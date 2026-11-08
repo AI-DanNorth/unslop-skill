@@ -17,7 +17,7 @@ detectors:
   glow:             {rule: SLP-008, tier: Reflex, min_blur_x_alpha_px: 3, spotlight_min_alpha: 0.14}
   neon_violet:      {rule: SLP-009, tier: Reflex, violet_hue: [265, 330], violet_min_chroma: 0.12, cyan_hue: [170, 230], cyan_min_chroma: 0.10, dark_bg_max_l: 0.40, min_px: 24}   # oklch hue and chroma
   accent_footprint: {rule: CLR-001, tier: Reflex, fold: [1280, 800], warn_pct: 5, fail_pct: 8}
-  stock_swatches:   {rule: CLR-002, tier: Reflex, lexicon: swatches}
+  stock_swatches:   {rule: CLR-002, tier: Reflex, lexicon: swatches, min_used: 3}
   # ---- type and spacing -----------------------------------------------------
   flat_hierarchy:   {rule: TYP-001, tier: Reflex, min_ratio: 1.25, min_roles: 3}
   type_ladder:      {rule: TYP-002, tier: Reflex, max_distinct_sizes: 8, warn_families: 3, fail_families: 4}
@@ -34,6 +34,8 @@ detectors:
   em_dash:          {rule: CPY-004, tier: Reflex, budget: 0, saturation_count: 8, saturation_per_chars: 500}
   lexicon_copy:     {rule: CPY-005, tier: Reflex, lexicons: [buzzwords, stock-phrases, button-labels, self-labels, chrome-glyphs]}
   repeated_label:   {rule: CPY-006, tier: Reflex, min_repeats_in_card: 3}
+  emoji_icons:      {rule: SLP-013, tier: Reflex, min_px: 16, min_count: 2}
+  nested_cards:     {rule: SLP-014, tier: Reflex, max_depth: 4}
   chrome_glyphs:    {rule: SLP-010, tier: Reflex, budget: 0}
   # ---- integrity ------------------------------------------------------------
   invented_metrics: {rule: INT-001, tier: Floor, lexicon: invented-metrics}
@@ -41,10 +43,11 @@ detectors:
   fake_people:      {rule: INT-003, tier: Floor, lexicon: fake-people}
   fake_send:        {rule: INT-004, tier: Floor, lexicon: fake-success}
   placeholder_residue: {rule: INT-005, tier: Floor, lexicon: self-labels, group: residue}
+  stat_band:        {rule: INT-007, tier: Reflex, min_px: 24, min_count: 3}
   data_slots:       {rule: INT-006, tier: Reflex, max_per_page: 2, pattern: "\\[DATA NEEDED"}
   # ---- accessibility --------------------------------------------------------
   contrast:         {rule: A11-001, tier: Floor, body: 4.5, large: 3.0, large_px: 24, large_bold_px: 18.66, apca_body_lc: 60, apca_large_lc: 45}
-  text_floor:       {rule: A11-002, tier: Floor, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2}
+  text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2}   # Floor below hard_px; Reflex below dense_ui_px; Finish below body_px
   focus_ring:       {rule: A11-003, tier: Floor, min_contrast: 3.0, fail_below: 2.95}
   targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex}
   img_alt:          {rule: A11-005, tier: Floor}

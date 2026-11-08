@@ -2,7 +2,7 @@
 capture_widths: [794]
 fixed_canvas: true
 detectors:
-  text_floor: {body_px: 12, dense_ui_px: 12, label_px: 9, min_run_chars: 28}
+  text_floor: {hard_px: 9, body_px: 12, dense_ui_px: 12, label_px: 9, min_run_chars: 28}
   overflow: {enabled: false}
   phone_parity: {enabled: false}
   targets: {enabled: false}

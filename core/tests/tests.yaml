@@ -42,6 +42,10 @@
 - {id: T-LOOK-LEDGER, name: Look-ledger, lens: [slop], kind: M, detector: distinctness,
    run: "Compare background family, palette, headline face and skeleton with the last 8 deliveries.",
    pass: "No trait recurs in more than max(2, 50%) of them; palette oklab distance >= 0.06; edge-map correlation <= 0.55.", sources: ["huashu §69 §111"]}
+- {id: T-STOCK-ORDER, name: Stock page order, lens: [slop, structure], kind: J,
+   run: "List the page's sections in order and mark each that matches a stock section: hero with product mock, logo strip, three or four equal feature cards, 1-2-3 steps, stat band, testimonial cards, three pricing tiers, FAQ accordion, closing CTA band, link-farm footer.",
+   pass: "Fewer than 5 stock sections. 5 or 6 in stock order caps overall_read at mixed; 7 or more means generated, however specific the copy.",
+   sources: ["hallmark §17 §518 anatomy", "lens review test set 1 (I01-I03: specific copy on a stock skeleton)"]}
 - {id: T-OVER-CORRECTION, name: Over-correction, lens: [slop, copy], kind: J,
    run: "After a fix, look for the habit that replaced the removed one.", pass: "None multiplied.", sources: ["taste-skill §51 §642"]}
 - {id: T-THREE-LINE, name: Three tests per line, lens: [copy], kind: J,

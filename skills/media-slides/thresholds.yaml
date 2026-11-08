@@ -2,7 +2,7 @@
 capture_widths: [1920]
 fixed_canvas: true
 detectors:
-  text_floor: {body_px: 24, dense_ui_px: 20, label_px: 16, min_run_chars: 20}   # body >= 24px, labels >= 16px (kami, huashu; C28)
+  text_floor: {hard_px: 18, body_px: 24, dense_ui_px: 20, label_px: 16, min_run_chars: 20}   # body >= 24px, labels >= 16px (kami, huashu; C28)
   overflow: {enabled: false}
   phone_parity: {enabled: false}
   targets: {enabled: false}

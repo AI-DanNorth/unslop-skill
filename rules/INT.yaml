@@ -98,6 +98,27 @@
   values:
     lexicon: self-labels
     group: residue
+- id: INT-007
+  title: Stat bands need sources
+  domain: D18
+  tier: Reflex
+  kind: cap
+  detector: stat_band
+  remedy: fix-copy
+  rule: A row of three or more big numbers (99.9%, 10K+, 2.3M, 4.9 stars) needs a source or must come from the brief's supplied facts.
+  why: Unsourced stat bands are the most common invented proof on generated pages.
+  fix: Cite each figure, use supplied facts only, or remove the band.
+  sources:
+  - lens review test set 1 (B02, B07, S09)
+  - hallmark §362
+  - taste-skill §40
+  priority: P1
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    min_px: 24
+    min_count: 3
 - id: INT-006
   title: At most two missing-fact slots
   domain: D18

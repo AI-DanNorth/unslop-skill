@@ -280,6 +280,46 @@
   status: active
   values:
     families_file: look-families.yaml
+- id: SLP-013
+  title: No emoji as icons
+  domain: D03
+  tier: Reflex
+  kind: cap
+  detector: emoji_icons
+  remedy: fix-quieter
+  rule: Do not use emoji as feature icons, heading prefixes or button glyphs.
+  why: Emoji icons are the fastest tell of a generated page and render differently on every platform.
+  fix: Use a consistent icon set with labels, or no icon.
+  sources:
+  - hallmark slopped.html gate 30
+  - ui-ux-pro-max §46
+  - ux-ui-agent-skills emoji fixture
+  priority: P1
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    min_px: 16
+    min_count: 2
+- id: SLP-014
+  title: No cards inside cards
+  domain: D03
+  tier: Reflex
+  detector: nested_cards
+  remedy: fix-layout
+  rule: Do not put a bordered or shadowed card inside another card.
+  why: Nested boxes add depth with no meaning and crowd the content.
+  fix: Keep one container level; group inside it with spacing or a rule.
+  sources:
+  - hallmark slopped.html gate 4
+  - impeccable §561
+  priority: P1
+  kind: ban
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    max_depth: 4
 - id: SLP-101
   title: 'Give every tell one of three severities: ban (a single instance is a tell), cap (fine once'
   domain: D03

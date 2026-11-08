@@ -1,7 +1,7 @@
 # Email adapter (draft, authored rules). Mobile client and desktop client widths.
 capture_widths: [375, 800]
 detectors:
-  text_floor: {body_px: 14, dense_ui_px: 13, label_px: 12}
+  text_floor: {hard_px: 12, body_px: 14, dense_ui_px: 13, label_px: 12}
   words_per_screen: {enabled: false}
   page_words: {enabled: false}
   h1_words: {enabled: false}

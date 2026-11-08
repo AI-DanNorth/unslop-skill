@@ -74,7 +74,7 @@ def numbered_labels(ev, cfg):
     hs = headings(ev)
     found = []
     for t in ev.texts():
-        if not re.fullmatch(r"(No\.?\s*)?0?\d{1,2}[.)/:]?|\d{2,3}\s*[/·]\s*\d{1,3}", t["text"]): continue
+        if not re.fullmatch(r"(No\.?\s*)?0?\d{1,2}[.)/:]?|\d{2,3}\s*[/·]\s*\d{1,3}|0\d\s*[/·—–-]\s*\S.{0,24}|(section|step|part|chapter|phase)\s*0?\d{1,2}", t["text"].strip(), re.I): continue
         if px(t["style"]["fontSize"]) > cfg["max_size_px"]: continue
         for h in hs:
             near = abs(h["rect"]["y"] - t["rect"]["y"]) < 80 and abs(h["rect"]["x"] - t["rect"]["x"]) < 400
@@ -239,7 +239,46 @@ def stock_swatches(ev, cfg):
         c = cl.parse(val)
         if c and cl.hexstr(c) in bad:
             out.append(hit(cfg, f":root {name}", f"token {name}: {val} is a stock {bad[cl.hexstr(c)]} swatch", value=cl.hexstr(c)))
+    used = collections.Counter()
+    for e in ev.visible():
+        for k in ("color", "backgroundColor", "borderTopColor"):
+            if k == "borderTopColor" and not px(e["style"]["borderTopWidth"]): continue
+            c = cl.parse(e["style"][k])
+            if c and c[3] > 0.5 and cl.hexstr(c) in bad: used[cl.hexstr(c)] += 1
+    if not out and len(used) >= cfg.get("min_used", 3):
+        out.append(hit(cfg, "whole page", f"{len(used)} stock framework colours used directly: {', '.join(sorted(used)[:6])}", value=len(used),
+                       after="Define brand tokens and use them instead of framework defaults."))
     return out
+
+EMOJI = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\u2B55\U0001F900-\U0001F9FF]")
+
+@detector("emoji_icons")
+def emoji_icons(ev, cfg):
+    icons, leads = [], []
+    for e in ev.texts():
+        t = e["text"].strip()
+        if not t or e.get("inDialog"): continue
+        if len(t) <= 3 and EMOJI.search(t) and px(e["style"]["fontSize"]) >= cfg["min_px"]: icons.append(e)
+        elif EMOJI.match(t) and (e.get("level") or e["tag"] in ("button", "a", "li")): leads.append(e)
+    found = icons + leads
+    if len(found) < cfg["min_count"]: return []
+    return [hit(cfg, where(e), f"emoji used as {'an icon' if e in icons else 'a label prefix'}: \"{e['text'][:30]}\" ({len(found)} on page)", value=len(found)) for e in found[:6]]
+
+def boxed(e):
+    s = e["style"]
+    return (s["boxShadow"] != "none" or px(s["borderTopWidth"]) >= 1) and px(s["borderTopLeftRadius"]) > 0 and px(s["paddingTop"]) >= 8 \
+        and e["tag"] not in ("button", "input", "select", "textarea", "a", "img", "svg") and e["rect"]["w"] >= 120 and e["rect"]["h"] >= 60
+
+@detector("nested_cards")
+def nested_cards(ev, cfg):
+    out, seen = [], set()
+    for e in ev.visible():
+        if not boxed(e): continue
+        for a in ev.ancestors(e)[:cfg["max_depth"]]:
+            if boxed(a) and a["id"] not in seen:
+                seen.add(a["id"])
+                out.append(hit(cfg, where(e), f"card inside a card ({a['sel'].split(' > ')[-1]})")); break
+    return out[:6]
 
 # ------------------------------------------------------------------ type
 @detector("flat_hierarchy")

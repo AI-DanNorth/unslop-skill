@@ -89,6 +89,12 @@ export async function installShim(ctx, log) {
     net.shimmed.push(`npm ${m[1]}${m[2] ? "@" + m[2] : ""}`);
     await route.fulfill({ status: 200, contentType: type, body: fs.readFileSync(file) });
   });
+  await ctx.route(/^https:\/\/cdn\.tailwindcss\.com/, async (route) => {
+    const dir = npmPackage("@tailwindcss/browser@4");
+    if (!dir) { net.blocked.push("script cdn.tailwindcss.com"); return route.abort(); }
+    net.shimmed.push("npm @tailwindcss/browser@4 (approximates Tailwind v3 play CDN; tailwind.config scripts ignored)");
+    await route.fulfill({ status: 200, contentType: "application/javascript", body: fs.readFileSync(path.join(dir, "dist/index.global.js")) });
+  });
   for (const pair of (process.env.UNSLOP_HOST_MAP || "").split(",").filter(Boolean)) {
     const [host, dir] = pair.split("=");
     await ctx.route(new RegExp(`^https?://(www\\.)?${host.replace(/\./g, "\\.")}/`), async (route) => {

@@ -9,13 +9,19 @@ def own_texts(ev, w=None):
     for e in ev.texts(w):
         yield e, e["text"]
         if e.get("img") and e["img"].get("alt"): yield e, e["img"]["alt"]
+    for e in ev.visible(w):                       # phrases split across inline elements ("Trusted by <b>10,000+</b>")
+        if e.get("blockText") and not e.get("inDialog"): yield e, e["blockText"]
 
 def run_lexicon(ev, cfg, name, groups=None, field="text", per_page=True, tier=None):
     pats = lexicon_patterns(name, groups)
     counts = collections.defaultdict(list)
+    seen = set()
     for e, text in own_texts(ev):
         for g, pol, budget, rx, term in pats:
             for m in rx.finditer(text):
+                key = (m.group(0).lower(), round(e["rect"]["y"] / 60))    # same phrase in a block and its child counts once
+                if key in seen: continue
+                seen.add(key)
                 counts[(g, pol, budget)].append((e, m.group(0), term))
     out = []
     for (g, pol, budget), hits in counts.items():
@@ -178,3 +184,19 @@ def placeholder_residue(ev, cfg):
 def data_slots(ev, cfg):
     n = len(re.findall(cfg["pattern"], ev.dom()["bodyText"]))
     return [hit(cfg, "whole page", f"{n} [DATA NEEDED] slots (max {cfg['max_per_page']})", value=n)] if n > cfg["max_per_page"] else []
+
+STAT = re.compile(r"^[~≈<>+−-]?[$€£¥]?\d[\d.,]*\s?(%|x|×|k|K|M|B|bn|ms|s|h|★|/5|/10)?\+?\s*★?$")
+
+@detector("stat_band")
+def stat_band(ev, cfg):
+    supplied = [x.lower() for x in cfg.get("supplied", [])]
+    stats = [e for e in ev.texts() if STAT.match(e["text"].strip()) and px(e["style"]["fontSize"]) >= cfg["min_px"] and not e.get("inDialog")
+             and not any(e["text"].strip().lower() in x for x in supplied)]
+    rows = collections.defaultdict(list)
+    for e in stats: rows[round(e["rect"]["y"] / 80)].append(e)
+    out = []
+    for r, lst in rows.items():
+        if len(lst) >= cfg["min_count"]:
+            out.append(hit(cfg, where(lst[0]), f"stat band of {len(lst)} unsourced figures: {', '.join(x['text'] for x in lst[:5])}", value=len(lst),
+                           after="Cite each figure, use only supplied facts, or remove the band."))
+    return out

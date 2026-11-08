@@ -75,6 +75,7 @@ for (const w of widths) {
   const { ctx, page, errors } = await open(browser, w);
   try { await page.goto(url, { waitUntil: "load", timeout: 45000 }); } catch (e) { note(`width ${w}: load failed: ${e.message}`); await ctx.close(); continue; }
   await settle(page);
+  await page.addStyleTag({ content: "*,*::before,*::after{background-attachment:scroll!important}" });   // fixed backgrounds render once in full-page shots
   const dom = await page.evaluate(EXTRACT);
   dom.consoleErrors = errors;
   fs.writeFileSync(path.join(ev, `dom-${w}.json`), JSON.stringify(dom));
@@ -116,7 +117,8 @@ for (const w of widths) {
 const VISIBLE_CHARS = () => {
   let vis = 0, tot = 0;
   for (const el of document.body.querySelectorAll("*")) {
-    if (["SCRIPT", "STYLE", "NOSCRIPT", "TEMPLATE"].includes(el.tagName)) continue;
+    if (["SCRIPT", "STYLE", "NOSCRIPT", "TEMPLATE", "TITLE", "DESC", "title", "desc", "OPTION"].includes(el.tagName)) continue;
+    if (el.closest("dialog,[role=dialog],[role=menu],[role=listbox],[role=tooltip],details:not([open]),[aria-hidden=true],[hidden]")) continue;
     let t = ""; for (const n of el.childNodes) if (n.nodeType === 3) t += n.textContent;
     const len = t.replace(/\s+/g, "").length; if (!len) continue;
     tot += len;

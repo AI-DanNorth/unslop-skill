@@ -83,6 +83,11 @@
       }
       if (tr.length) rec.textRects = tr;
     }
+    if (vis && !["inline", "contents"].includes(cs.display)) {
+      const bt = (el.innerText || "").replace(/\s+/g, " ").trim();
+      if (bt.length >= 3 && bt.length <= 300 && bt !== text) rec.blockText = bt;
+    }
+    rec.inDialog = !!el.closest("dialog,[role=dialog],[role=menu],[role=listbox],details:not([open]),[aria-hidden=true],template,[hidden]");
     if (/^H[1-6]$/.test(el.tagName)) rec.level = +el.tagName[1];
     if (vis && (/^H[1-6]$/.test(el.tagName) || el.tagName === "P") && (el.textContent || "").length <= 300) {
       const rg = document.createRange(); rg.selectNodeContents(el);

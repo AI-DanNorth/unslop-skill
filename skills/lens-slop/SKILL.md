@@ -27,6 +27,7 @@ Run these on the actual page text and screenshots. Each failed test is a finding
 | T-FIVE-SECOND | First screen only: what is it, for whom, what to do? | Any of the three is unanswered |
 | T-THREE-LINE | For each claim: picturable, falsifiable, only-this-business? | A claim fails all three (cap 3 examples) |
 | T-DELETION | Remove each decorative image, divider, badge and icon in turn | Nothing is lost (it is filler) |
+| T-STOCK-ORDER | List the sections in order; mark stock ones (mock hero, logo strip, equal feature cards, 1-2-3 steps, stat band, testimonial cards, three pricing tiers, FAQ, CTA band, link-farm footer) | 5 or more in stock order. 7 or more means the read is `generated` even when the copy is specific: specific words on a default skeleton are still a default page |
 | T-OVER-CORRECTION | If this page was already "unslopped", look for the substitute habit (fragments, "rather than", pairs) | The substitute multiplies |
 | T-FRESH-READER | Read only the text; list the 3 lines that would fit any site | Always list them; they are findings when they are headings or the hero |
 
@@ -40,7 +41,7 @@ Then look at the whole: count which look-family tells you can see that the sweep
 - Tier: Reflex for slop, Floor only for integrity (invented proof, fake people) the sweep missed, Finish for polish.
 - Respect the brief: if the contract records an override for a tell, do not report it.
 - `strengths`: name what is specific and must not be diluted by fixes. Always at least one if anything qualifies.
-- `overall_read`: one of `made` (reads as designed for this client), `mixed` (specific in places, default in others) or `generated` (reads as a model's default output), plus `confidence` (`low`, `medium`, `high`) and one sentence of reason. Decide it from the screenshots and tests, not from the count of sweep hits. A page can have many mechanical hits and still read as made, or none and read as generated.
+- `overall_read`: one of `made` (reads as designed for this client), `mixed` (specific in places, default in others) or `generated` (reads as a model's default output), plus `confidence` (`low`, `medium`, `high`) and one sentence of reason. Decide it from the screenshots and tests, not from the count of sweep hits. Specific copy does not rescue a stock skeleton (T-STOCK-ORDER), and a recognisable look family chosen without a reason in the contract counts against `made`. A page can have many mechanical hits and still read as made, or none and read as generated.
 - Never write an "after" that invents facts. Where content is missing, the after is `[DATA NEEDED: what]`.
 
 ## Gate

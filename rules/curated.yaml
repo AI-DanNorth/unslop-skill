@@ -48,6 +48,13 @@
    why: "One tell is a choice; a cluster is a default nobody chose.", fix: "Break the family on its strongest tell first; name the replacement decision.",
    sources: ["huashu §58 §68", "hallmark §16 §386", "impeccable §200"]}
 
+- {id: SLP-013, title: No emoji as icons, domain: D03, tier: Reflex, kind: cap, detector: emoji_icons, remedy: fix-quieter,
+   rule: "Do not use emoji as feature icons, heading prefixes or button glyphs.", why: "Emoji icons are the fastest tell of a generated page and render differently on every platform.",
+   fix: "Use a consistent icon set with labels, or no icon.", sources: ["hallmark slopped.html gate 30", "ui-ux-pro-max §46", "ux-ui-agent-skills emoji fixture"]}
+- {id: SLP-014, title: No cards inside cards, domain: D03, tier: Reflex, detector: nested_cards, remedy: fix-layout,
+   rule: "Do not put a bordered or shadowed card inside another card.", why: "Nested boxes add depth with no meaning and crowd the content.",
+   fix: "Keep one container level; group inside it with spacing or a rule.", sources: ["hallmark slopped.html gate 4", "impeccable §561"]}
+
 # ---------------- D06 colour ----------------
 - {id: CLR-001, title: Accent footprint within budget, domain: D06, tier: Reflex, kind: cap, detector: accent_footprint, remedy: fix-colorize,
    rule: "At the 1280x800 fold, solid accent area must stay under 5% (warn) and never exceed 8%.", why: "An accent sprayed everywhere stops pointing at anything.",
@@ -120,6 +127,9 @@
 - {id: INT-005, title: No placeholder residue at ship, domain: D18, tier: Floor, detector: placeholder_residue, remedy: fix-copy, waivable_by: never,
    rule: "No lorem ipsum, TODO, template brackets or 'placeholder' text in an artifact marked ship.", why: "Residue is broken content.",
    fix: "Fill with real content or a visible [DATA NEEDED] slot.", sources: ["taste-skill §39", "huashu §71", "kami §452"]}
+- {id: INT-007, title: Stat bands need sources, domain: D18, tier: Reflex, kind: cap, detector: stat_band, remedy: fix-copy,
+   rule: "A row of three or more big numbers (99.9%, 10K+, 2.3M, 4.9 stars) needs a source or must come from the brief's supplied facts.", why: "Unsourced stat bands are the most common invented proof on generated pages.",
+   fix: "Cite each figure, use supplied facts only, or remove the band.", sources: ["lens review test set 1 (B02, B07, S09)", "hallmark §362", "taste-skill §40"]}
 - {id: INT-006, title: At most two missing-fact slots, domain: D18, tier: Reflex, kind: cap, detector: data_slots, remedy: fix-copy,
    rule: "No more than 2 [DATA NEEDED] slots per page.", why: "More means the page was built before its content existed.", fix: "Get the content, or cut the sections that need it.",
    sources: ["hallmark §110"]}

@@ -55,8 +55,9 @@ def text_floor(ev, cfg):
         s = px(e["style"]["fontSize"])
         if in_tag(ev, e, ("footer", "figcaption", "small", "caption", "sup", "sub", "code", "pre", "label", "th", "td", "nav", "button")): continue
         if e["textLen"] >= cfg["min_run_chars"] and s < floor - 0.1:
-            tier = "Floor" if s < cfg["dense_ui_px"] else "Reflex"
-            out.append(hit(cfg, where(e), f"{e['textLen']}-character run at {s:.0f}px (body floor {floor}px)", value=s, tier=tier))
+            hard = cfg.get("hard_px", cfg["dense_ui_px"])
+            tier, pr = ("Floor", "P0") if s < hard - 0.1 else (("Reflex", "P1") if s < cfg["dense_ui_px"] - 0.1 else ("Finish", "P3"))
+            out.append(hit(cfg, where(e), f"{e['textLen']}-character run at {s:.0f}px (hard floor {hard}px, dense UI {cfg['dense_ui_px']}px, body {floor}px)", value=s, tier=tier, priority=pr))
         elif e["textLen"] < cfg["min_run_chars"] and s < cfg["label_px"] - 0.1:
             labels.append(e)
     if len(labels) > cfg["max_label_runs"]:
@@ -200,7 +201,7 @@ def hidden_content(ev, cfg):
     B, T = base["visibleChars"], base["totalChars"]
     out = []
     if T and 1 - B / T > cfg["max_hidden_share"]:
-        out.append(hit(cfg, "page after load", f"{100*(1-B/T):.0f}% of text is hidden after load and scrolling (max {100*cfg['max_hidden_share']:.0f}%)", tier="Floor"))
+        out.append(hit(cfg, "page after load", f"{100*(1-B/T):.0f}% of text is hidden after load and scrolling (max {100*cfg['max_hidden_share']:.0f}%; menus and dialogs excluded)", tier="Reflex"))
     for cond in ("reduced_motion", "observer_never_fires", "scripts_off"):
         c = h.get(cond, {})
         if "visibleChars" not in c: out.append(hit(cfg, cond, f"condition did not run: {c.get('error', 'unknown')}", tier="Reflex")); continue
