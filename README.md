@@ -12,7 +12,7 @@ intake ─▶ capture ─▶ sweep ─▶ lenses ─▶ synthesize ─▶ (remed
 ```
 
 - **Capture** renders the page with Playwright at each audit width. It first renders a known-good control page, and if the control does not reproduce, every capture finding is marked "not verified".
-- **Sweep** runs 54 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
+- **Sweep** runs 56 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
 - **Lenses** are Claude skills that judge what scripts cannot. Each one runs named tests from `core/tests/tests.yaml`.
 - **Synthesize** merges findings to root causes, drops anything without evidence, scores 7 dimensions with caps, and writes a report that opens with a verdict word.
 
