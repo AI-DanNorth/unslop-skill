@@ -1,0 +1,565 @@
+name: Test set 1
+built: '2026-11-08'
+note: Local items are audited from the repo clones at the listed commit. Live items need a browser session (the cloud workspace reaches GitHub only).
+items:
+- id: S01
+  repo: hallmark
+  path: skills/hallmark/scripts/fixtures/slopped.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: ~27 intended tells listed in the header comment
+  answer_key: header comment of the file
+  kind: page
+  commit: 407fa68
+- id: S02
+  repo: impeccable
+  path: demos/landing-demo/index.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: 'second-order slop: Fraunces, cream-peach SaaS'
+  answer_key: null
+  kind: page
+  commit: 924bbd1
+- id: S03
+  repo: impeccable
+  path: demos/landing-demo/classic/index.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: 'first-order slop: dark, Inter, purple/pink/cyan'
+  answer_key: null
+  kind: page
+  commit: 924bbd1
+- id: S04
+  repo: impeccable
+  path: tests/fixtures/antipatterns/should-flag.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: detector ground truth (flag)
+  answer_key: impeccable detector expectations
+  kind: page
+  commit: 924bbd1
+- id: S05
+  repo: design-taste
+  path: examples/before.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: 'AI-default page: Inter, slate, indigo-violet CTA, frosted nav'
+  answer_key: null
+  kind: page
+  commit: c4a6bff
+- id: S06
+  repo: ux-ui-agent-skills
+  path: tests/fixtures/bad/slop-screen.html
+  expect: slop
+  medium: app
+  group: known-slop
+  why: textbook AI dashboard; README has a verdict table
+  answer_key: README gate table
+  kind: page
+  commit: def84a7
+- id: S07
+  repo: huashu-design-en
+  path: scripts/tests/fixtures/lint_slop.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: 2026 cream/serif/terracotta default
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: S08
+  repo: ui-ux-pro-max
+  path: projects/portfolio-dark/index.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: eight gradients, glass cards (uncurated skill output)
+  answer_key: null
+  kind: page
+  commit: 4f2dbb6
+- id: S09
+  repo: ui-ux-pro-max
+  path: projects/saas-landing/index.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: Poppins, Tailwind blue, orange CTA
+  answer_key: null
+  kind: page
+  commit: 4f2dbb6
+- id: S10
+  repo: ui-ux-pro-max
+  path: projects/healthcare-dashboard/index.html
+  expect: slop
+  medium: app
+  group: known-slop
+  why: AI-default dashboard, Tailwind palette, Chart.js
+  answer_key: null
+  kind: page
+  commit: 4f2dbb6
+- id: S11
+  repo: pagepatch
+  path: before.html
+  expect: slop
+  medium: web
+  group: known-slop
+  why: AI hero before 5 explained fixes
+  answer_key: report.md
+  kind: page
+  commit: 91f215b
+- id: S12
+  repo: transitions-dev
+  path: example.html?style=generic
+  expect: slop
+  medium: web
+  group: known-slop
+  why: generic AI motion on a modal (motion)
+  answer_key: null
+  kind: page
+  commit: 20d70c1
+- id: S13
+  repo: huashu-design-en
+  path: scripts/tests/fixtures/xhs_bad.html
+  expect: slop
+  medium: social
+  group: known-slop
+  why: bad Xiaohongshu card
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: G01
+  repo: hallmark
+  path: skills/hallmark/scripts/fixtures/exemplars/editorial.html
+  expect: good
+  medium: web
+  group: control
+  why: must lint clean in hallmark
+  answer_key: null
+  kind: page
+  commit: 407fa68
+- id: G02
+  repo: hallmark
+  path: skills/hallmark/scripts/fixtures/exemplars/modern-minimal.html
+  expect: good
+  medium: web
+  group: control
+  why: must lint clean in hallmark
+  answer_key: null
+  kind: page
+  commit: 407fa68
+- id: G03
+  repo: hallmark
+  path: skills/hallmark/scripts/fixtures/exemplars/atmospheric.html
+  expect: good
+  medium: web
+  group: control
+  why: must lint clean in hallmark
+  answer_key: null
+  kind: page
+  commit: 407fa68
+- id: G04
+  repo: hallmark
+  path: skills/hallmark/scripts/fixtures/exemplars/playful.html
+  expect: good
+  medium: web
+  group: control
+  why: must lint clean in hallmark
+  answer_key: null
+  kind: page
+  commit: 407fa68
+- id: G05
+  repo: impeccable
+  path: tests/fixtures/antipatterns/should-pass.html
+  expect: good
+  medium: web
+  group: control
+  why: detector ground truth (pass)
+  answer_key: null
+  kind: page
+  commit: 924bbd1
+- id: G06
+  repo: design-taste
+  path: examples/after.html
+  expect: good
+  medium: web
+  group: pair-of-S05
+  why: same copy as S05, editorial-minimal
+  answer_key: null
+  kind: page
+  commit: c4a6bff
+- id: G07
+  repo: ux-ui-agent-skills
+  path: examples/sample-app/preview.html
+  expect: good
+  medium: app
+  group: pair-of-S06
+  why: rule-built twin of S06
+  answer_key: null
+  kind: page
+  commit: def84a7
+- id: G08
+  repo: huashu-design-en
+  path: scripts/tests/fixtures/lint_clean.html
+  expect: good
+  medium: web
+  group: pair-of-S07
+  why: clean version of S07
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: G09
+  repo: pagepatch
+  path: hero.html
+  expect: good
+  medium: web
+  group: pair-of-S11
+  why: fixed hero
+  answer_key: null
+  kind: page
+  commit: 91f215b
+- id: G10
+  repo: transitions-dev
+  path: example.html
+  expect: good
+  medium: web
+  group: pair-of-S12
+  why: tuned motion, same modal
+  answer_key: null
+  kind: page
+  commit: 20d70c1
+- id: G11
+  repo: huashu-design-en
+  path: scripts/tests/fixtures/xhs_ok.html
+  expect: good
+  medium: social
+  group: pair-of-S13
+  why: ok Xiaohongshu card
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: G12
+  repo: ux-ui-agent-skills
+  path: examples/showcase/index.html
+  expect: good
+  medium: app
+  group: control
+  why: dashboard with deliberate hierarchy
+  answer_key: null
+  kind: page
+  commit: def84a7
+- id: G13
+  repo: diagram-design
+  path: skills/diagram-design/assets/example-architecture.html
+  expect: good
+  medium: diagram
+  group: control
+  why: known-good architecture diagram
+  answer_key: null
+  kind: page
+  commit: e57eda6
+- id: B01
+  repo: huashu-design-en
+  path: scripts/tests/fixtures/lint_reskin.html
+  expect: borderline
+  medium: web
+  group: borderline
+  why: 'reskinned slop: same skeleton, new colours'
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: B02
+  repo: dsh-design-skills
+  path: examples/glassmorphism-landing.html
+  expect: borderline
+  medium: web
+  group: borderline
+  why: spec requires blue-purple-pink gradient and blur
+  answer_key: null
+  kind: page
+  commit: '7412727'
+- id: B03
+  repo: dsh-design-skills
+  path: examples/dark-saas-landing.html
+  expect: borderline
+  medium: web
+  group: borderline
+  why: stock SaaS layout with disciplined colour
+  answer_key: null
+  kind: page
+  commit: '7412727'
+- id: B04
+  repo: dsh-design-skills
+  path: examples/japanese-minimal-landing.html
+  expect: good
+  medium: web
+  group: borderline
+  why: likely cleanest of the dsh set
+  answer_key: null
+  kind: page
+  commit: '7412727'
+- id: B05
+  repo: design-taste
+  path: examples/dark-tech.html
+  expect: borderline
+  medium: web
+  group: borderline
+  why: 'Linear-style dark SaaS: false-positive risk'
+  answer_key: null
+  kind: page
+  commit: c4a6bff
+- id: B06
+  repo: design-taste
+  path: examples/corporate-trust.html
+  expect: good
+  medium: web
+  group: borderline
+  why: deliberately conventional enterprise
+  answer_key: null
+  kind: page
+  commit: c4a6bff
+- id: B07
+  repo: huashu-design-en
+  path: assets/showcases/website-saas/saas-build.html
+  expect: borderline
+  medium: web
+  group: borderline
+  why: floating cards, warm-gold gradient
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: B08
+  repo: huashu-design-en
+  path: assets/showcases/website-saas/saas-pentagram.html
+  expect: good
+  medium: web
+  group: borderline
+  why: same brief, pentagram direction
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: C01
+  repo: ux-ui-agent-skills
+  path: tests/fixtures/critic/async-lies.html
+  expect: slop
+  medium: app
+  group: lens-only
+  why: 'seeded taste defect: async-lies'
+  answer_key: evals/critic-answer-key.json
+  kind: page
+  commit: def84a7
+- id: C02
+  repo: ux-ui-agent-skills
+  path: tests/fixtures/critic/dashboard-no-lead.html
+  expect: slop
+  medium: app
+  group: lens-only
+  why: 'seeded taste defect: dashboard-no-lead'
+  answer_key: evals/critic-answer-key.json
+  kind: page
+  commit: def84a7
+- id: C03
+  repo: ux-ui-agent-skills
+  path: tests/fixtures/critic/empty-state-floating.html
+  expect: slop
+  medium: app
+  group: lens-only
+  why: 'seeded taste defect: empty-state-floating'
+  answer_key: evals/critic-answer-key.json
+  kind: page
+  commit: def84a7
+- id: C04
+  repo: ux-ui-agent-skills
+  path: tests/fixtures/critic/list-identical.html
+  expect: slop
+  medium: app
+  group: lens-only
+  why: 'seeded taste defect: list-identical'
+  answer_key: evals/critic-answer-key.json
+  kind: page
+  commit: def84a7
+- id: M01
+  repo: kami
+  path: site/assets/demos/demo-agent-slides.html
+  expect: good
+  medium: slides
+  group: other-media
+  why: 8-slide keynote
+  answer_key: null
+  kind: page
+  commit: e82bb39
+- id: M02
+  repo: kami
+  path: site/assets/demos/demo-musk-resume.html
+  expect: good
+  medium: print
+  group: other-media
+  why: 2-page resume
+  answer_key: null
+  kind: page
+  commit: e82bb39
+- id: M03
+  repo: kami
+  path: site/assets/demos/demo-tesla.html
+  expect: good
+  medium: print
+  group: other-media
+  why: equity report with charts
+  answer_key: null
+  kind: page
+  commit: e82bb39
+- id: M04
+  repo: kami
+  path: site/assets/demos/demo-social-cards-mole-en.html
+  expect: good
+  medium: social
+  group: other-media
+  why: 3:4 social cards
+  answer_key: null
+  kind: page
+  commit: e82bb39
+- id: M05
+  repo: huashu-design-en
+  path: assets/showcases/ppt/ppt-build.html
+  expect: borderline
+  medium: slides
+  group: other-media
+  why: data slide, build direction
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: M06
+  repo: huashu-design-en
+  path: assets/showcases/ppt/ppt-pentagram.html
+  expect: good
+  medium: slides
+  group: other-media
+  why: data slide, pentagram direction
+  answer_key: null
+  kind: page
+  commit: e07af09
+- id: M07
+  repo: open-design
+  path: design-templates/html-ppt-pitch-deck/example.html
+  expect: borderline
+  medium: slides
+  group: other-media
+  why: generated pitch deck
+  answer_key: null
+  kind: page
+  commit: 87a4f91
+- id: M08
+  repo: open-design
+  path: design-templates/email-marketing/example.html
+  expect: borderline
+  medium: email
+  group: other-media
+  why: generated launch email
+  answer_key: null
+  kind: page
+  commit: 87a4f91
+- id: I01
+  repo: hallmark
+  path: site/assets/cmp/fieldbook-bare-full.webp
+  expect: slop
+  medium: web
+  group: image-only
+  why: 'Opus output without hallmark: 26 issues'
+  answer_key: hallmark site compare
+  kind: image
+  commit: 407fa68
+- id: I02
+  repo: hallmark
+  path: site/assets/cmp/relay-bare-full.webp
+  expect: slop
+  medium: web
+  group: image-only
+  why: 18 issues
+  answer_key: null
+  kind: image
+  commit: 407fa68
+- id: I03
+  repo: hallmark
+  path: site/assets/cmp/closewise-bare-full.webp
+  expect: slop
+  medium: web
+  group: image-only
+  why: '11 issues: subtler'
+  answer_key: null
+  kind: image
+  commit: 407fa68
+- id: I04
+  repo: avoid-ai-design
+  path: docs/demo-before.png
+  expect: slop
+  medium: web
+  group: image-only
+  why: first-order slop specimen
+  answer_key: null
+  kind: image
+  commit: 2b7c718
+- id: I05
+  repo: avoid-ai-design
+  path: docs/demo-after.png
+  expect: good
+  medium: web
+  group: image-only
+  why: fixed version of I04
+  answer_key: null
+  kind: image
+  commit: 2b7c718
+- id: I06
+  repo: diagram-design
+  path: docs/pr-previews/waterfall/plausible-wrong.png
+  expect: slop
+  medium: diagram
+  group: image-only
+  why: looks right, numbers wrong (236 vs 238)
+  answer_key: plausible-wrong.md
+  kind: image
+  commit: e57eda6
+pending_live:
+- id: L01
+  target: https://findaistack.lovable.app/ (+ v0, Bolt, Replit, Base44 builds of the same brief)
+  expect: slop
+  status: 'not captured: needs browser or linked computer'
+- id: L02
+  target: https://consile.app , https://cineyx.ai , https://gradloom.app
+  expect: slop
+  status: 'not captured: needs browser or linked computer'
+- id: L03
+  target: https://kin-ai.replit.app , https://v0-optimus-delta.vercel.app , https://gameghost.manus.space
+  expect: slop
+  status: 'not captured: needs browser or linked computer'
+- id: L04
+  target: https://impeccable.style/antipattern-examples/new-slop-2026.html (+2022, 2025)
+  expect: slop
+  status: 'not captured: needs browser or linked computer'
+- id: L05
+  target: https://impeccable.style/gallery
+  expect: pair
+  status: 'not captured: needs browser or linked computer'
+- id: L06
+  target: 'Medium: anti-slop look is now AI slop (100/100 linter page)'
+  expect: slop
+  status: 'not captured: needs browser or linked computer'
+- id: L07
+  target: https://linear.app , https://cal.com , https://www.anthropic.com , https://www.nimblestudio.com
+  expect: control
+  status: 'not captured: needs browser or linked computer'
+- id: L08
+  target: https://landonorris.com , https://messenger.abeto.co , https://brand.dropbox.com
+  expect: good
+  status: 'not captured: needs browser or linked computer'
+- id: L09
+  target: https://design-system.service.gov.uk , https://preview.pro.ant.design/dashboard/analysis , https://vercel.com/design/guidelines
+  expect: good
+  status: 'not captured: needs browser or linked computer'
+- id: L10
+  target: IIB 2024 winners, LinkedIn deck, Really Good Emails
+  expect: good
+  status: 'not captured: needs browser or linked computer'

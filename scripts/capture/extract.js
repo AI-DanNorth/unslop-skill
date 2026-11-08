@@ -74,6 +74,15 @@
     if (interactive) { rec.interactive = true; rec.name = accName(el); rec.type = el.type || null; rec.role = el.getAttribute("role"); rec.href = el.getAttribute("href"); }
     if (el.tagName === "IMG") { rec.img = { alt: el.getAttribute("alt"), src: el.currentSrc || el.src, nw: el.naturalWidth, nh: el.naturalHeight, complete: el.complete, loading: el.loading }; }
     if (["INPUT","SELECT","TEXTAREA"].includes(el.tagName)) { rec.field = { type: el.type, name: el.name, placeholder: el.getAttribute("placeholder"), autocomplete: el.getAttribute("autocomplete"), labelled: !!accName(el) && accName(el) !== (el.getAttribute("placeholder") || "").trim() }; }
+    if (vis && text) {      // where the glyphs actually are: rects of this element's own text nodes
+      const tr = [];
+      for (const n of el.childNodes) {
+        if (n.nodeType !== 3 || !n.textContent.trim()) continue;
+        const rg = document.createRange(); rg.selectNodeContents(n);
+        for (const b of rg.getClientRects()) if (b.width >= 2 && b.height >= 4 && tr.length < 12) tr.push([Math.round(b.left + scrollX), Math.round(b.top + scrollY), Math.round(b.width), Math.round(b.height)]);
+      }
+      if (tr.length) rec.textRects = tr;
+    }
     if (/^H[1-6]$/.test(el.tagName)) rec.level = +el.tagName[1];
     if (vis && (/^H[1-6]$/.test(el.tagName) || el.tagName === "P") && (el.textContent || "").length <= 300) {
       const rg = document.createRange(); rg.selectNodeContents(el);

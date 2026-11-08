@@ -1,0 +1,7 @@
+# App screen adapter (draft). Product UI: dense text allowed at 14px; marketing budgets off.
+capture_widths: [375, 1280, 1440]
+detectors:
+  text_floor: {body_px: 14, dense_ui_px: 12, label_px: 11}
+  words_per_screen: {enabled: false}
+  page_words: {enabled: false}
+  h1_words: {enabled: false}

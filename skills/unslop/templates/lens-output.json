@@ -1,7 +1,13 @@
 {
   "lens": "slop",
   "ran_at": "2026-11-08T12:00:00",
-  "tests_run": ["T-RIVAL-NAME", "T-SQUINT"],
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Template hero and three generic feature cards; nothing on the first screen belongs to this business.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-SQUINT"
+  ],
   "findings": [
     {
       "rule": "SLP-012",
@@ -14,6 +20,10 @@
       "test": "T-RIVAL-NAME"
     }
   ],
-  "strengths": ["The pricing table is honest and complete."],
-  "not_investigated": ["copy voice: no brand voice samples supplied"]
+  "strengths": [
+    "The pricing table is honest and complete."
+  ],
+  "not_investigated": [
+    "copy voice: no brand voice samples supplied"
+  ]
 }

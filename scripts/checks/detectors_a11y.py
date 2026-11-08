@@ -21,22 +21,24 @@ def contrast(ev, cfg):
             c = cl.parse(e["style"]["color"])
             if not c or c[3] == 0: continue
             alpha = c[3] * e.get("opacity", 1)
-            r = e["rect"]
-            x0, y0 = max(0, r["x"]), max(0, r["y"]); x1, y1 = min(W, r["x"] + r["w"]), min(H, r["y"] + r["h"])
-            if x1 - x0 < 4 or y1 - y0 < 4: continue
-            xs = np.linspace(x0 + 1, x1 - 2, 7).astype(int); ys = np.linspace(y0 + 1, y1 - 2, 5).astype(int)   # inset: rects are rounded
-            samples = bg[np.ix_(ys, xs)].reshape(-1, 3) / 255.0
-            ratios = []
-            for s in samples:
-                fg = cl.over((c[0], c[1], c[2], alpha), tuple(s) + (1,))
-                ratios.append((cl.contrast(fg, s), s))
-            worst, ws = min(ratios, key=lambda t: t[0])
+            boxes = e.get("textRects") or [[e["rect"]["x"], e["rect"]["y"], e["rect"]["w"], e["rect"]["h"]]]
+            samples = []
+            for bx, by, bw, bh in boxes:
+                x0, y0, x1, y1 = max(0, bx + 1), max(0, by + 2), min(W, bx + bw - 1), min(H, by + bh - 2)
+                if x1 - x0 < 2 or y1 - y0 < 2: continue
+                xs = np.linspace(x0, x1 - 1, max(2, min(24, (x1 - x0) // 6))).astype(int); ys = np.linspace(y0, y1 - 1, max(2, min(6, (y1 - y0) // 3))).astype(int)
+                samples.extend(bg[np.ix_(ys, xs)].reshape(-1, 3) / 255.0)
+            if len(samples) < 4: continue
+            ratios = sorted(((cl.contrast(cl.over((c[0], c[1], c[2], alpha), tuple(s_) + (1,)), s_), s_) for s_ in samples), key=lambda t: t[0])
+            p10 = ratios[max(0, int(len(ratios) * 0.10) - 1)]
+            worst, ws = p10
+            absmin = ratios[0][0]
             size, weight = px(e["style"]["fontSize"]), int(e["style"]["fontWeight"] or 400)
             large = size >= cfg["large_px"] or (size >= cfg["large_bold_px"] and weight >= 700)
             need = cfg["large"] if large else cfg["body"]
             if worst < need - 0.005:
                 lc = cl.apca(cl.over((c[0], c[1], c[2], alpha), tuple(ws) + (1,)), ws)
-                out.append(hit(cfg, where(e), f"{worst:.2f}:1 against the worst sampled pixel {cl.hexstr(ws)} (text {cl.hexstr(c)}{', opacity %.2f' % alpha if alpha < 1 else ''}, {size:.0f}px; needs {need}:1). APCA Lc {abs(lc):.0f} (advisory)",
+                out.append(hit(cfg, where(e), f"{worst:.2f}:1 against the background behind the text (10th-percentile pixel {cl.hexstr(ws)}, worst {absmin:.2f}:1; text {cl.hexstr(c)}{', opacity %.2f' % alpha if alpha < 1 else ''}, {size:.0f}px; needs {need}:1). APCA Lc {abs(lc):.0f} (advisory)",
                                value=round(worst, 2), width=w, tier="Floor"))
     # one finding per selector+evidence
     seen, res = set(), []
@@ -83,7 +85,7 @@ def focus_ring(ev, cfg):
         ratios = sorted(cl.contrast(tuple(x) + (1,), tuple(y) + (1,)) for x, y in zip(on[::max(1, len(on) // 400)], off[::max(1, len(off) // 400)]))
         best = ratios[int(len(ratios) * 0.9)] if ratios else 0
         if best < cfg["fail_below"]:
-            out.append(hit(cfg, f"{s['tag']} \"{s['text']}\"", f"focus change only {best:.2f}:1 against the unfocused state (needs {cfg['min_contrast']}:1)", value=round(best, 2), tier="Floor"))
+            out.append(hit(cfg, f"{s['tag']} \"{s['text']}\"", f"focus indicator visible but faint: {best:.2f}:1 against the unfocused state (target {cfg['min_contrast']}:1, WCAG 2.4.13)", value=round(best, 2), tier="Reflex", priority="P2"))
     return out[:10]
 
 @detector("targets")

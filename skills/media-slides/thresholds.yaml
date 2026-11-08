@@ -1,0 +1,16 @@
+# Slides adapter (draft). Fixed 1920x1080 canvas; HTML decks are captured at canvas width.
+capture_widths: [1920]
+fixed_canvas: true
+detectors:
+  text_floor: {body_px: 24, dense_ui_px: 20, label_px: 16, min_run_chars: 20}   # body >= 24px, labels >= 16px (kami, huashu; C28)
+  overflow: {enabled: false}
+  phone_parity: {enabled: false}
+  targets: {enabled: false}
+  focus_ring: {enabled: false}
+  words_per_screen: {enabled: false}
+  page_words: {enabled: false}
+  h1_words: {enabled: false}
+  dead_band: {enabled: false}
+  headings_landmarks: {enabled: false}
+  fake_send: {enabled: false}
+  widows: {widths: [1920]}

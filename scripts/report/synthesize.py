@@ -34,6 +34,11 @@ def main(run):
     for det, r in mech["detectors"].items():
         if r["status"] != "ran": not_inv.append(f"{det} ({r['rule']}): {r['status']}"); continue
         for h in r.get("hits", []): findings.append(dict(h))
+    net = json.loads((run / "01-evidence/manifest.json").read_text()).get("network") or {}
+    if net.get("blockedImages"): not_inv.append(f"capture: {net['blockedImages']} image(s) could not load (network blocked); imagery and layout around them not verified")
+    if net.get("fontsMissing"): not_inv.append(f"capture: fonts unavailable offline: {', '.join(net['fontsMissing'])}; type findings for them not verified")
+    other = [b for b in net.get("blocked", []) if not b.startswith("image ")]
+    if other: not_inv.append(f"capture: {len(other)} other request(s) blocked, e.g. {other[0][:90]}")
     lens_dir = run / "03-lenses"
     if lens_dir.exists():
         for f in sorted(lens_dir.glob("*.json")):

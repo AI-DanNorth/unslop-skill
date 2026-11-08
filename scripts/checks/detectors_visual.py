@@ -15,7 +15,16 @@ def rendered_family(ev, e):
     except NotVerified: return first_family(e["style"]["fontFamily"])
     f = fonts.get(str(e["id"]))
     if not f: return first_family(e["style"]["fontFamily"])
-    return max(f, key=lambda x: x["glyphs"])["family"]
+    return base_family(max(f, key=lambda x: x["glyphs"])["family"])
+
+WEIGHT_WORDS = r"\s+(thin|hairline|extralight|extra light|ultralight|light|book|regular|normal|medium|semibold|semi bold|demibold|bold|extrabold|extra bold|ultrabold|black|heavy|italic|oblique)$"
+def base_family(name):
+    """'Inter SemiBold Italic' -> 'Inter' (platform font names carry the weight)."""
+    n = name.strip()
+    while True:
+        m = re.search(WEIGHT_WORDS, n, re.I)
+        if not m: return n
+        n = n[:m.start()]
 
 def is_serif(ff): s = ff.lower(); return ("serif" in s and "sans-serif" not in s.split(",")[-1]) or any(k in s for k in ("charter", "garamond", "baskerville", "lora", "georgia", "times", "playfair", "fraunces", "newsreader", "caslon"))
 
@@ -280,12 +289,26 @@ def banned_fonts(ev, cfg):
 def fallback_face(ev, cfg):
     fonts = ev.json("fonts.json")
     bad = {b.lower() for b in cfg["bad_faces"]}
-    out, seen = [], set()
+    net = ev.manifest.get("network") or {}
+    unavailable = {f.lower() for f in net.get("fontsMissing", [])}
+    css = "\n".join(ev.dom()["css"])
+    faces = collections.defaultdict(list)          # family -> remote src urls in its @font-face rules
+    for block in re.findall(r"@font-face\s*\{([^}]*)\}", css):
+        fm = re.search(r"font-family:\s*([^;]+)", block)
+        if fm: faces[fm.group(1).strip().strip("'\"").lower()] += re.findall(r"url\(\s*['\"]?(https?://[^'\")]+)", block)
+    blocked_urls = " ".join(net.get("blocked", []))
+    webfaces = set(faces)
+    webfaces |= {x.split(" ", 1)[1].lower() for x in net.get("shimmed", []) if x.startswith("font ")}
+    out, seen, skipped = [], set(), set()
     for e in ev.texts(min_len=2):
         f = fonts.get(str(e["id"]))
         if not f: continue
-        drawn = max(f, key=lambda x: x["glyphs"])["family"]
+        drawn = base_family(max(f, key=lambda x: x["glyphs"])["family"])
         declared = first_family(e["style"]["fontFamily"])
+        if declared.lower() in unavailable or declared.lower() not in webfaces:
+            skipped.add(declared); continue          # system font absent on this renderer, or font host blocked: not the page's fault
+        if any(u[:60] in blocked_urls for u in faces.get(declared.lower(), [])):
+            skipped.add(declared); continue          # its font file was blocked by the capture network
         if declared.lower() in GENERIC or drawn.lower().startswith(declared.lower()) or declared.lower().startswith(drawn.lower()): continue
         if ALIASES.get(declared.lower()) == drawn.lower(): continue
         key = (declared, drawn)
@@ -294,6 +317,8 @@ def fallback_face(ev, cfg):
         note = " (a known fallback face)" if drawn.lower() in bad else ""
         out.append(hit(cfg, where(e), f"declared \"{declared}\" but {drawn} drew the text{note}", value=drawn,
                        after="Fix the font load (path, format, font-display) or declare the face you actually ship."))
+    if net.get("blockedFonts") and not out:
+        raise NotVerified(f"{net['blockedFonts']} font request(s) were blocked by the capture network")
     return out
 
 # ------------------------------------------------------------------ layout

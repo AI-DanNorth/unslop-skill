@@ -1,0 +1,16 @@
+# Social card adapter (draft). Fixed canvas (1080 or 1242 wide); floors are for the canvas, the card shrinks about 2.8x on a phone.
+capture_widths: [1242]
+fixed_canvas: true
+detectors:
+  text_floor: {body_px: 36, dense_ui_px: 32, label_px: 28, min_run_chars: 20}
+  overflow: {enabled: false}
+  phone_parity: {enabled: false}
+  targets: {enabled: false}
+  focus_ring: {enabled: false}
+  words_per_screen: {enabled: false}
+  page_words: {enabled: false}
+  h1_words: {enabled: false}
+  dead_band: {enabled: false}
+  headings_landmarks: {enabled: false}
+  fake_send: {enabled: false}
+  widows: {widths: [1242]}

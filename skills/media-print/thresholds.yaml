@@ -1,0 +1,17 @@
+# Print/PDF adapter (draft). A4 at 96dpi = 794px wide. Body >= 9pt (12px), labels >= 7pt (9.3px).
+capture_widths: [794]
+fixed_canvas: true
+detectors:
+  text_floor: {body_px: 12, dense_ui_px: 12, label_px: 9, min_run_chars: 28}
+  overflow: {enabled: false}
+  phone_parity: {enabled: false}
+  targets: {enabled: false}
+  focus_ring: {enabled: false}
+  words_per_screen: {enabled: false}
+  page_words: {enabled: false}
+  h1_words: {enabled: false}
+  dead_band: {enabled: false}
+  headings_landmarks: {enabled: false}
+  fake_send: {enabled: false}
+  accent_footprint: {enabled: false}
+  widows: {widths: [794]}

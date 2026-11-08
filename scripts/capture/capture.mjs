@@ -8,6 +8,7 @@ const { chromium } = createRequire(import.meta.url)("playwright");
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { installShim } from "./netshim.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../..");
@@ -21,7 +22,7 @@ const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] :
 const [target, runDir] = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1].startsWith("--widths")));
 if (!target || !runDir) { console.error("usage: capture.mjs <url-or-file> <run-dir> [--widths 375,1440]"); process.exit(2); }
 const widths = opt("--widths", "320,375,414,768,1024,1280,1440,1920").split(",").map(Number);
-const toUrl = (t) => /^https?:|^file:/.test(t) ? t : pathToFileURL(path.resolve(t)).href;
+const toUrl = (t) => { if (/^https?:|^file:/.test(t)) return t; const [f, q] = t.split("?"); return pathToFileURL(path.resolve(f)).href + (q ? "?" + q : ""); };
 const url = toUrl(target);
 const ev = path.join(runDir, "01-evidence");
 fs.mkdirSync(path.join(ev, "focus"), { recursive: true });
@@ -41,6 +42,7 @@ async function settle(page) {
 
 async function open(browser, w, ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: HEIGHTS[w] || 900 }, deviceScaleFactor: 1, ...ctxOpts });
+  NETS.push(await installShim(ctx));
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e.message || e)));
@@ -48,6 +50,7 @@ async function open(browser, w, ctxOpts = {}) {
   return { ctx, page, errors };
 }
 
+const NETS = [];
 const browser = await chromium.launch();
 const manifest = { target, url, started: new Date().toISOString(), widths: [], files: {}, control: null, log };
 
@@ -78,7 +81,7 @@ for (const w of widths) {
   await page.screenshot({ path: path.join(ev, `shot-${w}.png`), fullPage: true });
   if (HEIGHTS[w] && [1280, 1440, 1920, 375].includes(w)) await page.screenshot({ path: path.join(ev, `fold-${w}.png`) });
   if (BG_WIDTHS.includes(w)) {      // background-only render for real-pixel contrast
-    await page.addStyleTag({ content: "*{color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
+    await page.addStyleTag({ content: "*,*::before,*::after{-webkit-text-fill-color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
     await page.waitForTimeout(100);
     await page.screenshot({ path: path.join(ev, `bg-${w}.png`), fullPage: true });
   }
@@ -238,6 +241,10 @@ const VISIBLE_CHARS = () => {
 }
 
 await browser.close();
+const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];
+manifest.network = { shimmed: uniq("shimmed"), blocked: uniq("blocked"), fontsMissing: uniq("fontsMissing") };
+manifest.network.blockedImages = manifest.network.blocked.filter((b) => b.startsWith("image ")).length;
+manifest.network.blockedFonts = manifest.network.blocked.filter((b) => b.startsWith("font ") || /fonts\.|fontshare|typekit/.test(b)).length;
 manifest.finished = new Date().toISOString();
 for (const f of fs.readdirSync(ev)) manifest.files[f] = true;
 fs.writeFileSync(path.join(ev, "manifest.json"), JSON.stringify(manifest, null, 1));

@@ -1,0 +1,15 @@
+# Diagram adapter (draft). Judged at native size; labels >= 11px, names 12px (diagram-design).
+capture_widths: [1440]
+fixed_canvas: true
+detectors:
+  text_floor: {body_px: 12, dense_ui_px: 11, label_px: 11, min_run_chars: 40}
+  overflow: {enabled: false}
+  phone_parity: {enabled: false}
+  targets: {enabled: false}
+  words_per_screen: {enabled: false}
+  page_words: {enabled: false}
+  h1_words: {enabled: false}
+  dead_band: {enabled: false}
+  headings_landmarks: {enabled: false}
+  fake_send: {enabled: false}
+  accent_footprint: {enabled: false}
