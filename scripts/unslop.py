@@ -35,7 +35,7 @@ def gates(run):
         p = run / f
         ok = p.exists() and (p.is_dir() and any(p.iterdir()) or p.is_file() and p.stat().st_size > 0)
         if f.endswith("manifest.json") and ok: ok = json.loads(p.read_text()).get("control", {}).get("ok", False)
-        print(f"  phase {n} {name:11s} {'done' if ok else ('skipped by user' if n in skipped else 'NOT DONE')}  ({f})")
+        print(f"  phase {n} {name:11s} {'done' if ok else (f"skipped ({next(x['reason'] for x in cfg['skips'] if x['phase'] == n)})" if n in skipped else 'NOT DONE')}  ({f})")
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("cmd"); ap.add_argument("arg", nargs="?")
@@ -55,6 +55,10 @@ def main():
     elif a.cmd == "gates": gates(a.arg)
     elif a.cmd == "quick":
         run = new(a.arg, a.profile, "quick", a.medium, a.root)
+        rj = json.loads((run / "run.json").read_text())
+        rj["skips"] = [{"phase": 0, "skipped_by": "workflow", "reason": "quick scan: no contract"},
+                       {"phase": 3, "skipped_by": "workflow", "reason": "quick scan: mechanical sweep only"}]
+        (run / "run.json").write_text(json.dumps(rj, indent=1))
         sh(node, str(ROOT / "scripts/capture/capture.mjs"), a.arg, str(run), "--widths", a.widths or "375,1280,1440")
         sh(py, str(ROOT / "scripts/checks/sweep.py"), str(run), "--profile", a.profile, "--medium", a.medium, "--quiet")
         sh(py, str(ROOT / "scripts/report/synthesize.py"), str(run))

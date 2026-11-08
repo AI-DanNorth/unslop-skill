@@ -56,7 +56,9 @@ def main(run):
         head = dict(lst[0]); head["instances"] = len(lst)
         if len(lst) > 1: head["also"] = [x["where"] for x in lst[1:8]]
         merged.append(head)
-    merged.sort(key=lambda f: (TIER_RANK.get(f["tier"], 3), f.get("priority", "P2"), -f["instances"]))
+    # within a tier: concept-level failures first (a generic first screen outranks every detail), then priority, then reach
+    concept = lambda f: 0 if C.get(f["rule"], {}).get("domain") in ("D02", "D20") or f.get("test") in ("T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-SCREEN-BY-SCREEN") else 1
+    merged.sort(key=lambda f: (TIER_RANK.get(f["tier"], 3), concept(f), f.get("priority", "P2"), -f["instances"]))
     open_floor = sum(1 for f in merged if f["tier"] == "Floor")
     verdict = "recapture" if not mech["summary"]["control_ok"] else ("fix" if open_floor or any(f["tier"] == "Reflex" for f in merged) else "ship")
     # mechanical part of the score: dimensions only where the sweep has evidence; judgment dims left for lenses

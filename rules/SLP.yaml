@@ -25,7 +25,7 @@
     max_ratio_to_heading: 0.45
     min_tracking_em: 0.06
     min_heading_px: 20
-    max_gap_px: 32
+    max_gap_px: 48
     budget: 0
 - id: SLP-002
   title: No decorative section numbering
@@ -192,7 +192,7 @@
   tier: Reflex
   detector: neon_violet
   remedy: fix-colorize
-  rule: Do not colour headings or large text in saturated violet (260-310) or neon cyan on dark (170-197).
+  rule: Do not colour headings or large text in saturated violet (oklch hue 265-330, chroma 0.12+) or neon cyan on dark (hue 170-230).
   why: The two most common model accent hues.
   fix: Derive the accent from brand, imagery or culture (Sample, Converge, Justify).
   sources:
@@ -206,14 +206,15 @@
   status: active
   values:
     violet_hue:
-    - 260
-    - 310
-    violet_min_sat: 0.3
+    - 265
+    - 330
+    violet_min_chroma: 0.12
     cyan_hue:
     - 170
-    - 197
-    cyan_min_sat: 0.4
-    dark_bg_max_l: 0.2
+    - 230
+    cyan_min_chroma: 0.1
+    dark_bg_max_l: 0.4
+    min_px: 24
 - id: SLP-010
   title: No template chrome glyphs
   domain: D03
