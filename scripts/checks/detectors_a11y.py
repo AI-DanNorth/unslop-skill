@@ -16,8 +16,12 @@ def contrast(ev, cfg):
     for w in widths:
         bg = ev.img(f"bg-{w}.png")
         H, W = bg.shape[:2]
+        dead = [x["rect"] for x in ev.dom(w)["elements"] if x.get("img") and x["vis"] and not x["img"].get("nw")]
+        if (ev.manifest.get("network") or {}).get("blockedImages"):
+            dead += [a["rect"] for a in ev.dom(w)["elements"] if a["vis"] and "url(" in a["style"]["backgroundImage"]]
+        def over_dead(r): return any(d["x"] <= r["x"] + r["w"] / 2 <= d["x"] + d["w"] and d["y"] <= r["y"] + r["h"] / 2 <= d["y"] + d["h"] for d in dead)
         for e in ev.texts(w, min_len=2):
-            if e.get("ariaHidden"): continue
+            if e.get("ariaHidden") or over_dead(e["rect"]): continue      # background image failed to load: not verifiable
             c = cl.parse(e["style"]["color"])
             if not c or c[3] == 0: continue
             alpha = c[3] * e.get("opacity", 1)
@@ -69,9 +73,12 @@ def focus_ring(ev, cfg):
     import numpy as np
     from PIL import Image
     stops = ev.json("focus.json")
-    if not stops: return [hit(cfg, "page", "Tab reached no focusable element", tier="Floor")]
+    if not stops:
+        if not any(e.get("interactive") for e in ev.visible()): raise Skip("page has no interactive controls")
+        return [hit(cfg, "page", "Tab reached no focusable element although the page has controls", tier="Floor")]
     out = []
     for s in stops:
+        if s.get("tag") == "iframe": continue        # focus moved into a frame: its own document is not captured here
         if s.get("covered"):
             out.append(hit(cfg, f"{s['tag']} \"{s['text']}\"", "focused element is covered by a fixed or sticky element", tier="Floor"))
         if not (s.get("on") and s.get("off")): continue

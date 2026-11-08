@@ -1,0 +1,107 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every visible decision is a default (violet-to-blue gradient h1 in Poppins, sparkle-emoji feature card nested in a card, numbered eyebrow, unattributed 50,000+/10x proof, 'Jane Doe' testimonial) and no line names what Nexus actually does or for whom.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER",
+    "T-LABEL-TRANSFORM"
+  ],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "first screen, 1440 and 375 (nav, h1, promo line)",
+      "evidence": "Failed T-FIVE-SECOND: the first screen says 'Unleash hyperproductivity-supercharged workflows' and 'Get started'. It never says what Nexus is (a sync tool? a project tracker?), who it is for, or what 'Get started' leads to. The only CTA is an unstyled browser-default button beside the wordmark.",
+      "before": "\"Unleash hyperproductivity-supercharged workflows\" / [Get started]",
+      "after": "[DATA NEEDED: what Nexus does in one plain clause, who uses it, and what the button starts (trial, demo, download)]; then an h1 built from that clause and a button labelled with that action",
+      "why": "A visitor cannot answer what, for whom, or what to do; the hero is pure category mood.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-108",
+      "tier": "Reflex",
+      "where": "h1, h2, h3, blockquote (whole page)",
+      "evidence": "Failed T-RIVAL-NAME: with any workflow SaaS name swapped in, every heading stays true: 'Unleash hyperproductivity-supercharged workflows', 'Everything, seamlessly', 'Magic sync', 'It changed everything for our team.' T-FRESH-READER generic lines: the h1, the h2 and the quote, all of them headings or the hero. Concept capped at 5.",
+      "before": "\"Everything, seamlessly\" / \"Magic sync\"",
+      "after": "[DATA NEEDED: the specific thing Nexus syncs, between which tools, and one concrete outcome]; each heading should name that object or mechanism",
+      "why": "Nothing on the page belongs to this business; it would hold under any competitor's name.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440",
+      "evidence": "Failed T-DEFAULT-AGENT: 'landing page for a productivity SaaS' plausibly yields exactly this kit: #8b5cf6 to #3b82f6 gradient-clip headline (violet-gradient family: ai_purple + gradient_pair), Poppins display over Inter body, sparkle-emoji feature icon, a mono wordmark, a '01 / FEATURES' eyebrow, a two-up product screenshot row and a one-line testimonial. Individually swept; together they form a cluster of 6+ default tells across two look families (violet-gradient, saas-card-kit).",
+      "before": "gradient text + Poppins + emoji feature + numbered eyebrow + quote card",
+      "after": "Pick one direction from the product itself (its UI, its data, its users' vocabulary) and drop the gradient, emoji and eyebrow together rather than swapping each for a synonym (SLP-112)",
+      "why": "Three or more tells read as a default, not a choice (C10); here there is no tell that reads as chosen.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Floor",
+      "where": "section.voices: blockquote and attribution",
+      "evidence": "Failed T-THREE-LINE: '\"It changed everything for our team.\"' is not picturable, not falsifiable and not specific to this business, and it is attributed to 'Jane Doe, Head of Operations' with no company. The sweep flagged the name (INT-002); the quote itself is an invented testimonial.",
+      "before": "\"It changed everything for our team.\" / Jane Doe, Head of Operations",
+      "after": "[DATA NEEDED: a real customer quote with full name, role and company, used with permission] or remove the section",
+      "why": "A fabricated testimonial is invented social proof (integrity Floor), not a styling problem.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-014",
+      "tier": "Reflex",
+      "where": "section.features > div.card > div.card (1440 y 290-425)",
+      "evidence": "The 'Magic sync' card (1px grey border) contains a second bordered card holding its only paragraph; the card_kit and container detectors did not fire because there is only one card. Visible as a box within a box at both widths.",
+      "before": "div.card > [emoji, h3, div.card > p]",
+      "after": "One surface: heading and paragraph in a single block; drop the inner border (climb the surface ladder, LAY-143)",
+      "why": "Nested containers are decoration with no grouping job; the second border carries no meaning.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "IMG-102",
+      "tier": "Reflex",
+      "where": "hero svg (grey circle, 1440 x0 y183, 120x40) and div.bar",
+      "evidence": "Failed T-DELETION: the grey circle under the promo line has no label, no caption and no relation to any text; removing it loses nothing. The infinitely animating div.bar ('grow' keyframes) is likewise decoration with no data.",
+      "before": "<svg><circle/></svg> in hero; div.bar animation: grow infinite",
+      "after": "Remove both, or replace with the product's own UI showing the thing the h1 promises (CON-147)",
+      "why": "Filler shapes stand where evidence of the product should be.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CON-147",
+      "tier": "Reflex",
+      "where": "section.gallery (two images, 720px each)",
+      "evidence": "Both images have alt 'Product screenshot one' / 'Product screenshot two' and render broken (naturalWidth 0; files shot-1.png and shot-2.png absent, not blocked by capture per manifest). The page therefore shows no product at all; even the alt text describes a slot, not a screen.",
+      "before": "img alt=\"Product screenshot one\" (broken)",
+      "after": "[DATA NEEDED: real captures of Nexus in a telling state (IMG-117)] with alts that say what each screen shows",
+      "why": "Software pages should lead with the product doing its job; numbered 'screenshot' slots are template residue.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "TYP-101",
+      "tier": "Finish",
+      "where": "h2 'EVERYTHING, SEAMLESSLY' and features head",
+      "evidence": "Failed T-LABEL-TRANSFORM: the h2 is set italic + uppercase in Poppins with line-height 0.94 and centred inside a 2fr column, while every other block sits flush left at x=0 with no page margin; removing the transform makes it read better, not worse. Combined with a mono wordmark and a serif quote, each element wears a different costume.",
+      "before": "h2 { font-style: italic; text-transform: uppercase; line-height: .94 } centred",
+      "after": "Sentence-case h2 in the body or display face, left-aligned on the same line as the h1, inside one capped container with side margins (LAY-124, LAY-128)",
+      "why": "Typographic variety here is accidental, not hierarchy.",
+      "test": "T-LABEL-TRANSFORM"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "T-STOCK-ORDER: sections are hero, numbered feature head, one feature card, two-image gallery, testimonial: 4 stock sections, below the 5 threshold, so the generated read rests on T-DEFAULT-AGENT and clusters, not skeleton",
+    "No strengths recorded: nothing on the page is specific to the client",
+    "broken gallery images are missing source files, not capture blocks; judged as absent product evidence, not as a styling choice",
+    "copy voice: no contract or brand samples supplied (00-contract.md absent)"
+  ]
+}

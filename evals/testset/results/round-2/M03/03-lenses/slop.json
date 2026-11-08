@@ -1,0 +1,42 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:40:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A dense, opinionated equity note whose structure (ticker block, thesis, candlestick, financial table, segment notes, catalysts, peer table, risk grid, verdict by holder type) is the genre's own anatomy and whose every line is about Tesla's Q1 2026 quarter.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-FRESH-READER", "T-SO-WHAT", "T-EYEBROW"],
+  "findings": [
+    {
+      "rule": "INT-108",
+      "tier": "Finish",
+      "where": "财务概览 table, tile 794-01",
+      "evidence": "Failed T-THREE-LINE (falsifiable) for one column: FY2024 and Q1 2026 are given exactly ($97.7B, $477M, $0.13) but FY2025 is all approximations ('~$3.0B', '~$0.86', '~17%', '~4%'), and FY2024/FY2025 free cash flow and capex are '--' although those are reported figures. The '--' and '~' are honest, but the table mixes reported and estimated values without saying which is which.",
+      "before": "GAAP 净利润 | $7.1B | ~$3.0B | $477M",
+      "after": "Fill reported FY figures from the 10-K, or footnote the column: 'FY2025 为估算' and '-- = 未披露'. [DATA NEEDED: FY2024/FY2025 FCF and capex]",
+      "why": "In a research note the reader must know which numbers are filed and which are the author's.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-108",
+      "tier": "Finish",
+      "where": "竞争格局 peer table, tile 794-03",
+      "evidence": "Market caps mix '~$120B', '~$18B' with exact '$1.2T', '$48B'; missing values are 'N/A' here but '--' in the table above; no as-of date for the peer prices.",
+      "before": "Rivian | ~$18B | N/A",
+      "after": "One missing-value mark ('--') across both tables and a source line under the peer table: '市值截至 2026.04.23 收盘'.",
+      "why": "Precision and missing-data conventions should match across the document (INT-108, CPY-108).",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "T-RIVAL-NAME passes outright: swap BYD into the header and no line stays true; the thesis line '利润率在恢复，但资本开支的账单到了' is a judgment only this quarter supports.",
+    "The verdict block splits the call by reader (多头核心 / 空头核心 / 已持有者 / 新建仓); it is the most specific design decision on the page and must survive any edit.",
+    "The candlestick figure has a caption that states the finding (4/17 high of $409, post-earnings drop on capex guidance), not just a title.",
+    "Navy single accent used only on figures and section labels; the warm paper and serif are the document system's deliberate house style, not an unchosen default (only 2 warm-paper tells present: cream ground, serif display)."
+  ],
+  "not_investigated": [
+    "disputed: chrome_glyphs (SLP-010) on '汽车与能源 · NASDAQ · 利润率在恢复…' is a false positive; T-EYEBROW passes because the line carries sector, exchange and the thesis",
+    "typeface: the intended body face (TsangerJinKai) was blocked by the capture network; the render uses Noto Serif CJK fallback, so type voice was not judged",
+    "factual accuracy of the Tesla figures: not verified against filings",
+    "T-STOCK-ORDER: 0 web stock sections; not applicable to a print note"
+  ]
+}

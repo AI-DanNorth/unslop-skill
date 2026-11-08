@@ -1,0 +1,35 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "link-button-purpose",
+  "focus-order",
+  "use-of-colour",
+  "non-text-contrast",
+  "reflow",
+  "forms",
+  "motion",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "KPI cards",
+   "evidence": "Card labels are h3 directly under h1 (sweep confirms the jump); each value is a separate <p class=stat> so a screen-reader user hears 'heading level 3, Active users' then '1,284' with no relationship. The four pairs form a description list in meaning.",
+   "before": "<h3>Active users</h3><p class=\"stat\">1,284</p>",
+   "after": "<dl class=\"grid4\"><div><dt>Active users</dt><dd>1,284</dd></div>...</dl>, or add <h2>Key metrics</h2> above the grid",
+   "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+   "test": "T-TAB-THROUGH"
+  }
+ ],
+ "strengths": [
+  "Text contrast is high (#1d1d1f on white and on #f4f4f6); the 2x2 reflow at 375 keeps every number readable; lang and title are set."
+ ],
+ "not_investigated": [
+  "disputed: sweep A11-003 'Tab reached no focusable element' is not a failure here; the page has no links or controls, so there is nothing to focus.",
+  "Units and periods for the metrics are a content gap (see slop lens), not a WCAG failure."
+ ]
+}

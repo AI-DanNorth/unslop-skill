@@ -1,0 +1,75 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks", "language-of-parts"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "a.cta x4, all cards",
+      "evidence": "dom-1440.json: the four a.cta elements have no href (cursor:pointer only); focus.json is empty and the sweep reports 'Tab reached no focusable element'. The links look actionable but cannot be reached or activated by keyboard.",
+      "before": "<a class=\"cta\">了解更多 →</a>",
+      "after": "<a class=\"cta\" href=\"/origin\">…</a> with a real destination, or remove the link styling if there is nowhere to go.",
+      "why": "WCAG 2.2 2.1.1 Keyboard: every function available by pointer must be available by keyboard.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "a.cta x4",
+      "evidence": "Four links share the accessible name '了解更多 →' ('learn more'); read out of context (link list) they are indistinguishable.",
+      "before": "了解更多 →",
+      "after": "Name the target in the link or via aria-describedby pointing at the card heading, e.g. '了解产地 →', or aria-label=\"了解更多：第一步 产地\".",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context): identical names for different destinations.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "card labels 'STEP ONE'-'STEP FOUR'",
+      "evidence": "The only heading is h1; each card's title is a div.num plus a styled div. Screen-reader heading navigation finds one heading for a five-block page.",
+      "before": "<div class=\"num\">01</div><div>STEP ONE</div>",
+      "after": "<h2>…</h2> per card with a descriptive name; keep the number as aria-hidden decoration if kept at all.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-008",
+      "tier": "Floor",
+      "where": "eyebrow and card labels",
+      "evidence": "html lang=\"zh\" but 'ORIGIN · PROCESS · ROAST' and 'STEP ONE'… are English; a zh voice will mispronounce them.",
+      "before": "<div class=\"eyebrow\">Origin · Process · Roast</div>",
+      "after": "<div class=\"eyebrow\" lang=\"en\">…</div> (same on the step labels), or translate them.",
+      "why": "WCAG 2.2 3.1.2 Language of Parts.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-002",
+      "tier": "Floor",
+      "where": ".grid at 375 (tiles 375-00, 375-01)",
+      "evidence": "At 375 the three-column grid holds: card text wraps every 2-3 characters and '了解更多 →' breaks over three lines; card three runs to the right edge (x 266-366). Content is technically present but unreadable as running text.",
+      "before": "grid-template-columns: repeat(3, 1fr) at every width",
+      "after": "@media (max-width: 40rem) { .grid { grid-template-columns: 1fr } }",
+      "why": "WCAG 2.2 1.4.10 Reflow: content at 320 CSS px must be usable without loss of readability.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "links and numbers on white cards",
+      "evidence": "Links are distinguished only by #d97757 with text-decoration:none; standing alone in cards this is acceptable for 1.4.1, but the same colour fails 4.5:1 on white (3.12:1, sweep). Verified on tile 1440-00: the orange '了解更多' is visibly light.",
+      "before": "a.cta { color: #d97757; text-decoration: none }",
+      "after": "Darken the accent-ink to about #a8492c (≥4.5:1 on #fff) and underline on hover/focus.",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); confirms sweep hit as real.",
+      "test": "T-GRADIENT-STOPS"
+    }
+  ],
+  "strengths": [
+    "No motion, no hidden content: all 210 characters visible under reduced motion, without observers and without scripts (hidden.json)."
+  ],
+  "not_investigated": [
+    "Sweep Floor hits verified: contrast on h1 em '履历' (2.77:1 at 76px) and on #d97757 over white are real; no disputes",
+    "forms: none on the page",
+    "live keyboard and text-spacing injection: not run, judged from DOM and focus.json"
+  ]
+}

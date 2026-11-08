@@ -1,0 +1,91 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The copy is concrete and belongs to the trade (movements, withdrawal dates, holding numbers, inspectors, £12 a month per farm), but it sits on the stock SaaS skeleton: device-mock hero, three equal tile-icon cards, product table with check list, 1-2-3 steps band, pricing plus FAQ, closing CTA band.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-STOCK-ORDER",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, image.png top to bottom",
+      "evidence": "Failed T-STOCK-ORDER: sections in order are (1) hero with phone product mock [stock], (2) 'Three records, one place.' three equal cards [stock], (3) 'Ready when they knock.' copy + table mock, (4) 'Set up before tea.' 1-2-3 steps on a green band [stock], (5) £12 pricing card beside an FAQ [stock FAQ], (6) 'Put the book in your pocket.' closing CTA band [stock], (7) footer. Five stock sections in the stock order caps the read at mixed. T-MIRROR: a neighbouring brief (a dairy compliance app, a vet-records app) would get the same sequence.",
+      "before": "hero mock / 3 cards / feature+mock / 1-2-3 / pricing+FAQ / CTA band",
+      "after": "Change one structural decision and name it: e.g. let the inspection report (the medicine record) be the page's spine, scrolling through one real day of entries, and fold the three cards and the steps into it",
+      "why": "Specific words on a default skeleton still read as a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "'Three records, one place.' cards (y 940-1290)",
+      "evidence": "Three equal-width cards with the same radius, border and fill, each: letter tile (MV / RX / FW) above a serif heading, one-sentence sub-line, then three dashed-rule bullet rows. The tiles do earn something (they match the entry codes in the phone mock), but the container recipe is the card kit.",
+      "before": "3 x [tile, h3, sub, 3 bullets] in identical cards",
+      "after": "Keep the MV/RX/FW codes but drop the boxes: set the three records as a table or a ruled list with the code in the margin, matching how the app itself shows entries",
+      "why": "Equal boxed cards are the default container; the content here is a list of record types and reads better as one.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "IMG-119",
+      "tier": "Reflex",
+      "where": "hero right: phone mock 'Hill Farm log' (x880-1190, y140-585)",
+      "evidence": "A drawn phone with a thick rounded bezel and soft drop shadow frames HTML-styled list rows; this is a built device mock, not a capture of the app (image-only: cannot confirm whether the product exists). The rows themselves are good sample data ('Wormer, batch 4471 / 8 lambs, 21 day withdrawal').",
+      "before": "CSS phone bezel around styled rows",
+      "after": "Use a real screenshot of the app in that state (IMG-116), shown without a drawn bezel; if the product is not built, keep the rows but label the panel as a design (IMG-121)",
+      "why": "Drawn device chrome is a template prop; the rows carry the meaning.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-108",
+      "tier": "Finish",
+      "where": "h1 and section heads",
+      "evidence": "T-RIVAL-NAME: swap in another livestock-records app and 'Farm records, done in the yard.', 'Three records, one place.' and 'Ready when they knock.' all stay true; what only Fieldbook can say (flat £12 per farm, 'Works without signal', 'Stock left in the cabinet') sits in sub-lines and bullets, not headings. Heads are category-specific, not business-specific; concept is not capped because the price and offline claims are concrete.",
+      "before": "\"Three records, one place.\"",
+      "after": "Promote a differentiator into a heading, e.g. 'One price per farm, every worker's phone' (from the pricing card)",
+      "why": "Headings are what a skimmer reads; the specific facts should be there.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-151",
+      "tier": "Finish",
+      "where": "nav, hero, pricing card, closing band",
+      "evidence": "One action in four wordings: 'Start free trial' (nav, closing band), 'Try it free for 30 days' (hero), 'Start your 30 day trial' (pricing). The price and trial ('£12 a month per farm', 'Thirty days free, then £12 a month per farm') are stated three times.",
+      "before": "\"Try it free for 30 days\" / \"Start your 30 day trial\" / \"Start free trial\"",
+      "after": "One label everywhere, e.g. 'Start 30-day trial'; state the price once in the hero and once in pricing, and cut the closing band's restatement",
+      "why": "Variant labels for one action are template drift; repetition stands in for content.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "CPY-121",
+      "tier": "Finish",
+      "where": "'Ready when they knock.' sub-line; FAQ last answer",
+      "evidence": "T-THREE-LINE: 'Pull any period into a clean report in seconds.' (not falsifiable: which report, how long) and 'Most farms do just that.' (unsourced generalisation). T-FRESH-READER generic lines: those two and 'Put the book in your pocket.'",
+      "before": "\"Pull any period into a clean report in seconds.\"",
+      "after": "Name the report and the mechanism, e.g. 'Pick the dates; the movement book and medicine record come out in the standard layout' ([DATA NEEDED: confirm formats])",
+      "why": "Small puffery in an otherwise factual page.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "Copy is in the farmer's vocabulary and concrete: '12 ewes to Top Field', 'Wormer, batch 4471, 8 lambs, 21 day withdrawal', 'Holding numbers saved', 'Stock left in the cabinet', 'Works without signal'. Do not dilute it.",
+    "Honest pricing and risk reversal: '£12 a month per farm. No card needed to start.', 'Cancel any month, keep your records', and an FAQ that answers real hesitations ('What if I stop paying?').",
+    "The medicine-record table is a telling product state that shows the inspection payoff directly.",
+    "Headlines have voice: 'Set up before tea.', 'Ready when they knock.'"
+  ],
+  "not_investigated": [
+    "image-only item: no DOM, no mechanical sweep; tells such as fonts, exact colours and radii judged by eye",
+    "Look family: cream ground and bold serif display touch warm-paper-serif, but the accent is farm green with a yellow action colour, no eyebrows or section numbering; not a cluster",
+    "Integrity of sample data ('Hill Farm', batch numbers) treated as illustrative product state, not as claims",
+    "phone width rendering not available"
+  ]
+}

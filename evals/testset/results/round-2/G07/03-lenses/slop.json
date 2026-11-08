@@ -1,0 +1,80 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T20:30:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The data copy is specific and honest (recurring-only note, refresh footnote, one promoted hero metric), but the skin is untouched Tailwind gray/blue-600 on Inter and the top-of-page and section sublines talk about the demo instead of the user's data.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-218",
+      "tier": "Reflex",
+      "where": "topbar subline under h1 'Analytics', and Settings section lede, 1440px and 375px",
+      "evidence": "Subline reads \"Last 30 days · one shared theme · light + dark\"; Settings lede reads \"Same theme, same primitives, second page.\" Both describe the demo's construction to a developer, not anything a user of this analytics screen needs. Failed T-FRESH-READER: these are the two lines a fresh reader flags as fitting any design-system sample.",
+      "before": "\"Last 30 days · one shared theme · light + dark\" / \"Same theme, same primitives, second page.\"",
+      "after": "\"Last 30 days, to 09:00 UTC today\" under Analytics; drop the Settings lede or replace with what the settings govern, e.g. \"Name shown on exported reports\" [DATA NEEDED: what the display name is used for]",
+      "why": "Self-reference is chat/demo residue; it tells the reader they are looking at a template, which is the opposite of made-for-this-client.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-182",
+      "tier": "Reflex",
+      "where": ":root tokens, whole page",
+      "evidence": "Every surface and text token is a stock Tailwind swatch (#111827, #4b5563, #e5e7eb, #6b7280, #f9fafb) with blue-600 #2563eb as the only action colour and Inter as the only family. Failed T-DEFAULT-AGENT: 'analytics dashboard with light/dark theme' in any agent yields this exact palette and face. The sweep flagged the swatches; the judgment here is that nothing in the skin was chosen.",
+      "before": "--color-action-primary: #2563eb; --font-sans: Inter",
+      "after": "Derive the action colour and greys from the product's own brand [DATA NEEDED: brand colour and display face]; keep the token structure, which is good, and change only the values",
+      "why": "The token architecture is deliberate but the values are the framework default, so the product has no visual identity of its own (SLP-187 tech-blue, SLP-119 product-chrome sameness).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "DVZ-103",
+      "tier": "Reflex",
+      "where": "Churn card, 1440px row 2 centre",
+      "evidence": "Churn 1.8% shows a red down-arrow \"2%\" (class .down, --color-feedback-error-icon). A fall in churn is good news, yet it is coloured as the error state; the colour is tied to arrow direction, not to whether the change is good.",
+      "before": "red ↘ 2% under Churn",
+      "after": "Map colour to sentiment, not direction: give the delta a data-sentiment=\"good|bad\" and render churn down in the success colour; label it \"down 0.04 pts\" or \"down 2% (better)\"",
+      "why": "A KPI kit that colours by sign alone is the default-agent pattern; it reverses the meaning for inverse metrics like churn (DVZ-103: a stat tile needs a worded qualifier).",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-160",
+      "tier": "Reflex",
+      "where": "metric grid, 1440px y 124-424",
+      "evidence": "T-STOCK-ORDER: title + action buttons, KPI hero, three equal stat cards (repeat(3,1fr)), settings card, footnote. The three-up stat row (Active users / Churn / NPS) with identical card, radius and shadow is the KPI-wall pattern, partly redeemed by the full-width revenue hero with its explanatory note. Only 2 stock sections, so the skeleton itself does not cap the read.",
+      "before": "Three equal cards: Active users 3,910 / Churn 1.8% / NPS 62",
+      "after": "Give each secondary metric its context the way Revenue has one (e.g. a one-line definition or the period's absolute change), or set them as a compact inline row rather than three identical cards",
+      "why": "Equal cards with a number and a percent read as filler metrics; the revenue card shows the page can do better.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "TYP-003",
+      "tier": "Finish",
+      "where": "#name input, Settings, 1440px and 375px",
+      "evidence": "The input value \"Plug\" renders in Arial (computed fontFamily: Arial) while every other element is Inter; form controls do not inherit the font.",
+      "before": "input font-family: Arial (UA default)",
+      "after": "input, button, select, textarea { font: inherit; }",
+      "why": "A mismatched face in the one text field is an unfinished-template tell.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-005",
+      "tier": "Finish",
+      "where": "Settings > Display name value",
+      "evidence": "Display name is pre-filled with \"Plug\", a placeholder-like value that does not correspond to any user or account shown elsewhere.",
+      "before": "value=\"Plug\"",
+      "after": "[DATA NEEDED: the signed-in user's real display name], or leave empty with a format placeholder",
+      "why": "Leftover sample data at ship reads as residue.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Revenue card note \"Recurring revenue only. One-off invoices are counted on the billing page, not here.\" is specific and honest; keep it.",
+    "Footer \"Figures refresh hourly. Last run 09:00 UTC, from the analytics warehouse.\" sources the numbers, which answers the INT-007 stat-band concern in spirit.",
+    "One metric is promoted to a full-width hero with a note column instead of four equal tiles; the hierarchy is a decision.",
+    "Destructive action has a typed-confirmation dialog (\"Type DELETE to confirm\")."
+  ],
+  "not_investigated": [
+    "dark theme render: only the light theme was captured",
+    "brand: no contract or brand colours supplied, so the Tailwind palette cannot be checked against a brief"
+  ]
+}

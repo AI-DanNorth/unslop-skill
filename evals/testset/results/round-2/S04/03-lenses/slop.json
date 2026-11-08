@@ -1,0 +1,58 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "A detector test fixture whose visible design is entirely framework default: gray-50 page, white shadow-sm cards with rounded corners and coloured side or top accent strips, Inter throughout and tracked-caps section labels; the specimens are deliberate, but the look around them is a default nobody chose, and as a design artifact it reads as a model's stock card kit.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-LABEL-TRANSFORM"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 0-1",
+      "evidence": "Failed T-DEFAULT-AGENT: 16 white cards, each radius 4-12px with shadow rgba(0,0,0,.1) 0 1px 3px and a 2-8px accent strip on one edge, on #f9fafb, in Inter with #6b7280/#9ca3af secondary text. Beyond the sweep's saas-card-kit cluster, the screenshots add the accent-strip card (side and top/bottom) as the unit of every section, which is the stock 'callout card' of generated dashboards.",
+      "before": "Every item is a rounded white card with a coloured edge strip",
+      "after": "For a specimen sheet, show each case as a plain row (name in mono, one-line note) with the specimen beside it at reduced size, so the page's own chrome does not repeat the tell it documents",
+      "why": "The chrome and the specimens share one recipe, so nothing on the page reads as chosen.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CLR-110",
+      "tier": "Reflex",
+      "where": "accent strips across all four sections",
+      "evidence": "Seven unrelated accent hues on one page with no meaning attached: blue, purple, red (Tailwind side-tab), blue, violet, green, red (CSS side-tab), blue, purple, emerald (top/bottom), cyan, violet, pink (dark mode). T-DELETION: recolouring them all one hue loses no information.",
+      "before": "border-blue-500 / border-purple-500 / border-red-500 / border-emerald-500 / border-cyan-400 / pink",
+      "after": "One accent token, or none; if variety is needed for detector coverage, vary the property (width, side, shorthand) and keep the hue constant",
+      "why": "A rotating rainbow of accents is decoration standing in for a decision; a reader looks for a code in the colours and finds none.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-165",
+      "tier": "Reflex",
+      "where": "section heads \"TAILWIND SIDE-TAB\", \"CSS SIDE-TAB\", \"TOP/BOTTOM + ROUNDED\", \"DARK MODE\"",
+      "evidence": "Failed T-LABEL-TRANSFORM: the h2s are 14px uppercase, tracked and grey, the same size as the h3 card titles (sweep flat_hierarchy: h2 14px = h3 14px). Set in sentence case they read as well or better, so the caps are costume and the only thing separating sections from cards.",
+      "before": "h2 14px uppercase tracked #4b5563",
+      "after": "h2 at 20-24px sentence case, untracked, body colour: \"Tailwind side-tab\"",
+      "why": "Tracked small caps as the only section marker is a generated-page habit and flattens the hierarchy to two levels.",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "LAY-156",
+      "tier": "Finish",
+      "where": "every section at 1440, right two thirds",
+      "evidence": "Cards are capped at 448px wide and left-aligned while section rules run the full 1376px; about 65% of each section's container is empty at 1440 (tiles 0-1).",
+      "before": "single 448px column inside a 1376px container",
+      "after": "Grid the specimens: grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) so each section fills its rule, or cap the whole page at ~720px so the rules match the cards",
+      "why": "Full-width rules over a narrow column leave a dead right-hand field and make the page look unfinished.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Every card names exactly the property it exhibits (\"border-e-8 + rounded-l\", \"border-left-width: 3px\") with a one-line note; for a fixture, the copy is precise and complete.",
+    "The intro line states the page's purpose plainly: \"Every example on this page should be detected by the anti-pattern scanner.\""
+  ],
+  "not_investigated": [
+    "Purpose: this is a scanner fixture, not a client page, so T-RIVAL-NAME, T-MIRROR, T-THREE-LINE and T-STOCK-ORDER have no client or category to test against; recorded as run, no finding.",
+    "Tailwind was shimmed with @tailwindcss/browser@4; small differences from the original v3 render are possible."
+  ]
+}

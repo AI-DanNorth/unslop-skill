@@ -7,7 +7,7 @@ Writes 01-evidence/tiles/<w>-NN.png at one screen height each (900px at desktop 
 import sys, pathlib
 from PIL import Image
 HEIGHT = {375: 812, 414: 896, 768: 1024, 1024: 768, 1280: 800, 1440: 900, 1920: 1080}
-run = pathlib.Path(sys.argv[1]); mx = int(sys.argv[sys.argv.index("--max") + 1]) if "--max" in sys.argv else 6
+run = pathlib.Path(sys.argv[1]); mx = int(sys.argv[sys.argv.index("--max") + 1]) if "--max" in sys.argv else 12
 ev = run / "01-evidence"; out = ev / "tiles"; out.mkdir(exist_ok=True)
 for shot in sorted(ev.glob("shot-*.png")):
     w = int(shot.stem.split("-")[1])

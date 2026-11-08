@@ -1,0 +1,62 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:10:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow",
+    "forms-errors",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "figure.hero__photo, figure.cup__note > div.photo, figure.cup__cup > div.photo",
+      "evidence": "The three content photographs are painted as CSS backgrounds on a figure/div (dom-1440: no img elements, backgroundImage on .hero__photo and .photo, no role or accessible name). The cup figures have figcaptions ('Six coffees a week', 'Sold in 250 g bags') but these caption facts, not the picture; the hero photo has nothing.",
+      "before": "<figure class=\"hero__photo\"></figure> with background-image",
+      "after": "<img src=\"...\" alt=\"[DATA NEEDED: what the photo shows, e.g. beans cooling in the roaster tray]\" width height> inside each figure, or role=\"img\" aria-label on the div if it must stay a background",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: content images need a text alternative. Images were blocked at capture, so the element type was read from the DOM, not the pixels.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "fieldset.seg radios #kind-bag / #kind-sub (order band)",
+      "evidence": "focus.json stop 6 lands on the radio input itself, a 1x1px visually hidden element at x69 y2886; its focus crop (focus/06-on.png) shows only a corner of a border, and whether the visible label 'One 250 g bag' gains a ring could not be confirmed from the evidence. The ring colour on this band is oklch(0.94 0.02 80) (cream) against indigo, which would pass if it is drawn on the label.",
+      "before": "input.visually-hidden:focus-visible draws on the 1px input",
+      "after": ".seg input:focus-visible + label { outline: 2px solid oklch(0.94 0.02 80); outline-offset: 3px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible: focus on a hidden native radio must show on its visible proxy. Verify live; disputed until seen.",
+      "test": "focus-order"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Finish",
+      "where": "masthead at 375px",
+      "evidence": "At 375 the masthead links 'The day book' and 'Order' are display-hidden (dom-375 vis false, 0x0) with no menu replacing them; the only route to the order form from the top is the hero buttons.",
+      "before": "header .mast__link { display: none } at phone width",
+      "after": "Keep 'Order' visible at 375 (e.g. right of the wordmark at 44px height) or provide a menu button",
+      "why": "WCAG 2.2 3.2.3 Consistent Navigation (advisory here, single page): navigation should not silently vanish on small screens.",
+      "test": "reflow"
+    }
+  ],
+  "strengths": [
+    "Skip link is the first focusable element and targets #main; every focus stop has a 2px solid outline, switching to cream on the indigo band (A11-125 done right).",
+    "Form fields have visible labels above them, autocomplete name/email, the radio pair is a fieldset with a (visually hidden) legend 'How would you like it?', and the unconnected form reports 'Nothing was sent: this form is not connected yet.'",
+    "Ledger is a real table with column and row th headers; lang en-GB and a descriptive title are set; headings h1 then h2s describe their sections."
+  ],
+  "not_investigated": [
+    "verified sweep A11-004: footer links at 375 are 22px tall (real, but inline-in-text exception may apply for the credit links)",
+    "no sweep Floor hits to verify",
+    "forms and errors: not submitted live; required/aria-invalid wiring not visible in the evidence",
+    "keyboard operation: no menus, dialogs or carousels present",
+    "motion: no animation in stylesheets (reduced_motion skipped by sweep)",
+    "reflow at 320px not captured; 375 shows no horizontal scroll or clipping",
+    "use of colour: footer credit links are underlined; nav links rely on position, not colour"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A stock SaaS landing skeleton (centred hero with terminal mock, three features, stat band, code block, three pricing tiers, CTA band, link-farm footer) in stock SaaS copy, dressed in a 'Japanese minimal' costume (hanko seal, vertical kanji inscription, Chinese financial numerals) that has nothing to do with an agent-orchestration product.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-REMOVE-DEVICE"],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440px tiles 00-05",
+      "evidence": "T-STOCK-ORDER: (1) centred hero with product mock (terminal 'RELAY — SESSION #4821' with traffic-light dots), (2) three equal features, (3) four-figure stat band, (4) config code block, (5) three pricing tiers with the middle one highlighted, (6) closing CTA band in a bordered box, (7) four-column link-farm footer. Six stock sections in stock order, plus a stock code-sample section.",
+      "before": "hero → features → stats → code → pricing → CTA → footer",
+      "after": "Lead with the run trace itself as the hero (it is the product's real material) and cut the stat band and CTA band; let pricing follow the trace directly",
+      "why": "Specific nouns (deepseek-v4, relay.yaml) on a default skeleton still read as a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-205",
+      "tier": "Reflex",
+      "where": "hero: red seal '信' at left edge, vertical inscription right edge; feature numerals",
+      "evidence": "A rotated red hanko seal '信' (trust), a vertical inscription '静寂に進む — Relay 二〇二六' ('advance in silence', year in kanji) that also causes sideways scroll at 1440 and 1280, and feature numerals '壹 贰 叁' (Chinese financial numerals, 贰 is simplified Chinese, not Japanese). Failed T-REMOVE-DEVICE: removing all three loses nothing about the product. Failed T-MIRROR: the costume would sit identically on any product given a 'Japanese minimal' prompt.",
+      "before": "<span class=\"seal\">信</span> <span class=\"vertical-inscription\">静寂に進む — Relay 二〇二六</span> 壹/贰/叁",
+      "after": "Delete the seal, inscription and numerals; if the brand genuinely has Japanese roots, put that fact in words [DATA NEEDED: why the brand is Japanese]",
+      "why": "Decoration text and borrowed cultural glyphs stand in for an idea; mixing Japanese and simplified-Chinese forms shows nobody who reads them chose them.",
+      "test": "T-REMOVE-DEVICE"
+    },
+    {
+      "rule": "SLP-209",
+      "tier": "Reflex",
+      "where": "h1 and section heads",
+      "evidence": "h1 \"Ship agent workflows with confidence\"; h2 \"Everything your agents need, nothing they don't\"; \"Start free. Scale when you're ready.\"; CTA \"Put your agents to work — with a leash.\"; footer \"Built for engineers who ship.\" Failed T-RIVAL-NAME: swap in LangSmith, CrewAI or any orchestration tool and every head stays true. Failed T-FRESH-READER: these are the generic lines.",
+      "before": "\"Ship agent workflows with confidence\"",
+      "after": "A head only Relay can say, built from its own trace: e.g. 'Every agent run gets a budget, a retry and a trace' [DATA NEEDED: confirm these are Relay's defining guarantees]",
+      "why": "Stock phrases (L2) and the 'X, nothing they don't' contrast frame (SLP-210) are the default-agent SaaS voice.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Floor",
+      "where": "stat band and hero trace",
+      "evidence": "\"99.99% Runs w/o intervention\", \"−42% Median token cost\", \"12ms p95 overhead\", \"2.3M Runs / 30 days\" with no source, baseline or period for the −42%; the trace also claims \"p95 latency 12ms\" for a 2m14s run. Failed T-THREE-LINE on −42% (compared with what?).",
+      "before": "99.99% / −42% / 12ms / 2.3M",
+      "after": "[DATA NEEDED: measured figures with source, period and baseline], or remove the band",
+      "why": "Unsourced round metrics on a GA launch page are invented proof.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-006",
+      "tier": "Reflex",
+      "where": "WHY RELAY section lede",
+      "evidence": "Lede says \"Four primitives cover the full lifecycle of a production agent run\" but only three features follow (Intelligent routing, Full observability, Self-healing runs).",
+      "before": "\"Four primitives cover the full lifecycle…\"",
+      "after": "Name the fourth primitive (budget guards appear in pricing and config) or say three",
+      "why": "A count that does not match the content is a generation seam no editor would leave.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "nav and section heads",
+      "evidence": "Beyond the four eyebrows the sweep counted, the nav links (FEATURES / PRICING / DOCS), footer column heads, button labels and the hero note 'NO CREDIT CARD REQUIRED · DEPLOY ON YOUR OWN INFRA' are all wide-tracked caps. T-LABEL-TRANSFORM: removing the caps and tracking from 'Why Relay' or 'Pricing' loses nothing; the eyebrows only announce the heading below.",
+      "before": "WHY RELAY / Everything your agents need…",
+      "after": "Delete the eyebrows; set nav and buttons in sentence case at normal tracking",
+      "why": "Tracked caps everywhere is the costume half of the warm-paper look (SLP-191).",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "SLP-150",
+      "tier": "Reflex",
+      "where": "every section",
+      "evidence": "Hero, Why Relay, Drop-in config, Pricing and CTA all stack eyebrow + centred serif head + centred grey lede on one axis; pricing tiers are centred text too. Only the feature list and footer break the axis.",
+      "before": "text-align: center on every section head",
+      "after": "Pick one axis (left) and let the trace panel and code block sit asymmetrically against the copy",
+      "why": "Centred-everything rhythm is the template default (SLP-152, SLP-161).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-168",
+      "tier": "Reflex",
+      "where": "hero product panel",
+      "evidence": "Panel toolbar draws three dots (red, grey, grey) before 'RELAY — SESSION #4821': imitation window chrome around a styled-div trace with invented figures.",
+      "before": "three dots + title bar",
+      "after": "Drop the dots; show a real captured trace or a real CLI screenshot [DATA NEEDED: real run output]",
+      "why": "Drawn OS chrome and fake product UI (SLP-169) are template props.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The relay.yaml block is real material: concrete keys (budget: $5.00 hard cap, fallback list, degrade: true) say what the product does better than any headline on the page.",
+    "The run trace lines (retry ×1 on tool timeout, cached hit) are the right kind of evidence for this product; keep the idea, replace the figures with real output."
+  ],
+  "not_investigated": [
+    "Whether the client asked for a Japanese aesthetic: no contract supplied. Even if asked, the mixed Chinese/Japanese glyphs stand."
+  ]
+}

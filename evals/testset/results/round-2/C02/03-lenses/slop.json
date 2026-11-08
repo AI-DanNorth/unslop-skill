@@ -1,0 +1,67 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "A marketing sentence pasted over four equal KPI tiles with no period, comparison, target or lead metric: the screen an agent produces for 'team dashboard' when nobody decided what the team needs to know.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-DEFAULT-AGENT",
+  "T-MIRROR",
+  "T-RIVAL-NAME",
+  "T-THREE-LINE",
+  "T-SO-WHAT",
+  "T-DELETION",
+  "T-FRESH-READER",
+  "T-STOCK-ORDER",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "SLP-005",
+   "tier": "Reflex",
+   "where": "div.grid4: 'Active users 1,284', 'Sessions 4,017', 'Conversion 3.4%', 'Churn 1.1%'",
+   "evidence": "Four identical cards (same size, fill #f4f4f6, 20px radius, label + number) with no lead: T-FIVE-SECOND fails on 'what to do' and on 'what matters'; the eye has no first stop. Failed T-DEFAULT-AGENT: this is the stock 'KPI row' with nothing else.",
+   "before": "4 equal KPI tiles in repeat(4, 1fr)",
+   "after": "Promote the one metric the team acts on to a lead block with its trend and target; set the others as a compact secondary row [DATA NEEDED: which metric the team owns and its target]",
+   "why": "A dashboard with no lead metric is KPI confetti; ranking the numbers is the design decision that was skipped.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "DVZ-103",
+   "tier": "Reflex",
+   "where": "each stat card",
+   "evidence": "T-SO-WHAT: '1,284', '4,017', '3.4%', '1.1%' have no period, no prior value, no direction and no target, so none can be judged good or bad; T-THREE-LINE: none is falsifiable as shown.",
+   "before": "Conversion\\n3.4%",
+   "after": "Conversion 3.4% (last 30 days, up from 2.9%; target 4%) [DATA NEEDED: period, prior value, target]",
+   "why": "A single value needs a worded qualifier to mean anything.",
+   "test": "T-SO-WHAT"
+  },
+  {
+   "rule": "CPY-005",
+   "tier": "Reflex",
+   "where": "sub-line under h1 'Team overview'",
+   "evidence": "'Powerful, intuitive, and beautiful reporting that lets your team unlock seamless insight across every workspace.' T-FRESH-READER: this line would fit any analytics product; it is landing-page copy inside an app screen and says nothing about the numbers below. Also a triplet of adjectives.",
+   "before": "\"Powerful, intuitive, and beautiful reporting that lets your team unlock seamless insight across every workspace.\"",
+   "after": "State scope and freshness: 'All workspaces, last 30 days. Updated hourly.' [DATA NEEDED: real period and refresh]",
+   "why": "Marketing adjectives on a working screen are filler; the slot should orient the reader.",
+   "test": "T-FRESH-READER"
+  },
+  {
+   "rule": "CON-115",
+   "tier": "Reflex",
+   "where": "page below the cards (y 240-900 at 1440)",
+   "evidence": "The page ends after the KPI row; the remaining 660px is empty. There is no breakdown, list or action, so the dashboard cannot answer the follow-up question any number raises.",
+   "before": "h1 + sub-line + 4 tiles",
+   "after": "Add the one view behind the lead metric (trend or list of what changed) [DATA NEEDED: series data]",
+   "why": "Density should match a data product; four bare numbers are not an overview.",
+   "test": "T-DELETION"
+  }
+ ],
+ "strengths": [
+  "Plain labels ('Active users', 'Sessions', 'Conversion', 'Churn') and tabular-looking numerals; tokens and dark-mode support carried from the shared base."
+ ],
+ "not_investigated": [
+  "Whether the numbers are real: fixture data, no source supplied (sweep INT-007 already notes unsourced stat band)."
+ ]
+}

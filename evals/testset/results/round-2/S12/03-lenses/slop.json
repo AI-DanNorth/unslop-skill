@@ -1,0 +1,79 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T20:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The share dialog itself is carefully tokenised and restrained (named shadow, radius and text tokens, one dark primary), but the harness around it gives no framing, and the demo is filled with a default cast of baby-name users at gmail.com with hotlinked stock faces, so the content layer reads as generated filler.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-002",
+      "tier": "Reflex",
+      "where": "both dialogs, member rows and General access avatar stack (1440 and 375)",
+      "evidence": "Names are the top of a baby-name list with a matching @gmail.com address: \"Mila Johnson / mila@gmail.com\", \"Liam Davis\", \"Ella Taylor\", \"Olivia Cole\", \"Ava Davis\", \"Noah Hart\"; the 375 render shows a different random set (\"Emma Cole\", \"James Moore\", \"Emma Wilson\"). Sweep default_names did not fire because the names live inside the iframes.",
+      "before": "Mila Johnson, mila@gmail.com (randomised per load)",
+      "after": "One fixed, plausible team for the demo product, e.g. names and a company domain the author chooses once ([DATA NEEDED: demo team names and domain])",
+      "why": "A default cast is the model's stand-in for people; it makes the dialog read as a generated mock rather than a product screen.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "whole first screen, 1440",
+      "evidence": "Failed T-FIVE-SECOND: the only text on the page is \"Dark mode\", \"Generic AI output\" and \"With Transitions Skill\" (dom-1440 bodyText). The two panels render identically at rest, so a visitor cannot tell what differs or what to do (click Invite, open the Full access menu, switch to Publish).",
+      "before": "Two identical dialogs under two labels, no instruction",
+      "after": "One line above the panes naming the interaction to try, e.g. \"Switch to Publish or open an access menu in each pane and compare the resize\"",
+      "why": "The page exists to show a motion difference; with no prompt the static first screen shows no difference at all.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Finish",
+      "where": "avatar circles in every member row and the General access stack",
+      "evidence": "manifest.json network.blocked lists 7+ hotlinked images.unsplash.com portrait URLs (photo-1534528741775, photo-1507003211169, ...) used as avatars for the invented users. (Their broken render here is from blocked network and is not judged.)",
+      "before": "Hotlinked Unsplash portraits as user avatars",
+      "after": "Local initials or neutral avatar shapes, or self-hosted images the author owns",
+      "why": "Stock faces attached to invented people are a fake-people tell, and hotlinks break offline exactly as seen in this capture. Tiered Finish because this is a demo harness, not a proof claim.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CON-114",
+      "tier": "Reflex",
+      "where": "left vs right pane, member lists",
+      "evidence": "Left pane lists Mila Johnson / Liam Davis / Ella Taylor, right pane Olivia Cole / Ava Davis / Noah Hart; content is randomised independently per pane.",
+      "before": "Different random content in each compared pane",
+      "after": "Identical content in both panes so motion is the only variable",
+      "why": "A before/after comparison should change one variable; differing content invites the reader to compare the wrong thing.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Finish",
+      "where": "pane labels, 1440",
+      "evidence": "Red cross / green check badge pair above \"Generic AI output\" vs \"With Transitions Skill\"; T-FRESH-READER lines that fit any comparison page: \"Generic AI output\", \"With Transitions Skill\".",
+      "before": "Red X / green check verdict badges",
+      "after": "Neutral labels naming what each pane does (e.g. \"Default CSS transitions\" / \"Tuned transitions\") and let the motion make the case",
+      "why": "Verdict badges are a stock comparison device; the judgement should come from the demo, not the icons.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "The share dialog is built from named tokens (--shadow-modal three-layer shadow, --radius-modal 12px, --text-strong/body/muted ladder) with one dark primary button: a restrained, deliberate component, not a card kit.",
+    "Side-by-side panes on a single neutral ground keep the comparison honest at rest; no gradients, glows or eyebrows."
+  ],
+  "not_investigated": [
+    "Motion itself (the actual subject of the page): captures are static, so the transition differences between panes were not judged.",
+    "No 00-contract.md in the run directory; category and brief inferred from page text.",
+    "Avatar images blocked by network; their visual appearance not judged."
+  ]
+}

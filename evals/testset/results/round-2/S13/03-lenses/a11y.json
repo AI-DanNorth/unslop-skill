@@ -1,0 +1,52 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T21:35:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "text-contrast (visual, sweep not verified)",
+    "use-of-colour",
+    "reading-order",
+    "headings-and-landmarks",
+    "hidden-content"
+  ],
+  "findings": [
+    {
+      "rule": "A11-109",
+      "tier": "Floor",
+      "where": "canvas 1, \"被色块盖住的字\" under the red block",
+      "evidence": "The p at (80,1220) is fully covered by div (60,1200,500x120) background #cc0000 painted on top; the text exists in the DOM and is read by assistive tech and text extraction but is invisible to sighted readers.",
+      "before": "<p style=\"top:1220px\">被色块盖住的字</p> under a later absolutely positioned red div",
+      "after": "Move the block out of the text box, or give the text z-index above it with 4.5:1 contrast on #cc0000 (white text on #cc0000 is 5.9:1)",
+      "why": "WCAG 2.2 1.3.2 Meaningful Sequence and 1.4.3 Contrast: visible and programmatic content diverge; covered text has no usable contrast.",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Floor",
+      "where": "canvas 1, overlapping lines at y 900-974",
+      "evidence": "\"压在下面的字\" (80,900) and \"压在上面的字\" (120,910) overprint each other (tile 1242-00), so neither line is legible.",
+      "before": "Two absolutely positioned lines 10px apart vertically",
+      "after": "Stack them in normal flow with at least 1.4x line-height between them",
+      "why": "WCAG 2.2 1.4.8-style legibility and 1.3.2 Meaningful Sequence: overlapping glyphs cannot be read. Nearest card A11-109 (visual order equals reading order).",
+      "test": "T-STRESS"
+    },
+    {
+      "rule": "A11-009",
+      "tier": "Floor",
+      "where": "canvas 1 right edge; canvas 3 seam",
+      "evidence": "\"跑出页面的字\" is clipped by overflow:hidden at x 1242 (only \"跑出页\" visible); \"这一行跨过了接缝\" will be split across two exported images.",
+      "before": ".xhs-page { overflow: hidden } with text placed past its width",
+      "after": "Constrain text boxes with max-width inside the canvas (left + width <= 1118) instead of relying on overflow clipping",
+      "why": "WCAG 2.2 1.4.10 Reflow analogue for fixed canvases: content must not be lost to clipping. Nearest curated card A11-009.",
+      "test": "T-STRESS"
+    }
+  ],
+  "strengths": [
+    "Black text on white where visible is maximum contrast."
+  ],
+  "not_investigated": [
+    "Sweep Floor hits A11-008 (no lang, no title) confirmed from dom-1242: lang and title are empty; for an exported image they matter only in the HTML source.",
+    "Keyboard, focus, forms and motion: none present on a static social canvas.",
+    "Contrast not machine-verified (no background render); judged visually."
+  ]
+}

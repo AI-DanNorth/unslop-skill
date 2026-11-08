@@ -1,0 +1,69 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "An honest, plain reference sheet with none of the marketing tells (no eyebrows, gradients, invented proof, stock section order), but its whole visual system is unchosen Tailwind grey plus Inter and its card copy is filler.",
+  "tests_run": ["T-DEFAULT-AGENT", "T-MIRROR", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-FRESH-READER", "T-SKELETON", "T-RIVAL-NAME"],
+  "findings": [
+    {
+      "rule": "CLR-116",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-01",
+      "evidence": "Failed T-DEFAULT-AGENT: page #f9fafb, headings #111827, section heads #6b7280, dark cards #1f2937/#111827, badge #dbeafe/#1d4ed8, side rules in Tailwind blue, violet and emerald, all in Inter. Every value is a framework default; nothing was picked for this document.",
+      "before": "Tailwind gray/blue/violet/emerald swatches, Inter everywhere",
+      "after": "One neutral ramp tinted toward a chosen hue and one accent; a heading face that is not the UI face (or Inter used deliberately at a contrasting weight).",
+      "why": "A framework palette is not a brand (CLR-116); the sweep counted the swatches, the judgment is that together they are the entire design.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "TYP-001",
+      "tier": "Reflex",
+      "where": "h2 'Clean Cards', 'Below Threshold…', 'Dark Mode (Clean)' vs card h3s",
+      "evidence": "Failed T-SKELETON: h2 section heads render at 18px in grey #6b7280 while the card h3s below them render at 18.72px in near-black #111827. Blurred, the section heads read as the weakest text on the page; the outline is upside down.",
+      "before": "h2 18px #6b7280; h3 18.72px #111827",
+      "after": "h2 at about 1.5x the h3 (e.g. 28px, #111827) with h3 at 18px; or make section heads small caps labels and demote the card titles.",
+      "why": "Hierarchy set by browser defaults and one grey token, not by the document's structure.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "CPY-108",
+      "tier": "Reflex",
+      "where": "card 4, 'No border at all'",
+      "evidence": "Failed T-DELETION: the blue 'New' pill asserts nothing that is new; removing it loses no fact, state or grouping.",
+      "before": "[New] No border at all",
+      "after": "Remove the badge, or replace it with a real state ('Added in v1.4, [date]'). [DATA NEEDED: what changed and when]",
+      "why": "A decorative status chip is filler; 'new' without an as-of date is an unbacked claim.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "card body lines",
+      "evidence": "Failed T-THREE-LINE and T-FRESH-READER: 'Clean and intentional.', 'Simple and effective.', 'Shadow only. Clean.' are neither picturable nor falsifiable and would fit any component gallery. They are the three generic lines; the h3s already say what each card is.",
+      "before": "Subtle 1px border all around. Clean and intentional.",
+      "after": "Say when to use the pattern: 'Use for grouped settings where each card is independent.' Or cut the line.",
+      "why": "Virtue words stand in for a reason.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "LAY-004",
+      "tier": "Finish",
+      "where": "every section at 1440",
+      "evidence": "Cards are fixed at about 448px and left-aligned; at 1440 roughly 70% of each row is empty while the section rules run the full 1360px width, so the rules frame nothing.",
+      "before": "cards max-width ~448px under full-width hr",
+      "after": "Lay the cards in an auto-fit grid (repeat(auto-fit, minmax(20rem, 1fr))) or cap the whole document container at ~60rem so rule and content share a width.",
+      "why": "Dead band: the measure and the container were never decided together.",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "Copy is literal and honest about what the page is: headings name the exact CSS treatment ('Top border, no radius', 'border-right: 2px solid'). Keep that plainness.",
+    "No stock section skeleton, no invented proof, no decorative imagery."
+  ],
+  "not_investigated": [
+    "Purpose: this is a component reference sheet, not a client site; T-RIVAL-NAME and T-MIRROR are weak tests here and were not scored as findings",
+    "T-STOCK-ORDER: three groups of cards, 0 stock sections",
+    "lexicon words and em dashes already reported by the sweep; not repeated"
+  ]
+}

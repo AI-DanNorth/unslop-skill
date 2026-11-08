@@ -1,0 +1,78 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:25:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "Product-literate copy (budget guards, relay.yaml, retry on tool timeout) is poured into the stock dark-SaaS skeleton: indigo-on-black Linear look, caps eyebrows, six icon-tile cards, unsourced stat band, three tiers with MOST POPULAR, CTA band and link-farm footer, six stock sections in stock order.",
+  "tests_run": ["T-STOCK-ORDER", "T-DEFAULT-AGENT", "T-MIRROR", "T-RIVAL-NAME", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-04",
+      "evidence": "Failed T-STOCK-ORDER: hero with product mock (terminal) > 6 equal feature cards with icon tiles > 4-figure stat band > [config block, not stock] > three pricing tiers with 'MOST POPULAR' > boxed CTA band 'Put your agents to work — with a leash.' > 4-column link-farm footer. Six stock sections in stock order; with near-black ground, a single indigo accent (#5e6ad2) and Inter throughout, it is the dark-single-accent family assembled as a kit.",
+      "before": "Stock dark-SaaS section sequence",
+      "after": "Keep the terminal and the relay.yaml block (the two real things) and build the page around them: e.g. let the config block be the hero's second half, replace the six cards with an annotated run trace, drop the stat band and the closing CTA box.",
+      "why": "Specific words on a default skeleton are still a default page (T-STOCK-ORDER caps the read at mixed; the look-family cluster pushes it to generated).",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero h1 and section heads",
+      "evidence": "Failed T-RIVAL-NAME: 'Ship agent workflows with confidence', 'Everything your agents need, nothing they don't' and 'Start free. Scale when you're ready.' stay true for any agent-ops vendor (LangSmith, Langfuse, AgentOps). These are the three generic lines from T-FRESH-READER, and two of them are the hero and a section head.",
+      "before": "Ship agent workflows with confidence",
+      "after": "Lead with the specific promise the body already makes: 'Every agent run gets a budget, a trace and a retry. No loop rewrite.'",
+      "why": "The headings could sit on a competitor's page; the specific claims are buried in 14px card text.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "'Why Relay' card grid, tile 1440-01",
+      "evidence": "Failed T-DELETION: each card opens with a 36px tile holding a Unicode glyph (⌁ ◉ ↻ ▤ ⇄ ⚑) at about 12px in indigo. Removing them loses nothing; ⌁ and ◉ do not depict routing or observability. Six equal cards in a 3x2 grid with one radius and one border.",
+      "before": "<div class=\"card-icon\">⌁</div> Intelligent routing",
+      "after": "Drop the icon tiles; vary the cards by content (a mini trace for observability, the budget YAML line for budget guards), or turn the six into a two-column list.",
+      "why": "Icon tiles above every card heading are the saas-card-kit tell (SLP-003, SLP-005).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-107",
+      "tier": "Reflex",
+      "where": "'Why Relay' section sub-line vs grid",
+      "evidence": "Sub-line says 'Four primitives cover the full lifecycle of a production agent run' directly above six cards. The count was not checked against the content.",
+      "before": "Four primitives cover the full lifecycle…",
+      "after": "'Six primitives…', or regroup into four and say which.",
+      "why": "A count that disagrees with what is shown is a tell of assembled, unreviewed copy and costs credibility.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "nav, pricing CTAs, footer (dom-1440.json hrefs)",
+      "evidence": "Failed T-FILLER: 'Sign in', 'Get started', all three pricing buttons, 'Get started free' and 11 of 13 footer links point to '#'. 'Read the docs →' goes to #features, not docs. 'Privacy · Terms · Security' is a plain span, not links. The footer is a link farm of destinations that do not exist.",
+      "before": "<a href=\"#\">Careers</a> … <span>Privacy · Terms · Security</span>",
+      "after": "Ship only links with real targets; cut Roadmap/Careers/Blog/Status until they exist; make the legal items real links. [DATA NEEDED: actual URLs]",
+      "why": "Chrome that pretends to a company that is not there is filler and an honesty issue.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-106",
+      "tier": "Reflex",
+      "where": "stat band, tile 1440-02",
+      "evidence": "Sweep flagged the band as unsourced; the judgment adds that '12ms p95 overhead per decision' reuses the terminal's 'p95 latency 12ms' for a different measure, and '99.99% … without intervention' sits beside a 'Human in the loop' card. The figures read as decoration, not measurement.",
+      "before": "99.99% / −42% / 12ms / 2.3M",
+      "after": "One figure with its source and date, or remove the band. [DATA NEEDED: measured figures, method, as-of date]",
+      "why": "Invented-looking metrics in a stat band are the strongest integrity tell on a SaaS page.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The terminal transcript and the relay.yaml config are specific to this product (budget flag, deepseek-v4 routing, retry on tool timeout, checkpoint resume) and are the page's best material; any rewrite should promote them, not cut them.",
+    "Feature body copy names concrete mechanisms ('When the budget is gone, the run stops — never silently overruns')."
+  ],
+  "not_investigated": [
+    "brief: no 00-contract.md, so whether the indigo-on-black look is a declared brand could not be checked",
+    "eyebrows, em dashes, Inter display, type ladder: reported by the sweep, not repeated"
+  ]
+}

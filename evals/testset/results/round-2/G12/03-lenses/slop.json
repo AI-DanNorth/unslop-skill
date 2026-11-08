@@ -1,0 +1,88 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "Carefully built and specific in its captions (partial-week note, refresh source, worded deltas), but the screen is the stock revenue-dashboard skeleton with the sample-data cast, so a 'SaaS revenue dashboard' prompt would land on nearly this layout.",
+ "tests_run": [
+  "T-DEFAULT-AGENT",
+  "T-MIRROR",
+  "T-FIVE-SECOND",
+  "T-RIVAL-NAME",
+  "T-STOCK-ORDER",
+  "T-DELETION",
+  "T-THREE-LINE",
+  "T-FRESH-READER",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "DVZ-106",
+   "tier": "Reflex",
+   "where": "whole page, 1440 tiles 00-01",
+   "evidence": "Order is sidebar nav + search/avatar bar > hero KPI with bar chart > KPI stack (NRR, churn, pipeline) > donut 'Revenue by plan' > ranked bars 'Largest accounts' > sparklines 'Expansion by region' > sortable table > activity feed. Failed T-DEFAULT-AGENT and T-MIRROR: every block is the stock admin-dashboard kit and would be generated for any B2B revenue console.",
+   "before": "Bento of KPI cards, donut, ranking, sparklines, table, feed",
+   "after": "Pick the one question this console answers first (e.g. which renewals are at risk this month) and let that block lead; demote or drop panels that do not serve it",
+   "why": "A dashboard that shows every chart type once is a decorative dashboard, not an answer.",
+   "test": "T-DEFAULT-AGENT"
+  },
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "hero card 'NET RECURRING REVENUE', bar chart",
+   "evidence": "Caption says 'Week 27 is the current, partial week.' yet the orange week-27 bar is the tallest of seven; a partial week out-earning every full week is implausible and the chart has no y-axis values to check it. Failed T-THREE-LINE (not falsifiable from the chart).",
+   "before": "Unlabelled 7-bar chart, partial week tallest and highlighted orange",
+   "after": "Show week-27 as a hatched or outlined partial bar at its real (lower) value with axis ticks; [DATA NEEDED: weekly NRR values]",
+   "why": "Placeholder data that contradicts its own caption reads as invented.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "DVZ-113",
+   "tier": "Reflex",
+   "where": "card 'REVENUE BY PLAN'",
+   "evidence": "A 4-segment donut (Enterprise 46%, Growth 31%, Team 15%, Starter 8%) with a separate legend list repeating the numbers; T-DELETION: removing the donut loses nothing the list does not already say.",
+   "before": "Donut + legend list",
+   "after": "One stacked horizontal bar labelled in place, or just the four-row list",
+   "why": "Part-to-whole with four parts reads faster as a labelled bar; the donut is decoration.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "INT-002",
+   "tier": "Reflex",
+   "where": "'Largest accounts', table, activity feed",
+   "evidence": "Account cast is the sample-data set ('Northwind Logistics', 'Kestrel Financial', 'Helios Biotech', 'Meridian Health Network'); sweep flagged Northwind/Kestrel. All metrics are illustrative with no source beyond the footer line.",
+   "before": "Northwind Logistics, Kestrel Financial ...",
+   "after": "[DATA NEEDED: real or clearly labelled demo accounts], or mark the screen 'Demo data'",
+   "why": "The default cast is the clearest tell that nobody supplied content.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "CLR-001",
+   "tier": "Reflex",
+   "where": "hero bar chart vs donut legend",
+   "evidence": "Orange #e8710a-ish means 'current partial week' in the bar chart and 'Growth plan' in the donut and 'Europe' in sparklines; blue means past weeks, Enterprise and North America. One palette is reused with three meanings on one screen.",
+   "before": "Same 4 series colours reused across unrelated charts",
+   "after": "Reserve orange for a single meaning (e.g. 'current/partial'); use neutral grey for past weeks",
+   "why": "Colour that changes meaning card to card makes readers re-learn every chart.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "SLP-001",
+   "tier": "Finish",
+   "where": "every card heading: 'NET RECURRING REVENUE', 'GROSS CHURN', 'LARGEST ACCOUNTS', 'ACTIVITY'",
+   "evidence": "All card titles are 12px tracked uppercase labels; T-LABEL-TRANSFORM: they read as well in sentence case ('Net recurring revenue'), and the one sentence-case title ('Accounts at renewal') is the only one that reads as a heading.",
+   "before": "text-transform: uppercase; letter-spacing on all card titles",
+   "after": "Sentence-case card titles at 14px semibold, matching 'Accounts at renewal'",
+   "why": "Caps-tracked labels on every card are costume, not hierarchy.",
+   "test": "T-LABEL-TRANSFORM"
+  }
+ ],
+ "strengths": [
+  "Captions carry real meaning: 'Recurring revenue only. Usage and one-off invoices are billed separately.', 'Figures refresh hourly. Last run 09:00 UTC from the revenue warehouse.', '+0.3 pts two enterprise accounts downgraded.' Keep this worded-qualifier pattern.",
+  "Restrained palette, tabular figures, a real sortable table with status text in badges, and a working dark-mode toggle."
+ ],
+ "not_investigated": [
+  "Sort behaviour of table headers and tab switching (no live interaction).",
+  "Footer credit line 'Built with ux-ui-agent-skills ... Every pixel here is token-driven and gate-verified' treated as a showcase credit, not product copy."
+ ]
+}

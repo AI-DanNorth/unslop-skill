@@ -1,0 +1,51 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:15:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A restrained cover card that leads with the product's real menu-bar panel (real process names, real readings) on a deliberate ink-blue theme; the only generic part is the tagline, which says a mood rather than what Mole does.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER",
+    "T-THUMBNAIL"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-214",
+      "tier": "Reflex",
+      "where": "tagline under h1, y 420-470",
+      "evidence": "\"A quiet keeper for your Mac.\" Failed T-RIVAL-NAME: CleanMyMac, Stats or iStat Menus could all carry it. Failed T-THREE-LINE: not picturable, not falsifiable. 'Quiet' is a virtue word about the product (SLP-135 house voice: warm, modest, literary).",
+      "before": "\"A quiet keeper for your Mac.\"",
+      "after": "Say the job the screenshot proves, e.g. 'CPU, memory, disk and battery in the menu bar; cleans what you uninstall' [DATA NEEDED: Mole's own one-line description]",
+      "why": "The one line of copy on the card spends itself on tone; T-FIVE-SECOND 'what is it' is answered only by the screenshot.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SOC-112",
+      "tier": "Finish",
+      "where": "screenshot panel, y 655-1550",
+      "evidence": "The app panel occupies about 350 x 900 px of a 1050 px wide frame; the rest is macOS wallpaper. At feed size (canvas shown ~2.8x smaller) the panel's 11-13 px-equivalent labels (CPU 14%, Top Processes) fall to about 4 px. Failed T-THUMBNAIL for the product evidence.",
+      "before": "Full wallpaper crop around a narrow panel",
+      "after": "Crop to the panel (or its top half: score 100, CPU, MEM, Disk) and scale it up so the key readings stay legible in the feed",
+      "why": "The real product is the card's best material; the wallpaper takes two thirds of its space.",
+      "test": "T-THUMBNAIL"
+    }
+  ],
+  "strengths": [
+    "The image is a real product capture with real process names (Parallels Desktop, Cursor, WeChat), real units and states; nothing is invented or drawn.",
+    "One theme, three colours (ink #1B365D, cream text, pale blue accent) chosen as a named variant from a set (paper-ink), not a default gradient.",
+    "Hierarchy is clear: maker, name, line, product; no badges, icons, emoji or chrome.",
+    "Meta line 'Tw93 Open Source Family' passes T-EYEBROW: it carries attribution and is set in sentence case, not tracked caps."
+  ],
+  "not_investigated": [
+    "Charter is not installed in the capture environment; the type rendered as Liberation Serif (fonts.json), so the face itself was not judged",
+    "other cards in the set: only the cover was captured"
+  ]
+}

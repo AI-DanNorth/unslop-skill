@@ -1,0 +1,79 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:30:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "a.pill 'Get started', a.btn-primary 'Start free trial →', CTA band 'Start your free trial →'",
+      "evidence": "focus.json shows every stop uses the browser default 'auto 1px rgb(16,16,16)' outline. On the near-black primary buttons (#1f1a17 fill) that ring is dark-on-dark: focus/07-on.png for 'Start free trial →' shows no visible ring at all. On the dark CTA band the ring sits on the dark ground as well.",
+      "before": "no :focus-visible style; UA auto outline",
+      "after": ".btn:focus-visible, .pill:focus-visible { outline: 2px solid #c8552b; outline-offset: 3px } and on .cta-section use a cream ring (outline-color: #faf6ef)",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast (ring 3:1 against adjacent colours).",
+      "test": "non-text-contrast"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Reflex",
+      "where": "all 10 links",
+      "evidence": "Every link (nav, hero CTAs, CTA band) has href=\"#\": activating 'Pricing', 'Docs' or 'Watch demo' scrolls to top and announces nothing; the link name promises a destination that does not exist.",
+      "before": "<a href=\"#\">Watch demo</a>",
+      "after": "Real hrefs; 'Watch demo' as a <button> that opens a captioned video dialog, or a link to the video page",
+      "why": "WCAG 2.2 2.4.4 Link Purpose: the name must match where the link goes.",
+      "test": "link-button-purpose"
+    },
+    {
+      "rule": "A11-113",
+      "tier": "Reflex",
+      "where": "div.card > div.icon (⚡ 🔒 📈)",
+      "evidence": "Emoji icons are plain text in divs with no aria-hidden; screen readers announce 'high voltage', 'locked', 'chart increasing' before each card heading, adding noise that does not match the headings.",
+      "before": "<div class=\"icon\">⚡</div>",
+      "after": "<div class=\"icon\" aria-hidden=\"true\">⚡</div> (or remove the icons)",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative symbols should be hidden from assistive tech.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-110",
+      "tier": "Floor",
+      "where": "nav.nav at 375px",
+      "evidence": "Verified sweep ROB-003: at 375 the full desktop nav stays in one row (tile 375-00), pushing the page to 698px wide; 'Get started' sits off-canvas at x 615-698 and the hero is cut at the right. No menu button replaces the links. Users must scroll in two directions.",
+      "before": "nav-links always display: flex",
+      "after": "@media (max-width: 720px) { .nav-links { display: none } } plus a <button aria-expanded> menu, keeping 'Get started' visible",
+      "why": "WCAG 2.2 1.4.10 Reflow.",
+      "test": "reflow"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "h2 'Everything you need to ship great products'",
+      "evidence": "The h2s ('Everything you need to ship great products', 'Ready to transform how your team builds?') describe no topic; a heading list gives a screen-reader user no idea what each section contains.",
+      "before": "<h2>Everything you need to ship great products</h2>",
+      "after": "An h2 naming the section's subject, e.g. <h2>Features</h2> or the three capabilities ([DATA NEEDED])",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels.",
+      "test": "headings-landmarks"
+    }
+  ],
+  "strengths": [
+    "lang and a descriptive title are set; heading levels step h1 > h2 > h3 without skips.",
+    "Body and heading contrast on cream is strong; no sweep contrast failures."
+  ],
+  "not_investigated": [
+    "verified sweep Floor ROB-003 overflow at 375: real (see reflow finding, which adds the off-canvas CTA and missing menu)",
+    "verified sweep Floor A11-011 reduced motion: stylesheet animates (button transforms); not verified visually, no capture of motion",
+    "sweep Floor TYP-004 (emoji drawn by Noto Color Emoji): typographic, not an a11y failure; disputed as a11y Floor",
+    "keyboard operation: no menus, dialogs or tabs exist; 'Watch demo' has no behaviour to test",
+    "forms: none",
+    "no <main> landmark and no skip link: sweep-reported, not repeated"
+  ]
+}

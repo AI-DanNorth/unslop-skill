@@ -1,0 +1,87 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T20:45:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every region is the stock admin-dashboard kit (sidebar, four icon KPI cards with arrow deltas, smoothed line chart beside an unlabelled donut, recent-records table, upcoming list) filled with placeholder people and unsourced hospital figures; nothing belongs to a particular clinic or user.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-160",
+      "tier": "Reflex",
+      "where": "KPI row, 1440px y 117-289",
+      "evidence": "Four equal white cards, each an outline icon top-left, an arrow delta top-right and a big number over a grey label: 2,847 Total Patients / 94.2% Recovery Rate / 24 min Avg. Wait Time / 142 Beds Available. Failed T-DEFAULT-AGENT: 'healthcare analytics dashboard' yields exactly this row. Failed T-THREE-LINE: 'Recovery Rate 94.2%' is not falsifiable (recovered from what, over what period, for which cohort).",
+      "before": "Four icon-number-label cards with ↑12% ↑8% ↓3% ↑5%",
+      "after": "Lead with the one number this user acts on today [DATA NEEDED: the clinician's or administrator's primary daily metric, its period and its definition]; move the rest into a compact labelled row with periods ('vs last week')",
+      "why": "The KPI wall is the most recognisable AI dashboard default (DVZ-106, DVZ-107); deltas with no period mean nothing.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "Recent Patients table and Upcoming Appointments list",
+      "evidence": "Patients \"John Doe\", \"Sarah Miller\", \"Robert Johnson\", \"Emily Wilson\" with emails at \"@email.com\"; appointments with \"Michael Brown\", \"Lisa Anderson\", \"David Lee\", \"Jennifer Kim\"; user \"Dr. Roberts, Cardiologist\". The sweep caught John Doe; the rest of the cast is the same default-name set. Failed T-FILLER: none of this data is real.",
+      "before": "John Doe / john.doe@email.com / #PT-2847",
+      "after": "[DATA NEEDED: realistic or anonymised sample records from the client], with varied name lengths and scripts to stress the table",
+      "why": "A default cast signals that no real records or users were considered; in a health product it also hides layout problems with real names and IDs.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "DVZ-106",
+      "tier": "Reflex",
+      "where": "Department Distribution donut, 1440px right column",
+      "evidence": "Donut of five colours (Cardiology, Neurology, Orthopedics, Pediatrics, Other) with no values, no totals and no unit: distribution of patients, admissions or beds is never said. Failed T-DELETION: removing it loses no fact the reader can read. Failed T-DIAGRAM-EARNS: a sorted bar or a 5-row table with counts teaches more.",
+      "before": "Unlabelled 5-segment donut",
+      "after": "Sorted horizontal bars with counts and the measure in the title, e.g. 'Admissions this week by department' [DATA NEEDED: counts]",
+      "why": "Decorative donut beside a trend chart is the stock dashboard pairing.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "DVZ-109",
+      "tier": "Reflex",
+      "where": "Patient Admissions Trend chart",
+      "evidence": "Admissions and Discharges drawn as heavily smoothed splines with a teal area fill under one series only; the curves overshoot between daily points (Thu peak bulges above the 65 point), inventing values for counts that are integers per day.",
+      "before": "tension-smoothed line + area fill",
+      "after": "Straight segments or daily bars for counts (DVZ-110), no area fill, direct labels at line ends instead of a bottom legend",
+      "why": "Chart.js defaults (smooth tension, fill, dot markers, bottom legend) were accepted rather than chosen for the data.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-221",
+      "tier": "Reflex",
+      "where": "page header and section heads",
+      "evidence": "h2 \"Healthcare Analytics\" with sub \"Overview of patient data and hospital metrics\"; section heads \"Recent Patients\", \"Upcoming Appointments\", \"Department Distribution\". Failed T-RIVAL-NAME: every line stays true for any hospital dashboard. Failed T-FIVE-SECOND: for whom (which ward, which role) and what to do are unanswered.",
+      "before": "\"Overview of patient data and hospital metrics\"",
+      "after": "State the scope and moment: '[DATA NEEDED: ward/clinic name], today, [date]' and put the one action (e.g. next appointment, patients awaiting review) first",
+      "why": "Category-label headings and a restating subline are filler; they name the page type, not its content.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-010",
+      "tier": "Reflex",
+      "where": "Upcoming Appointments cards",
+      "evidence": "\"Checkup - Michael Brown\", \"Surgery - Lisa Anderson\", \"Consultation - David Lee\", \"Lab Results - Jennifer Kim\": TYPE - Name labels repeated on four identical grey cards, each with the time right-aligned and a grey description below. The sweep caught the dash labels; the judgment is that the card list duplicates what a time-sorted agenda row would show.",
+      "before": "card: \"Checkup - Michael Brown\" / 9:00 AM / General Health Examination",
+      "after": "Agenda rows: '09:00  Michael Brown  Checkup, general examination', time first in tabular figures, no card per row",
+      "why": "One card per list item is the card-kit habit (SLP-005, SLP-155).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-104",
+      "tier": "Finish",
+      "where": "KPI values and patient IDs",
+      "evidence": "Inter for all text plus a monospace face (font-mono, intended Fira Code; renders as a Courier-like fallback in capture) for the big KPI numbers and '#PT-2847', which wraps onto two lines in the ID column. Mono is used as 'data costume' rather than for alignment.",
+      "before": "font-mono text-3xl on 2,847",
+      "after": "Use the body face with font-variant-numeric: tabular-nums for figures; keep mono only if IDs are copied by staff, and stop '#PT-2847' wrapping (white-space: nowrap)",
+      "why": "Mono-as-costume (SLP-192) on stat figures is a dashboard default.",
+      "test": "T-DEFAULT-AGENT"
+    }
+  ],
+  "strengths": [
+    "Information architecture is plausible for a clinic: appointments with times and procedure names are concrete in kind, even if the data is placeholder."
+  ],
+  "not_investigated": [
+    "Tailwind was shimmed (manifest: tailwind.config ignored), so custom 'primary' and status-pill colours, the active 'Weekly' tab fill and avatar circle fills are missing from the render; colour choices were not judged",
+    "Fonts Fira Sans / Fira Code were shimmed; typeface judgment limited to roles"
+  ]
+}

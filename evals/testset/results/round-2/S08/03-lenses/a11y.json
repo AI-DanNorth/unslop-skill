@@ -1,0 +1,77 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:25:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "hero 'Download CV'",
+      "evidence": "dom-1440.json: 'Download CV' is an a with href '#contact'. It downloads nothing; it scrolls to the contact form.",
+      "before": "<a href=\"#contact\">Download CV</a>",
+      "after": "<a href=\"/cv.pdf\" download>Download CV (PDF, 120 KB)</a>",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "social links (hero and footer), brand link",
+      "evidence": "GitHub, LinkedIn and Twitter icon links have accessible names but all point to '#'; the 'AC' brand link also goes to '#'. Six focus stops that do nothing (focus.json stops 1, 9-11, 17-19).",
+      "before": "<a href=\"#\" aria-label=\"GitHub\">",
+      "after": "Real profile URLs, or remove the links. [DATA NEEDED: profile URLs]",
+      "why": "WCAG 2.2 2.4.4 Link Purpose; a control whose name promises a destination it does not reach.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-010",
+      "tier": "Floor",
+      "where": "contact form",
+      "evidence": "forms.json: the form has action null and method get; pressing 'Send Message' made one request and produced no new text, so a user gets no confirmation or error. Fields have visible labels, but placeholders ('John Doe', 'john@example.com') are example data and no field shows a required state or error message.",
+      "before": "<form method=\"get\"> … no error or success region",
+      "after": "action pointing at a real endpoint; required + aria-invalid on failure, an error text tied with aria-describedby, and an aria-live=\"polite\" status after send.",
+      "why": "WCAG 2.2 3.3.1 Error Identification, 3.3.3 Error Suggestion and 4.1.3 Status Messages.",
+      "test": "T-FAKE-SEND"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "Featured Projects cards",
+      "evidence": "Project cards contain h3 titles but are not links and contain no links; a keyboard or screen-reader user (like anyone) has no way to open a project. focus.json goes straight from the hero to the form inputs.",
+      "before": "<div class=\"group bg-surface\">…<h3>E-Commerce Platform</h3>",
+      "after": "<h3><a href=\"/work/[slug]\">[Project name]</a></h3> with the card made clickable via the heading link.",
+      "why": "WCAG 2.2 2.1.1 Keyboard (functionality implied by hover-styled 'group' cards) and 1.3.1.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "page",
+      "evidence": "nav and footer landmarks but no main (sweep) and no skip link; the hero and sections are not in a header/main. Six nav/brand stops precede the content.",
+      "before": "<nav>…</nav><section>…",
+      "after": "<a href=\"#main\" class=\"skip\">Skip to content</a> and <main id=\"main\"> around the sections.",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "hero and about decorative graphics",
+      "evidence": "The 'AC' circle, '</>' tile, palette tile and person-silhouette avatar are decorative; the 'AC' text inside the circle is read aloud as 'A C' a second time after the h1. Confirm they are aria-hidden.",
+      "before": "<div class=\"…\">AC</div>",
+      "after": "aria-hidden=\"true\" on the decorative containers.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Every input has a visible, programmatically associated label (names 'Name', 'Email', 'Subject', 'Message').",
+    "Icon-only social links carry accessible names (GitHub, LinkedIn, Twitter)."
+  ],
+  "not_investigated": [
+    "disputed: contrast 1.00:1 on 'Let's Talk', 'View My Work' and 'Send Message' (white on white) is a capture artefact: the Tailwind v3 config with bg-primary was ignored by the v4 shim, so the button fills never rendered",
+    "disputed: tag-pill contrast (e.g. #00d3f2 on #e5f7fb at 1.64:1) may also be shim colours, not the authored palette; re-run with the real Tailwind config before reporting",
+    "focus visibility and non-text contrast of inputs not judged for the same reason",
+    "reflow at 375 not judged beyond the sweep: the layout depends on the un-rendered config"
+  ]
+}

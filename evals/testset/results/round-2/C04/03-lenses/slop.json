@@ -1,0 +1,66 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "A 'Welcome' page with a developer 'Debug mode' toggle above 24 identical placeholder rows ('Acme Corp', 'Paid', '$420.00'): filler data nobody chose, presented with no summary, sort, filter or signal of what needs attention.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-DEFAULT-AGENT",
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-FILLER",
+  "T-SO-WHAT",
+  "T-RIVAL-NAME",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "INT-005",
+   "tier": "Floor",
+   "where": "table rows 'Invoice 1000' to 'Invoice 1023'",
+   "evidence": "Every row is 'Acme Corp / Paid / $420.00'; only the number changes and dates cycle 2026-03-01..09 three times, so Invoice 1009 (2026-03-01) is dated before Invoice 1008 (2026-03-09). Failed T-FILLER: the data is not real and the table cannot be read for anything (no unpaid, no different customer, no outlier).",
+   "before": "24 x Acme Corp, Paid, $420.00",
+   "after": "[DATA NEEDED: real or realistic invoice records with varied customers, statuses and amounts]; dates monotonic with invoice numbers",
+   "why": "Placeholder residue at ship; identical rows hide every design problem the real list will have.",
+   "test": "T-FILLER"
+  },
+  {
+   "rule": "INT-005",
+   "tier": "Floor",
+   "where": "checkbox 'Debug mode' under h1",
+   "evidence": "A developer toggle sits as the first control on the page, above the content; T-DELETION: removing it loses nothing for the user.",
+   "before": "<label><input type=checkbox id=debugMode> Debug mode</label>",
+   "after": "Remove from the user-facing page (move behind a dev flag)",
+   "why": "Development controls left in the UI read as unfinished output.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "CON-113",
+   "tier": "Reflex",
+   "where": "h1 'Welcome'",
+   "evidence": "T-FIVE-SECOND: 'Welcome' says nothing about the page (an invoice list), who it is for or what to do; T-FRESH-READER lists it as a line that fits any app.",
+   "before": "Welcome",
+   "after": "Invoices, with a one-line summary (e.g. 'n unpaid, $x due this week') [DATA NEEDED: real totals]",
+   "why": "Each page gets one job and its heading should name it.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "TYP-001",
+   "tier": "Reflex",
+   "where": "table columns 'Status' and 'Amount', 1440",
+   "evidence": "Status is plain grey text identical for all rows and Amount is left-aligned prose-style, so nothing in the list can be scanned for state or size; the 'Date' column is clipped at the container edge even at 1440 (table 768px inside a 695px box).",
+   "before": "Left-aligned amounts, status as plain text, clipped date column",
+   "after": "Right-align amounts with tabular figures, show status as a labelled badge only when not 'Paid', widen the container or drop the redundant 'Invoice' prefix so all columns fit at desktop",
+   "why": "A list's design job is scanning; nothing here differentiates rows.",
+   "test": "T-SO-WHAT"
+  }
+ ],
+ "strengths": [
+  "Uses a real <table> with a caption and a named, focusable horizontal scroll region; spacing and type tokens are consistent."
+ ],
+ "not_investigated": [
+  "Behaviour of the 'Debug mode' toggle (no live interaction)."
+ ]
+}

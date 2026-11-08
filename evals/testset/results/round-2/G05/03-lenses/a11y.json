@@ -1,0 +1,37 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:10:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "h2 section heads vs h3 card titles",
+      "evidence": "Programmatic outline is correct (h1 > h2 > h3) but the h2s render smaller (18px vs 18.72px) and lighter (#6b7280 vs #111827) than their h3s. A sighted low-vision reader using magnification sees the card titles as the section heads.",
+      "before": "h2 { font-size: 18px; color: #6b7280 }",
+      "after": "h2 { font-size: 1.75rem; color: #111827 } so visual and programmatic levels agree.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships (advisory: visual structure should match the coded structure) and 2.4.6 Headings and Labels.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "page",
+      "evidence": "dom-1440.json landmarks: main 0, header 0. All content sits directly in body; with three sections and no landmark there is no 'skip to content' target. (Sweep reported missing main; added here: the h2 sections are plain div.section with no region roles either.)",
+      "before": "<body><h1>…<div class=\"section\">…",
+      "after": "<main><h1>…</h1><section aria-labelledby=\"clean-cards\">…</section>…</main>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships; 2.4.1 Bypass Blocks.",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "Reflows cleanly at 375: single column, no clipping, no horizontal scroll (tile 375-00).",
+    "Coloured side and bottom rules are decorative only; no meaning is carried by colour alone, and the 'New' badge has text."
+  ],
+  "not_investigated": [
+    "disputed: focus_ring 'Tab reached no focusable element' is not a defect here; the page has no links, buttons or inputs, so there is nothing to focus",
+    "Verified sweep text_floor hits (14px card body) are real on tile 1440-00; dark-card body #9ca3af on #1f2937 checked by eye and the sweep did not flag it",
+    "forms, motion, images: none present",
+    "live keyboard testing: nothing interactive to test"
+  ]
+}

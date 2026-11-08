@@ -1,0 +1,76 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:55:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-002",
+      "tier": "Floor",
+      "where": "nav and hero at 375, tile 375-00",
+      "evidence": "At 375 the page renders 577px wide: the nav keeps all four items in one row ('START FREE' runs to x≈445, past the viewport), and the hero keeps its two-column grid, so the h1 wraps to one word per line in a ~200px column and the metric labels wrap to 'TRIAL / → / PAID'. Sweep reported the logo row as the widest culprit; nav and hero grid also fail.",
+      "before": ".hero-grid two columns and inline nav at every width",
+      "after": "@media (max-width: 48rem) { .hero-grid { grid-template-columns: 1fr } .nav-links { display: none } } plus a Menu button; .logos-row { flex-wrap: wrap }",
+      "why": "WCAG 2.2 1.4.10 Reflow: no two-direction scrolling at 320 CSS px.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "hero 'Book a demo →'",
+      "evidence": "dom-1440.json: a.cta-text 'Book a demo →' has href '#pricing'. It does not book anything; it scrolls to pricing.",
+      "before": "<a href=\"#pricing\">Book a demo →</a>",
+      "after": "Point it at a booking page, or relabel 'See pricing'.",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "nav links '01 — Features', '02 — Pricing'",
+      "evidence": "Accessible names include the decorative numbering and dash: read as 'zero one em dash Features'. Visible text is uppercased by CSS, so the name is mixed case, which is fine, but the number is noise.",
+      "before": "<a href=\"#features\">01 — Features</a>",
+      "after": "<a href=\"#features\"><span aria-hidden=\"true\">01 — </span>Features</a>",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 2.5.3 Label in Name (keep 'Features' as the spoken name).",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "logo strip svgs",
+      "evidence": "Each customer name is a span with an unlabelled inline svg glyph (▲, ◠, ≡, ○, ›) and no aria-hidden; they are announced as unnamed images or skipped inconsistently.",
+      "before": "<span><svg>…</svg> Acme</span>",
+      "after": "<svg aria-hidden=\"true\" focusable=\"false\">…</svg>",
+      "why": "WCAG 2.2 1.1.1 Non-text Content.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "testimonial",
+      "evidence": "The quote is a blockquote but the attribution 'Sarah Chen — Founder, Stitchboard' sits outside it in a separate styled line with no figure/figcaption or cite, so the speaker is not programmatically tied to the quote.",
+      "before": "<blockquote>…</blockquote><div>Sarah Chen — Founder, Stitchboard</div>",
+      "after": "<figure><blockquote>…</blockquote><figcaption>Sarah Chen, Founder, Stitchboard</figcaption></figure>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "page",
+      "evidence": "header, nav and footer exist but no main (sweep) and no skip link: focus.json starts at '01 — FEATURES' and runs 6 controls before the content.",
+      "before": "<body><nav>…",
+      "after": "<a href=\"#main\" class=\"skip\">Skip to content</a> + <main id=\"main\">",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Focus order (14 stops in focus.json) follows the visual order and no stop is covered by sticky chrome.",
+    "Primary CTAs are real buttons and links with visible text names."
+  ],
+  "not_investigated": [
+    "Verified the sweep's #e34a2b contrast hits on tile 1440-00 (red kicker and white-on-red button text at 12px both look light); no disputes",
+    "button behaviour: 'Start free' buttons have no form or href; whether a script handles them was not tested",
+    "live keyboard tests not run"
+  ]
+}

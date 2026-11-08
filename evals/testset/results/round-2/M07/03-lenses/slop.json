@@ -1,0 +1,100 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "Specific numbers sit on a stock AI pitch-deck skin: blurred violet gradient blob on the cover, blue-violet-magenta gradient on key words and every figure, giant ghost numerals 01-07, caps kicker above every title, and three equal shadowed cards or three big numbers on most slides; and several of the specific numbers contradict each other.",
+ "tests_run": [
+  "T-GHOST-DECK",
+  "T-DEFAULT-AGENT",
+  "T-MIRROR",
+  "T-RIVAL-NAME",
+  "T-THREE-LINE",
+  "T-SO-WHAT",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-FRESH-READER",
+  "T-EYEBROW",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "every slide (tiles 1920-00 to 05)",
+   "evidence": "Failed T-DEFAULT-AGENT: 'demo day pitch deck for an AI dev tool' yields this deck: cover with a 560px blurred #3b5bff-#d94cff blob and gradient words 'agent era'; slides 2-8 each = 180px pale ghost numeral + blue caps kicker (PROBLEM, SOLUTION, WHY NOW, MARKET, MOAT, TRACTION, TEAM) + bold Inter title + 3 equal 20px-radius shadowed cards or 3 big gradient numbers. Violet-gradient family (ai_purple, gradient_pair, glow-like blob) plus the sweep's saas-card-kit cluster.",
+   "before": "Gradient blob, gradient keywords, ghost numerals, kicker on every slide",
+   "after": "Drop the blob, gradient text and ghost numerals; let one real artefact (a screenshot of an agent editing a design file) carry the cover and solution slides [DATA NEEDED: product screenshot]",
+   "why": "The chrome is the default AI-deck look; it makes the deck interchangeable with every other agent startup's.",
+   "test": "T-DEFAULT-AGENT"
+  },
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "slide 'TRACTION' title vs its data",
+   "evidence": "Title '6 months, growing 34% MoM.' but the bars read $8k, $15k, $23k, $36k, $55k, $81k: month-over-month ratios 1.88, 1.53, 1.57, 1.53, 1.47, a compound rate of about 59% MoM, not 34%. Failed T-THREE-LINE: the claim is falsifiable and the slide falsifies it.",
+   "before": "\"6 months, growing 34% MoM.\"",
+   "after": "State the rate the data supports ('$8k to $81k MRR in 5 months, ~59% MoM') or correct the series [DATA NEEDED: actual monthly MRR]",
+   "why": "An investor will do this division; a headline that contradicts its own chart costs credibility.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "slide 'MARKET' and slide 'PROBLEM'",
+   "evidence": "'41M developers worldwide who use an AI coding agent daily' then 'Every one of those 41M developers is currently locked out of AI design tooling'; '$92B TAM \u00b7 design + prototyping software spend' and '38% YoY growth in AI-assisted software teams' have no source. Problem slide states 'Claude Design costs $500 a seat a month, locks you to one model, and can't be self-hosted' about a named competitor with no citation. Sweep INT-007 caught the unsourced band, not the overclaim.",
+   "before": "\"Every one of those 41M developers is currently locked out...\"",
+   "after": "Cite each market figure on the slide and replace absolutes with what is known [DATA NEEDED: sources for 41M, $92B, 38% and competitor pricing]",
+   "why": "Unsourced market sizes and claims about a named competitor read as invented.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "SLD-128",
+   "tier": "Reflex",
+   "where": "slide 'MOAT'",
+   "evidence": "T-GHOST-DECK reads well overall (titles are assertions), but 'BYOK makes our moat structural.' sits over a pricing table (Community $0, Pro $79, Cloud 0.6%) and the footnote says 'The moat is the agent integrations and design memory, not the code' - so title, evidence and footnote name three different things.",
+   "before": "MOAT / BYOK makes our moat structural. / pricing cards",
+   "after": "Split: a business-model slide titled with the revenue logic, and a moat slide whose evidence is the integrations/memory lock-in [DATA NEEDED: retention or switching data]",
+   "why": "One evidence shape per slide, and the title must be what the evidence proves.",
+   "test": "T-GHOST-DECK"
+  },
+  {
+   "rule": "SLP-002",
+   "tier": "Reflex",
+   "where": "ghost numerals '01'-'07' and kickers on slides 2-8",
+   "evidence": "T-EYEBROW / T-DELETION: the 180px #f0f2f8 numerals and the caps kickers (PROBLEM, SOLUTION...) restate the slide's role, which the assertion title already makes clear; removing both loses nothing. Kickers with numerals are counted 8 times against a budget of 2 (sweep SLP-001).",
+   "before": "Ghost '02' + 'SOLUTION' kicker + title",
+   "after": "Title only; if sections are needed, one small running label in the footer",
+   "why": "Decorative numbering and category kickers are template chrome.",
+   "test": "T-EYEBROW"
+  },
+  {
+   "rule": "SLD-132",
+   "tier": "Reflex",
+   "where": "slides 'SOLUTION' (tile 02) and 'MARKET' (tile 04)",
+   "evidence": "The solution slide is a title, one sentence and five pills ('Prototyping', 'Slides', ...) with the right ~55% of the canvas empty; it shows no product. The market slide is three big numbers plus two sentences, again leaving the right half and bottom third blank.",
+   "before": "Solution: title + sentence + 5 pills",
+   "after": "Show the product doing the thing: one screenshot or 3-step flow of an agent producing a design file [DATA NEEDED: product visuals]",
+   "why": "Half-empty slides with no evidence are draft defects; the solution slide is where a demo-day deck must show the product.",
+   "test": "T-SO-WHAT"
+  },
+  {
+   "rule": "LAY-003",
+   "tier": "Finish",
+   "where": "cover slide, bottom-left",
+   "evidence": "Footer 'Alex Rivera \u00b7 Founder' at y ~958 sits about 12px under the last lede line ('64,000+ repos.' ending ~945) and reads as part of the paragraph.",
+   "before": "Footer 12px below lede",
+   "after": "Pin the presenter line to the slide's bottom margin (>= 48px clear of the lede)",
+   "why": "Collisions on the cover read as unchecked output.",
+   "test": "T-DELETION"
+  }
+ ],
+ "strengths": [
+  "Titles are mostly real assertions ('Every design tool assumes a human moves the mouse.', 'Shipped agent-native tools before.'), so the ghost deck tells an argument.",
+  "Concrete specifics exist and should lead: '64,000+ repos', '220+ plugins', 'SAFE \u00b7 post-money cap $18M', named prior roles on the team slide."
+ ],
+ "not_investigated": [
+  "Only 6 of 10 slides were captured as tiles (doc height 10800px); slides 7-10 judged from text only.",
+  "Whether the team members are real people: names and bios not verifiable; sweep flagged a default-cast surname."
+ ]
+}

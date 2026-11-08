@@ -1,0 +1,51 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T21:55:00",
+  "tests_run": [
+    "visible text contrast (by eye)",
+    "visible text size",
+    "use-of-colour (visible)",
+    "non-text contrast (visible)",
+    "visible form labels"
+  ],
+  "findings": [
+    {
+      "rule": "A11-143",
+      "tier": "Floor",
+      "where": "footer newsletter field, tile-01",
+      "evidence": "The email field shows only the placeholder \"you@company.com\" in light grey; the nearest text is the heading \"Stay in the loop\", with no visible field label.",
+      "before": "<input placeholder=\"you@company.com\">",
+      "after": "<label for=\"nl-email\">Work email</label><input id=\"nl-email\" type=\"email\" autocomplete=\"email\" placeholder=\"you@company.com\">",
+      "why": "WCAG 2.2 3.3.2 Labels or Instructions: the placeholder disappears on input and is low-contrast.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "feature-row captions and cohort legend",
+      "evidence": "Small grey captions \"events in the last hour\", \"visit, sign up, invite\", \"Fewer\" / \"More still active\" and the cohort subtitle are roughly 12px mid-grey on #f4f6f8; by eye they sit near or below 4.5:1 (not machine-verified).",
+      "before": "~12px mid-grey captions",
+      "after": "Captions at 14px minimum in the body grey used for paragraphs (or darker), verified at 4.5:1",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); small light text is the likeliest failure on this page.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-165",
+      "tier": "Floor",
+      "where": "lightest cohort cells and legend swatches; feature mini-bars",
+      "evidence": "The two lightest blue steps (e.g. Jul 7 week 5-7 cells, 45-47%) are very pale against the white card, and the lightest funnel bar under \"visit, sign up, invite\" is pale blue on grey; the cell values are printed, but the mini-bars carry no numbers.",
+      "before": "Lightest ramp step close to the card white; unlabelled pale bars",
+      "after": "Start the ramp at a step with 3:1 against white (or add a 1px cell border), and label the funnel bars with their values",
+      "why": "WCAG 2.2 1.4.11 Non-text Contrast for data marks.",
+      "test": "T-GRAYSCALE"
+    }
+  ],
+  "strengths": [
+    "Cohort heatmap prints the percentage in every cell, so the data is not conveyed by colour alone (1.4.1).",
+    "Primary text and buttons are dark navy on light grey or white text on navy, both high contrast."
+  ],
+  "not_investigated": [
+    "Image-only item: a11y lens limited to what is visible. Not checked: alt text, accessible names, focus visibility and order, keyboard operation, headings and landmarks, lang/title, reflow at 320px, motion, form errors.",
+    "Contrast values estimated by eye from the screenshot, not measured."
+  ]
+}

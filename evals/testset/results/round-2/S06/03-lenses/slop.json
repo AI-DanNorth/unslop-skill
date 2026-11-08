@@ -1,0 +1,75 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A model's default dashboard screen: indigo-to-violet gradient banner with \"📊 Analytics Dashboard\" and \"updated in real-time 🚀\", four equal emoji-labelled KPI cards with round invented numbers, and a settings card that contradicts itself; nothing on it belongs to any product or user.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole screen, 1440 tile 0",
+      "evidence": "Failed T-DEFAULT-AGENT: \"dashboard for a SaaS\" yields exactly this: gradient hero banner (#6366f1 to violet), a row of four equal white cards with radius 8 and shadow 0 4px 6px, emoji + grey label + big number + grey delta in each, then one settings card. Adds the gradient banner and emoji labels to the sweep's saas-card-kit cluster.",
+      "before": "gradient banner + 4 emoji KPI cards + settings card",
+      "after": "Drop the banner (a page title in body ink is enough); give the KPI row one primary metric with a trend line and period, the rest as a compact table",
+      "why": "Every part is the stock answer; nothing reflects what this product measures or who uses it.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Floor",
+      "where": "KPI cards",
+      "evidence": "T-FILLER: \"$48.2k\", \"3,910\", \"1.8%\", \"62\" with deltas \"↑ 12%\", \"↑ 4%\", \"↓ 2%\", \"↑ 7% from last month\" and no period, source or empty/loading state. The header promises \"updated in real-time\" while every delta is month-over-month.",
+      "before": "\"$48.2k ↑ 12% from last month\"",
+      "after": "Bind to real data with an as-of timestamp, and design the empty and loading states (INT-159); in a mock, mark figures as sample data",
+      "why": "A dashboard is the place figures must be true; round invented KPIs with confident deltas are fake data presented as state.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "CMP-212",
+      "tier": "Floor",
+      "where": "Settings card",
+      "evidence": "Sub-line says \"changes are saved automatically\" directly above a \"Save Changes\" button. One of the two is false.",
+      "before": "\"Manage your account preferences — changes are saved automatically\" + [Save Changes]",
+      "after": "Pick one model: autosave with a visible \"Saved\" trace (CMP-147) and no button, or an explicit Save with no autosave claim",
+      "why": "Contradictory save copy is the mark of text and UI generated separately; users cannot tell whether their change persisted.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CMP-167",
+      "tier": "Reflex",
+      "where": "Settings card buttons",
+      "evidence": "\"Delete Account\" sits 4px from \"Save Changes\", filled in the same brand indigo, in an unstyled browser-default bevel with a 21px target, plus a 🗑️ emoji button beside the email field that deletes something unnamed.",
+      "before": "[Save Changes][Delete Account] side by side, both indigo",
+      "after": "Move \"Delete account\" to a separate danger zone below, styled as a secondary/outline red control (CMP-122), with an undo or typed confirmation",
+      "why": "A destructive action styled and placed like the primary action is the opposite of a decision; the half-styled button shows nobody looked.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-013",
+      "tier": "Reflex",
+      "where": "h1, sub-line, KPI labels, field actions",
+      "evidence": "Seven emoji used as decoration or icons beyond the sweep's three counted: \"📊\" h1 prefix, \"🚀\" on the sub-line, \"💰 👥 📉 ⭐\" on labels, \"✏️ 🗑️\" as action buttons. T-DELETION: removing all of them loses nothing (the pencil on a field that is already an editable input means nothing).",
+      "before": "\"📊 Analytics Dashboard\" / \"real-time 🚀\"",
+      "after": "Remove the emoji; use a labelled text button (\"Change email\") or a proper icon set with accessible names",
+      "why": "Emoji as icons and as tone markers are among the strongest generated-UI tells.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-135",
+      "tier": "Reflex",
+      "where": "settings email field",
+      "evidence": "Value \"user@example.com\" shown as the account email.",
+      "before": "user@example.com",
+      "after": "Bind to the signed-in user's email; in a mock, use an obviously sample address",
+      "why": "Placeholder identity in an account screen reads as unfinished.",
+      "test": "T-FILLER"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "No brief or product context; T-RIVAL-NAME and T-STOCK-ORDER have no category beyond 'generic dashboard' (no finding beyond T-DEFAULT-AGENT).",
+    "Nothing on the screen is specific enough to list as a strength."
+  ]
+}

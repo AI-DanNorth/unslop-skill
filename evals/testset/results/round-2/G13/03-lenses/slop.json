@@ -1,0 +1,66 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A clear, specific architecture diagram (named services, real paths like 'src/content/*.mdx', one focal node, one accent for the primary flow) in a deliberate house style; the weak spots are decorative numbering that collides with labels and chrome (tag chips, eyebrow, 8-item legend) that outweighs a 5-node graph.",
+ "tests_run": [
+  "T-DIAGRAM-EARNS",
+  "T-30S-BOARD",
+  "T-DELETION",
+  "T-EYEBROW",
+  "T-GRAYSCALE",
+  "T-DEFAULT-AGENT",
+  "T-RIVAL-NAME",
+  "T-LABEL-TRANSFORM"
+ ],
+ "findings": [
+  {
+   "rule": "SLP-002",
+   "tier": "Reflex",
+   "where": "Cloudflare node ('01') and Astro Origin node ('02')",
+   "evidence": "32px pale mono watermarks '01' and '02' sit in the bottom-right of two nodes and overlap the sub-labels ('cache' runs into '01', 'MDX' into '02') in tile 1440-00. T-DELETION: removing them loses nothing; only two of five nodes are numbered and the order is already shown by arrows.",
+   "before": "<text>01</text>, <text>02</text> watermarks",
+   "after": "Delete both watermarks",
+   "why": "Decorative step numbering that collides with real labels is template chrome.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "DVZ-101",
+   "tier": "Finish",
+   "where": "whole diagram",
+   "evidence": "T-DIAGRAM-EARNS is borderline: five nodes in one chain with a fork ('Reader -> Cloudflare -> Astro Origin, which reads the MDX bundle and queries the CMS') fit in one sentence, and the svg's own <desc> says exactly that. The diagram earns its place only if it shows what prose cannot (cache hit vs miss, build-time vs request-time reads).",
+   "before": "Linear chain + fork",
+   "after": "Show the cache-hit return from Cloudflare and mark whether 'READ MDX' happens at build or per request [DATA NEEDED: build vs runtime read]",
+   "why": "Draw a diagram only if it out-teaches a paragraph.",
+   "test": "T-DIAGRAM-EARNS"
+  },
+  {
+   "rule": "SLP-010",
+   "tier": "Finish",
+   "where": "node tag chips 'EXT', 'EDGE', 'ORIG', 'BUN', 'CMS' and the 'CONTENT' group label",
+   "evidence": "Each node carries a 7-8px mono chip repeating its type or name ('CMS' above 'Content CMS'); types are also given by fill in the 8-item legend. T-LABEL-TRANSFORM: the chips add no fact the node title or legend does not.",
+   "before": "Chip + title + subtitle per node, 8-item legend",
+   "after": "Drop the chips (or the legend's node-type rows) so each fact appears once; legend keeps only arrow meanings",
+   "why": "Doubled labelling is chrome that crowds a small diagram.",
+   "test": "T-LABEL-TRANSFORM"
+  },
+  {
+   "rule": "LAY-004",
+   "tier": "Finish",
+   "where": "y ~190-350 and y ~780-900 at 1440",
+   "evidence": "The diagram occupies a 230px-tall strip; ~160px of empty dotted grid separates the title from the first node and the svg is 576px tall for a 300px drawing.",
+   "before": "svg height 576 with nodes in the lower half",
+   "after": "Crop the viewBox to the drawing plus margin so the title sits with the diagram",
+   "why": "Headings sit with their content.",
+   "test": "T-DELETION"
+  }
+ ],
+ "strengths": [
+  "Specific, real content: 'Astro Origin SSR + MDX', 'Cloudflare Pages \u00b7 cache', 'src/content/*.mdx', 'assets \u00b7 og images'; nothing generic.",
+  "One focal node in the accent colour and one accent arrow for the primary SSR path; return path dashed, so flow reads in under 30 seconds (T-30S-BOARD passes)."
+ ],
+ "not_investigated": [
+  "Correctness of the architecture itself (whether MDX is read at runtime) not verifiable from the artifact."
+ ]
+}

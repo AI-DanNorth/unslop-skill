@@ -1,0 +1,96 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T20:45:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-button-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-errors", "motion-timing", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-163",
+      "tier": "Floor",
+      "where": "canvas in 'Patient Admissions Trend' and 'Department Distribution'",
+      "evidence": "dom-1440 elements 98 and 102 are <canvas> with no accessible name, no role=\"img\", no fallback content and no data table; screen readers get nothing from either chart.",
+      "before": "<canvas id=\"...\"></canvas>",
+      "after": "<canvas role=\"img\" aria-label=\"Admissions and discharges per day, Mon to Sun; admissions peak Thursday at 65\"> plus a visually-hidden <table> of the daily values (and department counts for the donut)",
+      "why": "WCAG 2.2 1.1.1 Non-text Content and 1.3.1 Info and Relationships.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-168",
+      "tier": "Floor",
+      "where": "Department Distribution donut and admissions chart legend",
+      "evidence": "Five departments are distinguished only by hue (blue, green, orange, violet, grey) with no values or direct labels on segments; Admissions vs Discharges only by blue vs green line.",
+      "before": "colour-keyed legend dots",
+      "after": "Direct labels with counts on or beside each segment/line end, or replace with labelled bars",
+      "why": "WCAG 2.2 1.4.1 Use of Color.",
+      "test": "T-GRAYSCALE"
+    },
+    {
+      "rule": "A11-115",
+      "tier": "Floor",
+      "where": "Weekly / Monthly / Yearly period buttons",
+      "evidence": "Three plain <button>s acting as a single-select toggle; no aria-pressed or tab roles captured (role: null). The selected period is shown only by fill colour (missing in this render).",
+      "before": "<button>Weekly</button><button>Monthly</button><button>Yearly</button>",
+      "after": "<div role=\"group\" aria-label=\"Chart period\"> with aria-pressed=\"true\" on the active button (or a radiogroup), and a non-colour selected cue (weight or underline)",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 1.4.1 Use of Color.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "notification bell button, header",
+      "evidence": "Accessible name is \"Notifications\" while the visible badge reads \"3\" (focus.json text \"3\"); the unread count is either dropped from the name or read as a bare '3'.",
+      "before": "<button aria-label=\"Notifications\">…<span>3</span></button>",
+      "after": "<button aria-label=\"Notifications, 3 unread\"> and aria-hidden on the visual badge",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.5.3 Label in Name.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-102",
+      "tier": "Floor",
+      "where": "h1 'HealthView' (sidebar logo), h2 'Healthcare Analytics'",
+      "evidence": "The only h1 is the product wordmark in the sidebar; the page's own title is an h2, and the KPI cards have no heading. Heading navigation starts at the logo.",
+      "before": "<h1>HealthView</h1> … <h2>Healthcare Analytics</h2>",
+      "after": "Make the wordmark a link or plain text and set 'Healthcare Analytics' (or the page's real title) as the h1; add a visually-hidden h2 'Key metrics' over the KPI row",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Floor",
+      "where": "sidebar nav links",
+      "evidence": "All five nav links have href=\"#\" and none carries aria-current=\"page\"; 'Dashboard' is the current page only by darker text colour.",
+      "before": "<a href=\"#\">Dashboard</a>",
+      "after": "<a href=\"/dashboard\" aria-current=\"page\">Dashboard</a> with a non-colour current marker",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 1.4.1 Use of Color; 4.1.2 for current state.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-150",
+      "tier": "Finish",
+      "where": "search input 'Search patients...'",
+      "evidence": "Field has an accessible name but name=\"\", type=\"text\", and the placeholder carries the instruction 'Search patients...' (A11-144).",
+      "before": "<input type=\"text\" placeholder=\"Search patients...\">",
+      "after": "<form role=\"search\"><label class=\"sr-only\" for=\"q\">Search patients</label><input id=\"q\" name=\"q\" type=\"search\" placeholder=\"Name or patient ID\"></form>",
+      "why": "WCAG 2.2 1.3.1 and 3.3.2 Labels or Instructions.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Finish",
+      "where": "patient rows, Patient column",
+      "evidence": "Each row's first cell reads avatar initials then name (\"JD John Doe john.doe@email.com\"), so a screen reader announces the initials as a word before every name.",
+      "before": "<div>JD</div><div>John Doe</div>",
+      "after": "aria-hidden=\"true\" on the initials avatar",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships (decorative duplicate content).",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Landmarks present (nav, header, main); table uses real th headers.",
+    "Focus order follows visual order: sidebar links, search, notifications, period buttons, View All; nothing is covered."
+  ],
+  "not_investigated": [
+    "disputed: A11-001 'Weekly' 1.00:1 is a capture artefact: tailwind.config was ignored by the shim so the active button's primary fill is missing; re-check with the real build",
+    "status pill colours (Recovered / In Treatment / Scheduled) could not be judged for colour-only meaning because their fills were lost in the shim",
+    "keyboard operation of charts and View All: no live run"
+  ]
+}

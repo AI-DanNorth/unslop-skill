@@ -1,0 +1,88 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "A bold red-black-white Swiss skin over the stock AI-analytics hero: same eyebrow, 'Turn data into decisions, not dashboards' headline, invented 3x/50%/99.9% stat trio, fake dashboard mock with 'AI alerts', and a famous-brand logo strip; the style is chosen but the page underneath is a default.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-FRESH-READER",
+  "T-EYEBROW",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "whole page (single screen), 1440 tile 00",
+   "evidence": "Failed T-DEFAULT-AGENT and T-MIRROR: split hero with eyebrow 'BUSINESS INTELLIGENCE FOR MODERN TEAMS', h1 with one accent-coloured word ('decisions,'), 'AI-powered analytics...' sub-line, primary + 'Watch Demo' CTAs, stat trio, dark product mock on the right, 'TRUSTED BY' strip. The Swiss type and red accent are a skin; removing them leaves the generic BI landing hero.",
+   "before": "Stock split hero with mock and stats",
+   "after": "Keep the type and colour system, replace the content skeleton with something only this product can show [DATA NEEDED: a real product view or customer result]",
+   "why": "A distinctive style over a default skeleton still reads as generated.",
+   "test": "T-DEFAULT-AGENT"
+  },
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "h1 and sub-line",
+   "evidence": "Failed T-RIVAL-NAME: 'Turn data into decisions, not dashboards' and 'AI-powered analytics that tells you what matters, when it matters. Stop drowning in charts and start acting on real insights.' stay true for any BI vendor. T-FRESH-READER generic lines: h1, sub-line, 'TRUSTED BY'.",
+   "before": "\"Turn data into decisions, not dashboards\"",
+   "after": "[DATA NEEDED: who Meridian is for and the specific decision it speeds up]",
+   "why": "Concept capped at 5: the copy holds under any competitor's name.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "INT-003",
+   "tier": "Floor",
+   "where": "bottom strip 'TRUSTED BY Stripe Notion Linear Vercel Figma'",
+   "evidence": "Five famous brands as grey text, no logos, links or permission; borrowed proof the sweep did not flag. The mock's 'Churn risk: Acme Corp' and 'Expansion signal: Bolt' add placeholder companies.",
+   "before": "TRUSTED BY Stripe, Notion, Linear, Vercel, Figma",
+   "after": "Remove, or real customers with permission [DATA NEEDED: customer list]",
+   "why": "Fabricated social proof.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "DVZ-137",
+   "tier": "Reflex",
+   "where": "'MONTHLY PERFORMANCE' bar chart in the dark mock",
+   "evidence": "Three bars (Apr, Jun, Aug) are red and seven dark grey with no legend or stated meaning; the selected range chip reads '30D' while the axis shows ten months Jan-Oct; no y-axis. T-DELETION: the chart carries no readable fact.",
+   "before": "Randomly accented bars under a '30D' toggle showing 10 months",
+   "after": "Either a real chart with a labelled axis and an explained highlight, or a real product screenshot [DATA NEEDED: series data]",
+   "why": "Decorative data with contradictory controls reads as an invented dashboard.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "LAY-001",
+   "tier": "Reflex",
+   "where": "stat trio under the CTAs, 1440",
+   "evidence": "The 140px red '3x' starts at y 661 while the CTA row ends at y 667, so the numeral butts into the buttons; '99.9%' ends exactly at x 720, the dark panel's edge, and labels 'LESS MEETING TIME' wrap to three lines. The trio is jammed into the space left above the logo strip.",
+   "before": "3x block top at 661px, CTAs bottom at 667px",
+   "after": "Give the stat row (if kept with real data) its own band with >= 48px above it, or drop it",
+   "why": "Collisions show the layout was not checked at the delivered width.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "stat trio '3x FASTER INSIGHTS', '50% LESS MEETING TIME', '99.9% UPTIME' and mock KPIs",
+   "evidence": "Already flagged by the sweep (INT-001, INT-007); confirmed visually: the 3x is the largest element on the left half, so the invented figure is the page's lead visual.",
+   "before": "3x (140px, red)",
+   "after": "[DATA NEEDED: a measured result with source] or remove",
+   "why": "The biggest thing on the page is an unsupported claim.",
+   "test": "T-THREE-LINE"
+  }
+ ],
+ "strengths": [
+  "A committed visual system (heavy grotesk headline, red accent used sparingly on the light side, white/black split) that is more decisive than the usual soft SaaS look; keep it if real content replaces the template."
+ ],
+ "not_investigated": [
+  "Lucide icons and fonts were shimmed (manifest); rendering treated as intended.",
+  "Copy voice: no brand samples supplied."
+ ]
+}

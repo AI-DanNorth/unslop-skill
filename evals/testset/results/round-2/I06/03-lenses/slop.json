@@ -1,0 +1,56 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A purpose-built budget bridge with a real axis, connector lines, signed labels and one highlighted step, in a consistent house style; the problem is not slop but that the numbers do not add up.",
+ "tests_run": [
+  "T-DIAGRAM-EARNS",
+  "T-30S-BOARD",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-GRAYSCALE",
+  "T-DEFAULT-AGENT",
+  "T-EYEBROW",
+  "T-RIVAL-NAME"
+ ],
+ "findings": [
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "bars 'Storage tiering' and 'FY26 plan'",
+   "evidence": "Labelled steps give 240 + 64 - 36 + 22 - 52 = 238, but the end bar is labelled 236. Measured against the axis (0 at y~607, 400 at y~177), the storage-tiering bar is drawn from 290 down to ~236, i.e. -54, not the labelled -52. Failed T-THREE-LINE: the bridge is falsifiable and false.",
+   "before": "Storage tiering '-52'; FY26 plan '236'",
+   "after": "Make labels, bar geometry and total agree from one data source: either -54 and 236, or -52 and 238 [DATA NEEDED: correct storage saving]",
+   "why": "A waterfall's only job is that the steps sum to the total; a plausible-looking chart that does not reconcile is worse than none.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "DVZ-222",
+   "tier": "Finish",
+   "where": "title 'Cloud budget bridge \u00b7 FY25 \u2192 FY26'",
+   "evidence": "T-30S-BOARD passes on the path but the title states the topic, not the takeaway; the takeaway (net -4k/mo despite +64k headcount, driven by storage tiering) is left for the reader to compute, and the highlight sits in the legend ('Storage tiering \u00b7 largest saving').",
+   "before": "Cloud budget bridge \u00b7 FY25 \u2192 FY26",
+   "after": "'FY26 cloud spend lands $4k/mo under FY25: storage tiering offsets headcount growth' (once the totals reconcile)",
+   "why": "Caption a diagram once with the takeaway.",
+   "test": "T-30S-BOARD"
+  },
+  {
+   "rule": "SLP-001",
+   "tier": "Finish",
+   "where": "top-left eyebrow 'WATERFALL \u00b7 DIAGRAM DESIGN'",
+   "evidence": "T-EYEBROW: covering it loses nothing for the reader; it names the chart type and the tool, not a fact about the budget.",
+   "before": "WATERFALL \u00b7 DIAGRAM DESIGN",
+   "after": "Delete, or replace with the source and date [DATA NEEDED: budget source, as-of date]",
+   "why": "An eyebrow should carry an identifier, not restate the chart type.",
+   "test": "T-EYEBROW"
+  }
+ ],
+ "strengths": [
+  "Correct waterfall form: floating steps with connector lines, totals anchored to zero, signed value labels and a single accent for the largest saving (T-DIAGRAM-EARNS passes: a paragraph would not show the bridge as quickly).",
+  "Restrained palette where added vs removed is distinguished by fill vs outline, not hue alone."
+ ],
+ "not_investigated": [
+  "Source data for the budget: none supplied, so only internal consistency was checked."
+ ]
+}

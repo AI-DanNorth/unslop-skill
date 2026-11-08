@@ -1,0 +1,64 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:45:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "headings-landmarks",
+    "motion-timing"
+  ],
+  "findings": [
+    {
+      "rule": "A11-002",
+      "tier": "Floor",
+      "where": "slide 2 loop diagram svg text; slide 5 chart labels",
+      "evidence": "Box labels 'PLAN', 'ACT', 'OBSERVE', 'REFLECT' render at about 8px, '20 LOC' about 9px and 'CORE' about 6px on a 1123px-wide A4 canvas (tiles 1920-00/01); the chart's 'loading' sublabels and axis ticks are about 10px. Projected or printed these are 5-7pt, below any slide or print floor. The sweep flagged only the 9px 'TOOLS · HARNESS · EVALS · MEMORY' line.",
+      "before": "svg text font-size ~8px inside 130px boxes",
+      "after": "Raise diagram text to at least the body list size (17px on this canvas, ~13pt) and enlarge the boxes; drop the 'CORE' micro-label",
+      "why": "WCAG 2.2 1.4.4 Resize Text (embedded SVG text does not reflow) and the deck's own readability floor (TYP-141/TYP-142).",
+      "test": "verify-sweep-floor"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "every content slide title (slides 2-7)",
+      "evidence": "Only the cover and the ending titles are h1; the titles 'Simple core, complex surroundings', 'One turn, traced', 'Harness wins over hardware', 'Density beats length', 'Put state outside the context', 'Pseudocode over syntax' are not heading elements (dom-1920 has no h2). Each slide is a <section> with no accessible name, so a screen-reader user cannot navigate slide to slide by heading.",
+      "before": "<div class=\"slide-title\">Density beats length</div>",
+      "after": "<section aria-labelledby=\"s5-t\"><h2 id=\"s5-t\">Density beats length</h2>...; keep one h1 for the deck title",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-113",
+      "tier": "Reflex",
+      "where": "svgs on slides 1, 2, 3, 5",
+      "evidence": "Four inline svgs carry the deck's key content (loop diagram, sequence diagram, accuracy chart). The capture records no role or accessible name for them, and the chart's values exist only as svg <text> fragments read out of order ('Accuracy 85% 53% 53% Flat loading 85% Layered loading' in bodyText).",
+      "before": "<svg> chart with loose text nodes",
+      "after": "<svg role=\"img\" aria-labelledby=\"c5-title c5-desc\"><title id=\"c5-title\">Accuracy by loading strategy</title><desc id=\"c5-desc\">Flat loading 53%, layered loading 85%</desc>; cover rings get aria-hidden=\"true\"",
+      "why": "WCAG 2.2 1.1.1 Non-text Content and 1.3.2 Meaningful Sequence.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Finish",
+      "where": "slide 5 chart: y-axis label 'Accuracy' and '53%' tick",
+      "evidence": "The rotated 'Accuracy' axis title is drawn over the '53%' tick label (tile 1920-03, x600-630 y290-335); the two collide and neither reads cleanly.",
+      "before": "axis title overlapping tick label",
+      "after": "Move the axis title left of the tick labels (x - 40px) or put it above the axis as plain text",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum) is undermined where text overlaps text; legibility failure.",
+      "test": "non-text-contrast"
+    }
+  ],
+  "strengths": [
+    "No motion; text is live (not baked into images); body text in ink on warm paper is high contrast; colour is never the only carrier of meaning (highlighted words are also stated in the sentence)."
+  ],
+  "not_investigated": [
+    "sweep A11-002 Floor hits on 17px list items and 13px cover meta: disputed in part: the deck is an A4-landscape page canvas (1123px), so 1920-slide floors over-penalise; 17px here is about 13pt at A4, acceptable for print but small for projection. Kept the diagram-text finding, which fails either way",
+    "contrast: sweep could not verify (no background-only render); spot-check of mono running heads (#6b6a64 on warm paper) estimates about 5:1, passes",
+    "keyboard: no focusable elements; slide navigation shell (keyboard paging) not present in the capture, not tested",
+    "image-only aspects: none; forms: none"
+  ]
+}

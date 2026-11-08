@@ -1,0 +1,46 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:40:00",
+  "tests_run": ["alt-text", "use-of-colour", "non-text-contrast", "text-size-print", "contrast-spot-check", "headings-landmarks", "language"],
+  "findings": [
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "图 1 candlestick chart, tiles 794-00/01",
+      "evidence": "Up and down days are told apart only by fill colour: navy #1b365d (上涨) vs grey (下跌), both solid bodies. Their contrast with each other is about 2:1 and in a black-and-white print they are close to the same dark grey. The legend is two colour swatches.",
+      "before": "Filled navy body = up, filled grey body = down",
+      "after": "Use the print convention: hollow body (stroke only) for up days, filled for down days, or add a pattern; keep the colour as a second cue.",
+      "why": "WCAG 2.2 1.4.1 Use of Color and 1.4.11 Non-text Contrast; T-GRAYSCALE.",
+      "test": "T-GRAYSCALE"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "figure > svg",
+      "evidence": "dom-794.json: the svg has no role, title or aria-label; the figcaption carries the meaning but is not tied to the graphic, so assistive tech reads axis tick labels ('420 400 380… 3/26 4/1…') as loose text in the HTML/PDF tag tree.",
+      "before": "<figure><svg>…</svg><figcaption>图 1. …</figcaption></figure>",
+      "after": "<svg role=\"img\" aria-labelledby=\"fig1-cap\">…</svg><figcaption id=\"fig1-cap\">…</figcaption>; mark tick labels aria-hidden.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content.",
+      "test": "T-DIAGRAM-EARNS"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "风险与总结 2x2 grid and verdict rows",
+      "evidence": "Risk titles (资本开支, 交付疲软, HW3 淘汰, 竞争与关税) and verdict labels (多头核心…新建仓) are styled divs, not headings or a definition list, so the tagged PDF loses the label-to-text relationship.",
+      "before": "<div class=\"risk-title\">资本开支</div><div class=\"risk-desc\">…",
+      "after": "<h3> for risk titles; <dl><dt>多头核心</dt><dd>…</dd></dl> for the verdict rows.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships (applies to tagged PDF export too).",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "lang=\"zh-CN\" and a descriptive title are set; data tables use real th headers.",
+    "Spot-checked contrast: secondary grey #6b6a64 on #f5f4ed is 4.9:1 and the navy accent is 11:1; body is 9.5pt and dense tables 8.5pt, inside the PRN-106 print floors."
+  ],
+  "not_investigated": [
+    "Image-free print medium: focus order, keyboard, targets, reflow and motion are not applicable",
+    "contrast on real pixels: no background-only render for this medium; spot-checked from DOM colours instead",
+    "pagination: capture is a continuous 794px render, so page-break splitting (PRN-109) was not checked"
+  ]
+}

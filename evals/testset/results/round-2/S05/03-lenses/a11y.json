@@ -1,0 +1,76 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "nav (Features, Pricing, Docs, Blog) and footer (Privacy, Terms, Twitter, Status)",
+      "evidence": "dom-1440.json: all 8 <a> elements have no href, so none appears in focus.json (the 7 focus stops are all buttons). A keyboard user cannot reach the page's navigation or legal links at all.",
+      "before": "<a>Features</a>",
+      "after": "<a href=\"#features\">Features</a>, <a href=\"#pricing\">Pricing</a>, real URLs for Docs, Blog, Privacy, Terms, Twitter, Status",
+      "why": "WCAG 2.2 2.1.1 Keyboard and 4.1.2 Name, Role, Value: an <a> without href is not a link and cannot be focused or activated by keyboard.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "all 7 CTAs (\"Get Started Free\", \"Start free trial\", \"Book a demo\", pricing buttons, \"Start your free trial →\")",
+      "evidence": "Each is a <button type=\"submit\"> outside any form (forms.json: no forms) with no href or handler recorded; they are navigation actions exposed with the button role and go nowhere.",
+      "before": "<button class=\"btn-primary\">Start free trial</button>",
+      "after": "<a class=\"btn-primary\" href=\"/signup\">Start free trial</a> (and href=\"/demo\", \"/signup?plan=pro\", \"/contact\" for the others)",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.4.4 Link Purpose: controls that navigate must be links with a destination; a button that does nothing fails every user, and screen-reader users are told it is an action rather than a link.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "testimonial rating and hero chart, 1440 tiles 0-2",
+      "evidence": "The rating is five \"★\" characters with no text equivalent (read as \"black star\" five times); the hero bar chart is eight unlabeled divs with no role, title or alt, so assistive tech gets nothing or noise.",
+      "before": "<div class=\"stars\">★★★★★</div>; chart of bare divs",
+      "after": "<div class=\"stars\" role=\"img\" aria-label=\"Rated 5 out of 5\">; chart wrapper role=\"img\" aria-label=\"Example weekly active users chart\" or aria-hidden=\"true\" if decorative",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: every non-text element needs a text alternative or must be hidden as decoration.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "feature card icons and hero badge",
+      "evidence": "Emoji icons \"📊\", \"🎥\", \"👥\" and the \"✨\" in \"New · AI Insights ✨\" are plain text; screen readers announce \"bar chart\", \"movie camera\", \"busts in silhouette\", \"sparkles\" before each heading or label.",
+      "before": "<div class=\"feature-icon\">📊</div>",
+      "after": "<div class=\"feature-icon\" aria-hidden=\"true\">📊</div> (or remove the icons); <span aria-hidden=\"true\">✨</span>",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative emoji must be hidden from assistive technology.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "testimonial block, 1440 tile 1-2",
+      "evidence": "The quote and its attribution (\"— Sarah Chen, founder of Stitchboard\") are not in <blockquote>/<figure>/<figcaption>; the large purple quote mark is a text glyph.",
+      "before": "div + p + p",
+      "after": "<figure><blockquote><p>…</p></blockquote><figcaption>Sarah Chen, founder of Stitchboard</figcaption></figure>; quote glyph aria-hidden=\"true\"",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships: the relationship between quote and source must be programmatic.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Reflex",
+      "where": "all focus stops (focus.json)",
+      "evidence": "Every button relies on the default ring (outline auto 1px); on the indigo gradient primary buttons and the white button inside the fuchsia CTA band there is no designed :focus-visible style.",
+      "before": "no :focus-visible rule",
+      "after": ":focus-visible { outline: 2px solid #312e81; outline-offset: 2px } and outline-color: #fff inside .final-cta",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast: the ring must reach 3:1 against both the button and the gradient behind it.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Sound heading outline: one h1, h2 per section, h3 per feature and per pricing tier.",
+    "All text visible with reduced motion, observers blocked and scripts off."
+  ],
+  "not_investigated": [
+    "Sweep contrast hits spot-checked: the logo-strip line \"TRUSTED BY 4,000+ INDIE TEAMS\" (#94a3b8 on white, 2.56:1) and the badge text are visibly faint in tile 1440-01; the button hits at 4.3:1 on the gradient are plausible. None disputed.",
+    "Sweep ROB-003 overflow at 375 (pricing card 3 forces 499px) not re-checked beyond the sweep.",
+    "Keyboard operation: no menus, dialogs or tabs; no live Playwright run."
+  ]
+}

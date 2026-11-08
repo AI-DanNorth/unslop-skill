@@ -1,0 +1,82 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A small, specific page for one wine bar: real opening nights, 140 bottles, a \u00a325 monthly tasting and an honest unconnected form, set in a dark serif mood that suits a place open only after five; its weak spots are missing facts and two thin sub-lines, not a stock skeleton.",
+ "tests_run": [
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-FIVE-SECOND",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-OVER-CORRECTION",
+  "T-FRESH-READER",
+  "T-FILLER"
+ ],
+ "findings": [
+  {
+   "rule": "INT-006",
+   "tier": "Reflex",
+   "where": "list section, tasting section and Find us footer, all widths",
+   "evidence": "Three dashed missing-fact slots on one page: \"The full list: link to come.\", \"The next date is to be announced.\", \"Address to be announced\". The data_slots detector did not count them because they are not literal [DATA NEEDED] text.",
+   "before": "\"link to come\" / \"to be announced\" / \"Address to be announced\"",
+   "after": "[DATA NEEDED: street address] at minimum; publish the list link and the next tasting date, or cut the list link until it exists",
+   "why": "More than two slots means the page was built before its content existed; the page's two jobs (come in, book a tasting) both end at a missing fact.",
+   "test": "T-FILLER"
+  },
+  {
+   "rule": "INT-145",
+   "tier": "Reflex",
+   "where": "Find us section, 1440 tile 3-4",
+   "evidence": "Heading \"Find us after five.\" at display size is followed only by \"Address to be announced\" and two footer links; the hero's secondary CTA \"Find us\" and the nav item both land here.",
+   "before": "\"Find us after five.\" + \"Address to be announced\"",
+   "after": "[DATA NEEDED: street address, nearest station, map link]; until then drop the \"Find us\" CTA from the hero and nav",
+   "why": "A section whose heading promises a place and gives none reads as a template slot; the visitor who clicks \"Find us\" learns nothing.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "CPY-005",
+   "tier": "Reflex",
+   "where": "bar/shop pair, 1440 tile 2",
+   "evidence": "Failed T-RIVAL-NAME and T-THREE-LINE: \"The bar / Open a bottle and stay.\" and \"The shop / Take one home.\" stay true for any wine bar with a retail shelf; neither line is picturable to this place or falsifiable.",
+   "before": "\"Open a bottle and stay.\" / \"Take one home.\"",
+   "after": "One concrete fact each, e.g. [DATA NEEDED: corkage or by-the-glass detail for the bar; shop price range or takeaway discount]",
+   "why": "Two equal headings with four-word sub-lines are the only filler on an otherwise specific page.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "INT-176",
+   "tier": "Reflex",
+   "where": "nav pill status, all widths",
+   "evidence": "Static text \"Open tonight from 5pm\" sits in the header, while the hours table says Monday to Wednesday are \"Closed\". The capture shows no script making it conditional.",
+   "before": "\"Open tonight from 5pm\"",
+   "after": "Compute it from the day (\"Open tonight from 5pm\" / \"Closed tonight, open Thursday\"), or replace with the fixed \"Thu to Sun from 5pm\"",
+   "why": "A status line that is false three nights a week is invented state, and it is the first fact many visitors read.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "TYP-001",
+   "tier": "Finish",
+   "where": "h1 \"Natural wine after five.\" vs h2 \"Four nights a week, Thursday to Sunday.\", 1440",
+   "evidence": "The hours h2 renders at the same 84px as the h1 (sweep flat_hierarchy hit) and, being two long lines, is visually heavier than the hero on tile 2.",
+   "before": "h2 at --text-display",
+   "after": "Set the hours h2 to --text-section (clamp(2rem, 2.5vw + 1rem, 3.5rem)) like the other h2s",
+   "why": "Context for the sweep hit: the hours line out-shouts the hero, so the page has two first reads.",
+   "test": "T-FIVE-SECOND"
+  }
+ ],
+ "strengths": [
+  "Hours shown as a seven-day row with closed days dimmed and the open run marked by a rule: a fact turned into the page's most specific visual.",
+  "Concrete numbers that only this bar can say: 140 bottles, four nights, \u00a325 a place, once a month.",
+  "The email form fails honestly: \"Nothing was sent: this form is not connected yet.\"",
+  "Dark warm palette, Young Serif display and one salmon accent fit a bar that opens after five; it reads as a chosen mood, not the neon dark-single-accent default.",
+  "Photo credits with licences in the footer."
+ ],
+ "not_investigated": [
+  "Photography: all three Wikimedia images were blocked in capture; the gradient frames are fallbacks, not design choices, so T-DELETION on imagery was not judged.",
+  "Fonts were shimmed (Young Serif, Instrument Sans); the render is assumed close to intended."
+ ]
+}

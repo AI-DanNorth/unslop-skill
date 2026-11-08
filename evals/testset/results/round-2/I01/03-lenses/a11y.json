@@ -1,0 +1,30 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:00:00",
+  "tests_run": [
+    "visible-contrast",
+    "visible-text-size",
+    "use-of-colour"
+  ],
+  "findings": [
+    {
+      "rule": "A11-002",
+      "tier": "Finish",
+      "where": "hero phone mock secondary lines; medicine-record table header",
+      "evidence": "The mock's second lines ('From Lower Meadow, 07:40', '8 lambs, 21 day withdrawal') and 'Tuesday 21 October' render at about 12-13px in mid grey on white, and the table column heads ('Date', 'Product', 'Animals', 'Clear') at about 13px. These carry the product's key facts (withdrawal days, clear dates) at the smallest size on the page.",
+      "before": "secondary row text ~12px grey",
+      "after": "Set row sub-lines and table heads at 14px minimum (16px for the withdrawal fact) and darken the grey to at least 4.5:1",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum) at small sizes and the A11-002 text-size floor; estimated from pixels, not measured from CSS.",
+      "test": "visible-text-size"
+    }
+  ],
+  "strengths": [
+    "Visible contrast is generally strong: dark green ink on cream, white on #2f5a32 buttons, yellow numerals on the green band estimate about 4.5:1 at large size (passes 3:1).",
+    "Footer links 'Privacy' and 'Contact' are underlined, not colour-only; status pill 'All entries complete' carries text, not just a green fill; check icons sit beside text."
+  ],
+  "not_investigated": [
+    "image-only item: alt text, link purpose, focus order and visibility, keyboard operation, headings and landmarks, forms and errors, reflow at 320px and motion cannot be checked without the DOM or a live page",
+    "contrast values are estimated from sampled pixels (band #2f5a32, page #f4f1e9, card #fefdf7), not measured by the sweep",
+    "target sizes: buttons look 48px+ tall at 1440; phone-width targets not available"
+  ]
+}

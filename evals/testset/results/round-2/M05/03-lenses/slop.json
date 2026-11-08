@@ -1,0 +1,90 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:05:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The slide has a real organising idea (three big benchmark figures, each with its own three-row comparison) and restrained hierarchy, but it is dressed in a stock 'premium' kit (tracked-caps eyebrows, hairline Inter 200, terracotta dot ornaments on every decimal) and its headline is a generic 'Breakthrough' while the actual argument sits in 13px grey at the bottom.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER",
+    "T-GHOST-DECK",
+    "T-SO-WHAT"
+  ],
+  "findings": [
+    {
+      "rule": "INT-101",
+      "tier": "Floor",
+      "where": "comparison rows under each figure",
+      "evidence": "Comparator scores are implausible for the named models: \"Claude 3.5 88.2\" and \"GPT-4o 83.6\" on AIME 2025, when those models are publicly reported far lower on AIME. No source is given beyond \"Benchmark Evaluation 2025 / Official Results\" at 10px. The +7.5 to +20.5 margin in the insight line is derived from these figures.",
+      "before": "Claude 3.5 88.2 / GPT-4o 83.6 (AIME 2025); Claude 3.5 53.3% / GPT-4o 48.2% (SWE-bench Verified)",
+      "after": "[DATA NEEDED: sourced comparator scores with model version and evaluation date] and a visible source line, e.g. \"Source: <report>, <date>\"",
+      "why": "Unsourced, likely invented competitor numbers turn a benchmark slide into fabricated proof; the insight line's margins inherit the error.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-192",
+      "tier": "Reflex",
+      "where": "title area vs footer insight",
+      "evidence": "Failed T-GHOST-DECK / T-SO-WHAT: the title \"Coding Capability Breakthrough.\" is a label any model launch could use (T-RIVAL-NAME holds for any vendor), while the assertion \"open-source models can compete at the frontier ... margins of +7.5 to +20.5 points\" is 13px grey text at the bottom-left.",
+      "before": "Coding Capability Breakthrough.",
+      "after": "Promote the claim to the title, e.g. \"GLM-4.7 leads all three coding benchmarks by 7.5 to 20.5 points\" (once the comparators are sourced)",
+      "why": "Read as a ghost deck, the title says nothing only this slide can say; the point is in the smallest text.",
+      "test": "T-GHOST-DECK"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "top-left and bottom-right",
+      "evidence": "Wide-tracked uppercase micro labels: \"GLM-4.7 OPEN-SOURCE MODEL\" (10px, letter-spaced), \"ZHIPU AI\" preceded by a terracotta hairline rule, plus tracked caps metric names \"SWE-BENCH VERIFIED\". T-DELETION: the eyebrow repeats what the title and figures already say.",
+      "before": "G L M - 4 . 7   O P E N - S O U R C E   M O D E L",
+      "after": "Drop the eyebrow; put \"GLM-4.7\" in the title and the source in a legible footer line",
+      "why": "Tracked-caps eyebrows and the rule-plus-wordmark sign-off are the stock 'luxury slide' kit.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero figures and title period",
+      "evidence": "Terracotta (#d4a574) dot replaces the decimal point in \"95.7\", \"73.8\", \"87.4\" and ends the title \"Breakthrough.\"; with the off-white ground and caps eyebrows this is 3 tells of the warm-paper family (terracotta_accent, eyebrows, near-cream ground) on one slide. The sweep did not cluster it because the display face is sans.",
+      "before": "95<span class=dot>.</span>7 in terracotta",
+      "after": "Plain decimals in the figure colour; spend the single accent only on the GLM-4.7 rows, where it encodes 'ours'",
+      "why": "An ornamental accent on punctuation is decoration; the accent already has a job in the bars.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "LAY-004",
+      "tier": "Finish",
+      "where": "vertical bands at 1920x1080: y 220-430 and y 700-930",
+      "evidence": "About 210px of empty band above the figures and 230px below them; the comparison bars are 152px wide on a 1920px canvas while labels drop to 11px.",
+      "before": "Figures centred in a band of empty space, comparison bars 152px wide",
+      "after": "Use the band: widen the comparison bars to ~400px and raise labels to 18px+, or move the insight up beneath the figures",
+      "why": "The evidence (the bars) is the smallest thing on the slide while empty bands take a third of the height.",
+      "test": "T-SO-WHAT"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "subtitle",
+      "evidence": "T-THREE-LINE fails: \"First open-source model to achieve state-of-the-art across all major coding benchmarks\" is not picturable, the 'all major' scope is unfalsifiable from three benchmarks, and the comparators are older proprietary models, not the state of the art.",
+      "before": "First open-source model to achieve state-of-the-art across all major coding benchmarks",
+      "after": "Name the scope exactly: \"Highest open-weights scores on AIME 2025, SWE-bench Verified and τ²-Bench as of [DATA NEEDED: date]\"",
+      "why": "A superlative that overreaches its own evidence reads as generated launch copy.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "One clear structure: three large figures, each paired with its own three-row comparison, aligned on a strict three-column grid.",
+    "Bars are drawn to scale from zero (Claude 88.2 bar is about 92% of the 95.7 bar) and GLM-4.7 rows are the only accented rows, so the accent encodes meaning there."
+  ],
+  "not_investigated": [
+    "No 00-contract.md: the 'Build Studio Style' in the page title suggests a chosen house style, but no brief records it, so the warm-paper tells are treated as unchosen.",
+    "Benchmark figures for GLM-4.7 itself were not independently verified."
+  ]
+}

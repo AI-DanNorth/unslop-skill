@@ -1,0 +1,44 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "link-button-purpose",
+  "focus-order",
+  "use-of-colour",
+  "non-text-contrast",
+  "reflow",
+  "forms",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "h1 'Welcome'",
+   "evidence": "The only heading is 'Welcome'; it does not describe the page's content (an invoice table), so heading and title navigation ('Welcome' is also the <title>) give no orientation.",
+   "before": "<title>Welcome</title> / <h1>Welcome</h1>",
+   "after": "<title>Invoices - [Product]</title> / <h1>Invoices</h1>",
+   "why": "WCAG 2.2 2.4.2 Page Titled and 2.4.6 Headings and Labels.",
+   "test": "T-TAB-THROUGH"
+  },
+  {
+   "rule": "A11-001",
+   "tier": "Reflex",
+   "where": "div.scroller (table region) at 1440 and 375",
+   "evidence": "The Date column is cut at the region edge at 1440 and Status/Amount/Date are off-screen at 375 with no visible scroll cue (no shadow, scrollbar or 'scroll for more'); the region is focusable with aria-label 'Invoices, scrolls horizontally' and a 3px ring (focus/01-on.png), so keyboard and screen-reader users are covered but sighted pointer users may not know columns exist.",
+   "before": "overflow-x: auto with no visual affordance",
+   "after": "Edge shadow on the scroll container, or reflow rows into stacked cards below 600px",
+   "why": "WCAG 2.2 1.4.10 Reflow (two-dimensional scroll is allowed for data tables, but content must be discoverable).",
+   "test": "T-PHONE-PARITY"
+  }
+ ],
+ "strengths": [
+  "Table has a <caption>, header cells, and a focusable scroll region with an accessible name and a 3px #1d4ed8 focus ring; the checkbox has a programmatic label."
+ ],
+ "not_investigated": [
+  "th scope attributes not recorded in the capture.",
+  "Sweep skip-link hit agreed; low impact on this page."
+ ]
+}

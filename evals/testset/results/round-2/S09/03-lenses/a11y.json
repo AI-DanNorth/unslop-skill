@@ -1,0 +1,65 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:40:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "logo strip svgs, tile 1440-00",
+      "evidence": "dom-1440.json: five svg.h-8 wordmarks (Stripe, Notion, Linear, Vercel, Figma) have no accessible name, role or title; a screen reader gets 'Trusted by industry leaders' followed by nothing.",
+      "before": "<svg class=\"h-8 w-auto\">…</svg>",
+      "after": "<svg role=\"img\" aria-label=\"Stripe\">…</svg> for each (if the strip stays).",
+      "why": "WCAG 2.2 1.1.1 Non-text Content.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "testimonial star ratings",
+      "evidence": "Each card shows five svg stars (svg.w-5.h-5) with no text alternative; the rating exists only visually.",
+      "before": "<div><svg>★</svg>×5</div>",
+      "after": "<div role=\"img\" aria-label=\"Rated 5 out of 5\"> with the svgs aria-hidden.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "hero 'Watch Demo'",
+      "evidence": "href '#demo' but no element with id 'demo' exists in the DOM; activating it does nothing. 'Get Started' and 'Start Free Trial' both go to '#cta', which only repeats the same buttons.",
+      "before": "<a href=\"#demo\">Watch Demo</a>",
+      "after": "Link to a real video (with captions) or a demo page; give the trial buttons a real signup href.",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "pricing and CTA buttons",
+      "evidence": "focus.json: 'Get Started', 'Start Free Trial' (x2), 'Contact Sales', 'Schedule Demo' are buttons with no href or form; plus 12 footer links to '#'. Two different 'Start Free Trial' controls share a name (hero link to #cta, Pro-tier button doing nothing).",
+      "before": "<button>Start Free Trial</button> (no action)",
+      "after": "Real links (<a href=\"/signup?plan=pro\">Start Pro free trial</a>) with plan-specific names.",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 3.2.4 Consistent Identification.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "page",
+      "evidence": "nav and footer but no main (sweep) and no skip link; the fixed floating nav (nav.fixed.top-4) is 77px tall and could cover focused section headings when jumping via #features/#pricing (no scroll-margin-top observed).",
+      "before": "<nav class=\"fixed top-4\">…<section id=\"features\">",
+      "after": "Skip link + <main id=\"main\">; section[id] { scroll-margin-top: 6rem }.",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks and 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Focus order (24 stops) follows the visual order; social/brand links have text names."
+  ],
+  "not_investigated": [
+    "disputed: all 1.00-1.01:1 contrast hits (nav 'Get Started', hero 'Start Free Trial', Pro tier text, CTA band) are a capture artefact: the Tailwind v3 config defining bg-cta/bg-primary/bg-text was ignored by the v4 shim, so dark fills never rendered. Re-capture with the real Tailwind runtime before reporting contrast",
+    "reflow, non-text contrast and focus-ring visibility not judged for the same reason",
+    "live keyboard tests not run"
+  ]
+}

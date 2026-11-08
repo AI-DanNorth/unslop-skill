@@ -1,0 +1,91 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:45:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A deliberate paper-deck system (Charter serif, warm paper, navy accent, mono running heads) carrying an argument with concrete, domain-specific claims and diagrams that teach (the loop, a traced turn, pseudocode); what reads as default is the identical three-numbered-points layout on every content slide and unsourced figures dressed as data.",
+  "tests_run": [
+    "T-GHOST-DECK",
+    "T-RIVAL-NAME",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-SO-WHAT",
+    "T-DELETION",
+    "T-DIAGRAM-EARNS",
+    "T-FRESH-READER",
+    "T-FIVE-SECOND"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-127",
+      "tier": "Floor",
+      "where": "slide 5 'Density beats length', bar chart 'LOADING STRATEGY vs ACCURACY'",
+      "evidence": "The bar for 53% is about 95px tall and the bar for 85% about 195px tall (tile 1920-03): a 2.05x height ratio for a 1.6x value ratio. From the tick positions (85% at y195, 53% at y296, axis at y390) the implied zero sits below the axis, so the value axis starts near 23%, not 0.",
+      "before": "bars on a truncated axis, ticks only at 53% and 85%",
+      "after": "Start the bar axis at 0% (ticks 0/25/50/75/100), or switch to a dot plot if the range must be zoomed",
+      "why": "A truncated bar axis exaggerates the gain; the rule treats it as an invented metric.",
+      "test": "T-DIAGRAM-EARNS"
+    },
+    {
+      "rule": "INT-112",
+      "tier": "Floor",
+      "where": "slide 5 chart and claim; slide 4 metrics row",
+      "evidence": "Failed T-THREE-LINE on sourcing: 'Flat loading 53% / Layered loading 85%' accuracy and 'Context Rot sets in around 300–400K tokens regardless of the model' have no source, benchmark or date anywhere on the slide or deck. The sweep flagged the slide-4 stat band (INT-007: 20 / 4 / 10x); the chart on slide 5 is a separate unsourced data series it did not flag.",
+      "before": "Accuracy: Flat 53%, Layered 85% (no source)",
+      "after": "[DATA NEEDED: benchmark name, model, task set and date for the 53%/85% figures and the 300–400K threshold] as a source line under the chart; otherwise label it 'illustrative' and draw it without numbers",
+      "why": "A chart with exact percentages reads as measured evidence; unsourced it is fabricated data.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLD-135",
+      "tier": "Reflex",
+      "where": "slides 2, 4, 5, 6, 7 (body column)",
+      "evidence": "Every content slide uses the same recipe: mono eyebrow, serif title, one-sentence claim, then a numbered list of 3 or 4 points with blue numerals, plus a right-hand visual. The points are not sequential ('Control flow lives in the tools...', 'Workflow vs Agent...'), so the 1/2/3 numbering is decoration (SLP-002) and the rhythm never breaks across 5 slides (SLD-149).",
+      "before": "claim + '1. 2. 3.' list on five consecutive content slides",
+      "after": "Keep numbering only where order matters (slide 2 loop steps); turn one slide into a single big claim or a quote, and let slide 6's 'four kinds of memory' become a 2x2 or table",
+      "why": "The repeated three-point template is the deck's one default; it flattens a varied argument.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLD-128",
+      "tier": "Reflex",
+      "where": "slide 8 ending 'Protocol first. Then parallelism.'",
+      "evidence": "Failed T-GHOST-DECK: titles in order read as an argument (simple core, harness over hardware, density over length, state outside context, pseudocode over syntax) until the close, which concludes on 'parallelism', a topic no slide raises. The ending does not follow from the deck.",
+      "before": "\"Protocol first. Then parallelism.\"",
+      "after": "A close that restates the deck's actual through-line, e.g. 'Fix the harness before the model' (from slide 4 and the ending's own sub-line), or add the missing slide on parallelism",
+      "why": "A conclusion that introduces a new idea reads as a stock sign-off line.",
+      "test": "T-GHOST-DECK"
+    },
+    {
+      "rule": "CPY-150",
+      "tier": "Finish",
+      "where": "cover title and sub-line",
+      "evidence": "T-FRESH-READER generic lines: 'Things you don't know about Agents' (clickbait title that fits any talk on any topic) and 'what actually moves the needle in production' (dead metaphor plus 'actually'). The cover is the weakest slide in an otherwise specific deck.",
+      "before": "\"Things you don't know about Agents\" / \"what actually moves the needle\"",
+      "after": "A title that states the thesis, e.g. 'The loop is 20 lines; the harness is the work' (from slides 2 and 4)",
+      "why": "The cover should carry the argument the ghost deck already has.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "IMG-102",
+      "tier": "Finish",
+      "where": "cover visual (concentric circles 'Agent LOOP')",
+      "evidence": "Failed T-DELETION: the three rings with a partial navy arc and 'Agent / LOOP' at the centre carry no label, step or data; removing it loses nothing, and slide 2 draws the actual loop.",
+      "before": "decorative ring diagram on the cover",
+      "after": "Remove, or preview the real loop (PLAN, ACT, OBSERVE, REFLECT) from slide 2 at cover scale",
+      "why": "Decorative diagram where a real one exists one slide later.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Concrete, falsifiable claims specific to the subject: 'A working Agent loop fits in about 20 lines of code', 'Procedural: SKILL.md files', 'Episodic: JSONL logs', 'Semantic: MEMORY.md'. Keep them.",
+    "The sequence diagram 'One turn, traced' (User / Agent / Tool: ask, invoke(query), result, answer) and the commented pseudocode both pass T-DIAGRAM-EARNS: they teach what a paragraph would not.",
+    "Restrained, consistent system: one serif, one mono, one navy accent, running head and page number placed identically; it reads as a chosen deck style, not a default."
+  ],
+  "not_investigated": [
+    "Sweep CPY-005 'harness' hits disputed: in agent engineering 'harness' is the literal technical term (CPY-147 literal trade use), not a buzzword",
+    "Look family: warm paper, serif display, mono eyebrows and numbering touch warm-paper-serif, but the deck declares itself a kami-system demo (cover meta) and uses navy, not terracotta; treated as a deliberate house style",
+    "Canvas: slides are A4 landscape (1123x794) rendered inside a 1920 viewport; the white right side is outside the deck and not judged",
+    "copy voice: no contract or speaker notes supplied"
+  ]
+}

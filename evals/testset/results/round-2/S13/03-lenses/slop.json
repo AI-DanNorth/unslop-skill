@@ -1,0 +1,76 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:30:00",
+  "overall_read": "generated",
+  "confidence": "low",
+  "overall_reason": "There is nothing made here: three Xiaohongshu canvases of placeholder sentences that describe themselves, in default sans-serif on white, with no subject, idea or cover hook. It does not match any AI look family; it reads as an unfinished, unchecked output whose main failures are layout breakage (clipped, overlapping, covered and seam-crossing text) rather than style tells.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER",
+    "T-THUMBNAIL"
+  ],
+  "findings": [
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "all three canvases",
+      "evidence": "Every text line is placeholder that names its own defect: \"小字标签\" (small label), \"这是一段折成好几行的正文，字号太小……\" (a paragraph whose font is too small), \"跑出页面的字\", \"压在下面的字\", \"被色块盖住的字\", \"网格塌下来压到这行说明\", \"这一行跨过了接缝\". The sweep's placeholder detector did not catch Chinese self-describing filler.",
+      "before": "Self-describing placeholder sentences",
+      "after": "[DATA NEEDED: the post's title, body copy and images]",
+      "why": "Placeholder residue on a shippable canvas; nothing on it belongs to any account or post.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SOC-130",
+      "tier": "Floor",
+      "where": "canvas 1, right edge (x 1100-1364 of a 1242 canvas) and lower-left",
+      "evidence": "\"跑出页面的字\" starts at x 1100 and is 264px wide, so it is cut at the 1242 edge (tile 1242-00 shows \"跑出页\" and half a glyph); \"压在下面的字\" and \"压在上面的字\" are absolutely positioned 40px/10px apart and print on top of each other; \"被色块盖住的字\" at y 1220 sits under the #cc0000 block (60,1200,500x120) and is invisible.",
+      "before": "Absolutely positioned lines with fixed x/y and no collision check",
+      "after": "Lay text in normal flow inside an 80% safe zone (x 124-1118) and keep blocks out of text boxes; re-export until nothing clips or overlaps",
+      "why": "Clipped, stacked and hidden text is the plainest sign nobody looked at the render before shipping.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SOC-124",
+      "tier": "Reflex",
+      "where": "canvas 3 (section.xhs-strip, 2484 wide)",
+      "evidence": "\"这一行跨过了接缝\" spans x 1100-1452 across the 1242 seam of a two-panel strip; when the feed splits the strip, the line is cut in half on both images.",
+      "before": "Text at x 1100 on a 2484 strip",
+      "after": "Keep text wholly inside one panel (x <= 1118 or >= 1366); only the image subject may straddle the seam",
+      "why": "Panorama strips must survive being split; text across a seam breaks on both cards.",
+      "test": "T-THUMBNAIL"
+    },
+    {
+      "rule": "SOC-109",
+      "tier": "Reflex",
+      "where": "canvas 1 label and body",
+      "evidence": "\"小字标签\" is 24px and the body paragraph 34px on a 1242px canvas; the canvas shrinks about 3x in the phone feed, so these read at roughly 8px and 11px.",
+      "before": "label 24px, body 34px",
+      "after": "label >= 32px, body >= 40px on a 1242 canvas",
+      "why": "Type that cannot be read in the feed is filler, whatever it says.",
+      "test": "T-THUMBNAIL"
+    },
+    {
+      "rule": "CON-114",
+      "tier": "Reflex",
+      "where": "canvas 1 as cover",
+      "evidence": "Failed T-FIVE-SECOND: the first canvas has no title, no hero image and no hook, only a small label and a paragraph; a reader cannot tell what the post is about, who it is for, or why to swipe. Canvas 2's six dark squares (a collapsed grid) overlap the caption \"网格塌下来压到这行说明\".",
+      "before": "Label + paragraph + scattered lines on white",
+      "after": "Cover = one hook headline matching the post title plus one real visual (SOC carousel cover rules); later cards carry one point each",
+      "why": "Without a narrative role per card the set is a default dump of text boxes.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "No 00-contract.md and no real content, so T-RIVAL-NAME, T-MIRROR and T-THREE-LINE had nothing to test beyond the placeholder lines.",
+    "Look-family check: none apply (white ground, default sans-serif, one red block); slop here is absence of design, not a default style."
+  ]
+}

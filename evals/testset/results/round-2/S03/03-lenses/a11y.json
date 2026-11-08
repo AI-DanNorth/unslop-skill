@@ -1,0 +1,77 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:30:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "a.btn-primary 'Join the waitlist →', 'Get early access →', a.pill 'Get started →'",
+      "evidence": "No :focus-visible style; focus.json shows the UA 'auto 1px rgb(117,117,117)' ring on the gradient buttons. focus/07-on.png shows a hairline grey edge on the #8b5cf6-to-#ec4899 fill that is barely distinguishable from the button's own edge and glow. On the dark nav links the UA ring is a faint grey (focus/00-on.png): visible but thin.",
+      "before": "UA default outline on gradient pills with a violet glow",
+      "after": ".btn:focus-visible, .pill:focus-visible, .nav a:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast (ring 3:1 against the adjacent button fill and page).",
+      "test": "non-text-contrast"
+    },
+    {
+      "rule": "A11-110",
+      "tier": "Floor",
+      "where": "nav.nav and hero CTAs at 375px",
+      "evidence": "Verified sweep ROB-003: at 375 the desktop nav stays on one row, the page is 694px wide, 'Get started' becomes a 84px circle at x610-694 off-canvas, and the hero column is cut at x375 (tile 375-00). The hero buttons wrap their labels ('Join the / waitlist →', 'Watch / demo') inside fixed-height boxes, clipping text. No menu button exists.",
+      "before": ".nav-links { display: flex } at every width",
+      "after": "@media (max-width: 720px) { .nav-links { display: none } } plus a <button aria-expanded> menu; .btn { white-space: nowrap; height: auto; min-height: 48px }",
+      "why": "WCAG 2.2 1.4.10 Reflow.",
+      "test": "reflow"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Reflex",
+      "where": "all 10 links",
+      "evidence": "Every link has href=\"#\": 'Pricing', 'Docs', 'Join the waitlist →', 'Get early access →' all go nowhere; names promise destinations that do not exist, and '→' is read as 'right arrow' in each name.",
+      "before": "<a href=\"#\">Join the waitlist →</a>",
+      "after": "Real hrefs or a <form> for the waitlist; move the arrow into CSS (::after with content: '' / alt text) or aria-hidden span",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 2.5.3 Label in Name (keep the visible text as the name, without glyph noise).",
+      "test": "link-button-purpose"
+    },
+    {
+      "rule": "A11-113",
+      "tier": "Reflex",
+      "where": "div.eyebrow '🚀 Powered by AI', div.icon (⚡ 🔒 📈), logo '✨'",
+      "evidence": "Emoji are plain text with no aria-hidden: screen readers announce 'rocket', 'high voltage', 'locked', 'chart increasing', 'sparkles' around headings and the brand name.",
+      "before": "<div class=\"icon\">⚡</div>",
+      "after": "<span aria-hidden=\"true\">⚡</span> (or remove the emoji)",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative symbols hidden from assistive tech.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "h2 'Everything you need to ship faster', 'Ready to transform how your team builds?'",
+      "evidence": "Section headings do not describe their sections; in a heading list they give no topic.",
+      "before": "<h2>Everything you need to ship faster</h2>",
+      "after": "<h2>Features</h2> or headings naming the actual capabilities ([DATA NEEDED])",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels.",
+      "test": "headings-landmarks"
+    }
+  ],
+  "strengths": [
+    "lang and title set; heading levels step h1 > h2 > h3; body text (#a1a1aa-ish on #0a0a14) and gradient h1 stops pass contrast."
+  ],
+  "not_investigated": [
+    "verified sweep A11-001 Floor hits: white 15px text on gradient buttons measures about 3.8:1 (real); nav pill text at opacity .6 about 2.3:1 (real); 'Powered by AI' #8b5cf6 12px on violet glow about 2.6:1 (real); logo-strip names at opacity .36 about 3.3:1 (real, though if they are logos they would be exempt; here they are text)",
+    "motion: only 0.2s 'all' hover transitions, no autoplay; sweep skipped reduced motion as no animation",
+    "keyboard: no menus, dialogs or tabs; 'Watch demo' has no behaviour",
+    "forms: none (waitlist has no form)",
+    "no <main> and no skip link: sweep-reported, not repeated"
+  ]
+}

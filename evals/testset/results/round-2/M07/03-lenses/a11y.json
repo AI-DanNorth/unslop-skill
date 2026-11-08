@@ -1,0 +1,52 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "focus-order",
+  "use-of-colour",
+  "non-text-contrast",
+  "motion",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-001",
+   "tier": "Floor",
+   "where": "gradient key words ('agent era', 'one spine') and gradient metric figures",
+   "evidence": "Text uses a #3b5bff to #d94cff gradient fill; the magenta end (#d94cff) on white is about 3.3:1. Headline words pass the 3:1 large-text bar, but the gradient is also applied to card metrics and the ask-box figures where the light end falls near 3:1 on tinted card backgrounds.",
+   "before": "background-clip: text gradient #3b5bff -> #d94cff",
+   "after": "Solid #3b5bff (or darker) for figures; keep any gradient to >= 4.5:1 at its lightest stop",
+   "why": "WCAG 2.2 1.4.3 Contrast (Minimum) at the worst gradient stop (T-GRADIENT-STOPS).",
+   "test": "T-GRADIENT-STOPS"
+  },
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "deck structure",
+   "evidence": "No <main> or landmarks; each slide is a <section> with no accessible name; the 180px ghost numerals ('01'...'07') are text, so a screen reader reads 'zero one, PROBLEM, Every design tool...' on every slide.",
+   "before": "<span class=\"section-num\">01</span>",
+   "after": "aria-hidden=\"true\" on .section-num and the cover blob; aria-label=\"Slide 2 of 10: Problem\" on each section; wrap the deck in <main>",
+   "why": "WCAG 2.2 1.3.1 Info and Relationships and 1.1.1 Non-text Content (decorative content hidden).",
+   "test": "T-GHOST-DECK"
+  },
+  {
+   "rule": "A11-006",
+   "tier": "Floor",
+   "where": "deck navigation",
+   "evidence": "focus.json is empty: no focusable element on a 10-slide HTML deck. If the deck pages by arrow keys there is no visible or focusable control and no announced slide change; the '1 / 10' counter is plain text.",
+   "before": "No focusable controls; counter as text",
+   "after": "Prev/next <button>s with aria-labels and an aria-live=\"polite\" slide counter",
+   "why": "WCAG 2.2 2.1.1 Keyboard and 4.1.3 Status Messages.",
+   "test": "T-TAB-THROUGH"
+  }
+ ],
+ "strengths": [
+  "prefers-reduced-motion disables all anim-* entrance animations, and every slide's text is present with scripts off or observers blocked (hidden.json 2561/2561 chars in all conditions)."
+ ],
+ "not_investigated": [
+  "Live keyboard paging (arrow keys) not tested.",
+  "Sweep text-size hits (12-16px on a 1920 canvas) agreed and not repeated."
+ ]
+}

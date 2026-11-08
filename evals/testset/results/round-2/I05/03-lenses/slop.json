@@ -1,0 +1,88 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:50:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The retention cohort table in the hero is a genuinely good product picture, but it sits on a stock SaaS skeleton (product-mock hero, fake logo strip, three feature rows, unsourced stat band, three pricing tiers, 'Ready to get started?' band, link-farm footer) with rival-swap-proof copy at every heading; the de-carded feature rows and navy-on-grey palette swap one default for another.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, section order (image.png top to bottom)",
+      "evidence": "Failed T-STOCK-ORDER: product-mock hero, logo strip (\"Trusted by fast-moving teams at\"), three feature rows, four-figure stat band, three pricing tiers with a highlighted middle, CTA band, four-column footer with newsletter: 7 stock sections in stock order.",
+      "before": "Hero > logos > 3 features > stat band > 3 tiers > CTA band > footer",
+      "after": "Build the page around the cohort table: walk one real question (\"why did the Aug 4 cohort hold better?\") through the product, and cut logos, stat band and CTA band unless real data exists",
+      "why": "Seven stock sections in order reads as a default page however specific the hero visual is.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "logo strip under hero; Team workspaces row",
+      "evidence": "Customer names \"Northwind\", \"Lumen\", \"Vertex\", \"Quanta\", \"Beacon\", \"Atlas\" are the default fake-brand set (Northwind is Microsoft's sample-database company), set as plain bold text; \"Maya annotated Tuesday\" uses a default-cast first name.",
+      "before": "Trusted by fast-moving teams at Northwind / Lumen / Vertex / Quanta / Beacon / Atlas",
+      "after": "[DATA NEEDED: real customer logos with permission] or remove the strip",
+      "why": "Invented customer names presented as social proof are fabricated proof.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-106",
+      "tier": "Floor",
+      "where": "dark stat band mid-page",
+      "evidence": "\"12,000+ Teams onboard\", \"8B Events / month\", \"4.9 Average rating\", \"99.99% Uptime SLA\": four round, unsourced figures over one-word labels; \"4.9 Average rating\" names no platform; the CTA repeats \"Join thousands of teams\".",
+      "before": "12,000+ / 8B / 4.9 / 99.99%",
+      "after": "[DATA NEEDED: sourced figures with as-of date and rating source] or delete the band",
+      "why": "An unsourced stat strip is invented proof; the hero already shows better evidence (the cohort table).",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "h1, hero sub-line, section heads, CTA band",
+      "evidence": "T-FRESH-READER lines that fit any SaaS site: \"Product analytics that just works\" (h1), \"Seamlessly powerful, beautifully simple.\", \"Everything you need to understand your users\", \"Simple, transparent pricing\", \"Ready to get started?\". T-RIVAL-NAME: replace Cadence with Amplitude or Mixpanel and every head stays true.",
+      "before": "Product analytics that just works",
+      "after": "A head built from what the hero visual shows, e.g. \"See which signup week stuck, without writing SQL\" (only if Cadence can back it)",
+      "why": "Heads and hero are the most-read lines; all of them are stock phrases, including the 'seamlessly' slop word.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-006",
+      "tier": "Reflex",
+      "where": "features section and every section top",
+      "evidence": "Failed T-OVER-CORRECTION: the card grid has become three hairline rows each ending in a tiny decorative chart (sparkline \"events in the last hour\", three bars \"visit, sign up, invite\") with no axes or values; every section opens with the same 2px navy rule under a bold head (features, pricing, footer). T-DELETION: removing the mini charts loses nothing.",
+      "before": "Head + 2px rule + three equal rows each with a micro-viz",
+      "after": "Give one feature the room the cohort table has (a real funnel with numbers) and let the other two be a sentence each; vary the section openers",
+      "why": "The substitute habit (rules and micro-viz instead of cards) multiplies across the page and is itself a recognisable default.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "INT-107",
+      "tier": "Reflex",
+      "where": "hero proof row",
+      "evidence": "\"No SQL required\", \"5 min to first chart\", \"SOC 2 compliant\" set as a three-up mini stat row; \"5 min\" and \"SOC 2\" are unsourced claims presented as figures.",
+      "before": "No SQL / 5 min / SOC 2",
+      "after": "[DATA NEEDED: SOC 2 report type and date; measured time-to-first-chart] or fold the true ones into the sub-line",
+      "why": "Bare figures as badges read as invented specifics unless the page backs them.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The hero 'Weekly retention by signup week' cohort table is a real, legible product picture: plausible decaying percentages, a labelled legend (Fewer ... More still active), and printed values in every cell. Keep it and build around it.",
+    "Restrained palette (navy, one blue ramp, cool grey) with no gradients, glows or icon tiles; pricing tiers list concrete limits."
+  ],
+  "not_investigated": [
+    "Image-only item: no DOM, fonts, or mechanical sweep; look-family tells judged by eye only.",
+    "No 00-contract.md: brand palette and copy ownership unknown."
+  ]
+}

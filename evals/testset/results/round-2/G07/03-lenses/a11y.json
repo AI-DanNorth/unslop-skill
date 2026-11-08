@@ -1,0 +1,68 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T20:30:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-button-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-errors", "motion-timing", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-124",
+      "tier": "Floor",
+      "where": ".btn:focus-visible, #name, #notify (focus.json stops 00-04)",
+      "evidence": "focus.json shows outline: none on every control with the ring drawn only as box-shadow (0 0 0 2px #fff, 0 0 0 4px #2563eb). The ring is visible in the normal render (focus/03-on.png) but box-shadow is removed in Windows forced-colours mode, leaving no focus indicator.",
+      "before": ".btn:focus-visible { outline: none; box-shadow: var(--shadow-focus-ring); }",
+      "after": ".btn:focus-visible { outline: 2px solid transparent; outline-offset: 2px; box-shadow: var(--shadow-focus-ring); } (transparent outline becomes visible in forced-colours) or use outline: 2px solid var(--color-action-primary); outline-offset: 2px",
+      "why": "WCAG 2.2 2.4.7 Focus Visible (in forced-colours / high-contrast mode); A11-174 forced-colors.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-168",
+      "tier": "Floor",
+      "where": "KPI deltas (Revenue, Active users, Churn, NPS)",
+      "evidence": "Direction is carried by arrow icon plus colour plus visually hidden 'increase'/'decrease' text (bodyText includes \"12% increase\"), so 1.4.1 is met for direction. But sentiment is carried by colour only and is wrong for Churn: a decrease shown in the error red. A colour-relying reader is told churn got worse.",
+      "before": "Churn: red ↘ 2% (sr text: \"2% decrease\")",
+      "after": "Colour by sentiment and add a visible word: \"↘ 2% (improved)\"; sr text \"down 2%, an improvement\"",
+      "why": "WCAG 2.2 1.4.1 Use of Color: good/bad status is conveyed by colour alone and contradicts the data.",
+      "test": "T-GRAYSCALE"
+    },
+    {
+      "rule": "A11-115",
+      "tier": "Floor",
+      "where": "#themeBtn \"Dark\"",
+      "evidence": "The theme toggle is a plain button whose label is \"Dark\"; no role or pressed state was captured (role: null). Out of context a screen-reader user hears \"Dark, button\" and cannot tell whether it is the current theme or the action, nor its state after activation.",
+      "before": "<button id=\"themeBtn\">Dark</button>",
+      "after": "<button id=\"themeBtn\" aria-pressed=\"false\">Dark theme</button>, toggling aria-pressed with the theme; or label it as the action \"Switch to dark theme\"",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.4.6 Labels: the state of a toggle must be programmatically exposed.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-150",
+      "tier": "Finish",
+      "where": "#name (Display name)",
+      "evidence": "dom-1440 field record: name: \"\", autocomplete: null for a personal-name field.",
+      "before": "<input id=\"name\" type=\"text\">",
+      "after": "<input id=\"name\" name=\"display_name\" type=\"text\" autocomplete=\"nickname\">",
+      "why": "WCAG 2.2 1.3.5 Identify Input Purpose: fields collecting user information should expose autocomplete purpose.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-102",
+      "tier": "Finish",
+      "where": "h1 'Analytics' then h2 'Settings'",
+      "evidence": "Settings uses class page-title on an h2 inside the analytics page, but the metric cards have no heading at all (labels 'Revenue', 'Active users' etc. are plain text), so heading navigation jumps from 'Analytics' straight to 'Settings' and skips the metrics region.",
+      "before": "<div class=\"card__label\">Revenue</div>",
+      "after": "Wrap the metric grid in <section aria-labelledby=\"m\"><h2 id=\"m\" class=\"visually-hidden\">Key metrics</h2> and make each label an h3 or keep as dt/dd in a <dl>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Focus order (Dark, Export, Display name, Email notifications, Delete account, Back to top) follows the visual reading order with no hidden stops.",
+    "Email notifications is a button with role=\"switch\" and the accessible name \"Email notifications\"; the visible 'On' is shown as text, not colour alone.",
+    "Decorative SVG icons carry aria-hidden; delete confirmation input has a visible label \"Type DELETE to confirm\".",
+    "All content visible under reduced motion, scripts off and observer-never-fires (hidden.json: 394/394 chars)."
+  ],
+  "not_investigated": [
+    "Delete-account dialog keyboard behaviour (Escape, focus trap, focus return) and its role/aria-modal: the modal is a div.modal and role attributes were not captured; no live Playwright run in this review",
+    "dark theme contrast (A11-169): only light theme captured",
+    "error handling for the DELETE confirmation input: not submitted"
+  ]
+}

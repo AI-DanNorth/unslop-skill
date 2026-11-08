@@ -1,0 +1,88 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:55:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The 'tasteful' skin is itself the model's other default (cream paper, Fraunces with one italic word, red-orange accent, mono caps labels, 01/02 numbering, hairlines), laid over a stock SaaS skeleton with invented proof: Acme-style logo strip, '4,000+ indie teams', unsourced hero metrics and a 'Sarah Chen' testimonial.",
+  "tests_run": ["T-DEFAULT-AGENT", "T-STOCK-ORDER", "T-RIVAL-NAME", "T-MIRROR", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER", "T-LABEL-TRANSFORM"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-03",
+      "evidence": "Failed T-DEFAULT-AGENT: cream #f5f1ea, Fraunces display with italic 'what' in the h1, #e34a2b accent, 33 mono tracked caps labels, '01 — Features' numbering in the nav, sections and feature rows, hairline rules and zero radius everywhere, colophon 'Set in Fraunces & IBM Plex Mono'. Two look families (warm-paper-serif 5/6, hairline-newspaper 3/4) stacked; nothing in it comes from product analytics or from this company.",
+      "before": "Editorial warm-paper kit applied to an analytics SaaS",
+      "after": "Choose the look from the product: e.g. show a real funnel or session-replay frame as the hero image and let its colours set the palette. Drop the numbering and the colophon unless the brand is a publication. [DATA NEEDED: product screenshots]",
+      "why": "A recognisable look family chosen without a reason is a default, whichever family it is (SLP-012, SLP-115).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Floor",
+      "where": "testimonial block, tiles 1440-01/02",
+      "evidence": "Failed T-FILLER: one large italic quote 'We found the exact step where users churned in a fifteen-minute session. Skittie paid for itself in one afternoon.' attributed to 'Sarah Chen — Founder, Stitchboard'. Sarah Chen is a stock generated name, Stitchboard has no link or logo, and the quote follows the polished testimonial formula (a number, a punchline).",
+      "before": "“…Skittie paid for itself in one afternoon.” — Sarah Chen, Founder, Stitchboard",
+      "after": "[DATA NEEDED: a real customer quote with permission and a link], or remove the block.",
+      "why": "Invented people and quotes are an integrity failure regardless of styling (INT-102, INT-104).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-101",
+      "tier": "Floor",
+      "where": "hero right column, tile 1440-00",
+      "evidence": "'TRIAL → PAID 18.4%', 'MEDIAN TIME TO VALUE 9 min', 'CHURN, 90 DAYS 2.1%' with the note '— LIVE DATA, NO QUERIES WRITTEN'. Whose data is not stated: if it is a sample dashboard it is presented as fact, if it is Skittie's own it is unsourced. The sweep caught the logo-strip count; these three were not flagged.",
+      "before": "18.4% / 9 min / 2.1% — live data",
+      "after": "Label it as an example ('Example: a 3-person SaaS, March') with a real screenshot, or remove. [DATA NEEDED: source of the figures]",
+      "why": "Unsourced metrics dressed as live data (INT-101, INT-106).",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "section sequence",
+      "evidence": "Hero with metric panel > logo strip (Acme, Fathom, Baseline, Radar, Promptly) > three equal feature rows 01-03 > single testimonial > three pricing tiers with 'PRO — MOST POPULAR' > centred CTA band 'Stop guessing. Start knowing.' > footer. Six stock sections in stock order; restyling them as hairline rows does not change the skeleton.",
+      "before": "Stock SaaS order in editorial dress",
+      "after": "Cut the logo strip and CTA band; replace the three feature rows with one worked example (a funnel question answered end to end).",
+      "why": "Specific words on a default skeleton are still a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "section heads and closing CTA",
+      "evidence": "Failed T-RIVAL-NAME / T-FRESH-READER: 'Everything you need to grow', 'Simple pricing', 'Stop guessing. Start knowing.' fit any analytics tool (Mixpanel, PostHog, Plausible). Two are section heads and one is the closing h2.",
+      "before": "Stop guessing. Start knowing.",
+      "after": "A line only this product can say, built from its real differentiator ('Funnels typed in English, not SQL').",
+      "why": "Concept capped at 5: the headings hold under a competitor's name.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-113",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "Failed T-OVER-CORRECTION: the removed SaaS habits (gradients, cards, icon tiles) were replaced by a new set that multiplies: 11 em dashes in 1,805 characters, a leading '—' on every kicker ('— ANALYTICS FOR FOUNDERS', '— LIVE DATA', '— NO CREDIT CARD'), 'not X' contrasts ('for founders, not data teams', 'questions, not config screens', 'No per-seat theater'), and arrows on two CTAs.",
+      "before": "— ANALYTICS FOR FOUNDERS, NOT DATA TEAMS",
+      "after": "Keep one 'not' contrast (the hero) and no leading dashes; let labels be plain words.",
+      "why": "The substitute habit is as recognisable as the one it replaced (SLP-113).",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Reflex",
+      "where": "footer, tile 1440-03",
+      "evidence": "'© 2026 Skittie Analytics — No. 014, Indie Instruments' and 'Set in Fraunces & IBM Plex Mono' are invented editorial chrome: there is no series called Indie Instruments and a SaaS footer has no reason to credit its typefaces.",
+      "before": "No. 014, Indie Instruments / Set in Fraunces & IBM Plex Mono",
+      "after": "Remove both lines.",
+      "why": "Invented specifics dressed as authenticity (INT-105).",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The hero sub-line has a real voice and a picturable claim: 'the clarity of a data team without the schema, the SQL, or the second mortgage.'",
+    "Pricing tiers are concrete (10k / 500k / 5M events, 7-day vs unlimited retention) and readable as a comparison."
+  ],
+  "not_investigated": [
+    "eyebrows, numbered labels, Acme logo, '4,000+' and em-dash counts: reported by the sweep, not repeated",
+    "brief: no 00-contract.md, so no declared editorial brand could be checked"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:30:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The default AI landing page end to end: near-black ground with violet-to-pink gradient text, glowing gradient buttons, a rocket 'Powered by AI' pill, a fake logo strip, three emoji-tile feature cards and a 'Ready to transform' band, with copy that never says what Lumina does and contradicts itself on whether it exists yet.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER",
+    "T-EYEBROW"
+  ],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "hero, 1440 first screen",
+      "evidence": "Failed T-FIVE-SECOND: '🚀 POWERED BY AI' / 'Build faster with intelligent workflows' / 'The all-in-one platform that helps modern teams ship better products in record time.' Neither what Lumina is nor who it is for ('modern teams') is answered, and the two CTAs offer different things ('Join the waitlist', 'Watch demo') from the nav ('Get started').",
+      "before": "\"Build faster with intelligent workflows\"",
+      "after": "[DATA NEEDED: what Lumina does, for which team, and whether it is live]; h1 states the job, one CTA states the real next step",
+      "why": "The first screen is category mood with no product.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "INT-151",
+      "tier": "Floor",
+      "where": "nav, hero CTAs, features card 3, CTA band",
+      "evidence": "Failed T-THREE-LINE on consistency: the page offers 'Join the waitlist' and 'Get early access' (not launched) while claiming 'Join thousands of teams already shipping faster with Lumina', 'From your first prototype to millions of users', 'SOC 2 compliant infrastructure', plus 'Sign in' and 'Get started'. A product cannot be both waitlist-only and in use by thousands with a SOC 2 report.",
+      "before": "\"Join the waitlist →\" beside \"Join thousands of teams already shipping faster\"",
+      "after": "[DATA NEEDED: launch status]; if pre-launch, remove usage, scale and SOC 2 claims and the Sign in link; if live, drop the waitlist language",
+      "why": "Contradictory status claims mean at least one set is invented.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-103",
+      "tier": "Floor",
+      "where": "section.logos and hero proof line",
+      "evidence": "Six customer names in grey text in place of logos (Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity) on a page that is waitlist-only, plus 'Backed by top-tier investors' with no investor named. The sweep flagged three names as default names (Reflex); together they are an invented logo wall and unattributed backing claim.",
+      "before": "Northwind · Halcyon · Meridian · Fieldnote · Atlas & Co. · Verity / \"Backed by top-tier investors\"",
+      "after": "[DATA NEEDED: real customers with permission and logo files; named investors] or remove both",
+      "why": "Invented social proof is an integrity failure, not styling.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-108",
+      "tier": "Reflex",
+      "where": "h1, h2s, h3s",
+      "evidence": "Failed T-RIVAL-NAME: every heading stays true for any AI product: 'Build faster with intelligent workflows', 'Everything you need to ship faster', 'Lightning Fast', 'Enterprise Secure', 'Built to Scale', 'Ready to transform how your team builds?'. T-FRESH-READER generic lines: the h1, 'One platform. Endless possibilities. Built for the future.', the CTA h2. Concept capped at 5.",
+      "before": "\"Lightning Fast\" / \"Enterprise Secure\" / \"Built to Scale\"",
+      "after": "[DATA NEEDED: three capabilities only Lumina has, each with a mechanism or measured number]",
+      "why": "No line belongs to this business.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "page skeleton",
+      "evidence": "Failed T-DEFAULT-AGENT and T-MIRROR: centred pill eyebrow + gradient h1 + two CTAs + proof line, six-name logo strip, three equal cards with gradient emoji tiles, dark gradient CTA band, one-line footer. Typing 'landing page for an AI workflow startup' returns this. The violet-gradient skin is reported by the sweep (SLP-012 cluster, gradients, glows); the skeleton and the decorative teal radial spotlight behind the hero (right, 1440 tile 00) complete it.",
+      "before": "hero / logo strip / 3 feature cards / CTA band / footer",
+      "after": "Start from the product: show its UI doing one named job on the first screen and drop the glow, pill and emoji tiles together (SLP-112: fix with a decision, not a synonym)",
+      "why": "Every structural and surface decision is the default one.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-141",
+      "tier": "Reflex",
+      "where": "footer",
+      "evidence": "'© 2022 Lumina, Inc. Powered by AI in San Francisco.': a copyright year four years stale for a waitlist product, and a 'Powered by AI' sign-off repeating the hero pill.",
+      "before": "\"© 2022 Lumina, Inc. Powered by AI in San Francisco.\"",
+      "after": "\"© 2026 Lumina, Inc.\" plus [DATA NEEDED: contact or legal links]; drop the sign-off (CPY-143)",
+      "why": "Stale year and footer slogan read as an unedited template.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "CPY-139",
+      "tier": "Reflex",
+      "where": "all 10 links",
+      "evidence": "Every link, including 'Pricing', 'Customers', 'Docs', 'Join the waitlist' and 'Get early access', has href=\"#\" (focus.json). The waitlist has no form, so the page's one real action cannot be taken.",
+      "before": "<a href=\"#\">Join the waitlist →</a>",
+      "after": "A real waitlist form (email field + submit with honest states) or a link to one; remove nav items with no page",
+      "why": "Dead links are template chrome and the conversion path does not exist.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "No strengths recorded: nothing on the page is specific to the client; type spacing and alignment are tidy but default",
+    "T-STOCK-ORDER: hero, logo strip, three equal feature cards, CTA band = 4 stock sections plus a minimal footer, under the 5 threshold; generated read rests on T-DEFAULT-AGENT, T-MIRROR and the sweep's violet-gradient cluster",
+    "Sweep TYP-003 (Inter display) and SLP-007/008 gradient and glow hits not repeated",
+    "copy voice: no contract or brand samples supplied"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "\"Tailwind Side-Tab\" section, first three cards, 1440 tile 0",
+      "evidence": "dom-1440.json: the h3 \"border-l-4 + rounded-r\" and its p \"The classic AI tell.\" are both 16px / 400 / #000, so the heading is visually identical to its description; in the next sections h3s are 14px/600 over 13px grey. The section h2s (14px/400 grey) are smaller than these h3s (16px).",
+      "before": "h3 16px 400 black, same as p; h2 14px",
+      "after": "Give every h3 font-weight:600 and set h2 above h3 (e.g. h2 20px/600, h3 16px/600, p 14px)",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings: the structure exposed to assistive tech is not shown visually, and the visual levels are inverted (h2 smaller than h3). May be partly a Tailwind shim difference.",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "Correct heading outline in the DOM: one h1, an h2 per group, an h3 per specimen.",
+    "lang=\"en\" and a descriptive title (\"Anti-Patterns That Should Be Flagged\"); all text stays visible with scripts off.",
+    "Dark-mode card text (#9ca3af on #1f2937 and #111827) stays readable; the sweep found no contrast failures.",
+    "The coloured strips carry no information, so there is no use-of-colour (1.4.1) problem."
+  ],
+  "not_investigated": [
+    "disputed: sweep focus_ring Floor hit \"Tab reached no focusable element\". The page contains no links, buttons or form controls (dom-1440.json, focus.json is empty), so there is nothing that must take focus; 2.4.7 is not applicable. A skip link is unnecessary on a page with no repeated blocks.",
+    "Alt text, link purpose, forms, keyboard operation, motion: none present on the page.",
+    "Reflow: 375 tiles show single-column cards with no horizontal scroll; 1.4.12 spacing override not injected."
+  ]
+}

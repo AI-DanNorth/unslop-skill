@@ -1,0 +1,49 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T22:05:00",
+  "overall_read": "generated",
+  "confidence": "low",
+  "overall_reason": "Mechanically the canvas is clean (120px head, 42px body, 32px label, 84px margins, one red accent, nothing clipped), but every line is self-describing placeholder and half the canvas is empty, so there is no made content to judge; it reads as a correct template awaiting a post, not a designed card. No AI look family is present.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER",
+    "T-THUMBNAIL"
+  ],
+  "findings": [
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "whole canvas",
+      "evidence": "Head \"大标题 / 第二行！\" (literally 'big title / second line!'), body \"正文四十二像素……用来确认检查不会冤枉干净的页面\" ('42px body ... to confirm the check does not wrong a clean page'), label \"标签三十二\" ('label thirty-two'). All placeholder that names its own spec.",
+      "before": "Self-describing placeholder copy",
+      "after": "[DATA NEEDED: post title, body and label text]",
+      "why": "Placeholder residue cannot ship; T-FIVE-SECOND fails because the cover says nothing about any subject.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "LAY-004",
+      "tier": "Finish",
+      "where": "y 700 to 1560 of the 1242x1660 canvas (tile 1242-01 is entirely white)",
+      "evidence": "About 860px, more than half the canvas height, is empty between the body paragraph and the bottom label; there is no image or visual.",
+      "before": "Head + paragraph at top, label pinned at bottom, empty middle",
+      "after": "Fill the band with the post's real visual (photo or screenshot), or move the label up under the body and crop the canvas to content",
+      "why": "A Xiaohongshu card is judged at thumbnail size; an empty half reads as unfinished.",
+      "test": "T-THUMBNAIL"
+    }
+  ],
+  "strengths": [
+    "Type sizes clear the phone-feed floors (120 / 42 / 32px on a 1242 canvas) and everything sits inside an 84px margin with no clipping or overlap.",
+    "One accent used once: the red '！' at the end of the head."
+  ],
+  "not_investigated": [
+    "No real content or 00-contract.md, so T-RIVAL-NAME, T-MIRROR and T-THREE-LINE had nothing beyond placeholder lines to test.",
+    "Default sans-serif face (no font specified) not counted against the read, since no brand typography is defined."
+  ]
+}

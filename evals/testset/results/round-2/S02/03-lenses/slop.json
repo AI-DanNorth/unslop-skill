@@ -1,0 +1,98 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:30:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The warm-paper serif look (cream, Fraunces with one terracotta italic word, caps eyebrow) dressed over the stock SaaS page (centred hero, invented logo strip, three emoji-icon feature cards, dark CTA band) with copy that never says what Lumina does.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER",
+    "T-EYEBROW"
+  ],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "hero, 1440 first screen",
+      "evidence": "Failed T-FIVE-SECOND: 'Build faster with intelligent workflows for modern teams' / 'The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.' The audience (product teams) is named, but what Lumina is (a tracker? CI? a spec tool?) is never said, and there is no picture of the product on any screen.",
+      "before": "\"The all-in-one platform that helps product teams ship better software in record time.\"",
+      "after": "[DATA NEEDED: the one job Lumina does and its object, e.g. what it takes in and what it produces]; show the product UI doing it under the hero (CON-147)",
+      "why": "A software page with no product and no stated function reads as a template.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-108",
+      "tier": "Reflex",
+      "where": "h1, h2s, h3s, CTA band",
+      "evidence": "Failed T-RIVAL-NAME: with Linear, Height or any workflow tool swapped in, every heading stays true: 'Build faster with intelligent workflows for modern teams', 'Everything you need to ship great products', 'Lightning Fast', 'Enterprise Secure', 'Built to Scale', 'Ready to transform how your team builds?'. T-FRESH-READER generic lines: the h1, 'One platform. Endless possibilities. Built for teams who care about craft.', and the CTA h2. Concept capped at 5.",
+      "before": "\"Lightning Fast\" / \"Enterprise Secure\" / \"Built to Scale\"",
+      "after": "[DATA NEEDED: three things only Lumina does, each with its mechanism or number]; headings name those things",
+      "why": "Nothing on the page could only be said by this business.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "page skeleton: nav, hero, logos, features, CTA band, footer",
+      "evidence": "Failed T-MIRROR and T-DEFAULT-AGENT: centred eyebrow + h1 with one italic accent word + two CTAs + 'Trusted by 10,000+' line, then a six-name logo strip, three equal cards with emoji in rounded tiles, a dark 'Ready to transform' band. 'landing page for an AI workflow tool' yields this exactly. The warm-paper serif cluster (sweep SLP-012) is the paint; the skeleton underneath is the stock SaaS page.",
+      "before": "hero / logo strip / 3 feature cards / CTA band / footer",
+      "after": "Change one structural decision and name it: lead with the product UI on the first screen and let a real workflow run down the page instead of three equal cards",
+      "why": "Restyling a stock page in a 'tasteful' palette does not make it designed for this client (SLP-121 spent defaults).",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "INT-103",
+      "tier": "Floor",
+      "where": "section.logos: 'Northwind Halcyon Meridian Fieldnote Atlas & Co. Verity'",
+      "evidence": "Six customer names set as italic serif text in place of logos, directly under 'Trusted by 10,000+'. The sweep flagged three as default names (Reflex); as a group they form an invented logo wall presented as customers, which is an integrity failure. 'Meridian', 'Atlas & Co.' and 'Verity' are the same kind of stock name and were not flagged.",
+      "before": "Northwind · Halcyon · Meridian · Fieldnote · Atlas & Co. · Verity",
+      "after": "[DATA NEEDED: real customers who agreed to be named, with their logo files] or remove the strip",
+      "why": "A fake customer wall is invented social proof.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-101",
+      "tier": "Floor",
+      "where": "features card 2 and 3 body copy",
+      "evidence": "Failed T-THREE-LINE: 'SOC 2 compliant infrastructure with end-to-end encryption. Your data is safe, always.' and 'From your first prototype to millions of users' are compliance and scale claims with no source, report or date. The sweep caught '10,000+' but not these.",
+      "before": "\"SOC 2 compliant infrastructure with end-to-end encryption.\"",
+      "after": "[DATA NEEDED: SOC 2 report type and date, link to trust page]; else drop the claim",
+      "why": "Unverified compliance claims are a legal and honesty risk, not a styling issue.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-139",
+      "tier": "Reflex",
+      "where": "every link: nav (Product, Solutions, Pricing, Customers, Docs, Sign in, Get started), hero CTAs, CTA band",
+      "evidence": "All 10 links have href=\"#\" (focus.json, dom-1440). Nav promises Pricing, Customers and Docs pages that do not exist; 'Watch demo' leads nowhere.",
+      "before": "<a href=\"#\">Pricing</a>",
+      "after": "Point each link at a real destination, or at the on-page section that does most of its job (INT-146); remove nav items with no page",
+      "why": "A nav of dead links is template chrome.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-143",
+      "tier": "Finish",
+      "where": "footer",
+      "evidence": "'© 2026 Lumina, Inc. — Crafted with care in San Francisco.' The sign-off line is the footer's only content besides the copyright.",
+      "before": "\"Crafted with care in San Francisco.\"",
+      "after": "Remove it; add [DATA NEEDED: company address or contact, legal links] if needed",
+      "why": "Footer sign-offs are stock filler.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Typesetting is competent: Fraunces display with Inter body at a real size contrast (88/52/18px) and generous spacing; keep that craft when replacing the content."
+  ],
+  "not_investigated": [
+    "T-STOCK-ORDER: hero, logo strip, three equal feature cards, CTA band = 4 stock sections plus a minimal footer, under the 5 threshold; generated read rests on T-MIRROR, T-DEFAULT-AGENT and the look-family cluster",
+    "Look family warm-paper-serif already reported by sweep (SLP-012); not repeated",
+    "copy voice: no contract or brand samples supplied"
+  ]
+}

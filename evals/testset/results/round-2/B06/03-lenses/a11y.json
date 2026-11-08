@@ -1,0 +1,77 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T22:30:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-button-purpose",
+    "T-TAB-THROUGH (focus order from focus.json)",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow-375",
+    "forms-and-errors",
+    "motion-and-timing",
+    "headings-and-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-009",
+      "tier": "Floor",
+      "where": "pricing grid at 375 (tiles/375-03.png)",
+      "evidence": "At 375 the four-column pricing grid does not reflow: the SCALE column is cut off (\"$9\" and \"/ mor\" visible at the edge), \"Start 14-day trial\" wraps to four lines, and row cells no longer line up under their headers (Usage row columns are offset from the header columns). The sweep's overflow hit named only the logos row.",
+      "before": ".price-table: fixed four-column grid at every width",
+      "after": "@media (max-width: 640px) render one stacked block per plan (plan name, price, usage, includes, button) instead of the grid",
+      "why": "WCAG 2.2 1.4.10 Reflow: the Scale plan is unreachable without horizontal scrolling. Nearest curated card A11-009.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-103",
+      "tier": "Floor",
+      "where": "pricing grid",
+      "evidence": "dom-1440: the plan comparison is built from div.price-row and div cells with no table, th, row or column semantics; the PLAN / STARTER / PRO / SCALE header is visual only, so a screen reader reads a flat run (\"Usage 1 project · 10k events/mo 10 projects · 500k events/mo ...\").",
+      "before": "<div class=\"price-table\"><div class=\"price-row\">…",
+      "after": "<table><caption>Plan comparison</caption><thead><tr><th scope=\"col\">…</th></tr></thead><tbody><tr><th scope=\"row\">Usage</th><td>…</td></tr>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships: tabular data needs header associations.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "nav and footer links, final CTA",
+      "evidence": "dom-1440: \"Customers\", \"Resources\", \"Sign in\", \"Start free trial\" (nav and final CTA), \"Talk to sales\" and every footer link (Changelog, Status, Documentation, API reference, Blog, Contact, Privacy policy, Terms of service, Data processing, Security) have href=\"#\"; the three pricing buttons are <button> with no form (forms.json empty). Activation goes nowhere.",
+      "before": "<a href=\"#\">Privacy policy</a>; <button class=\"price-btn\">Get started</button>",
+      "after": "Real destinations (<a href=\"/privacy\">), and pricing actions as links: <a class=\"price-btn\" href=\"/signup?plan=starter\">Get started</a>",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 4.1.2 Name, Role, Value: a link must go where its name says; dead '#' links also return keyboard users to the top.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-165",
+      "tier": "Floor",
+      "where": "secondary buttons \"Talk to sales\", \"Get started\", \"Contact sales\"; compliance pills",
+      "evidence": "Border rgb(199,208,220) 1px on white is about 1.5:1; for these outline buttons it is the only boundary.",
+      "before": "border: 1px solid #c7d0dc",
+      "after": "border: 1px solid #7b8798 (about 3.6:1 on white)",
+      "why": "WCAG 2.2 1.4.11 Non-text Contrast: control boundaries need 3:1.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "all links and buttons (focus.json)",
+      "evidence": "Every stop reports the browser default outline (auto 1px) with no custom :focus-visible style; sweep measured \"Start 14-day trial\" at 2.95:1 change, just under 3:1, because a 1px default ring on the #1f4fe0 button is barely distinct.",
+      "before": "No :focus-visible rule",
+      "after": "a:focus-visible, button:focus-visible { outline: 2px solid #0f1722; outline-offset: 2px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible (and 2.4.13 for the measured value): rely on a designed ring, not a 1px UA default on saturated fills.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Focus order follows the visual order: nav, hero CTAs, pricing actions, final CTA, footer columns.",
+    "Logo glyph SVGs carry aria-hidden=\"true\"; lang=\"en\" and a descriptive title are set; a single h1."
+  ],
+  "not_investigated": [
+    "Sweep contrast hits on logo-strip names (3.60:1, #5b6777 at opacity 0.8) checked on 1440-00: real, not disputed.",
+    "No forms present; no animation in stylesheets.",
+    "Keyboard operation not run live; no menus, dialogs or carousels present."
+  ]
+}

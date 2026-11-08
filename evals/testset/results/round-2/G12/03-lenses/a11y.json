@@ -1,0 +1,76 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "link-button-purpose",
+  "focus-order",
+  "use-of-colour",
+  "non-text-contrast",
+  "reflow",
+  "forms",
+  "motion",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-005",
+   "tier": "Floor",
+   "where": "svg.chart x5 (NRR bars, plan donut, 3 region sparklines)",
+   "evidence": "dom-1440.json records no name, role or title on any svg.chart; the weekly bar values and region trends exist only as drawing, with no table or text equivalent (the sparklines' percentages are given, the bars' values are not).",
+   "before": "<svg class=\"chart\">...</svg>",
+   "after": "role=\"img\" aria-label=\"Net recurring revenue by week, weeks 21-27: ...\" on each chart, or a visually hidden <table> of the weekly values",
+   "why": "WCAG 2.2 1.1.1 Non-text Content.",
+   "test": "T-GRAYSCALE"
+  },
+  {
+   "rule": "A11-003",
+   "tier": "Floor",
+   "where": "segmented control '30 days' / '90 days' / '12 months' (role=tab)",
+   "evidence": "Verified sweep hit: focus/08-on.png shows only the selected tab's soft 0 1px 2px shadow, identical to its resting state; no ring.",
+   "before": "outline: none; box-shadow: rgba(20,30,40,.06) 0 1px 2px",
+   "after": "[role=tab]:focus-visible { box-shadow: 0 0 0 2px #f3f5f7, 0 0 0 4px #006a6a } (the ring used on nav links)",
+   "why": "WCAG 2.2 2.4.7 Focus Visible and 2.4.11 Focus Not Obscured.",
+   "test": "T-TAB-THROUGH"
+  },
+  {
+   "rule": "A11-001",
+   "tier": "Floor",
+   "where": "bar chart (hero), plan donut, region sparklines",
+   "evidence": "T-GRAYSCALE: the partial week is distinguished only by orange vs blue; donut segments by hue only (legend dots); region lines by hue only (blue, orange, violet). Status badges do carry text ('Healthy', 'At risk', 'Churning'), which passes.",
+   "before": "Partial-week bar: fill orange only",
+   "after": "Add a pattern or outline to the partial bar plus a direct label 'Wk 27 (partial)'; label donut segments in place",
+   "why": "WCAG 2.2 1.4.1 Use of Color and 1.4.11 Non-text Contrast.",
+   "test": "T-GRAYSCALE"
+  },
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "focus stop 9: section.hero card 'NET RECURRING REVENUE'",
+   "evidence": "focus.json stop 9 is a <section> with tabindex showing only a 1px auto outline (focus/09-on.png): a non-interactive card is a tab stop with no name or purpose announced.",
+   "before": "<section tabindex=\"0\">",
+   "after": "Remove tabindex, or give it role=\"region\" aria-label=\"Net recurring revenue\" and the same 2px teal ring as other controls",
+   "why": "WCAG 2.2 2.4.3 Focus Order and 4.1.2 Name, Role, Value.",
+   "test": "T-TAB-THROUGH"
+  },
+  {
+   "rule": "A11-006",
+   "tier": "Reflex",
+   "where": "footer link 'ux-ui-agent-skills'",
+   "evidence": "focus.json stop 15 records an empty text for this link and 1px default outline; nav links use a 2px teal ring, footer links fall back to the browser default.",
+   "before": "footer a: default outline",
+   "after": "Apply the shared :focus-visible ring to footer links",
+   "why": "WCAG 2.2 2.4.7 Focus Visible (consistency).",
+   "test": "T-TAB-THROUGH"
+  }
+ ],
+ "strengths": [
+  "Skip-to-main is the first focusable element; nav links, search, theme and notifications buttons show a 2px teal ring with offset.",
+  "Icon buttons have names ('Switch to dark theme', 'Notifications, 3 unread'); tabs use role=tab; table sort controls are real buttons."
+ ],
+ "not_investigated": [
+  "aria-selected / aria-sort state on tabs and sortable headers: not in the dom capture.",
+  "Reflow at 320px and the horizontally scrolling nav at 375 (tile shows 'Accounts' cut at the edge): not checked live."
+ ]
+}

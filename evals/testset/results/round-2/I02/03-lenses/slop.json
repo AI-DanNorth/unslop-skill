@@ -1,0 +1,71 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The copy and the product views are specific to one webhook product (typed Stripe handler, per-attempt backoff log, a replay command with a matched/delivered count), but they sit on a stock dev-tool skeleton (mock hero, logo strip, numbered 4-step row, zig-zag splits, unsourced stat band, three tiers, CTA band) in the near-black plus one-lime-accent look nobody justified.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, tiles 00-02",
+      "evidence": "T-STOCK-ORDER: hero with product mock (code editor + event log) -> logo strip (\"Works with any HTTP sender, including stripe github shopify ...\") -> numbered 1-2-3-4 steps (Receive / Type / Deliver / Replay) -> two alternating text/visual splits -> stat band (99.99% / < 50 ms / 0 / 4 regions) -> three pricing tiers (Free / Pro $49 / Scale Custom) -> closing CTA band (\"Get an endpoint in a minute\") -> footer. Six stock sections in stock order, which caps the read at mixed.",
+      "before": "mock hero, strip, 4 steps, zig-zag, stats, 3 tiers, CTA band",
+      "after": "Keep the strongest specific artefact (the replay terminal with 1,842 matched / delivered) as the page's spine and cut the stat band and CTA band; the hero already ends with an install command, so the closing band repeats it",
+      "why": "Specific words on a default skeleton still read as a default page; a neighbouring dev-tool brief would get this exact sequence.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "Visible dark-single-accent cluster: near-black ground, one saturated lime used for the primary buttons, the headline second line \"Typed events\", bullets, check marks and the Pro card border; monospace on non-code labels (\"stream live\", \"terminal\", \"relay cli 2.4\", the sender strip, step numbers \"01\"-\"04\"). T-MIRROR: Vercel/Linear/Resend-adjacent pages ship this hero and nav.",
+      "before": "near-black + lime accent + mono labels",
+      "after": "Name a reason for the look or change one axis, e.g. set labels in the text face and keep mono only for real code and payloads",
+      "why": "A look family chosen without a reason counts against 'made' even when the content is specific.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "INT-007",
+      "tier": "Reflex",
+      "where": "stat band, tile 01",
+      "evidence": "\"99.99% ingest uptime, last 12 months\", \"< 50 ms p95 receive to deliver\", \"0 events dropped after ack\", \"4 regions\" with no source, status-page link or as-of date. \"0 events dropped\" cannot be falsified from the page.",
+      "before": "\"0 events dropped after ack\"",
+      "after": "Link the uptime figure to the status page with an as-of date ([DATA NEEDED: status URL]); replace \"0 events dropped\" with the guarantee it implies (\"at-least-once delivery after ack\"), which the page already states",
+      "why": "An unsourced four-figure band is the most recognisable proof-by-number habit; this page's evidence is stronger in its terminal views.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-205",
+      "tier": "Reflex",
+      "where": "hero, above h1",
+      "evidence": "Pill \"New  Replay by time range or event ID\" above the headline. T-EYEBROW/T-DELETION: the same feature is the subject of the \"Replay without asking the provider\" section, so the pill adds nothing the page does not say later.",
+      "before": "\"New · Replay by time range or event ID\" pill",
+      "after": "Remove the pill; if replay is the launch, make it the hero's sub-line",
+      "why": "A version/news pill over the hero is template furniture.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-157",
+      "tier": "Finish",
+      "where": "\"Retries that respect your downstream\" and \"Replay without asking the provider\", tiles 00-01",
+      "evidence": "Text-left/visual-right then visual-left/text-right, each with three lime-bulleted lines: a mirrored zig-zag pair. The delivery-attempts panel draws a dot on an unlabeled track per attempt; the dot position has no axis or scale, so T-DELETION removes it with no loss (the 503/503/timeout/200 column carries the meaning).",
+      "before": "alternating splits; dot-on-track pseudo chart",
+      "after": "Put both mechanisms in one section with one shared panel (attempt, wait, status as a table), or keep the panel and drop the tracks",
+      "why": "Alternating splits are the stock way to fill the middle of a page; the faux chart is decoration in a data costume.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Headline and sub-line say what it is and for whom in one screen: \"Webhooks in. Typed events out.\" plus validation, retries and replay; it passes T-FIVE-SECOND.",
+    "Product views carry real, internally consistent detail: retries: 8 with exponential backoff, \"backoff 2s, 8s, 32s ... delivered after 42.6s\", the replay command with 1,842 matched and 1,842 delivered.",
+    "Each step card carries a concrete artefact (POST /in/src_8fk2/stripe, relay gen --lang ts, at-least-once ordered per key, relay replay --since 2h).",
+    "Pricing explains its unit honestly: \"An event is one accepted webhook. Retries and replays are not billed.\"",
+    "The sender strip is plain text (\"Works with any HTTP sender, including\") rather than a fake customer logo wall."
+  ],
+  "not_investigated": [
+    "Image-only item: no DOM, no mechanical sweep; look-family tells judged by eye, not measured.",
+    "Truth of the stated metrics and prices: no supplied facts."
+  ]
+}

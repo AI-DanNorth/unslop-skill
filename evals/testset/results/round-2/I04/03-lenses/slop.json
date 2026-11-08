@@ -1,0 +1,87 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:35:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every section is the stock SaaS template in the violet-gradient look: AI pill, gradient-word headline, a styled-div dashboard mock, a fake logo strip, three emoji icon cards, an unsourced stat band, three pricing tiers with 'Most Popular', a gradient CTA band and a link-farm footer with a newsletter box.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-EYEBROW"],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, tiles 00-02",
+      "evidence": "T-STOCK-ORDER, 9 stock sections in stock order: (1) hero with product mock, (2) logo strip 'TRUSTED BY FAST-MOVING TEAMS AT', (3) three equal feature cards, (4) stat band, (5) three pricing tiers, (6) closing CTA band 'Ready to get started?', (7) link-farm footer with 4 columns, (8) newsletter sign-up 'STAY IN THE LOOP', (9) social icon row. Seven or more means generated regardless of copy.",
+      "before": "hero → logos → 3 features → stats → 3 tiers → CTA band → footer",
+      "after": "Rebuild from the product's real material: lead with one real Cadence chart on real event data and the question it answers [DATA NEEDED: a real screenshot and the customer question it answers]; cut the logo strip, stat band and CTA band",
+      "why": "The skeleton is the default output for 'SaaS landing page'.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, buttons, stat band, CTA band",
+      "evidence": "violet-gradient family, at least 4 tells visible: indigo-to-violet/pink fills (logo tile, 'Start for free', 'Get Started', 'Start free trial', CTA band), gradient text on 'just works' and on all four stat figures, a soft radial violet glow behind the hero and under the mock and pro card, and scattered radii (pill badge, 12px buttons, 16px cards, 24px CTA band).",
+      "before": "linear-gradient(indigo → violet/pink) on fills and text",
+      "after": "One solid accent taken from the brand [DATA NEEDED: brand colour], no gradient text, no glow shadows",
+      "why": "SLP-162/163/164: the AI-purple gradient is the most recognised generated look.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-169",
+      "tier": "Reflex",
+      "where": "hero product mock, y 530-860",
+      "evidence": "A 'dashboard' built from grey placeholder bars and six gradient columns with no axis, labels or values, in a glowing frame. Failed T-DELETION and T-FILLER: it shows no real product and no data.",
+      "before": "styled-div bar chart in a lavender frame",
+      "after": "A real Cadence screenshot (funnel or retention view) with real labels [DATA NEEDED: product capture]",
+      "why": "Imitation product UI stands in for the product the page is selling (IMG-105).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "logo strip and stat band",
+      "evidence": "Logo strip lists 'Northwind', 'Lumen', 'Vertex', 'Quanta', 'Beacon', 'Atlas' set as grey text: default fake brands (Northwind is Microsoft's sample-database company). Stat band '12,000+ Teams onboard', '8B Events / month', '4.9★ Average rating', '99.99% Uptime SLA' has no source; 'Join thousands of teams' repeats it.",
+      "before": "TRUSTED BY FAST-MOVING TEAMS AT Northwind Lumen Vertex …",
+      "after": "[DATA NEEDED: real customer logos with permission, and sourced figures], or remove both sections",
+      "why": "Invented customers and metrics are false proof (INT-001, INT-007).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-209",
+      "tier": "Reflex",
+      "where": "h1, lede, section heads",
+      "evidence": "h1 'Product analytics that just works'; lede '…ship with confidence instead of guesswork. Seamlessly powerful, beautifully simple.'; 'Everything you need to understand your users'; 'Powerful features that scale with your team'; 'Simple, transparent pricing'; 'Ready to get started?'. Failed T-RIVAL-NAME: Mixpanel, Amplitude or PostHog can say every one. Failed T-FRESH-READER: all six are the generic lines.",
+      "before": "\"Product analytics that just works\"",
+      "after": "A head only Cadence can say, from a real differentiator [DATA NEEDED: what Cadence does that Mixpanel/Amplitude do not]",
+      "why": "Stock phrases and slop words (seamlessly, powerful) in every heading.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-173",
+      "tier": "Reflex",
+      "where": "'Powered by AI' pill, feature cards, footer social row",
+      "evidence": "Emoji used as icons: ✨ in the 'Powered by AI' pill, 📊 ⚡ 🚀 in lavender rounded tiles above each feature heading, and 🐦/💼/🐙-style emoji as the footer social links.",
+      "before": "📊 Live dashboards / ⚡ Funnels & retention / 🚀 Team workspaces",
+      "after": "Delete the icon tiles and the pill; use proper SVG brand marks with labels for social links",
+      "why": "Emoji icons in filled tiles combine SLP-013, SLP-140 and SLP-139.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero",
+      "evidence": "Pill label above the headline ('✨ Powered by AI'), accented gradient words in the h1 ('just works'), centred everything, primary with glued arrow 'Start for free →' beside a stock second action 'Book a demo' (SLP-201, SLP-224).",
+      "before": "pill + gradient-word h1 + centred lede + two buttons",
+      "after": "Left-aligned head with no pill and no accented word; one primary action without the arrow glyph",
+      "why": "Each is a hero-template tell; together they are the template.",
+      "test": "T-EYEBROW"
+    }
+  ],
+  "strengths": [
+    "Pricing tiers state concrete limits (5k events, 7-day history, 1M events, 1-year history), which is the only falsifiable content on the page."
+  ],
+  "not_investigated": [
+    "image-only item: no DOM, CSS or fonts, so computed values (exact hex, radii, fonts) are read from the picture, not measured",
+    "motion and hover states: not visible in a still"
+  ]
+}

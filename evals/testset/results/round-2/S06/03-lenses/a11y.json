@@ -1,0 +1,66 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "icon buttons beside the email field",
+      "evidence": "dom-1440.json: the two buttons' accessible names are the emoji \"✏️\" and \"🗑️\" (announced \"pencil\", \"wastebasket\"); neither says what is edited or deleted. Out of context, \"wastebasket\" next to \"Delete Account\" is ambiguous.",
+      "before": "<button class=\"icon-btn\">🗑️</button>",
+      "after": "<button class=\"icon-btn\" aria-label=\"Remove email address\"><span aria-hidden=\"true\">🗑️</span></button>; same with aria-label=\"Edit email address\"",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.4.6 Headings and Labels: a control's name must state its purpose.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Reflex",
+      "where": "all 5 focus stops",
+      "evidence": "focus.json: no :focus or :focus-visible rules in the CSS; every stop uses the default 1px auto ring. On \"Save Changes\" (indigo-violet gradient) and the indigo \"Delete Account\" a 1px dark ring has little contrast against the fill.",
+      "before": "no focus style",
+      "after": "button:focus-visible, input:focus-visible { outline: 2px solid #1e1b4b; outline-offset: 2px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "h1, sub-line and KPI labels",
+      "evidence": "Emoji are part of the text: h1 reads \"bar chart Analytics Dashboard\", the labels \"money bag Revenue\", \"busts in silhouette Active Users\", \"chart decreasing Churn\", \"star NPS\", and the sub-line ends \"rocket\".",
+      "before": "<h1>📊 Analytics Dashboard</h1>",
+      "after": "Remove the emoji, or wrap each in <span aria-hidden=\"true\">",
+      "why": "WCAG 2.2 1.1.1 Non-text Content and 2.4.6: decorative symbols pollute heading and label names.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Reflex",
+      "where": "KPI delta lines",
+      "evidence": "\"↑ 12% from last month\", \"↓ 2% from last month\" are all the same grey #9ca3af; whether a change is good or bad (churn down is good, others up are good) is conveyed by nothing but the arrow glyph, and the arrow is read as \"upwards arrow\".",
+      "before": "<div class=\"delta\">↑ 12% from last month</div>",
+      "after": "<div class=\"delta\"><span aria-hidden=\"true\">↑</span> Up 12% from last month</div>; raise colour to at least #4b5563",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 1.4.3 Contrast: direction must be in text, and the text must meet 4.5:1 (sweep measured 2.54:1).",
+      "test": "T-GRAYSCALE"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "KPI cards",
+      "evidence": "Each card is label div + value div + delta div with no structure; a screen reader reads a run of \"Revenue $48.2k up 12% ... Active Users 3,910 ...\" with no grouping.",
+      "before": "div.card > div.label + div.value + div.delta",
+      "after": "<dl> per card (<dt>Revenue</dt><dd>$48.2k</dd><dd>Up 12% from last month</dd>), or a <section aria-label=\"Key metrics\"> with an h2",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships.",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "lang set and a page title; h1 and h2 present in order.",
+    "All content visible with scripts off and reduced motion."
+  ],
+  "not_investigated": [
+    "Sweep Floor hits verified by eye: the unlabelled email input, the 15x16px emoji buttons, the grey label contrast and the fixed 1100px container (the 375 tile renders the full 1100px layout) are all real; none disputed.",
+    "Delete Account behaviour (confirmation, undo) cannot be exercised: no handlers in evidence.",
+    "Keyboard operation: no menus or dialogs; no live run."
+  ]
+}

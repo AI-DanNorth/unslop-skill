@@ -1,0 +1,39 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "visible-contrast",
+  "text-size",
+  "use-of-colour",
+  "grayscale"
+ ],
+ "findings": [
+  {
+   "rule": "A11-001",
+   "tier": "Floor",
+   "where": "rotated y-axis title 'CLOUD SPEND \u00b7 $K / MO' and axis ticks",
+   "evidence": "Sampled pixels: axis title ink ~#a6adb8 on #f5f5f5 page, about 2.1:1, at roughly 8px cap height and rotated 90 degrees; the units of the whole chart live only in this label.",
+   "before": "Light grey rotated 8px axis title",
+   "after": "Darken to >= #5a6170 (>= 4.5:1), set >= 12px, and repeat the unit in the title or first tick ('$k/mo')",
+   "why": "WCAG 2.2 1.4.3 Contrast (Minimum); the unit is essential information.",
+   "test": "T-GRADIENT-STOPS"
+  },
+  {
+   "rule": "A11-002",
+   "tier": "Floor",
+   "where": "value labels (+64, -36, +22, -52) and legend text",
+   "evidence": "Value labels render at about 9-10px in a light mono on a 1200px-wide image; at typical embed widths (600-800px) they fall to ~6px.",
+   "before": "~9px mono value labels",
+   "after": ">= 12px at the delivered width; bold the signed values",
+   "why": "WCAG 2.2 1.4.4 Resize Text: text in an image cannot be enlarged without loss; keep it above floor at its delivered size.",
+   "test": "T-THUMBNAIL"
+  }
+ ],
+ "strengths": [
+  "Cost added vs removed is encoded by fill vs outline, and the highlight by a bordered tint, so meaning survives in grayscale (T-GRAYSCALE passes)."
+ ],
+ "not_investigated": [
+  "Image-only item: alt text, reading order, keyboard and focus checks not possible; the delivered alt text is unknown and must state the bridge values and total.",
+  "Exact contrast of value labels on bar fills was not sampled."
+ ]
+}

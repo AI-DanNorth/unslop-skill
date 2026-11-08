@@ -1,0 +1,88 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T20:27:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-button-purpose",
+    "T-TAB-THROUGH (focus order from focus.json)",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow-375",
+    "forms-and-errors (visual only)",
+    "motion-and-timing",
+    "headings-and-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "#compareIframeOff and #compareIframeOn",
+      "evidence": "dom-1440.json: both iframes have empty text and no title or aria-label attribute recorded; focus.json stops 01-14 land on these frames with an empty name.",
+      "before": "<iframe id=\"compareIframeOff\">",
+      "after": "<iframe id=\"compareIframeOff\" title=\"Share dialog with default transitions\"> and title=\"Share dialog with tuned transitions\" on #compareIframeOn",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value (frames need a title, technique H64); screen-reader users hear two unnamed frames.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "Invite button focus state, inside both panes (focus/05-on.png)",
+      "evidence": "Focus on Invite shows only a pale grey halo (token --primary-focus-ring: rgba(0,0,0,0.3), about #b3b3b3 on white, roughly 2:1 against the white modal).",
+      "before": "box-shadow ring rgba(0,0,0,0.3)",
+      "after": ".invite:focus-visible { outline: 2px solid #1b1b1b; outline-offset: 2px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast: the indicator needs 3:1 against the adjacent white.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-143",
+      "tier": "Floor",
+      "where": "\"Add people\" input in both dialogs",
+      "evidence": "Screenshot shows no visible label; the only text is the placeholder \"Add people\" in --text-placeholder #9e9e9e on a near-white fill (about 2.6:1). Iframe DOM was not captured, so a hidden aria-label could not be confirmed.",
+      "before": "<input placeholder=\"Add people\">",
+      "after": "<label for=\"invite-email\" class=\"visually-hidden\">Add people by name or email</label> plus a placeholder at #676767 or darker",
+      "why": "WCAG 2.2 3.3.2 Labels or Instructions and 1.4.3 Contrast: a placeholder vanishes on typing and here is below 4.5:1.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "\"Full access\" dropdown triggers, four per dialog",
+      "evidence": "Every row's control reads \"Full access\" with a chevron; out of context a screen-reader list gives four identical \"Full access\" buttons with no person attached.",
+      "before": "<button>Full access</button>",
+      "after": "<button aria-haspopup=\"listbox\" aria-expanded=\"false\" aria-label=\"Access for James Hall: Full access\">",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels and 4.1.2 Name, Role, Value: identical names for different targets, and the menu state must be exposed.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-104",
+      "tier": "Floor",
+      "where": "pane labels \"Generic AI output\" / \"With Transitions Skill\"",
+      "evidence": "dom-1440: both labels are span.compare-pane-label inside .compare-pane-heading; no heading element exists on the page, so the two regions have no navigable names.",
+      "before": "<span class=\"compare-pane-label\">Generic AI output</span>",
+      "after": "<h2 class=\"compare-pane-label\" id=\"pane-off\">...</h2> and wrap each pane in <section aria-labelledby=\"pane-off\">",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships: visual section titles must be programmatic headings.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-009",
+      "tier": "Floor",
+      "where": "375 width, top of first pane (tiles/375-00.png)",
+      "evidence": "The fixed \"Dark mode\" toolbar button sits on the same line as \"Generic AI output\" and abuts its end; on scroll it stays fixed over pane content.",
+      "before": ".toolbar { position: fixed; top: 16px; right: 16px }",
+      "after": "At max-width 600px make .toolbar position: static (or reserve top padding equal to its height) so it never overlaps content",
+      "why": "WCAG 2.2 1.4.10 Reflow and 2.4.11 Focus Not Obscured: a fixed control can cover focused elements in the panes at narrow widths. Nearest curated card A11-009 (zoom/reflow).",
+      "test": "T-PHONE-PARITY"
+    }
+  ],
+  "strengths": [
+    "Focus rings are visible inside the dialogs on Copy link and the Add people field (focus/03-on.png, 04-on.png): dark 2px outlines.",
+    "Avatar images carry the person's name as alt (alt fragments visible in the broken General access stack)."
+  ],
+  "not_investigated": [
+    "disputed: sweep focus_ring hits (10) on iframe \"\" are false positives: focus moves into the frame and the inner controls show rings (focus/03-on.png Copy link, 04-on.png input); only the iframe element itself has outline none.",
+    "Iframe internals (labels, ARIA on dropdowns, Escape handling) not in the captured DOM; judged from screenshots only.",
+    "Keyboard operation of the access dropdowns and Share/Publish tabs not run live.",
+    "Motion: overshoot easing already flagged by sweep (MOT-001); reduced-motion behaviour inside frames not tested."
+  ]
+}

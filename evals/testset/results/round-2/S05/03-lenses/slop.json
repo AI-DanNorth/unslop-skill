@@ -1,0 +1,77 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Textbook default SaaS page: sparkle pill, indigo-to-fuchsia gradient headline, a drawn browser window with a fake bar chart, a greyed logo strip of invented brands, three emoji feature cards under \"Everything you need to grow\", a five-star quote from \"Sarah Chen\", three pricing tiers with \"Most popular\", and a gradient CTA band; one witty line in the sub-head does not change the skeleton.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 0-3",
+      "evidence": "Failed T-STOCK-ORDER with 7 stock sections in stock order: hero with product mock -> logo strip (\"Trusted by 4,000+ indie teams\") -> three equal feature cards -> testimonial -> three pricing tiers -> closing CTA band (\"Stop guessing. Start knowing.\") -> footer.",
+      "before": "hero mock, logos, 3 features, quote, 3 tiers, CTA band, footer",
+      "after": "Lead with one real funnel from a real product, annotated (where users dropped, what the replay showed); fold features into that walkthrough; keep pricing; cut the logo strip and CTA band",
+      "why": "Seven stock sections in stock order is a generated page however good any one line is.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "logo strip and testimonial, 1440 tiles 1-2",
+      "evidence": "Logo strip is styled text of invented or placeholder brands: \"ACME ▸ FATHOM ▸ BASELINE ▸ RADAR ▸ PROMPTLY\" (Acme is the canonical placeholder company; Fathom is a real analytics competitor). Testimonial: \"— Sarah Chen, founder of Stitchboard\" with ★★★★★, a default-cast name with no photo, link or date. The sweep's default_names detector did not fire.",
+      "before": "ACME / FATHOM / ... ; \"Sarah Chen, founder of Stitchboard\" ★★★★★",
+      "after": "[DATA NEEDED: real customer names with permission and a real quote], or remove both blocks",
+      "why": "Invented customers and a default-cast reviewer are fabricated proof; naming a real competitor as a customer is worse.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-169",
+      "tier": "Reflex",
+      "where": "hero product panel, 1440 tile 0",
+      "evidence": "A div browser window with red/yellow/green traffic-light dots containing eight gradient bars with no axis, labels, values or title. T-DELETION: removing it loses no fact; it shows nothing about funnels, cohorts or replay.",
+      "before": "fake browser chrome + unlabeled bar chart",
+      "after": "A real screenshot of a funnel view, or [DATA NEEDED: product screenshot]; drop the window dots (SLP-168)",
+      "why": "Imitation product UI with no data is decoration posing as the product.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-148",
+      "tier": "Reflex",
+      "where": "h1, section h2s and CTA band",
+      "evidence": "Failed T-RIVAL-NAME: \"Know exactly what your users do.\", \"Everything you need to grow\", \"Simple pricing\", \"Stop guessing. Start knowing.\" all stay true under PostHog, Mixpanel or Amplitude. T-FRESH-READER generic lines: these four plus \"Join 4,000+ founders who understand their product.\"",
+      "before": "\"Know exactly what your users do.\"",
+      "after": "Build the head from the one specific idea already on the page: analytics for indie founders without a data team or \"a second mortgage\", e.g. a head that states the price-and-setup difference",
+      "why": "The hero and every section head are category boilerplate.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 0",
+      "evidence": "Pill above the headline \"New · AI Insights ✨\" (sparkle emoji, an unrelated AI feature announcement on an analytics page), a two-tone indigo-violet-fuchsia gradient h1, a lavender radial wash behind it, all centred (SLP-150).",
+      "before": "sparkle pill + gradient-text h1 + radial wash",
+      "after": "Drop the pill and the wash; set the h1 in solid ink; left-align the hero with the product view beside it",
+      "why": "Pill, gradient headline and glow are the three hero tells that together say 'generated'.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Floor",
+      "where": "testimonial and CTA band",
+      "evidence": "Invented-precision proof beyond the sweep's \"Trusted by 4,000+\" hit: \"We found the exact step where users churned in a 15-minute session. Skittie paid for itself in one afternoon.\" and \"Join 4,000+ founders\" in the CTA band, plus \"Most popular\" on Pro with no basis.",
+      "before": "\"Skittie paid for itself in one afternoon.\" / \"Most popular\"",
+      "after": "[DATA NEEDED: sourced customer count and a real quote]; show \"Most popular\" only if true (INT-186)",
+      "why": "Unsupported proof claims are integrity failures, not style.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The sub-head has one real voice line worth keeping: \"Funnels, cohorts and session replay that don't require a data team — or a second mortgage.\"",
+    "Pricing tiers state concrete limits (10k / 500k / 5M events per month, 7-day vs unlimited retention)."
+  ],
+  "not_investigated": [
+    "Inter was shimmed in capture; render assumed close to intended."
+  ]
+}

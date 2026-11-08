@@ -1,0 +1,72 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:15:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page is built from the visitor's own questions (Do I still have to chase? What does my client receive? What if they write back? When does the chasing stop? What does it cost?) and answers each with the product in a telling state, with figures that reconcile across every mock; the surface (heavy grotesk, warm near-white, one salmon accent, pills everywhere, giant footer wordmark) is the generic part.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-119",
+      "tier": "Reflex",
+      "where": "whole page surface, 1440 and 375",
+      "evidence": "T-MIRROR on the surface only: tight heavy grotesk display, warm near-white ground (oklch 0.97 0.006 55), a single salmon/red accent, every button and status as a pill (Sign up, Start for £8 a month, See a reminder, All/Chasing/Paid chips, Sent/Paid badges) and an 8px-radius soft-shadow panel recipe on four figures (sweep card_kit). A neighbouring fintech brief would get the same skin. The display face was meant to be General Sans (blocked at capture), so the exact face was not judged.",
+      "before": "pill buttons + pill chips + pill badges, one accent, grotesk",
+      "after": "Keep pills for status badges only (where they mean state) and give buttons a different shape; take one cue from invoices themselves (ruled ledger lines, tabular figures already in Geist Mono) into the page chrome",
+      "why": "The content is specific; the skin is the product-chrome default (SLP-121 'pill buttons everywhere').",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "LAY-151",
+      "tier": "Finish",
+      "where": "#chase 'Do I still have to chase?' (1440 tile 01)",
+      "evidence": "Failed T-DELETION: the section is an h2, one sentence ('No. Tilly writes to the client while you get on with the work.') and a half-width library photo (blocked at capture; credited as 'Florist working', Wikimedia). The sentence restates the hero sub-line; removing the section loses only the photo. Sweep dead bands at y783-1020 and y1584-1765 sit either side of it.",
+      "before": "h2 + one line + 752x564 photo slot",
+      "after": "Merge the answer into the next section ('What does my client receive?') as its lead, or give this section the reminder schedule itself ([DATA NEEDED: default reminder cadence, e.g. days after due])",
+      "why": "A head and a paragraph are a head block, not a section; the page's one thin screen.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-121",
+      "tier": "Finish",
+      "where": "footer.mast: 240px 'Tilly' wordmark",
+      "evidence": "Failed T-DELETION: the footer opens with the wordmark at 240px, the largest type on the page, carrying no information; the giant footer wordmark is a current template habit. The nav already names the product twice.",
+      "before": "<div class=\"mast\">Tilly</div> at 240px",
+      "after": "Drop to the nav wordmark size, or use the space for one fact (who makes it, where, support contact [DATA NEEDED])",
+      "why": "Scale spent on decoration at the end of the page.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "IMG-132",
+      "tier": "Finish",
+      "where": "#chase figure.photo (image blocked; judged from credit)",
+      "evidence": "The page's only photograph is a Wikimedia library frame ('Florist_working.jpg', direct2Florist, CC BY 2.0) in a 752px-wide slot beside 'Do I still have to chase?'. It shows a generic freelancer at work, not the product or a Tilly user.",
+      "before": "library photo of a florist in a half-width slot",
+      "after": "Use the slot for the product (the reminder schedule or the 'Chasing' row) or shrink the photo to a detail slot (IMG-132); credit already present",
+      "why": "Mood stock in a major slot on a page that otherwise shows its product everywhere.",
+      "test": "T-FILLER"
+    }
+  ],
+  "strengths": [
+    "Question-led structure that follows a freelancer's real hesitations, ending on price: 'What does it cost? £8 a month.' This is the page's idea; keep it.",
+    "The product is shown in telling states, and the data reconciles: outstanding £4,520.00 equals 0045 + 0044 + 0043 + 0042; invoice 0042 lines £300.00 + £80.00 = £380.00, due 2 Oct, and 'now 7 days overdue' matches 'Reminder 2 Today, 09:00'; invoice 0041's timeline (sent 12 Sep, due 26 Sep, reply 30 Sep 'Paying this week.', paid 3 Oct) matches the inbox and hero ledger.",
+    "The h1 'Never write “following up” again.' names the exact chore with hung punctuation; the CTA carries the price ('Start for £8 a month').",
+    "Honest form: unconnected signup reports 'Nothing was sent: this form is not connected yet.' Phone layout is rebuilt, not shrunk (375 tile 00)."
+  ],
+  "not_investigated": [
+    "Display face: General Sans stylesheet blocked at capture, so the sweep's TYP-003 'Inter as display' hit is a fallback artefact; disputed",
+    "Photograph content: blocked at capture; judged from the footer credit only",
+    "'Example Press / Films / Kitchen ...' sample names: sweep INT-002 already reports; they are honest self-labels but trip INT-134, left to synthesis",
+    "T-STOCK-ORDER: hero with product mock, then question sections, then pricing band with signup, footer: 2 stock sections",
+    "copy voice: no contract or brand samples supplied"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "hero secondary CTA \"Read the docs\", 1440 tile 0",
+      "evidence": "dom-1440.json: <a href=\"#features\">Read the docs</a> scrolls to the \"Why Relay\" feature cards, not to documentation; the nav's \"Docs\" link goes to #docs (the YAML section). The label promises one destination and delivers another.",
+      "before": "<a href=\"#features\">Read the docs</a>",
+      "after": "href=\"/docs\" (the real documentation URL), or relabel to \"See the config\" with href=\"#docs\"",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context): the accessible name must describe where the link goes. Nearest curated card A11-006.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "nav \"Get started\", all pricing buttons, CTA band, 7 footer links",
+      "evidence": "13 of 20 links have href=\"#\": \"Get started\", \"Start free\" (pricing), \"Start 14-day trial\", \"Contact sales\", \"Get started free\", \"Changelog\", \"Documentation\", \"API reference\", \"Status\", \"About\", \"Blog\", \"Contact\", and the logo. Activating them jumps to the top of the page.",
+      "before": "<a class=\"btn\" href=\"#\">Start 14-day trial</a>",
+      "after": "Real URLs for each (e.g. href=\"/signup?plan=team\"); remove footer links whose pages do not exist",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 2.1.1 Keyboard: a keyboard or screen-reader user follows a named link and is moved to the page top with no explanation; for them the primary actions do not work.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "feature cards and hero terminal",
+      "evidence": "Decorative glyphs are plain text in the DOM with no aria-hidden recorded: icon divs \"⌁\", \"◉\", \"↻\" and terminal markers \"$\", \"→\" x4, \"✓\". A screen reader announces e.g. \"fisheye, Full observability\" and \"right arrow, plan dot 4 steps dot ...\".",
+      "before": "<div class=\"feature-icon\">◉</div>",
+      "after": "<div class=\"feature-icon\" aria-hidden=\"true\">◉</div>; same for the terminal's $, → and ✓ spans; give the terminal panel role=\"img\" aria-label=\"Example run: 4 steps, one retry, done in 2 minutes 14 seconds for $0.61\" or mark it aria-hidden if purely decorative",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative symbols must be hidden from assistive tech; meaningful ones need a text alternative.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Reflex",
+      "where": "every focus stop (focus.json)",
+      "evidence": "All 20 stops use the browser default ring (outline auto 1px rgb(16,16,16)) with no :focus-visible style. focus/01-on.png and 05-on.png show a thin two-tone ring that is visible but low-weight against the translucent glass and the purple aurora; on the light \"Start free\" pill the ring sits on a dark shadow edge.",
+      "before": "no :focus-visible rule",
+      "after": ":focus-visible { outline: 2px solid #fff; outline-offset: 3px; } and for light pills outline-color: #a5b4fc",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 2.4.13 Focus Appearance (AAA guidance): a designed 2px ring at 3:1 against both adjacent colours is needed over a varying gradient ground.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "page start",
+      "evidence": "focus.json: the first stop is the logo link \"R Relay\"; there is no skip link before the 5-item nav.",
+      "before": "first focusable: a.brand",
+      "after": "<a class=\"skip\" href=\"#main\">Skip to content</a> as the first child of body, and wrap header-to-CTA content in <main id=\"main\">",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks; pairs with the sweep's missing <main> hit.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Reflex",
+      "where": "pricing tier names and meta lines, 1440 tile 3",
+      "evidence": "\"STARTER\", \"TEAM\", \"ENTERPRISE\" and \"forever · 100 runs/mo\", \"per month · unlimited\" are 12-13px text at rgba(255,255,255,0.5) on translucent glass over a moving-colour ground; the contrast varies with what sits behind each card, so the 10th-percentile sample understates the risk where the cyan or magenta orb passes behind.",
+      "before": "--text-subtle: rgba(255,255,255,0.5)",
+      "after": "--text-subtle: rgba(255,255,255,0.78) and an opaque card fill (e.g. #2a2550) so text contrast no longer depends on the orbs",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum): text over blurred, translucent layers must meet 4.5:1 at its worst point, not on average.",
+      "test": "T-GRADIENT-STOPS"
+    }
+  ],
+  "strengths": [
+    "Heading outline is mostly sound: one h1, an h2 per section, h3 per feature.",
+    "All content remains visible with reduced motion, scripts off and observers blocked (hidden.json).",
+    "Pricing tiers state their limits in text rather than colour or icons alone."
+  ],
+  "not_investigated": [
+    "disputed: sweep focus_ring Floor hits on \"Relay\" and \"Changelog\" (covered by a fixed element). focus/00-on.png and 13-on.png show both fully visible with their ring; the logo is inside the fixed nav itself and the footer link is not under it at that scroll position.",
+    "Whether the glyph spans carry aria-hidden: dom-1440.json does not record aria-hidden, so finding 3 should be confirmed in source.",
+    "Keyboard operation: no menus, dialogs or tabs on the page; no live Playwright run.",
+    "Reflow at 320 and the 1.4.12 text-spacing override were not run beyond the 375 tiles."
+  ]
+}

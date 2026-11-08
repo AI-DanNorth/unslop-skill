@@ -1,0 +1,89 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:20:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A navy page with a tracked caps eyebrow, a numbered four-step card kit with identical 'Learn more' links and body copy that literally says the content does not matter; nothing names a roastery, a coffee or an action.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER",
+    "T-LABEL-TRANSFORM",
+    "T-EYEBROW"
+  ],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "first screen, 1440 and 375",
+      "evidence": "Failed T-FIVE-SECOND: the h1 '每一杯，都有一段履历。' ('Every cup has a record') and the eyebrow 'ORIGIN · PROCESS · ROAST' imply coffee, but no brand, product, audience or action appears anywhere; the only links are four identical '了解更多 →' ('Learn more') with no destination.",
+      "before": "h1 '每一杯，都有一段履历。' + four '了解更多 →'",
+      "after": "[DATA NEEDED: who roasts, what is sold, and the one action (buy, subscribe, visit)]; name it in the h1 or sub-line and give one primary link with a real href",
+      "why": "Visitor cannot tell what this is, who it is for or what to do.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "INT-130",
+      "tier": "Floor",
+      "where": "div.wrap > p and all four card paragraphs",
+      "evidence": "Card copy is self-describing filler: '第一张卡片里的说明文字，也写得足够长一些。' ('Explanatory text in the first card, also written long enough'), repeated with 二/三/四. The sweep caught the lede ('内容本身不重要', 'the content itself does not matter'); the four card bodies are the same residue and were not flagged.",
+      "before": "\"第二张卡片里的说明文字，也写得足够长一些。\"",
+      "after": "[DATA NEEDED: what actually happens at each of origin, process and roast]; until supplied, remove the cards",
+      "why": "Placeholder copy shipped as content; nothing on the page is real.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "div.grid: four .card blocks",
+      "evidence": "Failed T-DEFAULT-AGENT and T-MIRROR: a 'how it works' 1-2-3(-4) step grid of equal rounded cards (14px radius, same soft shadow), each '0N / STEP N / two lines / Learn more →', is the stock section any brand in any category gets. The eyebrow promises three stages (Origin · Process · Roast) but the grid has four generic 'STEP' cards that name none of them.",
+      "before": "01 STEP ONE ... 04 STEP FOUR",
+      "after": "Name the stages in the headings themselves (origin, processing, roast, [DATA NEEDED: fourth stage or drop it]) and lay them as a sequence that reads as one process, not four equal tiles",
+      "why": "Numbered equal cards are a skeleton, not a story about this coffee.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CPY-006",
+      "tier": "Reflex",
+      "where": "each .card: div.num '01' + div.eyebrow 'STEP ONE'",
+      "evidence": "Failed T-LABEL-TRANSFORM and T-EYEBROW: '01' in Courier yellow and 'STEP ONE' in tracked caps say the same thing twice; covering either loses nothing. On a lang=zh page the English caps labels are costume, not content.",
+      "before": "01 / STEP ONE",
+      "after": "One label, in the page's language and naming the stage, e.g. '产地' ([DATA NEEDED: confirm stage names]); drop the numeral or the word",
+      "why": "Double labels and borrowed English caps are template chrome.",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "TYP-151",
+      "tier": "Reflex",
+      "where": "h1 > em '履历' (76px, yellow)",
+      "evidence": "The h1 is declared in Impact, which has no CJK glyphs, so it renders in Noto Sans CJK SC (fonts.json); the em applies font-style: italic to Chinese, producing a synthetic oblique slant. The yellow italic 'one emphasised word' is the stock hero trick translated literally into a script that has no italic.",
+      "before": "h1 { font: 400 76px Impact } h1 em { font-style: italic; color: #ffd23f }",
+      "after": "Set the h1 in a real CJK display face; mark emphasis with weight or colour only (font-style: normal), or drop the emphasis",
+      "why": "Faux italics on Han characters read as an unexamined Latin default.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "LAY-140",
+      "tier": "Reflex",
+      "where": "div.grid at 375px",
+      "evidence": "The grid keeps repeat(3, 1fr) at phone width: cards are 88-99px wide with text columns 40-51px, so body text wraps every 2-3 characters across 11 lines and '了解更多 →' breaks over three lines (375 tiles 00-01). The fourth card orphans on its own row at both widths (LAY-137).",
+      "before": ".grid { grid-template-columns: repeat(3, 1fr) } at all widths",
+      "after": "@media (max-width: 640px) { .grid { grid-template-columns: 1fr } }; at desktop use 2x2 or 4 across for four items",
+      "why": "The layout was never looked at on a phone; sliver text and an orphan card are default-grid symptoms.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "No strengths recorded: navy plus one yellow accent and the h1 line are the only decisions, and the yellow accent on navy is a stock pairing here, not argued",
+    "T-STOCK-ORDER: hero + 1-2-3 steps only (2 stock sections); short page, generated read rests on placeholder copy and default kit, not skeleton length",
+    "T-RIVAL-NAME: there is no brand name to swap; every line would hold for any coffee seller",
+    "Look family: dark-single-accent partially (navy ground L about 0.32, not below 0.20; one vivid yellow accent; mono numerals) so not counted as a cluster",
+    "copy voice: no contract or brand samples supplied"
+  ]
+}

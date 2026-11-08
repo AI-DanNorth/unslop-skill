@@ -14,7 +14,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../..");
 const EXTRACT = fs.readFileSync(path.join(HERE, "extract.js"), "utf8");
 const HEIGHTS = { 320: 568, 375: 812, 414: 896, 768: 1024, 1024: 768, 1280: 800, 1440: 900, 1920: 1080 };
-const BG_WIDTHS = [375, 1440];
+const BG_ALL = true;   // background-only render at every captured width (fixed-canvas media have one width)
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
@@ -81,7 +81,7 @@ for (const w of widths) {
   fs.writeFileSync(path.join(ev, `dom-${w}.json`), JSON.stringify(dom));
   await page.screenshot({ path: path.join(ev, `shot-${w}.png`), fullPage: true });
   if (HEIGHTS[w] && [1280, 1440, 1920, 375].includes(w)) await page.screenshot({ path: path.join(ev, `fold-${w}.png`) });
-  if (BG_WIDTHS.includes(w)) {      // background-only render for real-pixel contrast
+  if (BG_ALL) {      // background-only render for real-pixel contrast
     await page.addStyleTag({ content: "*,*::before,*::after{-webkit-text-fill-color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
     await page.waitForTimeout(100);
     await page.screenshot({ path: path.join(ev, `bg-${w}.png`), fullPage: true });

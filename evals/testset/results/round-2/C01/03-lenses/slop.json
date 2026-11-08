@@ -1,0 +1,68 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A plain, token-driven app screen with no decorative slop, but its structure is a default: three equal pricing cards bolted above a two-item project list, and every one of five buttons is the same primary blue, so nothing on the screen was ranked by a person.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-RIVAL-NAME",
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-001",
+   "tier": "Reflex",
+   "where": "whole screen, 1440 and 375: buttons 'Choose Starter', 'Choose Team', 'Choose Scale', 'Create draft project', 'Export'",
+   "evidence": "All five buttons are .btn-primary on #1d4ed8 at the same 50px height; at 375 the three plan buttons are larger than 'Create draft project'. Failed T-FIVE-SECOND on 'what to do': the screen offers five equal next actions on a page titled 'Projects'.",
+   "before": "5 x .btn-primary, identical weight",
+   "after": "One primary action for the page's job ('Create draft project'); 'Export' as a secondary/outline button; plan buttons as secondary or moved off this screen",
+   "why": "Equal emphasis everywhere is the default an agent produces when nobody decided what the screen is for.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "CON-113",
+   "tier": "Reflex",
+   "where": "top of page, div.plans above h2 'Your projects'",
+   "evidence": "A page titled 'Projects' leads with a three-tier pricing row ('$9 / month', '$29 / month', '$99 / month') before the user's own projects. Failed T-MIRROR: the stock three-tier pricing block would be dropped into any SaaS screen the same way.",
+   "before": "h1 'Projects' > 3 pricing cards > 'Your projects' list",
+   "after": "Lead with the project list and its create action; move plan choice to billing or a single upgrade line tied to a real limit [DATA NEEDED: which plan limit the user is hitting]",
+   "why": "Each screen gets one job; a pricing upsell above the work list is the stock 'three pricing tiers' section used as filler.",
+   "test": "T-MIRROR"
+  },
+  {
+   "rule": "SLP-005",
+   "tier": "Reflex",
+   "where": "div.plans, 3 x div.card",
+   "evidence": "Three identical cards (same radius 20px, #f4f4f6 fill, 1px border, name/price/button) with no feature, limit or difference stated; deleting the cards' shells loses nothing (T-DELETION). The plans cannot be compared: nothing says what $29 buys over $9.",
+   "before": "Starter / $9 / month / Choose Starter (x3 with names swapped)",
+   "after": "State the one difference that sets each plan apart [DATA NEEDED: seat or project limits per plan], or render as a compact comparison row",
+   "why": "Equal cards with only the label swapped are a card kit, not a decision aid.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "CLR-002",
+   "tier": "Finish",
+   "where": ":root --color-action-primary",
+   "evidence": "Action colour #1d4ed8 is Tailwind blue-700 used as the only accent; the sweep's stock_swatches did not flag it.",
+   "before": "--color-action-primary: #1d4ed8",
+   "after": "A product-owned accent [DATA NEEDED: brand colour], kept at >= 4.5:1 with white text",
+   "why": "A framework swatch as the brand accent is a default nobody chose.",
+   "test": "T-DEFAULT-AGENT"
+  }
+ ],
+ "strengths": [
+  "Real design tokens with a dark-mode set and a visible 3px focus ring with offset: keep them.",
+  "Copy is plain and literal ('Create draft project', 'Export'); no slop diction, eyebrows, icons or decoration."
+ ],
+ "not_investigated": [
+  "Async behaviour of 'Create draft project', 'Export' and plan buttons (the empty #toast and .btn.is-busy suggest optimistic or fake success states) could not be observed from static evidence; needs a live click test with the network blocked (T-FAKE-SEND / INT-004).",
+  "T-FRESH-READER: only two content lines exist ('Website redesign', 'Mobile app'), both placeholder-like project names; not raised as a finding."
+ ]
+}

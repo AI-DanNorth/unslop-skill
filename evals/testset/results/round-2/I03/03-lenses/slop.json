@@ -1,0 +1,69 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:10:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The copy and the product mock are genuinely specific to overnight bank reconciliation, but they sit on the stock SaaS sequence (split hero with product card, timed steps, 2x2 feature grid, before/after stat, three pricing tiers, single testimonial, dark CTA band): seven stock sections in stock order, so specific words on a default skeleton.",
+  "tests_run": ["T-STOCK-ORDER", "T-MIRROR", "T-DEFAULT-AGENT", "T-RIVAL-NAME", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "whole page, tiles 00-02",
+      "evidence": "Failed T-STOCK-ORDER: (1) hero h1 left + product card right, (2) 'The work happens while you sleep.' four timed steps on a dark band, (3) 'Every mismatch, named.' 2x2 equal feature grid, (4) 'Month end becomes a review.' before/after stat, (5) three pricing tiers with the middle one outlined, (6) one centred testimonial, (7) dark centred CTA band 'Start tonight. Close calmly.' Five are textbook stock sections and two (stat, testimonial) are stock in single-item form: seven in stock order.",
+      "before": "Stock SaaS sequence, re-skinned",
+      "after": "Let the reconciliation report carry the page: one long annotated nightly run (pull, match, explain, report) in place of the steps band, the 2x2 grid and the stat, with each flag type shown inside the real report. Then pricing.",
+      "why": "Seven or more stock sections reads as generated however specific the copy (T-STOCK-ORDER).",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CON-118",
+      "tier": "Reflex",
+      "where": "hero and closing CTA",
+      "evidence": "Failed T-MIRROR: an expense-management or AP-automation brief would get the same hero (serif h1 left, light data card with status pills right, black 'Book a demo' + outline secondary) and the same dark centred CTA band. The one decision to change: the hero card is the page's best material but is sized as a side illustration.",
+      "before": "Split hero: 4-line h1 left, report card right",
+      "after": "Make the nightly report the hero at full width, with the h1 as its caption; the two flagged rows become the focal point.",
+      "why": "The signature (the real nightly report) should be on the first screen at its best, not as the right half of a template hero (CON-118).",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "INT-109",
+      "tier": "Floor",
+      "where": "'Month end becomes a review.' bars, tile 01",
+      "evidence": "'Before Closewise 8.5 days / With Closewise 2.5 days', caption 'Median close time across customer teams in their first quarter.' No number of teams, period or method; a 70% reduction stated as fact with no source.",
+      "before": "8.5 days → 2.5 days, median across customer teams",
+      "after": "Add n, period and how close time was measured, e.g. 'Median of [n] teams, [months], measured from period end to sign-off.' [DATA NEEDED: n, dates, method]",
+      "why": "A comparison needs its baseline and method (INT-109); unsourced it reads as invented proof.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Reflex",
+      "where": "testimonial, tile 02",
+      "evidence": "Quote 'We used to find problems on day five of close. Now we find them the morning after they happen.' attributed only to 'Financial controller, a 14-person finance team'. Anonymous, unverifiable, and shaped as the polished before/after testimonial.",
+      "before": "— Financial controller, a 14-person finance team",
+      "after": "Name, role and company with permission, or cut the section. [DATA NEEDED: a real, attributable quote]",
+      "why": "An unattributed quote cannot be checked; it is honest about not naming a person but still functions as social proof (INT-102).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-113",
+      "tier": "Reflex",
+      "where": "h1, section heads, CTA",
+      "evidence": "T-OVER-CORRECTION: every head is a short declarative with a full stop, and three are two-beat fragment pairs: 'Reconciled every night. Closed without surprises.', 'Start tonight. Close calmly.', plus 'Every mismatch, named.' and 'Priced by team size.' The rhythm repeats across all six heads.",
+      "before": "Start tonight. Close calmly.",
+      "after": "Vary the heads; let the CTA say the concrete action: 'Connect your bank and ledger: the first run happens tonight.'",
+      "why": "The fragment-pair cadence is the substitute habit for slogan copy.",
+      "test": "T-OVER-CORRECTION"
+    }
+  ],
+  "strengths": [
+    "The hero report is the product's real output and is internally consistent: Harlow Supplies -1,312.40 'Amount differs', footer '£13.40 Harlow bill posted at 1,299.00 in the ledger. Assigned to Priya.' (1,312.40 - 1,299.00 = 13.40). Keep it and make it bigger.",
+    "Flag types are named with sample values (£13.40, -£86.12, ×2, +4 days); T-RIVAL-NAME mostly passes on body copy.",
+    "'Built for finance teams of 3 to 30' matches the pricing tiers (3-8, 9-20, 21-30): audience and pricing agree."
+  ],
+  "not_investigated": [
+    "image-only item: no sweep, DOM or fonts; typeface names, palette tokens and mechanical tells were judged by eye only",
+    "look family: cream ground and serif display are present but no terracotta, eyebrows or numbering; not a cluster"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "link-button-purpose",
+  "focus-order",
+  "use-of-colour",
+  "non-text-contrast",
+  "reflow",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-005",
+   "tier": "Floor",
+   "where": "hero svg (530x248)",
+   "evidence": "dom-800.json records no name, role or title on the product svg; the only image of the product is silent to screen readers, and the hero's text stamps ('\u2014 SPORT TEST', 'DROP 04 \u00b7 04\u20142026') are read instead.",
+   "before": "<svg> sneaker with no accessible name",
+   "after": "<img src=\"axis-pro-ember-flare.jpg\" alt=\"Axis Pro trainer in Ember Flare: orange-to-red flame-knit upper on a thick white gel sole\">",
+   "why": "WCAG 2.2 1.1.1 Non-text Content.",
+   "test": "T-COVER-TEXT"
+  },
+  {
+   "rule": "A11-006",
+   "tier": "Floor",
+   "where": "all links: 'SHOP', 'JOURNAL', 'MEMBERS', 'Shop the Axis Pro', 'Unsubscribe', 'View in browser'",
+   "evidence": "Every href is '#'; link text is clear but none goes anywhere, including Unsubscribe.",
+   "before": "href=\"#\"",
+   "after": "Real destination URLs for each link",
+   "why": "WCAG 2.2 2.4.4 Link Purpose (In Context): the stated purpose must be achievable.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "A11-003",
+   "tier": "Floor",
+   "where": "CTA 'SHOP THE AXIS PRO' and nav links",
+   "evidence": "focus.json: all six links rely on the UA 'auto 1px' outline; on the #1a1816 CTA button a 1px dark ring is not distinguishable (focus/03-on.png).",
+   "before": "default outline",
+   "after": "a:focus-visible { outline: 2px solid #d8482b; outline-offset: 3px }",
+   "why": "WCAG 2.2 2.4.7 Focus Visible (applies in view-in-browser and webmail).",
+   "test": "T-TAB-THROUGH"
+  },
+  {
+   "rule": "A11-001",
+   "tier": "Reflex",
+   "where": "inline accent 'Ember Flare' in body copy",
+   "evidence": "Sweep measured #d8482b on #f4efe7 at 3.76:1; the italic accent is also the only signal it is a product name. Confirmed visible in tile 800-02.",
+   "before": "em { color: #d8482b }",
+   "after": "Darken accent text to #b23a20 (>= 4.5:1) and keep italic",
+   "why": "WCAG 2.2 1.4.3 Contrast (Minimum).",
+   "test": "T-GRADIENT-STOPS"
+  }
+ ],
+ "strengths": [
+  "Responsive at 375 (nav hidden, headline steps down to 48px, no overflow); header, nav and footer landmarks present; lang and title set."
+ ],
+ "not_investigated": [
+  "Email-client accessibility (role=\"presentation\" on layout tables, Outlook rendering) cannot be assessed from a browser capture.",
+  "Sweep text-size hits on 11px mono labels agreed and not repeated."
+ ]
+}

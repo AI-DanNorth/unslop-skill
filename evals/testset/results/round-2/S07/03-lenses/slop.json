@@ -1,0 +1,78 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every visible decision is the warm-paper default (middot eyebrow, one italic terracotta word in the h1, numbered STEP cards with identical 'learn more' links) and the copy says nothing about any coffee business.",
+  "tests_run": ["T-DEFAULT-AGENT", "T-RIVAL-NAME", "T-MIRROR", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-FRESH-READER", "T-LABEL-TRANSFORM"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tile 1440-00",
+      "evidence": "Failed T-DEFAULT-AGENT: cream ground #f4f1ea, tracked caps eyebrow 'ORIGIN · PROCESS · ROAST', 76px h1 with the single word '履历' in italic #d97757, then four white 14px-radius cards each with a mono '01'-'04' and 'STEP ONE'-'STEP FOUR'. Nothing on the page was decided for a client; it is the warm-paper-serif kit assembled in its usual order.",
+      "before": "Eyebrow + italic-accent-word h1 + numbered step cards on cream",
+      "after": "Pick the one thing this roaster has (a farm, a roast log, a photo of the bag) and lead with it; drop the italic accent word and the step numbering unless the steps are a real sequence. [DATA NEEDED: what the roaster actually sells and shows]",
+      "why": "Three or more tells from one family on one surface read as a default, not a style (conflict C10).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "first screen, 1440",
+      "evidence": "Failed T-FIVE-SECOND: the first screen says 'every cup has a record' but not what is sold, to whom, or what to do. The only actions are four identical '了解更多 →' links with no destination.",
+      "before": "每一杯，都有一段履历。 / 这是一段足够长的正文…",
+      "after": "A sub-line naming the product and the visitor's action (order beans / visit the café / subscribe). [DATA NEEDED: business kind and primary action]",
+      "why": "The visitor cannot tell what the page is or what to do next.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "card headers, all four cards",
+      "evidence": "Failed T-DELETION and T-LABEL-TRANSFORM: '01' and 'STEP ONE' say the same thing twice; removing either loses nothing. With caps and 0.18em tracking removed, 'Step one' is still an empty label: no step is named.",
+      "before": "01 / STEP ONE",
+      "after": "One heading per card that names the step, e.g. 'Origin: [farm, region]', 'Roast: [profile]'. [DATA NEEDED: the real steps]",
+      "why": "Counting devices stand in for content; the cards have no headings that carry meaning.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-004",
+      "tier": "Reflex",
+      "where": "h1, '履历'",
+      "evidence": "CSS sets h1 to Georgia, serif and h1 em to italic, but Georgia has no CJK glyphs: the headline renders in the fallback CJK sans (Noto Sans CJK SC) and '履历' is a synthetic slant. The 'serif display with italic accent' is a Latin-font recipe applied to Chinese text.",
+      "before": "font: 400 76px Georgia, serif; h1 em { font-style: italic }",
+      "after": "Name a CJK display face (e.g. Noto Serif SC / Source Han Serif) and mark emphasis with weight or colour, not a faked oblique.",
+      "why": "The recipe was copied rather than chosen: what renders is neither the intended face nor a real italic.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "ROB-110",
+      "tier": "Finish",
+      "where": ".grid, 1440 and 375",
+      "evidence": ".grid is repeat(3, 1fr) for four cards: at 1440 card 04 sits alone on a second row with two empty slots; at 375 the same three columns hold, leaving 2-3 characters per line ('第一 / 张卡 / 片里') and the link wrapping over three lines.",
+      "before": "grid-template-columns: repeat(3, 1fr)",
+      "after": "grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)), or two columns for four items; one column under 40rem.",
+      "why": "Fixed column count set by the template, not by the content.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "eyebrow and h1",
+      "evidence": "Failed T-RIVAL-NAME and T-FRESH-READER: 'ORIGIN · PROCESS · ROAST' and '每一杯，都有一段履历' stay true for any specialty roaster in any town. Generic lines: the eyebrow, the h1, and '了解更多 →'.",
+      "before": "ORIGIN · PROCESS · ROAST / 每一杯，都有一段履历。",
+      "after": "A head only this roaster can say: a named origin, a roast date, a place. [DATA NEEDED: one specific fact]",
+      "why": "Concept capped at 5: the page holds under another roaster's name.",
+      "test": "T-RIVAL-NAME"
+    }
+  ],
+  "strengths": [
+    "The h1 is large and short with generous space around it; the scale contrast between head and body is real and should survive a rewrite."
+  ],
+  "not_investigated": [
+    "T-STOCK-ORDER: only 2 sections (hero, step cards), so the count test does not apply; the read rests on the look-family cluster and empty copy",
+    "brief and contract: no 00-contract.md in the run, so no override could be checked",
+    "body copy and placeholder text: already reported by the sweep (INT-005), not repeated"
+  ]
+}

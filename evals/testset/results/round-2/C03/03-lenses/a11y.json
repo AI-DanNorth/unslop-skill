@@ -1,0 +1,31 @@
+{
+ "lens": "a11y",
+ "ran_at": "2026-11-08T12:00:00",
+ "tests_run": [
+  "verify-sweep-hits",
+  "alt-text",
+  "link-button-purpose",
+  "focus-order",
+  "use-of-colour",
+  "reflow",
+  "headings-landmarks"
+ ],
+ "findings": [
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "h2 'No data'",
+   "evidence": "The empty message is marked as an h2, so heading navigation lists 'No data' as a section of the page rather than a status; 'SECTION 01' is a <p> styled as a label that a screen reader reads as body text with no meaning.",
+   "before": "<h2>No data</h2>",
+   "after": "<section aria-labelledby=\"rep\"><h2 id=\"rep\">Reports list</h2><p role=\"status\">No reports yet...</p></section>",
+   "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels (headings describe their sections).",
+   "test": "T-TAB-THROUGH"
+  }
+ ],
+ "strengths": [
+  "Text contrast passes (#55575c on white ~7:1); layout reflows at 375 without overflow; lang and title set."
+ ],
+ "not_investigated": [
+  "disputed: sweep A11-003 'Tab reached no focusable element' is not a focus-visibility failure; the page simply has no controls (the missing action is a content gap, reported in the slop lens)."
+ ]
+}

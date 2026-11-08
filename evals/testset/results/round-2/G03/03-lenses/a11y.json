@@ -1,0 +1,41 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "header nav at 375px",
+      "evidence": "dom-375.json: the nav links \"The list\", \"Tastings\", \"Find us\" are display:none with zero rects, and no menu button exists; the 375 header shows only the wordmark and \"Open tonight from 5pm\". The footer repeats only \"The list\" and \"Tastings\".",
+      "before": "nav.nav__pill links hidden below the breakpoint with no replacement",
+      "after": "Keep the three links visible in a second row at 375px, or add a <button aria-expanded=\"false\" aria-controls=\"nav-links\">Menu</button>; add \"Find us\" to the footer links",
+      "why": "WCAG 2.2 2.4.5 Multiple Ways and 3.2.3 Consistent Navigation (advisory on a one-page site): phone users lose the page's navigation landmark content entirely. Nearest curated card A11-007 (landmarks).",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-010",
+      "tier": "Finish",
+      "where": "tasting signup form, 1440 tile 3",
+      "evidence": "forms.json: submitting shows \"Nothing was sent: this form is not connected yet.\" The capture does not say whether that text is in a role=\"status\" / aria-live region, and the input has no aria-describedby.",
+      "before": "message inserted near the form",
+      "after": "Render the message in <p role=\"status\" id=\"signup-msg\"> and set aria-describedby=\"signup-msg\" on #email when shown",
+      "why": "WCAG 2.2 4.1.3 Status Messages: screen-reader users must hear the outcome without moving focus. Unverified from evidence, so Finish.",
+      "test": "T-FAKE-SEND"
+    }
+  ],
+  "strengths": [
+    "Every focus stop shows a 2px salmon outline that is clearly visible on the dark ground (focus/01-on to 09-on); focus order follows the visual order top to bottom.",
+    "The email field has a visible label, type=email and autocomplete=email; the form fails honestly.",
+    "Closed days are marked by the word \"Closed\" as well as dimmed colour, so the hours do not rely on colour alone (1.4.1).",
+    "Footer and credit links are underlined; the logo link's name \"Night Cellar, home\" contains its visible label (2.5.3).",
+    "One h1, h2 per section, main/nav/header/footer landmarks, skip link first, and all text visible under reduced motion, observer-off and scripts-off."
+  ],
+  "not_investigated": [
+    "disputed: sweep focus_ring Floor hit on \"Skip to content\" (covered by a fixed element). focus/00-on.png shows the skip link fully visible with its ring at x16; the fixed header pill starts at x419, so the overlap is the header's transparent full-width box, not a visual cover.",
+    "Alt text: the three photographs were blocked in capture and no <img> elements appear in dom-1440.json, so alt quality could not be judged.",
+    "Keyboard operation: no menus, dialogs, carousels or tabs on the page; no live Playwright run.",
+    "Form validation messages for an invalid email were not exercised.",
+    "Text-spacing override (1.4.12) not injected."
+  ]
+}

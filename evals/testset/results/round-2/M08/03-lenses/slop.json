@@ -1,0 +1,79 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The product copy and spec block are specific (7.4 oz, 34 mm stack, 8 mm drop, Gel-02 pods) and the type has a point of view, but the hero is a clip-art sneaker on a blurred peach radial glow, the chrome is the warm-paper kit (cream page, terracotta accent, tracked mono caps with middot chains, italic accent words, corner 'stamps'), and the brand is a placeholder.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-EYEBROW",
+  "T-FRESH-READER",
+  "T-STOCK-ORDER",
+  "T-COVER-TEXT",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-121",
+   "tier": "Reflex",
+   "where": "hero (800 tile 00, y 80-590)",
+   "evidence": "The product, the only reason for the email, is a hand-drawn inline SVG shoe (flat orange upper, five curved strokes, a white flash, a bracket for a sole) floating on a CSS radial-gradient glow. T-COVER-TEXT: with text hidden this reads as a generic shoe icon, not the Axis Pro in 'Ember Flare' and its 'painterly flame-knit upper' that the copy describes.",
+   "before": "Inline SVG sneaker drawing on radial-gradient background",
+   "after": "A real product photograph of the Ember Flare colourway as a hosted <img> at 600px email width with alt text [DATA NEEDED: product photography]",
+   "why": "A launch email has to show the product; a schematic drawing contradicts 'painterly flame-knit' and reads as a placeholder.",
+   "test": "T-COVER-TEXT"
+  },
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "masthead, hero stamps, eyebrow, spec labels",
+   "evidence": "Warm-paper family tells the sweep could only partly measure: cream #f4efe7 page, terracotta #d8482b accent, italic accent words ('AXIS PRO.', 'Ember Flare'), and tracked mono caps with middot chains on every label: 'EST \u00b7 2024', '\u2014 SPORT TEST', '\u2014 EMBER FLARE', 'DROP 04 \u00b7 04\u20142026', 'NEW \u00b7 MAX-CUSHION TRAINER \u00b7 EMBER FLARE', 'SPECIFICATIONS \u00b7 WOMEN'S'. T-DELETION: the three hero corner stamps and 'EST \u00b7 2024' carry no fact the reader needs.",
+   "before": "Corner stamps + eyebrow + EST badge",
+   "after": "Keep one label (the eyebrow, rewritten as a fact like 'Ships 4 April'); drop the stamps and EST badge",
+   "why": "Three or more tells of one look family on one surface read as the default, not a brand choice.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "INT-005",
+   "tier": "Floor",
+   "where": "brand name 'SPORT TEST' (masthead, hero stamp, footer)",
+   "evidence": "The sender brand is 'SPORT TEST', a test placeholder, repeated three times including '\u00a9 2026 SPORT TEST'; every link (nav, CTA, Unsubscribe, View in browser) is href '#'.",
+   "before": "SPORT TEST; href=\"#\"",
+   "after": "[DATA NEEDED: real brand name and tracked URLs]; a working unsubscribe link is required before send",
+   "why": "Placeholder residue at ship; a dead unsubscribe link is also a legal problem for marketing email.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "CPY-005",
+   "tier": "Finish",
+   "where": "h1 'MEET THE AXIS PRO. A SNEAKER THAT RUNS.'",
+   "evidence": "T-THREE-LINE: 'A sneaker that runs' is not falsifiable and fits any running shoe (T-RIVAL-NAME: swap in any brand's trainer and it holds). The body line 'softer underfoot, louder on the outside' is the stock antithesis pair.",
+   "before": "\"A SNEAKER THAT RUNS.\"",
+   "after": "Use a spec as the claim: 'Meet the Axis Pro. 34 mm of gel under your heel.'",
+   "why": "The specs are the specific material; the headline should use them.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "EML-101",
+   "tier": "Reflex",
+   "where": "whole email build",
+   "evidence": "dom-800.json: layout is divs/sections with CSS aspect-ratio, radial gradients, an @media query and an inline <svg> hero; no tables, no <img>. Gmail and Outlook strip SVG and most of this CSS, so the hero and layout will not render as captured.",
+   "before": "div layout + inline SVG + CSS gradients",
+   "after": "Table-based 600px layout with inline styles and a hosted raster hero image",
+   "why": "An email's design is what the client renders; this capture shows a browser-only version.",
+   "test": "T-DEFAULT-AGENT"
+  }
+ ],
+ "strengths": [
+  "The spec block is real product information with units and qualifiers ('34MM max-cushion stack at the heel', '8MM heel-to-toe drop for low-impact landing'); keep it and make it the lead.",
+  "Single clear CTA ('Shop the Axis Pro') and a compliant footer structure with address, unsubscribe and view-in-browser."
+ ],
+ "not_investigated": [
+  "Rendering in real email clients (only a browser capture exists); preheader text not present in the DOM capture."
+ ]
+}

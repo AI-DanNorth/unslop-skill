@@ -1,0 +1,36 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["use-of-colour", "visible-contrast", "visible-text-size"],
+  "findings": [
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "muted text on near-black: sender strip lead-in, step numbers, code comment, pricing footnote, footer, tiles 00-02",
+      "evidence": "By eye, several runs are dim grey on ~#111: \"Works with any HTTP sender, including\", step numbers \"01\"-\"04\", the code comment \"// e.data.amount_paid: number, fully typed\", \"An event is one accepted webhook. Retries and replays are not billed.\" (about 13px) and the footer links \"Docs  API reference  Status  Changelog  Security\". These look near or below 4.5:1; needs pixel measurement.",
+      "before": "secondary grey around #6b6b6b-#7a7a7a on #111",
+      "after": "Raise the muted text token to at least #9a9a9a on #111 (about 6.6:1) for text under 18px; keep the dimmest grey only for decorative rules",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum): small secondary text, including the billing footnote that states a pricing term, must reach 4.5:1.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Reflex",
+      "where": "status chips in the hero event log and delivery-attempts panel",
+      "evidence": "Chip text \"200\", \"retry 3\" and \"replay\" is small (about 11px mono) on tinted dark chips; the attempt dots are red, orange and green. Status is also given in text (503 / timeout / 200), so colour is not the only carrier, but the chip text looks low-contrast against its tint.",
+      "before": "11px mono on a tinted chip",
+      "after": "Chip text at least 12px with 4.5:1 against the chip fill (e.g. #b9f27c on #1d2a12 checked by pixels)",
+      "why": "WCAG 2.2 1.4.3 Contrast; 1.4.1 Use of Color passes because each state has a text label.",
+      "test": "T-GRAYSCALE"
+    }
+  ],
+  "strengths": [
+    "Primary buttons use dark text on lime, which reads clearly; secondary buttons have a visible 1px border.",
+    "States are labelled in text everywhere (200, retry 3, replay, 503, timeout), so meaning survives without colour.",
+    "Clear visual heading hierarchy from h1 to section heads to card titles."
+  ],
+  "not_investigated": [
+    "Image-only item: alt text, link purpose, focus order and visibility, keyboard operation, landmarks, headings in markup, forms, motion and reflow cannot be checked from a flat image. Only visible contrast and text size were judged, by eye.",
+    "No 375px render supplied."
+  ]
+}

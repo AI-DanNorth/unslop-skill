@@ -1,0 +1,86 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:25:00",
+  "tests_run": ["verify-sweep-floor", "alt-text", "link-purpose", "focus-order", "keyboard", "use-of-colour", "non-text-contrast", "reflow-375", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "hero 'Read the docs →'",
+      "evidence": "dom-1440.json: a.btn-secondary 'Read the docs →' has href '#features'; activating it scrolls to the feature cards, not documentation. The nav 'Docs' link points to '#docs', which has no matching section.",
+      "before": "<a href=\"#features\">Read the docs →</a>",
+      "after": "<a href=\"/docs\">Read the docs</a> (real target), or relabel 'See what Relay does' if it stays an in-page link.",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context): the name says where it goes and it goes elsewhere.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "pricing buttons and CTA",
+      "evidence": "Three 'Start free' links exist (hero, Starter card, plus 'Get started' / 'Get started free'); the hero one goes to #pricing, the Starter one to '#'. Same name, different destinations; out of context a screen-reader user cannot tell them apart.",
+      "before": "<a href=\"#\">Start free</a> (Starter card)",
+      "after": "aria-describedby the plan name, e.g. aria-label=\"Start free on Starter plan\", and give each a real href.",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 3.2.4 Consistent Identification.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "feature card icons, tile 1440-01",
+      "evidence": "Icons are Unicode text in div.card-icon (⌁ ◉ ↻ ▤ ⇄ ⚑) with no aria-hidden; screen readers announce them ('electric arrow', 'fisheye', 'clockwise open circle arrow') before each heading.",
+      "before": "<div class=\"card-icon\">⌁</div>",
+      "after": "<div class=\"card-icon\" aria-hidden=\"true\">⌁</div>",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative content must be ignorable by assistive tech.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "hero terminal, tile 1440-00",
+      "evidence": "The terminal is a div stack with decorative '→', '$', '✓' glyphs and three window dots; it has no role, label or pre/code semantics, so it is read as loose fragments ('right arrow plan dot 4 steps dot…'). The green 'ok'/'done' states are colour plus word, which is fine.",
+      "before": "<div class=\"terminal\">…<div class=\"term-line\">→ plan · 4 steps…",
+      "after": "<figure aria-label=\"Example Relay session\"><pre><code>…</code></pre></figure>, with the prompt glyphs and dots aria-hidden.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-002",
+      "tier": "Floor",
+      "where": "nav at 375, tile 375-00",
+      "evidence": "At 375 the Features / Pricing / Docs / Changelog links are removed and there is no menu button: focus.json at 1440 has them, the 375 render shows only Relay, Sign in and Get started. Primary navigation is lost on phones.",
+      "before": ".nav-links { display: none } under the phone breakpoint, no replacement",
+      "after": "Add a <button aria-expanded=\"false\" aria-controls=\"nav-links\">Menu</button> that reveals the list, or keep the four links in a scrollable row.",
+      "why": "WCAG 2.2 1.4.10 Reflow (no loss of functionality at 320px) and 2.4.5 Multiple Ways.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "page structure",
+      "evidence": "header, nav and footer landmarks exist but no main (sweep). Additionally there is no skip link: the first focus stop is the brand link, then 6 nav items before content.",
+      "before": "<nav>…</nav><header class=\"hero\">…",
+      "after": "<a class=\"skip\" href=\"#main\">Skip to content</a> as first child of body; wrap hero-to-CTA in <main id=\"main\">.",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "pricing sub-lines and footer meta",
+      "evidence": "Verified on tile 1440-03: 'forever, up to 100 runs/mo', 'per month, unlimited runs' and the footer 'Privacy · Terms · Security' are dark grey on near-black and visibly faint, consistent with the sweep's #62666d readings (about 3.3-3.6:1). The plan terms are content a buyer needs.",
+      "before": "color: #62666d",
+      "after": "color: #8a8f98 or lighter (≥4.5:1 on #0f1011).",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); confirms sweep hits.",
+      "test": "T-GRADIENT-STOPS"
+    }
+  ],
+  "strengths": [
+    "Focus order in focus.json follows the visual order (nav, hero CTAs, pricing, CTA, footer) with no jumps or off-screen stops.",
+    "lang and a descriptive title are set; no motion and no hidden-until-scroll content."
+  ],
+  "not_investigated": [
+    "Sweep focus_ring hits (indicator 1.5:1 against unfocused) not re-verified against focus/*.png crops; no dispute raised",
+    "eyebrow #5e6ad2 at 4.44:1 is a near miss; confirmed real by measurement but low impact",
+    "forms: none on the page; live keyboard tests not run"
+  ]
+}

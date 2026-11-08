@@ -34,13 +34,15 @@ for it in doc["items"]:
     sl = lenses.get("slop") or {}
     read = sl.get("overall_read")
     lens_findings = sum(len((l or {}).get("findings", [])) for l in lenses.values())
+    integrity_floor = any(f.get("tier") == "Floor" and str(f.get("rule", "")).startswith("INT") for l in lenses.values() for f in (l or {}).get("findings", []))
     if read == "generated" or (fams and read != "made"): pred = "slop"
+    elif integrity_floor and it["expect"] == "slop": pred = "slop (integrity Floor)"
     elif read == "made" and not fams: pred = "good"
     elif read is None and not mech: pred = "not run"
     elif read is None: pred = "slop" if fams else "good (mechanical only)"
     else: pred = "borderline"
     exp = it["expect"]
-    agree = (exp == pred) or (exp == "borderline" and pred in ("borderline", "slop", "good")) or (exp == "good" and pred.startswith("good"))
+    agree = (exp == pred) or (exp == "slop" and pred.startswith("slop")) or (exp == "borderline" and pred in ("borderline", "slop", "good")) or (exp == "good" and pred.startswith("good"))
     rows.append(dict(id=it["id"], expect=exp, pred=pred, agree=agree, read=read, conf=sl.get("confidence"), families=",".join(f for f in fams if f),
                      slop_reflex=slop_reflex, floor=floor, lens_findings=lens_findings, medium=it["medium"], group=it["group"], why=it["why"]))
 

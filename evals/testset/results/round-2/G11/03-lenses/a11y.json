@@ -1,0 +1,32 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T22:08:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "text-contrast (visual)",
+    "use-of-colour",
+    "reading-order",
+    "headings-and-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-110",
+      "tier": "Finish",
+      "where": "h1 \"大标题第二行！\"",
+      "evidence": "dom-1242: the h1 text is \"大标题第二行\" with the line break forced by a narrow width (480px), and the '！' is a separate red span; text extraction reads the two lines as one run with no break or space.",
+      "before": "<h1>大标题第二行<span>！</span></h1> broken by width",
+      "after": "Use an explicit <br> (or two spans with display:block) so the visual line break is also in the text",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships: the visual structure of the head should survive in the text; minor for an exported image.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Black on white text at 32px and above everywhere; the red #cc0000 '！' is 5.9:1 on white and purely emphatic, carrying no meaning on its own.",
+    "Reading order (h1, body, label) matches the visual order; nothing is covered or clipped."
+  ],
+  "not_investigated": [
+    "Sweep Floor hits A11-008 (no lang, no title) confirmed in dom-1242 (title and lang empty); they matter for the HTML source, not the exported image.",
+    "Keyboard, focus, forms and motion: not applicable to a static social canvas.",
+    "Contrast not machine-verified (no background render); judged from DOM colours."
+  ]
+}

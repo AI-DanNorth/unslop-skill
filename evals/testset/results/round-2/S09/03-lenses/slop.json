@@ -1,0 +1,77 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:40:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The textbook generated SaaS page: placeholder brand 'SaaSify', 'Streamline Your Workflow Like Never Before', a four-figure stat band, a borrowed logo wall (Stripe, Notion, Linear, Vercel, Figma), three icon feature cards, three five-star testimonials from stock names, three pricing tiers, a 'Ready to Transform' CTA band and a link-farm footer; nine stock sections in stock order and no product shown.",
+  "tests_run": ["T-STOCK-ORDER", "T-DEFAULT-AGENT", "T-RIVAL-NAME", "T-MIRROR", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "whole page, tiles 1440-00 to 03 and dom-1440.json text",
+      "evidence": "Failed T-STOCK-ORDER (9 stock sections): centred hero > stat band (10K+, 99.9%, 50M+, 4.9) > 'TRUSTED BY INDUSTRY LEADERS' logo strip > 'Everything You Need to Scale' three equal icon cards > 'Loved by Teams Worldwide' three testimonial cards > 'Simple, Transparent Pricing' three tiers with 'Most Popular' > 'Ready to Transform Your Workflow?' CTA band > four-column link-farm footer. Failed T-DEFAULT-AGENT: 'landing page for a workflow automation SaaS' produces this verbatim.",
+      "before": "Stock SaaS sequence with no product visible",
+      "after": "[DATA NEEDED: what the product automates, for whom, and a real screenshot]; build the first screen around one workflow shown end to end.",
+      "why": "Seven or more stock sections reads as generated.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CON-118",
+      "tier": "Reflex",
+      "where": "first screen",
+      "evidence": "Failed T-FIVE-SECOND: the hero says 'automate tasks, boost productivity, and scale their operations' but never which tasks or for which team; there is no product image anywhere on the page. A visitor cannot tell what SaaSify does.",
+      "before": "Streamline Your Workflow Like Never Before",
+      "after": "A head naming the job, e.g. '[Product] turns [specific trigger] into [specific outcome] for [team]'. [DATA NEEDED: the actual job]",
+      "why": "What it is and who it is for are unanswered on the first screen.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "INT-103",
+      "tier": "Floor",
+      "where": "logo strip, tile 1440-00",
+      "evidence": "'TRUSTED BY INDUSTRY LEADERS' over Stripe, Notion, Linear, Vercel and Figma wordmarks. These are real companies placed as customers of a placeholder product with no source; the sweep caught '10,000+ teams' but not the logo wall.",
+      "before": "Trusted by: Stripe, Notion, Linear, Vercel, Figma",
+      "after": "Remove the strip until there are customers who have agreed to be named. [DATA NEEDED: permitted customer logos]",
+      "why": "Invented logo walls using real brands are an integrity and impersonation failure (INT-103).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Floor",
+      "where": "testimonials, tiles 1440-01/02",
+      "evidence": "Three five-star cards from 'Sarah Mitchell, VP Operations, TechCorp', 'James Chen, CTO, ScaleUp Inc', 'Amanda Rodriguez, Founder, GrowthLab': stock names, placeholder companies, initials avatars, and quotes built to formula ('reduced our manual work by 80%', 'ROI was visible within the first month', 'Best investment we've made').",
+      "before": "\"SaaSify reduced our manual work by 80%.\" — Sarah Mitchell, TechCorp",
+      "after": "[DATA NEEDED: real, attributable quotes], or remove the section.",
+      "why": "Fake people and invented outcome numbers (INT-102, INT-104).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "all section heads",
+      "evidence": "Failed T-RIVAL-NAME on every heading: 'Everything You Need to Scale', 'Loved by Teams Worldwide', 'Simple, Transparent Pricing', 'Ready to Transform Your Workflow?' and the sub-line 'work smarter, not harder' stay true for Zapier, Make or n8n. All headings are in Title Case, a second default.",
+      "before": "Everything You Need to Scale",
+      "after": "Heads that state a checkable fact about this product. [DATA NEEDED: differentiators]",
+      "why": "Concept capped at 5: no line belongs to this business.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "feature cards, tile 1440-01",
+      "evidence": "Failed T-DELETION: lightning bolt, bar chart and padlock icons in tiles above 'Instant Automation', 'Real-time Analytics', 'Enterprise Security'. Each icon is the literal stock glyph for its heading and adds nothing; 'Bank-level encryption, SOC 2 compliance' is an unbacked claim.",
+      "before": "⚡ Instant Automation / 📊 Real-time Analytics / 🔒 Enterprise Security",
+      "after": "Drop the icon tiles; replace the three cards with one real workflow screenshot and a short list; state SOC 2 only with a report link. [DATA NEEDED: SOC 2 status]",
+      "why": "Icon tile above every card heading on equal cards (SLP-003, SLP-005).",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Pricing tiers state concrete limits (5 users / 100 automations, 25 users / unlimited) that a buyer can compare; nothing else on the page is specific."
+  ],
+  "not_investigated": [
+    "Render fidelity: Tailwind v3 config was ignored by the v4 shim, so the Pro tier, CTA band, primary buttons and footer render white on white; colours, fonts (Poppins/Open Sans intended) and the CTA band layout were judged from dom-1440.json text, not the screenshots",
+    "slop words, '10,000+ teams', '99.9% Uptime' and the stat band: reported by the sweep, not repeated"
+  ]
+}

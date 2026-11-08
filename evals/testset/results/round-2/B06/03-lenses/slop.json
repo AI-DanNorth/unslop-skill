@@ -1,0 +1,97 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T22:25:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A white Inter-and-Tailwind-blue SaaS page in stock order (eyebrow hero, benchmark stat panel, Acme logo strip, three equal feature cards, Sarah Chen testimonial, pricing grid, compliance pills, CTA band, four-column footer), propped up by invented proof; the 'corporate trust' dressing is the default, not a choice for this product.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, section order (tiles 1440-00 to 1440-03)",
+      "evidence": "Failed T-STOCK-ORDER: hero with eyebrow and two CTAs, stat band (\"Customer benchmarks — 2025 cohort\"), logo strip, three equal feature cards, testimonial card, pricing grid with \"Most popular\" middle, compliance pills, centred CTA band, link-farm footer: 8 stock sections. saas-card-kit tells visible: Inter only, equal 3-up cards, stock slate greys and #F8FAFC panel (sweep CLR-002).",
+      "before": "The default SaaS landing order in default Tailwind slate and blue",
+      "after": "Open with the product doing its one distinctive thing (a funnel built from plain-language steps, shown for real) and cut the stat band, logo strip and CTA band until real data exists",
+      "why": "Seven or more stock sections reads as generated whatever the copy says.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Floor",
+      "where": "testimonial card, 1440-01",
+      "evidence": "\"We found the exact step where users churned in a fifteen-minute session. Skittie paid for itself in one afternoon.\" — Sarah Chen, Founder, Stitchboard · 12-person team, 40k monthly users. Default-cast name plus manufactured specifics (team size, MAU) for credibility.",
+      "before": "Sarah Chen — Founder, Stitchboard · 12-person team, 40k monthly users",
+      "after": "[DATA NEEDED: real, permissioned customer quote and attribution] or remove",
+      "why": "Invented testimonial with invented specifics is fabricated proof (INT-105 pattern).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-106",
+      "tier": "Floor",
+      "where": "hero benchmark panel, 1440-00",
+      "evidence": "\"Customer benchmarks — 2025 cohort, n = 4,120 teams\": 18.4% trial-to-paid, 9 min to first insight, 2.1% 90-day churn, with pseudo-methodology captions (\"Skittie data, p75 window\"; a median labelled with a p75 window). Sweep caught the 4,000+ logo-strip count; this panel adds sample-size and percentile dressing to unsourced numbers.",
+      "before": "Median trial → paid conversion 18.4% / Skittie data, p75 window",
+      "after": "[DATA NEEDED: real cohort figures, method and date] or replace with a product capture",
+      "why": "Statistical dressing (n=, p75) makes invented figures look sourced; 'median' over a 'p75 window' is internally inconsistent.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-105",
+      "tier": "Floor",
+      "where": "compliance strip and footer",
+      "evidence": "Pills \"SOC 2 Type II\", \"GDPR\", \"ISO 27001\", \"EU data residency available\"; footer \"Founded 2021, headquartered in Berlin\", \"Skittie Analytics GmbH\", \"Uptime 99.9% SLA\". None is supplied by a brief; certifications are claims with legal weight.",
+      "before": "SOC 2 Type II · GDPR · ISO 27001",
+      "after": "[DATA NEEDED: certifications actually held, with report dates; company facts] or omit",
+      "why": "Trust badges invented to suit the 'corporate trust' style are fabricated proof, the most damaging kind on a page whose whole register is trust.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "h1, section heads, CTA band",
+      "evidence": "T-FRESH-READER / T-RIVAL-NAME: \"Know exactly what your users do — without building a data team\", \"Everything you need to understand usage\", \"Simple, transparent pricing\", \"Start your 14-day trial — no credit card required\" all stay true with PostHog or Mixpanel swapped in.",
+      "before": "Simple, transparent pricing",
+      "after": "Heads that carry Skittie's actual difference, e.g. from the body copy: \"Funnels from plain-language steps\" / \"Ask in English, get the cohort\"",
+      "why": "The only specific ideas (plain-language funnels, English queries) are buried in 14px card text.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "features section, 1440-01",
+      "evidence": "Three equal-width bordered cards, same radius, h3 + 14px paragraph each; T-DELETION: card borders and boxes add nothing that three paragraphs would not carry.",
+      "before": "3 equal feature cards",
+      "after": "One feature shown large with real output; the others as a short list",
+      "why": "Equal card triplets are the saas-card-kit signature.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "LAY-109",
+      "tier": "Finish",
+      "where": "pricing grid, 1440-02",
+      "evidence": "The Starter tagline \"For first projects\" sits in the row-label column above \"Monthly price\" instead of under STARTER, so it reads as a label for the whole row.",
+      "before": "PLAN column: \"For first projects / Monthly price\"",
+      "after": "Move \"For first projects\" under the STARTER header and give Pro and Scale their own one-line tagline or none",
+      "why": "A misplaced cell shows the grid was filled from a template, not checked.",
+      "test": "T-SKELETON"
+    }
+  ],
+  "strengths": [
+    "Pricing as a comparison grid with concrete limits (events per month, retention, SSO) is more useful than three marketing cards.",
+    "Body copy has real specifics worth keeping: \"products with one to twenty people\", \"Funnels are created from plain-language steps, not schema definitions\", \"Queries are written in English against your existing event stream\"."
+  ],
+  "not_investigated": [
+    "No 00-contract.md: no brief override for the corporate-trust look or for the compliance claims, so they are treated as unchosen and unsupplied."
+  ]
+}

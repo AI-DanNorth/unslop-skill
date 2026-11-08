@@ -89,10 +89,29 @@ export async function installShim(ctx, log) {
     net.shimmed.push(`npm ${m[1]}${m[2] ? "@" + m[2] : ""}`);
     await route.fulfill({ status: 200, contentType: type, body: fs.readFileSync(file) });
   });
+  // Tailwind v3 pages set `tailwind.config = {theme:{extend:{colors,fontFamily}}}`; v4 ignores it, so map it to @theme variables.
+  await ctx.addInitScript(() => {
+    let cfg;
+    try {
+      Object.defineProperty(window, "tailwind", { configurable: true, get() { return { get config() { return cfg; }, set config(v) { cfg = v; } }; }, set(v) { if (v && v.config) cfg = v.config; } });
+    } catch {}
+    window.addEventListener("DOMContentLoaded", () => {
+      if (!cfg || !cfg.theme) return;
+      const t = Object.assign({}, cfg.theme, cfg.theme.extend || {});
+      const lines = [];
+      const flat = (prefix, obj) => { for (const [k, v] of Object.entries(obj || {})) { const name = k === "DEFAULT" ? prefix : `${prefix}-${k}`; if (typeof v === "string") lines.push(`--${name}: ${v};`); else if (v && typeof v === "object" && !Array.isArray(v)) flat(name, v); } };
+      flat("color", t.colors);
+      for (const [k, v] of Object.entries(t.fontFamily || {})) lines.push(`--font-${k}: ${Array.isArray(v) ? v.join(", ") : v};`);
+      for (const [k, v] of Object.entries(t.borderRadius || {})) lines.push(`--radius-${k}: ${v};`);
+      if (!lines.length) return;
+      const st = document.createElement("style"); st.type = "text/tailwindcss"; st.textContent = `@theme {\n${lines.join("\n")}\n}`;
+      document.head.appendChild(st);
+    });
+  });
   await ctx.route(/^https:\/\/cdn\.tailwindcss\.com/, async (route) => {
     const dir = npmPackage("@tailwindcss/browser@4");
     if (!dir) { net.blocked.push("script cdn.tailwindcss.com"); return route.abort(); }
-    net.shimmed.push("npm @tailwindcss/browser@4 (approximates Tailwind v3 play CDN; tailwind.config scripts ignored)");
+    net.shimmed.push("npm @tailwindcss/browser@4 (approximates Tailwind v3 play CDN; tailwind.config colours, fonts and radii mapped to @theme)");
     await route.fulfill({ status: 200, contentType: "application/javascript", body: fs.readFileSync(path.join(dir, "dist/index.global.js")) });
   });
   for (const pair of (process.env.UNSLOP_HOST_MAP || "").split(",").filter(Boolean)) {

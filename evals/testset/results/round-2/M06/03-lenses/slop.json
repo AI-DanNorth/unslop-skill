@@ -1,0 +1,79 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A deliberate Swiss red-black-white treatment with one giant number and directly labelled, proportional bars; the style is chosen, not defaulted, but the slide repeats its lead figure three times, leaves a dead middle band and makes claims its own data does not support.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-GHOST-DECK",
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-THREE-LINE",
+  "T-SO-WHAT",
+  "T-DELETION",
+  "T-LABEL-TRANSFORM",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "INT-001",
+   "tier": "Floor",
+   "where": "left column key message and top bar",
+   "evidence": "'First open-source model to achieve SOTA across all three major coding benchmarks' but the first benchmark is labelled 'AIME 2025 / Mathematical Reasoning', not coding; '#1 OPEN-SOURCE RANKING' is shown while the chart compares only against closed models (Claude 3.5, GPT-4o), so no open-source rival is on the slide. Source line is 'Benchmark data sourced from official evaluation reports, 2025' with no report named. Failed T-THREE-LINE (not falsifiable as stated).",
+   "before": "\"across all three major coding benchmarks\"; '#1 OPEN-SOURCE RANKING'",
+   "after": "\"Leads Claude 3.5 and GPT-4o on AIME 2025, SWE-bench Verified and \u03c4\u00b2-bench\" and a footnote naming each report and date [DATA NEEDED: report citations; open-source comparison set if '#1' is kept]",
+   "why": "A benchmark slide is only as good as the claims it can back; mislabelled categories and an unshown ranking read as invented proof.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "CPY-128",
+   "tier": "Reflex",
+   "where": "'95.7' in the left hero, the AIME column number, and the GLM-4.7 AIME bar",
+   "evidence": "T-DELETION: the 200px '95.7' hero and the 80px '95.7' AIME column header can each be removed without losing a fact; the same figure appears three times within 900px. The left hero also picks AIME, the one non-coding benchmark, as the lead number on a 'coding performance' slide. The columns then repeat 'big number + bar chart' three times, the stock data-slide shape SLD-136 warns against.",
+   "before": "Hero 95.7 + column 95.7 + bar 95.7",
+   "after": "Make the hero the slide's argument (e.g. '+20.5 on SWE-bench Verified', the largest coding margin) and keep each benchmark's score once, on its bar",
+   "why": "Repeating one number as decoration crowds out the point the slide should make.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "LAY-004",
+   "tier": "Reflex",
+   "where": "columns 2-4, y ~610-900 at 1920",
+   "evidence": "Between the '+x VS CLOSED-SOURCE BEST' lines and the summary row sits a ~290px empty band across all three benchmark columns (tile 1920-00); the left column is empty from y 560 to the footer.",
+   "before": "Bars top-aligned, summary pinned to bottom, empty middle",
+   "after": "Move the summary row up under the bars or enlarge the bars to use the height",
+   "why": "A dead band in the middle of a slide reads as a layout nobody finished.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "SLP-001",
+   "tier": "Finish",
+   "where": "top bar, column heads and labels: 'BENCHMARK REPORT / 2025 CODING PERFORMANCE', 'OPEN-SOURCE SOTA' (x3), 'OPEN-SOURCE MODEL', 'AIME 2025 SCORE', 'BENCHMARKS WON'",
+   "evidence": "About 30 tracked-caps labels; 'OPEN-SOURCE SOTA' appears in the top-right, bottom-right and (as 'OPEN SOURCE') in the outline badge. T-LABEL-TRANSFORM: the badge and the second 'OPEN-SOURCE SOTA' lose nothing when removed.",
+   "before": "OPEN-SOURCE SOTA in top bar, footer and badge",
+   "after": "Keep one instance (top bar); delete the badge and the footer repeat",
+   "why": "Repeated caps labels are chrome, not information.",
+   "test": "T-LABEL-TRANSFORM"
+  },
+  {
+   "rule": "SLD-128",
+   "tier": "Finish",
+   "where": "T-GHOST-DECK on the slide title",
+   "evidence": "The only title is the label 'BENCHMARK REPORT / 2025 CODING PERFORMANCE'; the assertion lives in 16px grey body text. Read as a ghost deck, the slide says 'benchmark report', not what was found.",
+   "before": "BENCHMARK REPORT / 2025 CODING PERFORMANCE",
+   "after": "An assertion title: 'GLM-4.7 leads closed models on all three benchmarks' (if the claim survives the fix above)",
+   "why": "Slide titles should carry the argument.",
+   "test": "T-GHOST-DECK"
+  }
+ ],
+ "strengths": [
+  "Bars are drawn to scale, directly labelled and sorted, with the subject in red, the main rival in black and the rest in grey: a clear, intentional encoding.",
+  "The type-and-grid treatment (heavy grotesk numerals, hairline column rules, black top and bottom bars) is a chosen Swiss style executed consistently; do not soften it into cards."
+ ],
+ "not_investigated": [
+  "Benchmark figures themselves were not fact-checked against external reports.",
+  "Only one slide captured; deck-level narrative (T-GHOST-DECK across slides) not possible."
+ ]
+}

@@ -1,0 +1,98 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T20:40:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A near-black Linear-violet (#5e6ad2) dev-tool page with // mono kickers, a fake live metrics panel, a placeholder logo wall, three equal feature cards, a Sarah Chen testimonial, three pricing tiers and a CTA band: eight stock sections in stock order, so the specific copy sits on a default skeleton.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, section order at 1440 (tiles 1440-00 to 1440-03)",
+      "evidence": "Failed T-STOCK-ORDER: nav, mock-dashboard hero (\"skittie:live — metrics\"), logo strip, stat band (18.4% / 9m / 2.1%), three equal feature cards, testimonial, three pricing tiers with a featured middle, CTA band (\"Stop guessing. Start knowing.\"), link footer: 8 stock sections in stock order.",
+      "before": "Hero > metric panel > logos > 3 cards > quote > 3 tiers > CTA band",
+      "after": "Lead with one real artefact of the product (an actual funnel question typed in English and its answer) and cut the sections that repeat the template: logo strip, equal cards, CTA band",
+      "why": "Seven or more stock sections reads as generated regardless of copy quality; this is the default dev-tool landing order.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-102",
+      "tier": "Floor",
+      "where": "testimonial section, 1440-01",
+      "evidence": "\"We found the exact step where users churned in a fifteen-minute session. Skittie paid for itself in one afternoon.\" — Sarah Chen, founder of Stitchboard. Sarah Chen is the canonical default-cast testimonial name; the sweep's default_names did not fire.",
+      "before": "— Sarah Chen, founder of Stitchboard",
+      "after": "[DATA NEEDED: a real customer quote with permission, name and company] or remove the section",
+      "why": "An invented quote from an invented founder is fabricated proof.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-103",
+      "tier": "Floor",
+      "where": "logo strip under hero, 1440-00",
+      "evidence": "\"Trusted by 4,000+ indie teams\" next to text-and-glyph pseudo-logos \"acme\", \"fathom\", \"baseline\", \"radar\", \"promptly\" (acme is the placeholder company). Sweep caught the 4,000+ count; the invented logo wall itself was not flagged.",
+      "before": "acme / fathom / baseline / radar / promptly",
+      "after": "[DATA NEEDED: real customer names with permission] or delete the strip",
+      "why": "Invented customer names presented as social proof.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "IMG-105",
+      "tier": "Reflex",
+      "where": "hero metrics panel, 1440-00",
+      "evidence": "A styled-div dashboard titled \"skittie:live — metrics\" with a green \"● live\" dot showing trial_to_paid 18.4%, time_to_value 9m, churn_90d 2.1%, \"median, n=4,120\": a fake live product UI with fake data standing in for a screenshot.",
+      "before": "Hand-built metrics card with invented numbers and a live dot",
+      "after": "A real screenshot or recording of a Skittie funnel, or [DATA NEEDED: product capture]",
+      "why": "A dashboard mock with fake data is a look-family tell the sweep cannot see; the \"live\" dot claims a state that is not live.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "hero kicker, feature cards, CTA band",
+      "evidence": "Mono code-comment labels used as eyebrows: \"// Product analytics for indie founders\", \"▸ funnels.realtime\", \"▸ replay.sessions\", \"▸ cohorts.smart\", \"// no credit card · no data team\"; footer colophon \"v2.4.1 — set in Space Grotesk & JetBrains Mono\".",
+      "before": "// Product analytics for indie founders",
+      "after": "Fold the category into the sub-line and drop the // and ▸ code dressing from non-code labels",
+      "why": "Code-comment eyebrows are the dark-single-accent family's signature (mono_labels tell, 17 instances); they decorate rather than inform.",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "h1, final CTA h2, feature head",
+      "evidence": "T-FRESH-READER lines that fit any analytics site: \"Know exactly what your users do.\" (h1), \"Stop guessing. Start knowing.\" (CTA h2), \"Simple pricing\". T-RIVAL-NAME: swap in PostHog or Mixpanel and all three stay true.",
+      "before": "Know exactly what your users do.",
+      "after": "A head only Skittie can say, built from its one real difference (\"typed in English\", \"zero schema\"), e.g. \"Ask your product a question in English. Get the funnel.\"",
+      "why": "Hero and closing heads are the rival-swap-proof stock pair; the specific idea is buried in the sub-line.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "features section, 1440-01",
+      "evidence": "Three equal-width cards, same padding, same 1px border, same ▸ mono id + h3 + 14px paragraph recipe; T-DELETION: removing the ▸ mono ids loses nothing.",
+      "before": "3 equal feature cards",
+      "after": "Show one feature large with real output (a replay frame, a funnel) and list the other two as text",
+      "why": "Equal card triplets are the stock feature section; the card_kit detector missed it because there is no icon tile.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Some copy is specific and should survive: \"Funnels that read like questions, not config screens\", \"No per-seat theater, no hidden events line\", \"Slice by ... typed in English\".",
+    "Pricing tiers are concrete (events per month, retention days) rather than vague feature words."
+  ],
+  "not_investigated": [
+    "No 00-contract.md: no brief override recorded for the dark-single-accent look, so it is treated as unchosen.",
+    "Buttons render in Liberation Sans fallback (form controls not inheriting Space Grotesk); already in sweep type_ladder, not repeated."
+  ]
+}

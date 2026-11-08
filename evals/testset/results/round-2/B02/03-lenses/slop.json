@@ -1,0 +1,88 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The stock AI-SaaS landing page in full: violet-to-cyan aurora behind frosted glass panels, a pill eyebrow over a centred Inter headline, a fake terminal hero, three icon-circle feature cards, an unsourced four-figure stat band, three pricing tiers, a CTA band and a link-farm footer; the YAML and terminal details are plausible but sit on a default skeleton and a default look.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 0-4",
+      "evidence": "Failed T-STOCK-ORDER: hero with product mock (terminal panel) -> three equal feature cards -> stat band (99.99% / -42% / 12ms / 2.3M) -> code block -> three pricing tiers (Starter $0 / Team $49 / Enterprise Custom) -> closing CTA band (\"Put your agents to work — with a leash.\") -> link-farm footer (Product / Resources / Company). Six stock sections in stock order, plus the eyebrow-per-section rhythm.",
+      "before": "hero mock, 3 features, stats, config, 3 tiers, CTA band, footer",
+      "after": "Build the page around the one real artefact it has, the relay.yaml and a run trace: lead with a real trace and let features be annotations on it; cut the stat band and the CTA band",
+      "why": "Specific details on a default skeleton still read as a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-164",
+      "tier": "Reflex",
+      "where": "page background and hero, 1440 tile 0-1",
+      "evidence": "Failed T-DEFAULT-AGENT: violet blob top-left, cyan blob right, magenta radial bloom behind the terminal panel, every surface a translucent frosted card (13 containers share radius 20px + the same shadow). The sweep found the violet-gradient cluster on the brand mark; the screenshots show the aurora wash and glass are the whole page's ground, not one element.",
+      "before": "aurora mesh + glass panels on #1e1b4b-family ground",
+      "after": "One solid dark ground, panels drawn with a 1px rule rather than blur, colour reserved for the trace's status states (ok / retry / fail)",
+      "why": "Aurora-plus-glass is the most recognisable generated look for AI tools; it says 'AI startup' and nothing about Relay.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CPY-148",
+      "tier": "Reflex",
+      "where": "h1 and section h2s",
+      "evidence": "Failed T-RIVAL-NAME: \"Ship agent workflows with confidence\", \"Everything your agents need, nothing they don't\" and \"Start free. Scale when you're ready.\" stay true with LangSmith, CrewAI or any agent platform's name. T-FRESH-READER generic lines: these three plus \"Deploy in minutes, tune in days, trust from the first run.\"",
+      "before": "\"Ship agent workflows with confidence\"",
+      "after": "A head only Relay can say, built from its mechanism, e.g. \"Every agent run gets a budget, a fallback and a trace.\"",
+      "why": "The hero and every section head are category boilerplate, so the first screen identifies a category, not a product.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-208",
+      "tier": "Reflex",
+      "where": "\"Why Relay\" section, 1440 tile 1",
+      "evidence": "Sub-line says \"Four primitives cover the full lifecycle of a production agent run\" but only three cards follow (Intelligent routing, Full observability, Self-healing runs); the fourth slot in the row below is the stat band.",
+      "before": "\"Four primitives\" over three cards",
+      "after": "Name the fourth primitive (the YAML shows budget caps: [DATA NEEDED: is budget enforcement the fourth primitive?]) or say \"Three\"",
+      "why": "A count that does not match what is shown is the mark of copy written before, or apart from, the layout.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-169",
+      "tier": "Reflex",
+      "where": "hero terminal panel, 1440 tile 0-1",
+      "evidence": "A styled-div terminal with traffic-light dots, \"relay — session #4821\", and invented run figures (\"$0.28\", \"1,840 tokens\", \"2m 14s · $0.61 · p95 latency 12ms\"). A 2m14s run reporting a p95 latency of 12ms reuses the stat band's \"12ms p95 overhead\" figure, so the mock and the stats share one invented number.",
+      "before": "drawn terminal with invented session data",
+      "after": "A real captured trace from the product, or [DATA NEEDED: a real run log]; drop the window dots",
+      "why": "Imitation product UI with invented figures is decoration posing as evidence.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-013",
+      "tier": "Reflex",
+      "where": "feature card icons, 1440 tile 1",
+      "evidence": "Icons are Unicode glyphs \"⌁\", \"◉\", \"↻\" in 54px translucent circles centred above each heading. T-DELETION: removing them loses nothing; \"⌁\" does not read as routing.",
+      "before": "glyph in a circle over each card title",
+      "after": "Remove the icon circles; if a visual is wanted, show a two-line trace snippet per feature",
+      "why": "Glyph-in-circle over every card is icon-tile filler (the sweep's icon_tile detector missed it because the glyphs are text).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero and every section head",
+      "evidence": "Pill labels above headings: \"AGENT ORCHESTRATION · NOW IN GA\", \"WHY RELAY\", \"DROP-IN CONFIG\", \"PRICING\"; all heads centred on one axis with the lede, two pill buttons and a note beneath (SLP-150 centred-everything hero). Pill buttons and a pill nav repeat the radius-999 recipe 7 times.",
+      "before": "pill eyebrow + centred h1 + centred lede + two pills",
+      "after": "Drop the pills; left-align the hero head with the trace beside it; one button shape",
+      "why": "The context the sweep's eyebrow hit lacks: the pill eyebrow is the frame of every section, so the page's rhythm is the template's rhythm.",
+      "test": "T-MIRROR"
+    }
+  ],
+  "strengths": [
+    "The relay.yaml block is concrete and product-specific (budget hard cap, fallback models, degrade on tool failure, jsonl export); it is the one thing a rival could not copy and should lead the page.",
+    "Feature body copy names mechanisms (\"Timeouts retry with backoff, failed tools degrade to fallbacks, and sessions resume from checkpoint.\") rather than adjectives.",
+    "Pricing states real limits (100 runs/mo, 1 project, 2 agents) instead of vague tiers."
+  ],
+  "not_investigated": [
+    "Whether Relay's metrics are real: no contract or supplied facts; treated as unsourced per INT-007 (already a sweep hit)."
+  ]
+}

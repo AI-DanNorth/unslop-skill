@@ -1,0 +1,58 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-quality", "link-purpose", "focus-order", "keyboard-operation", "use-of-colour", "non-text-contrast", "reflow", "forms-and-errors", "motion-and-timing", "headings-and-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "whole document",
+      "evidence": "dom-794.json contains no h1-h6 elements and no landmarks: the name \"Elon Musk\", the section titles (Summary, Experience, Open Source & Indie Work, Judgment & Conviction, Public Impact, Core Skills, Education) and the company names are all styled divs/spans.",
+      "before": "<div class=\"name\">Elon Musk</div> ... <div class=\"section-title\">Experience</div>",
+      "after": "<h1> for the name, <h2> for each section title, <h3> for each company row head; the PDF export then carries tagged headings and bookmarks",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels (and PDF/UA tagging): a screen-reader user of the exported PDF gets one flat run of text with no way to jump between sections.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "Public Impact and writing/talks links, tile 2",
+      "evidence": "Link names do not match destinations: \"@elonmusk\" -> https://tesla.com/blog, \"Master Plan Part Deux\" -> https://youtube.com/ted, \"First Principles Thinking in Engineering\" -> https://spacex.com.",
+      "before": "<a href=\"https://youtube.com/ted\">Master Plan Part Deux</a>",
+      "after": "Point each link at the item it names, or remove the <a> and keep plain text",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context): the accessible name must say where the link goes. Nearest curated card A11-006.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Reflex",
+      "where": "inline emphasis in impact rows and skills, tiles 0-3",
+      "evidence": "Non-link phrases (\"400+ launches\", \"7,000+ satellites\", \"7M+ vehicles delivered\", \"122 days\", \"first reusable orbital booster\") are set in the same navy rgb(27,54,93) with no underline as the real links \"SpaceX\" and \"Tesla\"; neither is underlined.",
+      "before": "emphasis and links share color: rgb(27,54,93), no decoration",
+      "after": "Underline real links (text-decoration: underline; text-underline-offset: 2px) and render emphasis as font-weight: 600 in body ink",
+      "why": "WCAG 2.2 1.4.1 Use of Color: links must be distinguishable from surrounding text by more than colour; here colour also marks non-links, so a reader cannot tell which navy text is clickable in the PDF.",
+      "test": "T-GRAYSCALE"
+    },
+    {
+      "rule": "A11-008",
+      "tier": "Finish",
+      "where": "document metadata",
+      "evidence": "Title is \"Elon Musk · Resume\"; no description or author metadata was captured for PDF export.",
+      "before": "<title>Elon Musk · Resume</title> only",
+      "after": "Add <meta name=\"author\" content=\"Elon Musk\"> and <meta name=\"description\">; export with document title shown in the PDF title bar (PRN-121)",
+      "why": "WCAG 2.2 2.4.2 Page Titled applies to the PDF's displayed title as well as the HTML.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Text contrast on the paper ground is strong: body ink 16.7:1, meta grey rgb(107,106,100) 4.9:1, navy 11:1 (computed from dom-794 colours against rgb(245,244,237)).",
+    "lang=\"en\" set; smallest running text is 12px (9pt), at the print body floor for a résumé.",
+    "No motion, no forms, no colour-only meaning in the data itself."
+  ],
+  "not_investigated": [
+    "Sweep contrast was not verified on pixels (no background render); computed ratios above are from declared colours on a flat ground.",
+    "Focus order and keyboard: print medium, focus checks disabled by profile.",
+    "Tagged-PDF output itself was not inspected; only the HTML source of the export.",
+    "The middot separators at 1.13:1 are decorative; not reported."
+  ]
+}

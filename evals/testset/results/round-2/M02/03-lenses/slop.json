@@ -1,0 +1,91 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The document design is considered (role / actions / impact rows, a dated timeline, a cadence callout, one navy ink on warm paper) and fits a dense one-person CV, but the content reads model-written: an unsourced stat band, borrowed-authority lines (\"others called impossible\", \"a pace the industry called implausible\"), a placeholder email, mislabelled sections and links that point at the wrong pages.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-LABEL-TRANSFORM", "T-SO-WHAT", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "INT-135",
+      "tier": "Floor",
+      "where": "header contact line, tile 0",
+      "evidence": "\"em@example.com\" printed as the contact email beside a real handle (x.com/elonmusk) and a real city (Austin, TX), linked as mailto:em@example.com.",
+      "before": "em@example.com",
+      "after": "[DATA NEEDED: real contact email] or remove the field",
+      "why": "Placeholder contact data on a named person's résumé is fake data presented as real; the one field a reader acts on goes nowhere.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-151",
+      "tier": "Floor",
+      "where": "links in Public Impact and Open Source sections, tile 2",
+      "evidence": "dom-794.json hrefs: \"@elonmusk\" -> https://tesla.com/blog; \"Master Plan Part Deux\" -> https://youtube.com/ted; \"First Principles Thinking in Engineering\" -> https://spacex.com. Each link names one thing and opens another.",
+      "before": "<a href=\"https://tesla.com/blog\">@elonmusk</a>",
+      "after": "href=\"https://x.com/elonmusk\"; link each talk and post to its own URL, or unlink it: [DATA NEEDED: source URLs]",
+      "why": "Wrong targets are invented provenance: they look like citations and are not.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "INT-007",
+      "tier": "Reflex",
+      "where": "metric row under the name, tile 0",
+      "evidence": "Four bare figures with no dates or sources: \"30 yrs building hard tech\", \"6 cos founded / co-founded\", \"400+ Falcon launches\", \"7M+ Tesla vehicles\". The sweep's stat_band did not fire (print profile). Later lines add more unsourced valuations: \"Valued at $350B (2024)\", \"* $900B\", \"xAI valued at $50B\".",
+      "before": "\"400+ Falcon launches\"",
+      "after": "Date each figure and keep the source in a footnote (\"Falcon 9 launches to [DATA NEEDED: as-of date], source: [DATA NEEDED]\"), or drop the band; the experience rows already carry the numbers",
+      "why": "A résumé stat band of round, unsourced numbers is the slide-deck habit moved into a CV; it duplicates the body and cannot be checked.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-105",
+      "tier": "Reflex",
+      "where": "Experience timeline and xAI impact row, tiles 0-1",
+      "evidence": "Borrowed-authority lines that fail T-THREE-LINE (not falsifiable, attributed to no one): \"Built physical infrastructure others called impossible.\", \"Colossus in 122 days, a pace the industry called implausible\", \"Every major OEM announced EV transition within 5 years of Model 3\", \"The industry assumption that rockets were expendable was gone within 24 months.\"",
+      "before": "\"a pace the industry called implausible\"",
+      "after": "State the fact and stop: \"Colossus: 100K H100 GPUs, 122 days from concept to training.\"",
+      "why": "Unattributed 'others said it was impossible' framing is a model's way of adding drama; on a résumé it reads as puffery and undercuts the real figures beside it.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-208",
+      "tier": "Reflex",
+      "where": "\"Open Source & Indie Work\" section, tiles 1-2",
+      "evidence": "The section heading promises open-source and indie work; its content is a philosophy line (\"First-principles founder across hard tech. Approach: ...\"), two company rows (SpaceX $350B, Tesla $900B) and a Falcon 9 landing callout. Its right-hand meta repeats the Experience meta (\"1995 - present · Founder-engineer across six hard-tech companies\"). \"125 followers on GitHub\" is the only open-source fact.",
+      "before": "\"Open Source & Indie Work\"",
+      "after": "Cut the section, or rename it to what it holds (\"Approach\") and drop the repeated company rows",
+      "why": "A template section kept and refilled with whatever fits shows the document was generated from a fixed skeleton, not from this person's material.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-165",
+      "tier": "Finish",
+      "where": "row labels ROLE / ACTIONS / IMPACT and Core Skills labels, tiles 0-3",
+      "evidence": "T-LABEL-TRANSFORM: 12px uppercase tracked navy labels repeat 12 times (ROLE/ACTIONS/IMPACT x4) and the skill labels wrap mid-phrase in caps (\"CAPITAL · CRISIS / MGMT\", \"MANUFACTURING / · SCALE\", with the middot starting a line). In sentence case at body weight the labels read as well and stop wrapping.",
+      "before": "\"CAPITAL · CRISIS MGMT\" tracked caps, wrapping",
+      "after": "Sentence-case labels, untracked, 'Capital and crisis management'; widen the label column to fit the longest label on one line",
+      "why": "The caps carry no information the row structure does not; their wrapping is the visible cost.",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "INT-151",
+      "tier": "Finish",
+      "where": "date ranges throughout",
+      "evidence": "Three date styles: \"1995 - Present\" and \"1995 - present\" (hyphen, mixed case), \"2016.07\" for writing and talks, \"1992 - 1997\" for education.",
+      "before": "\"1995 - Present\" / \"1995 - present\" / \"2016.07\"",
+      "after": "One format with an en dash: \"1995–present\", \"Jul 2016\"",
+      "why": "One fact, one wording: mixed date styles are a seam where generated sections were joined.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "The role / actions / impact row structure per company is a real editorial decision that makes a dense career scannable.",
+    "The three-era timeline (1995 Internet era, 2002 Space + autos, 2023 AI era) and the 1999 / 2008 / 2015 'Judgment & Conviction' row are specific and dated.",
+    "Restrained palette: warm paper, black serif and one navy ink used for figures and labels; nothing decorative beyond hairlines.",
+    "Many body facts are concrete and checkable (Colossus 100K H100s in 122 days, 1,024 electrodes, Falcon 9 landing 22 December 2015)."
+  ],
+  "not_investigated": [
+    "Factual accuracy of claims about a real person was not verified (no supplied facts); findings flag unsourced framing, not truth.",
+    "The capture is a screen render: @page margins (11mm 13mm) do not apply on screen, so the flush-left text is a capture artefact; Charter fell back to Liberation Serif, so type colour differs from the intended render.",
+    "Page balance (PRN-117) not measured without a paged PDF render."
+  ]
+}

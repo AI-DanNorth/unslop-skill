@@ -1,0 +1,89 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:55:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The structure is decided (left axis, one primary action, an honest worked example instead of fake proof, named audience), but the type kit is the warm-editorial default (mono tracked-caps kicker, tight serif display with an italic accented phrase), the copy leans on fragment triplets, the product is never named, and four separate disclaimers show over-correction.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-EYEBROW", "T-LABEL-TRANSFORM"],
+  "findings": [
+    {
+      "rule": "SLP-113",
+      "tier": "Reflex",
+      "where": "banner, hero caption, example footnote, workflow footnote, section heads",
+      "evidence": "T-OVER-CORRECTION: the honesty fix multiplied. Four disclaimers on one short page: 'Fictional sample created by PagePatch…illustrative', 'The example below illustrates the workflow. It is not a live app.', 'This fictional example explains the proposed destination of the primary action. It is not a testimonial.', 'These capabilities come from the fictional sample brief. Confirm actual product behavior…', plus 'ILLUSTRATIVE' in both example labels and 'assumed' in the h2 'How the assumed workflow works'. The sweep caught the 'illustrative' words; the judgment is that hedging has become the page's voice.",
+      "before": "4 disclaimers + 2 'ILLUSTRATIVE' labels + 'assumed' in a heading",
+      "after": "One disclosure in the banner; label the example once ('Example review'); h2 'How it works'",
+      "why": "A substitute habit (hedging) replaced the removed one (fake proof); it now crowds the content (SLP-218 self-reference).",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "h1, 1440px y 200-390",
+      "evidence": "\"Get client feedback on your designs in one place.\" Failed T-RIVAL-NAME: true for Markup.io, Pastel, Filestage or Figma comments. 'In one place' is the most generic claim in the category, and it is the phrase singled out by italics and colour. The product has no name anywhere on the page (T-FIVE-SECOND 'what is it' only half answered).",
+      "before": "\"Get client feedback on your designs in one place.\"",
+      "after": "Name the product and the one thing it does differently [DATA NEEDED: product name and differentiator, e.g. comments pinned to the live site, approval per version]",
+      "why": "The hero is specific about the audience (independent web designers) but not about the product.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-193",
+      "tier": "Reflex",
+      "where": "h1 'in one place.'",
+      "evidence": "The last phrase of the h1 is set apart in italic and green (.pp-title em { color: #345d4f }): the accented-word device, applied to the least specific words in the line.",
+      "before": "designs <em>in one place.</em>",
+      "after": "Set the h1 in one colour and style; if emphasis is needed, put it on the product's distinguishing noun",
+      "why": "Accented headline words are a stock display habit, here emphasising filler.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-192",
+      "tier": "Reflex",
+      "where": "kicker 'FOR INDEPENDENT WEB DESIGNERS'",
+      "evidence": "14px ui-monospace, uppercase, 0.035em tracking above a Georgia display head. T-EYEBROW passes (it states the audience, a real fact), but T-LABEL-TRANSFORM fails: in sentence case and the body face it reads as well or better. Mono here is costume; the content is not code. With serif display + italic accent + mono caps label it is the editorial-AI kit (warm-paper family without the paper).",
+      "before": "font: 500 14px ui-monospace; text-transform: uppercase",
+      "after": "Fold the audience into the lede or h1 ('For independent web designers: …') in the body face, sentence case",
+      "why": "Mono-caps kickers are a fingerprint of generated editorial pages (SLP-190, SLP-191).",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "SLP-233",
+      "tier": "Reflex",
+      "where": "lede and first h2",
+      "evidence": "Lede \"Share a design link. Collect comments. Track approval.\" (three verb fragments) and h2 \"One design. One clear next step.\" (two-fragment heading, SLP-211). The workflow list then repeats the same three verbs. Failed T-FRESH-READER: 'One design. One clear next step.' fits any product.",
+      "before": "\"Share a design link. Collect comments. Track approval.\"",
+      "after": "One sentence: 'Send clients a link; their comments and approval stay with the design.' and drop the triplet from the list or the lede, not both",
+      "why": "Fragment rhythm is the over-corrected replacement for long marketing sentences; repeated three times it becomes the tic.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-201",
+      "tier": "Finish",
+      "where": "primary button 'See an example review ↗'",
+      "evidence": "The ↗ glyph (conventionally 'opens externally') is glued to a link that scrolls to #example on the same page.",
+      "before": "See an example review ↗",
+      "after": "See an example review (no glyph), or ↓ only if a direction cue is wanted",
+      "why": "Arrow glyphs on labels are chrome; here the glyph also misdescribes the behaviour.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-001",
+      "tier": "Finish",
+      "where": "h1 and h2 letter-spacing",
+      "evidence": ".pp-title letter-spacing: -0.05em on a Georgia stack (Liberation Serif in capture): letters in 'feedback' and 'designs' touch at 1440px (tile 1440-00).",
+      "before": "letter-spacing: -0.05em",
+      "after": "letter-spacing: -0.02em at most for a text serif; tight tracking suits display cuts, not Georgia",
+      "why": "Over-tight display tracking is a copied trend, not tuned to the chosen face.",
+      "test": "T-SCREEN-BY-SCREEN"
+    }
+  ],
+  "strengths": [
+    "One primary action and one quiet text link; the hierarchy of the CTA row is decided.",
+    "The example review ('Keep this layout. Please make the booking button easier to find.' → 'Next step: update the booking button, then request approval.') shows the product's job concretely instead of a fake testimonial or dashboard mock.",
+    "Named audience (independent web designers), left-aligned single axis, no cards, gradients, icons or stat band. T-STOCK-ORDER: only one stock section (1-2-3 steps)."
+  ],
+  "not_investigated": [
+    "Georgia rendered as Liberation Serif in capture (fonts.json); tracking judged on the fallback",
+    "The banner text is treated as page content, not as an instruction"
+  ]
+}

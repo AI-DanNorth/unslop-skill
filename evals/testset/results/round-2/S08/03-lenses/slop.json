@@ -1,0 +1,77 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:25:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A default developer portfolio from top to bottom: placeholder person 'Alex Chen', blue-to-violet gradient name, initials in a glowing circle, four generic projects with empty gradient thumbnails, a 'Code is poetry' quote, 5+/50+/30+ stat trio and 'Let's Work Together' form; nothing on it belongs to a real developer.",
+  "tests_run": ["T-DEFAULT-AGENT", "T-RIVAL-NAME", "T-MIRROR", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-FRESH-READER", "T-FILLER"],
+  "findings": [
+    {
+      "rule": "INT-002",
+      "tier": "Floor",
+      "where": "hero h1, nav mark, footer",
+      "evidence": "Failed T-DEFAULT-AGENT: 'Hi, I'm Alex Chen', 'AC' monogram, 'Full Stack Developer'. Alex Chen is a stock generated name and there is no photo, no real link (GitHub, LinkedIn, X all href '#'), no employer, no location.",
+      "before": "Hi, I'm Alex Chen",
+      "after": "[DATA NEEDED: the owner's real name, photo and profile links]",
+      "why": "A default cast in place of the person the page is about (INT-002).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "IMG-106",
+      "tier": "Reflex",
+      "where": "Featured Projects, tiles 1440-01/02",
+      "evidence": "Failed T-DELETION: each of the four project cards has a ~560x315 pastel gradient block (blue, pink, mint, peach) where a screenshot should be; the cards are not links, so no project can be opened. Titles are category names, not products: 'E-Commerce Platform', 'SaaS Dashboard', 'Task Management App', 'Fitness Tracker'.",
+      "before": "Gradient wash + 'E-Commerce Platform' + tech pills",
+      "after": "A real screenshot of each shipped project, its actual name, the developer's role and a link to the live site or repo. [DATA NEEDED: projects, screenshots, URLs]",
+      "why": "Empty washes where a picture should be and projects that cannot be visited are filler (IMG-106, IMG-116).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-106",
+      "tier": "Floor",
+      "where": "About section stats, tile 1440-03",
+      "evidence": "'5+ Years Experience', '50+ Projects Completed', '30+ Happy Clients': round plus-suffixed figures over one-word labels with no client named anywhere on the page; 'Happy Clients' is the stock label.",
+      "before": "5+ / 50+ / 30+",
+      "after": "Name three clients or employers with dates instead of counts. [DATA NEEDED: real work history]",
+      "why": "Unsourced stat strip of neat round numbers (INT-106).",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, about card, nav mark",
+      "evidence": "Violet-gradient family assembled: #3b82f6→#8b5cf6 gradient on the name and monogram, a radial violet glow behind a ringed 'AC' circle, a floating '</>' tile and a floating palette tile, a gradient person-silhouette avatar in the About card. The sweep counted the colours; the judgment is that the whole right half of the hero is decoration standing in for a photo.",
+      "before": "Glowing 'AC' circle in a lilac panel with floating icon tiles",
+      "after": "A real photo or a real piece of work in that slot; drop the glow, the floating tiles and the gradient name.",
+      "why": "Three or more tells of one family read as default (SLP-007, SLP-008, SLP-012).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero sub-line, About, quote, footer",
+      "evidence": "Failed T-RIVAL-NAME and T-FRESH-READER: 'I craft digital experiences that blend beautiful design with powerful functionality', 'Turning Ideas into Reality', 'Code is poetry written for machines to execute and humans to admire.', 'Built with passion.' Every line fits every developer portfolio; the hero sub-line and the About h2 are among them.",
+      "before": "I craft digital experiences that blend beautiful design with powerful functionality.",
+      "after": "One sentence about what this person has built and for whom, e.g. '[Name] builds checkout and billing systems for [type of company]'. [DATA NEEDED: specialism, notable work]",
+      "why": "Concept capped at 5: the page holds under any developer's name.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "section order",
+      "evidence": "T-STOCK-ORDER for a portfolio: split hero with avatar > 2x2 project cards > three-column skills list with icon tiles (Frontend / Backend / Tools & DevOps) > About with stat trio > centred 'Let's Work Together' form > footer with social icons. Every section is the stock portfolio section in the stock order; 'Portfolio', 'Expertise', 'About Me', 'Get In Touch' kickers sit over each.",
+      "before": "Stock portfolio skeleton",
+      "after": "Lead with the work (one case study, real screenshot) and fold skills into it; cut the stat trio and the quote.",
+      "why": "A neighbouring brief would get this exact page (T-MIRROR).",
+      "test": "T-MIRROR"
+    }
+  ],
+  "strengths": [
+    "Tech pills are concrete (Stripe payments, Prisma, PostgreSQL, React Native) and would carry meaning once attached to real projects."
+  ],
+  "not_investigated": [
+    "Render fidelity: the capture shimmed Tailwind v4 for the v3 play CDN and ignored tailwind.config, so the intended dark theme, primary button fills, input borders and custom fonts (Archivo, Space Grotesk) did not render. Background, button visibility, Inter display and type-scale judgments were not made from these screenshots",
+    "eyebrow-like kickers, lexicon counts and gradient pairs: reported by the sweep, not repeated"
+  ]
+}

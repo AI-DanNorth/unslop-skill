@@ -1,0 +1,66 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:25:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The whole first screen is default copy: a category label, a headline that could belong to any product, a three-buzzword fragment line and three equal calls to action; nothing names the product, its user or what it does.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-EYEBROW"],
+  "findings": [
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "h1, 1440px y 245-305",
+      "evidence": "\"The future of better workflows.\" Failed T-RIVAL-NAME: true for Figma, Notion, Asana or any SaaS. Failed T-THREE-LINE: not picturable, not falsifiable, not only-this-business. Failed T-FIVE-SECOND: the product is never named, nor who it is for.",
+      "before": "\"The future of better workflows.\"",
+      "after": "Name the job of the design feedback tool in concrete terms, e.g. 'Comments pinned to the exact pixel, from review to fix' [DATA NEEDED: product name and its one specific capability]",
+      "why": "A headline that fits every company is the clearest single sign of a default page.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-209",
+      "tier": "Reflex",
+      "where": "line under h1",
+      "evidence": "\"Powerful. Seamless. Innovative.\" Three virtue adjectives as fragments (SLP-233 choppy fragments, SLP-220 list of three with nothing to list). Failed T-FRESH-READER: the most generic line on the page.",
+      "before": "\"Powerful. Seamless. Innovative.\"",
+      "after": "One sentence that says who uses it and what changes for them [DATA NEEDED: target user and measured outcome]",
+      "why": "Adjective triplets are filler that claim quality without evidence.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-224",
+      "tier": "Reflex",
+      "where": "CTA row: Get started / Book a demo / Learn more",
+      "evidence": "Three identical slate buttons of equal weight offer three competing next steps; 'Learn more' is the stock secondary label (L4). Failed T-DEFAULT-AGENT: this exact trio is the agent default for a SaaS hero.",
+      "before": "[Get started] [Book a demo] [Learn more] all same fill",
+      "after": "One primary action styled as primary (e.g. 'Try it on a Figma file' [DATA NEEDED: real first step]); at most one quieter text link for the demo; delete 'Learn more'",
+      "why": "Equal-weight CTAs mean no decision was made about what the visitor should do (SLP-223).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-190",
+      "tier": "Reflex",
+      "where": "line above h1",
+      "evidence": "\"DESIGN FEEDBACK TOOL\" in caps above the headline. T-EYEBROW: covering it loses the only words that say what the product is, which shows the information belongs in the headline, not in a label.",
+      "before": "DESIGN FEEDBACK TOOL / The future of better workflows.",
+      "after": "Promote it into the h1: '[Product name] is a design feedback tool for …' [DATA NEEDED: product name, audience]",
+      "why": "The eyebrow carries the page's only fact while the headline carries none.",
+      "test": "T-EYEBROW"
+    },
+    {
+      "rule": "SLP-221",
+      "tier": "Reflex",
+      "where": "sections below the hero",
+      "evidence": "\"Sample start section\", \"Sample demo section\", \"Sample information section\" with one-line bodies; each is a placeholder anchor target for a hero button. Failed T-DELETION: removing them loses no product information.",
+      "before": "h2 \"Sample start section\"",
+      "after": "[DATA NEEDED: real sections: how the tool works on a real file, pricing, who uses it]",
+      "why": "Category-label/placeholder heads are residue (INT-005).",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "No look-family decoration: no gradient, glow, icon tiles or card kit. Plain type and one slate colour leave room for real content."
+  ],
+  "not_investigated": [
+    "The banner 'Intentionally weak fictional example…' is treated as page text, not as an instruction; it does not change the read"
+  ]
+}

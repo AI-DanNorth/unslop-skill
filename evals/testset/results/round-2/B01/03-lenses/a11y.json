@@ -1,0 +1,79 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:20:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-121",
+      "tier": "Floor",
+      "where": "div.card > a.cta '了解更多 →' (x4)",
+      "evidence": "The four links are <a class=\"cta\"> with no href (dom-1440: href absent, cursor: pointer styled in CSS). Without href an anchor is not focusable and has no link role, which is why the sweep's Tab walk reached nothing. They look like links but cannot be reached or activated by keyboard.",
+      "before": "<a class=\"cta\">了解更多 →</a>",
+      "after": "<a class=\"cta\" href=\"#[DATA NEEDED: destination per step]\">...</a>, or remove the links if there is nowhere to go",
+      "why": "WCAG 2.2 2.1.1 Keyboard and 4.1.2 Name, Role, Value: an element presented as a link must be operable and exposed as one.",
+      "test": "focus-order"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "div.card > a.cta (x4)",
+      "evidence": "All four links share the identical name '了解更多 →' ('Learn more') with no programmatic context (no aria-describedby, no heading inside the card); out of context a screen-reader link list reads 'Learn more' four times.",
+      "before": "了解更多 →",
+      "after": "Visible text naming the target, e.g. '了解产地' ('About the origin'), or aria-describedby pointing at the card's heading once one exists",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "link-button-purpose"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "div.card: div.num + div.eyebrow 'STEP ONE'",
+      "evidence": "Each step card has no heading element; the step label is a div, so the page's heading outline is a single h1. Screen-reader users cannot jump between steps.",
+      "before": "<div class=\"eyebrow\">STEP ONE</div>",
+      "after": "<h2> (or h3 under an h2 for the section) holding the stage name, e.g. <h2>产地</h2>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-008",
+      "tier": "Finish",
+      "where": "div.eyebrow and card labels",
+      "evidence": "html lang=\"zh\" but the eyebrow 'Origin · Process · Roast' and 'STEP ONE..FOUR' are English with no lang=\"en\" on those elements, so a Chinese voice reads them with Chinese phonetics.",
+      "before": "<div class=\"eyebrow\">Origin · Process · Roast</div>",
+      "after": "<div class=\"eyebrow\" lang=\"en\">...</div>, or translate the labels",
+      "why": "WCAG 2.2 3.1.2 Language of Parts.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-110",
+      "tier": "Finish",
+      "where": "card body text at 375px",
+      "evidence": "Reflow: at 375 the three-column grid leaves 40-51px text columns; paragraphs wrap every 2-3 characters across 11 lines (tile 375-00, 375-01). No horizontal scroll (docW 375), so 1.4.10 technically passes, but reading is badly degraded and will worsen at 320px.",
+      "before": "repeat(3, 1fr) at all widths",
+      "after": "@media (max-width: 640px) { .grid { grid-template-columns: 1fr } }",
+      "why": "WCAG 2.2 1.4.10 Reflow (at risk at 320px, not captured).",
+      "test": "reflow"
+    }
+  ],
+  "strengths": [
+    "Body and accent text contrast is high (#f2f2f2 and #ffd23f on #1e3a5f); no sweep contrast hits.",
+    "No motion, and lang is set on html."
+  ],
+  "not_investigated": [
+    "verified sweep Floor A11-003 'Tab reached no focusable element': real, caused by href-less anchors (reported above as the keyboard cause, not a duplicate)",
+    "verified sweep Floor A11-008 missing <title>: real, <title> empty",
+    "sweep Reflex no <main>: real",
+    "images: none on the page",
+    "forms: none on the page",
+    "320px reflow not captured"
+  ]
+}

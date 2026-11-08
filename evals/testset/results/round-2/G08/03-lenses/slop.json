@@ -1,0 +1,67 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T21:45:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The poster split and the one real claim (4,800 screenshots into 37 folders, found again by one sentence, offline) are specific and not a look family, but the page ships a test-residue paragraph, no product name, no action, and a type stack that never names a Chinese face.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-SCREEN-BY-SCREEN"],
+  "findings": [
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "second block, 1440px y 717-775",
+      "evidence": "\"这里是第二段正文，同样写得足够长，用来让脚本识别正文的字号与字体设置是否达标。\" ('This is the second body paragraph, written long enough for the script to check the body size and font settings.') Self-referential filler written for a checker, shipped as content. Failed T-FRESH-READER and T-DELETION: it says nothing about the product.",
+      "before": "这里是第二段正文，同样写得足够长……",
+      "after": "[DATA NEEDED: the second thing a reader needs, e.g. how searching by a sentence works, or platform and price], or delete the block",
+      "why": "Placeholder residue at ship is a Floor integrity defect; the sweep flagged it, and the judgment here is that it is the page's whole second section, not a stray line.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "first screen",
+      "evidence": "T-FIVE-SECOND: 'what' is half answered (截图归位, 'screenshots back in place', and the side claim), 'for whom' is not answered, and 'what to do' has no answer: there is no product name, link, download or price anywhere on the page.",
+      "before": "headline + one sentence, no action",
+      "after": "Add the product name and one action under the claim [DATA NEEDED: product name, platform, download or purchase link]",
+      "why": "A poster with no next step is a mood, not a page with a job.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "LAY-004",
+      "tier": "Reflex",
+      "where": "navy side panel, 1440px x 960-1440 y 0-640",
+      "evidence": "The navy panel is a third of the first screen and holds one 17px sentence at its top; about 500px of solid navy sits below it. The left 2fr column is also empty under the headline. T-SCREEN-BY-SCREEN: screen 1 has its reason (the headline); the panel does not earn its area.",
+      "before": "grid-template-columns: 2fr 1fr; min-height: 640px; one sentence in .side",
+      "after": "Put the evidence in the panel: the claim set large (4,800 → 37), or a real before/after of a screenshot folder [DATA NEEDED: real capture]",
+      "why": "A block of colour with nothing in it is decoration (SLP-171 empty picture).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "TYP-004",
+      "tier": "Finish",
+      "where": "headline '截图归位' and body",
+      "evidence": "Headline stack is Impact, \"Arial Black\", sans-serif at weight 900 and body Helvetica, Arial; none has Chinese glyphs, so every character falls back to Noto Sans CJK SC Regular (fonts.json) with synthetic bold. The intended heavy poster face never renders.",
+      "before": "font: 900 140px/0.9 Impact, \"Arial Black\", sans-serif",
+      "after": "font: 900 140px/0.95 \"Source Han Sans SC\", \"Noto Sans SC\", \"PingFang SC\", sans-serif (a CJK family with a real Heavy weight)",
+      "why": "The type choice was made for Latin and never checked for the page's own script.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "TYP-001",
+      "tier": "Finish",
+      "where": "headline line-height, 1440px",
+      "evidence": "At line-height 0.9 the two lines '截图' and '归位' touch: the bottom of 截/图 meets the top of 归/位 (tile 1440-00, y ~185-200). CJK ideographs fill the em box, so a Latin-tuned 0.9 leading collides.",
+      "before": "line-height: 0.9",
+      "after": "line-height: 1.0 to 1.05 for CJK display",
+      "why": "Finish detail that shows the Latin poster recipe was applied without looking at the Chinese result.",
+      "test": "T-SCREEN-BY-SCREEN"
+    }
+  ],
+  "strengths": [
+    "The side claim '四千八百张截图，整理成三十七个文件夹。每一张都能用一句话找回来，全程离线。' is picturable, falsifiable and specific; keep it as the core message.",
+    "The headline is a decision: two characters per line at 140px against a navy block, not a template hero, no eyebrow, no gradient, no cards."
+  ],
+  "not_investigated": [
+    "brief and audience: no contract, so whether a poster-only page was intended cannot be checked"
+  ]
+}

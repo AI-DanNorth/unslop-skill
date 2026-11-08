@@ -1,0 +1,61 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A gig-poster page for one small Hull venue: extended black caps, burnt orange and teal, a listing table with Night / Band / Price / Tickets, a facts table and an honest signup; the skeleton follows what a venue site needs rather than a SaaS template, and the weak spots are thin content (one fact repeated, an empty listing) rather than defaults.",
+ "tests_run": [
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-FIVE-SECOND",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-OVER-CORRECTION",
+  "T-FRESH-READER",
+  "T-FILLER"
+ ],
+ "findings": [
+  {
+   "rule": "INT-147",
+   "tier": "Reflex",
+   "where": "\"Room for two hundred\" section, 1440 tiles 2-3",
+   "evidence": "Failed T-DELETION/T-FRESH-READER on the copy: the section's only text is the captions \"Doors open at 7pm.\" and \"The first band is on at 8pm.\", which repeat the hero h1 \"Doors 7pm. First band 8pm.\" word for word; the room's capacity is also stated in the hero lead, this h2, and the facts table (\"200 capacity\"). Three photo slots plus a full-bleed one carry the section (photos blocked in capture, so the images themselves are not judged).",
+   "before": "captions \"Doors open at 7pm.\" / \"The first band is on at 8pm.\"",
+   "after": "Captions that say what the photo shows about this room ([DATA NEEDED: stage size, bar, standing or seated, accessibility of the room]), or cut to one photo",
+   "why": "The page has about three facts and says each three times; repetition reads as filler around missing content.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "INT-006",
+   "tier": "Finish",
+   "where": "listing table and Find us, tiles 1 and 3",
+   "evidence": "Two missing-fact slots, within the cap of two: \"This month's line-up to be announced\" (the listing table, the page's reason to exist, has no rows) and \"Hull, street address to be announced\". The hero's primary CTA \"THIS MONTH'S GIGS\" lands on the empty table.",
+   "before": "empty bill table; address TBA",
+   "after": "[DATA NEEDED: this month's gigs with night, band, price, ticket link]; until it exists, make \"How tickets work\" or the signup the primary hero action",
+   "why": "Within budget, but the primary action leads to the gap; noted so the fix order puts the listing first.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "CPY-148",
+   "tier": "Finish",
+   "where": "hero h1",
+   "evidence": "T-RIVAL-NAME: \"Doors 7pm. First band 8pm.\" is a schedule line any small venue could print; the specific ownership comes only from the lead (\"A 200-capacity music venue in Hull\"). As a poster convention it is a defensible choice, so this is a Finish note, not a Reflex.",
+   "before": "\"Doors 7pm. First band 8pm.\"",
+   "after": "Keep the poster form but let the h1 carry the venue or the next act once the bill exists (\"[DATA NEEDED: next headliner]. Doors 7pm.\")",
+   "why": "The first screen says when, not who or where, until the lead is read.",
+   "test": "T-RIVAL-NAME"
+  }
+ ],
+ "strengths": [
+  "Category anatomy is right for a venue: listing table (Night / Band / Price / Tickets) with a caption, a facts table (Where / Room / Tickets), and a gig-by-gig on-sale signup.",
+  "A committed poster palette and type (Anybody extended caps, burnt orange, teal, paper) that fits live music; not one of the generated look families.",
+  "Honest form: \"Nothing was sent: this form is not connected yet.\" and honest dashed slots for missing facts instead of invented acts or an invented address.",
+  "Photo credits with licences in the footer; footer links underlined."
+ ],
+ "not_investigated": [
+  "All six Wikimedia photos were blocked; the orange and teal blocks are fallbacks, so imagery, hero overlay and photo choice were not judged.",
+  "Fonts were shimmed (Anybody, Archivo, Archivo Narrow)."
+ ]
+}

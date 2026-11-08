@@ -1,0 +1,45 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:10:00",
+  "tests_run": ["contrast-pixel-sample", "text-size-visible", "use-of-colour", "non-text-contrast"],
+  "findings": [
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "'Median close time across customer teams…' caption, tile 01",
+      "evidence": "Pixel sample on image.png: darkest text pixel rgb(119,118,110) on rgb(238,237,228), about 3.9:1 at roughly 13px. The source note for the page's main claim is the least legible text on it.",
+      "before": "light grey caption on beige band",
+      "after": "Darken to about #5f5d57 (≥4.5:1 on #eeede4).",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum).",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "secondary grey text: 'Built for finance teams of 3 to 30', 'Lines matched', '3 to 8 people', 'per month', testimonial attribution",
+      "evidence": "Pixel samples give the darkest pixel at rgb(116-121,114-121,110-119) on near-white, 4.3-4.4:1. Anti-aliasing means this is a best case; at 13-14px these fail 4.5:1 by a small margin.",
+      "before": "secondary grey ≈ #747270",
+      "after": "Secondary text token ≈ #66645f (about 5.5:1 on #f6f4f0).",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); estimate from a raster, confirm on the live page.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Finish",
+      "where": "status pills in hero report",
+      "evidence": "'Amount differs' / 'Not in ledger' are brown-orange on pale orange (sample about 4.5:1, borderline) at about 12px; state is also given in words and the row tint, so colour is not the only cue.",
+      "before": "12px orange pill text",
+      "after": "Darken pill text to about #7a4a1f and set it at 13px or more.",
+      "why": "WCAG 2.2 1.4.3 Contrast and 1.4.1 Use of Color (passes on words).",
+      "test": "T-GRAYSCALE"
+    }
+  ],
+  "strengths": [
+    "State is never colour-only: every pill carries a word and the bar chart labels both bars with text and values.",
+    "Text on the dark green bands samples at 7.7-8.7:1."
+  ],
+  "not_investigated": [
+    "image-only item: alt text, link purpose, focus order, keyboard, landmarks, headings, forms, reflow at 320px and motion cannot be checked from a static image",
+    "contrast figures are raster estimates from anti-aliased glyphs, not computed from CSS"
+  ]
+}

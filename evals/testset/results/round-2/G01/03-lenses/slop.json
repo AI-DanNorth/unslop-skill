@@ -1,0 +1,93 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:10:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A York roastery voice carried by a blackletter display (Grenze Gotisch), cream ground with an indigo accent, plain factual copy and an order form instead of a SaaS skeleton; the weaknesses are thin material stretched by repetition and a few painted-on devices, not defaults.",
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-REMOVE-DEVICE",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER",
+    "T-ANATOMY"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-128",
+      "tier": "Reflex",
+      "where": "hero sub-line, 'Written in the day book' ledger, cup figcaptions, order h2",
+      "evidence": "Failed T-DELETION on the ledger: its five rows ('Coffees roasted each week 6', 'Weight of each bag 250 g', 'Ways to buy By the bag, or by subscription', 'Roastery York', 'Roasting since 1921') repeat the h1 and hero sub-line; only the bag weight is new. 'Six coffees' appears 3 times, '250 g' 4 times, 'York' 3 times, '1921' twice. The page has about five facts and spends a full screen restating them.",
+      "before": "Ledger: 1 Coffees roasted each week 6 ... 5 Roasting since 1921",
+      "after": "[DATA NEEDED: the six coffees (name, origin, roast, price per 250 g bag) and subscription terms]; let the ledger hold those rows instead of restating the hero",
+      "why": "Repetition stands in for content; a fact said four times reads as filler.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "whole page; order band",
+      "evidence": "Failed T-ANATOMY: a roastery site's core section is the coffees themselves (names, origins, notes, price). This page never names one of the six coffees, gives no price for a bag or a subscription, and the order band asks for name and email with only 'One 250 g bag' / 'A subscription' to choose from.",
+      "before": "\"250 g bags, or a subscription\" + name/email form, no price or coffee",
+      "after": "[DATA NEEDED: this week's six coffees and the bag and subscription prices]; put a coffee list above the order form and the price beside each choice",
+      "why": "The visitor's job (choose a coffee, know the cost) cannot be done from the page.",
+      "test": "T-ANATOMY"
+    },
+    {
+      "rule": "IMG-130",
+      "tier": "Floor",
+      "where": "#cup figures and hero photo (images blocked at capture; judged from footer credits)",
+      "evidence": "Footer credits three Wikimedia Commons library photos, one titled 'Coffee roasting machine, The Roastery, Coaltown Coffee, Ammanford, Wales'. It sits under the heading 'From a York drum to your kettle', so another roastery's machine is presented as this York roastery's drum.",
+      "before": "h2 'From a York drum to your kettle' over a Coaltown Coffee (Wales) roaster photo",
+      "after": "[DATA NEEDED: a photograph of Fenwick and Daughters' own roaster]; until then use a detail-slot library frame that does not claim to be the York drum (IMG-132) or relabel the heading",
+      "why": "Licensed and credited, but it still passes another business's room off as the client's.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "CON-144",
+      "tier": "Finish",
+      "where": "#daybook ledger and footer 'letter'",
+      "evidence": "Failed T-REMOVE-DEVICE: the 'day book' metaphor (No./Entry/Kept columns, double hairline rules, 'fibre' paper texture on the hero plate) and the footer's 'letter' sign-off could be removed and the page would be no less clear. The device dresses five facts as a ledger rather than recording anything a day book would (roast dates, batches).",
+      "before": "\"Written in the day book / Five lines the roastery keeps to.\"",
+      "after": "Either make it a real day book ([DATA NEEDED: roast date and batch per coffee this week]) or drop the metaphor and present the facts plainly",
+      "why": "A device is earned when it carries real records; here it is costume for thin content (CON-141 subject painted on).",
+      "test": "T-REMOVE-DEVICE"
+    },
+    {
+      "rule": "CPY-143",
+      "tier": "Finish",
+      "where": "footer.letter: 'With thanks from the roastery,' above wordmark",
+      "evidence": "Footer closes with a sign-off line 'With thanks from the roastery,' then the name set at 52px, a third repetition of the wordmark on the page.",
+      "before": "\"With thanks from the roastery,\" / Fenwick and Daughters",
+      "after": "Remove the sign-off; use the footer for the address, opening or dispatch days ([DATA NEEDED]) and the credit line",
+      "why": "Footer sign-offs are a template flourish that adds no fact.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "CPY-113",
+      "tier": "Finish",
+      "where": "#cup lead; order lead",
+      "evidence": "T-FRESH-READER generic lines: 'The cup is yours to make.', 'Tell the roastery which you would like, and where to reach you.', 'Five lines the roastery keeps to.' None is a heading; they are the only lines that would fit any roaster.",
+      "before": "\"Fenwick and Daughters roasts the coffee. The cup is yours to make.\"",
+      "after": "A line only this roastery can say, e.g. [DATA NEEDED: grind or brew guidance they give, dispatch day]",
+      "why": "Minor; the rest of the copy is concrete, so these stand out as filler.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Grenze Gotisch blackletter for wordmark and heads is an unusual, place-and-age-appropriate choice; keep it rather than swapping to a safer serif.",
+    "Indigo (oklch 0.5 0.17 275) as the single accent on cream breaks the warm-paper terracotta default; keep it.",
+    "Copy is plain and factual with no hype words: 'Roasted in York since 1921', 'Six coffees a week, sold by the bag or by subscription.'",
+    "Order form is honest: with no endpoint it says 'Nothing was sent: this form is not connected yet.' Library photos are credited in one footer line."
+  ],
+  "not_investigated": [
+    "Photography: all three images were blocked at capture (manifest network.blocked), so photo choice, crop and quality were not judged; hero and cup panels show only the placeholder gradient",
+    "T-STOCK-ORDER: hero, ledger (stat-like), two-photo row, order CTA band with form, footer: 3 stock sections, under threshold",
+    "Look family: cream ground and display serif-like face hit 2 warm-paper-serif tells, but the accent is indigo not terracotta and there are no eyebrows; read as chosen, not reported",
+    "copy voice: no contract or brand samples supplied"
+  ]
+}

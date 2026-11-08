@@ -1,0 +1,88 @@
+{
+ "lens": "slop",
+ "ran_at": "2026-11-08T12:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "The single screen is the stock AI-analytics hero: tracked caps eyebrow, headline with one italic word and an accent period, 'AI-powered' sub-line, two CTAs, an invented 3-stat band, a dashboard mock with fake KPIs and 'AI Insight' cards, then a logo strip of famous brands; nothing on it belongs to a specific product.",
+ "tests_run": [
+  "T-FIVE-SECOND",
+  "T-RIVAL-NAME",
+  "T-MIRROR",
+  "T-DEFAULT-AGENT",
+  "T-THREE-LINE",
+  "T-DELETION",
+  "T-STOCK-ORDER",
+  "T-FRESH-READER",
+  "T-EYEBROW",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "hero, 1440 tile 00 (the whole page)",
+   "evidence": "Failed T-DEFAULT-AGENT: 'landing page for an AI analytics tool' yields exactly this: eyebrow 'BUSINESS INTELLIGENCE FOR MODERN TEAMS', h1 'Turn data into decisions, not dashboards.' with italic 'decisions' and a terracotta period, sub-line, 'Start Free Trial' + 'Watch Demo', stat trio, product mock right, logo strip. Cream #fafaf8 page, terracotta accent and an italic display word put it in the warm-paper-serif family's tells (cream_bg, terracotta_accent, eyebrows) applied to a sans.",
+   "before": "Template split hero with mock and stat trio",
+   "after": "Lead with one real thing the product does on real data [DATA NEEDED: an actual product screenshot or a named customer's outcome]; drop the eyebrow and the accent-period flourish",
+   "why": "The page reads as a model's default for the category; a cluster, not one tell.",
+   "test": "T-DEFAULT-AGENT"
+  },
+  {
+   "rule": "SLP-012",
+   "tier": "Reflex",
+   "where": "h1 and sub-line",
+   "evidence": "Failed T-RIVAL-NAME: put Mode, Hex, Looker or ThoughtSpot in place of 'Meridian' and 'Turn data into decisions, not dashboards.' and 'AI-powered analytics that tells you what matters, when it matters. Less noise, more clarity.' stay true. T-FRESH-READER generic lines: the h1, the sub-line, and 'Trusted by teams at'. The 'X, not Y' and 'Less noise, more clarity' pairs are the stock antithesis rhythm.",
+   "before": "\"Turn data into decisions, not dashboards.\"",
+   "after": "A headline naming the specific job and user [DATA NEEDED: who uses Meridian and the decision it changes]",
+   "why": "Concept capped at 5: the whole page holds under a competitor's name.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "INT-003",
+   "tier": "Floor",
+   "where": "trust bar, bottom of fold: 'Trusted by teams at Stripe Notion Linear Vercel Figma'",
+   "evidence": "Five famous brand names set as grey text with no logos, links or case studies; the sweep's invented_metrics caught the stats but not this borrowed proof. These are the stock 'logo strip' cast for dev-tool landing pages.",
+   "before": "Trusted by teams at Stripe, Notion, Linear, Vercel, Figma",
+   "after": "Remove, or list real customers with permission [DATA NEEDED: actual customer names]",
+   "why": "Claiming famous customers without evidence is fabricated social proof.",
+   "test": "T-THREE-LINE"
+  },
+  {
+   "rule": "DVZ-107",
+   "tier": "Floor",
+   "where": "right-hand 'Performance Overview' card",
+   "evidence": "Dashboard mock with '$2.4M REVENUE', '84.2K USERS', '1.2% CHURN', '$142 ARPU', an unlabelled smooth area line, and cards 'AI Insight: Revenue Acceleration ... grew 23%' and 'Predicted: Q3 Target On Track ... 89% probability'. No axes, no dates, no source; T-DELETION: removing it loses only decoration because none of the data is real.",
+   "before": "Coded fake dashboard with invented KPIs",
+   "after": "A real screenshot of the product on demo data labelled as such, or an annotated single view of one insight [DATA NEEDED: product screenshot]",
+   "why": "A dashboard mock with fake data is a look-family tell the sweep cannot measure and it presents invented figures as product output.",
+   "test": "T-DELETION"
+  },
+  {
+   "rule": "CON-102",
+   "tier": "Reflex",
+   "where": "page as a whole",
+   "evidence": "T-FIVE-SECOND: what it is (BI tool) is answered; for whom ('modern teams') and why this one are not. The page ends after the fold with a 189px empty band and no product, pricing or proof sections, so nav items 'Product', 'Pricing', 'Docs', 'Blog' all point to '#'.",
+   "before": "Hero-only page with dead nav",
+   "after": "[DATA NEEDED: audience, product sections] then sections a buyer in this category expects (how it works on their data, pricing)",
+   "why": "The page cannot answer the visitor's next question.",
+   "test": "T-FIVE-SECOND"
+  },
+  {
+   "rule": "SLP-001",
+   "tier": "Reflex",
+   "where": "above h1: 'BUSINESS INTELLIGENCE FOR MODERN TEAMS'",
+   "evidence": "T-EYEBROW: covering the 10px tracked-caps eyebrow loses nothing; it repeats the category and duplicates the <title>. The sweep's eyebrow detector did not fire on it (10px span inside .hero-badge).",
+   "before": "BUSINESS INTELLIGENCE FOR MODERN TEAMS",
+   "after": "Delete it; put the audience into the sub-line if it is real",
+   "why": "An eyebrow restating the category is the most common AI hero tell.",
+   "test": "T-EYEBROW"
+  }
+ ],
+ "strengths": [
+  "Restrained palette and a single dark primary CTA give a calm first screen; the composition and spacing are competent and worth keeping once real content replaces the mock."
+ ],
+ "not_investigated": [
+  "Copy voice: no brand samples supplied.",
+  "Lucide icons were shimmed (manifest: 'npm lucide@latest'); icon rendering treated as intended."
+ ]
+}

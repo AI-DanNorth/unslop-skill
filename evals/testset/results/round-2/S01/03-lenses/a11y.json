@@ -1,0 +1,79 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:00:00",
+  "tests_run": [
+    "verify-sweep-floor",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "section.gallery img:nth-of-type(1) and img:nth-of-type(2)",
+      "evidence": "alt=\"Product screenshot one\" and alt=\"Product screenshot two\"; both images fail to load (naturalWidth 0), so the alt text is all a sighted or screen-reader user gets, and it names a slot, not content.",
+      "before": "<img alt=\"Product screenshot one\">",
+      "after": "alt describing what the screen shows, e.g. alt=\"[DATA NEEDED: what the screenshot shows, e.g. the sync settings panel with two connected tools]\"; fix the src so the file exists",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: the alternative must serve the equivalent purpose.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-113",
+      "tier": "Floor",
+      "where": "section.hero > svg (grey circle, 120x40 at y183)",
+      "evidence": "Inline svg with no aria-hidden, no role, no title or aria-label (dom-1440: name null, role null). It is decorative.",
+      "before": "<svg><circle/></svg>",
+      "after": "<svg aria-hidden=\"true\" focusable=\"false\">...</svg>",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: decorative graphics must be hidden from assistive tech.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "section.features > div.bar (animation: grow 2s infinite)",
+      "evidence": "Stylesheet: '.bar { animation: 2s ease 0s infinite normal none running grow; }'. The animation loops forever with no pause control; the sweep flagged the missing reduced-motion rule, this is the separate pause requirement. The bar renders with no visible height at capture, so impact may be nil; verify live.",
+      "before": ".bar { animation: grow 2s infinite }",
+      "after": "Remove the loop, or limit to animation-iteration-count: 1 and add @media (prefers-reduced-motion: reduce) { .bar { animation: none } }",
+      "why": "WCAG 2.2 2.2.2 Pause, Stop, Hide: auto-moving content lasting over 5 seconds needs a way to stop it.",
+      "test": "motion-timing"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Reflex",
+      "where": "header.nav > button.cta 'Get started'",
+      "evidence": "A <button> outside any form with no stated destination; read out of context, 'Get started' does not say what starts (signup, demo, download). Only interactive element on the page.",
+      "before": "<button class=\"cta\">Get started</button>",
+      "after": "If it navigates, make it <a href=\"/signup\">Start a free trial</a> (or the real action); keep the visible text in the accessible name",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context) and 4.1.2 Name, Role, Value: a navigating control should be a link whose name says where it goes.",
+      "test": "link-button-purpose"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Finish",
+      "where": "h2 'Everything, seamlessly'; section.voices",
+      "evidence": "The h2 does not describe its section (features of what?), and the testimonial section has no heading. The eyebrow '01 / FEATURES' is a span, so the only descriptive word for the section is not in the heading tree.",
+      "before": "<span class=\"eyebrow\">01 / FEATURES</span><h2>Everything, seamlessly</h2>",
+      "after": "<h2>Features</h2> or an h2 naming what the features do; drop the eyebrow span",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels: headings must describe topic or purpose.",
+      "test": "headings-landmarks"
+    }
+  ],
+  "strengths": [
+    "The one control has a visible 2px solid ink focus outline (focus/00-on.png), and lang=\"en\" and a title are set.",
+    "Main content is inside <main>; no content is hidden under reduced motion, observer-off or scripts-off (hidden.json all 241 chars)."
+  ],
+  "not_investigated": [
+    "verified sweep Floor A11-001: #e91e63 promo text on white measures 4.35:1 at 16px, real failure",
+    "verified sweep A11-004: 'Get started' is an unstyled browser button 82x21px, real",
+    "keyboard operation: no menus, dialogs or custom widgets present; live keyboard test not run",
+    "forms and errors: no forms on the page",
+    "reflow at 320px: only 375 captured; at 375 nothing clips, but html { overflow-x: hidden } could hide overflow at narrower widths",
+    "use of colour: no in-text links exist; gradient h1 is 32px bold (large text), stops #8b5cf6/#3b82f6 both exceed 3:1 on white"
+  ]
+}
