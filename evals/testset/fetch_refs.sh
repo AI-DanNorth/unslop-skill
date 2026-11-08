@@ -4,7 +4,8 @@
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 refs="${1:-$here/../../../unslop-refs}"; mkdir -p "$refs"
-python3 - "$here/set1.yaml" <<'PY' | while read -r name repo sha; do
+# tr strips the \r that Windows Python adds to each line; without it the SHAs never match.
+python3 - "$here/set1.yaml" <<'PY' | tr -d '\r' | while read -r name repo sha; do
 import sys, yaml
 for k, v in yaml.safe_load(open(sys.argv[1]))["sources"].items(): print(k, v["github"], v["commit"])
 PY
@@ -21,8 +22,10 @@ import sys
 names = ["con", "prn", "aux", "nul"] + [f"com{i}" for i in range(1, 10)] + [f"lpt{i}" for i in range(1, 10)]
 ci = lambda n: "".join(f"[{c.lower()}{c.upper()}]" if c.isalpha() else c for c in n)
 lines = ["/*"] + [f"!**/{ci(n)}{suffix}" for n in names for suffix in ("", ".*", "/")]
-open(sys.argv[1], "w").write("\n".join(lines) + "\n")
+open(sys.argv[1], "w", newline="\n").write("\n".join(lines) + "\n")  # LF: git reads a \r as part of each pattern
 PY
+  # Git refuses reserved names in the tree on Windows even when sparse-checkout leaves them out.
+  git -C "$dir" config core.protectNTFS false
   git -C "$dir" checkout -q FETCH_HEAD
   echo "fetched $name @ ${sha:0:7}"
 done
