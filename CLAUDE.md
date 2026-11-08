@@ -2,6 +2,20 @@
 
 Unslop is a Claude plugin that audits design artifacts for AI-default slop, accessibility floors and craft errors. Read `README.md` for the layout and `core/guardrails.md` before any audit. The plan and its history live in the claude.ai Project "Design Reviewing System" (the plan doc) and in `evals/testset/results/`.
 
+## Where things are
+
+| Need | Read |
+|---|---|
+| The plan (architecture, domains, pipeline, bundles, detectors, conflicts, roadmap) | `docs/PLAN.md` (export of the claude.ai Project plan doc; the live doc is the source of truth) |
+| What happened, decisions, lessons, mistakes | `docs/HISTORY.md` |
+| Prompts for the next sessions | `docs/NEXT-PROMPTS.md` |
+| Prompts that produced the research | `docs/AGENT-PROMPTS.md` |
+| The 20 source docs the rules came from | `research/sources/` |
+| Mined rule rows, named tests, conflicts, lexicons | `research/mining/` (A to G) |
+| Web research findings | `research/web-research-report.md` |
+| Candidate examples (1,883 rows) | `evals/candidates/` |
+| Test sets, results, adjudications | `evals/testset/` |
+
 ## Setup (once per machine)
 
 ```bash

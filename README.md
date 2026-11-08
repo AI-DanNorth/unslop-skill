@@ -2,7 +2,7 @@
 
 A Claude plugin that audits design artifacts for AI-default slop, accessibility floors and craft errors, then reports findings ranked by severity, each tied to a rule card and to measured evidence.
 
-**Status: phase 1 (core and web MVP).** Web pages only. The other lenses, media adapters and remedies follow the roadmap in the plan doc.
+**Status: phase 1 (core and web MVP), calibrated on test set 1.** Draft adapters for slides, social, print, diagram, email and app. The other lenses and remedies follow the roadmap in `docs/PLAN.md`. Start with `CLAUDE.md`.
 
 ## How it works
 
@@ -12,7 +12,7 @@ intake ─▶ capture ─▶ sweep ─▶ lenses ─▶ synthesize ─▶ (remed
 ```
 
 - **Capture** renders the page with Playwright at each audit width. It first renders a known-good control page, and if the control does not reproduce, every capture finding is marked "not verified".
-- **Sweep** runs 51 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
+- **Sweep** runs 54 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
 - **Lenses** are Claude skills that judge what scripts cannot. Each one runs named tests from `core/tests/tests.yaml`.
 - **Synthesize** merges findings to root causes, drops anything without evidence, scores 7 dimensions with caps, and writes a report that opens with a verdict word.
 
@@ -38,11 +38,13 @@ Requirements: Node 18+, Playwright with Chromium, and Python 3.10+ with PyYAML, 
 |---|---|
 | `core/` | Contracts every skill reads: rule schema, severity, report format, guardrails, precedence, gates, glossary, conflict register, named tests, profiles |
 | `data/` | Thresholds, 12 lexicons, look-family definitions, stress fixtures |
-| `rules/` | Rule cards: `curated.yaml` (53 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,099 mined drafts with provenance) |
+| `rules/` | Rule cards: `curated.yaml` (56 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,099 mined drafts with provenance) |
 | `skills/` | `unslop`, `intake`, `capture`, `sweep`, `lens-slop`, `lens-a11y`, `synthesize`, `media-web` |
 | `scripts/` | Capture (Node), checks and sweep (Python), report synthesis, build tools, self-test |
 | `evals/seeded-defects/` | Control page (must stay clean) and seed pages (every detector must catch its seed) |
-| `research/mining/` | The source-mining files the cards were built from |
+| `research/` | The 20 source docs, the mining files the cards were built from, reader notes and the web research report |
+| `docs/` | The plan (exported), project history and decisions, agent prompts, prompts for next sessions |
+| `evals/candidates/`, `evals/testset/` | 1,883 candidate examples; test set 1 (52 local + 39 live), results and adjudications |
 | `sources/` | Source index and `provenance.csv` (rule id → source sections) |
 
 ## Changing rules

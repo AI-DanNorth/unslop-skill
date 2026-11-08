@@ -1,0 +1,22 @@
+# ui-ux-pro-max (reader report, condensed)
+- Broad lookup KB: 91 parts, ~192 product-category profiles, 89 styles, palettes, 75 font pairings, platform/framework rules; brand, logo, banner, social, slides, print.
+- Key process: P25 priority order (A11y CRITICAL > Touch > Perf > Style > Layout > Type&Color > Animation > Forms > Nav > Charts). Pre-delivery checklist 7 groups. P27 dependency flow brand→tokens→impl→application. Retheming procedure. Asset Approval Checklist 9 areas w/ sign-off; brand audit cadence.
+- P48 deterministic brief→system algorithm (signal-word rules: style/constraint/pattern/mode; mode precedence; luminance <0.18 = dark).
+- Category severity HIGH/MEDIUM: anti-patterns as hard constraints vs defaults. Trust industries ban AI purple/pink at HIGH.
+- Design dials variance/motion/density 1-10 → spacing scale.
+- Darken accent not abandon hue; on-color by luminance; focus-ring derivation.
+- RTL readiness levels per style. Style a11y-risk list (neumorphism, glass-over-vibrant, kinetic type, HUD, custom cursors). Glass needs reduced-transparency fallback.
+- State priority disabled>loading>active>focus>hover>default; exit 60-70% of enter.
+- Master + page-override model with page-type detection.
+- "Say it's a fallback" when no verified guidance matches.
+- Rule template: Rule / Do / Don't / Platform / Severity / Values → good findings schema. Severity Critical/High/Medium/Low.
+- Lintables: viewport meta zoom, contrast, outline:none, transform-only anim, reduced motion, aria-label icon buttons, emoji icons, labels/autocomplete/paste, heading order/skip link/landmarks, img alt+dims+lazy+webp, font-display, ≤3 families, 16px body mobile, 65-75ch, raw hex, 24/44 targets, 100vh, break-all, z-index 9999.
+- MEDIUM-SPECIFIC (scarce elsewhere): 
+  - Slides P33: layouts by goal, grids, 16:9 frame 60px padding, title clamp(32,6vw,80), real charts, deck strategies with slide counts for 14 deck types (YC seed 10-12…), copy formulas PAS/AIDA/FAB/BAB, Duarte sparkline and pattern breaks at 1/3 & 2/3.
+  - Print: 300 DPI, 3-5mm bleed, CMYK, 1pt per foot viewing distance, card/letterhead/envelope specs, logo min 35mm/10mm.
+  - Social/ads: platform sizes, safe zones central 70-80%, <20% text, type at 1080px (48/32/24/18/CTA 28), test at 50% thumbnail.
+  - Email: 600px, <1MB (thin).
+  - Native: 44pt/48dp, safe areas, Dynamic Type, predictive back. Desktop native. Spatial/visionOS.
+  - Logo: legible at 16px, single color.
+- Proposed domains: D18 Brand & identity; D19 Conversion & page patterns; D20 AI-product UX.
+- Conflicts: promotes slop (gradient text, glass, indigo AI purple, Inter both, hero>features>CTA default, transition:all) — treat as context-dependent, low trust for taste rules; good for medium specs.

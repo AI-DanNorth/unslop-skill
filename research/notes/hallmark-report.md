@@ -1,0 +1,22 @@
+# hallmark (reader report, condensed)
+- Anti-slop web design system, 53 parts. "Made, not generated." Web pages first; components & app screens secondary. No slides/print/email/native.
+- THREE RULE TIERS: Floor (non-waivable) / Reflex (fix or waive w/ reason ≥24 chars naming rule, citing evidence, not reused) / Finish (non-blocking) / Repetition (noted). Same rule waived 3 builds running or >3 waivers/page → codify as house style. Ship = no open Floor, no unanswered Reflex.
+- Six-axis structural fingerprint (heading placement, body composition, divider language, button voice, image treatment, reveal pattern): share ≤3 of 6 with last 3 builds; compare against recorded log.
+- Mirror test / competitor-name test.
+- Budgets: ~80 words per 900px screen (>95 fail); ≤450 words/page; h1 ≤7 words/50 chars; hero sub ≤12 words; 1-2 actions.
+- Fold geometry at 1280x800/1440x900/1920x1080; dead band >160px fails.
+- Surface ladder: whitespace → hairline → tinted well → card (border OR shadow).
+- Theme identity descriptor (paper band, display class, accent band, posture) → theme distance. Named "spent looks" with numeric definitions (cream+serif+terracotta). Escape order: accent, paper, face.
+- Honest forms (no fake "Sent"); missing facts as dashed slots (≤2/page).
+- Brand truth: never theme brand from memory; extract literals from site CSS, cluster 3-6, record source, 90-day refresh.
+- Comp-before-code w/ reproduction diff; name largest divergence.
+- Lintables: eyebrow detector heuristic; banned gradient hue pairs; glow/orb/glass thresholds; banned display faces; stock Tailwind swatches as tokens; no #000/#fff; accent footprint <5% (>8% hard fail); contrast real pixels, APCA Lc60; CSS bans (transition all, animating layout props, bare ease, 100vw, vh heroes); 4px spacing scale ≤3 off-scale; section gaps ≥120px not identical; container monotony (same box recipe 6+ selectors); copy buzzword list & stock lines; invented-metric regex; imagery placeholder detectors; typography limits.
+- Build sequence 12 steps: read project → ask once (Material, Audience, Use, Tone) → material inventory → genre & scope → commit plan → comps (2, one axis, 2-round ceiling) → nav+hero alone + fresh review → sections → six-axis self-critique → rendered checks → fresh-eyes finish → handoff (slot list + one material that'd most improve). Decisions/waivers recorded in first 40 lines of stylesheet.
+- Scoring: 6 axes 1-5 (Philosophy, Hierarchy, Execution, Specificity, Restraint, Variety); any <3 forces revision; straight 5s must name what was cut; overall 1-10. Judged defects fail outright.
+- Review: fresh reviewer; hero first then page; verdict first word recapture/rebuild/fix/ship; fixes scored resolved/partial/unresolved; ≤8 findings ranked by cost; "thin screen" outranks details; name what must not be diluted.
+- Verification budget: one inspection, one fix batch, ≤1 confirming round; never claim a check passed if not run. Widths 320/375/414/768/1024/1280/1440/1920.
+- Audit-only mode: inventory, four-line read (purpose / works & stays / reads generated / broken), findings by tier, name lightest depth Polish/Restyle/Full; audit changes nothing.
+- Redesign integrity: keep every link/field/handler/id; word-count drop >40% flags lost content; before/after counts.
+- Benchmark briefs for testing the skill (tempt fabrication, component-only, same theme twice, vague).
+- Proposed domains: D18 brand truth/provenance; D19 information architecture / page anatomy (visitor jobs, 20 macrostructures); D20 redesign/change management.
+- Conflicts: dashes banned, eyebrows banned (Floor), pie/donut banned, no chart libs, one filled button, glass banned, tight word budgets, "All rights reserved" flagged.

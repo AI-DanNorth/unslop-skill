@@ -1,0 +1,16 @@
+# taste-skill (reader report, condensed)
+- One-page marketing sites only. Six business kinds (software, gaming, tech/hardware, product, service, place) gate allowed assets/effects/motion.
+- "Deal, don't choose": random dealing from per-kind lists w/ history → anti-homogeneity check across outputs.
+- Judge tile: sections exactly 1 or 2 screens (2px tol); content-height windows at 1440x900 (708px/screen).
+- One object never carries the page (≤3 sections).
+- Copy device budgets; 2×budget+1 = FAIL. Over-correction traps (banning em dash breeds comma splices). "Not tells, leave alone" list (false-positive guard).
+- Fact sheet before writing; rival's-name test; fresh-reader test.
+- Palette derivation math (surface = ink 5% into bg; muted stepped to 4.6:1); violet ban hue 275-330 chroma>0.05.
+- Visual-empty detection (<6 colours, 99.8% one colour = FAIL).
+- Lintable: banned fonts list, spacing set {4..128}, weights 400/500, ≤62ch, scale ratio ≥1.3, contrast 7:1 body, slop lexicon, banned button labels, default names (Priya, Acme...), placeholder phones/href="#", caption ban, sentence-rhythm stats, button counts, overflow 320-1440, empty area >35% WARN >50% FAIL, perf budgets WARN/FAIL, head/meta checks.
+- Gate order: first screen → sections → edges → visuals → kind fit → motion → keyboard & head → system & copy → widths → copy. Widths 1440/1024/820/768/390/320.
+- Severity WARN/FAIL with count bands; meta-severity ban / cap / context ("clusters are the signal").
+- Gate discipline: fix all FAIL; ≤3 fix rounds; ≤5 waivers, each ≥12-char reason.
+- Proposed new domains: D18 composition & page narrative/rhythm; D19 pattern library (reference only); D20 content integrity/honesty.
+- No slides/print/email/native/docs coverage.
+- Conflicts: accordions banned, Inter etc. banned, no captions, no all-caps labels, rigid 1H/2H sections, internal inconsistencies → need precedence rule.
