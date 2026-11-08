@@ -1,0 +1,54 @@
+name: Test set 1 (live)
+built: '2026-11-08'
+note: >
+  Live sites from the web research and repo agents. Capture these from a machine with normal internet access
+  (local Claude Code). Labels are what the citing source claims, not audit results. Sites change: record the
+  capture date, and treat a redesigned or dead site as "not verified", never as a pass.
+items:
+# --- one brief, five AI builders (techaffiliate.in same-prompt test; the brief banned gradients and glass)
+- {id: L01, url: 'https://findaistack.lovable.app/', expect: slop, medium: web, group: builder-same-brief, why: Lovable output}
+- {id: L02, url: 'https://ai-stack-gold.vercel.app/', expect: slop, medium: web, group: builder-same-brief, why: v0 output}
+- {id: L03, url: 'https://ai-stack-recommendat-7v45.bolt.host/', expect: slop, medium: web, group: builder-same-brief, why: Bolt output}
+- {id: L04, url: 'https://ai-stack--techaffiliate.replit.app/', expect: slop, medium: web, group: builder-same-brief, why: Replit output}
+- {id: L05, url: 'https://ai-stack-techaffiliate.base44.app/', expect: slop, medium: web, group: builder-same-brief, why: Base44 output}
+# --- AI-built sites in the wild
+- {id: L06, url: 'https://consile.app', expect: slop, medium: web, group: builder-wild, why: featured Lovable SaaS}
+- {id: L07, url: 'https://cineyx.ai', expect: slop, medium: web, group: builder-wild, why: Lovable AI-video site}
+- {id: L08, url: 'https://gradloom.app', expect: slop, medium: web, group: builder-wild, why: Lovable AI career platform}
+- {id: L09, url: 'https://kin-ai.replit.app', expect: slop, medium: web, group: builder-wild, why: vibe-coded shadcn landing cited by impeccable}
+- {id: L10, url: 'https://v0-optimus-delta.vercel.app', expect: slop, medium: web, group: builder-wild, why: v0 site cited by impeccable}
+- {id: L11, url: 'https://gameghost.manus.space', expect: slop, medium: web, group: builder-wild, why: Manus site cited by impeccable}
+# --- known-slop specimens published by skill authors
+- {id: L12, url: 'https://impeccable.style/antipattern-examples/old-slop-2022.html', expect: slop, medium: web, group: specimen, why: first-order era}
+- {id: L13, url: 'https://impeccable.style/antipattern-examples/new-slop-2025.html', expect: slop, medium: web, group: specimen, why: 2025 era}
+- {id: L14, url: 'https://impeccable.style/antipattern-examples/new-slop-2026.html', expect: slop, medium: web, group: specimen, why: 2026 era}
+- {id: L15, url: 'https://skill-fixture-before.theroost.dev', expect: slop, medium: app, group: pair, why: plain ops dashboard before the ui-ux-pro-max skill}
+- {id: L16, url: 'https://ui-ux-pro-max-after.theroost.dev', expect: borderline, medium: app, group: pair, why: same dashboard after the skill}
+- {id: L17, url: 'https://uupm.cc', expect: borderline, medium: web, group: skill-site, why: skill landing page with gradient wordmark and glow}
+# --- skill sites (AI-assisted, claimed good)
+- {id: L18, url: 'https://www.usehallmark.com/', expect: good, medium: web, group: skill-site, why: anti-slop tool's own site}
+- {id: L19, url: 'https://impeccable.style', expect: good, medium: web, group: skill-site, why: anti-slop tool's own site}
+- {id: L20, url: 'https://www.tasteskill.dev/', expect: good, medium: web, group: skill-site, why: anti-slop tool's own site}
+- {id: L21, url: 'https://diagramdesign.dev/', expect: good, medium: diagram, group: skill-site, why: editorial diagrams}
+- {id: L22, url: 'https://skill-huasheng.vercel.app/slides/slide-03b-deepseek-cover.html', expect: borderline, medium: slides, group: pair, why: slop vs designer on one slide}
+# --- false-positive controls (human-made, sharing AI-default markers)
+- {id: L23, url: 'https://www.anthropic.com', expect: good, medium: web, group: fp-control, why: human origin of the cream/serif look}
+- {id: L24, url: 'https://www.nimblestudio.com/story/creating-an-anti-ai-brand-in-times-of-artificial-everything', expect: good, medium: web, group: fp-control, why: deliberate terracotta/serif brand}
+- {id: L25, url: 'https://linear.app', expect: good, medium: web, group: fp-control, why: the dark-SaaS original AI copies}
+- {id: L26, url: 'https://cal.com', expect: good, medium: web, group: fp-control, why: monochrome restraint}
+- {id: L27, url: 'https://stripe.com', expect: good, medium: web, group: fp-control, why: gradient used with intent}
+# --- human exemplars
+- {id: L28, url: 'https://landonorris.com', expect: good, medium: web, group: exemplar, why: Awwwards Site of the Year 2025}
+- {id: L29, url: 'https://messenger.abeto.co', expect: good, medium: web, group: exemplar, why: Awwwards Developer SOTY 2025}
+- {id: L30, url: 'https://brand.dropbox.com', expect: good, medium: web, group: exemplar, why: CSSDA Website of the Year 2025 (domain probable)}
+- {id: L31, url: 'https://www.informationisbeautifulawards.com/showcase/7177-this-is-a-teenager', expect: good, medium: web, group: exemplar, why: IIB 2024 gold data story}
+# --- design-system baselines
+- {id: L32, url: 'https://design-system.service.gov.uk', expect: good, medium: web, group: baseline, why: accessibility-first baseline}
+- {id: L33, url: 'https://preview.pro.ant.design/dashboard/analysis', expect: good, medium: app, group: baseline, why: conventional enterprise dashboard}
+- {id: L34, url: 'https://ant.design/docs/spec/buttons', expect: good, medium: web, group: baseline, why: do/don't spec page}
+- {id: L35, url: 'https://vercel.com/design/guidelines', expect: good, medium: web, group: baseline, why: rule-built page}
+- {id: L36, url: 'https://carbondesignsystem.com', expect: good, medium: web, group: baseline, why: IBM Carbon}
+# --- other media
+- {id: L37, url: 'https://reallygoodemails.com/emails/see-you-next-week', expect: good, medium: web, group: exemplar, why: real email (gallery page wraps it)}
+- {id: L38, url: 'https://reallygoodemails.com/emails/welcome-to-apple-arcade', expect: borderline, medium: web, group: exemplar, why: polished, flagged for weak alt text}
+- {id: L39, url: 'https://www.reidhoffman.org/linkedin-pitch-to-greylock/', expect: good, medium: web, group: exemplar, why: real human pitch deck with known flaws}

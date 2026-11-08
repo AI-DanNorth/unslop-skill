@@ -1,0 +1,50 @@
+# Unslop: working notes for Claude
+
+Unslop is a Claude plugin that audits design artifacts for AI-default slop, accessibility floors and craft errors. Read `README.md` for the layout and `core/guardrails.md` before any audit. The plan and its history live in the claude.ai Project "Design Reviewing System" (the plan doc) and in `evals/testset/results/`.
+
+## Setup (once per machine)
+
+```bash
+npm install && npx playwright install chromium     # capture
+python3 -m pip install -r requirements.txt          # checks and reports
+evals/testset/fetch_refs.sh ../unslop-refs          # the 13 source repos test set 1 uses, at pinned commits
+python3 scripts/selftest.py                         # must print SELF-TEST PASSED
+```
+
+## Commands
+
+| Task | Command |
+|---|---|
+| Quick audit of a URL or file | `python3 scripts/unslop.py quick <url-or-file> --profile balanced` |
+| Phase gates of a run | `python3 scripts/unslop.py gates <run-dir>` |
+| Detector self-test | `python3 scripts/selftest.py` |
+| Rebuild rule cards and lint | `python3 scripts/build/build_rules.py` |
+| Rebuild lexicons | `python3 scripts/build/make_lexicons.py` |
+| Capture + sweep a test set | `python3 evals/testset/run_set.py <set.yaml> <refs-dir> <runs-dir> [--only ID,ID]` |
+| Screenshot tiles for reviewers | `python3 scripts/capture/tiles.py <run-dir>` |
+| Score a test set | `python3 evals/testset/calibrate.py <set.yaml> <runs-dir> --out <report.md>` |
+| Archive a review round | `evals/testset/archive_round.sh <round-name> <runs-dir>` |
+
+## Rules for working in this repo
+
+- **Commits** are authored as AI-DanNorth: `git config user.name "AI-DanNorth"` and `git config user.email "287803787+AI-DanNorth@users.noreply.github.com"`. Commit and push to `main` after each meaningful step.
+- **Never delete review output.** `03-lenses/` folders hold blind judgments that cost real time. Archive a round with `archive_round.sh` before re-capturing, and never use globs like `rm -rf <runs>/*/0*`.
+- **Detector changes need the self-test.** Any change to `scripts/checks/`, `data/thresholds.yaml`, a lexicon or `scripts/capture/` is followed by `python3 scripts/selftest.py`. A new detector needs a threshold entry, a curated card in `rules/curated.yaml` and a `data-seed` in `evals/seeded-defects/seeded.html`. The control page must stay clean. Re-bless it only after an intentional edit (`capture.mjs ... --bless-control`).
+- **Reviews are blind.** Reviewers get `evals/testset/LENS-BRIEF.md` with the paths filled in, and never the manifests, candidates or source repos. Expected labels live only in the `set*.yaml` manifests.
+- **Thresholds change only on evidence:** a detector firing on a control, or missing a tell in an answer key. Record the reason in the commit message.
+- **Capture must be honest.** Blocked requests, missing fonts and failed images are recorded in `manifest.json` `network` and become "not verified", never a pass or a finding.
+
+## Status (8 Nov 2026)
+
+- Phase 1 (core and web MVP) is built. Draft media adapters exist for slides, social, print, diagram, email and app.
+- Test set 1 local items (52): two blind review rounds. 27 of 44 raw agreement; 37 of 41 after adjudication (`evals/testset/results/round-2-adjudication.md`).
+
+## Next steps, in order
+
+1. **Live test set** (`evals/testset/set1-live.yaml`, 39 sites). This needs normal internet access, which is why it moved to a local session.
+   - Run `python3 evals/testset/run_set.py evals/testset/set1-live.yaml ../unslop-refs ../unslop-runs-live`, then `tiles.py` on each run.
+   - Send blind reviewers in batches of about 8 with `LENS-BRIEF.md`, then archive the round (`archive_round.sh live-round-1 ../unslop-runs-live`) and calibrate.
+   - Watch for: cookie walls and bot blocks (recapture or mark not verified), redesigned sites (note the capture date), false positives on the human controls (L23 to L36).
+2. **Human spot-check** of the "label generous" and contested rows in the round-2 adjudication.
+3. **Motion and interaction capture:** frame sequences for transitions, scripted clicks for async states. This covers S12, G10 and C01.
+4. **Phase 2:** the other 15 lenses, the scoring rubric and `verify-fix` (roadmap in the plan doc).

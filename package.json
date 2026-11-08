@@ -1,0 +1,12 @@
+{
+  "name": "unslop",
+  "private": true,
+  "description": "Capture scripts for the Unslop design audit (Playwright).",
+  "type": "commonjs",
+  "engines": { "node": ">=18" },
+  "dependencies": { "playwright": "1.63.0" },
+  "scripts": {
+    "setup": "playwright install chromium",
+    "selftest": "python3 scripts/selftest.py"
+  }
+}

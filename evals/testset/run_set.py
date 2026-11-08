@@ -9,13 +9,14 @@ HOSTS = {"transitions.dev": "transitions-dev"}       # live sites whose files ar
 doc = yaml.safe_load(open(a.manifest)); runs = pathlib.Path(a.runs); runs.mkdir(parents=True, exist_ok=True)
 only = set(a.only.split(",")) if a.only else None
 for it in doc["items"]:
+    it.setdefault("kind", "page"); it.setdefault("repo", "live"); it.setdefault("path", it.get("url", "")); it.setdefault("commit", None)
     if it["kind"] != "page" or (only and it["id"] not in only): continue
     run = runs / it["id"]
     if (run / "04-findings.json").exists() and not only: print(it["id"], "done already"); continue
     run.mkdir(exist_ok=True)
     (run / "run.json").write_text(json.dumps({"target": it["path"], "profile": a.profile, "workflow": "testset", "medium": it["medium"],
         "item": {k: it[k] for k in ("id", "repo", "path", "medium", "commit")}}, indent=1))   # no expected label: lenses review blind
-    target = str(pathlib.Path(a.refs) / it["repo"] / it["path"])
+    target = it["url"] if it.get("url") else str(pathlib.Path(a.refs) / it["repo"] / it["path"])
     medium = it["medium"]
     adapter = ROOT / f"skills/media-{medium}/thresholds.yaml"
     widths = ",".join(map(str, (yaml.safe_load(adapter.read_text()) or {}).get("capture_widths", [375, 1280, 1440]))) if adapter.exists() else "375,1280,1440"
