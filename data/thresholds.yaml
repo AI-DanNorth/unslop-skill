@@ -62,7 +62,7 @@ detectors:
   motion_css:       {rule: MOT-001, tier: Reflex, max_overshoot: 1.05, exit_ratio: [0.60, 0.75], banned: ["transition: all", "transition-property: all"], layout_props: [width, height, top, left, right, bottom, margin, padding]}
   performance:      {rule: WEB-001, tier: Reflex, lcp_warn_ms: 2500, lcp_fail_ms: 4500, image_max_kb: 400, image_max_ratio: 2.0}
   # ---- capture and cross-output ---------------------------------------------
-  near_blank:       {rule: PRC-001, tier: Floor, max_diff_share: 0.008, level: 24}
+  near_blank:       {rule: PRC-001, tier: Floor, max_diff_share: 0.0015, level: 24}   # capture sanity: an empty render, not a sparse page
   look_family:      {rule: SLP-012, tier: Reflex, families_file: look-families.yaml}
   distinctness:     {rule: SLP-011, tier: Reflex, min_palette_oklab: 0.06, max_edge_corr: 0.55, ledger_size: 8}
   redesign_loss:    {rule: PRC-002, tier: Floor, max_word_drop: 0.40}

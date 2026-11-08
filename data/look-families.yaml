@@ -9,7 +9,7 @@ families:
       - {id: terracotta_accent, test: "an accent within oklab distance 0.07 of #D97757, or oklch C >= 0.08 at hue 15-55"}
       - {id: serif_display, test: "h1/h2 rendered in a serif face"}
       - {id: italic_serif_hero, test: "italic serif headline >= 48px"}
-      - {id: eyebrows, test: "eyebrow detector fires >= 1"}
+      - {id: eyebrows, test: "eyebrow detector fires >= 1, or 3+ tracked uppercase labels <= 14px (caps_labels)"}
       - {id: numbered_labels, test: "numbered_labels detector fires"}
   dark-single-accent:
     description: Near-black page with one saturated accent, often neon or GitHub-dark.

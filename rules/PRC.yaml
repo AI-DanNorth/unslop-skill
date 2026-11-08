@@ -8,7 +8,8 @@
   waivable_by: never
   tests:
   - T-VERIFY-VERIFIER
-  rule: Stop the run if the control render fails or a screenshot is near-blank (under 0.8% of pixels differ by more than 24 levels).
+  rule: Stop the run if the control render fails or a screenshot is empty (under 0.15% of pixels differ by more than 24 levels from the dominant
+    colour).
   why: A blank or wrong render produces confident nonsense.
   fix: Fix the capture (wait for fonts, network, lazy content) and recapture.
   sources:
@@ -18,7 +19,7 @@
   check: M
   status: active
   values:
-    max_diff_share: 0.008
+    max_diff_share: 0.0015
     level: 24
 - id: PRC-002
   title: Redesigns keep content and behaviour

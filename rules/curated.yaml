@@ -182,7 +182,7 @@
 
 # ---------------- process ----------------
 - {id: PRC-001, title: Capture must be trustworthy, domain: D17, tier: Floor, detector: near_blank, remedy: none, waivable_by: never, tests: [T-VERIFY-VERIFIER],
-   rule: "Stop the run if the control render fails or a screenshot is near-blank (under 0.8% of pixels differ by more than 24 levels).",
+   rule: "Stop the run if the control render fails or a screenshot is empty (under 0.15% of pixels differ by more than 24 levels from the dominant colour).",
    why: "A blank or wrong render produces confident nonsense.", fix: "Fix the capture (wait for fonts, network, lazy content) and recapture.", sources: ["huashu §49 §106"]}
 - {id: PRC-002, title: Redesigns keep content and behaviour, domain: D17, tier: Floor, detector: redesign_loss, remedy: none, waivable_by: brief,
    rule: "A redesign keeps every link, field, handler and id, and does not drop more than 40% of words without the brief saying so.", why: "Silent loss breaks the product.",

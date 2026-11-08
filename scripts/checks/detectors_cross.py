@@ -43,6 +43,8 @@ def tells(ev, results):
     purple = [c for c in colours if cl.hexstr(c) in ("#6366f1", "#8b5cf6") or (cl.oklch(c)[1] > 0.12 and 265 <= cl.oklch(c)[2] <= 330)]
     terracotta = [c for c in colours if cl.oklab_dist(c, cl.parse("#d97757")) < 0.07 or (cl.oklch(c)[1] >= 0.08 and 15 <= cl.oklch(c)[2] <= 55)]
     gp = [h for h in results.get("gradient", {}).get("hits", []) if h.get("banned_pair")]
+    caps_labels = [e for e in texts if e["textLen"] < 40 and px(e["style"]["fontSize"]) <= 14 and (e["style"]["textTransform"] == "uppercase" or (e["text"].isupper() and len(e["text"]) > 3))
+                   and e["style"]["letterSpacing"] != "normal" and px(e["style"]["letterSpacing"]) / max(1, px(e["style"]["fontSize"])) >= 0.06]
     T = lambda cond, ev_: ev_ if cond else None
     return {
         "warm-paper-serif": {
@@ -50,7 +52,7 @@ def tells(ev, results):
             "terracotta_accent": T(bool(terracotta), terracotta and cl.hexstr(terracotta[0])),
             "serif_display": T(bool(serif_display), serif_display and rendered_family(ev, serif_display[0])),
             "italic_serif_hero": T(bool(italic_serif), "italic serif headline"),
-            "eyebrows": T(fired("eyebrow"), "eyebrow detector"),
+            "eyebrows": T(fired("eyebrow") or len(caps_labels) >= 3, "eyebrow detector" if fired("eyebrow") else f"{len(caps_labels)} tracked caps labels"),
             "numbered_labels": T(fired("numbered_labels"), "numbered labels"),
         },
         "dark-single-accent": {
