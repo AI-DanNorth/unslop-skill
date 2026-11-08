@@ -1,0 +1,14 @@
+# conventional: enterprise, regulated and native app UI. Familiar patterns allowed.
+profile: conventional
+look_family_cluster_min: 5
+house_style_bans: info
+detectors:
+  em_dash:        {budget: 99}
+  eyebrow:        {budget: 99}
+  numbered_labels: {budget: 99}
+  words_per_screen: {enabled: false}
+  page_words:     {enabled: false}
+  h1_words:       {enabled: false}
+  chrome_glyphs:  {budget: 3}
+  banned_fonts:   {severity: info}   # system fonts are fine
+weights: {distinctiveness: 0.5, concept: 0.75}

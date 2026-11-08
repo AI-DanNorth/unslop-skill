@@ -1,0 +1,219 @@
+lexicon: buzzwords
+match: word, case-insensitive, any inflection
+scope:
+- visible text
+- alt
+- title
+- meta description
+rule: CPY-005
+sources:
+- taste-skill §37 §40 §42
+- hallmark §106 §356
+- kami §224 §236 §238 §303
+- agent-skills §119-122
+groups:
+- name: slop-words
+  policy: fail
+  note: unless a literal trade use
+  entries:
+  - term: delve
+    added: '2026-11-08'
+  - term: tapestry
+    added: '2026-11-08'
+  - term: testament to
+    added: '2026-11-08'
+  - term: realm
+    added: '2026-11-08'
+  - term: embark
+    added: '2026-11-08'
+  - term: beacon
+    added: '2026-11-08'
+  - term: multifaceted
+    added: '2026-11-08'
+  - term: paradigm
+    added: '2026-11-08'
+  - term: myriad
+    added: '2026-11-08'
+  - term: plethora
+    added: '2026-11-08'
+  - term: meticulous
+    added: '2026-11-08'
+  - term: intricate
+    added: '2026-11-08'
+  - term: interplay
+    added: '2026-11-08'
+  - term: garner
+    added: '2026-11-08'
+  - term: elevate
+    added: '2026-11-08'
+  - term: unlock
+    added: '2026-11-08'
+  - term: unleash
+    added: '2026-11-08'
+  - term: empower
+    added: '2026-11-08'
+  - term: harness
+    added: '2026-11-08'
+  - term: supercharge
+    added: '2026-11-08'
+  - term: turbocharge
+    added: '2026-11-08'
+  - term: seamless
+    added: '2026-11-08'
+  - term: effortless
+    added: '2026-11-08'
+  - term: cutting-edge
+    added: '2026-11-08'
+  - term: revolutionary
+    added: '2026-11-08'
+  - term: revolutionize
+    added: '2026-11-08'
+  - term: revolutionise
+    added: '2026-11-08'
+  - term: transformative
+    added: '2026-11-08'
+  - term: holistic
+    added: '2026-11-08'
+  - term: next-level
+    added: '2026-11-08'
+  - term: world-class
+    added: '2026-11-08'
+  - term: best-in-class
+    added: '2026-11-08'
+  - term: game-changer
+    added: '2026-11-08'
+  - term: game-changing
+    added: '2026-11-08'
+  - term: state-of-the-art
+    added: '2026-11-08'
+  - term: bespoke
+    added: '2026-11-08'
+  - term: synergy
+    added: '2026-11-08'
+  - term: leverage
+    added: '2026-11-08'
+  - term: reimagine
+    added: '2026-11-08'
+  - term: next-generation
+    added: '2026-11-08'
+  - term: next-gen
+    added: '2026-11-08'
+  - term: unparalleled
+    added: '2026-11-08'
+  - term: unrivaled
+    added: '2026-11-08'
+  - term: unrivalled
+    added: '2026-11-08'
+  - term: streamline
+    added: '2026-11-08'
+  - term: industry-leading
+    added: '2026-11-08'
+  - term: mission-critical
+    added: '2026-11-08'
+  - term: future-proof
+    added: '2026-11-08'
+  - term: enterprise-grade
+    added: '2026-11-08'
+  - term: one-stop solution
+    added: '2026-11-08'
+  - term: nestled
+    added: '2026-11-08'
+- name: weak-intensifiers
+  policy: cap
+  budget: 3
+  entries:
+  - term: powerful
+    added: '2026-11-08'
+  - term: robust
+    added: '2026-11-08'
+  - term: very
+    added: '2026-11-08'
+  - term: just
+    added: '2026-11-08'
+  - term: really
+    added: '2026-11-08'
+  - term: simply
+    added: '2026-11-08'
+  - term: significantly
+    added: '2026-11-08'
+  - term: easy
+    added: '2026-11-08'
+  - term: simple
+    added: '2026-11-08'
+  - term: quick
+    added: '2026-11-08'
+- name: virtue-words
+  policy: cap
+  budget: 2
+  entries:
+  - term: honest
+    added: '2026-11-08'
+  - term: honestly
+    added: '2026-11-08'
+  - term: calm
+    added: '2026-11-08'
+  - term: calmly
+    added: '2026-11-08'
+  - term: quiet
+    added: '2026-11-08'
+  - term: quietly
+    added: '2026-11-08'
+  - term: actually
+    added: '2026-11-08'
+  - term: genuine
+    added: '2026-11-08'
+  - term: genuinely
+    added: '2026-11-08'
+  - term: truly
+    added: '2026-11-08'
+  - term: thoughtful
+    added: '2026-11-08'
+  - term: thoughtfully
+    added: '2026-11-08'
+  - term: carefully
+    added: '2026-11-08'
+  - term: intentional
+    added: '2026-11-08'
+  - term: intentionally
+    added: '2026-11-08'
+  - term: steady
+    added: '2026-11-08'
+  - term: dependable
+    added: '2026-11-08'
+- name: puffery
+  policy: fail
+  entries:
+  - term: serves as
+    added: '2026-11-08'
+  - term: stands as
+    added: '2026-11-08'
+  - term: pivotal
+    added: '2026-11-08'
+  - term: crucial
+    added: '2026-11-08'
+  - term: plays a key role
+    added: '2026-11-08'
+  - term: plays a vital role
+    added: '2026-11-08'
+  - term: in the heart of
+    added: '2026-11-08'
+  - term: as seen in
+    added: '2026-11-08'
+  - term: the world of
+    added: '2026-11-08'
+- name: dead-metaphors
+  policy: context
+  note: fail unless literal (journey on a travel site) or the audience is fluent
+  entries:
+  - term: landscape
+    added: '2026-11-08'
+  - term: ecosystem
+    added: '2026-11-08'
+  - term: journey
+    added: '2026-11-08'
+  - term: hub
+    added: '2026-11-08'
+  - term: flywheel
+    added: '2026-11-08'
+  - term: closed loop
+    added: '2026-11-08'

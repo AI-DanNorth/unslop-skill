@@ -1,0 +1,2153 @@
+rule_id,file,mined_id,sources
+A11-001,rules/curated.yaml,,web-interface-guidelines; hallmark §411 §454; WCAG 2.2 1.4.3
+A11-002,rules/curated.yaml,,huashu §66; hallmark §52; ui-ux-pro-max §43
+A11-003,rules/curated.yaml,,web-interface-guidelines; hallmark §455; WCAG 2.2 2.4.7 2.4.11
+A11-004,rules/curated.yaml,,WCAG 2.2 2.5.8; hallmark §87; ui-ux-pro-max §22
+A11-005,rules/curated.yaml,,web-interface-guidelines; WCAG 2.2 1.1.1
+A11-006,rules/curated.yaml,,web-interface-guidelines; ui-ux-pro-max §46; WCAG 2.2 4.1.2
+A11-007,rules/curated.yaml,,hallmark §132 §406; ui-ux-pro-max §43; taste-skill §631
+A11-008,rules/curated.yaml,,hallmark §132 §477; WCAG 2.2 3.1.1 2.4.2
+A11-009,rules/curated.yaml,,ui-ux-pro-max §42; web-interface-guidelines
+A11-010,rules/curated.yaml,,web-interface-guidelines; ui-ux-pro-max §60; WCAG 2.2 1.3.1 3.3.2
+A11-011,rules/curated.yaml,,hallmark §330; agent-skills; WCAG 2.2 2.3.3
+A11-101,D-motion-a11y-robustness.md,A11-001,"hallmark §132, §477, taste §639, §68"
+A11-102,D-motion-a11y-robustness.md,A11-002,"hallmark §132, §406, uupm §43, §230, taste §631"
+A11-103,D-motion-a11y-robustness.md,A11-003,"uupm §46, §58, §342, §968"
+A11-104,D-motion-a11y-robustness.md,A11-004,hallmark §482
+A11-105,D-motion-a11y-robustness.md,A11-005,"hallmark §478, uupm §49, §343, taste §471, §639"
+A11-106,D-motion-a11y-robustness.md,A11-006,"taste §631, §639"
+A11-107,D-motion-a11y-robustness.md,A11-007,hallmark §480
+A11-108,D-motion-a11y-robustness.md,A11-008,"hallmark §479, uupm §344"
+A11-109,D-motion-a11y-robustness.md,A11-009,"uupm §230, §244"
+A11-110,D-motion-a11y-robustness.md,A11-010,"taste §632, §20 (photos)"
+A11-111,D-motion-a11y-robustness.md,A11-011,uupm §161
+A11-112,D-motion-a11y-robustness.md,A11-020,"uupm §44, §121, §344, taste §631, §639"
+A11-113,D-motion-a11y-robustness.md,A11-021,"hallmark §476, uupm §125"
+A11-114,D-motion-a11y-robustness.md,A11-022,"uupm §42, taste §631, §632, hallmark §122, kami §763"
+A11-115,D-motion-a11y-robustness.md,A11-023,"uupm §58, §343, §240, taste §631, §567"
+A11-116,D-motion-a11y-robustness.md,A11-024,"hallmark §317, uupm §234, agent §203"
+A11-117,D-motion-a11y-robustness.md,A11-025,uupm §106
+A11-118,D-motion-a11y-robustness.md,A11-026,hallmark §317
+A11-119,D-motion-a11y-robustness.md,A11-027,taste §632
+A11-120,D-motion-a11y-robustness.md,A11-028,uupm §121-§123
+A11-121,D-motion-a11y-robustness.md,A11-040,"uupm §45, §230, §967"
+A11-122,D-motion-a11y-robustness.md,A11-041,"hallmark §129, §312, §455, uupm §32, §230, §347, taste §631"
+A11-123,D-motion-a11y-robustness.md,A11-042,"hallmark §312, §483, uupm §326, §53, taste §422"
+A11-124,D-motion-a11y-robustness.md,A11-043,"hallmark §92, §315, §449"
+A11-125,D-motion-a11y-robustness.md,A11-044,"hallmark §483, §300"
+A11-126,D-motion-a11y-robustness.md,A11-045,"uupm §51, §231, taste §631, §639"
+A11-127,D-motion-a11y-robustness.md,A11-046,"uupm §52, §53"
+A11-128,D-motion-a11y-robustness.md,A11-047,"hallmark §318, §329, uupm §343, §131"
+A11-129,D-motion-a11y-robustness.md,A11-048,uupm §343
+A11-130,D-motion-a11y-robustness.md,A11-049,uupm §239
+A11-131,D-motion-a11y-robustness.md,A11-050,"hallmark §319, §330"
+A11-132,D-motion-a11y-robustness.md,A11-051,huashu §404
+A11-133,D-motion-a11y-robustness.md,A11-052,uupm §230
+A11-134,D-motion-a11y-robustness.md,A11-060,"uupm §55, §231, §126"
+A11-135,D-motion-a11y-robustness.md,A11-061,"hallmark §90, §313, §258, taste §631, §643, huashu §77"
+A11-136,D-motion-a11y-robustness.md,A11-062,"uupm §26, §126, §232"
+A11-137,D-motion-a11y-robustness.md,A11-063,"uupm §27, §127, §232, taste §643"
+A11-138,D-motion-a11y-robustness.md,A11-064,"uupm §54, §151, §231, adp §1, hallmark §335"
+A11-139,D-motion-a11y-robustness.md,A11-065,"uupm §28, §150, §232"
+A11-140,D-motion-a11y-robustness.md,A11-066,uupm §232
+A11-141,D-motion-a11y-robustness.md,A11-067,"hallmark §92, §311, §321, §449, uupm §35, §238, §327"
+A11-142,D-motion-a11y-robustness.md,A11-068,uupm §238
+A11-143,D-motion-a11y-robustness.md,A11-080,"hallmark §314, §92, uupm §47, §68, §122, §238, taste §67"
+A11-144,D-motion-a11y-robustness.md,A11-081,"hallmark §314, adp §2"
+A11-145,D-motion-a11y-robustness.md,A11-082,"hallmark §311, §314, §481, uupm §48, §69, §329, §346"
+A11-146,D-motion-a11y-robustness.md,A11-083,"hallmark §95, §314, uupm §69, taste §67"
+A11-147,D-motion-a11y-robustness.md,A11-084,"uupm §120, §238, hallmark §92, taste §67"
+A11-148,D-motion-a11y-robustness.md,A11-085,"hallmark §314, uupm §73, §346"
+A11-149,D-motion-a11y-robustness.md,A11-086,"uupm §346, §238"
+A11-150,D-motion-a11y-robustness.md,A11-087,"hallmark §92, uupm §71, §72, §77, taste §67"
+A11-151,D-motion-a11y-robustness.md,A11-088,"hallmark §92, uupm §119, §152, taste §67"
+A11-152,D-motion-a11y-robustness.md,A11-089,"uupm §78, §231"
+A11-153,D-motion-a11y-robustness.md,A11-090,"uupm §56, §231"
+A11-154,D-motion-a11y-robustness.md,A11-091,"uupm §74, §139"
+A11-155,D-motion-a11y-robustness.md,A11-092,"uupm §79, §238"
+A11-156,D-motion-a11y-robustness.md,A11-093,"hallmark §92, §314, taste §67, uupm §36"
+A11-157,D-motion-a11y-robustness.md,A11-100,"uupm §345, §124, hallmark §481"
+A11-158,D-motion-a11y-robustness.md,A11-101,"uupm §59, §231"
+A11-159,D-motion-a11y-robustness.md,A11-102,"hallmark §335, §337"
+A11-160,D-motion-a11y-robustness.md,A11-103,"uupm §95, §328"
+A11-161,D-motion-a11y-robustness.md,A11-104,hallmark §333
+A11-162,D-motion-a11y-robustness.md,A11-105,uupm §112
+A11-163,D-motion-a11y-robustness.md,A11-106,uupm §240
+A11-164,D-motion-a11y-robustness.md,A11-120,"hallmark §411, uupm §40, §230, huashu §74, §78, taste §643"
+A11-165,D-motion-a11y-robustness.md,A11-121,"hallmark §411, §456, uupm §241, §330, §240, huashu §66"
+A11-166,D-motion-a11y-robustness.md,A11-122,"hallmark §411, §454, huashu §66, uupm §242"
+A11-167,D-motion-a11y-robustness.md,A11-123,"uupm §238, §961"
+A11-168,D-motion-a11y-robustness.md,A11-124,"uupm §41, §230, §106, hallmark §311"
+A11-169,D-motion-a11y-robustness.md,A11-125,"uupm §242, §149, hallmark §303"
+A11-170,D-motion-a11y-robustness.md,A11-126,hallmark §412
+A11-171,D-motion-a11y-robustness.md,A11-127,taste §632
+A11-172,D-motion-a11y-robustness.md,A11-128,huashu §392
+A11-173,D-motion-a11y-robustness.md,A11-129,uupm §242
+A11-174,D-motion-a11y-robustness.md,A11-140,uupm §961
+A11-175,D-motion-a11y-robustness.md,A11-141,"uupm §57, §349"
+A11-176,D-motion-a11y-robustness.md,A11-142,"uupm §84, §235, adp §198"
+A11-177,D-motion-a11y-robustness.md,A11-143,"uupm §147, §230, §146"
+A11-178,D-motion-a11y-robustness.md,A11-144,hallmark §257
+A11-179,D-motion-a11y-robustness.md,A11-160,"adp §84, uupm §238"
+A11-180,D-motion-a11y-robustness.md,A11-161,"adp §168, §2"
+A11-181,D-motion-a11y-robustness.md,A11-162,adp §171
+A11-182,D-motion-a11y-robustness.md,A11-163,uupm §119
+A11-183,D-motion-a11y-robustness.md,A11-164,"uupm §98, §238, adp §8"
+A11-184,D-motion-a11y-robustness.md,A11-165,"uupm §230, §108, §131"
+A11-185,D-motion-a11y-robustness.md,A11-166,adp §63
+A11-186,D-motion-a11y-robustness.md,A11-167,hallmark §331
+A11-187,D-motion-a11y-robustness.md,A11-168,hallmark §328
+A11-188,D-motion-a11y-robustness.md,A11-169,"hallmark §280, uupm §117"
+AND-101,F-media-process.md,AND-001,"uux §126, §232"
+AND-102,F-media-process.md,AND-002,"uux §239, §1039"
+APP-101,F-media-process.md,APP-001,"hs §176, §197"
+APP-102,F-media-process.md,APP-002,hs §177
+APP-103,F-media-process.md,APP-003,uux §126
+APP-104,F-media-process.md,APP-004,"uux §127, §232, §1035"
+APP-105,F-media-process.md,APP-005,"uux §148, §232, §243"
+APP-106,F-media-process.md,APP-006,"uux §146, §147, §230, §962"
+APP-107,F-media-process.md,APP-007,"uux §130, §239"
+APP-108,F-media-process.md,APP-008,"uux §129, §132"
+APP-109,F-media-process.md,APP-009,uux §131
+APP-110,F-media-process.md,APP-010,as §203–§213
+APP-111,F-media-process.md,APP-011,"uux §128, §150, §232"
+APP-112,F-media-process.md,APP-012,uux §151
+APP-113,F-media-process.md,APP-013,"uux §121–§125, §1045"
+APP-114,F-media-process.md,APP-014,"uux §133–§135, §241"
+APP-115,F-media-process.md,APP-015,"uux §136–§139, §152, §1036"
+APP-116,F-media-process.md,APP-016,uux §143–§145
+APP-117,F-media-process.md,APP-017,"uux §140, §975; as §227"
+APP-118,F-media-process.md,APP-018,"uux §149, §242, §960"
+APP-119,F-media-process.md,APP-019,as §245
+APP-120,F-media-process.md,APP-020,as §251
+APP-121,F-media-process.md,APP-021,"as §214, §217"
+APP-122,F-media-process.md,APP-022,"hm §143, §159"
+APP-123,F-media-process.md,APP-023,hm §145
+APP-124,F-media-process.md,APP-024,"hm §144, §145"
+APP-125,F-media-process.md,APP-025,hm §144
+APP-126,F-media-process.md,APP-026,"hs §178, §179"
+APP-127,F-media-process.md,APP-027,hs §179
+APP-128,F-media-process.md,APP-028,"hs §24, §181"
+APP-129,F-media-process.md,APP-029,hs §178
+APP-130,F-media-process.md,APP-030,"uux §981, §244"
+APP-131,F-media-process.md,APP-031,"uux §115, §116"
+APP-132,F-media-process.md,APP-032,uux §448
+BRD-101,E-copy-dataviz-imagery-brand.md,BRD-001,"hallmark §134, huashu §40"
+BRD-102,E-copy-dataviz-imagery-brand.md,BRD-002,huashu §34 §81
+BRD-103,E-copy-dataviz-imagery-brand.md,BRD-003,"huashu §35, kami §228"
+BRD-104,E-copy-dataviz-imagery-brand.md,BRD-004,huashu §36
+BRD-105,E-copy-dataviz-imagery-brand.md,BRD-005,huashu §36
+BRD-106,E-copy-dataviz-imagery-brand.md,BRD-006,"hallmark §134, huashu §36"
+BRD-107,E-copy-dataviz-imagery-brand.md,BRD-007,huashu §36
+BRD-108,E-copy-dataviz-imagery-brand.md,BRD-008,"hallmark §136, hallmark §5"
+BRD-109,E-copy-dataviz-imagery-brand.md,BRD-009,"hallmark §134, huashu §36"
+BRD-110,E-copy-dataviz-imagery-brand.md,BRD-010,huashu §36
+BRD-111,E-copy-dataviz-imagery-brand.md,BRD-011,"huashu §37, uupm §288"
+BRD-112,E-copy-dataviz-imagery-brand.md,BRD-012,huashu §39 §35
+BRD-113,E-copy-dataviz-imagery-brand.md,BRD-013,hallmark §135
+BRD-114,E-copy-dataviz-imagery-brand.md,BRD-014,hallmark §135
+BRD-115,E-copy-dataviz-imagery-brand.md,BRD-015,hallmark §137
+BRD-116,E-copy-dataviz-imagery-brand.md,BRD-016,"hallmark §135, kami §228 §308"
+BRD-117,E-copy-dataviz-imagery-brand.md,BRD-017,kami §309
+BRD-118,E-copy-dataviz-imagery-brand.md,BRD-018,kami §310
+BRD-119,E-copy-dataviz-imagery-brand.md,BRD-019,"hallmark §5 §138-140, uupm §292"
+BRD-120,E-copy-dataviz-imagery-brand.md,BRD-020,"hallmark §121 §134, huashu §37, taste §360"
+BRD-121,E-copy-dataviz-imagery-brand.md,BRD-021,huashu §38
+BRD-122,E-copy-dataviz-imagery-brand.md,BRD-022,"hallmark §121 §279, taste §615, huashu §60"
+BRD-123,E-copy-dataviz-imagery-brand.md,BRD-023,"uupm §300, huashu §36"
+BRD-124,E-copy-dataviz-imagery-brand.md,BRD-024,uupm §299
+BRD-125,E-copy-dataviz-imagery-brand.md,BRD-025,uupm §299
+BRD-126,E-copy-dataviz-imagery-brand.md,BRD-026,"hallmark §279, uupm §301, kami §138"
+BRD-127,E-copy-dataviz-imagery-brand.md,BRD-027,uupm §263 §299 §301
+BRD-128,E-copy-dataviz-imagery-brand.md,BRD-028,uupm §257
+BRD-129,E-copy-dataviz-imagery-brand.md,BRD-029,uupm §300
+BRD-130,E-copy-dataviz-imagery-brand.md,BRD-030,uupm §258
+BRD-131,E-copy-dataviz-imagery-brand.md,BRD-031,kami §306
+BRD-132,E-copy-dataviz-imagery-brand.md,BRD-032,adp §73
+BRD-133,E-copy-dataviz-imagery-brand.md,BRD-033,uupm §292
+BRD-134,E-copy-dataviz-imagery-brand.md,BRD-034,uupm §295
+BRD-135,E-copy-dataviz-imagery-brand.md,BRD-035,"uupm §296, kami §301 (≤3 brand accents per page)"
+BRD-136,E-copy-dataviz-imagery-brand.md,BRD-036,uupm §294
+BRD-137,E-copy-dataviz-imagery-brand.md,BRD-037,uupm §293
+BRD-138,E-copy-dataviz-imagery-brand.md,BRD-038,uupm §263 §305
+BRD-139,E-copy-dataviz-imagery-brand.md,BRD-039,uupm §266-271 §278
+BRD-140,E-copy-dataviz-imagery-brand.md,BRD-040,uupm §275
+BRD-141,E-copy-dataviz-imagery-brand.md,BRD-041,uupm §304
+BRD-142,E-copy-dataviz-imagery-brand.md,BRD-042,uupm §305
+BRD-143,E-copy-dataviz-imagery-brand.md,BRD-043,kami §307
+BRD-144,E-copy-dataviz-imagery-brand.md,BRD-044,"uupm §302, kami §446-447"
+BRD-145,E-copy-dataviz-imagery-brand.md,BRD-045,uupm §306
+BRD-146,E-copy-dataviz-imagery-brand.md,BRD-046,uupm §306
+BRD-147,E-copy-dataviz-imagery-brand.md,BRD-047,"uupm §306, hallmark §134"
+BRD-148,E-copy-dataviz-imagery-brand.md,BRD-048,"uupm §293, hallmark §101"
+BRD-149,E-copy-dataviz-imagery-brand.md,BRD-049,hallmark §141
+CLR-001,rules/curated.yaml,,hallmark §67 §410; kami §14; taste-skill §31
+CLR-002,rules/curated.yaml,,hallmark §371 §408; kami §688; huashu §213
+CLR-101,B-type-color-tokens.md,CLR-001,"HM §65, §387; HS §62; UU §340"
+CLR-102,B-type-color-tokens.md,CLR-002,"HS §62, §211; HM §134"
+CLR-103,B-type-color-tokens.md,CLR-003,HS §211
+CLR-104,B-type-color-tokens.md,CLR-004,HS §211; HM §65
+CLR-105,B-type-color-tokens.md,CLR-005,"HM §65, §300"
+CLR-106,B-type-color-tokens.md,CLR-006,"HM §65, §409, §486; HS §329"
+CLR-107,B-type-color-tokens.md,CLR-007,KM §14; UU §296
+CLR-108,B-type-color-tokens.md,CLR-008,KM §23
+CLR-109,B-type-color-tokens.md,CLR-009,HM §65; KM §22; TS §61
+CLR-110,B-type-color-tokens.md,CLR-010,TS §31; HM §68; HS §331; KM §10
+CLR-111,B-type-color-tokens.md,CLR-011,HS §212
+CLR-112,B-type-color-tokens.md,CLR-012,"HM §70, §387"
+CLR-113,B-type-color-tokens.md,CLR-013,"HS §60, §213, §58"
+CLR-114,B-type-color-tokens.md,CLR-014,"TS §31, §250"
+CLR-115,B-type-color-tokens.md,CLR-015,HM §134
+CLR-116,B-type-color-tokens.md,CLR-016,HM §137
+CLR-117,B-type-color-tokens.md,CLR-017,"KM §21, §185"
+CLR-118,B-type-color-tokens.md,CLR-018,TS §61
+CLR-119,B-type-color-tokens.md,CLR-019,UU §296
+CLR-120,B-type-color-tokens.md,CLR-020,"HM §70; KM §17, §183"
+CLR-121,B-type-color-tokens.md,CLR-021,HS §213
+CLR-122,B-type-color-tokens.md,CLR-022,HM §415
+CLR-123,B-type-color-tokens.md,CLR-023,"HS §69, §208"
+CLR-124,B-type-color-tokens.md,CLR-024,HM §68
+CLR-125,B-type-color-tokens.md,CLR-025,"HM §67, §410; KM §11, §181; TS §61"
+CLR-126,B-type-color-tokens.md,CLR-026,HM §67; HM §144
+CLR-127,B-type-color-tokens.md,CLR-027,HM §410
+CLR-128,B-type-color-tokens.md,CLR-028,HM §410
+CLR-129,B-type-color-tokens.md,CLR-029,KM §184
+CLR-130,B-type-color-tokens.md,CLR-030,UU §666
+CLR-131,B-type-color-tokens.md,CLR-031,"TS §61; HS §73, §144"
+CLR-132,B-type-color-tokens.md,CLR-032,"HM §69, §411; UU §40, §296; HS §74, §78; TS §60"
+CLR-133,B-type-color-tokens.md,CLR-033,"HM §69, §411, §455, §456; UU §296"
+CLR-134,B-type-color-tokens.md,CLR-034,"HM §485; TS §60, §250; UU §668"
+CLR-135,B-type-color-tokens.md,CLR-035,"HM §69, §412; UU §313, §667; KM §22; TS §61"
+CLR-136,B-type-color-tokens.md,CLR-036,UU §667; KM §22
+CLR-137,B-type-color-tokens.md,CLR-037,"HM §69, §412"
+CLR-138,B-type-color-tokens.md,CLR-038,"HM §69, §412"
+CLR-139,B-type-color-tokens.md,CLR-039,"HM §411, §454, §282; UU §242"
+CLR-140,B-type-color-tokens.md,CLR-040,HM §274; UU §242
+CLR-141,B-type-color-tokens.md,CLR-041,"HM §70; UU §41, §236; KM §421"
+CLR-142,B-type-color-tokens.md,CLR-042,"HM §455, §483, §300; UU §347, §669, §360"
+CLR-143,B-type-color-tokens.md,CLR-043,"TS §61, §63, §250"
+CLR-144,B-type-color-tokens.md,CLR-044,"UU §92, §347"
+CLR-145,B-type-color-tokens.md,CLR-045,HS §386
+CLR-146,B-type-color-tokens.md,CLR-046,HM §456
+CLR-147,B-type-color-tokens.md,CLR-047,"HM §66, §408; HS §329; TS §61; KM §12; UU §296"
+CLR-148,B-type-color-tokens.md,CLR-048,KM §12
+CLR-149,B-type-color-tokens.md,CLR-049,KM §13
+CLR-150,B-type-color-tokens.md,CLR-050,"HM §71, §299; HS §62; UU §149, §236, §242"
+CLR-151,B-type-color-tokens.md,CLR-051,"UU §459, §465"
+CLR-152,B-type-color-tokens.md,CLR-052,"HM §300, §303; UU §360"
+CLR-153,B-type-color-tokens.md,CLR-053,"HM §300, §302, §76"
+CLR-154,B-type-color-tokens.md,CLR-054,"HM §300, §299"
+CLR-155,B-type-color-tokens.md,CLR-055,HM §300
+CLR-156,B-type-color-tokens.md,CLR-056,HM §300
+CLR-157,B-type-color-tokens.md,CLR-057,"HM §299, §303; UU §242"
+CLR-158,B-type-color-tokens.md,CLR-058,HM §302
+CLR-159,B-type-color-tokens.md,CLR-059,HM §302
+CLR-160,B-type-color-tokens.md,CLR-060,HM §302
+CLR-161,B-type-color-tokens.md,CLR-061,"HM §302, §309"
+CLR-162,B-type-color-tokens.md,CLR-062,"HM §302, §284"
+CLR-163,B-type-color-tokens.md,CLR-063,HM §301; UU §371
+CLR-164,B-type-color-tokens.md,CLR-064,HM §301; UU §338
+CLR-165,B-type-color-tokens.md,CLR-065,HM §299
+CLR-166,B-type-color-tokens.md,CLR-066,UU §360
+CLR-167,B-type-color-tokens.md,CLR-067,UU §242
+CLR-168,B-type-color-tokens.md,CLR-068,"HM §70, §371; HS §60"
+CLR-169,B-type-color-tokens.md,CLR-069,HM §70; TS §32; HS §60
+CLR-170,B-type-color-tokens.md,CLR-070,"HM §70, §372"
+CLR-171,B-type-color-tokens.md,CLR-071,"HM §70, §373; HS §60"
+CLR-172,B-type-color-tokens.md,CLR-072,"HM §373; UU §359, §367, §448; HS §79; TS §32"
+CLR-173,B-type-color-tokens.md,CLR-073,"HM §70, §373"
+CLR-174,B-type-color-tokens.md,CLR-074,HM §306
+CLR-175,B-type-color-tokens.md,CLR-075,"HM §76, §488; KM §75"
+CLR-176,B-type-color-tokens.md,CLR-076,HM §498; KM §75
+CLR-177,B-type-color-tokens.md,CLR-077,"HM §76, §378"
+CLR-178,B-type-color-tokens.md,CLR-078,"HM §74; KM §74, §75"
+CLR-179,B-type-color-tokens.md,CLR-079,"KM §75; TS §216, §1485"
+CLR-180,B-type-color-tokens.md,CLR-080,"HM §76, §302"
+CLR-181,B-type-color-tokens.md,CLR-081,HM §76
+CLR-182,B-type-color-tokens.md,CLR-082,"HS §58, §68; HM §377"
+CLR-183,B-type-color-tokens.md,CLR-083,HM §306; TS §63
+CLR-184,B-type-color-tokens.md,CLR-084,"HM §74, §385"
+CLR-185,B-type-color-tokens.md,CLR-085,"HM §495, §300"
+CLR-186,B-type-color-tokens.md,CLR-086,"HM §74, §375; TS §32, §53, §94"
+CLR-187,B-type-color-tokens.md,CLR-087,KM §73
+CLR-188,B-type-color-tokens.md,CLR-088,HM §374; HS §60
+CLR-189,B-type-color-tokens.md,CLR-089,HM §74; TS §29
+CLR-190,B-type-color-tokens.md,CLR-090,KM §196
+CLR-191,B-type-color-tokens.md,CLR-091,HM §498
+CLR-192,B-type-color-tokens.md,CLR-092,HM §74
+CLR-193,B-type-color-tokens.md,CLR-093,HM §78; HS §1300 (inner 9 in card 14)
+CLR-194,B-type-color-tokens.md,CLR-094,HM §78; TS §62; UU §337
+CLR-195,B-type-color-tokens.md,CLR-095,"HM §78, §377, §497; KM §195"
+CLR-196,B-type-color-tokens.md,CLR-096,"HM §497; KM §76, §195"
+CLR-197,B-type-color-tokens.md,CLR-097,KM §76
+CLR-198,B-type-color-tokens.md,CLR-098,HM §78
+CLR-199,B-type-color-tokens.md,CLR-099,AS §245
+CLR-200,B-type-color-tokens.md,CLR-100,AS §89
+CLR-201,B-type-color-tokens.md,CLR-101,"HM §281, §289; TS §32"
+CLR-202,B-type-color-tokens.md,CLR-102,HM §282
+CLR-203,B-type-color-tokens.md,CLR-103,HM §283; TS §32
+CLR-204,B-type-color-tokens.md,CLR-104,HM §285; TS §32
+CLR-205,B-type-color-tokens.md,CLR-105,HM §284
+CLR-206,B-type-color-tokens.md,CLR-106,"HM §72, §414"
+CMP-101,C-concept-layout-components.md,CMP-001,"HM §91, HM §311, HM §142"
+CMP-102,C-concept-layout-components.md,CMP-002,"HM §91, HM §142"
+CMP-103,C-concept-layout-components.md,CMP-003,"HM §85, HM §311, KM §148, UX §232"
+CMP-104,C-concept-layout-components.md,CMP-004,"HM §86, HM §312, UX §32, UX §326"
+CMP-105,C-concept-layout-components.md,CMP-005,"HM §311, HM §325, UX §34, UX §241"
+CMP-106,C-concept-layout-components.md,CMP-006,"HM §92, HM §311, UX §238, UX §327"
+CMP-107,C-concept-layout-components.md,CMP-007,HM §321
+CMP-108,C-concept-layout-components.md,CMP-008,"HM §311, UX §328"
+CMP-109,C-concept-layout-components.md,CMP-009,"HM §311, UX §329"
+CMP-110,C-concept-layout-components.md,CMP-010,"HM §311, HM §93, ADP §55"
+CMP-111,C-concept-layout-components.md,CMP-011,UX §324
+CMP-112,C-concept-layout-components.md,CMP-012,UX §238
+CMP-113,C-concept-layout-components.md,CMP-013,"UX §242, KM §157"
+CMP-114,C-concept-layout-components.md,CMP-020,"HM §90, HM §154, TS §63, UX §234"
+CMP-115,C-concept-layout-components.md,CMP-021,"HM §90, TS §63, KM §149"
+CMP-116,C-concept-layout-components.md,CMP-022,"HM §51, KM §149, KM §267"
+CMP-117,C-concept-layout-components.md,CMP-023,"KM §149, KM §267, TS §63"
+CMP-118,C-concept-layout-components.md,CMP-024,"HM §90, HM §145, HM §258, TS §63"
+CMP-119,C-concept-layout-components.md,CMP-025,"HM §90, HM §259, KM §145"
+CMP-120,C-concept-layout-components.md,CMP-026,"HM §106-107, HM §125, KM §150, KM §273, TS §90"
+CMP-121,C-concept-layout-components.md,CMP-027,"TS §63, TS §90, TS §146"
+CMP-122,C-concept-layout-components.md,CMP-028,"HM §90, UX §238"
+CMP-123,C-concept-layout-components.md,CMP-029,HM §90
+CMP-124,C-concept-layout-components.md,CMP-030,"HM §92, HM §314, UX §36, UX §232"
+CMP-125,C-concept-layout-components.md,CMP-031,KM §151
+CMP-126,C-concept-layout-components.md,CMP-032,"UX §26, UX §121, UX §126, UX §231, HM §313"
+CMP-127,C-concept-layout-components.md,CMP-033,"KM §152, TS §53"
+CMP-128,C-concept-layout-components.md,CMP-034,"HM §334, HM §232"
+CMP-129,C-concept-layout-components.md,CMP-040,"HM §314, HM §326, UX §68, UX §238"
+CMP-130,C-concept-layout-components.md,CMP-041,HM §314
+CMP-131,C-concept-layout-components.md,CMP-042,"HM §92, UX §71-72, UX §77, UX §238, TS §67"
+CMP-132,C-concept-layout-components.md,CMP-043,"HM §314, HM §327, UX §70, UX §136"
+CMP-133,C-concept-layout-components.md,CMP-044,"HM §314, UX §69, UX §238"
+CMP-134,C-concept-layout-components.md,CMP-045,"HM §92, HM §316, HM §327"
+CMP-135,C-concept-layout-components.md,CMP-046,"HM §92, UX §238, TS §67"
+CMP-136,C-concept-layout-components.md,CMP-047,"HM §314, UX §73"
+CMP-137,C-concept-layout-components.md,CMP-048,"HM §92, UX §74, UX §152, UX §231"
+CMP-138,C-concept-layout-components.md,CMP-049,"HM §92, HM §315-316"
+CMP-139,C-concept-layout-components.md,CMP-050,HM §315-316
+CMP-140,C-concept-layout-components.md,CMP-051,"HM §92, HM §316"
+CMP-141,C-concept-layout-components.md,CMP-052,"HM §317, UX §234"
+CMP-142,C-concept-layout-components.md,CMP-053,"HM §93, HM §251, TS §137"
+CMP-143,C-concept-layout-components.md,CMP-054,"HM §251, TS §67"
+CMP-144,C-concept-layout-components.md,CMP-055,"TS §137, UX §78, UX §201"
+CMP-145,C-concept-layout-components.md,CMP-056,UX §238
+CMP-146,C-concept-layout-components.md,CMP-057,"ADP §20, ADP §39"
+CMP-147,C-concept-layout-components.md,CMP-058,"UX §238, ADP §8"
+CMP-148,C-concept-layout-components.md,CMP-059,"UX §79, UX §238"
+CMP-149,C-concept-layout-components.md,CMP-060,"TS §22, TS §137"
+CMP-150,C-concept-layout-components.md,CMP-070,"HM §40, HM §516"
+CMP-151,C-concept-layout-components.md,CMP-071,"HM §40, HM §209, TS §99"
+CMP-152,C-concept-layout-components.md,CMP-072,"HM §17, HM §40"
+CMP-153,C-concept-layout-components.md,CMP-073,"HM §40, UX §3, UX §239"
+CMP-154,C-concept-layout-components.md,CMP-074,"HM §40, ADP §209"
+CMP-155,C-concept-layout-components.md,CMP-075,"HM §40, ADP §73"
+CMP-156,C-concept-layout-components.md,CMP-076,"UX §2, UX §231"
+CMP-157,C-concept-layout-components.md,CMP-077,"TS §95, KM §275"
+CMP-158,C-concept-layout-components.md,CMP-078,"TS §108, ADP §74, ADP §76"
+CMP-159,C-concept-layout-components.md,CMP-079,"UX §130, UX §239"
+CMP-160,C-concept-layout-components.md,CMP-080,"HM §144, UX §239"
+CMP-161,C-concept-layout-components.md,CMP-081,"UX §6, UX §239, ADP §68"
+CMP-162,C-concept-layout-components.md,CMP-082,"UX §4, UX §129, UX §132, UX §239"
+CMP-163,C-concept-layout-components.md,CMP-083,"HM §145, UX §5, UX §239"
+CMP-164,C-concept-layout-components.md,CMP-084,"ADP §66-67, HM §332"
+CMP-165,C-concept-layout-components.md,CMP-085,"HM §249, TS §120"
+CMP-166,C-concept-layout-components.md,CMP-086,"HM §255, UX §230, TS §639"
+CMP-167,C-concept-layout-components.md,CMP-087,UX §239
+CMP-168,C-concept-layout-components.md,CMP-088,"TS §64, TS §154"
+CMP-169,C-concept-layout-components.md,CMP-095,"HM §29, HM §128, HM §207"
+CMP-170,C-concept-layout-components.md,CMP-096,"TS §146-147, HM §237"
+CMP-171,C-concept-layout-components.md,CMP-097,"HM §40, HM §208, HM §516, TS §150"
+CMP-172,C-concept-layout-components.md,CMP-098,"HM §40, HM §106, KM §275"
+CMP-173,C-concept-layout-components.md,CMP-100,"HM §144, ADP §70, UX §239"
+CMP-174,C-concept-layout-components.md,CMP-101,"HM §318, UX §131"
+CMP-175,C-concept-layout-components.md,CMP-102,HM §318
+CMP-176,C-concept-layout-components.md,CMP-103,UX §321
+CMP-177,C-concept-layout-components.md,CMP-104,"HM §320, HM §145, UX §238"
+CMP-178,C-concept-layout-components.md,CMP-105,"HM §319, HM §330"
+CMP-179,C-concept-layout-components.md,CMP-106,"HM §86, HM §331, UX §107"
+CMP-180,C-concept-layout-components.md,CMP-107,"HM §88, HM §323, HM §328"
+CMP-181,C-concept-layout-components.md,CMP-108,"HM §328, UX §99, UX §238"
+CMP-182,C-concept-layout-components.md,CMP-109,"HM §77, HM §322, UX §17"
+CMP-183,C-concept-layout-components.md,CMP-110,TS §22
+CMP-184,C-concept-layout-components.md,CMP-120,"HM §96, KM §95, KM §97"
+CMP-185,C-concept-layout-components.md,CMP-121,"UX §322, HM §183, KM §92"
+CMP-186,C-concept-layout-components.md,CMP-122,"UX §322, HM §96, HM §183"
+CMP-187,C-concept-layout-components.md,CMP-123,"HM §96, HM §145"
+CMP-188,C-concept-layout-components.md,CMP-124,"HM §96, HM §261, HM §435, TS §143"
+CMP-189,C-concept-layout-components.md,CMP-125,"KM §93, ADP §93"
+CMP-190,C-concept-layout-components.md,CMP-126,"ADP §94, ADP §92, UX §111, UX §240"
+CMP-191,C-concept-layout-components.md,CMP-127,"HM §94, UX §240"
+CMP-192,C-concept-layout-components.md,CMP-128,KM §167
+CMP-193,C-concept-layout-components.md,CMP-129,"HM §145, HM §75"
+CMP-194,C-concept-layout-components.md,CMP-130,"UX §140, UX §233, ADP §80, ADP §85"
+CMP-195,C-concept-layout-components.md,CMP-140,"HM §237, TS §141-142"
+CMP-196,C-concept-layout-components.md,CMP-141,"HM §97, TS §141"
+CMP-197,C-concept-layout-components.md,CMP-142,"HM §97, TS §141-142"
+CMP-198,C-concept-layout-components.md,CMP-143,"TS §141, UX §202, UX §208"
+CMP-199,C-concept-layout-components.md,CMP-144,"TS §17, TS §23, HM §239"
+CMP-200,C-concept-layout-components.md,CMP-145,TS §141-142
+CMP-201,C-concept-layout-components.md,CMP-146,TS §143
+CMP-202,C-concept-layout-components.md,CMP-147,AS §166-167
+CMP-203,C-concept-layout-components.md,CMP-148,"ADP §169, KM §273"
+CMP-204,C-concept-layout-components.md,CMP-149,ADP §64-65
+CMP-205,C-concept-layout-components.md,CMP-160,"HM §95, HM §321, UX §96, ADP §52"
+CMP-206,C-concept-layout-components.md,CMP-161,UX §110
+CMP-207,C-concept-layout-components.md,CMP-162,"HM §95, UX §97, UX §238"
+CMP-208,C-concept-layout-components.md,CMP-163,"HM §95, HM §321, UX §113, UX §133, UX §233"
+CMP-209,C-concept-layout-components.md,CMP-164,"UX §21, UX §233"
+CMP-210,C-concept-layout-components.md,CMP-165,"HM §323, HM §336"
+CMP-211,C-concept-layout-components.md,CMP-166,"UX §238, UX §233"
+CMP-212,C-concept-layout-components.md,CMP-167,"ADP §55, HM §311"
+CMP-213,C-concept-layout-components.md,CMP-168,"UX §231, HM §337"
+CMP-214,C-concept-layout-components.md,CMP-180,"UX §108, UX §230"
+CMP-215,C-concept-layout-components.md,CMP-181,"ADP §30, ADP §34-35"
+CMP-216,C-concept-layout-components.md,CMP-182,ADP §33
+CMP-217,C-concept-layout-components.md,CMP-183,ADP §37
+CMP-218,C-concept-layout-components.md,CMP-184,ADP §47-48
+CMP-219,C-concept-layout-components.md,CMP-185,ADP §50
+CMP-220,C-concept-layout-components.md,CMP-186,ADP §43
+CMP-221,C-concept-layout-components.md,CMP-187,"UX §98, UX §238, ADP §21, ADP §23"
+CMP-222,C-concept-layout-components.md,CMP-188,ADP §53-54
+CMP-223,C-concept-layout-components.md,CMP-189,ADP §42
+CMP-224,C-concept-layout-components.md,CMP-190,ADP §63
+CMP-225,C-concept-layout-components.md,CMP-200,"ADP §101, UX §109, HM §337"
+CMP-226,C-concept-layout-components.md,CMP-201,"UX §239, UX §210, UX §216"
+CMP-227,C-concept-layout-components.md,CMP-202,HM §338
+CMP-228,C-concept-layout-components.md,CMP-203,ADP §16
+CMP-229,C-concept-layout-components.md,CMP-204,"ADP §1, UX §151, UX §231, HM §335"
+CMP-230,C-concept-layout-components.md,CMP-205,"UX §150, ADP §91"
+CMP-231,C-concept-layout-components.md,CMP-206,"UX §25, UX §106-107"
+CMP-232,C-concept-layout-components.md,CMP-207,"UX §105, KM §159"
+CMP-233,C-concept-layout-components.md,CMP-208,ADP §6
+CMP-234,C-concept-layout-components.md,CMP-220,"TS §93, HM §4, HU §60"
+CMP-235,C-concept-layout-components.md,CMP-221,"UX §206, UX §217, KM §276"
+CMP-236,C-concept-layout-components.md,CMP-222,"ADP §142, UX §212, UX §218"
+CMP-237,C-concept-layout-components.md,CMP-223,"KM §163, KM §272"
+CMP-238,C-concept-layout-components.md,CMP-224,"TS §145, KM §274"
+CMP-239,C-concept-layout-components.md,CMP-225,KM §269
+CMP-240,C-concept-layout-components.md,CMP-226,KM §270-271
+CMP-241,C-concept-layout-components.md,CMP-227,"UX §196, UX §209, UX §231, HM §87, HM §254"
+CMP-242,C-concept-layout-components.md,CMP-228,"HM §87, HM §254, TS §24"
+CMP-243,C-concept-layout-components.md,CMP-229,HM §98
+CMP-244,C-concept-layout-components.md,CMP-230,"HM §109, TS §16, KM §273"
+CMP-245,C-concept-layout-components.md,CMP-231,"HM §250, TS §24, UX §104"
+CMP-246,C-concept-layout-components.md,CMP-232,"TS §23, TS §88, TS §140"
+CMP-247,C-concept-layout-components.md,CMP-233,"TS §22, TS §587-588, HM §238"
+CMP-248,C-concept-layout-components.md,CMP-234,"TS §587, TS §590-591"
+CMP-249,C-concept-layout-components.md,CMP-250,UX §112
+CMP-250,C-concept-layout-components.md,CMP-251,"UX §113, AS §327"
+CMP-251,C-concept-layout-components.md,CMP-252,"UX §114, ADP §59"
+CMP-252,C-concept-layout-components.md,CMP-253,ADP §58
+CMP-253,C-concept-layout-components.md,CMP-254,ADP §60
+CMP-254,C-concept-layout-components.md,CMP-255,"UX §493, UX §79"
+CMP-255,C-concept-layout-components.md,CMP-256,"TS §588, TS §592-593, HU §60"
+CMP-256,C-concept-layout-components.md,CMP-257,HM §242
+CMP-257,C-concept-layout-components.md,CMP-258,ADP §61
+CMP-258,C-concept-layout-components.md,CMP-270,"HM §144, TS §588"
+CMP-259,C-concept-layout-components.md,CMP-271,HM §144
+CMP-260,C-concept-layout-components.md,CMP-272,"HM §145, HM §159"
+CMP-261,C-concept-layout-components.md,CMP-273,"HM §143, HM §145, UX §143"
+CMP-262,C-concept-layout-components.md,CMP-274,AS §203-212
+CMP-263,C-concept-layout-components.md,CMP-275,HU §178-179
+CMP-264,C-concept-layout-components.md,CMP-276,"HM §4, HU §177, HM §216"
+CON-101,C-concept-layout-components.md,CON-001,"TS §5, UX §229, UX §454"
+CON-102,C-concept-layout-components.md,CON-002,"HM §17, HM §203"
+CON-103,C-concept-layout-components.md,CON-003,TS §5
+CON-104,C-concept-layout-components.md,CON-004,"HM §8, HM §240-243"
+CON-105,C-concept-layout-components.md,CON-005,"HM §6, HM §235"
+CON-106,C-concept-layout-components.md,CON-006,"HM §9, HM §142"
+CON-107,C-concept-layout-components.md,CON-007,"HU §207, KM §207-208"
+CON-108,C-concept-layout-components.md,CON-008,"HM §7, HM §236, KM §143"
+CON-109,C-concept-layout-components.md,CON-009,"HM §7, HM §236"
+CON-110,C-concept-layout-components.md,CON-010,"HM §6, HU §43"
+CON-111,C-concept-layout-components.md,CON-011,"HM §6, HU §9"
+CON-112,C-concept-layout-components.md,CON-012,"HM §5, HU §5"
+CON-113,C-concept-layout-components.md,CON-013,"AS §102-103, KM §207"
+CON-114,C-concept-layout-components.md,CON-014,HU §16
+CON-115,C-concept-layout-components.md,CON-015,"HU §16, HU §181"
+CON-116,C-concept-layout-components.md,CON-020,"HM §10, TS §6"
+CON-117,C-concept-layout-components.md,CON-021,HM §11
+CON-118,C-concept-layout-components.md,CON-022,"HM §13, HU §7"
+CON-119,C-concept-layout-components.md,CON-023,"HM §13, HU §158"
+CON-120,C-concept-layout-components.md,CON-024,"HU §7, HU §181, TS §99"
+CON-121,C-concept-layout-components.md,CON-025,"HM §15, HM §158"
+CON-122,C-concept-layout-components.md,CON-026,"HM §15, HU §97"
+CON-123,C-concept-layout-components.md,CON-027,"HU §6, HU §52"
+CON-124,C-concept-layout-components.md,CON-028,"HM §15, HU §41, HU §47"
+CON-125,C-concept-layout-components.md,CON-029,"HU §42, HU §69"
+CON-126,C-concept-layout-components.md,CON-030,"HU §54, HU §208, HU §69"
+CON-127,C-concept-layout-components.md,CON-031,"HU §54, HU §56"
+CON-128,C-concept-layout-components.md,CON-032,HU §49
+CON-129,C-concept-layout-components.md,CON-033,"HU §9, HU §49"
+CON-130,C-concept-layout-components.md,CON-034,"HU §49, HU §52"
+CON-131,C-concept-layout-components.md,CON-035,HU §5
+CON-132,C-concept-layout-components.md,CON-036,"HU §8, HU §42"
+CON-133,C-concept-layout-components.md,CON-037,HM §14
+CON-134,C-concept-layout-components.md,CON-038,"HM §15, HU §2"
+CON-135,C-concept-layout-components.md,CON-040,HM §15
+CON-136,C-concept-layout-components.md,CON-041,"HM §16, HU §2, HU §58, HU §68"
+CON-137,C-concept-layout-components.md,CON-042,HM §16
+CON-138,C-concept-layout-components.md,CON-043,"HU §58, HU §69"
+CON-139,C-concept-layout-components.md,CON-044,"HM §12, HM §233-234, HM §519"
+CON-140,C-concept-layout-components.md,CON-045,TS §3
+CON-141,C-concept-layout-components.md,CON-046,"HM §16, HM §127"
+CON-142,C-concept-layout-components.md,CON-047,"HU §60, HU §104, HU §215"
+CON-143,C-concept-layout-components.md,CON-048,"HU §2, HM §137"
+CON-144,C-concept-layout-components.md,CON-049,"HU §42, HU §54"
+CON-145,C-concept-layout-components.md,CON-050,HM §139-140
+CON-146,C-concept-layout-components.md,CON-060,"TS §5, TS §7, TS §25"
+CON-147,C-concept-layout-components.md,CON-061,"TS §19-20, TS §122, TS §588"
+CON-148,C-concept-layout-components.md,CON-062,TS §21
+CON-149,C-concept-layout-components.md,CON-063,TS §16-17
+CON-150,C-concept-layout-components.md,CON-064,TS §10-11
+CON-151,C-concept-layout-components.md,CON-065,TS §18
+CON-152,C-concept-layout-components.md,CON-066,TS §87
+CON-153,C-concept-layout-components.md,CON-067,TS §16-17
+CON-154,C-concept-layout-components.md,CON-068,"UX §245, UX §455"
+CON-155,C-concept-layout-components.md,CON-069,HM §235
+CON-156,C-concept-layout-components.md,CON-070,HM §235
+CON-157,C-concept-layout-components.md,CON-071,"HM §143, HM §159"
+CON-158,C-concept-layout-components.md,CON-080,"HU §97, HU §105"
+CON-159,C-concept-layout-components.md,CON-081,"HM §151, HM §515"
+CON-160,C-concept-layout-components.md,CON-082,HM §151
+CON-161,C-concept-layout-components.md,CON-083,HU §103
+CON-162,C-concept-layout-components.md,CON-084,HU §105
+CON-163,C-concept-layout-components.md,CON-085,"HM §157, HM §155"
+CON-164,C-concept-layout-components.md,CON-086,"HM §155, HM §520"
+CON-165,C-concept-layout-components.md,CON-087,HU §10
+CON-166,C-concept-layout-components.md,CON-088,"HM §3, HM §521, TS §645"
+CON-167,C-concept-layout-components.md,CON-089,"HM §141, HM §153"
+CON-168,C-concept-layout-components.md,CON-090,HM §523
+CPY-001,rules/curated.yaml,,hallmark §20 §30
+CPY-002,rules/curated.yaml,,hallmark §30; taste-skill §6
+CPY-003,rules/curated.yaml,,hallmark §101
+CPY-004,rules/curated.yaml,,hallmark §358; kami §652; impeccable §508; writing-guidelines
+CPY-005,rules/curated.yaml,,taste-skill §37-45; hallmark §106 §356 §357; kami §224 §238 §298; agent-skills §119-129
+CPY-006,rules/curated.yaml,,impeccable §510
+CPY-101,E-copy-dataviz-imagery-brand.md,CPY-001,"taste §331, hallmark §6-7"
+CPY-102,E-copy-dataviz-imagery-brand.md,CPY-002,"taste §331 §333, hallmark §7, huashu §71"
+CPY-103,E-copy-dataviz-imagery-brand.md,CPY-003,hallmark §7
+CPY-104,E-copy-dataviz-imagery-brand.md,CPY-004,"taste §331, hallmark §6"
+CPY-105,E-copy-dataviz-imagery-brand.md,CPY-005,"hallmark §6, taste §613-614"
+CPY-106,E-copy-dataviz-imagery-brand.md,CPY-006,taste §613-614
+CPY-107,E-copy-dataviz-imagery-brand.md,CPY-007,"kami §226, §302"
+CPY-108,E-copy-dataviz-imagery-brand.md,CPY-008,kami §226 §302
+CPY-109,E-copy-dataviz-imagery-brand.md,CPY-009,"taste Part 1, agsk §101"
+CPY-110,E-copy-dataviz-imagery-brand.md,CPY-010,agsk §102-103
+CPY-111,E-copy-dataviz-imagery-brand.md,CPY-011,"hallmark §362, taste §40 §615, huashu §60"
+CPY-112,E-copy-dataviz-imagery-brand.md,CPY-012,"hallmark §121 §362, taste §354 §615, huashu §60, kami §247"
+CPY-113,E-copy-dataviz-imagery-brand.md,CPY-013,taste §43 §49
+CPY-114,E-copy-dataviz-imagery-brand.md,CPY-014,kami §227 §299
+CPY-115,E-copy-dataviz-imagery-brand.md,CPY-015,kami §225 §233 §299
+CPY-116,E-copy-dataviz-imagery-brand.md,CPY-016,kami §299
+CPY-117,E-copy-dataviz-imagery-brand.md,CPY-017,kami §299
+CPY-118,E-copy-dataviz-imagery-brand.md,CPY-018,"taste §325 §359, hallmark §362"
+CPY-119,E-copy-dataviz-imagery-brand.md,CPY-019,taste §325 §359
+CPY-120,E-copy-dataviz-imagery-brand.md,CPY-020,taste §325
+CPY-121,E-copy-dataviz-imagery-brand.md,CPY-021,"kami §222 §298, taste §334"
+CPY-122,E-copy-dataviz-imagery-brand.md,CPY-022,kami §298
+CPY-123,E-copy-dataviz-imagery-brand.md,CPY-023,hallmark §364
+CPY-124,E-copy-dataviz-imagery-brand.md,CPY-024,taste §334 §355
+CPY-125,E-copy-dataviz-imagery-brand.md,CPY-025,taste §39
+CPY-126,E-copy-dataviz-imagery-brand.md,CPY-026,taste §331 §334 §355
+CPY-127,E-copy-dataviz-imagery-brand.md,CPY-027,kami §225 §286
+CPY-128,E-copy-dataviz-imagery-brand.md,CPY-028,"hallmark §109 §363, taste §613 §616"
+CPY-129,E-copy-dataviz-imagery-brand.md,CPY-029,kami §302
+CPY-130,E-copy-dataviz-imagery-brand.md,CPY-030,"hallmark §357, taste §39, huashu §71, uupm §104"
+CPY-131,E-copy-dataviz-imagery-brand.md,CPY-031,taste §39
+CPY-132,E-copy-dataviz-imagery-brand.md,CPY-032,taste §39
+CPY-133,E-copy-dataviz-imagery-brand.md,CPY-033,hallmark §354
+CPY-134,E-copy-dataviz-imagery-brand.md,CPY-034,taste §44
+CPY-135,E-copy-dataviz-imagery-brand.md,CPY-035,"hallmark §355, taste §44 §328"
+CPY-136,E-copy-dataviz-imagery-brand.md,CPY-036,taste §328
+CPY-137,E-copy-dataviz-imagery-brand.md,CPY-037,taste §39 §613 §617-619
+CPY-138,E-copy-dataviz-imagery-brand.md,CPY-038,taste §39
+CPY-139,E-copy-dataviz-imagery-brand.md,CPY-039,"taste §39, hallmark §120"
+CPY-140,E-copy-dataviz-imagery-brand.md,CPY-040,hallmark §120
+CPY-141,E-copy-dataviz-imagery-brand.md,CPY-041,agsk §148-149
+CPY-142,E-copy-dataviz-imagery-brand.md,CPY-042,taste §43 §46
+CPY-143,E-copy-dataviz-imagery-brand.md,CPY-043,"hallmark §357, taste §46 §358"
+CPY-144,E-copy-dataviz-imagery-brand.md,CPY-044,hallmark §106 §357
+CPY-145,E-copy-dataviz-imagery-brand.md,CPY-045,kami §135 §304
+CPY-146,E-copy-dataviz-imagery-brand.md,CPY-046,"hallmark §106 §356, taste §37, kami §238, uupm §293"
+CPY-147,E-copy-dataviz-imagery-brand.md,CPY-047,taste §37
+CPY-148,E-copy-dataviz-imagery-brand.md,CPY-048,"hallmark §106 §357, taste §38, kami §238"
+CPY-149,E-copy-dataviz-imagery-brand.md,CPY-049,agsk §119-122
+CPY-150,E-copy-dataviz-imagery-brand.md,CPY-050,"taste §42, hallmark §106"
+CPY-151,E-copy-dataviz-imagery-brand.md,CPY-051,taste §40 (budget 0)
+CPY-152,E-copy-dataviz-imagery-brand.md,CPY-052,taste §40
+CPY-153,E-copy-dataviz-imagery-brand.md,CPY-053,agsk §124 §129
+CPY-154,E-copy-dataviz-imagery-brand.md,CPY-054,kami §243 §303
+CPY-155,E-copy-dataviz-imagery-brand.md,CPY-055,"taste §40, hallmark §359"
+CPY-156,E-copy-dataviz-imagery-brand.md,CPY-056,taste §40
+CPY-157,E-copy-dataviz-imagery-brand.md,CPY-057,taste §40 §49
+CPY-158,E-copy-dataviz-imagery-brand.md,CPY-058,taste §40
+CPY-159,E-copy-dataviz-imagery-brand.md,CPY-059,taste §40 §51
+CPY-160,E-copy-dataviz-imagery-brand.md,CPY-060,"taste §40, hallmark §102"
+CPY-161,E-copy-dataviz-imagery-brand.md,CPY-061,"hallmark §104, taste §40"
+CPY-162,E-copy-dataviz-imagery-brand.md,CPY-062,taste §40 §50
+CPY-163,E-copy-dataviz-imagery-brand.md,CPY-063,taste §52
+CPY-164,E-copy-dataviz-imagery-brand.md,CPY-064,taste §51
+CPY-165,E-copy-dataviz-imagery-brand.md,CPY-065,"hallmark §100, taste §334"
+CPY-166,E-copy-dataviz-imagery-brand.md,CPY-066,taste §332 §335 §43 §49
+CPY-167,E-copy-dataviz-imagery-brand.md,CPY-067,taste §332 §335
+CPY-168,E-copy-dataviz-imagery-brand.md,CPY-068,taste §332
+CPY-169,E-copy-dataviz-imagery-brand.md,CPY-069,uupm §293
+CPY-170,E-copy-dataviz-imagery-brand.md,CPY-070,"taste §332 §355, uupm §293"
+CPY-171,E-copy-dataviz-imagery-brand.md,CPY-071,agsk §114
+CPY-172,E-copy-dataviz-imagery-brand.md,CPY-072,taste §339 §359
+CPY-173,E-copy-dataviz-imagery-brand.md,CPY-073,taste §334 §353
+CPY-174,E-copy-dataviz-imagery-brand.md,CPY-074,"kami §251, uupm §306"
+CPY-175,E-copy-dataviz-imagery-brand.md,CPY-075,agsk §107-112
+CPY-176,E-copy-dataviz-imagery-brand.md,CPY-076,"agsk §113, taste §322 §48"
+CPY-177,E-copy-dataviz-imagery-brand.md,CPY-077,agsk §123 §128
+CPY-178,E-copy-dataviz-imagery-brand.md,CPY-078,kami §237
+CPY-179,E-copy-dataviz-imagery-brand.md,CPY-079,taste §332
+CPY-180,E-copy-dataviz-imagery-brand.md,CPY-080,"taste §315 §349, kami §704"
+CPY-181,E-copy-dataviz-imagery-brand.md,CPY-081,"hallmark §105 §367, taste §315"
+CPY-182,E-copy-dataviz-imagery-brand.md,CPY-082,taste §316
+CPY-183,E-copy-dataviz-imagery-brand.md,CPY-083,hallmark §101
+CPY-184,E-copy-dataviz-imagery-brand.md,CPY-084,taste §317
+CPY-185,E-copy-dataviz-imagery-brand.md,CPY-085,taste §317 §350
+CPY-186,E-copy-dataviz-imagery-brand.md,CPY-086,"hallmark §103, taste §322"
+CPY-187,E-copy-dataviz-imagery-brand.md,CPY-087,"hallmark §106 §360, taste §40 §322"
+CPY-188,E-copy-dataviz-imagery-brand.md,CPY-088,taste §322
+CPY-189,E-copy-dataviz-imagery-brand.md,CPY-089,"hallmark §103 §367, taste §321"
+CPY-190,E-copy-dataviz-imagery-brand.md,CPY-090,"hallmark §370, huashu §59 §67"
+CPY-191,E-copy-dataviz-imagery-brand.md,CPY-091,"hallmark §104 §363, kami §298"
+CPY-192,E-copy-dataviz-imagery-brand.md,CPY-092,kami §240 §248 §703
+CPY-193,E-copy-dataviz-imagery-brand.md,CPY-093,kami §249 §703
+CPY-194,E-copy-dataviz-imagery-brand.md,CPY-094,agsk §104 §130-131
+CPY-195,E-copy-dataviz-imagery-brand.md,CPY-095,agsk §132
+CPY-196,E-copy-dataviz-imagery-brand.md,CPY-096,kami §241
+CPY-197,E-copy-dataviz-imagery-brand.md,CPY-097,"hallmark §111-112 §369, kami §4, taste §40, huashu §59 §67"
+CPY-198,E-copy-dataviz-imagery-brand.md,CPY-098,"kami §4 §301, taste §40, huashu §59 §67"
+CPY-199,E-copy-dataviz-imagery-brand.md,CPY-099,"hallmark §367, taste §324"
+CPY-200,E-copy-dataviz-imagery-brand.md,CPY-100,"hallmark §367, taste §324"
+CPY-201,E-copy-dataviz-imagery-brand.md,CPY-101,taste §324
+CPY-202,E-copy-dataviz-imagery-brand.md,CPY-102,hallmark §367
+CPY-203,E-copy-dataviz-imagery-brand.md,CPY-103,"hallmark §105, taste §323"
+CPY-204,E-copy-dataviz-imagery-brand.md,CPY-104,"taste §323, kami §238, agsk §117"
+CPY-205,E-copy-dataviz-imagery-brand.md,CPY-105,"agsk §115, taste §332"
+CPY-206,E-copy-dataviz-imagery-brand.md,CPY-106,"taste §47 §334, hallmark §104"
+CPY-207,E-copy-dataviz-imagery-brand.md,CPY-107,taste §43 §323
+CPY-208,E-copy-dataviz-imagery-brand.md,CPY-108,"hallmark §105, taste §333"
+CPY-209,E-copy-dataviz-imagery-brand.md,CPY-109,taste §333
+CPY-210,E-copy-dataviz-imagery-brand.md,CPY-110,kami §238
+CPY-211,E-copy-dataviz-imagery-brand.md,CPY-111,kami §232 §289
+CPY-212,E-copy-dataviz-imagery-brand.md,CPY-112,agsk §159
+CPY-213,E-copy-dataviz-imagery-brand.md,CPY-113,"kami §230, agsk §106 §135"
+CPY-214,E-copy-dataviz-imagery-brand.md,CPY-114,kami §231
+CPY-215,E-copy-dataviz-imagery-brand.md,CPY-115,"hallmark §107, taste §318 §356"
+CPY-216,E-copy-dataviz-imagery-brand.md,CPY-116,"taste §45, hallmark §361, adp §99, agsk §164"
+CPY-217,E-copy-dataviz-imagery-brand.md,CPY-117,hallmark §106 §361
+CPY-218,E-copy-dataviz-imagery-brand.md,CPY-118,"taste §319, kami §704 (never 3 buttons)"
+CPY-219,E-copy-dataviz-imagery-brand.md,CPY-119,taste §319 §356
+CPY-220,E-copy-dataviz-imagery-brand.md,CPY-120,"agsk §164-165, taste §329, hallmark §361"
+CPY-221,E-copy-dataviz-imagery-brand.md,CPY-121,"hallmark §125 §365, huashu §59 §67, taste §41"
+CPY-222,E-copy-dataviz-imagery-brand.md,CPY-122,adp §70
+CPY-223,E-copy-dataviz-imagery-brand.md,CPY-123,"taste §329, hallmark §128 §368"
+CPY-224,E-copy-dataviz-imagery-brand.md,CPY-124,taste §43 §357
+CPY-225,E-copy-dataviz-imagery-brand.md,CPY-125,"taste §327 §357, uupm §37 §97"
+CPY-226,E-copy-dataviz-imagery-brand.md,CPY-126,uupm §48
+CPY-227,E-copy-dataviz-imagery-brand.md,CPY-127,"taste §327 §357, uupm §100"
+CPY-228,E-copy-dataviz-imagery-brand.md,CPY-128,"adp §52, uupm §96, taste §357"
+CPY-229,E-copy-dataviz-imagery-brand.md,CPY-129,taste §357
+CPY-230,E-copy-dataviz-imagery-brand.md,CPY-130,agsk §155-156
+CPY-231,E-copy-dataviz-imagery-brand.md,CPY-131,uupm §98
+CPY-232,E-copy-dataviz-imagery-brand.md,CPY-132,uupm §39
+CPY-233,E-copy-dataviz-imagery-brand.md,CPY-133,"taste §327, uupm §47 §68"
+CPY-234,E-copy-dataviz-imagery-brand.md,CPY-134,taste §357
+CPY-235,E-copy-dataviz-imagery-brand.md,CPY-135,taste §40
+CPY-236,E-copy-dataviz-imagery-brand.md,CPY-136,uupm §105
+CPY-237,E-copy-dataviz-imagery-brand.md,CPY-137,uupm §112
+CPY-238,E-copy-dataviz-imagery-brand.md,CPY-138,"hallmark §108 §358, agsk §153, kami §238 §398, taste §40"
+CPY-239,E-copy-dataviz-imagery-brand.md,CPY-139,kami §233
+CPY-240,E-copy-dataviz-imagery-brand.md,CPY-140,"hallmark §108, agsk §155"
+CPY-241,E-copy-dataviz-imagery-brand.md,CPY-141,taste §40 §41 §48
+CPY-242,E-copy-dataviz-imagery-brand.md,CPY-142,"hallmark §108, agsk §139"
+CPY-243,E-copy-dataviz-imagery-brand.md,CPY-143,"hallmark §108, agsk §150-151 §157, kami §233"
+CPY-244,E-copy-dataviz-imagery-brand.md,CPY-144,"kami §233 §430, uupm §103"
+CPY-245,E-copy-dataviz-imagery-brand.md,CPY-145,kami §102
+CPY-246,E-copy-dataviz-imagery-brand.md,CPY-146,"hallmark §125 §365, huashu §59 §67, kami §5"
+CPY-247,E-copy-dataviz-imagery-brand.md,CPY-147,"hallmark §365, huashu §59 §67"
+CPY-248,E-copy-dataviz-imagery-brand.md,CPY-148,kami §5
+CPY-249,E-copy-dataviz-imagery-brand.md,CPY-149,"uupm §102, kami §233"
+CPY-250,E-copy-dataviz-imagery-brand.md,CPY-150,"kami §234, huashu §79"
+CPY-251,E-copy-dataviz-imagery-brand.md,CPY-151,agsk §137-138
+CPY-252,E-copy-dataviz-imagery-brand.md,CPY-152,"hallmark §123 §127, taste §41, kami §301, huashu §60"
+CPY-253,E-copy-dataviz-imagery-brand.md,CPY-153,kami §240 §281 §300
+CPY-254,E-copy-dataviz-imagery-brand.md,CPY-154,kami §278-280 §294 §696
+CPY-255,E-copy-dataviz-imagery-brand.md,CPY-155,kami §282
+CPY-256,E-copy-dataviz-imagery-brand.md,CPY-156,kami §283 §285 §300
+CPY-257,E-copy-dataviz-imagery-brand.md,CPY-157,kami §284 §287
+CPY-258,E-copy-dataviz-imagery-brand.md,CPY-158,kami §240 §246 §698
+CPY-259,E-copy-dataviz-imagery-brand.md,CPY-159,kami §241 §697 §300
+CPY-260,E-copy-dataviz-imagery-brand.md,CPY-160,kami §242 §699
+CPY-261,E-copy-dataviz-imagery-brand.md,CPY-161,kami §242 §258
+CPY-262,E-copy-dataviz-imagery-brand.md,CPY-162,kami §243-245
+CPY-263,E-copy-dataviz-imagery-brand.md,CPY-163,kami §252 §701
+CPY-264,E-copy-dataviz-imagery-brand.md,CPY-164,kami §117 §240 §253 §702
+CPY-265,E-copy-dataviz-imagery-brand.md,CPY-165,kami §247 §700
+CPY-266,E-copy-dataviz-imagery-brand.md,CPY-166,kami §248 §304 §703
+CPY-267,E-copy-dataviz-imagery-brand.md,CPY-167,kami §250 §303 §394
+CPY-268,E-copy-dataviz-imagery-brand.md,CPY-168,kami §240 §254 §705
+CPY-269,E-copy-dataviz-imagery-brand.md,CPY-169,kami §255
+CPY-270,E-copy-dataviz-imagery-brand.md,CPY-170,kami §704
+CPY-271,E-copy-dataviz-imagery-brand.md,CPY-171,taste §352
+CPY-272,E-copy-dataviz-imagery-brand.md,CPY-172,agsk §133-134 §140-146
+CPY-273,E-copy-dataviz-imagery-brand.md,CPY-173,"agsk §166-167, taste §355"
+CPY-274,E-copy-dataviz-imagery-brand.md,CPY-174,kami §236 §392
+DVZ-101,E-copy-dataviz-imagery-brand.md,DVZ-001,kami §338 §344
+DVZ-102,E-copy-dataviz-imagery-brand.md,DVZ-002,kami §141 §262 §301
+DVZ-103,E-copy-dataviz-imagery-brand.md,DVZ-003,"hallmark §305, uupm §170"
+DVZ-104,E-copy-dataviz-imagery-brand.md,DVZ-004,taste §372
+DVZ-105,E-copy-dataviz-imagery-brand.md,DVZ-005,"hallmark §305, uupm §171"
+DVZ-106,E-copy-dataviz-imagery-brand.md,DVZ-006,"hallmark §304 §310, huashu §60"
+DVZ-107,E-copy-dataviz-imagery-brand.md,DVZ-007,"huashu §60, taste §40"
+DVZ-108,E-copy-dataviz-imagery-brand.md,DVZ-008,huashu §82 §168
+DVZ-109,E-copy-dataviz-imagery-brand.md,DVZ-009,"hallmark §305, kami §260 §431 §434, uupm §170"
+DVZ-110,E-copy-dataviz-imagery-brand.md,DVZ-010,kami §419
+DVZ-111,E-copy-dataviz-imagery-brand.md,DVZ-011,"kami §260 §433, uupm §171, hallmark §305"
+DVZ-112,E-copy-dataviz-imagery-brand.md,DVZ-012,"kami §419 §435, uupm §171"
+DVZ-113,E-copy-dataviz-imagery-brand.md,DVZ-013,"hallmark §305, kami §419 §436, uupm §172"
+DVZ-114,E-copy-dataviz-imagery-brand.md,DVZ-014,uupm §173 §186
+DVZ-115,E-copy-dataviz-imagery-brand.md,DVZ-015,uupm §174
+DVZ-116,E-copy-dataviz-imagery-brand.md,DVZ-016,uupm §176
+DVZ-117,E-copy-dataviz-imagery-brand.md,DVZ-017,"kami §437 §418, uupm §182"
+DVZ-118,E-copy-dataviz-imagery-brand.md,DVZ-018,"kami §418 §438, uupm §184"
+DVZ-119,E-copy-dataviz-imagery-brand.md,DVZ-019,uupm §177 §187
+DVZ-120,E-copy-dataviz-imagery-brand.md,DVZ-020,uupm §183
+DVZ-121,E-copy-dataviz-imagery-brand.md,DVZ-021,uupm §180 §189
+DVZ-122,E-copy-dataviz-imagery-brand.md,DVZ-022,"uupm §191, hallmark §306"
+DVZ-123,E-copy-dataviz-imagery-brand.md,DVZ-023,uupm §193
+DVZ-124,E-copy-dataviz-imagery-brand.md,DVZ-024,"huashu §266, kami §343"
+DVZ-125,E-copy-dataviz-imagery-brand.md,DVZ-025,kami §419
+DVZ-126,E-copy-dataviz-imagery-brand.md,DVZ-026,kami §418 §431
+DVZ-127,E-copy-dataviz-imagery-brand.md,DVZ-027,"hallmark §306 §308, kami §425"
+DVZ-128,E-copy-dataviz-imagery-brand.md,DVZ-028,"hallmark §308, kami §425"
+DVZ-129,E-copy-dataviz-imagery-brand.md,DVZ-029,hallmark §306
+DVZ-130,E-copy-dataviz-imagery-brand.md,DVZ-030,huashu §272
+DVZ-131,E-copy-dataviz-imagery-brand.md,DVZ-031,kami §261 §418 §301
+DVZ-132,E-copy-dataviz-imagery-brand.md,DVZ-032,"hallmark §308, huashu §168, taste §612"
+DVZ-133,E-copy-dataviz-imagery-brand.md,DVZ-033,hallmark §308 §110
+DVZ-134,E-copy-dataviz-imagery-brand.md,DVZ-034,kami §262 §299
+DVZ-135,E-copy-dataviz-imagery-brand.md,DVZ-035,kami §425
+DVZ-136,E-copy-dataviz-imagery-brand.md,DVZ-036,kami §436
+DVZ-137,E-copy-dataviz-imagery-brand.md,DVZ-037,"hallmark §306, huashu §168, kami §263"
+DVZ-138,E-copy-dataviz-imagery-brand.md,DVZ-038,taste §25
+DVZ-139,E-copy-dataviz-imagery-brand.md,DVZ-039,"hallmark §306, kami §433"
+DVZ-140,E-copy-dataviz-imagery-brand.md,DVZ-040,"hallmark §306, kami §434"
+DVZ-141,E-copy-dataviz-imagery-brand.md,DVZ-041,"hallmark §306, kami §425"
+DVZ-142,E-copy-dataviz-imagery-brand.md,DVZ-042,hallmark §306
+DVZ-143,E-copy-dataviz-imagery-brand.md,DVZ-043,kami §424
+DVZ-144,E-copy-dataviz-imagery-brand.md,DVZ-044,kami §422
+DVZ-145,E-copy-dataviz-imagery-brand.md,DVZ-045,kami §426
+DVZ-146,E-copy-dataviz-imagery-brand.md,DVZ-046,kami §430
+DVZ-147,E-copy-dataviz-imagery-brand.md,DVZ-047,adp §226
+DVZ-148,E-copy-dataviz-imagery-brand.md,DVZ-048,uupm §170 §173
+DVZ-149,E-copy-dataviz-imagery-brand.md,DVZ-049,kami §347 §417
+DVZ-150,E-copy-dataviz-imagery-brand.md,DVZ-050,kami §347 §644 §699
+DVZ-151,E-copy-dataviz-imagery-brand.md,DVZ-051,kami §347
+DVZ-152,E-copy-dataviz-imagery-brand.md,DVZ-052,taste §373
+DVZ-153,E-copy-dataviz-imagery-brand.md,DVZ-053,taste §377
+DVZ-154,E-copy-dataviz-imagery-brand.md,DVZ-054,"hallmark §305 §307, kami §420, huashu §272"
+DVZ-155,E-copy-dataviz-imagery-brand.md,DVZ-055,hallmark §307
+DVZ-156,E-copy-dataviz-imagery-brand.md,DVZ-056,"hallmark §307, huashu §168 §258 §263"
+DVZ-157,E-copy-dataviz-imagery-brand.md,DVZ-057,"uupm §170-194 §41, hallmark §307"
+DVZ-158,E-copy-dataviz-imagery-brand.md,DVZ-058,"kami §358 §421, uupm §182, huashu §276"
+DVZ-159,E-copy-dataviz-imagery-brand.md,DVZ-059,hallmark §307
+DVZ-160,E-copy-dataviz-imagery-brand.md,DVZ-060,"hallmark §307, kami §100"
+DVZ-161,E-copy-dataviz-imagery-brand.md,DVZ-061,"hallmark §309, huashu §62"
+DVZ-162,E-copy-dataviz-imagery-brand.md,DVZ-062,"taste §612, kami §111"
+DVZ-163,E-copy-dataviz-imagery-brand.md,DVZ-063,kami §420
+DVZ-164,E-copy-dataviz-imagery-brand.md,DVZ-064,huashu §268-269
+DVZ-165,E-copy-dataviz-imagery-brand.md,DVZ-065,"kami §262 §301 §342 §429 §644, huashu §261 §266 §269 §272"
+DVZ-166,E-copy-dataviz-imagery-brand.md,DVZ-066,"kami §428, uupm §288"
+DVZ-167,E-copy-dataviz-imagery-brand.md,DVZ-067,"kami §434, huashu §269, uupm §170"
+DVZ-168,E-copy-dataviz-imagery-brand.md,DVZ-068,"kami §429, huashu §266 §269"
+DVZ-169,E-copy-dataviz-imagery-brand.md,DVZ-069,huashu §266 §268 §272
+DVZ-170,E-copy-dataviz-imagery-brand.md,DVZ-070,kami §427 §430
+DVZ-171,E-copy-dataviz-imagery-brand.md,DVZ-071,"kami §423, huashu §75"
+DVZ-172,E-copy-dataviz-imagery-brand.md,DVZ-072,uupm §170-194
+DVZ-173,E-copy-dataviz-imagery-brand.md,DVZ-073,huashu §276
+DVZ-174,E-copy-dataviz-imagery-brand.md,DVZ-074,kami §167
+DVZ-175,E-copy-dataviz-imagery-brand.md,DVZ-075,"kami §348 §369 §387, taste §376"
+DVZ-176,E-copy-dataviz-imagery-brand.md,DVZ-076,kami §350 §449
+DVZ-177,E-copy-dataviz-imagery-brand.md,DVZ-077,kami §342 §351 §453
+DVZ-178,E-copy-dataviz-imagery-brand.md,DVZ-078,kami §348-349
+DVZ-179,E-copy-dataviz-imagery-brand.md,DVZ-079,kami §348
+DVZ-180,E-copy-dataviz-imagery-brand.md,DVZ-080,kami §341 §352 §453
+DVZ-181,E-copy-dataviz-imagery-brand.md,DVZ-081,kami §353 §453
+DVZ-182,E-copy-dataviz-imagery-brand.md,DVZ-082,kami §345-346
+DVZ-183,E-copy-dataviz-imagery-brand.md,DVZ-083,kami §360 §449
+DVZ-184,E-copy-dataviz-imagery-brand.md,DVZ-084,"kami §361 §403 §442 §451, taste §376"
+DVZ-185,E-copy-dataviz-imagery-brand.md,DVZ-085,taste §376
+DVZ-186,E-copy-dataviz-imagery-brand.md,DVZ-086,kami §339 §390
+DVZ-187,E-copy-dataviz-imagery-brand.md,DVZ-087,kami §340 §448
+DVZ-188,E-copy-dataviz-imagery-brand.md,DVZ-088,kami §358
+DVZ-189,E-copy-dataviz-imagery-brand.md,DVZ-089,kami §359
+DVZ-190,E-copy-dataviz-imagery-brand.md,DVZ-090,kami §355
+DVZ-191,E-copy-dataviz-imagery-brand.md,DVZ-091,kami §363 §391 §404
+DVZ-192,E-copy-dataviz-imagery-brand.md,DVZ-092,kami §365 §391 §450
+DVZ-193,E-copy-dataviz-imagery-brand.md,DVZ-093,kami §363
+DVZ-194,E-copy-dataviz-imagery-brand.md,DVZ-094,kami §364 §642
+DVZ-195,E-copy-dataviz-imagery-brand.md,DVZ-095,kami §366
+DVZ-196,E-copy-dataviz-imagery-brand.md,DVZ-096,kami §439 §450
+DVZ-197,E-copy-dataviz-imagery-brand.md,DVZ-097,kami §369 §405
+DVZ-198,E-copy-dataviz-imagery-brand.md,DVZ-098,kami §441
+DVZ-199,E-copy-dataviz-imagery-brand.md,DVZ-099,kami §367 §450
+DVZ-200,E-copy-dataviz-imagery-brand.md,DVZ-100,kami §391 §450
+DVZ-201,E-copy-dataviz-imagery-brand.md,DVZ-101,kami §391 §372
+DVZ-202,E-copy-dataviz-imagery-brand.md,DVZ-102,kami §416 §450
+DVZ-203,E-copy-dataviz-imagery-brand.md,DVZ-103,kami §408 §454
+DVZ-204,E-copy-dataviz-imagery-brand.md,DVZ-104,kami §377 §451
+DVZ-205,E-copy-dataviz-imagery-brand.md,DVZ-105,kami §259 §343
+DVZ-206,E-copy-dataviz-imagery-brand.md,DVZ-106,kami §373
+DVZ-207,E-copy-dataviz-imagery-brand.md,DVZ-107,kami §382
+DVZ-208,E-copy-dataviz-imagery-brand.md,DVZ-108,kami §376
+DVZ-209,E-copy-dataviz-imagery-brand.md,DVZ-109,kami §378
+DVZ-210,E-copy-dataviz-imagery-brand.md,DVZ-110,kami §375 §380
+DVZ-211,E-copy-dataviz-imagery-brand.md,DVZ-111,huashu §273
+DVZ-212,E-copy-dataviz-imagery-brand.md,DVZ-112,"huashu §265, taste §620"
+DVZ-213,E-copy-dataviz-imagery-brand.md,DVZ-113,kami §384-389 §398
+DVZ-214,E-copy-dataviz-imagery-brand.md,DVZ-114,kami §392 §394
+DVZ-215,E-copy-dataviz-imagery-brand.md,DVZ-115,kami §264 §400-408
+DVZ-216,E-copy-dataviz-imagery-brand.md,DVZ-116,kami §408 §454
+DVZ-217,E-copy-dataviz-imagery-brand.md,DVZ-117,kami §404
+DVZ-218,E-copy-dataviz-imagery-brand.md,DVZ-118,kami §643
+DVZ-219,E-copy-dataviz-imagery-brand.md,DVZ-119,kami §414
+DVZ-220,E-copy-dataviz-imagery-brand.md,DVZ-120,kami §641
+DVZ-221,E-copy-dataviz-imagery-brand.md,DVZ-121,taste §377
+DVZ-222,E-copy-dataviz-imagery-brand.md,DVZ-122,"kami §342 §413, taste §376"
+EML-101,F-media-process.md,EML-001,uux §268
+EML-102,F-media-process.md,EML-002,uux §305
+EML-103,F-media-process.md,EML-003,uux §306
+EML-104,F-media-process.md,EML-004,adp §204
+EML-105,F-media-process.md,EML-005,"hm §194, §753, §2326"
+EML-106,F-media-process.md,EML-006,ts §2425
+EML-107,F-media-process.md,EML-007,hm §1627; ts §594
+IMG-101,E-copy-dataviz-imagery-brand.md,IMG-001,"hallmark §114 §264, taste §549, kami §228 §639"
+IMG-102,E-copy-dataviz-imagery-brand.md,IMG-002,"hallmark §114 §265 §272, huashu §81, kami §639"
+IMG-103,E-copy-dataviz-imagery-brand.md,IMG-003,"huashu §81, taste §35 §554"
+IMG-104,E-copy-dataviz-imagery-brand.md,IMG-004,"hallmark §117 §277, huashu §60 §81, taste §23 §25"
+IMG-105,E-copy-dataviz-imagery-brand.md,IMG-005,"hallmark §117, huashu §35 §60, taste §23 §25"
+IMG-106,E-copy-dataviz-imagery-brand.md,IMG-006,"hallmark §117 §268 §277, taste §563"
+IMG-107,E-copy-dataviz-imagery-brand.md,IMG-007,"hallmark §117 §277, huashu §262"
+IMG-108,E-copy-dataviz-imagery-brand.md,IMG-008,hallmark §119 §268
+IMG-109,E-copy-dataviz-imagery-brand.md,IMG-009,"hallmark §268, taste §39"
+IMG-110,E-copy-dataviz-imagery-brand.md,IMG-010,"kami §228 §265 §639, huashu §39 §86"
+IMG-111,E-copy-dataviz-imagery-brand.md,IMG-011,hallmark §277
+IMG-112,E-copy-dataviz-imagery-brand.md,IMG-012,"huashu §60, hallmark §277"
+IMG-113,E-copy-dataviz-imagery-brand.md,IMG-013,"taste §562, hallmark §264"
+IMG-114,E-copy-dataviz-imagery-brand.md,IMG-014,"hallmark §277, taste §566, uupm §275"
+IMG-115,E-copy-dataviz-imagery-brand.md,IMG-015,hallmark §277
+IMG-116,E-copy-dataviz-imagery-brand.md,IMG-016,hallmark §115 §269 §475
+IMG-117,E-copy-dataviz-imagery-brand.md,IMG-017,hallmark §269
+IMG-118,E-copy-dataviz-imagery-brand.md,IMG-018,"hallmark §269, huashu §36"
+IMG-119,E-copy-dataviz-imagery-brand.md,IMG-019,hallmark §118 §270
+IMG-120,E-copy-dataviz-imagery-brand.md,IMG-020,kami §136 §265 §646
+IMG-121,E-copy-dataviz-imagery-brand.md,IMG-021,kami §136 §229
+IMG-122,E-copy-dataviz-imagery-brand.md,IMG-022,hallmark §271
+IMG-123,E-copy-dataviz-imagery-brand.md,IMG-023,hallmark §269
+IMG-124,E-copy-dataviz-imagery-brand.md,IMG-024,hallmark §270
+IMG-125,E-copy-dataviz-imagery-brand.md,IMG-025,uupm §265
+IMG-126,E-copy-dataviz-imagery-brand.md,IMG-026,"hallmark §122 §266 §465, taste §549-550"
+IMG-127,E-copy-dataviz-imagery-brand.md,IMG-027,hallmark §266
+IMG-128,E-copy-dataviz-imagery-brand.md,IMG-028,hallmark §121 §467
+IMG-129,E-copy-dataviz-imagery-brand.md,IMG-029,"hallmark §265 §467, taste §36 §551"
+IMG-130,E-copy-dataviz-imagery-brand.md,IMG-030,taste §36 §550-551 §553
+IMG-131,E-copy-dataviz-imagery-brand.md,IMG-031,"taste §36, hallmark §265"
+IMG-132,E-copy-dataviz-imagery-brand.md,IMG-032,taste §549
+IMG-133,E-copy-dataviz-imagery-brand.md,IMG-033,huashu §38
+IMG-134,E-copy-dataviz-imagery-brand.md,IMG-034,"hallmark §266 §468, taste §36"
+IMG-135,E-copy-dataviz-imagery-brand.md,IMG-035,taste §550 §557
+IMG-136,E-copy-dataviz-imagery-brand.md,IMG-036,"hallmark §266 §466, taste §566 §616"
+IMG-137,E-copy-dataviz-imagery-brand.md,IMG-037,"hallmark §275, taste §35"
+IMG-138,E-copy-dataviz-imagery-brand.md,IMG-038,taste §551
+IMG-139,E-copy-dataviz-imagery-brand.md,IMG-039,taste §552
+IMG-140,E-copy-dataviz-imagery-brand.md,IMG-040,"hallmark §122, huashu §83"
+IMG-141,E-copy-dataviz-imagery-brand.md,IMG-041,huashu §39 §83
+IMG-142,E-copy-dataviz-imagery-brand.md,IMG-042,"taste §557, huashu §38"
+IMG-143,E-copy-dataviz-imagery-brand.md,IMG-043,hallmark §272
+IMG-144,E-copy-dataviz-imagery-brand.md,IMG-044,hallmark §116 §273
+IMG-145,E-copy-dataviz-imagery-brand.md,IMG-045,"hallmark §268 §272, taste §556"
+IMG-146,E-copy-dataviz-imagery-brand.md,IMG-046,"hallmark §267, taste §558"
+IMG-147,E-copy-dataviz-imagery-brand.md,IMG-047,taste §35 §558
+IMG-148,E-copy-dataviz-imagery-brand.md,IMG-048,"hallmark §267 §470, kami §137"
+IMG-149,E-copy-dataviz-imagery-brand.md,IMG-049,"hallmark §122 §470, huashu §66, uupm §42"
+IMG-150,E-copy-dataviz-imagery-brand.md,IMG-050,hallmark §267 §470
+IMG-151,E-copy-dataviz-imagery-brand.md,IMG-051,"hallmark §267 §472, taste §558"
+IMG-152,E-copy-dataviz-imagery-brand.md,IMG-052,taste §563 §35
+IMG-153,E-copy-dataviz-imagery-brand.md,IMG-053,"hallmark §274, taste §560"
+IMG-154,E-copy-dataviz-imagery-brand.md,IMG-054,taste §558 §560
+IMG-155,E-copy-dataviz-imagery-brand.md,IMG-055,hallmark §268
+IMG-156,E-copy-dataviz-imagery-brand.md,IMG-056,"hallmark §276, taste §35 §562"
+IMG-157,E-copy-dataviz-imagery-brand.md,IMG-057,taste §565
+IMG-158,E-copy-dataviz-imagery-brand.md,IMG-058,"hallmark §277, taste §561"
+IMG-159,E-copy-dataviz-imagery-brand.md,IMG-059,taste §35
+IMG-160,E-copy-dataviz-imagery-brand.md,IMG-060,"hallmark §275, taste §35"
+IMG-161,E-copy-dataviz-imagery-brand.md,IMG-061,hallmark §280 §473
+IMG-162,E-copy-dataviz-imagery-brand.md,IMG-062,"kami §637, uupm §274"
+IMG-163,E-copy-dataviz-imagery-brand.md,IMG-063,"kami §638, huashu §67 §80"
+IMG-164,E-copy-dataviz-imagery-brand.md,IMG-064,"hallmark §123 §278, huashu §60, uupm §234, taste §23 §25"
+IMG-165,E-copy-dataviz-imagery-brand.md,IMG-065,"hallmark §123 §278, uupm §234 §937, taste §361"
+IMG-166,E-copy-dataviz-imagery-brand.md,IMG-066,"hallmark §278, uupm §261 §937, taste §366"
+IMG-167,E-copy-dataviz-imagery-brand.md,IMG-067,"hallmark §278, uupm §261, taste §363"
+IMG-168,E-copy-dataviz-imagery-brand.md,IMG-068,"hallmark §123-124, taste §23"
+IMG-169,E-copy-dataviz-imagery-brand.md,IMG-069,"huashu §60, kami §411"
+IMG-170,E-copy-dataviz-imagery-brand.md,IMG-070,"hallmark §123, uupm §44 §125 §937, adp §247"
+IMG-171,E-copy-dataviz-imagery-brand.md,IMG-071,"taste §360 §366 §376, huashu §34"
+IMG-172,E-copy-dataviz-imagery-brand.md,IMG-072,taste §361-362 §616
+IMG-173,E-copy-dataviz-imagery-brand.md,IMG-073,taste §365
+IMG-174,E-copy-dataviz-imagery-brand.md,IMG-074,taste §366-367
+IMG-175,E-copy-dataviz-imagery-brand.md,IMG-075,kami §409
+IMG-176,E-copy-dataviz-imagery-brand.md,IMG-076,kami §412
+IMG-177,E-copy-dataviz-imagery-brand.md,IMG-077,huashu §271
+IMG-178,E-copy-dataviz-imagery-brand.md,IMG-078,uupm §937
+IMG-179,E-copy-dataviz-imagery-brand.md,IMG-079,"hallmark §281 §289, taste §25, hallmark §127"
+IMG-180,E-copy-dataviz-imagery-brand.md,IMG-080,"hallmark §281 §289, taste §23 §25"
+IMG-181,E-copy-dataviz-imagery-brand.md,IMG-081,"hallmark §282, huashu §180"
+IMG-182,E-copy-dataviz-imagery-brand.md,IMG-082,hallmark §282
+IMG-183,E-copy-dataviz-imagery-brand.md,IMG-083,"hallmark §283, taste §23 §25"
+IMG-184,E-copy-dataviz-imagery-brand.md,IMG-084,hallmark §283
+IMG-185,E-copy-dataviz-imagery-brand.md,IMG-085,"taste §25 §564, hallmark §276 §471"
+IMG-186,E-copy-dataviz-imagery-brand.md,IMG-086,hallmark §285-286
+IMG-187,E-copy-dataviz-imagery-brand.md,IMG-087,hallmark §117 §127
+INT-001,rules/curated.yaml,,hallmark §362; kami §299; taste-skill §40 §43; huashu §60
+INT-002,rules/curated.yaml,,hallmark §110 §354 §355; taste-skill §35 §43
+INT-003,rules/curated.yaml,,hallmark §389 §465 §467
+INT-004,rules/curated.yaml,,hallmark §93 §364 §510
+INT-005,rules/curated.yaml,,taste-skill §39; huashu §71; kami §452
+INT-006,rules/curated.yaml,,hallmark §110
+INT-101,A-slop-integrity.md,INT-001,"hallmark §4, §362; taste §40, §615; huashu §9, §60; kami §299"
+INT-102,A-slop-integrity.md,INT-002,"hallmark §121, §238, §362; taste §40, §43, §615; huashu §9, §60; adp §187"
+INT-103,A-slop-integrity.md,INT-003,"hallmark §121, §238; taste §615; huashu §60"
+INT-104,A-slop-integrity.md,INT-004,taste §43
+INT-105,A-slop-integrity.md,INT-005,"taste §43, §49"
+INT-106,A-slop-integrity.md,INT-006,taste §40; hallmark §362; huashu §60
+INT-107,A-slop-integrity.md,INT-007,"hallmark §362, §1280-area"
+INT-108,A-slop-integrity.md,INT-008,"kami §225, §233, §299"
+INT-109,A-slop-integrity.md,INT-009,kami §299
+INT-110,A-slop-integrity.md,INT-010,"kami §227, §299"
+INT-111,A-slop-integrity.md,INT-011,"kami §299, §453"
+INT-112,A-slop-integrity.md,INT-012,"hallmark §34 (§1972, §1984–1985)"
+INT-113,A-slop-integrity.md,INT-013,huashu §60; hallmark §110; taste §27
+INT-114,A-slop-integrity.md,INT-014,kami §453
+INT-115,A-slop-integrity.md,INT-015,"kami §226, §302"
+INT-116,A-slop-integrity.md,INT-016,"kami §226, §228-area (§1477)"
+INT-117,A-slop-integrity.md,INT-017,kami §225; huashu §9
+INT-118,A-slop-integrity.md,INT-018,hallmark §134–135; uupm §28 (never invent brand rules)
+INT-119,A-slop-integrity.md,INT-019,"hallmark §121, §134; huashu §36; uupm §241"
+INT-120,A-slop-integrity.md,INT-020,"huashu §9, §116"
+INT-121,A-slop-integrity.md,INT-021,"hallmark §141, §153; huashu §578"
+INT-122,A-slop-integrity.md,INT-022,kami §229
+INT-123,A-slop-integrity.md,INT-023,kami §1642-area; hallmark §115
+INT-124,A-slop-integrity.md,INT-024,"hallmark §467, §121; taste §35–36"
+INT-125,A-slop-integrity.md,INT-025,taste §35–36; hallmark §1711-area
+INT-126,A-slop-integrity.md,INT-026,adp §166; taste §35
+INT-127,A-slop-integrity.md,INT-027,"hallmark §122, §465–466; taste §616"
+INT-128,A-slop-integrity.md,INT-028,kami §302
+INT-129,A-slop-integrity.md,INT-029,uupm §112
+INT-130,A-slop-integrity.md,INT-030,taste §39; hallmark §357; huashu §71; kami §654; uupm §104
+INT-131,A-slop-integrity.md,INT-031,taste §39; kami §654
+INT-132,A-slop-integrity.md,INT-032,taste §39
+INT-133,A-slop-integrity.md,INT-033,kami §304
+INT-134,A-slop-integrity.md,INT-034,"taste §24, §34, §39; hallmark §1729-area"
+INT-135,A-slop-integrity.md,INT-035,"taste §2, §39, §613, §617, §619"
+INT-136,A-slop-integrity.md,INT-036,hallmark §389
+INT-137,A-slop-integrity.md,INT-037,hallmark §354–355; taste §44
+INT-138,A-slop-integrity.md,INT-038,"hallmark §494; kami §654, §3659-area"
+INT-139,A-slop-integrity.md,INT-039,agent §148–149
+INT-140,A-slop-integrity.md,INT-040,"hallmark §5, §136"
+INT-141,A-slop-integrity.md,INT-041,"taste §40, §43, §46"
+INT-142,A-slop-integrity.md,INT-042,"taste §23, §39"
+INT-143,A-slop-integrity.md,INT-043,hallmark §6–7
+INT-144,A-slop-integrity.md,INT-044,"hallmark §120, §509"
+INT-145,A-slop-integrity.md,INT-045,hallmark §120
+INT-146,A-slop-integrity.md,INT-046,"hallmark §120; taste §23, §39; kami §1705-area"
+INT-147,A-slop-integrity.md,INT-047,"hallmark §119, §388, §436"
+INT-148,A-slop-integrity.md,INT-048,"hallmark §474; huashu §60, §209"
+INT-149,A-slop-integrity.md,INT-049,taste §613–614
+INT-150,A-slop-integrity.md,INT-050,taste §619
+INT-151,A-slop-integrity.md,INT-051,"taste §23, §613, §616"
+INT-152,A-slop-integrity.md,INT-052,"kami §228, §1284-area; huashu §35; hallmark §160"
+INT-153,A-slop-integrity.md,INT-053,huashu §209
+INT-154,A-slop-integrity.md,INT-054,kami §237
+INT-155,A-slop-integrity.md,INT-055,"hallmark §93, §364; taste §640 (""forms send"")"
+INT-156,A-slop-integrity.md,INT-056,"hallmark §364, §510"
+INT-157,A-slop-integrity.md,INT-057,"hallmark §95, §510; agent §114"
+INT-158,A-slop-integrity.md,INT-058,hallmark §446
+INT-159,A-slop-integrity.md,INT-059,hallmark §94
+INT-160,A-slop-integrity.md,INT-060,hallmark §92
+INT-161,A-slop-integrity.md,INT-061,taste §22; uupm §39; adp §65
+INT-162,A-slop-integrity.md,INT-062,adp Part 7 preamble (§119–197)
+INT-163,A-slop-integrity.md,INT-063,"adp §20, §21-area (prefill), §119"
+INT-164,A-slop-integrity.md,INT-064,adp §142; uupm §204-area (pre-launch)
+INT-165,A-slop-integrity.md,INT-065,"adp §64, §143; uupm landing (event/pre-launch)"
+INT-166,A-slop-integrity.md,INT-066,"adp §65, §124"
+INT-167,A-slop-integrity.md,INT-067,"adp §124, §126"
+INT-168,A-slop-integrity.md,INT-068,"adp §61, §64"
+INT-169,A-slop-integrity.md,INT-069,adp §63
+INT-170,A-slop-integrity.md,INT-070,"adp §62, §131, §137, §173"
+INT-171,A-slop-integrity.md,INT-071,"adp §123, §169"
+INT-172,A-slop-integrity.md,INT-072,"adp §43, §165"
+INT-173,A-slop-integrity.md,INT-073,"adp §146, §155"
+INT-174,A-slop-integrity.md,INT-074,"adp §133, §167"
+INT-175,A-slop-integrity.md,INT-075,"adp §127, §159, §180"
+INT-176,A-slop-integrity.md,INT-076,"adp §121, §179"
+INT-177,A-slop-integrity.md,INT-077,"adp §128–129, §152"
+INT-178,A-slop-integrity.md,INT-078,"adp §181, §182, §191"
+INT-179,A-slop-integrity.md,INT-079,"adp §164, §170, §171"
+INT-180,A-slop-integrity.md,INT-080,"adp §40, §43, §34-area"
+INT-181,A-slop-integrity.md,INT-081,"adp §35, §61"
+INT-182,A-slop-integrity.md,INT-082,uupm §108; adp §163
+INT-183,A-slop-integrity.md,INT-083,"adp §178, Part 3 (§731)"
+INT-184,A-slop-integrity.md,INT-084,"adp §175, §177, §189"
+INT-185,A-slop-integrity.md,INT-085,adp §197
+INT-186,A-slop-integrity.md,INT-086,adp §187; taste §43; hallmark §97
+INT-187,A-slop-integrity.md,INT-087,adp §195
+IOS-101,F-media-process.md,IOS-001,"uux §126, §232; hs §176"
+IOS-102,F-media-process.md,IOS-002,as §241–§244
+IOS-103,F-media-process.md,IOS-003,uux §239; as §212
+LAY-001,rules/curated.yaml,,impeccable §540; hallmark §76
+LAY-002,rules/curated.yaml,,hallmark §76; huashu §104
+LAY-003,rules/curated.yaml,,impeccable §541
+LAY-004,rules/curated.yaml,,hallmark §453
+LAY-101,C-concept-layout-components.md,LAY-001,TS §99
+LAY-102,C-concept-layout-components.md,LAY-002,"HM §210, HM §151, HU §99"
+LAY-103,C-concept-layout-components.md,LAY-003,"HU §99, HU §104"
+LAY-104,C-concept-layout-components.md,LAY-004,HM §170
+LAY-105,C-concept-layout-components.md,LAY-005,"HM §35, HM §170"
+LAY-106,C-concept-layout-components.md,LAY-006,"UX §235, KM §177-178"
+LAY-107,C-concept-layout-components.md,LAY-007,HM §33
+LAY-108,C-concept-layout-components.md,LAY-008,"HM §32, HM §434, TS §81"
+LAY-109,C-concept-layout-components.md,LAY-009,"HU §104, KM §179"
+LAY-110,C-concept-layout-components.md,LAY-010,"HM §157, HM §210"
+LAY-111,C-concept-layout-components.md,LAY-011,HM §30
+LAY-112,C-concept-layout-components.md,LAY-012,KM §350-351
+LAY-113,C-concept-layout-components.md,LAY-020,"HM §37, HM §430, KM §64"
+LAY-114,C-concept-layout-components.md,LAY-021,KM §64
+LAY-115,C-concept-layout-components.md,LAY-022,"HM §73, HM §416-417, TS §55, UX §235, KM §62"
+LAY-116,C-concept-layout-components.md,LAY-023,"HM §73, HM §416"
+LAY-117,C-concept-layout-components.md,LAY-024,HM §73
+LAY-118,C-concept-layout-components.md,LAY-025,"HM §171, TS §74"
+LAY-119,C-concept-layout-components.md,LAY-026,KM §65
+LAY-120,C-concept-layout-components.md,LAY-027,"HM §79, HM §431"
+LAY-121,C-concept-layout-components.md,LAY-028,"HM §79, HM §431, TS §81"
+LAY-122,C-concept-layout-components.md,LAY-029,"UX §236, KM §67"
+LAY-123,C-concept-layout-components.md,LAY-030,UX §246
+LAY-124,C-concept-layout-components.md,LAY-040,"HM §4, HM §39, HM §167, HM §424, TS §69, TS §81"
+LAY-125,C-concept-layout-components.md,LAY-041,"HM §32, HM §434, TS §53"
+LAY-126,C-concept-layout-components.md,LAY-042,"HM §168, TS §70"
+LAY-127,C-concept-layout-components.md,LAY-043,TS §81
+LAY-128,C-concept-layout-components.md,LAY-044,"TS §81, TS §85"
+LAY-129,C-concept-layout-components.md,LAY-045,"TS §69, TS §83, HM §47"
+LAY-130,C-concept-layout-components.md,LAY-046,TS §81
+LAY-131,C-concept-layout-components.md,LAY-047,"HM §38, HM §424"
+LAY-132,C-concept-layout-components.md,LAY-048,"HM §176, TS §85"
+LAY-133,C-concept-layout-components.md,LAY-049,"UX §23, UX §235, KM §179, HM §213, HM §223"
+LAY-134,C-concept-layout-components.md,LAY-050,"HM §38, HM §133, HU §79"
+LAY-135,C-concept-layout-components.md,LAY-051,HM §169
+LAY-136,C-concept-layout-components.md,LAY-052,"KM §66, KM §161"
+LAY-137,C-concept-layout-components.md,LAY-060,"HM §38, HM §432, KM §168"
+LAY-138,C-concept-layout-components.md,LAY-061,"HM §4, HM §426"
+LAY-139,C-concept-layout-components.md,LAY-062,"HM §38, HM §433"
+LAY-140,C-concept-layout-components.md,LAY-063,HM §38
+LAY-141,C-concept-layout-components.md,LAY-064,"HM §124, HU §63"
+LAY-142,C-concept-layout-components.md,LAY-065,"HM §4, HM §74, TS §94, TS §192"
+LAY-143,C-concept-layout-components.md,LAY-066,HM §74
+LAY-144,C-concept-layout-components.md,LAY-067,"HU §68, HM §78"
+LAY-145,C-concept-layout-components.md,LAY-068,HM §180
+LAY-146,C-concept-layout-components.md,LAY-069,"HM §181, HM §212, TS §118"
+LAY-147,C-concept-layout-components.md,LAY-070,"HM §212, HU §63, TS §102"
+LAY-148,C-concept-layout-components.md,LAY-071,"TS §53, TS §191"
+LAY-149,C-concept-layout-components.md,LAY-072,ADP §82
+LAY-150,C-concept-layout-components.md,LAY-080,"TS §89, HM §30"
+LAY-151,C-concept-layout-components.md,LAY-081,"HM §34, HM §176, HM §429"
+LAY-152,C-concept-layout-components.md,LAY-082,"HM §34, HM §429"
+LAY-153,C-concept-layout-components.md,LAY-083,"HM §34, HM §172, KM §258"
+LAY-154,C-concept-layout-components.md,LAY-084,HM §177
+LAY-155,C-concept-layout-components.md,LAY-085,"TS §91, TS §75"
+LAY-156,C-concept-layout-components.md,LAY-086,TS §78
+LAY-157,C-concept-layout-components.md,LAY-087,"TS §74, TS §78"
+LAY-158,C-concept-layout-components.md,LAY-088,"KM §256, KM §322"
+LAY-159,C-concept-layout-components.md,LAY-089,"KM §258, HU §71"
+LAY-160,C-concept-layout-components.md,LAY-090,KM §168
+LAY-161,C-concept-layout-components.md,LAY-091,"HU §71, HU §101"
+LAY-162,C-concept-layout-components.md,LAY-092,HM §174
+LAY-163,C-concept-layout-components.md,LAY-093,HM §175
+LAY-164,C-concept-layout-components.md,LAY-100,"HM §36, HM §172, HM §418"
+LAY-165,C-concept-layout-components.md,LAY-101,HM §172
+LAY-166,C-concept-layout-components.md,LAY-102,KM §68
+LAY-167,C-concept-layout-components.md,LAY-103,"HM §195, HM §205, TS §92, TS §99"
+LAY-168,C-concept-layout-components.md,LAY-104,"HM §174, HM §41"
+LAY-169,C-concept-layout-components.md,LAY-105,"HM §206, TS §92"
+LAY-170,C-concept-layout-components.md,LAY-106,"HM §74, HM §234"
+LAY-171,C-concept-layout-components.md,LAY-107,HM §205
+LAY-172,C-concept-layout-components.md,LAY-108,"HM §205, HM §219"
+LAY-173,C-concept-layout-components.md,LAY-109,"TS §78, TS §86, TS §102"
+LAY-174,C-concept-layout-components.md,LAY-110,HM §177
+LAY-175,C-concept-layout-components.md,LAY-111,"HM §178, HM §205, TS §82, KM §161, KM §270"
+LAY-176,C-concept-layout-components.md,LAY-112,HM §178
+LAY-177,C-concept-layout-components.md,LAY-113,HM §179
+LAY-178,C-concept-layout-components.md,LAY-114,HM §186
+LAY-179,C-concept-layout-components.md,LAY-115,HM §182
+LAY-180,C-concept-layout-components.md,LAY-116,"HM §189, HM §248"
+LAY-181,C-concept-layout-components.md,LAY-117,"HM §190, HM §227"
+LAY-182,C-concept-layout-components.md,LAY-118,HM §192
+LAY-183,C-concept-layout-components.md,LAY-119,"HM §42, HM §341"
+LAY-184,C-concept-layout-components.md,LAY-120,"HM §43, HM §427"
+LAY-185,C-concept-layout-components.md,LAY-121,"TS §99, TS §101"
+LAY-186,C-concept-layout-components.md,LAY-130,"HM §17, HM §41, HM §204, HU §63, HU §158"
+LAY-187,C-concept-layout-components.md,LAY-131,"HM §204, TS §100, HU §159"
+LAY-188,C-concept-layout-components.md,LAY-132,"HM §185, HM §204, TS §123"
+LAY-189,C-concept-layout-components.md,LAY-133,"HM §19, UX §217"
+LAY-190,C-concept-layout-components.md,LAY-134,HM §20
+LAY-191,C-concept-layout-components.md,LAY-135,"HM §21, TS §155"
+LAY-192,C-concept-layout-components.md,LAY-136,"HM §22, UX §212"
+LAY-193,C-concept-layout-components.md,LAY-137,"HM §23, HM §194, TS §17"
+LAY-194,C-concept-layout-components.md,LAY-138,HM §24
+LAY-195,C-concept-layout-components.md,LAY-139,"HM §25, TS §20"
+LAY-196,C-concept-layout-components.md,LAY-140,HM §26
+LAY-197,C-concept-layout-components.md,LAY-141,HM §27
+LAY-198,C-concept-layout-components.md,LAY-142,HM §28
+LAY-199,C-concept-layout-components.md,LAY-143,"TS §10-12, TS §100"
+LAY-200,C-concept-layout-components.md,LAY-144,"TS §20, TS §100"
+LAY-201,C-concept-layout-components.md,LAY-145,"TS §18, TS §100"
+LAY-202,C-concept-layout-components.md,LAY-146,"HM §17, HM §518"
+LAY-203,C-concept-layout-components.md,LAY-147,HM §18
+LAY-204,C-concept-layout-components.md,LAY-148,HM §237-239
+LAY-205,C-concept-layout-components.md,LAY-149,"HM §238, TS §93, HU §60"
+LAY-206,C-concept-layout-components.md,LAY-160,HM §211
+LAY-207,C-concept-layout-components.md,LAY-161,HM §212
+LAY-208,C-concept-layout-components.md,LAY-162,"HM §215, HM §48"
+LAY-209,C-concept-layout-components.md,LAY-163,HM §220
+LAY-210,C-concept-layout-components.md,LAY-164,HM §216
+LAY-211,C-concept-layout-components.md,LAY-165,HM §213
+LAY-212,C-concept-layout-components.md,LAY-166,"HM §222, HM §224, HM §229, HM §231"
+LAY-213,C-concept-layout-components.md,LAY-167,HM §225
+LAY-214,C-concept-layout-components.md,LAY-168,HM §230
+LAY-215,C-concept-layout-components.md,LAY-169,HM §221
+LAY-216,C-concept-layout-components.md,LAY-180,"HM §4, HM §45, HM §422"
+LAY-217,C-concept-layout-components.md,LAY-181,"HM §45, HM §423, TS §171"
+LAY-218,C-concept-layout-components.md,LAY-182,"HM §45, HM §424"
+LAY-219,C-concept-layout-components.md,LAY-183,"HM §48, HM §420-421, UX §22, TS §171"
+LAY-220,C-concept-layout-components.md,LAY-184,"HM §46, HM §199, HM §423"
+LAY-221,C-concept-layout-components.md,LAY-185,"HM §46, HM §199, HM §423"
+LAY-222,C-concept-layout-components.md,LAY-186,"HM §47, HM §200, HM §423"
+LAY-223,C-concept-layout-components.md,LAY-187,HM §423
+LAY-224,C-concept-layout-components.md,LAY-188,HM §47
+LAY-225,C-concept-layout-components.md,LAY-189,"HM §48, HM §421, HM §516"
+LAY-226,C-concept-layout-components.md,LAY-190,HM §201
+LAY-227,C-concept-layout-components.md,LAY-191,HM §197-198
+LAY-228,C-concept-layout-components.md,LAY-192,HM §197
+LAY-229,C-concept-layout-components.md,LAY-193,"HM §51, HM §156, TS §22"
+LAY-230,C-concept-layout-components.md,LAY-194,"HM §200, TS §17, TS §26"
+LAY-231,C-concept-layout-components.md,LAY-195,"TS §171, TS §633"
+LAY-232,C-concept-layout-components.md,LAY-196,TS §171-173
+LAY-233,C-concept-layout-components.md,LAY-197,TS §171
+LAY-234,C-concept-layout-components.md,LAY-198,"HM §50, HM §155"
+LAY-235,C-concept-layout-components.md,LAY-199,"HM §49, TS §172"
+LAY-236,C-concept-layout-components.md,LAY-210,"HM §44, HM §202, TS §99, TS §171, TS §173"
+LAY-237,C-concept-layout-components.md,LAY-211,"HM §31, HM §44"
+LAY-238,C-concept-layout-components.md,LAY-212,"HM §4, HM §31"
+LAY-239,C-concept-layout-components.md,LAY-213,HM §30
+LAY-240,C-concept-layout-components.md,LAY-214,"HM §105, HM §175"
+LAY-241,C-concept-layout-components.md,LAY-215,KM §145
+LAY-242,C-concept-layout-components.md,LAY-216,KM §145
+LAY-243,C-concept-layout-components.md,LAY-217,HM §3
+LAY-244,C-concept-layout-components.md,LAY-218,"HU §75, KM §257, KM §670"
+LAY-245,C-concept-layout-components.md,LAY-219,"HM §30, HM §173, HM §419"
+LAY-246,C-concept-layout-components.md,LAY-230,"HM §4, HM §80, HM §425, UX §85, TS §84"
+LAY-247,C-concept-layout-components.md,LAY-231,"HM §152, HM §256, UX §81, TS §641"
+LAY-248,C-concept-layout-components.md,LAY-232,"HM §257, UX §334, ADP §198"
+LAY-249,C-concept-layout-components.md,LAY-233,"HM §257, HM §417"
+LAY-250,C-concept-layout-components.md,LAY-234,"HM §257, HM §417"
+LAY-251,C-concept-layout-components.md,LAY-235,"HM §196, TS §74, TS §82"
+LAY-252,C-concept-layout-components.md,LAY-236,"HM §196, ADP §204, ADP §208"
+LAY-253,C-concept-layout-components.md,LAY-237,"HM §133, HM §435"
+LAY-254,C-concept-layout-components.md,LAY-238,"HM §133, HM §256, ADP §205"
+LAY-255,C-concept-layout-components.md,LAY-239,"ADP §206, UX §230"
+LAY-256,C-concept-layout-components.md,LAY-240,"HM §258, ADP §77"
+LAY-257,C-concept-layout-components.md,LAY-241,"HM §260, UX §19, UX §148, UX §243"
+LAY-258,C-concept-layout-components.md,LAY-242,"UX §84, UX §235, ADP §198"
+LAY-259,C-concept-layout-components.md,LAY-243,"UX §235, HM §196"
+LAY-260,C-concept-layout-components.md,LAY-244,"HM §263, KM §161"
+LAY-261,C-concept-layout-components.md,LAY-245,KM §148
+LAY-262,C-concept-layout-components.md,LAY-246,TS §171
+LAY-263,C-concept-layout-components.md,LAY-247,UX §243
+MOT-001,rules/curated.yaml,,hallmark §323 §327; transitions-dev; agent-skills §1
+MOT-101,D-motion-a11y-robustness.md,MOT-001,"agent §1, hallmark §323, taste §408, huashu §324"
+MOT-102,D-motion-a11y-robustness.md,MOT-002,"hallmark §323, §84"
+MOT-103,D-motion-a11y-robustness.md,MOT-003,"hallmark §323, taste §407, §441"
+MOT-104,D-motion-a11y-robustness.md,MOT-004,"uupm §7, §237"
+MOT-105,D-motion-a11y-robustness.md,MOT-005,"taste §33, huashu §364, §324"
+MOT-106,D-motion-a11y-robustness.md,MOT-006,"taste §431, §428"
+MOT-107,D-motion-a11y-robustness.md,MOT-007,"taste §408, hallmark §84, §130, kami §684"
+MOT-108,D-motion-a11y-robustness.md,MOT-008,"taste §427, §33"
+MOT-109,D-motion-a11y-robustness.md,MOT-009,"hallmark §87, §280, taste §436"
+MOT-110,D-motion-a11y-robustness.md,MOT-010,taste §625
+MOT-111,D-motion-a11y-robustness.md,MOT-011,hallmark §340
+MOT-112,D-motion-a11y-robustness.md,MOT-020,"hallmark §4, §81, §437, uupm §13, §237, agent §219, taste §411, huashu §395"
+MOT-113,D-motion-a11y-robustness.md,MOT-021,"hallmark §4, §81, §437, huashu §364"
+MOT-114,D-motion-a11y-robustness.md,MOT-022,"hallmark §81, taste §411, §624"
+MOT-115,D-motion-a11y-robustness.md,MOT-023,"hallmark §81, uupm §165"
+MOT-116,D-motion-a11y-robustness.md,MOT-024,"hallmark §332, agent §220, taste §426"
+MOT-117,D-motion-a11y-robustness.md,MOT-025,"hallmark §332, taste §419, agent §35"
+MOT-118,D-motion-a11y-robustness.md,MOT-026,"uupm §237, taste §624"
+MOT-119,D-motion-a11y-robustness.md,MOT-027,"agent §391, uupm §160, taste §437"
+MOT-120,D-motion-a11y-robustness.md,MOT-028,agent §386
+MOT-121,D-motion-a11y-robustness.md,MOT-029,"uupm §233, §241"
+MOT-122,D-motion-a11y-robustness.md,MOT-030,"agent §239, §240, uupm §142, §233"
+MOT-123,D-motion-a11y-robustness.md,MOT-031,huashu §402
+MOT-124,D-motion-a11y-robustness.md,MOT-040,"hallmark §438, uupm §8, §237"
+MOT-125,D-motion-a11y-robustness.md,MOT-041,"hallmark §83, §324, §438"
+MOT-126,D-motion-a11y-robustness.md,MOT-042,"uupm §8, §237"
+MOT-127,D-motion-a11y-robustness.md,MOT-043,"agent §78, huashu §337"
+MOT-128,D-motion-a11y-robustness.md,MOT-044,uupm §143
+MOT-129,D-motion-a11y-robustness.md,MOT-045,"hallmark §82, §342, uupm §14, §237, agent §80, huashu §335, taste §410"
+MOT-130,D-motion-a11y-robustness.md,MOT-046,"hallmark §438, huashu §332"
+MOT-131,D-motion-a11y-robustness.md,MOT-047,"hallmark §82, §324, §438, taste §410, §443, uupm §160"
+MOT-132,D-motion-a11y-robustness.md,MOT-048,"uupm §237, taste §643"
+MOT-133,D-motion-a11y-robustness.md,MOT-049,agent §81
+MOT-134,D-motion-a11y-robustness.md,MOT-050,"agent §82, §32"
+MOT-135,D-motion-a11y-robustness.md,MOT-060,"hallmark §83, §324, uupm §237, §162, agent §79"
+MOT-136,D-motion-a11y-robustness.md,MOT-061,"agent §27, §79"
+MOT-137,D-motion-a11y-robustness.md,MOT-062,agent §51
+MOT-138,D-motion-a11y-robustness.md,MOT-063,huashu §377
+MOT-139,D-motion-a11y-robustness.md,MOT-064,"uupm §162, §163"
+MOT-140,D-motion-a11y-robustness.md,MOT-065,uupm §163
+MOT-141,D-motion-a11y-robustness.md,MOT-066,"uupm §237, hallmark §329"
+MOT-142,D-motion-a11y-robustness.md,MOT-070,"hallmark §83, uupm §237, huashu §342, §349"
+MOT-143,D-motion-a11y-robustness.md,MOT-071,"uupm §157, §159, hallmark §330"
+MOT-144,D-motion-a11y-robustness.md,MOT-072,"hallmark §338, agent §43"
+MOT-145,D-motion-a11y-robustness.md,MOT-073,"uupm §159, §974"
+MOT-146,D-motion-a11y-robustness.md,MOT-074,"huashu §349, §365, uupm §156, agent §28"
+MOT-147,D-motion-a11y-robustness.md,MOT-075,"huashu §342, §422"
+MOT-148,D-motion-a11y-robustness.md,MOT-080,"hallmark §84, §339, taste §427, §33"
+MOT-149,D-motion-a11y-robustness.md,MOT-081,"taste §33, §459, §427"
+MOT-150,D-motion-a11y-robustness.md,MOT-082,taste §427
+MOT-151,D-motion-a11y-robustness.md,MOT-083,"hallmark §341, §444, taste §436"
+MOT-152,D-motion-a11y-robustness.md,MOT-084,"hallmark §87, taste §436, §437, uupm §50, §165"
+MOT-153,D-motion-a11y-robustness.md,MOT-085,"taste §436, §437, uupm §50"
+MOT-154,D-motion-a11y-robustness.md,MOT-086,hallmark §342
+MOT-155,D-motion-a11y-robustness.md,MOT-087,hallmark §342
+MOT-156,D-motion-a11y-robustness.md,MOT-088,"hallmark §342, uupm §158"
+MOT-157,D-motion-a11y-robustness.md,MOT-089,"hallmark §347, §339"
+MOT-158,D-motion-a11y-robustness.md,MOT-090,"uupm §158, hallmark §343"
+MOT-159,D-motion-a11y-robustness.md,MOT-091,uupm §158
+MOT-160,D-motion-a11y-robustness.md,MOT-092,"hallmark §343, §346, §257"
+MOT-161,D-motion-a11y-robustness.md,MOT-093,"taste §436, §448"
+MOT-162,D-motion-a11y-robustness.md,MOT-094,"taste §436, §442"
+MOT-163,D-motion-a11y-robustness.md,MOT-095,"taste §435, §437"
+MOT-164,D-motion-a11y-robustness.md,MOT-096,"taste §33, §436, hallmark §345"
+MOT-165,D-motion-a11y-robustness.md,MOT-100,"agent §7-§14, §3"
+MOT-166,D-motion-a11y-robustness.md,MOT-101,"agent §8, §49"
+MOT-167,D-motion-a11y-robustness.md,MOT-102,"agent §49, uupm §237, §364"
+MOT-168,D-motion-a11y-robustness.md,MOT-103,"agent §4, §58, §83"
+MOT-169,D-motion-a11y-robustness.md,MOT-104,"agent §1, §15"
+MOT-170,D-motion-a11y-robustness.md,MOT-105,"agent §67, §85"
+MOT-171,D-motion-a11y-robustness.md,MOT-106,agent §73
+MOT-172,D-motion-a11y-robustness.md,MOT-107,"agent §39, §98"
+MOT-173,D-motion-a11y-robustness.md,MOT-108,"agent §45, §93"
+MOT-174,D-motion-a11y-robustness.md,MOT-109,"agent §33, §46, §88, §89"
+MOT-175,D-motion-a11y-robustness.md,MOT-110,"uupm §164, agent §42"
+MOT-176,D-motion-a11y-robustness.md,MOT-111,"agent §62, §74, §76"
+MOT-177,D-motion-a11y-robustness.md,MOT-112,"agent §60, §92"
+MOT-178,D-motion-a11y-robustness.md,MOT-113,"agent §70, §71, §86, §87"
+MOT-179,D-motion-a11y-robustness.md,MOT-114,agent §76
+MOT-180,D-motion-a11y-robustness.md,MOT-115,agent §66
+MOT-181,D-motion-a11y-robustness.md,MOT-120,"taste §413, hallmark §311, §258"
+MOT-182,D-motion-a11y-robustness.md,MOT-121,"hallmark §323, taste §413, uupm §11, §232"
+MOT-183,D-motion-a11y-robustness.md,MOT-122,"hallmark §85, §311, §440, taste §414"
+MOT-184,D-motion-a11y-robustness.md,MOT-123,"hallmark §85, §440, taste §414, §420, uupm §33"
+MOT-185,D-motion-a11y-robustness.md,MOT-124,hallmark §440
+MOT-186,D-motion-a11y-robustness.md,MOT-125,"hallmark §85, §440, taste §421"
+MOT-187,D-motion-a11y-robustness.md,MOT-126,"taste §413, §420, §33, hallmark §87, §459 (taste)"
+MOT-188,D-motion-a11y-robustness.md,MOT-127,"taste §412, §414, uupm §153"
+MOT-189,D-motion-a11y-robustness.md,MOT-128,"taste §409, §415, §33"
+MOT-190,D-motion-a11y-robustness.md,MOT-129,"hallmark §325, §311, taste §415, uupm §34, §237, §241, agent §222"
+MOT-191,D-motion-a11y-robustness.md,MOT-130,uupm §154
+MOT-192,D-motion-a11y-robustness.md,MOT-131,"hallmark §86, §325, §441, taste §422, §632"
+MOT-193,D-motion-a11y-robustness.md,MOT-132,"hallmark §86, §331, §442"
+MOT-194,D-motion-a11y-robustness.md,MOT-133,"taste §418, hallmark §330"
+MOT-195,D-motion-a11y-robustness.md,MOT-134,"uupm §16, §237"
+MOT-196,D-motion-a11y-robustness.md,MOT-135,uupm §237
+MOT-197,D-motion-a11y-robustness.md,MOT-136,uupm §338
+MOT-198,D-motion-a11y-robustness.md,MOT-140,"hallmark §88, §323, §328, §446"
+MOT-199,D-motion-a11y-robustness.md,MOT-141,"hallmark §328, uupm §99, §238"
+MOT-200,D-motion-a11y-robustness.md,MOT-142,"hallmark §95, uupm §168"
+MOT-201,D-motion-a11y-robustness.md,MOT-143,"uupm §168, §233, §113, §133"
+MOT-202,D-motion-a11y-robustness.md,MOT-144,uupm §167
+MOT-203,D-motion-a11y-robustness.md,MOT-145,"hallmark §334, taste §425"
+MOT-204,D-motion-a11y-robustness.md,MOT-146,"hallmark §333, taste §432, huashu §356"
+MOT-205,D-motion-a11y-robustness.md,MOT-147,hallmark §335
+MOT-206,D-motion-a11y-robustness.md,MOT-148,"hallmark §323, §336"
+MOT-207,D-motion-a11y-robustness.md,MOT-149,"hallmark §337, uupm §109"
+MOT-208,D-motion-a11y-robustness.md,MOT-150,hallmark §338
+MOT-209,D-motion-a11y-robustness.md,MOT-151,"hallmark §320, uupm §39, §238"
+MOT-210,D-motion-a11y-robustness.md,MOT-152,"hallmark §327, uupm §70, §136, §238, taste §67"
+MOT-211,D-motion-a11y-robustness.md,MOT-153,hallmark §326
+MOT-212,D-motion-a11y-robustness.md,MOT-154,"uupm §31, §232"
+MOT-213,D-motion-a11y-robustness.md,MOT-155,"uupm §237, §232"
+MOT-214,D-motion-a11y-robustness.md,MOT-156,"uupm §29, §30"
+MOT-215,D-motion-a11y-robustness.md,MOT-160,"hallmark §87, uupm §12, §145, taste §428"
+MOT-216,D-motion-a11y-robustness.md,MOT-161,"hallmark §87, uupm §167-§169, taste §629"
+MOT-217,D-motion-a11y-robustness.md,MOT-162,"hallmark §87, §443, taste §434, §632, uupm §15, §231"
+MOT-218,D-motion-a11y-robustness.md,MOT-163,"hallmark §87, §443, uupm §15, §169"
+MOT-219,D-motion-a11y-robustness.md,MOT-164,"hallmark §87, taste §33, §429"
+MOT-220,D-motion-a11y-robustness.md,MOT-165,taste §428
+MOT-221,D-motion-a11y-robustness.md,MOT-166,"taste §33, §419, uupm §15"
+MOT-222,D-motion-a11y-robustness.md,MOT-170,"hallmark §4, §130, §439, uupm §9, §50, agent §77, kami §684"
+MOT-223,D-motion-a11y-robustness.md,MOT-171,"hallmark §439, uupm §348, agent §77"
+MOT-224,D-motion-a11y-robustness.md,MOT-172,"hallmark §84, §323, taste §439"
+MOT-225,D-motion-a11y-robustness.md,MOT-173,"hallmark §84, taste §439, §632"
+MOT-226,D-motion-a11y-robustness.md,MOT-174,"uupm §974, §144"
+MOT-227,D-motion-a11y-robustness.md,MOT-175,"taste §439, §444, uupm §233"
+MOT-228,D-motion-a11y-robustness.md,MOT-180,huashu §379
+MOT-229,D-motion-a11y-robustness.md,MOT-181,"huashu §380, §391"
+MOT-230,D-motion-a11y-robustness.md,MOT-182,"huashu §393, §394"
+MOT-231,D-motion-a11y-robustness.md,MOT-183,"huashu §378, §396, §406"
+MOT-232,D-motion-a11y-robustness.md,MOT-184,huashu §397
+MOT-233,D-motion-a11y-robustness.md,MOT-185,"huashu §321, §355, §373"
+MOT-234,D-motion-a11y-robustness.md,MOT-186,"huashu §321, §350"
+MOT-235,D-motion-a11y-robustness.md,MOT-187,"huashu §351, §414"
+MOT-236,D-motion-a11y-robustness.md,MOT-188,huashu §344
+MOT-237,D-motion-a11y-robustness.md,MOT-189,huashu §346
+MOT-238,D-motion-a11y-robustness.md,MOT-190,Finish
+MOT-239,D-motion-a11y-robustness.md,MOT-191,"huashu §202, §385"
+MOT-240,D-motion-a11y-robustness.md,MOT-192,"huashu §405, taste §440"
+PRC-001,rules/curated.yaml,,huashu §49 §106
+PRC-002,rules/curated.yaml,,hallmark §521
+PRC-101,F-media-process.md,PRC-001,hm §5; hs §30
+PRC-102,F-media-process.md,PRC-002,hs §31
+PRC-103,F-media-process.md,PRC-003,hm §5
+PRC-104,F-media-process.md,PRC-004,"hm §6; hs §25, §43; km §212"
+PRC-105,F-media-process.md,PRC-005,hm §6; hs §26
+PRC-106,F-media-process.md,PRC-006,hm §6
+PRC-107,F-media-process.md,PRC-007,hm §6; km §212; hs §25
+PRC-108,F-media-process.md,PRC-008,hm §6; hs §25
+PRC-109,F-media-process.md,PRC-009,km §211
+PRC-110,F-media-process.md,PRC-010,km §211
+PRC-111,F-media-process.md,PRC-011,"hm §7, §236"
+PRC-112,F-media-process.md,PRC-012,km §215
+PRC-113,F-media-process.md,PRC-013,hs §16
+PRC-114,F-media-process.md,PRC-014,hs §13
+PRC-115,F-media-process.md,PRC-015,hs §34–§37
+PRC-116,F-media-process.md,PRC-016,hs §38
+PRC-117,F-media-process.md,PRC-017,hs §26
+PRC-118,F-media-process.md,PRC-018,km §313
+PRC-119,F-media-process.md,PRC-019,km §143
+PRC-120,F-media-process.md,PRC-020,hm §5; hs §24
+PRC-121,F-media-process.md,PRC-021,hs §12
+PRC-122,F-media-process.md,PRC-022,hm §9
+PRC-123,F-media-process.md,PRC-023,"ts §5, §7, §8"
+PRC-124,F-media-process.md,PRC-024,"km §207, §208"
+PRC-125,F-media-process.md,PRC-025,km §210
+PRC-126,F-media-process.md,PRC-026,km §213
+PRC-127,F-media-process.md,PRC-027,"hs §200, §525"
+PRC-128,F-media-process.md,PRC-028,uux §229
+PRC-129,F-media-process.md,PRC-029,uux §229
+PRC-130,F-media-process.md,PRC-030,uux §252
+PRC-131,F-media-process.md,PRC-031,hs §28
+PRC-132,F-media-process.md,PRC-032,hm §10; ts §6
+PRC-133,F-media-process.md,PRC-033,"hs §41, §55, §56"
+PRC-134,F-media-process.md,PRC-034,"hs §42, §54"
+PRC-135,F-media-process.md,PRC-035,"hs §47, §53, §54"
+PRC-136,F-media-process.md,PRC-036,"hm §147, §148"
+PRC-137,F-media-process.md,PRC-037,hm §149
+PRC-138,F-media-process.md,PRC-038,hm §150
+PRC-139,F-media-process.md,PRC-039,hs §29
+PRC-140,F-media-process.md,PRC-040,hs §23
+PRC-141,F-media-process.md,PRC-041,hs §18
+PRC-142,F-media-process.md,PRC-042,hs §24
+PRC-143,F-media-process.md,PRC-043,"hm §12, §234"
+PRC-144,F-media-process.md,PRC-044,"ts §3, §6"
+PRC-145,F-media-process.md,PRC-045,"hm §139, §140; hs §37"
+PRC-146,F-media-process.md,PRC-046,hm §141; hs §33
+PRC-147,F-media-process.md,PRC-047,"km §706; hm §141, §153"
+PRC-148,F-media-process.md,PRC-048,hs §106; km §632
+PRC-149,F-media-process.md,PRC-049,hm §153
+PRC-150,F-media-process.md,PRC-050,hm §152
+PRC-151,F-media-process.md,PRC-051,"hm §152, §452, §453"
+PRC-152,F-media-process.md,PRC-052,"hs §107; km §168, §217"
+PRC-153,F-media-process.md,PRC-053,"hs §107, §178"
+PRC-154,F-media-process.md,PRC-054,"hs §107; km §217, §706"
+PRC-155,F-media-process.md,PRC-055,km §217
+PRC-156,F-media-process.md,PRC-056,"hs §494, §505"
+PRC-157,F-media-process.md,PRC-057,"hs §575, §578"
+PRC-158,F-media-process.md,PRC-058,hs §49
+PRC-159,F-media-process.md,PRC-059,"hs §157, §116"
+PRC-160,F-media-process.md,PRC-060,"hm §155, §520; km §218"
+PRC-161,F-media-process.md,PRC-061,hm §155
+PRC-162,F-media-process.md,PRC-062,"hm §155, §520"
+PRC-163,F-media-process.md,PRC-063,"hm §155, §157"
+PRC-164,F-media-process.md,PRC-064,hm §156
+PRC-165,F-media-process.md,PRC-065,"hm §157, §210"
+PRC-166,F-media-process.md,PRC-066,hm §156
+PRC-167,F-media-process.md,PRC-067,hm §159
+PRC-168,F-media-process.md,PRC-068,km §218
+PRC-169,F-media-process.md,PRC-069,km §220
+PRC-170,F-media-process.md,PRC-070,hs §96
+PRC-171,F-media-process.md,PRC-071,"hm §151, §515"
+PRC-172,F-media-process.md,PRC-072,hm §517
+PRC-173,F-media-process.md,PRC-073,hs §97–§102
+PRC-174,F-media-process.md,PRC-074,hs §103
+PRC-175,F-media-process.md,PRC-075,hs §105
+PRC-176,F-media-process.md,PRC-076,"hs §99, §100, §104"
+PRC-177,F-media-process.md,PRC-077,as §337
+PRC-178,F-media-process.md,PRC-078,hs §530
+PRC-179,F-media-process.md,PRC-079,hm §2
+PRC-180,F-media-process.md,PRC-080,hm §2
+PRC-181,F-media-process.md,PRC-081,"hs §105, §577"
+PRC-182,F-media-process.md,PRC-082,"ts §644, §645; hs §21"
+PRC-183,F-media-process.md,PRC-083,uux §229
+PRC-184,F-media-process.md,PRC-084,km §218
+PRC-185,F-media-process.md,PRC-085,"hm §3, §521; ts §645"
+PRC-186,F-media-process.md,PRC-086,hm §3
+PRC-187,F-media-process.md,PRC-087,"hm §3, §521; ts §645"
+PRC-188,F-media-process.md,PRC-088,hm §3
+PRC-189,F-media-process.md,PRC-089,km §217; ts §645; hm §153
+PRC-190,F-media-process.md,PRC-090,km §221
+PRC-191,F-media-process.md,PRC-091,km §221
+PRC-192,F-media-process.md,PRC-092,"hs §361, §498"
+PRC-193,F-media-process.md,PRC-093,"hs §163, §19"
+PRC-194,F-media-process.md,PRC-094,km §214
+PRC-195,F-media-process.md,PRC-095,hm §161
+PRC-196,F-media-process.md,PRC-096,"hm §162, §522"
+PRC-197,F-media-process.md,PRC-097,hm §163
+PRC-198,F-media-process.md,PRC-098,hm §164
+PRC-199,F-media-process.md,PRC-099,hm §164
+PRC-200,F-media-process.md,PRC-100,hm §165
+PRC-201,F-media-process.md,PRC-101,"hm §166, §522"
+PRC-202,F-media-process.md,PRC-102,hm §166
+PRC-203,F-media-process.md,PRC-103,uux §248
+PRC-204,F-media-process.md,PRC-104,hm §162
+PRC-205,F-media-process.md,PRC-105,hs §105
+PRC-206,F-media-process.md,PRC-106,as §334
+PRC-207,F-media-process.md,PRC-107,as §338
+PRC-208,F-media-process.md,PRC-108,"as §335, §336"
+PRC-209,F-media-process.md,PRC-109,km §219
+PRC-210,F-media-process.md,PRC-110,hs §22
+PRC-211,F-media-process.md,PRC-111,hm §160
+PRC-212,F-media-process.md,PRC-112,km §707
+PRC-213,F-media-process.md,PRC-113,uux §305
+PRC-214,F-media-process.md,PRC-114,hs §111
+PRC-215,F-media-process.md,PRC-115,hm §233
+PRC-216,F-media-process.md,PRC-116,"hm §12; hs §11, §112"
+PRC-217,F-media-process.md,PRC-117,"hs §112, §113"
+PRC-218,F-media-process.md,PRC-118,hs §113
+PRC-219,F-media-process.md,PRC-119,hs §114
+PRC-220,F-media-process.md,PRC-120,hs §113
+PRC-221,F-media-process.md,PRC-121,hm §523
+PRC-222,F-media-process.md,PRC-122,"hs §42, §115"
+PRC-223,F-media-process.md,PRC-123,"ts §17, §87"
+PRC-224,F-media-process.md,PRC-124,"hs §96, §506"
+PRC-225,F-media-process.md,PRC-125,as §171
+PRN-101,F-media-process.md,PRN-001,km §602; hs §195
+PRN-102,F-media-process.md,PRN-002,"km §69, §602"
+PRN-103,F-media-process.md,PRN-003,"km §70, §603"
+PRN-104,F-media-process.md,PRN-004,km §608
+PRN-105,F-media-process.md,PRN-005,km §607
+PRN-106,F-media-process.md,PRN-006,km §34; hs §76
+PRN-107,F-media-process.md,PRN-007,km §647
+PRN-108,F-media-process.md,PRN-008,km §35
+PRN-109,F-media-process.md,PRN-009,"km §119, §619"
+PRN-110,F-media-process.md,PRN-010,km §619
+PRN-111,F-media-process.md,PRN-011,km §121
+PRN-112,F-media-process.md,PRN-012,"km §256, §322, §618"
+PRN-113,F-media-process.md,PRN-013,km §258
+PRN-114,F-media-process.md,PRN-014,"km §257, §618, §644"
+PRN-115,F-media-process.md,PRN-015,km §612
+PRN-116,F-media-process.md,PRN-016,km §613
+PRN-117,F-media-process.md,PRN-017,"km §323, §616, §617"
+PRN-118,F-media-process.md,PRN-018,"km §324, §620"
+PRN-119,F-media-process.md,PRN-019,km §605
+PRN-120,F-media-process.md,PRN-020,"km §114, §621"
+PRN-121,F-media-process.md,PRN-021,"km §216, §606"
+PRN-122,F-media-process.md,PRN-022,"km §123, §661, §662"
+PRN-123,F-media-process.md,PRN-023,"km §123, §642, §643, §630"
+PRN-124,F-media-process.md,PRN-024,km §641
+PRN-125,F-media-process.md,PRN-025,km §637
+PRN-126,F-media-process.md,PRN-026,uux §274
+PRN-127,F-media-process.md,PRN-027,uux §273
+PRN-128,F-media-process.md,PRN-028,km §638
+PRN-129,F-media-process.md,PRN-029,"km §628, §611"
+PRN-130,F-media-process.md,PRN-030,"km §624, §626, §627"
+PRN-131,F-media-process.md,PRN-031,km §626
+PRN-132,F-media-process.md,PRN-032,km §632
+PRN-133,F-media-process.md,PRN-033,km §631
+PRN-134,F-media-process.md,PRN-034,km §609
+PRN-135,F-media-process.md,PRN-035,km §604
+PRN-136,F-media-process.md,PRN-036,km §610
+PRN-137,F-media-process.md,PRN-037,km §611
+PRN-138,F-media-process.md,PRN-038,km §660
+PRN-139,F-media-process.md,PRN-039,"km §658, §659"
+PRN-140,F-media-process.md,PRN-040,km §696–§702
+PRN-141,F-media-process.md,PRN-041,hs §195
+PRN-142,F-media-process.md,PRN-042,km §706
+ROB-001,rules/curated.yaml,,taste-skill §437; hallmark §445
+ROB-002,rules/curated.yaml,,hallmark §435
+ROB-003,rules/curated.yaml,,hallmark §452; taste-skill §641
+ROB-004,rules/curated.yaml,,hallmark §401; kami §168
+ROB-101,D-motion-a11y-robustness.md,ROB-001,"hallmark §4, §256, §425, uupm §85, taste §84, §621, kami §168"
+ROB-102,D-motion-a11y-robustness.md,ROB-002,"hallmark §4, §260, §425"
+ROB-103,D-motion-a11y-robustness.md,ROB-003,hallmark §425
+ROB-104,D-motion-a11y-robustness.md,ROB-004,"hallmark §4, §426, uupm §107, §236"
+ROB-105,D-motion-a11y-robustness.md,ROB-005,"hallmark §4, §400, huashu §122"
+ROB-106,D-motion-a11y-robustness.md,ROB-006,uupm §236
+ROB-107,D-motion-a11y-robustness.md,ROB-007,"hallmark §131, §457, taste §84"
+ROB-108,D-motion-a11y-robustness.md,ROB-008,"taste §84, kami §682"
+ROB-109,D-motion-a11y-robustness.md,ROB-009,huashu §374
+ROB-110,D-motion-a11y-robustness.md,ROB-010,huashu §376
+ROB-111,D-motion-a11y-robustness.md,ROB-011,hallmark §427
+ROB-112,D-motion-a11y-robustness.md,ROB-012,"hallmark §99, §428"
+ROB-113,D-motion-a11y-robustness.md,ROB-013,agent §387
+ROB-114,D-motion-a11y-robustness.md,ROB-014,"kami §654, §683, uupm §104, huashu §71"
+ROB-115,D-motion-a11y-robustness.md,ROB-015,"hallmark §93, §311, taste §67"
+ROB-116,D-motion-a11y-robustness.md,ROB-016,"huashu §375, kami §708"
+ROB-117,D-motion-a11y-robustness.md,ROB-020,"uupm §101, §107, §236, §335"
+ROB-118,D-motion-a11y-robustness.md,ROB-021,"uupm §105, taste §84"
+ROB-119,D-motion-a11y-robustness.md,ROB-022,"uupm §107, §235"
+ROB-120,D-motion-a11y-robustness.md,ROB-023,"hallmark §90, §259, §407"
+ROB-121,D-motion-a11y-robustness.md,ROB-024,"hallmark §90, §407"
+ROB-122,D-motion-a11y-robustness.md,ROB-025,hallmark §96
+ROB-123,D-motion-a11y-robustness.md,ROB-026,"kami §658, §659"
+ROB-124,D-motion-a11y-robustness.md,ROB-027,"taste §419, §430, §432"
+ROB-125,D-motion-a11y-robustness.md,ROB-040,"hallmark §263, adp §264"
+ROB-126,D-motion-a11y-robustness.md,ROB-041,hallmark §263
+ROB-127,D-motion-a11y-robustness.md,ROB-042,"uupm §247, §364"
+ROB-128,D-motion-a11y-robustness.md,ROB-043,kami §61
+ROB-129,D-motion-a11y-robustness.md,ROB-044,"kami §692, §709"
+ROB-130,D-motion-a11y-robustness.md,ROB-045,kami §709
+ROB-131,D-motion-a11y-robustness.md,ROB-046,"huashu §127, kami §51, §630"
+ROB-132,D-motion-a11y-robustness.md,ROB-047,kami §52
+ROB-133,D-motion-a11y-robustness.md,ROB-048,kami §626
+ROB-134,D-motion-a11y-robustness.md,ROB-049,"kami §623, §627"
+ROB-135,D-motion-a11y-robustness.md,ROB-050,"kami §575, §636, hallmark §297"
+ROB-136,D-motion-a11y-robustness.md,ROB-051,"kami §582, §631"
+ROB-137,D-motion-a11y-robustness.md,ROB-052,kami §682
+ROB-138,D-motion-a11y-robustness.md,ROB-053,"kami §54, §634, huashu §121, §77"
+ROB-139,D-motion-a11y-robustness.md,ROB-054,"kami §578, §580, §54"
+ROB-140,D-motion-a11y-robustness.md,ROB-055,"kami §633, §59"
+ROB-141,D-motion-a11y-robustness.md,ROB-056,"kami §58, hallmark §402, uupm §236"
+ROB-142,D-motion-a11y-robustness.md,ROB-057,kami §584
+ROB-143,D-motion-a11y-robustness.md,ROB-058,kami §60
+ROB-144,D-motion-a11y-robustness.md,ROB-059,taste §67
+ROB-145,D-motion-a11y-robustness.md,ROB-070,"hallmark §263, uupm §102, §103, §240, huashu §356"
+ROB-146,D-motion-a11y-robustness.md,ROB-071,agent §267
+ROB-147,D-motion-a11y-robustness.md,ROB-072,"kami §167, §653"
+ROB-148,D-motion-a11y-robustness.md,ROB-073,"agent §385, §309"
+ROB-149,D-motion-a11y-robustness.md,ROB-074,"agent §155, §156, hallmark §403"
+ROB-150,D-motion-a11y-robustness.md,ROB-075,"agent §157, kami §59"
+ROB-151,D-motion-a11y-robustness.md,ROB-090,"agent §278, §283, uupm §233"
+ROB-152,D-motion-a11y-robustness.md,ROB-091,taste §621
+ROB-153,D-motion-a11y-robustness.md,ROB-092,taste §621
+ROB-154,D-motion-a11y-robustness.md,ROB-093,taste §621
+ROB-155,D-motion-a11y-robustness.md,ROB-094,agent §279-§282
+ROB-156,D-motion-a11y-robustness.md,ROB-095,"agent §382, §296, §297, uupm §65"
+ROB-157,D-motion-a11y-robustness.md,ROB-096,"agent §298, §291"
+ROB-158,D-motion-a11y-robustness.md,ROB-097,"uupm §62, §67, agent §292, §293"
+ROB-159,D-motion-a11y-robustness.md,ROB-098,"uupm §140, §233, agent §227, §380"
+ROB-160,D-motion-a11y-robustness.md,ROB-099,agent §276
+ROB-161,D-motion-a11y-robustness.md,ROB-100,"taste §626-§629, uupm §981, §1083"
+ROB-162,D-motion-a11y-robustness.md,ROB-101,taste §621
+ROB-163,D-motion-a11y-robustness.md,ROB-102,uupm §118
+ROB-164,D-motion-a11y-robustness.md,ROB-110,"hallmark §470, §262, taste §621, §622, agent §288, uupm §233"
+ROB-165,D-motion-a11y-robustness.md,ROB-111,"hallmark §89, §472, taste §622, agent §284"
+ROB-166,D-motion-a11y-robustness.md,ROB-112,"hallmark §262, taste §621, §623, uupm §61"
+ROB-167,D-motion-a11y-robustness.md,ROB-113,"taste §621, §622, hallmark §470, agent §285, uupm §60"
+ROB-168,D-motion-a11y-robustness.md,ROB-114,"taste §622, §623"
+ROB-169,D-motion-a11y-robustness.md,ROB-115,"taste §621, §622"
+ROB-170,D-motion-a11y-robustness.md,ROB-116,"hallmark §463, huashu §66, adp §256"
+ROB-171,D-motion-a11y-robustness.md,ROB-117,"taste §622, §623"
+ROB-172,D-motion-a11y-robustness.md,ROB-118,"hallmark §89, §280, §473"
+ROB-173,D-motion-a11y-robustness.md,ROB-119,uupm §117
+ROB-174,D-motion-a11y-robustness.md,ROB-120,taste §630
+ROB-175,D-motion-a11y-robustness.md,ROB-121,"kami §638, huashu §80, §388, §389, §115(S4)"
+ROB-176,D-motion-a11y-robustness.md,ROB-122,kami §637
+ROB-177,D-motion-a11y-robustness.md,ROB-123,"kami §640, §641"
+ROB-178,D-motion-a11y-robustness.md,ROB-124,kami §646
+ROB-179,D-motion-a11y-robustness.md,ROB-130,"uupm §64, §233, hallmark §297, taste §624"
+ROB-180,D-motion-a11y-robustness.md,ROB-131,"hallmark §297, uupm §91"
+ROB-181,D-motion-a11y-robustness.md,ROB-132,"hallmark §297, taste §624, uupm §233, agent §381"
+ROB-182,D-motion-a11y-robustness.md,ROB-133,"agent §289, adp §240"
+ROB-183,D-motion-a11y-robustness.md,ROB-134,"hallmark §462, kami §624, §628, §629"
+ROB-184,D-motion-a11y-robustness.md,ROB-135,kami §628
+ROB-185,D-motion-a11y-robustness.md,ROB-136,kami §629
+ROB-186,D-motion-a11y-robustness.md,ROB-137,"kami §630, §584"
+ROB-187,D-motion-a11y-robustness.md,ROB-138,"agent §383, hallmark §301"
+ROB-188,D-motion-a11y-robustness.md,ROB-150,"hallmark §94, §321, uupm §96, §240"
+ROB-189,D-motion-a11y-robustness.md,ROB-151,"hallmark §91, §311, §448"
+ROB-190,D-motion-a11y-robustness.md,ROB-152,uupm §324
+ROB-191,D-motion-a11y-robustness.md,ROB-153,"hallmark §311, §321, uupm §36"
+ROB-192,D-motion-a11y-robustness.md,ROB-154,"hallmark §92, §316, §449"
+ROB-193,D-motion-a11y-robustness.md,ROB-155,"hallmark §315, §316, §449"
+ROB-194,D-motion-a11y-robustness.md,ROB-156,"uupm §238, taste §67"
+ROB-195,D-motion-a11y-robustness.md,ROB-157,uupm §233
+ROB-196,D-motion-a11y-robustness.md,ROB-158,"hallmark §462, huashu §66, §107"
+ROB-197,D-motion-a11y-robustness.md,ROB-159,taste §621
+ROB-198,D-motion-a11y-robustness.md,ROB-160,"uupm §110, hallmark §321"
+ROB-199,D-motion-a11y-robustness.md,ROB-161,"uupm §239, §129, §132"
+ROB-200,D-motion-a11y-robustness.md,ROB-162,"uupm §239, kami §709"
+ROB-201,D-motion-a11y-robustness.md,ROB-163,agent §324
+ROB-202,D-motion-a11y-robustness.md,ROB-170,"hallmark §84, §445, §347, uupm §156"
+ROB-203,D-motion-a11y-robustness.md,ROB-171,"hallmark §445, taste §437"
+ROB-204,D-motion-a11y-robustness.md,ROB-172,taste §427
+ROB-205,D-motion-a11y-robustness.md,ROB-173,kami §675-§679
+ROB-206,D-motion-a11y-robustness.md,ROB-174,"kami §680, §681"
+ROB-207,D-motion-a11y-robustness.md,ROB-175,kami §681
+ROB-208,D-motion-a11y-robustness.md,ROB-176,"hallmark §133, §435"
+ROB-209,D-motion-a11y-robustness.md,ROB-177,"hallmark §96, §261, §435, uupm §87"
+ROB-210,D-motion-a11y-robustness.md,ROB-190,"hallmark §256, §452, uupm §81, §334, taste §641"
+ROB-211,D-motion-a11y-robustness.md,ROB-191,"hallmark §152, §453, §424"
+ROB-212,D-motion-a11y-robustness.md,ROB-192,"kami §168, uupm §244"
+ROB-213,D-motion-a11y-robustness.md,ROB-193,"hallmark §4, §424"
+ROB-214,D-motion-a11y-robustness.md,ROB-194,"hallmark §260, §420, uupm §235"
+ROB-215,D-motion-a11y-robustness.md,ROB-195,"hallmark §260, uupm §148, §235, §243"
+ROB-216,D-motion-a11y-robustness.md,ROB-196,"hallmark §431, §257"
+ROB-217,D-motion-a11y-robustness.md,ROB-197,"hallmark §398, §133, huashu §74, uupm §83, taste §643, adp §260"
+ROB-218,D-motion-a11y-robustness.md,ROB-198,uupm §235
+ROB-219,D-motion-a11y-robustness.md,ROB-199,"hallmark §133, uupm §331"
+ROB-220,D-motion-a11y-robustness.md,ROB-200,"huashu §107, kami §168"
+ROB-221,D-motion-a11y-robustness.md,ROB-201,agent §55
+ROB-222,D-motion-a11y-robustness.md,ROB-202,kami §706
+ROB-223,D-motion-a11y-robustness.md,ROB-203,"hallmark §153, huashu §106"
+ROB-224,D-motion-a11y-robustness.md,ROB-204,huashu §107
+ROB-225,D-motion-a11y-robustness.md,ROB-205,"kami §689, §690"
+ROB-226,D-motion-a11y-robustness.md,ROB-206,kami §662
+ROB-227,D-motion-a11y-robustness.md,ROB-207,kami §661
+ROB-228,D-motion-a11y-robustness.md,ROB-208,kami §642
+ROB-229,D-motion-a11y-robustness.md,ROB-209,kami §632
+ROB-230,D-motion-a11y-robustness.md,ROB-210,huashu §110
+SLD-101,F-media-process.md,SLD-001,"hs §149, §194; km §667; uux §286"
+SLD-102,F-media-process.md,SLD-002,"km §71, §312, §552"
+SLD-103,F-media-process.md,SLD-003,"hs §154; km §559, §668"
+SLD-104,F-media-process.md,SLD-004,"hs §139, §156; km §311, §210"
+SLD-105,F-media-process.md,SLD-005,"hs §139; km §210, §311"
+SLD-106,F-media-process.md,SLD-006,hs §149
+SLD-107,F-media-process.md,SLD-007,"km §668, §682; hs §155"
+SLD-108,F-media-process.md,SLD-008,hs §155
+SLD-109,F-media-process.md,SLD-009,hs §155
+SLD-110,F-media-process.md,SLD-010,hs §155
+SLD-111,F-media-process.md,SLD-011,"hs §155, §156"
+SLD-112,F-media-process.md,SLD-012,hs §156
+SLD-113,F-media-process.md,SLD-013,hs §157
+SLD-114,F-media-process.md,SLD-014,hs §157; km §132
+SLD-115,F-media-process.md,SLD-015,km §629
+SLD-116,F-media-process.md,SLD-016,hs §153
+SLD-117,F-media-process.md,SLD-017,hs §153; uux §278
+SLD-118,F-media-process.md,SLD-018,"km §640, §556"
+SLD-119,F-media-process.md,SLD-019,"hs §74, §75, §146"
+SLD-120,F-media-process.md,SLD-020,"hs §146, §194"
+SLD-121,F-media-process.md,SLD-021,km §34
+SLD-122,F-media-process.md,SLD-022,km §648
+SLD-123,F-media-process.md,SLD-023,"km §634, §647"
+SLD-124,F-media-process.md,SLD-024,"km §126, §649, §650"
+SLD-125,F-media-process.md,SLD-025,km §655
+SLD-126,F-media-process.md,SLD-026,"km §314, §635"
+SLD-127,F-media-process.md,SLD-027,"hs §143, §194; km §129, §670"
+SLD-128,F-media-process.md,SLD-028,"km §129, §314, §554, §703; hs §155"
+SLD-129,F-media-process.md,SLD-029,"km §129, §314, §703"
+SLD-130,F-media-process.md,SLD-030,"km §129, §314, §703"
+SLD-131,F-media-process.md,SLD-031,"km §257, §703"
+SLD-132,F-media-process.md,SLD-032,"km §129, §258"
+SLD-133,F-media-process.md,SLD-033,"km §129, §314"
+SLD-134,F-media-process.md,SLD-034,hs §143
+SLD-135,F-media-process.md,SLD-035,hs §143
+SLD-136,F-media-process.md,SLD-036,"hs §148, §168"
+SLD-137,F-media-process.md,SLD-037,uux §288
+SLD-138,F-media-process.md,SLD-038,hs §194
+SLD-139,F-media-process.md,SLD-039,"km §131, §670"
+SLD-140,F-media-process.md,SLD-040,"km §128, §258, §555"
+SLD-141,F-media-process.md,SLD-041,"km §128, §314, §556"
+SLD-142,F-media-process.md,SLD-042,km §671
+SLD-143,F-media-process.md,SLD-043,"hs §144, §73"
+SLD-144,F-media-process.md,SLD-044,hs §145
+SLD-145,F-media-process.md,SLD-045,"km §315, §321, §672"
+SLD-146,F-media-process.md,SLD-046,"km §129, §314, §315, §672"
+SLD-147,F-media-process.md,SLD-047,"km §315, §672; hs §147"
+SLD-148,F-media-process.md,SLD-048,"hs §142, §147"
+SLD-149,F-media-process.md,SLD-049,uux §290
+SLD-150,F-media-process.md,SLD-050,km §313; uux §289
+SLD-151,F-media-process.md,SLD-051,km §703
+SLD-152,F-media-process.md,SLD-052,"hs §140, §28"
+SLD-153,F-media-process.md,SLD-053,hs §149; km §671
+SLD-154,F-media-process.md,SLD-054,km §130; hs §149
+SLD-155,F-media-process.md,SLD-055,km §671
+SLD-156,F-media-process.md,SLD-056,km §703
+SLD-157,F-media-process.md,SLD-057,"hs §139, §149, §80"
+SLD-158,F-media-process.md,SLD-058,hs §150
+SLD-159,F-media-process.md,SLD-059,hs §151
+SLD-160,F-media-process.md,SLD-060,km §671
+SLD-161,F-media-process.md,SLD-061,hs §152
+SLP-001,rules/curated.yaml,,hallmark §111 §369; impeccable §519 §520; kami §4; huashu §59
+SLP-002,rules/curated.yaml,,impeccable §521; huashu §59 §60; hallmark §366
+SLP-003,rules/curated.yaml,,impeccable §560; ux-ui-agent-skills §28
+SLP-004,rules/curated.yaml,,impeccable §552
+SLP-005,rules/curated.yaml,,huashu §68; impeccable §561; hallmark §79
+SLP-006,rules/curated.yaml,,hallmark §79
+SLP-007,rules/curated.yaml,,hallmark §384 §408; impeccable §527; design-taste §5
+SLP-008,rules/curated.yaml,,impeccable §533 §536; hallmark §385
+SLP-009,rules/curated.yaml,,impeccable §527 §529; taste-skill §31; huashu §211
+SLP-010,rules/curated.yaml,,hallmark §125 §365 §366; huashu §59 §60 §67; taste-skill §22
+SLP-011,rules/curated.yaml,,huashu §69 §111; hallmark §234 §519
+SLP-012,rules/curated.yaml,,huashu §58 §68; hallmark §16 §386; impeccable §200
+SLP-101,A-slop-integrity.md,SLP-001,taste §50
+SLP-102,A-slop-integrity.md,SLP-002,"taste §40, §644"
+SLP-103,A-slop-integrity.md,SLP-003,hallmark §2
+SLP-104,A-slop-integrity.md,SLP-004,"hallmark §3, §521; taste §645"
+SLP-105,A-slop-integrity.md,SLP-005,hallmark §3; taste §645
+SLP-106,A-slop-integrity.md,SLP-006,hallmark §3; taste §52
+SLP-107,A-slop-integrity.md,SLP-007,"hallmark §151, §515"
+SLP-108,A-slop-integrity.md,SLP-008,"huashu §97, §105"
+SLP-109,A-slop-integrity.md,SLP-009,"huashu §105, §577; hallmark §157"
+SLP-110,A-slop-integrity.md,SLP-010,taste §644
+SLP-111,A-slop-integrity.md,SLP-011,hallmark §153; taste §645
+SLP-112,A-slop-integrity.md,SLP-012,"taste §1/§4, §50; huashu §59, §116"
+SLP-113,A-slop-integrity.md,SLP-013,"taste §51, §642; huashu §8, §42, §115 S6"
+SLP-114,A-slop-integrity.md,SLP-014,"huashu §8, §42"
+SLP-115,A-slop-integrity.md,SLP-015,"hallmark §16, §386; huashu §2, §58, §68; kami §3; taste §31"
+SLP-116,A-slop-integrity.md,SLP-016,"huashu §58, §68; hallmark §16, §386"
+SLP-117,A-slop-integrity.md,SLP-017,"huashu §58, §68; hallmark §386; kami §3"
+SLP-118,A-slop-integrity.md,SLP-018,"huashu §58, §68"
+SLP-119,A-slop-integrity.md,SLP-019,"hallmark §76, §127"
+SLP-120,A-slop-integrity.md,SLP-020,"huashu §60, §104, §215; kami §448"
+SLP-121,A-slop-integrity.md,SLP-021,"hallmark §16, §386"
+SLP-122,A-slop-integrity.md,SLP-022,huashu §68
+SLP-123,A-slop-integrity.md,SLP-023,huashu §2
+SLP-124,A-slop-integrity.md,SLP-024,taste §31
+SLP-125,A-slop-integrity.md,SLP-025,"hallmark §12, §233"
+SLP-126,A-slop-integrity.md,SLP-026,"hallmark §234, §385, §519; taste §3"
+SLP-127,A-slop-integrity.md,SLP-027,huashu §69
+SLP-128,A-slop-integrity.md,SLP-028,"huashu §69, §42"
+SLP-129,A-slop-integrity.md,SLP-029,huashu §69
+SLP-130,A-slop-integrity.md,SLP-030,"huashu §69, §208, §115 S1"
+SLP-131,A-slop-integrity.md,SLP-031,"huashu §69, §111–112"
+SLP-132,A-slop-integrity.md,SLP-032,hallmark §415
+SLP-133,A-slop-integrity.md,SLP-033,hallmark §12
+SLP-134,A-slop-integrity.md,SLP-034,taste §642
+SLP-135,A-slop-integrity.md,SLP-035,"taste §43, §49"
+SLP-136,A-slop-integrity.md,SLP-036,"hallmark §468; taste §36, §2873-area (Part 16)"
+SLP-137,A-slop-integrity.md,SLP-037,taste §210
+SLP-138,A-slop-integrity.md,SLP-038,"hallmark §15, §128, §385; huashu §63; uupm §196"
+SLP-139,A-slop-integrity.md,SLP-039,"hallmark §124, §374; kami §449"
+SLP-140,A-slop-integrity.md,SLP-040,"hallmark §124, §374"
+SLP-141,A-slop-integrity.md,SLP-041,"hallmark §374; huashu §60, §215"
+SLP-142,A-slop-integrity.md,SLP-042,hallmark §376
+SLP-143,A-slop-integrity.md,SLP-043,"hallmark §375, §74; taste §24, §53"
+SLP-144,A-slop-integrity.md,SLP-044,"hallmark §377, §78"
+SLP-145,A-slop-integrity.md,SLP-045,"hallmark §378, §76"
+SLP-146,A-slop-integrity.md,SLP-046,"hallmark §74, §127; taste §22"
+SLP-147,A-slop-integrity.md,SLP-047,"hallmark §383, §516"
+SLP-148,A-slop-integrity.md,SLP-048,"hallmark §384, §516"
+SLP-149,A-slop-integrity.md,SLP-049,"hallmark §128, §368, §17-area"
+SLP-150,A-slop-integrity.md,SLP-050,"hallmark §421, §516"
+SLP-151,A-slop-integrity.md,SLP-051,"hallmark §51, §156"
+SLP-152,A-slop-integrity.md,SLP-052,"hallmark §385, §418, §516, §234"
+SLP-153,A-slop-integrity.md,SLP-053,"hallmark §127, §158"
+SLP-154,A-slop-integrity.md,SLP-054,huashu §63; taste §29
+SLP-155,A-slop-integrity.md,SLP-055,huashu §63; taste §43
+SLP-156,A-slop-integrity.md,SLP-056,taste §43
+SLP-157,A-slop-integrity.md,SLP-057,taste §29
+SLP-158,A-slop-integrity.md,SLP-058,taste §29; hallmark §96
+SLP-159,A-slop-integrity.md,SLP-059,"hallmark §117, §460"
+SLP-160,A-slop-integrity.md,SLP-060,"hallmark §13, §34-area (§1995)"
+SLP-161,A-slop-integrity.md,SLP-061,huashu §104; hallmark §434
+SLP-162,A-slop-integrity.md,SLP-062,"hallmark §4, §371; huashu §60, §215; uupm §26 (banned for banking etc.)"
+SLP-163,A-slop-integrity.md,SLP-063,hallmark §372
+SLP-164,A-slop-integrity.md,SLP-064,hallmark §373; huashu §60; taste §25
+SLP-165,A-slop-integrity.md,SLP-065,hallmark §373; taste §25; huashu §79
+SLP-166,A-slop-integrity.md,SLP-066,huashu §60; taste §31–32; kami §448
+SLP-167,A-slop-integrity.md,SLP-067,"hallmark §117, §127, §380; taste §25, §32"
+SLP-168,A-slop-integrity.md,SLP-068,"hallmark §4, §118, §379"
+SLP-169,A-slop-integrity.md,SLP-069,"hallmark §117, §380; taste §22, §25, §620"
+SLP-170,A-slop-integrity.md,SLP-070,"hallmark §117, §458; huashu §60; taste §26"
+SLP-171,A-slop-integrity.md,SLP-071,"hallmark §117, §459"
+SLP-172,A-slop-integrity.md,SLP-072,"huashu §60, §104, §39-area (§3060); taste §24"
+SLP-173,A-slop-integrity.md,SLP-073,"hallmark §4, §123, §381; huashu §60; taste §30; uupm §234, §244; kami §301"
+SLP-174,A-slop-integrity.md,SLP-074,hallmark §382; uupm §234
+SLP-175,A-slop-integrity.md,SLP-075,huashu §60; kami §301
+SLP-176,A-slop-integrity.md,SLP-076,taste §22; hallmark §121
+SLP-177,A-slop-integrity.md,SLP-077,hallmark §440; taste §33
+SLP-178,A-slop-integrity.md,SLP-078,taste §33; huashu §116
+SLP-179,A-slop-integrity.md,SLP-079,taste §33
+SLP-180,A-slop-integrity.md,SLP-080,taste §22
+SLP-181,A-slop-integrity.md,SLP-081,hallmark §408–409; huashu §59; kami §688
+SLP-182,A-slop-integrity.md,SLP-082,hallmark §387; kami §688
+SLP-183,A-slop-integrity.md,SLP-083,hallmark §410
+SLP-184,A-slop-integrity.md,SLP-084,"taste §24, §31; kami §301"
+SLP-185,A-slop-integrity.md,SLP-085,"taste §25, §31"
+SLP-186,A-slop-integrity.md,SLP-086,"huashu §62, §211; taste §3"
+SLP-187,A-slop-integrity.md,SLP-087,huashu §213
+SLP-188,A-slop-integrity.md,SLP-088,"hallmark §390, §291; huashu §61, §67, §125; taste §30"
+SLP-189,A-slop-integrity.md,SLP-089,hallmark §292; huashu §125
+SLP-190,A-slop-integrity.md,SLP-090,"hallmark §4, §111, §369; kami §4, §301; taste §40; huashu §59, §67"
+SLP-191,A-slop-integrity.md,SLP-091,hallmark §395; taste §30; huashu §59
+SLP-192,A-slop-integrity.md,SLP-092,"hallmark §396; huashu §59, §67; taste §30; kami §448"
+SLP-193,A-slop-integrity.md,SLP-093,"hallmark §4, §370, §393; huashu §59, §67"
+SLP-194,A-slop-integrity.md,SLP-094,taste §30
+SLP-195,A-slop-integrity.md,SLP-095,"taste §28, §30"
+SLP-196,A-slop-integrity.md,SLP-096,"hallmark §391–392; huashu §100, §104"
+SLP-197,A-slop-integrity.md,SLP-097,"huashu §99, §104"
+SLP-198,A-slop-integrity.md,SLP-098,"huashu §9, §61, §210"
+SLP-199,A-slop-integrity.md,SLP-099,"huashu §66, §74, §115 S3"
+SLP-200,A-slop-integrity.md,SLP-100,"hallmark §125, §365; huashu §59, §67; kami §5, §301"
+SLP-201,A-slop-integrity.md,SLP-101,"hallmark §125, §365; huashu §59, §67; taste §41"
+SLP-202,A-slop-integrity.md,SLP-102,hallmark §365; taste §22
+SLP-203,A-slop-integrity.md,SLP-103,"hallmark §365; huashu §59, §67"
+SLP-204,A-slop-integrity.md,SLP-104,"huashu §59, §67; taste §22, §40; kami §4, §301; hallmark §366"
+SLP-205,A-slop-integrity.md,SLP-105,"hallmark §126, §366; taste §22"
+SLP-206,A-slop-integrity.md,SLP-106,"kami §155-area (§480), §655"
+SLP-207,A-slop-integrity.md,SLP-107,"huashu §59, §116"
+SLP-208,A-slop-integrity.md,SLP-108,"taste §37; hallmark §106, §356; kami §238, §303"
+SLP-209,A-slop-integrity.md,SLP-109,taste §38; hallmark §357; kami §298
+SLP-210,A-slop-integrity.md,SLP-110,"taste §40; hallmark §359, §106"
+SLP-211,A-slop-integrity.md,SLP-111,"taste §40; hallmark §360, §102"
+SLP-212,A-slop-integrity.md,SLP-112,taste §40
+SLP-213,A-slop-integrity.md,SLP-113,taste §40
+SLP-214,A-slop-integrity.md,SLP-114,"taste §40, §49"
+SLP-215,A-slop-integrity.md,SLP-115,taste §40; hallmark §102
+SLP-216,A-slop-integrity.md,SLP-116,taste §40
+SLP-217,A-slop-integrity.md,SLP-117,"taste §40, §42; hallmark §106"
+SLP-218,A-slop-integrity.md,SLP-118,"taste §40; agent §124, §129"
+SLP-219,A-slop-integrity.md,SLP-119,"taste §40–41, §48; hallmark §95"
+SLP-220,A-slop-integrity.md,SLP-120,taste §40; hallmark §104
+SLP-221,A-slop-integrity.md,SLP-121,"hallmark §103, §106, §360; taste §48"
+SLP-222,A-slop-integrity.md,SLP-122,hallmark §101; taste §642; hallmark §14
+SLP-223,A-slop-integrity.md,SLP-123,"hallmark §361, §107; taste §45; agent §164–165"
+SLP-224,A-slop-integrity.md,SLP-124,"hallmark §51, §361"
+SLP-225,A-slop-integrity.md,SLP-125,"hallmark §357; taste §43, §46"
+SLP-226,A-slop-integrity.md,SLP-126,"hallmark §363, §109, §104; kami §298"
+SLP-227,A-slop-integrity.md,SLP-127,"hallmark §4, §105, §367"
+SLP-228,A-slop-integrity.md,SLP-128,taste §47
+SLP-229,A-slop-integrity.md,SLP-129,hallmark §113
+SLP-230,A-slop-integrity.md,SLP-130,"hallmark §358, §108; kami §233, §652; agent §153; taste §40; kami §303"
+SLP-231,A-slop-integrity.md,SLP-131,taste §38–39; kami §238
+SLP-232,A-slop-integrity.md,SLP-132,agent §124
+SLP-233,A-slop-integrity.md,SLP-133,agent §125; taste §51
+SLP-234,A-slop-integrity.md,SLP-134,"agent §126, §128"
+SLP-235,A-slop-integrity.md,SLP-135,"agent §113, §129"
+SLP-236,A-slop-integrity.md,SLP-136,agent §119–122
+SLP-237,A-slop-integrity.md,SLP-137,agent §123
+SLP-238,A-slop-integrity.md,SLP-138,"kami §224, §303"
+SLP-239,A-slop-integrity.md,SLP-139,kami §298; hallmark §104
+SLP-240,A-slop-integrity.md,SLP-140,"kami §238, §303"
+SLP-241,A-slop-integrity.md,SLP-141,kami §303
+SLP-242,A-slop-integrity.md,SLP-142,"kami §232, §651; agent §159"
+SLP-243,A-slop-integrity.md,SLP-143,kami §236
+SLP-244,A-slop-integrity.md,SLP-144,"hallmark §403, §108; agent §154–156"
+SLP-245,A-slop-integrity.md,SLP-145,"kami §304, §723, §1969, §4113"
+SLP-246,A-slop-integrity.md,SLP-146,kami §304; huashu §116
+SLP-247,A-slop-integrity.md,SLP-147,"huashu §116, §576"
+SLP-248,A-slop-integrity.md,SLP-148,kami §448–449
+SLP-249,A-slop-integrity.md,SLP-149,huashu §116
+SLP-250,A-slop-integrity.md,SLP-150,hallmark §147-area (§857)
+SOC-101,F-media-process.md,SOC-001,"uux §275, §278"
+SOC-102,F-media-process.md,SOC-002,uux §276
+SOC-103,F-media-process.md,SOC-003,uux §266
+SOC-104,F-media-process.md,SOC-004,uux §267
+SOC-105,F-media-process.md,SOC-005,uux §268; km §144; hs §175
+SOC-106,F-media-process.md,SOC-006,"hs §170; km §72, §174, §544"
+SOC-107,F-media-process.md,SOC-007,"uux §271, §278"
+SOC-108,F-media-process.md,SOC-008,"km §174, §544, §705"
+SOC-109,F-media-process.md,SOC-009,"hs §74, §167, §171; uux §279"
+SOC-110,F-media-process.md,SOC-010,hs §171
+SOC-111,F-media-process.md,SOC-011,"hs §171; km §173, §544, §674"
+SOC-112,F-media-process.md,SOC-012,uux §278
+SOC-113,F-media-process.md,SOC-013,"uux §273, §280; hs §172"
+SOC-114,F-media-process.md,SOC-014,"uux §270, §272"
+SOC-115,F-media-process.md,SOC-015,uux §272
+SOC-116,F-media-process.md,SOC-016,"km §171, §326, §550"
+SOC-117,F-media-process.md,SOC-017,"km §325, §173, §645, §674"
+SOC-118,F-media-process.md,SOC-018,"km §324, §620"
+SOC-119,F-media-process.md,SOC-019,hs §174
+SOC-120,F-media-process.md,SOC-020,"hs §174; km §169, §326"
+SOC-121,F-media-process.md,SOC-021,"km §173, §545, §705"
+SOC-122,F-media-process.md,SOC-022,"km §173, §645"
+SOC-123,F-media-process.md,SOC-023,"km §173, §547, §674, §705"
+SOC-124,F-media-process.md,SOC-024,hs §174
+SOC-125,F-media-process.md,SOC-025,hs §172
+SOC-126,F-media-process.md,SOC-026,uux §275
+SOC-127,F-media-process.md,SOC-027,uux §278
+SOC-128,F-media-process.md,SOC-028,uux §275
+SOC-129,F-media-process.md,SOC-029,"uux §269, §276, §277"
+SOC-130,F-media-process.md,SOC-030,uux §282
+SOC-131,F-media-process.md,SOC-031,"hs §165, §166"
+SOC-132,F-media-process.md,SOC-032,"hs §168, §169"
+SOC-133,F-media-process.md,SOC-033,uux §299
+TOK-101,B-type-color-tokens.md,TOK-001,"HM §138, §349; UU §307"
+TOK-102,B-type-color-tokens.md,TOK-002,"HM §413; UU §236, §242, §307, §461, §288"
+TOK-103,B-type-color-tokens.md,TOK-003,"HM §73, §416"
+TOK-104,B-type-color-tokens.md,TOK-004,"UU §307, §308"
+TOK-105,B-type-color-tokens.md,TOK-005,"HM §65, §138; UU §308"
+TOK-106,B-type-color-tokens.md,TOK-006,UU §308
+TOK-107,B-type-color-tokens.md,TOK-007,KM §24; HM §491
+TOK-108,B-type-color-tokens.md,TOK-008,HM §491
+TOK-109,B-type-color-tokens.md,TOK-009,"HM §349, §138"
+TOK-110,B-type-color-tokens.md,TOK-010,HM §348
+TOK-111,B-type-color-tokens.md,TOK-011,HM §494
+TOK-112,B-type-color-tokens.md,TOK-012,"HM §138, §348"
+TOK-113,B-type-color-tokens.md,TOK-013,"HM §348, §484"
+TOK-114,B-type-color-tokens.md,TOK-014,"UU §313, §336, §461, §666"
+TOK-115,B-type-color-tokens.md,TOK-015,"HM §348, §484"
+TOK-116,B-type-color-tokens.md,TOK-016,"UU §313, §667"
+TOK-117,B-type-color-tokens.md,TOK-017,HM §485
+TOK-118,B-type-color-tokens.md,TOK-018,HM §486
+TOK-119,B-type-color-tokens.md,TOK-019,"HM §77, §489; UU §312"
+TOK-120,B-type-color-tokens.md,TOK-020,"HM §73, §416, §417; TS §55; UU §310, §467"
+TOK-121,B-type-color-tokens.md,TOK-021,HM §487; UU §311
+TOK-122,B-type-color-tokens.md,TOK-022,TS §53
+TOK-123,B-type-color-tokens.md,TOK-023,KM §35; HM §413
+TOK-124,B-type-color-tokens.md,TOK-024,HM §377
+TOK-125,B-type-color-tokens.md,TOK-025,KM §35; HM §140
+TOK-126,B-type-color-tokens.md,TOK-026,KM §339
+TOK-127,B-type-color-tokens.md,TOK-027,KM §24
+TOK-128,B-type-color-tokens.md,TOK-028,"UU §315, §360; HM §301"
+TOK-129,B-type-color-tokens.md,TOK-029,HM §301
+TOK-130,B-type-color-tokens.md,TOK-030,UU §339
+TOK-131,B-type-color-tokens.md,TOK-031,HM §303; UU §242
+TOK-132,B-type-color-tokens.md,TOK-032,HM §350
+TOK-133,B-type-color-tokens.md,TOK-033,HM §350
+TOK-134,B-type-color-tokens.md,TOK-034,"HM §138, §349, §351"
+TOK-135,B-type-color-tokens.md,TOK-035,HM §350
+TOK-136,B-type-color-tokens.md,TOK-036,HM §350
+TOK-137,B-type-color-tokens.md,TOK-037,HM §353
+TOK-138,B-type-color-tokens.md,TOK-038,HM §352; UU §308
+TOK-139,B-type-color-tokens.md,TOK-039,HM §138
+TOK-140,B-type-color-tokens.md,TOK-040,HM §138
+TOK-141,B-type-color-tokens.md,TOK-041,AS §255
+TOK-142,B-type-color-tokens.md,TOK-042,HS §30
+TOK-143,B-type-color-tokens.md,TOK-043,HS §31; HM §134
+TOK-144,B-type-color-tokens.md,TOK-044,"HS §32, §73, §144"
+TOK-145,B-type-color-tokens.md,TOK-045,HM §139
+TOK-146,B-type-color-tokens.md,TOK-046,HM §140
+TOK-147,B-type-color-tokens.md,TOK-047,HM §141; HS §33
+TOK-148,B-type-color-tokens.md,TOK-048,"UU §461, §295, §307"
+TOK-149,B-type-color-tokens.md,TOK-049,HM §492
+TOK-150,B-type-color-tokens.md,TOK-050,"KM §16, §17"
+TYP-001,rules/curated.yaml,,impeccable §513; huashu §104
+TYP-002,rules/curated.yaml,,kami §35; hallmark §56; huashu §104
+TYP-003,rules/curated.yaml,,hallmark §291 §390; huashu §61 §125; taste-skill §30
+TYP-004,rules/curated.yaml,,kami §189 §624 §629; hallmark §462
+TYP-101,B-type-color-tokens.md,TYP-001,"HM §52, §290, §391; TS §57; HS §126 (max 2 CJK families)"
+TYP-102,B-type-color-tokens.md,TYP-002,HM §52; TS §57
+TYP-103,B-type-color-tokens.md,TYP-003,"HM §62, §390; HS §60, §61, §125; TS §30"
+TYP-104,B-type-color-tokens.md,TYP-004,"HS §125, §138; HM §291"
+TYP-105,B-type-color-tokens.md,TYP-005,HM §291; TS §30; HS §61
+TYP-106,B-type-color-tokens.md,TYP-006,"HM §292; HS §124, §125"
+TYP-107,B-type-color-tokens.md,TYP-007,HS §125
+TYP-108,B-type-color-tokens.md,TYP-008,HS §123
+TYP-109,B-type-color-tokens.md,TYP-009,"HS §123, §124"
+TYP-110,B-type-color-tokens.md,TYP-010,HS §117
+TYP-111,B-type-color-tokens.md,TYP-011,HM §290
+TYP-112,B-type-color-tokens.md,TYP-012,"HM §290, §293; HS §210; KM §53"
+TYP-113,B-type-color-tokens.md,TYP-013,HS §61
+TYP-114,B-type-color-tokens.md,TYP-014,"HM §64, §296"
+TYP-115,B-type-color-tokens.md,TYP-015,HM §64
+TYP-116,B-type-color-tokens.md,TYP-016,HS §124; HM §61
+TYP-117,B-type-color-tokens.md,TYP-017,"HM §61, §396, §298; HS §59, §60; TS §30"
+TYP-118,B-type-color-tokens.md,TYP-018,"HS §124, §134"
+TYP-119,B-type-color-tokens.md,TYP-019,"HM §290, §297"
+TYP-120,B-type-color-tokens.md,TYP-020,HS §117; HM §137
+TYP-121,B-type-color-tokens.md,TYP-021,"HS §118; HM §54; UU §90, §297"
+TYP-122,B-type-color-tokens.md,TYP-022,"HM §54, §348"
+TYP-123,B-type-color-tokens.md,TYP-023,KM §35; UU §90
+TYP-124,B-type-color-tokens.md,TYP-024,"HS §118, §138"
+TYP-125,B-type-color-tokens.md,TYP-025,TS §59; HM §170
+TYP-126,B-type-color-tokens.md,TYP-026,"HM §170, §399"
+TYP-127,B-type-color-tokens.md,TYP-027,HS §118
+TYP-128,B-type-color-tokens.md,TYP-028,"HS §119; HM §55, §487"
+TYP-129,B-type-color-tokens.md,TYP-029,HM §56
+TYP-130,B-type-color-tokens.md,TYP-030,"TS §30, §59"
+TYP-131,B-type-color-tokens.md,TYP-031,TS §59
+TYP-132,B-type-color-tokens.md,TYP-032,TS §59
+TYP-133,B-type-color-tokens.md,TYP-033,KM §47; UU §93
+TYP-134,B-type-color-tokens.md,TYP-034,HM §406
+TYP-135,B-type-color-tokens.md,TYP-035,"KM §187, §408; TS §59; HS §171"
+TYP-136,B-type-color-tokens.md,TYP-036,TS §59
+TYP-137,B-type-color-tokens.md,TYP-037,"HM §59, §398; UU §83, §298; TS §60; HS §74, §77; KM §34"
+TYP-138,B-type-color-tokens.md,TYP-038,"HM §59, §398; TS §59; KM §34, §187; UU §236"
+TYP-139,B-type-color-tokens.md,TYP-039,"ADP §228, §260; HS §77"
+TYP-140,B-type-color-tokens.md,TYP-040,"UU §146, §147, §236"
+TYP-141,B-type-color-tokens.md,TYP-041,"HS §75, §146; KM §34"
+TYP-142,B-type-color-tokens.md,TYP-042,"KM §32, §34, §187; HS §76"
+TYP-143,B-type-color-tokens.md,TYP-043,"HS §74, §167, §171"
+TYP-144,B-type-color-tokens.md,TYP-044,UU §279
+TYP-145,B-type-color-tokens.md,TYP-045,"KM §33, §34"
+TYP-146,B-type-color-tokens.md,TYP-046,KM §414
+TYP-147,B-type-color-tokens.md,TYP-047,HS §171
+TYP-148,B-type-color-tokens.md,TYP-048,TS §58; UU §298
+TYP-149,B-type-color-tokens.md,TYP-049,"HM §53, §392"
+TYP-150,B-type-color-tokens.md,TYP-050,"HM §53, §297; UU §297"
+TYP-151,B-type-color-tokens.md,TYP-051,"HM §53, §297, §488; KM §38; HS §131; TS §57"
+TYP-152,B-type-color-tokens.md,TYP-052,"TS §58, §210"
+TYP-153,B-type-color-tokens.md,TYP-053,"HM §57, §370"
+TYP-154,B-type-color-tokens.md,TYP-054,HM §300; KM §171
+TYP-155,B-type-color-tokens.md,TYP-055,"HM §59; UU §88, §236, §298; HS §77; TS §60"
+TYP-156,B-type-color-tokens.md,TYP-056,"HM §59, §398"
+TYP-157,B-type-color-tokens.md,TYP-057,"HM §55, §496; HS §121"
+TYP-158,B-type-color-tokens.md,TYP-058,"HM §55, §394, §298"
+TYP-159,B-type-color-tokens.md,TYP-059,HS §121; KM §40
+TYP-160,B-type-color-tokens.md,TYP-060,"KM §39, §40, §179"
+TYP-161,B-type-color-tokens.md,TYP-061,ADP §241; UU §57
+TYP-162,B-type-color-tokens.md,TYP-062,KM §60
+TYP-163,B-type-color-tokens.md,TYP-063,"HM §55, §496; TS §58, §210; HS §133, §138"
+TYP-164,B-type-color-tokens.md,TYP-064,HM §59; KM §41; UU §236
+TYP-165,B-type-color-tokens.md,TYP-065,"HM §60, §395, §298; TS §30; HS §59"
+TYP-166,B-type-color-tokens.md,TYP-066,"HM §395, §492"
+TYP-167,B-type-color-tokens.md,TYP-067,KM §42
+TYP-168,B-type-color-tokens.md,TYP-068,"HM §59, §397; UU §89, §298; HS §120; KM §45; TS §59"
+TYP-169,B-type-color-tokens.md,TYP-069,HM §397
+TYP-170,B-type-color-tokens.md,TYP-070,HM §397
+TYP-171,B-type-color-tokens.md,TYP-071,"HM §58, §488; UU §94"
+TYP-172,B-type-color-tokens.md,TYP-072,"HM §58, §400; HS §79, §122; UU §94"
+TYP-173,B-type-color-tokens.md,TYP-073,"HM §58, §401"
+TYP-174,B-type-color-tokens.md,TYP-074,"HM §56, §401; UU §94"
+TYP-175,B-type-color-tokens.md,TYP-075,HM §400; HS §122
+TYP-176,B-type-color-tokens.md,TYP-076,HM §407
+TYP-177,B-type-color-tokens.md,TYP-077,"HM §59, §404; UU §298; KM §46"
+TYP-178,B-type-color-tokens.md,TYP-078,"KM §46, §179"
+TYP-179,B-type-color-tokens.md,TYP-079,HM §59; UU §298
+TYP-180,B-type-color-tokens.md,TYP-080,UU §57
+TYP-181,B-type-color-tokens.md,TYP-081,UU §236; TS §29
+TYP-182,B-type-color-tokens.md,TYP-082,"HM §57, §370, §393; HS §59, §60"
+TYP-183,B-type-color-tokens.md,TYP-083,"HM §57, §298"
+TYP-184,B-type-color-tokens.md,TYP-084,"HM §57, §393"
+TYP-185,B-type-color-tokens.md,TYP-085,HM §298; TS §60
+TYP-186,B-type-color-tokens.md,TYP-086,HM §405
+TYP-187,B-type-color-tokens.md,TYP-087,KM §184
+TYP-188,B-type-color-tokens.md,TYP-088,"HM §60, §395"
+TYP-189,B-type-color-tokens.md,TYP-089,"HM §63, §298, §402, §307; HS §129, §138; KM §58, §190"
+TYP-190,B-type-color-tokens.md,TYP-090,"KM §58, §190"
+TYP-191,B-type-color-tokens.md,TYP-091,HS §129
+TYP-192,B-type-color-tokens.md,TYP-092,HM §294
+TYP-193,B-type-color-tokens.md,TYP-093,"HM §63, §403; AS §155; TS §60"
+TYP-194,B-type-color-tokens.md,TYP-094,"HM §63; TS §60; AS §150, §151"
+TYP-195,B-type-color-tokens.md,TYP-095,AS §152
+TYP-196,B-type-color-tokens.md,TYP-096,"HM §63, §496; KM §44"
+TYP-197,B-type-color-tokens.md,TYP-097,KM §59
+TYP-198,B-type-color-tokens.md,TYP-098,HS §136
+TYP-199,B-type-color-tokens.md,TYP-099,KM §191
+TYP-200,B-type-color-tokens.md,TYP-100,"HS §127, §138"
+TYP-201,B-type-color-tokens.md,TYP-101,HS §127; KM §51
+TYP-202,B-type-color-tokens.md,TYP-102,"KM §30, §189"
+TYP-203,B-type-color-tokens.md,TYP-103,"KM §52, §189"
+TYP-204,B-type-color-tokens.md,TYP-104,KM §52
+TYP-205,B-type-color-tokens.md,TYP-105,HS §137
+TYP-206,B-type-color-tokens.md,TYP-106,HS §121; KM §54; HS §77
+TYP-207,B-type-color-tokens.md,TYP-107,HS §120
+TYP-208,B-type-color-tokens.md,TYP-108,HS §118
+TYP-209,B-type-color-tokens.md,TYP-109,"HS §133; KM §41, §49, §54"
+TYP-210,B-type-color-tokens.md,TYP-110,HS §131
+TYP-211,B-type-color-tokens.md,TYP-111,"HS §79, §132; KM §50"
+TYP-212,B-type-color-tokens.md,TYP-112,HS §130
+TYP-213,B-type-color-tokens.md,TYP-113,HS §132; KM §52
+TYP-214,B-type-color-tokens.md,TYP-114,HS §128
+TYP-215,B-type-color-tokens.md,TYP-115,"HS §126, §138"
+TYP-216,B-type-color-tokens.md,TYP-116,KM §56
+TYP-217,B-type-color-tokens.md,TYP-117,KM §189
+TYP-218,B-type-color-tokens.md,TYP-118,"HM §63, §297; UU §64, §91; HS §137; TS §57"
+TYP-219,B-type-color-tokens.md,TYP-119,"HM §63, §297; UU §91"
+TYP-220,B-type-color-tokens.md,TYP-120,"HM §297, §493; AS (preload)"
+TYP-221,B-type-color-tokens.md,TYP-121,"AS §289, §290"
+TYP-222,B-type-color-tokens.md,TYP-122,AS §251
+TYP-223,B-type-color-tokens.md,TYP-123,ADP §240
+TYP-224,B-type-color-tokens.md,TYP-124,HM §462; TS §57
+TYP-225,B-type-color-tokens.md,TYP-125,HS §379
+VID-101,F-media-process.md,VID-001,hs §564
+VID-102,F-media-process.md,VID-002,hs §565
+VID-103,F-media-process.md,VID-003,"hs §565, §573"
+VID-104,F-media-process.md,VID-004,"hs §565, §567, §387"
+VID-105,F-media-process.md,VID-005,"hs §568, §403"
+VID-106,F-media-process.md,VID-006,hs §572
+VID-107,F-media-process.md,VID-007,"hs §110, §582"
+VID-108,F-media-process.md,VID-008,hs §569; audio part
+VID-109,F-media-process.md,VID-009,"hs §570, §380, §382"
+VID-110,F-media-process.md,VID-010,hs §571
+VID-111,F-media-process.md,VID-011,hs §572
+VID-112,F-media-process.md,VID-012,"hs §202, §384, §385"
+VID-113,F-media-process.md,VID-013,"hs §204, §570"
+VID-114,F-media-process.md,VID-014,"hs §579, §580, §378, §390, §396, §406"
+VID-115,F-media-process.md,VID-015,"hs §391, §393, §394"
+VID-116,F-media-process.md,VID-016,hs §397
+VID-117,F-media-process.md,VID-017,"hs §379, §381, §383, §581"
+VID-118,F-media-process.md,VID-018,"hs §395, §398"
+VID-119,F-media-process.md,VID-019,"hs §401, §399, §465"
+VID-120,F-media-process.md,VID-020,"hs §400, §460"
+VID-121,F-media-process.md,VID-021,hs §386
+VID-122,F-media-process.md,VID-022,hs §566
+VID-123,F-media-process.md,VID-023,"hs §582, §392"
+VID-124,F-media-process.md,VID-024,"hs §388, §389"
+VID-125,F-media-process.md,VID-025,hs §405
+VID-126,F-media-process.md,VID-026,"hs §477, §494"
+VID-127,F-media-process.md,VID-027,"hs §478, §479"
+VID-128,F-media-process.md,VID-028,hs §482
+VID-129,F-media-process.md,VID-029,hs §489
+VID-130,F-media-process.md,VID-030,voiceover part (hs ~§534)
+VID-131,F-media-process.md,VID-031,hs §327
+VID-132,F-media-process.md,VID-032,hs §377
+VID-133,F-media-process.md,VID-033,"hs §497, §576"
+VID-134,F-media-process.md,VID-034,"hs §457, §491"
+VID-135,F-media-process.md,VID-035,"hs §457, §458, §480"
+VID-136,F-media-process.md,VID-036,"hs §408, §456"
+VID-137,F-media-process.md,VID-037,hs §491
+VID-138,F-media-process.md,VID-038,"hs §493, §350, §463"
+VID-139,F-media-process.md,VID-039,"hs §420, §492"
+VID-140,F-media-process.md,VID-040,"hs §343, §355, §373"
+VID-141,F-media-process.md,VID-041,hs §501
+VID-142,F-media-process.md,VID-042,hs §507
+VID-143,F-media-process.md,VID-043,"hs §202, §526, §527"
+VID-144,F-media-process.md,VID-044,"hs §407, §410"
+VID-145,F-media-process.md,VID-045,"hs §344, §351, §414, §422"
+VID-146,F-media-process.md,VID-046,"hs §346, §370"
+VID-147,F-media-process.md,VID-047,"hs §345, §366"
+VID-148,F-media-process.md,VID-048,"hs §203, §362, audio part"
+VID-149,F-media-process.md,VID-049,"hs §29, §204"
+VID-150,F-media-process.md,VID-050,"hs §329, §371"
+VID-151,F-media-process.md,VID-051,hs §363
+WEB-001,rules/curated.yaml,,taste-skill §622; agent-skills; web-interface-guidelines
+WEB-101,F-media-process.md,WEB-001,"hm §256, §425; ts §635"
+WEB-102,F-media-process.md,WEB-002,"hm §4, §260, §425"
+WEB-103,F-media-process.md,WEB-003,"hm §4, §422, §453"
+WEB-104,F-media-process.md,WEB-004,hm §423
+WEB-105,F-media-process.md,WEB-005,"hm §260, §420, §421; uux §235"
+WEB-106,F-media-process.md,WEB-006,"hm §4, §424"
+WEB-107,F-media-process.md,WEB-007,hm §257
+WEB-108,F-media-process.md,WEB-008,hm §258
+WEB-109,F-media-process.md,WEB-009,"uux §231, §126; ts §643; hs §160"
+WEB-110,F-media-process.md,WEB-010,"hs §74, §77, §160; uux §235; km §34; hm §133"
+WEB-111,F-media-process.md,WEB-011,hm §259
+WEB-112,F-media-process.md,WEB-012,"hm §133, §435, §261"
+WEB-113,F-media-process.md,WEB-013,"hm §4, §426"
+WEB-114,F-media-process.md,WEB-014,hm §427
+WEB-115,F-media-process.md,WEB-015,uux §235
+WEB-116,F-media-process.md,WEB-016,"hm §132, §477; ts §602; km §709"
+WEB-117,F-media-process.md,WEB-017,"km §1712, §709, §143"
+WEB-118,F-media-process.md,WEB-018,as §278–§283
+WEB-119,F-media-process.md,WEB-019,ts §621
+WEB-120,F-media-process.md,WEB-020,"ts §622, §623; as §284, §285; hm §262"
+WEB-121,F-media-process.md,WEB-021,"as §284, §285"
+WEB-122,F-media-process.md,WEB-022,ts §624; as §289; hm §462
+WEB-123,F-media-process.md,WEB-023,as §291; uux §233
+WEB-124,F-media-process.md,WEB-024,"hs §160; hm §462, §463; ts §621"
+WEB-125,F-media-process.md,WEB-025,"hm §4, §130"
+WEB-126,F-media-process.md,WEB-026,"ts §626, §630"
+WEB-127,F-media-process.md,WEB-027,ts §632; uux §231
+WEB-128,F-media-process.md,WEB-028,"uux §117, §118"
+WEB-129,F-media-process.md,WEB-029,hm §454
+WEB-130,F-media-process.md,WEB-030,"hm §455, §483; ts §631"
+WEB-131,F-media-process.md,WEB-031,"hm §418, §419"
+WEB-132,F-media-process.md,WEB-032,hm §429
+WEB-133,F-media-process.md,WEB-033,hm §431
+WEB-134,F-media-process.md,WEB-034,hm §263
+WEB-135,F-media-process.md,WEB-035,hs §162; hm §4
+WEB-136,F-media-process.md,WEB-036,km §145
+WEB-137,F-media-process.md,WEB-037,km §704; hs §158
+WEB-138,F-media-process.md,WEB-038,km §601
+WEB-139,F-media-process.md,WEB-039,km §601
+WEB-140,F-media-process.md,WEB-040,as §55

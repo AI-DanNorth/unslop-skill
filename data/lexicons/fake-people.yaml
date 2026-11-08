@@ -1,0 +1,47 @@
+lexicon: fake-people
+match: substring of img/src, srcset, CSS url()
+rule: INT-003
+tier: Floor
+sources:
+- hallmark §389 §465 §467
+groups:
+- name: avatar-services
+  policy: fail
+  entries:
+  - term: pravatar
+    added: '2026-11-08'
+  - term: dicebear
+    added: '2026-11-08'
+  - term: randomuser
+    added: '2026-11-08'
+  - term: thispersondoesnotexist
+    added: '2026-11-08'
+  - term: ui-avatars
+    added: '2026-11-08'
+- name: placeholder-services
+  policy: fail
+  entries:
+  - term: placehold.co
+    added: '2026-11-08'
+  - term: via.placeholder.com
+    added: '2026-11-08'
+  - term: placeholder.com
+    added: '2026-11-08'
+  - term: dummyimage.com
+    added: '2026-11-08'
+  - term: picsum.photos
+    added: '2026-11-08'
+  - term: source.unsplash.com
+    added: '2026-11-08'
+- name: hotlinked-stock
+  policy: fail
+  note: hotlinking breaks licence and performance; self-host
+  entries:
+  - term: images.unsplash.com
+    added: '2026-11-08'
+  - term: images.pexels.com
+    added: '2026-11-08'
+  - term: cdn.pixabay.com
+    added: '2026-11-08'
+  - term: plus.unsplash.com
+    added: '2026-11-08'

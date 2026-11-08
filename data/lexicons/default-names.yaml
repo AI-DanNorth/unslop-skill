@@ -1,0 +1,98 @@
+lexicon: default-names
+match: case-sensitive whole name
+rule: INT-002
+policy_note: fail as real people or as the page's own brand; allowed only inside an obvious product-UI sample
+sources:
+- hallmark §110 §354-355
+- taste-skill §35 §43-44
+groups:
+- name: placeholder-people
+  policy: fail
+  entries:
+  - term: Jane Doe
+    added: '2026-11-08'
+  - term: John Smith
+    added: '2026-11-08'
+  - term: John Doe
+    added: '2026-11-08'
+  - term: Example User
+    added: '2026-11-08'
+- name: default-cast
+  policy: cap
+  budget: 0
+  note: model's default first names; flag when used for testimonials or team members
+  entries:
+  - term: Priya
+    added: '2026-11-08'
+  - term: Okafor
+    added: '2026-11-08'
+  - term: Raman
+    added: '2026-11-08'
+  - term: Natarajan
+    added: '2026-11-08'
+  - term: Sarah J.
+    added: '2026-11-08'
+  - term: Elara
+    added: '2026-11-08'
+  - term: Aisha
+    added: '2026-11-08'
+  - term: Lena M.
+    added: '2026-11-08'
+  - term: Marcus
+    added: '2026-11-08'
+  - term: Dana
+    added: '2026-11-08'
+  - term: Tomas
+    added: '2026-11-08'
+  - term: Nora
+    added: '2026-11-08'
+  - term: Mara
+    added: '2026-11-08'
+  - term: Theo
+    added: '2026-11-08'
+  - term: Isla
+    added: '2026-11-08'
+  - term: Maya
+    added: '2026-11-08'
+  - term: Ines
+    added: '2026-11-08'
+  - term: Jess
+    added: '2026-11-08'
+- name: fake-brands
+  policy: fail
+  entries:
+  - term: Acme
+    added: '2026-11-08'
+  - term: Nexus
+    added: '2026-11-08'
+  - term: Fieldnote
+    added: '2026-11-08'
+  - term: Kestrel
+    added: '2026-11-08'
+  - term: Halcyon
+    added: '2026-11-08'
+  - term: Brightloop
+    added: '2026-11-08'
+  - term: Northwind
+    added: '2026-11-08'
+  - term: Lumen
+    added: '2026-11-08'
+  - term: Nimbus
+    added: '2026-11-08'
+  - term: Zenith
+    added: '2026-11-08'
+  - term: Apex
+    added: '2026-11-08'
+  - term: Vertex
+    added: '2026-11-08'
+- name: fake-specifics
+  policy: fail
+  entries:
+  - term: Batch No. 047
+    added: '2026-11-08'
+  - term: Room 9, 6:12 a.m.
+    added: '2026-11-08'
+  - term: Field study no. 12
+    added: '2026-11-08'
+  - term: Example Kitchen
+    added: '2026-11-08'

@@ -1,0 +1,68 @@
+# Every numeric limit used by scripts/checks, keyed by detector.
+# Resolution order (core/precedence.md): brief > brand > media adapter > profile > this file.
+# `tier` is the default tier of a hit; `rule` is the card the finding cites.
+version: 1
+widths: {web: [320, 375, 414, 768, 1024, 1280, 1440, 1920], fold: [[1280, 800], [1440, 900], [1920, 1080]]}
+
+detectors:
+  # ---- slop: visual tells ---------------------------------------------------
+  eyebrow:          {rule: SLP-001, tier: Reflex, max_size_px: 14, max_ratio_to_heading: 0.45, min_tracking_em: 0.06, min_heading_px: 20, max_gap_px: 48, budget: 0}
+  numbered_labels:  {rule: SLP-002, tier: Reflex, max_size_px: 13, min_heading_ratio: 1.3, min_count: 2, budget: 0}
+  icon_tile:        {rule: SLP-003, tier: Reflex, min_px: 32, max_px: 128, min_tint_alpha: 0.05, min_repeats: 3}
+  side_tab_border:  {rule: SLP-004, tier: Reflex, min_side_px: 2, max_other_px: 1, min_radius_px: 4}
+  card_kit:         {rule: SLP-005, tier: Reflex, min_same_recipe: 4, wide_shadow_px: 32, min_row: 3}
+  container_monotony: {rule: SLP-006, tier: Reflex, min_selectors: 6}
+  gradient:         {rule: SLP-007, tier: Reflex, max_stops: 3, max_hue_span_deg: 40,
+                     banned_pairs: [[265, 330, 200, 264], [265, 330, 331, 25], [170, 230, 265, 330]]}   # violet-blue, violet-pink, cyan-violet (oklch hue ranges)
+  glow:             {rule: SLP-008, tier: Reflex, min_blur_x_alpha_px: 3, spotlight_min_alpha: 0.14}
+  neon_violet:      {rule: SLP-009, tier: Reflex, violet_hue: [265, 330], violet_min_chroma: 0.12, cyan_hue: [170, 230], cyan_min_chroma: 0.10, dark_bg_max_l: 0.40, min_px: 24}   # oklch hue and chroma
+  accent_footprint: {rule: CLR-001, tier: Reflex, fold: [1280, 800], warn_pct: 5, fail_pct: 8}
+  stock_swatches:   {rule: CLR-002, tier: Reflex, lexicon: swatches}
+  # ---- type and spacing -----------------------------------------------------
+  flat_hierarchy:   {rule: TYP-001, tier: Reflex, min_ratio: 1.25, min_roles: 3}
+  type_ladder:      {rule: TYP-002, tier: Reflex, max_distinct_sizes: 8, warn_families: 3, fail_families: 4}
+  banned_fonts:     {rule: TYP-003, tier: Reflex, lexicon: fonts, display_min_px: 32}
+  fallback_face:    {rule: TYP-004, tier: Floor, bad_faces: [DejaVu Sans, DejaVu Serif, Bitstream Vera, Calibri, Aptos, Times New Roman]}
+  spacing_monotony: {rule: LAY-001, tier: Reflex, max_share_one_value: 0.60, min_values: 10, min_distinct: 4}
+  off_scale_spacing: {rule: LAY-002, tier: Finish, base_px: 4, max_off_scale: 3}
+  heading_rhythm:   {rule: LAY-003, tier: Reflex, min_violations: 2}
+  dead_band:        {rule: LAY-004, tier: Reflex, max_empty_px: 160}
+  # ---- copy -----------------------------------------------------------------
+  words_per_screen: {rule: CPY-001, tier: Reflex, screen_px: 900, warn: 80, fail: 95}
+  page_words:       {rule: CPY-002, tier: Reflex, fail: 450}
+  h1_words:         {rule: CPY-003, tier: Reflex, fail: 7, max_chars: 50}
+  em_dash:          {rule: CPY-004, tier: Reflex, budget: 0, saturation_count: 8, saturation_per_chars: 500}
+  lexicon_copy:     {rule: CPY-005, tier: Reflex, lexicons: [buzzwords, stock-phrases, button-labels, self-labels, chrome-glyphs]}
+  repeated_label:   {rule: CPY-006, tier: Reflex, min_repeats_in_card: 3}
+  chrome_glyphs:    {rule: SLP-010, tier: Reflex, budget: 0}
+  # ---- integrity ------------------------------------------------------------
+  invented_metrics: {rule: INT-001, tier: Floor, lexicon: invented-metrics}
+  default_names:    {rule: INT-002, tier: Reflex, lexicon: default-names}
+  fake_people:      {rule: INT-003, tier: Floor, lexicon: fake-people}
+  fake_send:        {rule: INT-004, tier: Floor, lexicon: fake-success}
+  placeholder_residue: {rule: INT-005, tier: Floor, lexicon: self-labels, group: residue}
+  data_slots:       {rule: INT-006, tier: Reflex, max_per_page: 2, pattern: "\\[DATA NEEDED"}
+  # ---- accessibility --------------------------------------------------------
+  contrast:         {rule: A11-001, tier: Floor, body: 4.5, large: 3.0, large_px: 24, large_bold_px: 18.66, apca_body_lc: 60, apca_large_lc: 45}
+  text_floor:       {rule: A11-002, tier: Floor, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2}
+  focus_ring:       {rule: A11-003, tier: Floor, min_contrast: 3.0, fail_below: 2.95}
+  targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex}
+  img_alt:          {rule: A11-005, tier: Floor}
+  control_names:    {rule: A11-006, tier: Floor}
+  headings_landmarks: {rule: A11-007, tier: Reflex}
+  lang_and_title:   {rule: A11-008, tier: Floor}
+  zoom_blocked:     {rule: A11-009, tier: Floor}
+  form_labels:      {rule: A11-010, tier: Floor}
+  reduced_motion:   {rule: A11-011, tier: Floor}
+  # ---- robustness and motion ------------------------------------------------
+  hidden_content:   {rule: ROB-001, tier: Floor, max_hidden_share: 0.30, observer_wait_ms: 4000}
+  phone_parity:     {rule: ROB-002, tier: Reflex, desktop: 1440, phone: 375, max_hidden_words: 40}
+  overflow:         {rule: ROB-003, tier: Floor, tolerance_px: 1}
+  widows:           {rule: ROB-004, tier: Finish, min_last_line_share: 0.35, widths: [375, 1280]}
+  motion_css:       {rule: MOT-001, tier: Reflex, max_overshoot: 1.05, exit_ratio: [0.60, 0.75], banned: ["transition: all", "transition-property: all"], layout_props: [width, height, top, left, right, bottom, margin, padding]}
+  performance:      {rule: WEB-001, tier: Reflex, lcp_warn_ms: 2500, lcp_fail_ms: 4500, image_max_kb: 400, image_max_ratio: 2.0}
+  # ---- capture and cross-output ---------------------------------------------
+  near_blank:       {rule: PRC-001, tier: Floor, max_diff_share: 0.008, level: 24}
+  look_family:      {rule: SLP-012, tier: Reflex, families_file: look-families.yaml}
+  distinctness:     {rule: SLP-011, tier: Reflex, min_palette_oklab: 0.06, max_edge_corr: 0.55, ledger_size: 8}
+  redesign_loss:    {rule: PRC-002, tier: Floor, max_word_drop: 0.40}

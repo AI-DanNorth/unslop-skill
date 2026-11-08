@@ -1,0 +1,42 @@
+lexicon: invented-metrics
+match: regex over visible text
+rule: INT-001
+tier: Floor
+policy_note: a finding unless the contract lists the figure with unit and source
+sources:
+- hallmark §362
+- taste-skill §40 §43
+- huashu §60
+- kami §299
+groups:
+- name: multipliers
+  policy: fail
+  entries:
+  - term: \b\d+(\.\d+)?x (faster|better|more|cheaper|quicker)\b
+    added: '2026-11-08'
+- name: social-proof-counts
+  policy: fail
+  entries:
+  - term: \btrusted by [\d,.]+\+?
+    added: '2026-11-08'
+  - term: \b[\d,.]+\+ (happy )?(customers|teams|users|developers|companies|businesses)\b
+    added: '2026-11-08'
+- name: percent-claims
+  policy: fail
+  entries:
+  - term: \b\d{2}(\.\d+)?% (faster|fewer|more|less|uptime|satisfied|conversion|revenue|cheaper)\b
+    added: '2026-11-08'
+  - term: \b99\.9+% uptime\b
+    added: '2026-11-08'
+  - term: \+\d+% (conversion|revenue|growth)\b
+    added: '2026-11-08'
+- name: time-savings
+  policy: fail
+  entries:
+  - term: \bsaves? \d+ (hours|minutes|days)\b
+    added: '2026-11-08'
+- name: uncited-decimal
+  policy: info
+  entries:
+  - term: \b\d{1,2}\.\d%
+    added: '2026-11-08'

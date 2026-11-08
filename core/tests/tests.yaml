@@ -1,0 +1,100 @@
+# Named tests. Lenses cite a test id as evidence ("failed T-GHOST-DECK").
+# kind: J = a judgment procedure for a lens; M = scripted (detector named).
+- {id: T-RIVAL-NAME, name: Rival's-name swap, lens: [concept, copy], kind: J,
+   run: "Put a competitor's name, or the same trade in another town, into the h1, sub-line and every heading.",
+   pass: "No line stays true. If the design still holds under another client's name, Concept is capped at 5.",
+   sources: ["hallmark §14 §101", "taste-skill §642", "huashu §97", "impeccable §149"]}
+- {id: T-MIRROR, name: Mirror, lens: [concept], kind: J,
+   run: "Ask whether a neighbouring brief in the same category would get this hero, nav, footer and first section.",
+   pass: "No. If yes, change one decision and name it.", sources: ["hallmark §12"]}
+- {id: T-ONE-SENTENCE, name: One-sentence idea, lens: [concept], kind: J,
+   run: "State the design's idea in one sentence.", pass: "It can be done.", sources: ["huashu §97", "hallmark §15"]}
+- {id: T-COVER-TEXT, name: Cover-the-text, lens: [concept], kind: J,
+   run: "Hide all text and logos.", pass: "The theme is still recognisable.", sources: ["huashu §97"]}
+- {id: T-REMOVE-DEVICE, name: Remove-the-device, lens: [concept], kind: J,
+   run: "Remove the central metaphor or device.", pass: "The page still works and is no less clear.", sources: ["huashu §54 §115"]}
+- {id: T-DEFAULT-AGENT, name: Default-agent kill question, lens: [concept, slop], kind: J,
+   run: "Could typing 'landing page' into an agent produce this?", pass: "No.", sources: ["design-taste §6 §62"]}
+- {id: T-MEMORY, name: Memory, lens: [concept], kind: J,
+   run: "Look at the first viewport only, then away.", pass: "You can describe a thing, not a mood.", sources: ["impeccable §225"]}
+- {id: T-SQUINT, name: Squint, lens: [structure], kind: H, detector: blur_render,
+   run: "Blur the render (Gaussian 8px at 1440).", pass: "Primary, secondary and groups read in order; heavy and light rhythm.",
+   sources: ["hallmark §151 §210", "huashu §99", "impeccable §62"]}
+- {id: T-SKELETON, name: Skeleton, lens: [structure], kind: J,
+   run: "Strip the copy from a section.", pass: "Structure alone says what it is.", sources: ["impeccable §290"]}
+- {id: T-SCREEN-BY-SCREEN, name: Screen-by-screen, lens: [structure], kind: J,
+   run: "Scroll at 1440x900 one screen at a time (capture tiles).", pass: "Every screen has something big enough to be its reason. Outranks detail findings.",
+   sources: ["hallmark §157 §210"]}
+- {id: T-JUDGE-TILE, name: Judge tile, lens: [structure], kind: H, detector: viewport_tiles,
+   run: "Screenshot at scrollY = k x viewport height.", pass: "Each tile shows one section, no neighbour's heading.", sources: ["taste-skill §71 §78"]}
+- {id: T-ANATOMY, name: Anatomy, lens: [structure], kind: J,
+   run: "Check the primary action sits where category sites put it and the category's own sections are present.",
+   pass: "Yes, yes, and the sequence could not sit under another business.", sources: ["hallmark §17 §518"]}
+- {id: T-FIVE-SECOND, name: Five-second, lens: [structure, copy], kind: J,
+   run: "First screen only.", pass: "What it is, who it is for and what to do are answered.", sources: ["taste-skill §4", "huashu §158", "design-taste §39"]}
+- {id: T-EYEBROW, name: Eyebrow, lens: [slop], kind: H, detector: eyebrow,
+   run: "Cover the small line above a heading and reread.", pass: "A fact, destination or identifier is lost. Otherwise promote it into the heading.",
+   sources: ["hallmark §111 §369", "kami §4", "impeccable §520"]}
+- {id: T-LABEL-TRANSFORM, name: Label transform-delete, lens: [typography, slop], kind: J,
+   run: "Remove text-transform and tracking from a label.", pass: "It reads worse; if not, the caps were costume.", sources: ["hallmark §60"]}
+- {id: T-FINGERPRINT, name: Fingerprint, lens: [slop], kind: H, detector: fingerprint,
+   run: "Record six axes and compare with the last 3 builds in the ledger.", pass: "At most 3 of 6 shared.", sources: ["hallmark §233 §234 §519"]}
+- {id: T-LOOK-LEDGER, name: Look-ledger, lens: [slop], kind: M, detector: distinctness,
+   run: "Compare background family, palette, headline face and skeleton with the last 8 deliveries.",
+   pass: "No trait recurs in more than max(2, 50%) of them; palette oklab distance >= 0.06; edge-map correlation <= 0.55.", sources: ["huashu §69 §111"]}
+- {id: T-OVER-CORRECTION, name: Over-correction, lens: [slop, copy], kind: J,
+   run: "After a fix, look for the habit that replaced the removed one.", pass: "None multiplied.", sources: ["taste-skill §51 §642"]}
+- {id: T-THREE-LINE, name: Three tests per line, lens: [copy], kind: J,
+   run: "For each claim: can the reader picture it, could it be proven false, could only this business say it?", pass: "Yes to all three.", sources: ["hallmark §102"]}
+- {id: T-FRESH-READER, name: Fresh-reader, lens: [copy], kind: J,
+   run: "Give a fresh reader or model only the text: what, for whom, why this, cost, hesitations, which 3 lines sound generic.",
+   pass: "Correct answers, no generic lines. Never iterate to beat a detector.", sources: ["taste-skill §642", "writing-guidelines §86"]}
+- {id: T-READ-ALOUD, name: Read-aloud and nine-trades, lens: [copy], kind: J,
+   run: "Read as the client; picture the voice on nine other businesses.", pass: "They would say it; it fits none of the nine.", sources: ["taste-skill §330 §332"]}
+- {id: T-SECOND-READ, name: Second-read and by-monkeys, lens: [copy], kind: J,
+   run: "Read each sentence once at speaking pace; append 'by monkeys' after verbs.", pass: "Parses first time; no passive.", sources: ["writing-guidelines §10 §18", "agent-skills §107 §116"]}
+- {id: T-GHOST-DECK, name: Ghost deck, lens: [media-slides, structure], kind: H, detector: slide_titles,
+   run: "Read only slide titles in order.", pass: "They tell the argument as assertions, each unique.", sources: ["kami §129 §304 §703"]}
+- {id: T-SO-WHAT, name: So-what, lens: [copy], kind: J,
+   run: "Ask 'so what?' of each claim and bullet.", pass: "Each answers why the reader should care.", sources: ["kami §240 §242 §699"]}
+- {id: T-DELETION, name: Deletion (image, line, element), lens: [imagery, structure], kind: J,
+   run: "Remove it.", pass: "Meaning, state, grouping, navigation or a fact is lost.", sources: ["hallmark §114", "kami §428", "huashu §71 §180"]}
+- {id: T-FILLER, name: Filler, lens: [integrity], kind: J,
+   run: "Remove an element; ask what problem it solves and whether its data is real.", pass: "Worse without it; solves a real problem; real data.", sources: ["huashu §71 §101"]}
+- {id: T-FAKE-SEND, name: Fake-send, lens: [integrity], kind: M, detector: fake_send,
+   run: "Submit every form with the network blocked.", pass: "No success copy appears; an honest failure message shows.", sources: ["hallmark §364 §510"]}
+- {id: T-DIAGRAM-EARNS, name: Diagram earns its place, lens: [dataviz], kind: J,
+   run: "Would a paragraph or table teach as much? Can any node, arrow or label be removed?", pass: "No and no.", sources: ["diagram-design §4 §5", "kami §338"]}
+- {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,
+   run: "Ask a reader to state a diagram's main path.", pass: "Done in 30 seconds.", sources: ["kami §398"]}
+- {id: T-GRAYSCALE, name: Grayscale, lens: [dataviz, color], kind: H, detector: grayscale_render,
+   run: "View the chart or palette in grayscale.", pass: "Meaning survives without hue.", sources: ["ui-ux-pro-max §256"]}
+- {id: T-GRADIENT-STOPS, name: Gradient-stop contrast, lens: [color, a11y], kind: M, detector: contrast,
+   run: "Sample the darkest and lightest pixels behind each text run.", pass: "Worst sample meets 4.5:1 body, 3:1 large.", sources: ["hallmark §411 §454"]}
+- {id: T-TAB-THROUGH, name: Focus by tabbing, lens: [a11y], kind: M, detector: focus_walk,
+   run: "Tab from page top through every control.", pass: "Skip link first; visible ring at 3:1 or better; never under a sticky header.", sources: ["hallmark §455", "taste-skill §639"]}
+- {id: T-HIDDEN-CONTENT, name: Three-condition hidden content, lens: [robustness, motion], kind: M, detector: hidden_content,
+   run: "Load with reduced motion, with IntersectionObserver never firing for 4s, and with scripts off.", pass: "All content visible in all three; under 30% of text hidden after load.",
+   sources: ["taste-skill §437", "hallmark §445"]}
+- {id: T-PURPOSE, name: Purpose and 50th use, lens: [motion], kind: J,
+   run: "Say what each animation communicates; imagine its 50th use today.", pass: "It has a job and is still wanted.", sources: ["agent-skills §1", "Design Rules 1 §2"]}
+- {id: T-RAPID-TOGGLE, name: Rapid toggle, lens: [motion], kind: M, detector: rapid_toggle,
+   run: "Click a control repeatedly mid-transition.", pass: "Final state correct; nothing stuck.", sources: ["ui-ux-pro-max §16"]}
+- {id: T-STRESS, name: Stress matrix, lens: [robustness], kind: H, detector: stress,
+   run: "Inject fixtures (data/fixtures) varying length, script, quantity and state.", pass: "Nothing visibly breaks.", sources: ["krehel §113"]}
+- {id: T-SLOW-LINE, name: Slow mobile line, lens: [robustness], kind: M, detector: slow_network,
+   run: "Throttle to 1.6 Mbit/s with 400ms RTT and scroll.", pass: "No image frame empty 1s after it enters the viewport.", sources: ["taste-skill §622"]}
+- {id: T-PHONE-PARITY, name: Phone parity, lens: [robustness], kind: M, detector: phone_parity,
+   run: "Compare words visible at 1440 and at 375.", pass: "Fewer than 40 words hidden on phone.", sources: ["hallmark §435"]}
+- {id: T-COVER-FRAME, name: Cover (video), lens: [media-video], kind: J,
+   run: "Pause at 3 random times.", pass: "Each frame works as a cover: one protagonist, at most 3 active elements.", sources: ["huashu §478 §479"]}
+- {id: T-THUMBNAIL, name: 50% thumbnail and 3-metre, lens: [media-social, media-video], kind: H, detector: thumbnail,
+   run: "View at 50% size (social) or phone size (video frame).", pass: "Text readable.", sources: ["ui-ux-pro-max §278", "huashu §489"]}
+- {id: T-VERIFY-VERIFIER, name: Verify the verifier, lens: [capture], kind: M, detector: control_render,
+   run: "Render evals/seeded-defects/control.html before the artifact.", pass: "Expected text and element counts match exactly; screenshot not near-blank.", sources: ["huashu §106"]}
+- {id: T-SEEDED-DEFECT, name: Seeded defect, lens: [sweep], kind: M, detector: self_test,
+   run: "Run every detector on evals/seeded-defects/seeded.html.", pass: "Every detector flags its seed; none flags the control.", sources: ["ux-ui-agent-skills §262"]}
+- {id: T-REPRODUCTION-DIFF, name: Reproduction diff, lens: [fidelity], kind: H, detector: comp_diff,
+   run: "Screenshot the build at comp size and compare region by region.", pass: "Largest divergence named; first-viewport fidelity >= 0.72.", sources: ["hallmark §149", "impeccable §497"]}
+- {id: T-VARIANT-JUDGING, name: Variant judging, lens: [explore-directions], kind: J,
+   run: "Show each option alone, full size, with real neighbours and data.", pass: "Never judged from thumbnails or with a favourite picked first.", sources: ["krehel §115", "Design Rules 1 §25"]}

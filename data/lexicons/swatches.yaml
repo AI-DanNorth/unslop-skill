@@ -1,0 +1,105 @@
+lexicon: swatches
+match: computed colour of tokens (custom properties) and large fills, case-insensitive hex
+rule: CLR-002
+sources:
+- hallmark §371 §386-387 §408
+- kami §688
+- huashu §58-60 §68 §213 §215
+- taste-skill §31
+groups:
+- name: tailwind-defaults
+  policy: fail
+  note: as brand tokens
+  entries:
+  - term: '#0f172a'
+    added: '2026-11-08'
+  - term: '#1e293b'
+    added: '2026-11-08'
+  - term: '#64748b'
+    added: '2026-11-08'
+  - term: '#f8fafc'
+    added: '2026-11-08'
+  - term: '#6366f1'
+    added: '2026-11-08'
+  - term: '#8b5cf6'
+    added: '2026-11-08'
+  - term: '#3b82f6'
+    added: '2026-11-08'
+  - term: '#06b6d4'
+    added: '2026-11-08'
+  - term: '#6b7280'
+    added: '2026-11-08'
+  - term: '#9ca3af'
+    added: '2026-11-08'
+  - term: '#d1d5db'
+    added: '2026-11-08'
+  - term: '#e5e7eb'
+    added: '2026-11-08'
+  - term: '#f3f4f6'
+    added: '2026-11-08'
+  - term: '#4b5563'
+    added: '2026-11-08'
+  - term: '#374151'
+    added: '2026-11-08'
+  - term: '#1f2937'
+    added: '2026-11-08'
+  - term: '#111827'
+    added: '2026-11-08'
+- name: bootstrap-neutrals
+  policy: fail
+  note: as brand tokens
+  entries:
+  - term: '#f8f9fa'
+    added: '2026-11-08'
+  - term: '#e9ecef'
+    added: '2026-11-08'
+  - term: '#dee2e6'
+    added: '2026-11-08'
+  - term: '#ced4da'
+    added: '2026-11-08'
+  - term: '#adb5bd'
+    added: '2026-11-08'
+  - term: '#6c757d'
+    added: '2026-11-08'
+  - term: '#495057'
+    added: '2026-11-08'
+  - term: '#343a40'
+    added: '2026-11-08'
+  - term: '#212529'
+    added: '2026-11-08'
+- name: pure
+  policy: info
+  note: flag when undocumented (C09)
+  entries:
+  - term: '#000000'
+    added: '2026-11-08'
+  - term: '#ffffff'
+    added: '2026-11-08'
+  - term: '#0b0b0b'
+    added: '2026-11-08'
+  - term: '#111111'
+    added: '2026-11-08'
+- name: ai-look-anchors
+  policy: info
+  note: count toward look families
+  entries:
+  - term: '#f4f1ea'
+    added: '2026-11-08'
+  - term: '#f5f0e8'
+    added: '2026-11-08'
+  - term: '#f6efe6'
+    added: '2026-11-08'
+  - term: '#d97757'
+    added: '2026-11-08'
+  - term: '#cc785c'
+    added: '2026-11-08'
+  - term: '#0d1117'
+    added: '2026-11-08'
+  - term: '#0066ff'
+    added: '2026-11-08'
+  - term: '#39ff14'
+    added: '2026-11-08'
+  - term: '#5b5bd6'
+    added: '2026-11-08'
+  - term: '#7c7cff'
+    added: '2026-11-08'

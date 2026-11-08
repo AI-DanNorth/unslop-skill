@@ -1,0 +1,19 @@
+# Hostile content for the stress skill (authored: no source supplies a list). Robustness findings cite the fixture id.
+text:
+  - {id: F-LONG-NAME, value: "Maximiliana Wolfeschlegelsteinhausen-Bergerdorff Ostrander"}         # 60 chars
+  - {id: F-UNBROKEN, value: "Donaudampfschiff"}                                                     # 16-char unbroken word
+  - {id: F-URL, value: "https://example.com/a/very/long/path/that/keeps/going/and/never/wraps?ref=campaign-2026"}
+  - {id: F-GERMAN, expand: 1.35, note: "multiply every visible string length by 1.35"}
+  - {id: F-ARABIC, value: "مرحباً بك في لوحة التحكم الخاصة بك", dir: rtl}
+  - {id: F-HEBREW, value: "ברוכים הבאים ללוח הבקרה שלך", dir: rtl}
+  - {id: F-EMOJI, value: "Team 🎉👩🏽‍💻 launch ✔︎ café naïve Zoë"}
+  - {id: F-COMBINING, value: "Z̤͔ͧ̑̓ä͖̭̈̇lͮ̒ͫǧ̗͚̚o̙̔ͮ̇͐̇"}
+  - {id: F-CJK, value: "这是一个用于测试换行和标点符号处理的较长中文句子，包括逗号、句号。"}
+  - {id: F-EMPTY, value: ""}
+  - {id: F-WHITESPACE, value: "   "}
+counts: [0, 1, 2, 99, 1000, 10000, 1234567]
+states: [loading, empty, error, partial, offline, permission-denied, very-many-items]
+images: {missing: "/__unslop_missing__.jpg", tall: [400, 2400], wide: [2400, 300]}
+network: {slow: {download_kbps: 1600, latency_ms: 400}, offline: true}
+viewport_extras: [[320, 568], [2560, 1440]]
+zoom: [2.0]           # WCAG 1.4.4 resize text

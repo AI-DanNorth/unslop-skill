@@ -1,0 +1,36 @@
+lexicon: fake-success
+match: text that appears after submitting a form that made no network request
+rule: INT-004
+tier: Floor
+sources:
+- hallmark §93 §364 §510
+groups:
+- name: success-strings
+  policy: fail
+  entries:
+  - term: Sent
+    added: '2026-11-08'
+  - term: Thanks
+    added: '2026-11-08'
+  - term: Thank you
+    added: '2026-11-08'
+  - term: Reserved
+    added: '2026-11-08'
+  - term: Booked
+    added: '2026-11-08'
+  - term: You're on the list
+    added: '2026-11-08'
+  - term: Subscribed
+    added: '2026-11-08'
+  - term: Confirmed
+    added: '2026-11-08'
+  - term: All set
+    added: '2026-11-08'
+  - term: You're in
+    added: '2026-11-08'
+  - term: Success
+    added: '2026-11-08'
+honest_replacements:
+- 'Nothing was sent: this form is not connected yet.'
+- That address looks incomplete. Write it as name@example.com.
+- That did not go through. Try again in a minute.

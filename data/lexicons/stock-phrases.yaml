@@ -1,0 +1,123 @@
+lexicon: stock-phrases
+match: phrase, case-insensitive, regex allowed
+rule: CPY-005
+sources:
+- taste-skill §38-40
+- hallmark §106 §357
+- kami §238 §298 §303
+- agent-skills §124 §129
+groups:
+- name: openers
+  policy: fail
+  entries:
+  - term: in today's (fast-paced|digital|modern|ever-changing|busy|rapidly evolving)
+    added: '2026-11-08'
+  - term: in today's landscape
+    added: '2026-11-08'
+  - term: built for the modern team
+    added: '2026-11-08'
+  - term: whether you're (a|an)\b
+    added: '2026-11-08'
+  - term: unlock the (power|potential)
+    added: '2026-11-08'
+  - term: harness the power
+    added: '2026-11-08'
+  - term: the future of \w+ is (here|now)
+    added: '2026-11-08'
+  - term: say goodbye to
+    added: '2026-11-08'
+  - term: look no further
+    added: '2026-11-08'
+  - term: join (thousands|millions|hundreds) of
+    added: '2026-11-08'
+  - term: trusted by (teams|businesses|companies|brands|people) (worldwide|everywhere|around the world)
+    added: '2026-11-08'
+  - term: quietly trusted by
+    added: '2026-11-08'
+  - term: imagine a world
+    added: '2026-11-08'
+  - term: ready to (transform|take your|elevate|level up)
+    added: '2026-11-08'
+  - term: ever-evolving
+    added: '2026-11-08'
+  - term: one-stop shop
+    added: '2026-11-08'
+  - term: to the next level
+    added: '2026-11-08'
+  - term: (it's|this is|we're) not just an?\b
+    added: '2026-11-08'
+  - term: not only .{1,60} but also
+    added: '2026-11-08'
+  - term: here's the thing
+    added: '2026-11-08'
+  - term: let that sink in
+    added: '2026-11-08'
+  - term: let's dive in
+    added: '2026-11-08'
+  - term: it's (important|worth) (to note|noting)
+    added: '2026-11-08'
+  - term: (in|with) just a few clicks
+    added: '2026-11-08'
+  - term: we've got you covered
+    added: '2026-11-08'
+  - term: the possibilities are endless
+    added: '2026-11-08'
+  - term: at your fingertips
+    added: '2026-11-08'
+  - term: \w+ made (simple|easy)
+    added: '2026-11-08'
+  - term: everything you need to
+    added: '2026-11-08'
+  - term: all in one place
+    added: '2026-11-08'
+  - term: enter your email below
+    added: '2026-11-08'
+  - term: made with ♥
+    added: '2026-11-08'
+  - term: made with <3
+    added: '2026-11-08'
+  - term: this means that
+    added: '2026-11-08'
+- name: not-x-but-y
+  policy: cap
+  budget: 1
+  entries:
+  - term: \bit'?s not (just )?[^.,;]{1,40}[,;—-] it'?s\b
+    added: '2026-11-08'
+  - term: \bnot [^.,;]{1,30}\. (it'?s|just)\b
+    added: '2026-11-08'
+- name: staged-reveals
+  policy: fail
+  entries:
+  - term: the result?
+    added: '2026-11-08'
+  - term: why does this matter?
+    added: '2026-11-08'
+  - term: 'one thing changed:'
+    added: '2026-11-08'
+  - term: this section shows
+    added: '2026-11-08'
+  - term: below, you'll find
+    added: '2026-11-08'
+  - term: here are \d+ reasons
+    added: '2026-11-08'
+  - term: we've added
+    added: '2026-11-08'
+- name: chat-residue
+  policy: fail
+  entries:
+  - term: certainly!
+    added: '2026-11-08'
+  - term: i hope this helps
+    added: '2026-11-08'
+  - term: as an ai
+    added: '2026-11-08'
+  - term: great question!
+    added: '2026-11-08'
+- name: suspect
+  policy: info
+  entries:
+  - term: all rights reserved
+    added: '2026-11-08'
+  - term: no credit card required
+    added: '2026-11-08'

@@ -1,0 +1,108 @@
+lexicon: fonts
+match: resolved font-family of rendered text (not the declared stack)
+rule: TYP-003
+sources:
+- hallmark §291 §292 §386 §390
+- huashu §61 §67 §125 §210
+- taste-skill §30
+groups:
+- name: banned-as-display
+  policy: fail
+  applies_to: display (>= 32px or h1-h2)
+  entries:
+  - term: Inter
+    added: '2026-11-08'
+  - term: Roboto
+    added: '2026-11-08'
+  - term: Open Sans
+    added: '2026-11-08'
+  - term: Poppins
+    added: '2026-11-08'
+  - term: Lato
+    added: '2026-11-08'
+  - term: Arial
+    added: '2026-11-08'
+  - term: Helvetica
+    added: '2026-11-08'
+  - term: Helvetica Neue
+    added: '2026-11-08'
+  - term: Segoe UI
+    added: '2026-11-08'
+  - term: system-ui
+    added: '2026-11-08'
+  - term: -apple-system
+    added: '2026-11-08'
+  - term: Source Sans
+    added: '2026-11-08'
+  - term: Nunito
+    added: '2026-11-08'
+  - term: Montserrat
+    added: '2026-11-08'
+  - term: Raleway
+    added: '2026-11-08'
+  - term: Work Sans
+    added: '2026-11-08'
+  - term: DM Sans
+    added: '2026-11-08'
+  - term: Plus Jakarta Sans
+    added: '2026-11-08'
+- name: saturated
+  policy: info
+  note: counts toward a look-family cluster; needs an argument in the contract
+  entries:
+  - term: Playfair Display
+    added: '2026-11-08'
+  - term: Cormorant
+    added: '2026-11-08'
+  - term: Cormorant Garamond
+    added: '2026-11-08'
+  - term: DM Serif Display
+    added: '2026-11-08'
+  - term: Fraunces
+    added: '2026-11-08'
+  - term: Instrument Serif
+    added: '2026-11-08'
+  - term: Recoleta
+    added: '2026-11-08'
+  - term: Space Grotesk
+    added: '2026-11-08'
+  - term: Hubot Sans
+    added: '2026-11-08'
+  - term: Bebas Neue
+    added: '2026-11-08'
+  - term: Unbounded
+    added: '2026-11-08'
+  - term: Geist
+    added: '2026-11-08'
+  - term: Instrument Sans
+    added: '2026-11-08'
+  - term: Mona Sans
+    added: '2026-11-08'
+  - term: Gloock
+    added: '2026-11-08'
+  - term: Newsreader
+    added: '2026-11-08'
+  - term: Canela
+    added: '2026-11-08'
+- name: never-specify-paid
+  policy: fail
+  note: paid faces cannot ship unlicensed
+  entries:
+  - term: Söhne
+    added: '2026-11-08'
+  - term: Circular
+    added: '2026-11-08'
+substitutes:
+  Fraunces:
+  - Newsreader
+  - Libre Caslon Text
+  Inter (display):
+  - Archivo
+  - Anton
+  - Schibsted Grotesk
+  Space Grotesk:
+  - Schibsted Grotesk
+  - Familjen Grotesk
+  Playfair Display:
+  - Cormorant
+  - DM Serif Display

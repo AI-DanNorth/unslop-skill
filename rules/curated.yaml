@@ -1,0 +1,189 @@
+# Active, hand-written cards for phase 1. Ids 001-099 per prefix are reserved for curated cards;
+# mined drafts are imported from research/mining as 101+ (see scripts/build/build_rules.py).
+# `values` is filled at build time from data/thresholds.yaml (detector entry), so numbers live in one place.
+# Fields omitted here take defaults: priority from tier (Floor P0, Reflex P1, Finish P3), kind ban, check M, status active.
+
+# ---------------- D03 slop detection ----------------
+- {id: SLP-001, title: No eyebrow labels above headings, domain: D03, tier: Reflex, kind: cap, detector: eyebrow, remedy: fix-typeset, tests: [T-EYEBROW],
+   rule: "Do not set a small tracked label directly above a heading unless it carries a fact, destination or identifier.",
+   why: "Eyebrows are the most common machine default; they repeat the heading's job and flatten the hierarchy into a template.",
+   fix: "Promote any fact into the heading or the line below it; delete the rest.", sources: ["hallmark §111 §369", "impeccable §519 §520", "kami §4", "huashu §59"]}
+- {id: SLP-002, title: No decorative section numbering, domain: D03, tier: Reflex, kind: cap, detector: numbered_labels, remedy: fix-typeset,
+   rule: "Do not number sections 01, 02, 03 unless the reader needs to refer to them by number.",
+   why: "Numbered labels imply a sequence the content does not have and are a strong template tell.", fix: "Remove the numbers or make them real steps.",
+   sources: ["impeccable §521", "huashu §59 §60", "hallmark §366"]}
+- {id: SLP-003, title: No icon tiles above every card heading, domain: D03, tier: Reflex, kind: cap, detector: icon_tile, remedy: fix-quieter,
+   rule: "Do not put a tinted square icon tile above each card heading as a repeated pattern.",
+   why: "Generic icons in tiles add no information and make every card read the same.", fix: "Remove the tiles, or use a real image or figure that differs per card.",
+   sources: ["impeccable §560", "ux-ui-agent-skills §28"]}
+- {id: SLP-004, title: No side-tab accent borders on cards, domain: D03, tier: Reflex, detector: side_tab_border, remedy: fix-quieter,
+   rule: "Do not mark cards with a thick coloured border on one side only.", why: "A stock emphasis device that signals generated UI.",
+   fix: "Use grouping, a heading or one surface change instead.", sources: ["impeccable §552"]}
+- {id: SLP-005, title: No uniform card kit, domain: D03, tier: Reflex, kind: cap, detector: card_kit, remedy: fix-layout,
+   rule: "Do not apply the same radius and shadow recipe to every container, or hairline plus wide shadow to every card in a row.",
+   why: "One box recipe everywhere erases hierarchy; the surface ladder (whitespace, hairline, tinted well, card) exists for a reason.",
+   fix: "Remove boxes where whitespace groups; keep one card style for things that are objects.", sources: ["huashu §68", "impeccable §561", "hallmark §79"]}
+- {id: SLP-006, title: Vary container recipes, domain: D03, tier: Reflex, kind: cap, detector: container_monotony, remedy: fix-layout,
+   rule: "Do not reuse one container recipe across six or more distinct components.", why: "Container monotony is a template tell.",
+   fix: "Differentiate by role: section, object, callout, well.", sources: ["hallmark §79"]}
+- {id: SLP-007, title: No stock gradient pairs, domain: D03, tier: Reflex, detector: gradient, remedy: fix-colorize,
+   rule: "Do not use purple-to-blue, purple-to-pink or cyan-to-violet gradients, more than 3 stops, or a hue span over 40 degrees.",
+   why: "These pairs are the default 'AI' gradient and read as generated.", fix: "Use a flat fill or a single-hue ramp.", sources: ["hallmark §384 §408", "impeccable §527", "design-taste §5"]}
+- {id: SLP-008, title: No glow halos or radial spotlights, domain: D03, tier: Reflex, detector: glow, remedy: fix-quieter,
+   rule: "Do not add zero-offset coloured glows or radial spotlights behind content.", why: "Decorative glow is a dark-SaaS tell and lowers contrast.",
+   fix: "Remove; use type size and spacing for emphasis.", sources: ["impeccable §533 §536", "hallmark §385"]}
+- {id: SLP-009, title: No neon violet or cyan on headings, domain: D03, tier: Reflex, detector: neon_violet, remedy: fix-colorize,
+   rule: "Do not colour headings or large text in saturated violet (oklch hue 265-330, chroma 0.12+) or neon cyan on dark (hue 170-230).", why: "The two most common model accent hues.",
+   fix: "Derive the accent from brand, imagery or culture (Sample, Converge, Justify).", sources: ["impeccable §527 §529", "taste-skill §31", "huashu §211"]}
+- {id: SLP-010, title: No template chrome glyphs, domain: D03, tier: Reflex, kind: cap, detector: chrome_glyphs, remedy: fix-copy,
+   rule: "Do not decorate with middot chains, arrows glued to links, fake version strings, scroll cues or emoji bullets.",
+   why: "Each is a template signature; together they make the page read as a theme demo.", fix: "Delete, or replace with real content.",
+   sources: ["hallmark §125 §365 §366", "huashu §59 §60 §67", "taste-skill §22"]}
+- {id: SLP-011, title: Do not repeat your own last looks, domain: D03, tier: Reflex, detector: distinctness, remedy: explore-directions, tests: [T-LOOK-LEDGER, T-FINGERPRINT],
+   rule: "A new delivery must differ from the last 8 in the ledger: palette oklab distance at least 0.06, skeleton edge-map correlation at most 0.55.",
+   why: "Slop is often only visible across outputs: each page fine, every page the same.", fix: "Change the accent, then the paper, then the face (escape order).",
+   sources: ["huashu §69 §111", "hallmark §234 §519"]}
+- {id: SLP-012, title: Look-family cluster, domain: D03, tier: Reflex, check: H, detector: look_family, remedy: fix-quieter,
+   rule: "Flag a surface when enough tells of one AI-default look family cluster on it (data/look-families.yaml, profile cluster minimum).",
+   why: "One tell is a choice; a cluster is a default nobody chose.", fix: "Break the family on its strongest tell first; name the replacement decision.",
+   sources: ["huashu §58 §68", "hallmark §16 §386", "impeccable §200"]}
+
+# ---------------- D06 colour ----------------
+- {id: CLR-001, title: Accent footprint within budget, domain: D06, tier: Reflex, kind: cap, detector: accent_footprint, remedy: fix-colorize,
+   rule: "At the 1280x800 fold, solid accent area must stay under 5% (warn) and never exceed 8%.", why: "An accent sprayed everywhere stops pointing at anything.",
+   fix: "Keep accent on the primary action, current state and one focal element.", sources: ["hallmark §67 §410", "kami §14", "taste-skill §31"]}
+- {id: CLR-002, title: No stock framework swatches as brand tokens, domain: D06, tier: Reflex, detector: stock_swatches, remedy: fix-colorize,
+   rule: "Do not use Tailwind or Bootstrap default colours, or #6366F1, as the artifact's own tokens.", why: "A framework default is not a brand.",
+   fix: "Derive tokens from the brand source; tint neutrals toward the brand hue.", sources: ["hallmark §371 §408", "kami §688", "huashu §213"]}
+
+# ---------------- D05 typography ----------------
+- {id: TYP-001, title: Clear type hierarchy, domain: D05, tier: Reflex, detector: flat_hierarchy, remedy: fix-typeset,
+   rule: "Adjacent type roles must differ by at least 1.25x in size (or a clear weight step) when three or more roles are in use.",
+   why: "Sizes that are nearly equal make everything read at one level.", fix: "Adopt a scale (1.25 to 1.5) and assign roles to steps.", sources: ["impeccable §513", "huashu §104"]}
+- {id: TYP-002, title: Sizes on a declared ladder, families limited, domain: D05, tier: Reflex, detector: type_ladder, remedy: fix-typeset,
+   rule: "Every font size is a declared step; use at most 3 families (warn) and never 4.", why: "Drifting sizes and extra families are craft errors that read as unplanned.",
+   fix: "Collapse sizes to the scale; drop the extra family.", sources: ["kami §35", "hallmark §56", "huashu §104"]}
+- {id: TYP-003, title: No UI text faces as display type, domain: D05, tier: Reflex, detector: banned_fonts, remedy: fix-typeset,
+   rule: "Do not set display type (32px and up, or h1-h2) in a UI text face (Inter, Roboto, system-ui and similar). Saturated faces need an argument in the contract.",
+   why: "UI faces at display size are the model's default headline.", fix: "Pick a display face for the brief; see substitutes in data/lexicons/fonts.yaml.",
+   sources: ["hallmark §291 §390", "huashu §61 §125", "taste-skill §30"]}
+- {id: TYP-004, title: The intended font actually renders, domain: D05, tier: Floor, detector: fallback_face, remedy: fix-typeset, waivable_by: never,
+   rule: "The face that draws the text must be the declared face, not a fallback.", why: "A silent fallback changes metrics, layout and voice.",
+   fix: "Fix the font load (path, format, font-display) and wait for fonts before capture.", sources: ["kami §189 §624 §629", "hallmark §462"]}
+
+# ---------------- D07 layout ----------------
+- {id: LAY-001, title: Spacing has rhythm, domain: D07, tier: Reflex, detector: spacing_monotony, remedy: fix-layout,
+   rule: "Do not use one spacing value for more than 60% of gaps; use at least 4 distinct steps across a page.", why: "Uniform gaps make every group look equally related.",
+   fix: "Tighten within groups, open between groups.", sources: ["impeccable §540", "hallmark §76"]}
+- {id: LAY-002, title: Spacing on the scale, domain: D07, tier: Finish, detector: off_scale_spacing, remedy: fix-layout,
+   rule: "Spacing values sit on the 4px scale; no more than 3 off-scale values.", why: "Off-scale values are drift.", fix: "Snap to the nearest step.", sources: ["hallmark §76", "huashu §104"]}
+- {id: LAY-003, title: Headings sit with their content, domain: D07, tier: Reflex, detector: heading_rhythm, remedy: fix-layout,
+   rule: "A heading must be closer to its own content than to the block above it.", why: "Otherwise headings visually belong to the wrong section.",
+   fix: "Increase space above headings; reduce space below.", sources: ["impeccable §541"]}
+- {id: LAY-004, title: No dead bands, domain: D07, tier: Reflex, detector: dead_band, remedy: fix-layout,
+   rule: "No empty vertical band taller than 160px at any fold width.", why: "Dead bands read as broken layout and push content below the fold.",
+   fix: "Remove the empty band or fill it with content that earns the space.", sources: ["hallmark §453"]}
+
+# ---------------- D11 copy ----------------
+- {id: CPY-001, title: Words per screen within budget, domain: D11, tier: Reflex, kind: cap, detector: words_per_screen, remedy: fix-distill,
+   rule: "Keep visible words per 900px screen under the profile budget (strict: warn 80, fail 95).", why: "Dense marketing screens are skimmed, not read.",
+   fix: "Cut qualifiers and repeated claims; move detail to a page that is for reading.", sources: ["hallmark §20 §30"]}
+- {id: CPY-002, title: Page length within budget, domain: D11, tier: Reflex, kind: cap, detector: page_words, remedy: fix-distill,
+   rule: "Persuade pages stay under the profile's word total (strict 450).", why: "Length is not depth.", fix: "Read only hero and headings: if they tell the story, cut the rest.",
+   sources: ["hallmark §30", "taste-skill §6"]}
+- {id: CPY-003, title: Short headline, domain: D11, tier: Reflex, kind: cap, detector: h1_words, remedy: fix-copy,
+   rule: "The h1 is at most 7 words and 50 characters (strict).", why: "Long headlines become paragraphs at display size.", fix: "Say one thing; move the rest to the sub-line.",
+   sources: ["hallmark §101"]}
+- {id: CPY-004, title: Dash budget, domain: D11, tier: Reflex, kind: cap, detector: em_dash, remedy: fix-copy,
+   rule: "Use em dashes within the profile budget (strict 0); never 8 or more at 1 per 500 characters.", why: "Em-dash saturation is the most recognisable AI prose tell.",
+   fix: "Use a full stop, comma, colon or parentheses.", sources: ["hallmark §358", "kami §652", "impeccable §508", "writing-guidelines"]}
+- {id: CPY-005, title: No slop diction, domain: D11, tier: Reflex, check: M, detector: lexicon_copy, remedy: fix-copy, tests: [T-THREE-LINE, T-OVER-CORRECTION],
+   rule: "Do not use words and phrases in the buzzword, stock-phrase, button-label, self-label and chrome lexicons beyond their policy.",
+   why: "These are the strings a model reaches for when it has nothing specific to say.", fix: "Replace with a specific claim only this business can make, or delete.",
+   sources: ["taste-skill §37-45", "hallmark §106 §356 §357", "kami §224 §238 §298", "agent-skills §119-129"]}
+- {id: CPY-006, title: No repeated labels inside a card, domain: D11, tier: Reflex, detector: repeated_label, remedy: fix-copy,
+   rule: "The same literal text must not appear three or more times inside one card.", why: "Repetition signals filled template slots.", fix: "Say it once.", sources: ["impeccable §510"]}
+
+# ---------------- D18 integrity ----------------
+- {id: INT-001, title: No invented metrics, domain: D18, tier: Floor, detector: invented_metrics, remedy: fix-copy, waivable_by: never,
+   rule: "Never show a metric, count, uptime, multiple or percentage the user did not supply with a unit and source.", why: "Invented proof is a false claim made on the client's behalf.",
+   fix: "Use the real number, a visible [DATA NEEDED] slot, or nothing.", sources: ["hallmark §362", "kami §299", "taste-skill §40 §43", "huashu §60"]}
+- {id: INT-002, title: No default cast or fake brands, domain: D18, tier: Reflex, detector: default_names, remedy: fix-copy,
+   rule: "Do not use placeholder people, the model's default first names or fake brand names as real testimonials, team members or customers.",
+   why: "They are invented people presented as real.", fix: "Use supplied names, or remove the testimonial.", sources: ["hallmark §110 §354 §355", "taste-skill §35 §43"]}
+- {id: INT-003, title: No fake people or hotlinked stock, domain: D18, tier: Floor, detector: fake_people, remedy: fix-harden, waivable_by: never,
+   rule: "Do not load avatars from face generators or placeholder services, or hotlink stock photos.", why: "Fake faces imply real customers; hotlinks break and may violate licences.",
+   fix: "Use supplied photos, self-hosted licensed assets, or no image.", sources: ["hallmark §389 §465 §467"]}
+- {id: INT-004, title: Honest form states, domain: D18, tier: Floor, check: H, detector: fake_send, remedy: fix-harden, waivable_by: never, tests: [T-FAKE-SEND],
+   rule: "A form that sends nothing must not show a success message.", why: "Fake success loses the user's message and their trust.",
+   fix: "Show 'Nothing was sent: this form is not connected yet.' until an endpoint exists.", sources: ["hallmark §93 §364 §510"]}
+- {id: INT-005, title: No placeholder residue at ship, domain: D18, tier: Floor, detector: placeholder_residue, remedy: fix-copy, waivable_by: never,
+   rule: "No lorem ipsum, TODO, template brackets or 'placeholder' text in an artifact marked ship.", why: "Residue is broken content.",
+   fix: "Fill with real content or a visible [DATA NEEDED] slot.", sources: ["taste-skill §39", "huashu §71", "kami §452"]}
+- {id: INT-006, title: At most two missing-fact slots, domain: D18, tier: Reflex, kind: cap, detector: data_slots, remedy: fix-copy,
+   rule: "No more than 2 [DATA NEEDED] slots per page.", why: "More means the page was built before its content existed.", fix: "Get the content, or cut the sections that need it.",
+   sources: ["hallmark §110"]}
+
+# ---------------- D10 accessibility ----------------
+- {id: A11-001, title: Text contrast on real pixels, domain: D10, tier: Floor, detector: contrast, remedy: fix-a11y, waivable_by: never, tests: [T-GRADIENT-STOPS],
+   rule: "Body text at least 4.5:1 and large text at least 3:1 against the worst sampled background pixel (WCAG 2.2 1.4.3). APCA reported as advisory.",
+   why: "Low contrast excludes low-vision readers and everyone in sunlight.", fix: "Darken text or lighten ground; never thin weights on tinted ground.",
+   sources: ["web-interface-guidelines", "hallmark §411 §454", "WCAG 2.2 1.4.3"]}
+- {id: A11-002, title: Text size floors, domain: D10, tier: Floor, detector: text_floor, remedy: fix-typeset, waivable_by: never,
+   rule: "Running text (28+ characters) is at least the medium's body floor (web 16px, dense UI 14px); labels at least 12px.",
+   why: "Small text fails readers before any other check.", fix: "Raise to the floor; cut words rather than shrink.", sources: ["huashu §66", "hallmark §52", "ui-ux-pro-max §43"]}
+- {id: A11-003, title: Visible focus everywhere, domain: D10, tier: Floor, detector: focus_ring, remedy: fix-a11y, waivable_by: never, tests: [T-TAB-THROUGH],
+   rule: "Every focusable element shows a focus indicator at 3:1 or better, never hidden under a sticky header, never removed without replacement.",
+   why: "Keyboard users cannot see where they are.", fix: "Use :focus-visible with a 2px ring offset 2px in a contrasting colour.", sources: ["web-interface-guidelines", "hallmark §455", "WCAG 2.2 2.4.7 2.4.11"]}
+- {id: A11-004, title: Target size, domain: D10, tier: Floor, detector: targets, remedy: fix-a11y,
+   rule: "Interactive targets are at least 24x24px (Floor, WCAG 2.5.8); on touch, at least 44x44px (Reflex).", why: "Small targets cause mis-taps and exclude motor-impaired users.",
+   fix: "Enlarge the hit area with padding or a pseudo-element.", sources: ["WCAG 2.2 2.5.8", "hallmark §87", "ui-ux-pro-max §22"]}
+- {id: A11-005, title: Images have text alternatives, domain: D10, tier: Floor, detector: img_alt, remedy: fix-a11y, waivable_by: never,
+   rule: "Every img has an alt attribute: descriptive for content images, empty for decorative ones.", why: "Screen readers announce file names otherwise.",
+   fix: "Write what the image tells the reader, or alt=\"\" if it tells nothing.", sources: ["web-interface-guidelines", "WCAG 2.2 1.1.1"]}
+- {id: A11-006, title: Controls have accessible names, domain: D10, tier: Floor, detector: control_names, remedy: fix-a11y, waivable_by: never,
+   rule: "Every button, link and form control has an accessible name; icon-only buttons have aria-label.", why: "Unnamed controls are announced as 'button'.",
+   fix: "Add visible text or aria-label.", sources: ["web-interface-guidelines", "ui-ux-pro-max §46", "WCAG 2.2 4.1.2"]}
+- {id: A11-007, title: Headings and landmarks, domain: D10, tier: Reflex, detector: headings_landmarks, remedy: fix-a11y,
+   rule: "One h1; heading levels step one at a time; main, nav and footer landmarks present; a skip link first.", why: "Structure is how screen-reader users navigate.",
+   fix: "Fix levels in markup and size with CSS.", sources: ["hallmark §132 §406", "ui-ux-pro-max §43", "taste-skill §631"]}
+- {id: A11-008, title: Language and title set, domain: D10, tier: Floor, detector: lang_and_title, remedy: fix-a11y, waivable_by: never,
+   rule: "html has a lang attribute and the page has a title in its own words.", why: "Wrong pronunciation and unlabeled tabs.", fix: "Add lang and a specific title.",
+   sources: ["hallmark §132 §477", "WCAG 2.2 3.1.1 2.4.2"]}
+- {id: A11-009, title: Zoom never blocked, domain: D10, tier: Floor, detector: zoom_blocked, remedy: fix-a11y, waivable_by: never,
+   rule: "The viewport meta must not set user-scalable=no or maximum-scale below 2.", why: "Blocks low-vision users from zooming.", fix: "Remove the restriction.",
+   sources: ["ui-ux-pro-max §42", "web-interface-guidelines"]}
+- {id: A11-010, title: Form fields have labels, domain: D10, tier: Floor, detector: form_labels, remedy: fix-a11y, waivable_by: never,
+   rule: "Every input has a programmatic label; placeholder is never the only label; autocomplete set on personal fields.", why: "Placeholders vanish on typing and are not announced reliably.",
+   fix: "Add a visible label element.", sources: ["web-interface-guidelines", "ui-ux-pro-max §60", "WCAG 2.2 1.3.1 3.3.2"]}
+- {id: A11-011, title: Reduced motion respected, domain: D10, tier: Floor, detector: reduced_motion, remedy: fix-motion, waivable_by: never,
+   rule: "When animations exist, a prefers-reduced-motion rule removes movement (opacity and colour changes up to 150ms may stay).",
+   why: "Motion can trigger vestibular disorders.", fix: "Wrap movement in @media (prefers-reduced-motion: no-preference) or add a reduce override.",
+   sources: ["hallmark §330", "agent-skills", "WCAG 2.2 2.3.3"]}
+
+# ---------------- D15 robustness, D09 motion, web ----------------
+- {id: ROB-001, title: Content never depends on animation to appear, domain: D15, tier: Floor, detector: hidden_content, remedy: fix-harden, waivable_by: never, tests: [T-HIDDEN-CONTENT],
+   rule: "All content is visible with reduced motion, with an observer that never fires, and with scripts off; under 30% of text hidden after load.",
+   why: "Reveal-on-scroll pages are blank for crawlers, print, reduced motion and slow devices.", fix: "Start visible; animate from visible.", sources: ["taste-skill §437", "hallmark §445"]}
+- {id: ROB-002, title: Phone parity, domain: D15, tier: Reflex, detector: phone_parity, remedy: fix-layout, tests: [T-PHONE-PARITY],
+   rule: "Do not hide 40 or more words at 375px that are shown at 1440px.", why: "Phone visitors get a lesser page.", fix: "Reflow instead of hiding.", sources: ["hallmark §435"]}
+- {id: ROB-003, title: No horizontal overflow, domain: D15, tier: Floor, detector: overflow, remedy: fix-harden, waivable_by: never,
+   rule: "No sideways scroll and no element wider than the viewport at any tested width.", why: "Sideways scroll breaks reading and zoom.",
+   fix: "Find the overflowing element; use min-width: 0, overflow-wrap, and avoid 100vw.", sources: ["hallmark §452", "taste-skill §641"]}
+- {id: ROB-004, title: No widows in headings and short paragraphs, domain: D15, tier: Finish, detector: widows, remedy: fix-polish,
+   rule: "No single-word last line, and no last line under 35% of the measure, in headings and short paragraphs at 375 and 1280.", why: "Stubs look unfinished.",
+   fix: "text-wrap: balance on headings, pretty on paragraphs (Latin only).", sources: ["hallmark §401", "kami §168"]}
+- {id: MOT-001, title: Motion CSS hygiene, domain: D09, tier: Reflex, detector: motion_css, remedy: fix-motion,
+   rule: "No transition: all; animate transform and opacity, not layout properties; no overshoot past 1.05 in UI; exits 60 to 75% of enters.",
+   why: "These produce jank, layout thrash and toy-like motion.", fix: "List properties; use transform; one non-overshoot curve.", sources: ["hallmark §323 §327", "transitions-dev", "agent-skills §1"]}
+- {id: WEB-001, title: Performance budget, domain: D15, tier: Reflex, detector: performance, remedy: fix-harden,
+   rule: "Lab LCP warns at 2.5s and fails at 4.5s; no image over 400KB or more than 2x its rendered width.", why: "Slow pages lose visitors before design matters.",
+   fix: "Compress, size and lazy-load images; preload the LCP asset.", sources: ["taste-skill §622", "agent-skills", "web-interface-guidelines"]}
+
+# ---------------- process ----------------
+- {id: PRC-001, title: Capture must be trustworthy, domain: D17, tier: Floor, detector: near_blank, remedy: none, waivable_by: never, tests: [T-VERIFY-VERIFIER],
+   rule: "Stop the run if the control render fails or a screenshot is near-blank (under 0.8% of pixels differ by more than 24 levels).",
+   why: "A blank or wrong render produces confident nonsense.", fix: "Fix the capture (wait for fonts, network, lazy content) and recapture.", sources: ["huashu §49 §106"]}
+- {id: PRC-002, title: Redesigns keep content and behaviour, domain: D17, tier: Floor, detector: redesign_loss, remedy: none, waivable_by: brief,
+   rule: "A redesign keeps every link, field, handler and id, and does not drop more than 40% of words without the brief saying so.", why: "Silent loss breaks the product.",
+   fix: "Restore the missing items or get them cut in the brief.", sources: ["hallmark §521"]}

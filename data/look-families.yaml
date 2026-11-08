@@ -1,0 +1,43 @@
+# The AI-default looks, as numeric tells. Each tell alone is info.
+# A family becomes a finding (rule SLP-012) when >= profile.look_family_cluster_min of its tells fire on one surface.
+# Sources: huashu §58 §68, hallmark §16 §386, impeccable §200 §532, taste-skill §31, design-taste §5.
+families:
+  warm-paper-serif:
+    description: Cream page, serif display, terracotta accent, caps eyebrows, 01/02/03 numbering.
+    tells:
+      - {id: cream_bg, test: "page background oklch L > 0.90, hue 40-110, C >= 0.003; or sRGB all channels >= 209, R>=G>=B, R-B in 6..48"}
+      - {id: terracotta_accent, test: "an accent within oklab distance 0.07 of #D97757, or oklch C >= 0.08 at hue 15-55"}
+      - {id: serif_display, test: "h1/h2 rendered in a serif face"}
+      - {id: italic_serif_hero, test: "italic serif headline >= 48px"}
+      - {id: eyebrows, test: "eyebrow detector fires >= 1"}
+      - {id: numbered_labels, test: "numbered_labels detector fires"}
+  dark-single-accent:
+    description: Near-black page with one saturated accent, often neon or GitHub-dark.
+    tells:
+      - {id: dark_bg, test: "page background oklch L < 0.20"}
+      - {id: single_vivid, test: "exactly one colour with oklch C > 0.15 across text, borders and fills"}
+      - {id: neon_cyan_violet, test: "neon_violet detector fires"}
+      - {id: glow, test: "glow detector fires"}
+      - {id: mono_labels, test: "monospace face on non-code labels"}
+  hairline-newspaper:
+    description: Broadsheet hairlines, zero radius, italic serif and mono labels.
+    tells:
+      - {id: hairlines, test: ">= 8 elements wider than 200px with 1px borders"}
+      - {id: zero_radius, test: "> 90% of bordered elements have radius 0"}
+      - {id: mono_labels, test: "monospace face on non-code labels"}
+      - {id: italic_serif, test: "italic serif display"}
+  saas-card-kit:
+    description: Equal cards with icon tiles, one radius, one soft shadow, Inter everywhere.
+    tells:
+      - {id: card_kit, test: "card_kit detector fires"}
+      - {id: icon_tiles, test: "icon_tile detector fires"}
+      - {id: equal_grid, test: "a row of 3 or 4 equal-width cards: repeat(3|4, 1fr)"}
+      - {id: inter_only, test: "one family on the whole page and it is Inter, Roboto or system-ui"}
+      - {id: stock_greys, test: "stock_swatches hits on text greys (#6b7280, #9ca3af)"}
+  violet-gradient:
+    description: Indigo-to-violet gradient, radial glow, Inter, scattered radii.
+    tells:
+      - {id: ai_purple, test: "#6366F1 or #8B5CF6 present, or a fill at oklch hue 265-330 with C > 0.12"}
+      - {id: gradient_pair, test: "gradient detector fires on a banned pair"}
+      - {id: glow, test: "glow detector fires"}
+      - {id: scattered_radii, test: ">= 5 distinct border-radius values"}

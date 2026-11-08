@@ -1,0 +1,79 @@
+lexicon: button-labels
+match: whole accessible name of a link or button, case-insensitive
+rule: CPY-005
+sources:
+- taste-skill §45
+- hallmark §106 §107 §361 §365
+- agent-skills §164-165
+- web-interface-guidelines
+groups:
+- name: empty-labels
+  policy: fail
+  entries:
+  - term: learn more
+    added: '2026-11-08'
+  - term: read more
+    added: '2026-11-08'
+  - term: view more
+    added: '2026-11-08'
+  - term: show more
+    added: '2026-11-08'
+  - term: discover
+    added: '2026-11-08'
+  - term: discover more
+    added: '2026-11-08'
+  - term: explore
+    added: '2026-11-08'
+  - term: explore more
+    added: '2026-11-08'
+  - term: more
+    added: '2026-11-08'
+  - term: find out more
+    added: '2026-11-08'
+  - term: see more
+    added: '2026-11-08'
+  - term: click here
+    added: '2026-11-08'
+  - term: more info
+    added: '2026-11-08'
+  - term: details
+    added: '2026-11-08'
+  - term: begin
+    added: '2026-11-08'
+  - term: go
+    added: '2026-11-08'
+  - term: here
+    added: '2026-11-08'
+  - term: link
+    added: '2026-11-08'
+  - term: mehr erfahren
+    added: '2026-11-08'
+  - term: weitere infos
+    added: '2026-11-08'
+- name: stock-second-action
+  policy: info
+  note: a finding when it is the hero's second action
+  entries:
+  - term: see how it works
+    added: '2026-11-08'
+  - term: watch demo
+    added: '2026-11-08'
+  - term: get started
+    added: '2026-11-08'
+  - term: book a demo
+    added: '2026-11-08'
+- name: arrow-suffix
+  policy: cap
+  budget: 1
+  match: label ends with
+  entries:
+  - term: →
+    added: '2026-11-08'
+  - term: ->
+    added: '2026-11-08'
+  - term: ›
+    added: '2026-11-08'
+  - term: »
+    added: '2026-11-08'
+  - term: ⟶
+    added: '2026-11-08'

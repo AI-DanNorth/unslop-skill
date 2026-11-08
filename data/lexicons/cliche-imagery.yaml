@@ -1,0 +1,67 @@
+lexicon: cliche-imagery
+match: alt text, filenames, image prompts, and vision review
+rule: IMG-001
+sources:
+- huashu §60
+- taste-skill §23 §24 §36
+- hallmark §373
+groups:
+- name: ai-cliche
+  policy: fail
+  entries:
+  - term: gradient sphere
+    added: '2026-11-08'
+  - term: digital rain
+    added: '2026-11-08'
+  - term: circuit board
+    added: '2026-11-08'
+  - term: robot face
+    added: '2026-11-08'
+  - term: 3d blob
+    added: '2026-11-08'
+  - term: glowing particles
+    added: '2026-11-08'
+  - term: data stream
+    added: '2026-11-08'
+  - term: holographic hud
+    added: '2026-11-08'
+  - term: aurora
+    added: '2026-11-08'
+  - term: mesh gradient
+    added: '2026-11-08'
+  - term: blurred orb
+    added: '2026-11-08'
+- name: stock-cliche
+  policy: fail
+  entries:
+  - term: people at screens
+    added: '2026-11-08'
+  - term: handshake
+    added: '2026-11-08'
+  - term: latte art
+    added: '2026-11-08'
+  - term: coffee beans
+    added: '2026-11-08'
+  - term: croissant and cappuccino
+    added: '2026-11-08'
+  - term: made bed
+    added: '2026-11-08'
+  - term: flour thrown
+    added: '2026-11-08'
+- name: mood-stock
+  policy: info
+  entries:
+  - term: curtain
+    added: '2026-11-08'
+  - term: plant shadows
+    added: '2026-11-08'
+  - term: sky
+    added: '2026-11-08'
+  - term: grass
+    added: '2026-11-08'
+  - term: forest
+    added: '2026-11-08'
+  - term: fog
+    added: '2026-11-08'
+  - term: waterfall
+    added: '2026-11-08'

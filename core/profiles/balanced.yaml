@@ -1,0 +1,13 @@
+# balanced (default): most audits. House-style items become caps or cluster rules.
+profile: balanced
+look_family_cluster_min: 3
+house_style_bans: cap
+detectors:
+  em_dash:        {budget: 2}
+  eyebrow:        {budget: 2}     # flagged at 3 or more, or inside a look-family cluster
+  numbered_labels: {budget: 2}
+  words_per_screen: {warn: 120, fail: 143}   # 1.5x strict
+  page_words:     {fail: 675}
+  h1_words:       {fail: 10}
+  chrome_glyphs:  {budget: 1}
+weights: {distinctiveness: 1.0, concept: 1.0}

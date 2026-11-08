@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Home</title>
+<meta name="unslop-seeds" content="lang_and_title zoom_blocked stock_swatches look_family">
+<!-- Seeded-defect page. Each data-seed attribute names the detector that must flag it.
+     Every detector in data/thresholds.yaml (except ledger- and capture-only ones) must report at least one hit here. -->
+<style>
+  :root { --primary: #6366f1; --violet: #8b5cf6; --muted: #6b7280; --border: #e5e7eb; --bg: #ffffff; }
+  body { margin: 0; font-family: "Inter", sans-serif; color: #111827; background: var(--bg); font-size: 16px; line-height: 1.5; }
+  * { transition: all .3s ease; }
+  nav { padding: 24px; }
+  .hero { padding: 24px; background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899, #06b6d4); color: #fff; }
+  .hero h1 { font-family: "Inter", sans-serif; font-size: 56px; line-height: 1.1; margin: 24px 0; }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 24px 0 8px; }
+  .glow { box-shadow: 0 0 40px rgba(99,102,241,.65); border-radius: 16px; padding: 24px; margin: 24px; }
+  .band { background: #6366f1; height: 260px; margin: 24px 0; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 24px; }
+  .card { border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.08); padding: 24px; margin: 24px 0; background: #fff; }
+  .tile { width: 48px; height: 48px; border-radius: 12px; background: rgba(99,102,241,.12); margin-bottom: 16px; }
+  .num { font-size: 12px; color: var(--muted); margin-right: 8px; }
+  .side { border: 1px solid var(--border); border-left: 4px solid #6366f1; border-radius: 8px; padding: 24px; margin: 24px; }
+  .violet { color: #8b5cf6; font-size: 40px; }
+  .flat h2 { font-size: 20px; margin: 8px 0 48px; } .flat h3 { font-size: 18px; } .flat p { font-size: 16px; }
+  .odd1 { padding: 13px; } .odd2 { padding: 17px; } .odd3 { padding: 22px; } .odd4 { padding: 37px; } .odd5 { margin-top: 29px; }
+  .ladder span { display: block; }
+  .tiny { font-size: 12px; color: #b0b0b0; }
+  .pale { color: #b0b0b0; }
+  .noring:focus { outline: none; }
+  .wide { width: 1600px; background: #f3f4f6; padding: 8px; }
+  .hide-phone { }
+  @media (max-width: 600px) { .hide-phone { display: none; } }
+  .reveal { opacity: 0; transform: translateY(40px); }
+  .reveal.in { opacity: 1; transform: none; }
+  @keyframes pulse { 0% { transform: scale(1) } 50% { transform: scale(1.2) } 100% { transform: scale(1) } }
+  .pulse { animation: pulse 1.2s cubic-bezier(.34,1.56,.64,1) infinite; width: 10px; height: 10px; border-radius: 50%; background: #22c55e; display: inline-block; }
+  .grow { transition: width .4s; width: 100px; } .grow:hover { width: 140px; }
+  .widow { width: 10ch; font-family: "DejaVu Sans Mono", monospace; font-size: 24px; }
+  .missing { font-family: "Fancy Missing Display", serif; font-size: 34px; }
+  .f1 { font-family: "Lora", serif; } .f2 { font-family: "DejaVu Sans Mono", monospace; } .f3 { font-family: "Liberation Serif", serif; }
+  .r1 { border-radius: 6px; } .r2 { border-radius: 10px; } .r3 { border-radius: 20px; } .r4 { border-radius: 999px; }
+  .pill { display: inline-block; padding: 4px 8px; }
+  .s1 { margin: 24px; } .s2 { margin: 24px; } .s3 { margin: 24px; } .s4 { margin: 24px; } .s5 { margin: 24px; } .s6 { margin: 24px; }
+  .icon-btn { width: 16px; height: 16px; padding: 0; border: 0; background: #111827; display: inline-block; }
+</style>
+</head>
+<body>
+<nav><a href="#">Home</a> <a href="#" data-seed="lexicon_copy">Learn more →</a> <span data-seed="chrome_glyphs">v2.4.1</span></nav>
+<section class="hero" data-seed="gradient">
+  <h1 data-seed="banned_fonts h1_words">Supercharge your workflow with the seamless all-in-one platform built for the modern team</h1>
+  <p data-seed="lexicon_copy">In today's fast-paced world, we help you delve into your data and unlock the power of collaboration.</p>
+  <p data-seed="invented_metrics">Trusted by 10,000+ teams. 10x faster than alternatives. 99.9% uptime.</p>
+  <p data-seed="chrome_glyphs">Fast · Secure · Simple · Smart</p>
+  <p data-seed="chrome_glyphs">Scroll to explore</p>
+</section>
+<div class="band" data-seed="accent_footprint"></div>
+<div class="glow" data-seed="glow"><p>Our AI engine powers everything.</p></div>
+
+<p class="eyebrow" data-seed="eyebrow">Features</p>
+<h2 class="violet" data-seed="neon_violet">Everything you need to succeed</h2>
+
+<div class="grid" data-seed="card_kit icon_tile numbered_labels">
+  <div class="card"><div class="tile"></div><h3><span class="num">01</span>Analytics</h3><p>Insights at your fingertips.</p></div>
+  <div class="card"><div class="tile"></div><h3><span class="num">02</span>Automation</h3><p>Workflows made simple.</p></div>
+  <div class="card"><div class="tile"></div><h3><span class="num">03</span>Security</h3><p>Enterprise-grade protection.</p></div>
+  <div class="card" data-seed="repeated_label"><p>Included</p><p>Included</p><p>Included</p></div>
+</div>
+<div class="side" data-seed="side_tab_border"><p>Tip: this is a side-tab callout.</p></div>
+<div data-seed="container_monotony">
+  <div class="card a1">One</div><div class="card a2">Two</div><div class="card a3">Three</div>
+</div>
+
+<section class="flat" data-seed="flat_hierarchy heading_rhythm">
+  <h2>Flat section heading one</h2><h3>Sub heading</h3><p>Body copy that is almost the same size as the headings above it.</p>
+  <h2>Flat section heading two</h2><p>More body copy.</p>
+</section>
+
+<div data-seed="off_scale_spacing"><div class="odd1">a</div><div class="odd2">b</div><div class="odd3">c</div><div class="odd4">d</div><div class="odd5">e</div></div>
+<div data-seed="spacing_monotony"><div class="s1">x</div><div class="s2">x</div><div class="s3">x</div><div class="s4">x</div><div class="s5">x</div><div class="s6">x</div></div>
+
+<div class="ladder" data-seed="type_ladder">
+  <span style="font-size:13px">a</span><span style="font-size:15px">a</span><span style="font-size:17px">a</span><span style="font-size:19px">a</span>
+  <span style="font-size:21px">a</span><span style="font-size:23px">a</span><span style="font-size:27px">a</span><span style="font-size:31px">a</span><span style="font-size:45px">a</span>
+  <span class="f1">Lora</span><span class="f2">Mono</span><span class="f3">Liberation Serif</span>
+</div>
+<p class="missing" data-seed="fallback_face">Display text in a face that never loads</p>
+
+<div style="height: 320px" data-seed="dead_band"></div>
+
+<section data-seed="words_per_screen page_words em_dash">
+  <p>Our platform — built from the ground up — gives you everything — truly everything — you need. It is fast — very fast — and it is simple — remarkably simple — for every team. We believe in honest, thoughtful, intentional design that quietly serves as a testament to the power of collaboration. Whether you're a startup or an enterprise, our robust, powerful, cutting-edge tools streamline your work and elevate your outcomes. Say goodbye to busywork and hello to a world where everything just works. Our revolutionary approach empowers teams to harness the potential of their data, leverage synergy across departments and reimagine what is possible in the modern workplace. With just a few clicks you can transform your workflow, unleash creativity and take your business to the next level.</p>
+  <p>We have spent years building a holistic, world-class, best-in-class solution that is truly game-changing. The future of work is here, and it is seamless. Imagine a world where every meeting is productive, every decision is informed and every team is aligned. That world is now. Our next-generation platform is the one-stop solution for teams who want to move faster, collaborate better and achieve more. It is not just a tool, it is a movement. Join thousands of companies already using our platform to unlock new levels of productivity and growth across every department in the organisation, from marketing and sales to engineering, finance, support and operations.</p>
+  <p>Every feature has been meticulously designed to deliver an effortless experience. From onboarding to reporting, the platform guides you through every step with intelligent suggestions, automated workflows and real-time insights. Teams report spending less time on manual tasks and more time on the work that matters. Our dedicated support team is available around the clock to help you get the most out of the platform, and our extensive library of guides, templates and tutorials makes it easy to get started. Whether you are managing a small project or coordinating a global initiative, the platform scales with you, adapting to your needs as they grow and change over time across many regions.</p>
+  <p>Security is built into everything we do. Your data is encrypted at rest and in transit, and our infrastructure is monitored continuously by a team of experts. We comply with the leading industry standards and undergo regular independent audits. Access controls, audit logs and single sign-on keep your organisation in control, while granular permissions ensure that every person sees exactly what they need and nothing more. We take privacy seriously and never sell your data. Our transparent policies and clear terms make it easy to understand how your information is handled, and our privacy team is always ready to answer questions about how we protect what matters most to you.</p>
+</section>
+
+<blockquote data-seed="default_names">"This changed how our whole team works." — Priya Shah, Acme</blockquote>
+<img src="https://i.pravatar.cc/100" width="48" height="48" alt="Avatar" data-seed="fake_people">
+<img src="assets/noise.png" width="200" height="200" data-seed="img_alt performance">
+<p data-seed="placeholder_residue">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p data-seed="data_slots">[DATA NEEDED: price] [DATA NEEDED: launch date] [DATA NEEDED: customer quote]</p>
+<p class="pale" data-seed="contrast">This grey paragraph text does not have enough contrast against the white page.</p>
+<p class="tiny" data-seed="text_floor">This running paragraph is set far too small to read comfortably on any screen.</p>
+<button class="noring" data-seed="focus_ring">Focus me</button>
+<a href="#" class="icon-btn" aria-label="Close" data-seed="targets"></a><a href="#" class="icon-btn" aria-label="Minimise" data-seed="targets"></a>
+<button data-seed="control_names"><svg width="16" height="16"><rect width="16" height="16"/></svg></button>
+<h1 data-seed="headings_landmarks">A second h1</h1>
+<h4 data-seed="headings_landmarks">Skipped to h4</h4>
+
+<form id="signup" data-seed="fake_send form_labels">
+  <input type="email" placeholder="Enter your email">
+  <button type="submit">Subscribe</button>
+  <p id="msg"></p>
+</form>
+
+<p class="hide-phone" data-seed="phone_parity">This long paragraph appears on desktop but is hidden on phones, which means phone visitors miss the full explanation of pricing, the refund policy, the delivery window, the support hours, the warranty terms and the contact details that everyone else gets to read before they decide whether to buy anything from this company at all today or tomorrow or next week.</p>
+<div class="wide" data-seed="overflow">This strip is 1600px wide and overflows small screens.</div>
+<h3 class="widow" data-seed="widows">aaaa bbbb c</h3>
+<span class="pulse" data-seed="reduced_motion motion_css"></span>
+<div class="grow" data-seed="motion_css">grow</div>
+<div class="r1 pill">r1</div><div class="r2 pill">r2</div><div class="r3 pill">r3</div><div class="r4 pill">r4</div>
+
+<section data-seed="hidden_content">
+  <p class="reveal">Revealed content one. This paragraph only appears when an observer fires, so without it the reader sees nothing here at all.</p>
+  <p class="reveal">Revealed content two. More text that depends on scroll animation to become visible to the reader of the page.</p>
+  <p class="reveal">Revealed content three. Even more hidden text so that the hidden share of the page is large enough to fail.</p>
+  <p class="reveal">Revealed content four. This page hides most of its text until it scrolls into view, which is the defect being seeded.</p>
+</section>
+<script>
+  document.getElementById("signup").addEventListener("submit", (e) => { e.preventDefault(); document.getElementById("msg").textContent = "Thanks! You're on the list."; });
+  const io = new IntersectionObserver((es) => es.forEach(x => x.isIntersecting && x.target.classList.add("in")));
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>

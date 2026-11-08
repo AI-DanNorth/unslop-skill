@@ -1,0 +1,59 @@
+lexicon: chrome-glyphs
+match: regex over visible text runs
+rule: SLP-010
+sources:
+- hallmark §125 §365-366
+- huashu §59-60 §67
+- taste-skill §22
+groups:
+- name: middot-chains
+  policy: cap
+  budget: 1
+  note: a run with two or more ' · ' joins
+  entries:
+  - term: \S+ · \S+[^·]* · \S+
+    added: '2026-11-08'
+- name: dash-labels
+  policy: cap
+  budget: 0
+  entries:
+  - term: ^[A-Z]{1,20} [—–-] \S
+    added: '2026-11-08'
+- name: numbering-tokens
+  policy: cap
+  budget: 2
+  entries:
+  - term: ^0\d\b
+    added: '2026-11-08'
+  - term: '^\d{2,3} [·/] '
+    added: '2026-11-08'
+  - term: ^00 / INDEX
+    added: '2026-11-08'
+- name: fake-versions
+  policy: cap
+  budget: 0
+  note: decorative only; real changelogs exempt
+  entries:
+  - term: \bv\d+\.\d+(\.\d+)?\b
+    added: '2026-11-08'
+  - term: \bBuild \d{3,}\b
+    added: '2026-11-08'
+  - term: ^BETA$
+    added: '2026-11-08'
+  - term: INVITE-ONLY PREVIEW
+    added: '2026-11-08'
+- name: scroll-cues
+  policy: fail
+  entries:
+  - term: scroll to explore
+    added: '2026-11-08'
+  - term: ^↓ ?scroll$
+    added: '2026-11-08'
+  - term: ^scroll$
+    added: '2026-11-08'
+- name: emoji-bullets
+  policy: cap
+  budget: 0
+  entries:
+  - term: ^[🚀⚡✨🎯💡✅]
+    added: '2026-11-08'

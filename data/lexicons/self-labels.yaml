@@ -1,0 +1,77 @@
+lexicon: self-labels
+match: phrase in captions, alt text and visible text
+rule: CPY-005
+sources:
+- taste-skill §34 §39
+- hallmark §112
+- huashu §71
+- kami §452 §654
+groups:
+- name: medium-descriptions
+  policy: fail
+  scope:
+  - alt
+  - figcaption
+  entries:
+  - term: image of
+    added: '2026-11-08'
+  - term: picture of
+    added: '2026-11-08'
+  - term: photo of
+    added: '2026-11-08'
+  - term: pictured
+    added: '2026-11-08'
+  - term: view of
+    added: '2026-11-08'
+  - term: rendering
+    added: '2026-11-08'
+  - term: render of
+    added: '2026-11-08'
+  - term: made in code
+    added: '2026-11-08'
+  - term: made with code
+    added: '2026-11-08'
+  - term: this photo shows
+    added: '2026-11-08'
+  - term: for illustration
+    added: '2026-11-08'
+  - term: illustrative
+    added: '2026-11-08'
+  - term: stock photo
+    added: '2026-11-08'
+- name: residue
+  policy: fail
+  tier: Floor
+  note: shipped placeholder text
+  entries:
+  - term: lorem ipsum
+    added: '2026-11-08'
+  - term: placeholder
+    added: '2026-11-08'
+  - term: TODO
+    added: '2026-11-08'
+  - term: your name here
+    added: '2026-11-08'
+  - term: Title Text
+    added: '2026-11-08'
+  - term: your screenshot here
+    added: '2026-11-08'
+  - term: to be added
+    added: '2026-11-08'
+  - term: \[(company|brand|business|product) name\]
+    added: '2026-11-08'
+  - term: \[insert
+    added: '2026-11-08'
+  - term: \[NEED
+    added: '2026-11-08'
+  - term: \{\{[^}]+\}\}
+    added: '2026-11-08'
+  - term: \(sample\)
+    added: '2026-11-08'
+  - term: \(example\)
+    added: '2026-11-08'
+- name: figure-numbers-in-ui
+  policy: info
+  entries:
+  - term: \bfig(\.|ure) \d+\b
+    added: '2026-11-08'

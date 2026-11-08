@@ -1,0 +1,14 @@
+# strict: Persuade and Experience surfaces that must look made, not generated.
+# Floors never change. Overrides apply on top of data/thresholds.yaml.
+profile: strict
+look_family_cluster_min: 2        # tells on one surface before a family becomes a finding
+house_style_bans: Reflex          # em dashes, eyebrows, Inter as display, 01/02/03 labels, cream+serif+terracotta
+detectors:
+  em_dash:        {budget: 0}
+  eyebrow:        {budget: 0}
+  numbered_labels: {budget: 0}
+  words_per_screen: {warn: 80, fail: 95}
+  page_words:     {fail: 450}
+  h1_words:       {fail: 7}
+  chrome_glyphs:  {budget: 0}
+weights: {distinctiveness: 1.5, concept: 1.25}

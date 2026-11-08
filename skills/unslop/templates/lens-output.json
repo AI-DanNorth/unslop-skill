@@ -1,0 +1,19 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": ["T-RIVAL-NAME", "T-SQUINT"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, 1440px",
+      "evidence": "Failed T-RIVAL-NAME: swapping in a competitor's name leaves the h1 and all three feature heads true.",
+      "before": "\"Everything you need to succeed\"",
+      "after": "A head only this product can say, e.g. the specific job it does",
+      "why": "The page reads as a template; nothing on it belongs to this business.",
+      "test": "T-RIVAL-NAME"
+    }
+  ],
+  "strengths": ["The pricing table is honest and complete."],
+  "not_investigated": ["copy voice: no brand voice samples supplied"]
+}
