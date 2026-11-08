@@ -13,7 +13,7 @@ You judge one thing: **does this read as made for this client, or as the default
 2. `01-evidence/fold-1440.png`, `shot-1440.png`, `shot-375.png`: look at them yourself before reading any numbers.
 3. `02-mechanical.json`: hits from `eyebrow`, `numbered_labels`, `icon_tile`, `card_kit`, `gradient`, `glow`, `neon_violet`, `chrome_glyphs`, `lexicon_copy`, `look_family`, `invented_metrics`, `default_names`. These are already findings; do not repeat them. Use them as context for what you judge.
 4. `data/look-families.yaml` and `data/lexicons/` for the vocabulary of tells.
-5. `rules/SLP.yaml`: the curated cards (SLP-001 to 012) plus about 150 draft cards mined from the sources. Drafts are advice: cite one when it names what you see, with its id.
+5. `rules/D03-SLP.yaml`: the curated cards (SLP-001 to 012) plus about 150 draft cards mined from the sources. Drafts are advice: cite one when it names what you see, with its id.
 
 ## Tests to run (record each in `tests_run`)
 

@@ -14,7 +14,7 @@ The sweep resolves thresholds in precedence order (core default, profile, media 
 
 Every detector listed in `data/thresholds.yaml` ends with one status:
 
-- `ran`: with zero or more hits. Each hit cites a rule card (`rules/<PREFIX>.yaml`), a tier, where, and measured evidence.
+- `ran`: with zero or more hits. Each hit cites a rule card (`rules/<domain>-<PREFIX>.yaml`, e.g. `D03-SLP.yaml`), a tier, where, and measured evidence.
 - `skipped: <reason>`: the detector does not apply (no forms, no ledger yet, profile disabled it).
 - `not-verified: <reason>`: it applies but the evidence is missing or untrustworthy (control failed, a capture file is absent, the detector errored).
 

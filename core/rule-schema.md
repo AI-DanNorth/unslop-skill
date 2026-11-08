@@ -1,6 +1,6 @@
 # Rule card schema
 
-Every rule, from every source, is rewritten into this one shape. Cards live in `rules/<PREFIX>.yaml`, one list per domain prefix. The id is permanent: a retired rule keeps its id with `status: retired`.
+Every rule, from every source, is rewritten into this one shape. Cards live in `rules/<domain>-<PREFIX>.yaml` (for example `rules/D03-SLP.yaml`), one list per prefix. The domain comes first because Windows reserves `CON` and `PRN` as file names. The id is permanent: a retired rule keeps its id with `status: retired`.
 
 ```yaml
 - id: SLP-012                 # PREFIX-NNN, never reused

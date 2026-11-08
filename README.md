@@ -53,7 +53,7 @@ Edit `rules/curated.yaml`, `data/thresholds.yaml` or the lexicon lists in `scrip
 
 ```bash
 python3 scripts/build/make_lexicons.py
-python3 scripts/build/build_rules.py      # regenerates rules/<PREFIX>.yaml and lints cards against thresholds
+python3 scripts/build/build_rules.py      # regenerates rules/<domain>-<PREFIX>.yaml and lints cards against thresholds
 python3 scripts/selftest.py               # must pass
 ```
 
