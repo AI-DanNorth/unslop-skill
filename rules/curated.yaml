@@ -51,6 +51,21 @@
 - {id: SLP-013, title: No emoji as icons, domain: D03, tier: Reflex, kind: cap, detector: emoji_icons, remedy: fix-quieter,
    rule: "Do not use emoji as feature icons, heading prefixes or button glyphs.", why: "Emoji icons are the fastest tell of a generated page and render differently on every platform.",
    fix: "Use a consistent icon set with labels, or no icon.", sources: ["hallmark slopped.html gate 30", "ui-ux-pro-max §46", "ux-ui-agent-skills emoji fixture"]}
+- {id: SLP-015, title: No sparkle or wand as the sign for AI, domain: D03, tier: Reflex, detector: ai_sparkle, remedy: fix-quieter,
+   rule: "Do not mark an AI feature with a sparkle, wand or stars glyph (lucide-sparkles, wand-sparkles, auto_awesome and the like). The product's own mark is fine even when it is a sparkle; waive with that reason.",
+   why: "The sparkle is the generic shorthand for any AI feature, so it says nothing about this one and reads as a template.",
+   fix: "Say what happens in a plain label (Summarize, Draft reply), or use the product's own mark.",
+   sources: ["stageshow craft.md Icons and logos; teaching.md Style (AI shorthand)", "mined SLP-251"]}
+- {id: SLP-016, title: No invented letter-tile logos, domain: D03, tier: Reflex, detector: invented_mark, remedy: fix-quieter,
+   rule: "A real company named on the page is shown by its real mark or its plain name, never by a letter or glyph in a coloured square.",
+   why: "A letter tile in a brand colour is the stock stand-in for a logo; beside a real company's name it reads as fake.",
+   fix: "Use the company's real mark in its original proportions and colours, or a plain text wordmark.",
+   sources: ["stageshow craft.md Icons and logos; scripts/film-checks.mjs detectInventedMark (MIT)", "mined SLP-252"]}
+- {id: SLP-017, title: One icon construction per group, domain: D03, tier: Finish, detector: mixed_icons, remedy: fix-quieter,
+   rule: "Within one nav, list or toolbar, icons share one set, one style and one stroke width: not two or more filled glyphs beside two or more outline glyphs. Filling one glyph to mark the selected state is fine.",
+   why: "Glyphs of different constructions side by side are the first sign the icons were drawn or picked one at a time.",
+   fix: "Take every glyph in the group from one set at one size and stroke; use fill only for state.",
+   sources: ["stageshow craft.md Icons and logos (mixed icons)", "mined SLP-253"]}
 - {id: SLP-014, title: No cards inside cards, domain: D03, tier: Reflex, detector: nested_cards, remedy: fix-layout,
    rule: "Do not put a bordered or shadowed card inside another card.", why: "Nested boxes add depth with no meaning and crowd the content.",
    fix: "Keep one container level; group inside it with spacing or a rule.", sources: ["hallmark slopped.html gate 4", "impeccable §561"]}

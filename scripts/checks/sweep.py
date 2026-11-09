@@ -7,7 +7,7 @@ Every detector in data/thresholds.yaml gets a status: ran | skipped: reason | no
 import argparse, json, sys, time, traceback, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from core import REGISTRY, Evidence, Skip, NotVerified, resolve
-import detectors_visual, detectors_text, detectors_a11y, detectors_cross, detectors_motion   # noqa: F401  (register)
+import detectors_visual, detectors_text, detectors_a11y, detectors_cross, detectors_motion, detectors_icons   # noqa: F401  (register)
 
 ORDER_LAST = ["look_family"]          # needs other detectors' results
 

@@ -108,6 +108,17 @@
       if (lw.length > 1) rec.lines = lw;
     }
     if (el.getAttribute("aria-hidden") === "true") rec.ariaHidden = true;
+    // icons: class names (icon sets name their glyphs: lucide-sparkles, ph-magic-wand, fa-wand-magic-sparkles) and how an
+    // SVG glyph is painted (filled vs outline), for ai_sparkle and mixed_icons
+    const cls = typeof el.className === "string" ? el.className : (el.className && el.className.baseVal) || "";
+    if (el.tagName.toLowerCase() === "svg") {
+      const shapes = [...el.querySelectorAll("path,circle,rect,polygon,ellipse,line,polyline,use")];
+      const sh = shapes[0], ss = sh ? getComputedStyle(sh) : null;
+      rec.icon = { svg: true, cls: cls.slice(0, 120), lucide: el.getAttribute("data-lucide") || null, label: el.getAttribute("aria-label") || null,
+        fill: ss ? ss.fill : cs.fill, stroke: ss ? ss.stroke : cs.stroke, strokeWidth: ss ? ss.strokeWidth : cs.strokeWidth, shapes: shapes.length };
+    } else if (cls && /(^|[\s-])(icon|icons|fa|fas|far|fa-solid|fa-regular|bi|ph|ti|ri|lni|material-symbols[\w-]*|material-icons[\w-]*)($|[\s-])/i.test(cls) && r.width <= 64 && r.height <= 64) {
+      rec.icon = { svg: false, cls: cls.slice(0, 120) };
+    }
     els.push(rec);
   }
 

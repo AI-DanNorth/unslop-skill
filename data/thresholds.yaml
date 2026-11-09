@@ -35,6 +35,12 @@ detectors:
   lexicon_copy:     {rule: CPY-005, tier: Reflex, lexicons: [buzzwords, stock-phrases, button-labels, self-labels, chrome-glyphs]}
   repeated_label:   {rule: CPY-006, tier: Reflex, min_repeats_in_card: 3}
   emoji_icons:      {rule: SLP-013, tier: Reflex, min_px: 16, min_count: 2}
+  # icons (source 21: Stageshow craft.md Icons and logos; invented_mark ported from film-checks detectInventedMark). Named glyphs only.
+  ai_sparkle:       {rule: SLP-015, tier: Reflex, max_px: 48, max_hits: 4, ligatures: [auto_awesome, auto_fix_high, magic_button],
+                     names: 'sparkles?|magic[-_ ]?wand|wand[-_ ]?(magic|sparkles?)|\bwand\b|auto[-_]?awesome|\bbi-stars\b|ai[-_]sparkle'}
+  invented_mark:    {rule: SLP-016, tier: Reflex, min_px: 14, max_px: 44, min_spread: 0.24, max_hits: 4,   # spread: 60/255, colorlib channels are 0-1
+                     brands: 'chase|wells fargo|bank of america|citibank|barclays|hsbc|monzo|revolut|capital one|goldman|jpmorgan|stripe|paypal|visa|mastercard|amex|american express|slack|figma|notion|linear|github|gitlab|vercel|netlify|shopify|dropbox|google|gmail|apple|microsoft|amazon|aws|spotify|netflix|uber|lyft|airbnb|zoom|discord|twitter|meta|facebook|instagram|tiktok|openai|anthropic'}
+  mixed_icons:      {rule: SLP-017, tier: Finish, min_px: 10, max_px: 32, min_each: 2, max_hits: 4}
   nested_cards:     {rule: SLP-014, tier: Reflex, max_depth: 4}
   chrome_glyphs:    {rule: SLP-010, tier: Reflex, budget: 0}
   # ---- integrity ------------------------------------------------------------
