@@ -108,12 +108,51 @@ class Evidence:
             self._img[name] = np.array(Image.open(p).convert("RGB"))
         return self._img[name]
 
+    # ---- exhibits: regions a page shows on purpose as examples (a slop specimen, a "before" panel) -------------
+    # sweep sets skip_exhibits for the slop-tell detectors listed in thresholds.yaml `exhibits`; texts() and visible()
+    # then leave those regions out. Accessibility detectors never skip them: a user still meets those failures.
+    skip_exhibits = False
+    exhibit_cfg = None
+
+    def exhibit_ids(self, w=None):
+        w = w or self.primary
+        key = ("exhibits", w)
+        if key in self._dom: return self._dom[key]
+        cfg = self.exhibit_cfg or {}
+        pat = re.compile(cfg.get("pattern", r"$^"), re.I)
+        d = self.dom(w); els = d["elements"]
+        page_h = max([e["rect"]["y"] + e["rect"]["h"] for e in els if e["vis"]] + [1])
+        roots = set()
+        for e in els:
+            if e["tag"] in ("html", "body", "main"): continue
+            last = e["sel"].split(" > ")[-1]
+            names = " ".join(re.findall(r"[.#]((?:\\.|[\w-])+)", last)).replace("\\", "")
+            if names and pat.search(names) and e["rect"]["h"] <= cfg.get("max_share", 0.5) * page_h: roots.add(e["id"])
+        inside, memo = set(), {}
+        def walk(e):
+            i = e["id"]
+            if i in memo: return memo[i]
+            memo[i] = False
+            p = e.get("parent")
+            par = d["byid"].get(int(p)) if p is not None else None
+            memo[i] = i in roots or (par is not None and walk(par))
+            return memo[i]
+        for e in els:
+            if walk(e): inside.add(e["id"])
+        self._dom[key] = (roots, inside)
+        return self._dom[key]
+
+    def _own(self, lst, w):
+        if not self.skip_exhibits: return lst
+        roots, inside = self.exhibit_ids(w)
+        return [e for e in lst if e["id"] not in inside] if inside else lst
+
     # convenience
     def texts(self, w=None, min_len=1):
-        return [e for e in self.dom(w)["elements"] if e["vis"] and e["textLen"] >= min_len]
+        return self._own([e for e in self.dom(w)["elements"] if e["vis"] and e["textLen"] >= min_len], w)
 
     def visible(self, w=None):
-        return [e for e in self.dom(w)["elements"] if e["vis"]]
+        return self._own([e for e in self.dom(w)["elements"] if e["vis"]], w)
 
     def ancestors(self, e, w=None):
         d = self.dom(w); out = []

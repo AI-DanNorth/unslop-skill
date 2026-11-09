@@ -4,6 +4,18 @@
 version: 1
 widths: {web: [320, 375, 414, 768, 1024, 1280, 1440, 1920], fold: [[1280, 800], [1440, 900], [1920, 1080]]}
 
+# Exhibits (live round 1, L19 and L20): regions a page shows on purpose as examples, such as a slop specimen or a
+# "before" panel, found from the class or id names of the region's root (core.Evidence.exhibit_ids). The listed
+# slop-tell and copy detectors leave them out; accessibility, robustness and motion detectors never do. A root taller
+# than max_share of the page is ignored, so a page that is itself marked "slop" is still judged as a whole.
+exhibits:
+  pattern: '(^|[\s_-])(slop|specimens?|anti-?patterns?|antipatterns?|dont|do-not|bad-example|before)([\s_-]|$)'
+  max_share: 0.5
+  detectors: [eyebrow, numbered_labels, icon_tile, side_tab_border, card_kit, container_monotony, gradient, glow, neon_violet,
+              stock_swatches, banned_fonts, lexicon_copy, repeated_label, emoji_icons, ai_sparkle, invented_mark, mixed_icons,
+              nested_cards, chrome_glyphs, invented_metrics, default_names, fake_people, placeholder_residue, stat_band, em_dash,
+              near_tangent, nested_radius, unit_wrapped]
+
 detectors:
   # ---- slop: visual tells ---------------------------------------------------
   eyebrow:          {rule: SLP-001, tier: Reflex, max_size_px: 14, max_ratio_to_heading: 0.45, min_tracking_em: 0.06, min_heading_px: 20, max_gap_px: 48, budget: 0}

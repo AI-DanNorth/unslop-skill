@@ -18,6 +18,8 @@ def run(run_dir, profile="balanced", medium="web", only=None, overrides=None):
     cfg = resolve(profile, medium, overrides)
     (ev.run / "resolved-thresholds.json").write_text(json.dumps(cfg["detectors"], indent=1))
     control_ok = bool((ev.manifest.get("control") or {}).get("ok"))
+    ev.exhibit_cfg = cfg.get("exhibits") or {}
+    exhibit_aware = set(ev.exhibit_cfg.get("detectors") or [])
     names = [n for n in cfg["detectors"] if not only or n in only]
     names.sort(key=lambda n: n in ORDER_LAST)
     results = {}
@@ -27,6 +29,7 @@ def run(run_dir, profile="balanced", medium="web", only=None, overrides=None):
         impl = REGISTRY.get(name)
         if not impl: results[name] = {"status": "not-verified: detector not implemented yet", "rule": c["rule"]}; continue
         t0 = time.time()
+        ev.skip_exhibits = name in exhibit_aware
         try:
             hits = impl["fn"](ev, c, results) if name in ORDER_LAST else impl["fn"](ev, c)
             for h in hits:
@@ -35,11 +38,21 @@ def run(run_dir, profile="balanced", medium="web", only=None, overrides=None):
             status = "ran" if control_ok or name in ("near_blank",) else "not-verified: control render failed"
             results[name] = {"status": status, "rule": c["rule"], "hits": hits, "ms": round(1000 * (time.time() - t0))}
             if getattr(hits, "partial", None): results[name]["partial"] = list(hits.partial)     # parts that were not verified
+            if ev.skip_exhibits:
+                try:
+                    roots, _ = ev.exhibit_ids()
+                    if roots: results[name]["exhibits_left_out"] = len(roots)
+                except NotVerified: pass
         except Skip as e: results[name] = {"status": f"skipped: {e}", "rule": c["rule"]}
         except NotVerified as e: results[name] = {"status": f"not-verified: {e}", "rule": c["rule"]}
         except Exception as e:
             results[name] = {"status": f"not-verified: detector error {type(e).__name__}: {e}", "rule": c["rule"], "trace": traceback.format_exc(limit=3)}
-    summary = {"profile": profile, "medium": medium, "control_ok": control_ok, "widths": ev.widths,
+    ev.skip_exhibits = False
+    try:
+        roots, inside = ev.exhibit_ids()
+        exhibits = sorted(ev.dom()["byid"][i]["sel"] for i in roots)[:12]
+    except NotVerified: exhibits = []
+    summary = {"exhibits": exhibits, "profile": profile, "medium": medium, "control_ok": control_ok, "widths": ev.widths,
                "counts": {t: sum(1 for r in results.values() if r["status"] == "ran" for h in r.get("hits", []) if h["tier"] == t) for t in ("Floor", "Reflex", "Finish")},
                "ran": sum(1 for r in results.values() if r["status"] == "ran"),
                "skipped": [f"{n}: {r['status']}" for n, r in results.items() if r["status"] != "ran"]}

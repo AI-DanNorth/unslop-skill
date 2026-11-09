@@ -38,7 +38,7 @@ items:
 - {id: L26, url: 'https://cal.com', expect: good, medium: web, group: fp-control, why: monochrome restraint}
 - {id: L27, url: 'https://stripe.com', expect: good, medium: web, group: fp-control, why: gradient used with intent}
 # --- human exemplars
-- {id: L28, url: 'https://landonorris.com', expect: good, medium: web, group: exemplar, why: Awwwards Site of the Year 2025}
+- {id: L28, url: 'https://landonorris.com', expect: good, medium: web, group: exemplar, why: Awwwards Site of the Year 2025, capture_flags: [--no-interact]}   # ~740 s without interaction
 - {id: L29, url: 'https://messenger.abeto.co', expect: good, medium: web, group: exemplar, why: Awwwards Developer SOTY 2025}
 - {id: L30, url: 'https://brand.dropbox.com', expect: good, medium: web, group: exemplar, why: CSSDA Website of the Year 2025 (domain probable)}
 - {id: L31, url: 'https://www.informationisbeautifulawards.com/showcase/7177-this-is-a-teenager', expect: good, medium: web, group: exemplar, why: IIB 2024 gold data story}

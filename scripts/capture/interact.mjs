@@ -380,14 +380,17 @@ export function analyseLive(cfg) {
   // snaps after the click
   const found = new Map();
   for (let f = c0 + 2; f < F.length - 1; f++) {
-    if (late(f - 1) || late(f) || late(f + 1)) continue;
+    // frame-time aware: a late frame carries several frames of gliding, so the jump is judged against the distance the
+    // element's own speed (from the frames either side) covers in this frame's real duration, not skipped
+    const dt = (g) => Math.max(F[g].t - F[g - 1].t, 1);
     for (const [id] of at[f]) {
       if (isAmbient(id)) continue;
       for (const [k, axis] of AX) {
         const d = step(f, id, k), before = step(f - 1, id, k), after = step(f + 1, id, k);
         if (d === null || before === null || after === null) continue;
-        const calm = Math.max(Math.abs(before), Math.abs(after), 0.4);
-        if (Math.abs(d) <= cfg.jumpPx || Math.abs(d) <= 3 * calm) continue;
+        const speed = Math.max(Math.abs(before) / dt(f - 1), Math.abs(after) / dt(f + 1), 0.4 / frameMs);
+        const calm = speed * dt(f);
+        if (Math.abs(d) - calm <= cfg.jumpPx || Math.abs(d) <= 3 * calm) continue;
         // settle: this element glided in at least 3 of the 8 frames before the jump
         let glided = 0;
         for (let g = Math.max(c0 + 1, f - 8); g < f; g++) { const s = step(g, id, k); if (s !== null && Math.abs(s) > 0.4 && Math.abs(s) <= cfg.jumpPx * 3) glided++; }
