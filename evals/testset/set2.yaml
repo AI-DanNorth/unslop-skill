@@ -1,0 +1,1436 @@
+name: Test set 2 (controlled pairs)
+# One fault per pair: the bad and good halves of Stageshow's teaching pairs (benjitaylor/skills, MIT), captured one
+# half at a time from the local playground, with the other half, the captions and the lesson header removed from the DOM by `isolate`.
+# Expected labels live only here. Reviewers never see the lesson id: withhold_target keeps the URL out of run.json and manifest.json.
+sources:
+  stageshow:
+    github: benjitaylor/skills
+    commit: 299140fafd08df55a9c234e610c3f64af3f45531
+# Serve the playground first: cd <refs>/stageshow/stageshow && npm ci && npx vite playground --config playground/vite.config.ts --port 5199 --strictPort --host 127.0.0.1
+# expect: slop for the six style faults that are AI tells; borderline for single craft faults; good for good halves.
+items:
+- id: P01
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=edge-separation
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: edge-separation
+  half: bad
+  why: 'bad half: The confirmation almost touches the panel'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P02
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-sparkle
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-sparkle
+  half: bad
+  why: 'bad half: Sparkles, a wand and a gradient AI chip'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P03
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=window-focus
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: window-focus
+  half: bad
+  why: 'bad half: Three active windows compete for attention'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P04
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=edge-separation
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: edge-separation
+  half: good
+  why: 'good half: Make edges feel deliberate'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P05
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=visual-restraint
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: visual-restraint
+  half: bad
+  why: 'bad half: Borders, shadows and color on every part'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P06
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=control-alignment
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: control-alignment
+  half: good
+  why: 'good half: Fit the contents of a control'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P07
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=dashboard-phone
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: dashboard-phone
+  half: good
+  why: 'good half: Compose the two-device story'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P08
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=unread-gutter
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: unread-gutter
+  half: good
+  why: 'good half: Never push only the unread rows in'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P09
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-copy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-detail
+  pair: detail-copy
+  half: good
+  why: 'good half: Choose copy that fits'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P10
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=decorative-noise
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: decorative-noise
+  half: bad
+  why: 'bad half: Decorative effects compete with the report'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P11
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-detail
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-style
+  pair: style-detail
+  half: bad
+  why: 'bad half: Every row carries six facts and a badge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P12
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=result-weight
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: result-weight
+  half: good
+  why: 'good half: Give the result the most weight'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P13
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-tiny
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-style
+  pair: style-tiny
+  half: bad
+  why: 'bad half: 9 to 10px text that only reads zoomed in'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P14
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-bar
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-detail
+  pair: detail-bar
+  half: bad
+  why: 'bad half: Only the more button, the left side empty'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P15
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=dashboard-phone
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: dashboard-phone
+  half: bad
+  why: 'bad half: The phone hides the payment it is explaining'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P16
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=product-anatomy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: product-anatomy
+  half: bad
+  why: 'bad half: Browser chrome disguises a sharing task'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P17
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=window-satellite
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: window-satellite
+  half: bad
+  why: 'bad half: The receipt sits over the settings and action'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P18
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=surface-contrast
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: surface-contrast
+  half: bad
+  why: 'bad half: Foreground, surface and ground blend together'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P19
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=unread-gutter
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: unread-gutter
+  half: bad
+  why: 'bad half: Unread rows push their avatar in; the column zigzags'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P20
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=compact-reflow
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: compact-reflow
+  half: good
+  why: 'good half: Reflow a small composition'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P21
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=crop-filler
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: crop-filler
+  half: bad
+  why: 'bad half: The crop cuts the size the story ends on'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P22
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=window-satellite
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: window-satellite
+  half: good
+  why: 'good half: Place a satellite around the story'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P23
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=framing
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: framing
+  half: good
+  why: 'good half: Give the product room'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P24
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-caps
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-caps
+  half: bad
+  why: 'bad half: Capitals on the heading, labels and button'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P25
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=compact-reflow
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: compact-reflow
+  half: bad
+  why: 'bad half: The desktop table is scaled to half size'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P26
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-bar
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-detail
+  pair: detail-bar
+  half: good
+  why: 'good half: Balance a top bar'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P27
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=result-weight
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: result-weight
+  half: bad
+  why: 'bad half: The new file is one thin row in a long list'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P28
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=tile-lead
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: tile-lead
+  half: good
+  why: 'good half: Give one tile the lead'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P29
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=content-density
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: content-density
+  half: bad
+  why: 'bad half: Uniform gaps weaken the appointment groups'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P30
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=material-contrast
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: material-contrast
+  half: good
+  why: 'good half: Separate dark and light materials'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P31
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=story-crop
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: story-crop
+  half: good
+  why: 'good half: Crop to the action and payoff'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P32
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-icons
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-icons
+  half: bad
+  why: 'bad half: Invented glyphs in rainbow tiles'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P33
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=icon-consistency
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: icon-consistency
+  half: bad
+  why: 'bad half: Mixed fill, stroke weight and visible size'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P34
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=material-contrast
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: material-contrast
+  half: bad
+  why: 'bad half: Inherited colors flatten the dark and light surfaces'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P35
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=surface-contrast
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: surface-contrast
+  half: good
+  why: 'good half: Keep the foreground readable'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P36
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=tile-lead
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: tile-lead
+  half: bad
+  why: 'bad half: Four equal tiles, each a heading and bars'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P37
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=colored-layers
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: colored-layers
+  half: good
+  why: 'good half: Use the ground to frame the layers'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P38
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=colored-layers
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: colored-layers
+  half: bad
+  why: 'bad half: Ground, invoice and deposit compete in one saturated field'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P39
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=nested-spacing
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: nested-spacing
+  half: good
+  why: 'good half: Carry padding around every edge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P40
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=control-alignment
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: control-alignment
+  half: bad
+  why: 'bad half: Icons sit low and labels crowd the upper edge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P41
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=ui-anatomy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: ui-anatomy
+  half: bad
+  why: 'bad half: Labels, metadata and actions compete'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P42
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=crop-filler
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: crop-filler
+  half: good
+  why: 'good half: Crop filler, never the story'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P43
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=story-crop
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-scene
+  pair: story-crop
+  half: bad
+  why: 'bad half: The whole application becomes a thumbnail'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P44
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-copy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-detail
+  pair: detail-copy
+  half: bad
+  why: 'bad half: Truncated email, wrapped name, ragged labels'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P45
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=visual-restraint
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: visual-restraint
+  half: good
+  why: 'good half: Choose where emphasis belongs'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P46
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-onion
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-onion
+  half: bad
+  why: 'bad half: Translucent ink: darker where strokes cross'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P47
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=decorative-noise
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: decorative-noise
+  half: good
+  why: 'good half: Let the information lead'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P48
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-purple
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-purple
+  half: bad
+  why: 'bad half: Purple gradient ground, gradient title, tinted everything'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P49
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-purple
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-style
+  pair: style-purple
+  half: good
+  why: 'good half: the shared good deploys card'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P50
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=content-density
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: content-density
+  half: good
+  why: 'good half: Give whitespace a job'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P51
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=icon-consistency
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: icon-consistency
+  half: good
+  why: 'good half: Give icons a shared construction'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P52
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=framing
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: framing
+  half: bad
+  why: 'bad half: Tight edges and a status over the content'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P53
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=window-focus
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-scene
+  pair: window-focus
+  half: good
+  why: 'good half: Choose one window to lead'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P54
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=nested-spacing
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-composition
+  pair: nested-spacing
+  half: bad
+  why: 'bad half: The inner surface and action crowd the bottom'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P55
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=product-anatomy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: product-anatomy
+  half: good
+  why: 'good half: Choose chrome that serves the task'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P56
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=style-glow
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: slop
+  group: pair-style
+  pair: style-glow
+  half: bad
+  why: 'bad half: A colored glow on the card, button and dot'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P57
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=ui-anatomy
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-composition
+  pair: ui-anatomy
+  half: good
+  why: 'good half: Make the UI read like a product'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2

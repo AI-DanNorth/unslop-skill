@@ -57,8 +57,8 @@ Source short names: hallmark, uupm (ui-ux-pro-max), huashu (huashu-design), tast
 |---|---|---|---|---|---|
 | MOT-060 | Exit faster than enter. | Exit = 60-75% of enter (65% typical); agent tokens exit 150 / enter 210 / move 400ms | Reflex | M | hallmark §83, §324, uupm §237, §162, agent §79 |
 | MOT-061 | Delay the enter by the exit duration with `both` fill so the old state clears first, unless cross-fading for continuity. | `animation-delay: var(--duration-exit)` | Finish | M | agent §27, §79 |
-| MOT-062 | Always pair an enter with an exit; otherwise the old view vanishes instantly. | Every enter has an exit or explicit `none` | Reflex | H | agent §51 |
-| MOT-063 | Never leave a blank gap between outgoing and incoming content. | No pure-blank gap >0.3s | Reflex | M | huashu §377 |
+| MOT-062 | Always pair an enter with an exit; otherwise the old view vanishes instantly. | Every enter has an exit or explicit `none` | Reflex | H | agent §51, stageshow §50 |
+| MOT-063 | Never leave a blank gap between outgoing and incoming content. | No pure-blank gap >0.3s | Reflex | M | huashu §377, stageshow §50 |
 | MOT-064 | Cap route exit; never block navigation on animation; preload destination before exit ends. | Exit ≤~250ms | Reflex | M | uupm §162, §163 |
 | MOT-065 | Give overlay/wipe transitions a max-wait timeout so slow data never stalls them. | Timeout required | Reflex | H | uupm §163 |
 | MOT-066 | Animate modals/sheets from their trigger source (scale+fade or slide). | Modal panel 0.96 -> 1 over long ease-out; close ~65% ease-in | Finish | J | uupm §237, hallmark §329 |
@@ -71,7 +71,7 @@ Source short names: hallmark, uupm (ui-ux-pro-max), huashu (huashu-design), tast
 | MOT-072 | Never stagger on filtering or search updates; rows may fade in on first open only. | 0 stagger on filter | Reflex | H | hallmark §338, agent §43 |
 | MOT-073 | Target stagger items by stable class/attribute, not array index; animate only mounted items in virtualized lists. | Stable keys | Finish | H | uupm §159, §974 |
 | MOT-074 | Give entrances direction; never plain opacity 0->1 on every element. | translateY 8-16px (10px default) | Finish | M | huashu §349, §365, uupm §156, agent §28 |
-| MOT-075 | Stagger exits by reading order when many leave; simultaneous disappearance reads as a crash (video/demo). | ≥0.4 frame by reading order | Finish | J | huashu §342, §422 |
+| MOT-075 | Stagger exits by reading order when many leave; simultaneous disappearance reads as a crash (video/demo). | ≥0.4 frame by reading order | Finish | J | huashu §342, §422, stageshow §47 |
 
 ### Page load and scroll choreography
 | ID | Rule | Values / thresholds | Tier | Check | Sources |
@@ -163,8 +163,8 @@ Source short names: hallmark, uupm (ui-ux-pro-max), huashu (huashu-design), tast
 | MOT-161 | Every loop stops off-screen, in a hidden tab, and under reduced motion. | | Floor | H | hallmark §87, uupm §167-§169, taste §629 |
 | MOT-162 | Anything moving on its own past 5s carries a visible pause control (WCAG 2.2.2). | 5s; pause disc 32px, 12px from corner, never over copy | Floor | H | hallmark §87, §443, taste §434, §632, uupm §15, §231 |
 | MOT-163 | Auto-rotating content, carousels, marquees, tickers pause on hover and focus; provide prev/next and play/pause; announce slide without moving focus. | | Floor | H | hallmark §87, §443, uupm §15, §169 |
-| MOT-164 | Ban decorative attention loops: pulsing dots, twinkling, flicker, hue cycling, scrambled text, typing dots, block cursors after headlines, caret blinking past five beats. | Every change shows a state, step or real data | Reflex | M | hallmark §87, taste §33, §429 |
-| MOT-165 | Seed loops on their finished picture; never show an empty frame; a reset dims and rewrites, never blanks. | Rest 600ms before first cycle; hold last 10-15% | Finish | J | taste §428 |
+| MOT-164 | Ban decorative attention loops: pulsing dots, twinkling, flicker, hue cycling, scrambled text, typing dots, block cursors after headlines, caret blinking past five beats. | Every change shows a state, step or real data | Reflex | M | hallmark §87, taste §33, §429, stageshow §48 |
+| MOT-165 | Seed loops on their finished picture; never show an empty frame; a reset dims and rewrites, never blanks. | Rest 600ms before first cycle; hold last 10-15% | Finish | J | taste §428, stageshow §45 §47 |
 | MOT-166 | Never auto-advance tabs or slides without a stop control; avoid timed tabs. | | Reflex | M | taste §33, §419, uupm §15 |
 
 ### Reduced motion
@@ -173,7 +173,7 @@ Source short names: hallmark, uupm (ui-ux-pro-max), huashu (huashu-design), tast
 | MOT-170 | Every keyframe, transform transition, scroll effect and view transition has a `prefers-reduced-motion: reduce` fallback. | 100% coverage | Floor | M | hallmark §4, §130, §439, uupm §9, §50, agent §77, kami §684 |
 | MOT-171 | Default global fallback: zero durations and delays, one iteration, `scroll-behavior: auto`. | 0.01ms durations; delay 0 (prevents blank gap from delayed enters) | Floor | M | hallmark §439, uupm §348, agent §77 |
 | MOT-172 | Treat reduced motion as a state, not off: spatial motion collapses to a short opacity crossfade; colours, menus and functional state still change. | 150ms crossfade allowed | Reflex | H | hallmark §84, §323, taste §439 |
-| MOT-173 | Under reduced motion, every reveal shows its end state; loops hold one frame; pause buttons hide; numbers show final text; tab indicators and switches jump. | | Floor | H | hallmark §84, taste §439, §632 |
+| MOT-173 | Under reduced motion, every reveal shows its end state; loops hold one frame; pause buttons hide; numbers show final text; tab indicators and switches jump. | | Floor | H | hallmark §84, taste §439, §632, stageshow §54 |
 | MOT-174 | Listen to the reduced-motion setting live; offer an in-app setting where the OS gives none. | Live listener | Reflex | M | uupm §974, §144 |
 | MOT-175 | Also degrade motion on phones and slow networks: heavy canvases become stills, hover effects off on touch. | Phone = <640px or touch landscape <500px tall | Reflex | H | taste §439, §444, uupm §233 |
 

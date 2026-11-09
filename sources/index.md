@@ -1,6 +1,6 @@
 # Sources
 
-The 20 collections in the "Design Reviewing System" project that the rules were mined from. **Licence status must be confirmed for each before this repository is published** (open decision in the plan).
+The 21 collections in the "Design Reviewing System" project that the rules were mined from. **Licence status must be confirmed for each before this repository is published** (open decision in the plan).
 
 | Short name | Project doc | Used for | Licence |
 |---|---|---|---|
@@ -21,6 +21,7 @@ The 20 collections in the "Design Reviewing System" project that the rules were 
 | web-interface-guidelines | web-interface-guidelines-rules-by-concept.md | accessibility, interaction | to confirm |
 | dsh-design-skills | dsh-design-skills-rules-by-concept.md | style library | to confirm |
 | writing-guidelines | writing-guidelines-rules-by-concept.md | copy tests | to confirm |
+| stageshow | stageshow-rules-by-concept.md | product illustrations and mockups, demo-animation motion, mockup slop tells (source 21, benjitaylor/skills @ `299140f`; added 9 Nov 2026, see `research/notes/stageshow-review.md`) | MIT (brand SVGs under their own licences; not used) |
 | Design Rules 1, Design Rules 2, Concepts and rules | project notes | motion frequency, styles, 2026 tells | user's own notes |
 
 `provenance.csv` maps every rule id to the mining file, the mined id and the cited sections.

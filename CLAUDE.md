@@ -10,7 +10,7 @@ Unslop is a Claude plugin that audits design artifacts for AI-default slop, acce
 | What happened, decisions, lessons, mistakes | `docs/HISTORY.md` |
 | Prompts for the next sessions | `docs/NEXT-PROMPTS.md` |
 | Prompts that produced the research | `docs/AGENT-PROMPTS.md` |
-| The 20 source docs the rules came from | `research/sources/` |
+| The 21 source docs the rules came from | `research/sources/` |
 | Mined rule rows, named tests, conflicts, lexicons | `research/mining/` (A to G) |
 | Web research findings | `research/web-research-report.md` |
 | Candidate examples (1,883 rows) | `evals/candidates/` |
@@ -57,9 +57,18 @@ python3 scripts/selftest.py                         # must print SELF-TEST PASSE
 - Phase 2 started (9 Nov 2026): `lens-concept`, `lens-structure`, `lens-typography`, `lens-color` and `lens-copy` built (157 active cards). Run blind on 8 live items: verdict agreement 6 to 8 of 8 per lens, and every lens's score separates slop from good with no overlap (`evals/testset/results/phase2-round-1/SUMMARY.md`).
 - Test set 1 live (39 sites, captured 9 Nov 2026): one blind round. 27 of 34 raw, **29 of 34 after evidence-based fixes**; 30 of 33 adjusted, with 2 contested (`evals/testset/results/live-round-1-adjudication.md`). L04 is not verified (unpublished app). Every Floor hit on the 14 human controls was verified: 148 false positives were traced and fixed, and what remains is real WCAG failures, not slop calls.
 
+- Stageshow (benjitaylor/skills, MIT) added 9 Nov 2026 as source 21 (`research/notes/stageshow-review.md`): 95 draft cards from `research/mining/F-stageshow.md`, conflicts C45 to C51. Capture gained a live (real-time) motion recorder in `interact.mjs` (`run.live` in motion.json) and the `motion_snap` detector (MOT-003, Finish). Test set 2 (`evals/testset/set2.yaml`, 57 halves of Stageshow's teaching pairs, one fault per pair) needs the Stageshow playground served on port 5199 (command in the manifest).
+
+## Owner decisions (9 Nov 2026)
+
+- `targets`: a too-small target inside a footer (`footer`, `role=contentinfo`) is Reflex, not Floor (`footer_tier`). Floor everywhere else.
+- Spot-check rows stay **provisional** until the designer's JSON comes back; keep working and fold the calls in then.
+- The full live recapture with interaction waits until the live recorder is in (it now is): one recapture carries all the new evidence.
+
 ## Next steps, in order
 
-1. **Human spot-check:** a designer works through `evals/testset/results/spot-check.html` (11 rows; rebuild with `evals/testset/build_spotcheck.py`) and returns the JSON. Record the calls in both adjudications. L15 (fixture semantics) is not on the page; decide it in the same pass.
-2. **Region-aware sweeping** for pages that exhibit slop on purpose (L19, L20): ignore sections labelled as examples. Decide whether `targets` stays Floor for dense footer link lists.
-3. **Interaction capture on live sites:** tried on L06, L13 and L26 (9 Nov 2026). The guards held (no request left the page), motion took about 33 s, L06 got a reduced-motion Floor and the Cal.com control got no hits. Recapture the full live set with interaction before the next live round; use `--no-interact` for slow pages such as L28, which is already at about 740 s.
+1. **Human spot-check:** a designer works through `evals/testset/results/spot-check.html` (11 rows; rebuild with `evals/testset/build_spotcheck.py`) and returns the JSON. Record the calls in both adjudications. L15 (fixture semantics) is not on the page; decide it in the same pass. Until then the rows are provisional.
+2. **Region-aware sweeping** for pages that exhibit slop on purpose (L19, L20): ignore sections labelled as examples.
+3. **Interaction capture on live sites:** tried on L06, L13 and L26 (9 Nov 2026). The guards held (no request left the page), motion took about 33 s, L06 got a reduced-motion Floor and the Cal.com control got no hits. Recapture the full live set with interaction (now including the live recorder) before the next live round; use `--no-interact` for slow pages such as L28, which is already at about 740 s.
+3a. **Test set 2 (Stageshow pairs):** score pairwise (does the bad half score worse than its good half, and does the named fault appear?), then build the next detectors against it and the 14 live human controls: `ai_sparkle`, `invented_mark`, `mixed_icons`, then `near_tangent`, `unit_wrapped`, `nested_radius`. Reflex or Finish only, never Floor. The motion pairs need a passive recording mode (they play without a click) and are not in set 2 yet.
 4. **Phase 2, continued:** add the five new lenses to intake's default set and test the full report on a few items. Then build the remaining lenses (integrity, components, imagery, dataviz, motion, robustness, tokens, brand, fidelity, usability), the scoring rubric and `verify-fix` (roadmap in the plan doc). Run each new lens blind on a larger, mixed set, including non-web media.

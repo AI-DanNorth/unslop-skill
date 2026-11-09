@@ -53,7 +53,7 @@ detectors:
   text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2,
                      scaled_ratio: 0.85, mock_hint: '(?:^|[-_]|(?<=[a-z0-9])(?=[A-Z]))(?i:graphic|mock(?:up)?|illustration|screenshot|preview|demo|frame)s?(?![a-z])'}   # Floor below hard_px; Reflex below dense_ui_px; Finish below body_px; mock text drops to Reflex
   focus_ring:       {rule: A11-003, tier: Floor, min_contrast: 3.0, fail_below: 2.95}
-  targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex}
+  targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex, footer_tier: Reflex}   # footer links: Reflex (owner call, 9 Nov 2026)
   img_alt:          {rule: A11-005, tier: Floor}
   control_names:    {rule: A11-006, tier: Floor}
   headings_landmarks: {rule: A11-007, tier: Reflex}
@@ -88,6 +88,11 @@ detectors:
   motion:           {rule: MOT-002, tier: Reflex, max_ms: {menu: 300, tab: 300, button: 300, disclosure: 450, dialog: 450},
                      min_enter_scale: 0.90, max_travel_px: 16, max_overshoot: 1.05, min_overshoot_px: 1, banned_easing: [ease], linear_movement: true,
                      layout_px: 2, settle_px: 1, settle_opacity: 0.02, min_root_px: 32, reduced_move_px: 2, reduced_scale: 0.02, reduced_rule: A11-011}
+  # motion_snap: from the live run in motion.json (real-time click, every painted element's box each animation frame).
+  #   A snap is a change over 2 px in one frame that is over 3x the change in the frames either side (Stageshow
+  #   jumps-core, MIT). settle = the element glided in 3 of the 8 frames before; shove = another element is mid-glide.
+  #   Instant changes are not judged (product UI may open instantly). min_px: the smallest jump reported.
+  motion_snap:      {rule: MOT-003, tier: Finish, min_px: 3, max_hits: 6}
   # async_state: measured from async.json (primary actions clicked with fetch/XHR held 3 s, then with a forced 500).
   #   checks_ms        MOT-200 (hallmark §311, uupm): show progress after 150-300 ms, "Loading..." past 2 s. No visible change
   #                    at both 0.5 s and 2 s while a request is pending = no feedback.

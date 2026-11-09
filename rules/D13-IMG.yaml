@@ -49,7 +49,7 @@
   values: SVG only for icons from one set, the logo, charts/diagrams of real data, plain geometry
   area: Real material vs placeholders
   sources:
-  - hallmark §117 §277, huashu §60 §81, taste §23 §25
+  - hallmark §117 §277, huashu §60 §81, taste §23 §25, stageshow §31 §43
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-004
   status: draft
 - id: IMG-105
@@ -254,7 +254,7 @@
   values: 'Too tall: split into 2-3 panels; normalize frame/padding across a group'
   area: Product captures and mockups
   sources:
-  - kami §136 §265 §646
+  - kami §136 §265 §646, stageshow §35
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-020
   status: draft
 - id: IMG-121
@@ -812,7 +812,7 @@
   values: No 🚀⚡️✨🎯💡 before heads, no ✅ in feature lists
   area: Icon systems and stroke
   sources:
-  - hallmark §123 §278, huashu §60, uupm §234, taste §23 §25
+  - hallmark §123 §278, huashu §60, uupm §234, taste §23 §25, stageshow §26
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-064
   status: draft
 - id: IMG-165
@@ -825,7 +825,7 @@
   values: A brand mark in ≤2 places may be extra; never a second line set
   area: Icon systems and stroke
   sources:
-  - hallmark §123 §278, uupm §234 §937, taste §361
+  - hallmark §123 §278, uupm §234 §937, taste §361, stageshow §25
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-065
   status: draft
 - id: IMG-166
@@ -902,7 +902,7 @@
   values: No hand-rolled SVG icons for real brands; nothing fetches/tints icons at runtime
   area: Icon systems and stroke
   sources:
-  - taste §360 §366 §376, huashu §34
+  - taste §360 §366 §376, huashu §34, stageshow §28
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-071
   status: draft
 - id: IMG-172
@@ -940,7 +940,7 @@
   values: 'Wordmark height 0.7× size, max width 4.5×; tile: landscape 70% width, portrait 68% height, square 60%'
   area: Icon systems and stroke
   sources:
-  - taste §366-367
+  - taste §366-367, stageshow §28
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-074
   status: draft
 - id: IMG-175
@@ -1106,4 +1106,222 @@
   sources:
   - hallmark §117 §127
   mined_from: E-copy-dataviz-imagery-brand.md#IMG-087
+  status: draft
+- id: IMG-188
+  title: 'Judge every faux UI or product mockup against the five ways it fails: Too much (packed, re'
+  domain: D13
+  tier: Reflex
+  priority: P1
+  check: J
+  rule: 'Judge every faux UI or product mockup against the five ways it fails: Too much (packed, real text everywhere), Wireframe (gray blobs,
+    built too small), Boxed (whole window shrunk into a card), Flat (every object the same weight), Bland (a gray window whatever the brief said).'
+  values: any one = finding
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §2
+  mined_from: F-stageshow.md#IMG-001
+  status: draft
+- id: IMG-189
+  title: 'In a product illustration, budget the words, not the elements: the title, the thing acted '
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a product illustration, budget the words, not the elements: the title, the thing acted on, what is typed and the result are real;
+    the rest is quiet placeholder. A calendar still needs a populated week.'
+  values: 3-7 real strings
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §6
+  mined_from: F-stageshow.md#IMG-002
+  status: draft
+- id: IMG-190
+  title: In a product illustration, put real words and values where the eye lands and bars at the e
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a product illustration, put real words and values where the eye lands and bars at the edges; label and value are both words or both
+    bars; placeholder widths vary row to row.
+  values: widths vary, e.g. 60, 45, 70, 52; no blank pill beside a real control
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §7
+  mined_from: F-stageshow.md#IMG-003
+  status: draft
+- id: IMG-191
+  title: 'In a product illustration, where the story touches a list show two or three real rows and '
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a product illustration, where the story touches a list show two or three real rows and at most as many bars; in a small surface a row
+    is one line; one number gets to be big.
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §8 §9
+  mined_from: F-stageshow.md#IMG-004
+  status: draft
+- id: IMG-192
+  title: In a product illustration, keep the domain's signature content (album art, thumbnails, ava
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration, keep the domain's signature content (album art, thumbnails, avatars) and give named avatars their own colour;
+    gray discs are filler only.
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §8
+  mined_from: F-stageshow.md#IMG-005
+  status: draft
+- id: IMG-193
+  title: 'In a product illustration, say it once: the feature''s signal appears once, a fictional pro'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration, say it once: the feature''s signal appears once, a fictional product gets no masthead, monogram or nav in
+    every crop, and the product name shows only where the real product would show it.'
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §10
+  mined_from: F-stageshow.md#IMG-006
+  status: draft
+- id: IMG-194
+  title: 'In a product illustration, compose objects, not an inventory of cards: hierarchy from prop'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration, compose objects, not an inventory of cards: hierarchy from proportion, space, material and ground; the heaviest
+    marks on the story; nothing outsized against a real screen; judge the silhouette at thumbnail size.'
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §11 §57
+  mined_from: F-stageshow.md#IMG-007
+  status: draft
+- id: IMG-195
+  title: 'Build a product illustration in the product''s own look: map its real tokens (accent, grays'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Build a product illustration in the product''s own look: map its real tokens (accent, grays, radii, type, control height) from code or
+    computed styles, taking values not assets, and check a still beside a real screenshot at the same scale.'
+  values: accent, gray temperature, radii and type match at a glance
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §30
+  mined_from: F-stageshow.md#IMG-008
+  status: draft
+- id: IMG-196
+  title: In a product illustration, use type at real UI sizes at the shown size
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a product illustration, use type at real UI sizes at the shown size; text shrunk to fit more rows reads as a wireframe.
+  values: UI text 11-15px; names 13-14px, metadata 11-12px; never <10px at widths <600
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §13 §55
+  mined_from: F-stageshow.md#IMG-009
+  status: draft
+- id: IMG-197
+  title: 'In a product illustration, use chrome for the task: browser chrome only when the browser i'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration, use chrome for the task: browser chrome only when the browser is part of the picture, a desktop app with its
+    real chrome, never platform chrome drawn from memory; platform conventions (Messages blue, macOS window lights, iOS banner size) are not placeholders.
+    See the conflict register for drawn chrome.'
+  values: columns run the full window height
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §32 §60
+  mined_from: F-stageshow.md#IMG-010
+  status: draft
+- id: IMG-198
+  title: In a product illustration with several windows, choose the active step
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration with several windows, choose the active step; quieter contrast and shadow push the others back.
+  values: 3 equally loud surfaces = fault
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §32 §57
+  mined_from: F-stageshow.md#IMG-011
+  status: draft
+- id: IMG-199
+  title: 'In a product illustration with a phone, keep the system''s real proportions: nothing under '
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration with a phone, keep the system''s real proportions: nothing under the Dynamic Island, true status bar and home
+    indicator, notifications at true size and never cut, lit from the first frame, no invented home-screen icons, never covering the amount it
+    explains.'
+  values: satellite phone ≥40% of the window's visible width and ≥220px; cropped at the top loses status bar and nav together
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §33
+  mined_from: F-stageshow.md#IMG-012
+  status: draft
+- id: IMG-200
+  title: In a product illustration, take icons from the product's own pack first, else one set chos
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a product illustration, take icons from the product's own pack first, else one set chosen on purpose; small icons are filled; icons
+    are one opaque colour with no duotone; even glyphs in even boxes; no glyph drawn past its box.
+  values: 14-16px, one size per scene; filled at ≤14px and in tinted tiles
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §23 §24 §25
+  mined_from: F-stageshow.md#IMG-013
+  status: draft
+- id: IMG-201
+  title: Give a drawn object tile one light source, a real material and the real object's anatomy
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: Give a drawn object tile one light source, a real material and the real object's anatomy; a drawn card that gets proportions wrong gives
+    itself away.
+  values: payment card chip ~1/8 card width, a third of the way down
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §31
+  mined_from: F-stageshow.md#IMG-014
+  status: draft
+- id: IMG-202
+  title: 'Choose an illustration''s ground for what it does: a quiet solid for dense UI, a colour fie'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Choose an illustration''s ground for what it does: a quiet solid for dense UI, a colour field for a sparse picture, a calm area behind
+    text; a vivid ground does not also need vivid controls, a coloured shadow and a glow; texture never sits over text.'
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §31
+  mined_from: F-stageshow.md#IMG-015
+  status: draft
+- id: IMG-203
+  title: 'Follow the brief''s look in full ("Bland" is a failure): a styled brief gets its colours, r'
+  domain: D13
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Follow the brief''s look in full ("Bland" is a failure): a styled brief gets its colours, radii, mascot and motion, still built to the
+    craft rules.'
+  area: 'Product illustrations and mockups: content (illustrations only, not product UI)'
+  sources:
+  - stageshow §2 §11
+  mined_from: F-stageshow.md#IMG-016
   status: draft

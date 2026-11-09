@@ -125,7 +125,7 @@ Reference viewport is 1440x900 unless a row says otherwise.
 | LAY-024 | Use `gap` for siblings, `margin` only to break the flow | — | Finish | M | HM §73 |
 | LAY-025 | Head and its lede 16-24px apart; head block to section content 48-64px (40 tight); grid items column-gap apart horizontally and 48-64px vertically; card/well padding 32-40px | 16-24 / 48-64 / 32-40px | Finish | M | HM §171, TS §74 |
 | LAY-026 | When a heading block feels dense, open its internals (title-to-lede) before touching macro rhythm | — | Finish | J | KM §65 |
-| LAY-027 | Pad text inside a filled or side-bordered box >100x30px by ≥max(8px,0.5em) sides and ≥max(4px,0.3em) top/bottom (em part capped 24/12px) | — | Floor | M | HM §79, HM §431 |
+| LAY-027 | Pad text inside a filled or side-bordered box >100x30px by ≥max(8px,0.5em) sides and ≥max(4px,0.3em) top/bottom (em part capped 24/12px) | — | Floor | M | HM §79, HM §431; stageshow §14 |
 | LAY-028 | Keep running text ≥8px from a phone edge; use a 16px phone gutter | 16px | Floor | M | HM §79, HM §431, TS §81 |
 | LAY-029 | Group related fields/items with whitespace first; repeated rows carry no ornament (connector lines, badges, index numbers become noise by the 5th repeat) | — | Finish | J | UX §236, KM §67 |
 | LAY-030 | Use a density dial to pick the scale: low/marketing 24-96px, mid 16-64px, high/dashboard 8-32px | — | Finish | J | UX §246 |
@@ -159,7 +159,7 @@ Reference viewport is 1440x900 unless a row says otherwise.
 | LAY-066 | Climb the surface ladder in order: whitespace → 1px hairline → tinted well → card (border or shadow, never both); climb different rungs at different seams | — | Reflex | H | HM §74 |
 | LAY-067 | Never repeat one card recipe identically (same radius + same shadow ≥4 times = card kit) or one container recipe on ≥6 selectors | 4 / 6 | Reflex | M | HU §68, HM §78 |
 | LAY-068 | Grid composition: 3-4 items across (or 2x2), each with photo/large figure/title big enough to carry the cell, equal heights, aligned tops, ≥240px | ≥240px | Finish | M | HM §180 |
-| LAY-069 | Bento: 4-6 tiles (shape: 6-9 blocks) in mixed spans (8+4 over 4+4; 7+5 over 5+7), rows 280-360px, ≥2 tiles with a visual, one tile clearly the lead | — | Finish | M | HM §181, HM §212, TS §118 |
+| LAY-069 | Bento: 4-6 tiles (shape: 6-9 blocks) in mixed spans (8+4 over 4+4; 7+5 over 5+7), rows 280-360px, ≥2 tiles with a visual, one tile clearly the lead | — | Finish | M | HM §181, HM §212, TS §118; stageshow §42 |
 | LAY-070 | Use bento only when there are many small equally valid things; avoid when the message is one hero idea; never a bento next to another card grid | — | Reflex | J | HM §212, HU §63, TS §102 |
 | LAY-071 | One card height per row; titles level across a row; lines held so panels align | — | Finish | M | TS §53, TS §191 |
 | LAY-072 | Never scroll inside a card; truncate with an expand path | — | Reflex | M | ADP §82 |

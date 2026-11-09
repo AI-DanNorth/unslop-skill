@@ -3,6 +3,9 @@
 motion       reads 01-evidence/motion.json: per trigger, a 10 ms sweep of the changed elements' bounding boxes and opacity
              (CSS/WAAPI animations paused and seeked), seven screenshot frames, the end state, and other content that
              moved while the transition ran, with prefers-reduced-motion off and on.
+motion_snap  reads the live run in motion.json (`run.live`): the same click in real time with every painted element's box
+             recorded each animation frame. Reports one-frame snaps at the end of a movement and content shoved in one
+             frame while another element animates. Method adapted from Stageshow's jump scanner (MIT).
 async_state  reads 01-evidence/async.json: per primary action, the UI before the click, at 0.5 s, 2 s and after the
              request completed (fetch/XHR held 3 s), the request log, a text timeline, and a forced-failure rerun.
 Anything the capture could not measure raises NotVerified or is listed in the result's `partial` notes; never a pass.
@@ -168,12 +171,47 @@ def motion(ev, cfg):
             L = S["layout_top"]
             out.append(hit(cfg, w, f"{S['layout_moved']} other element(s) move while the transition runs (e.g. \"{L['name'][:30]}\" {L['midPx']:.0f} px off its start and end at {L['atMs']} ms): the transition animates layout",
                            value=S["layout_moved"], check="layout", after="Animate transform/opacity, or reserve the space; let content reflow once"))
+        live = n.get("live") or {}
+        if not roots and live.get("coverage") == "ok" and live.get("motionEndMs") and not live.get("stillMoving") and live["motionEndMs"] > lim:
+            # JavaScript-driven motion: not seekable, measured from the live run's per-frame boxes
+            out.append(hit(cfg, w, f"transition runs about {live['motionEndMs']} ms (JavaScript-driven, measured in real time at ~{live.get('frameMs')} ms a frame; limit for a {t['kind']} {lim} ms)",
+                           value=live["motionEndMs"], check="duration_live"))
         red = S.get("reduce")
         if red and (red["move_px"] > cfg["reduced_move_px"] or red["scale_dev"] > cfg["reduced_scale"]):
             out.append(hit(cfg, w, f"with prefers-reduced-motion: reduce the transition still moves {red['move_px']:.0f} px / scales {red['scale_dev']*100:.0f}% (frames {S.get('reduce_timing')})",
                            tier="Floor", rule=cfg["reduced_rule"], value=red, check="reduced_motion",
                            after="Under prefers-reduced-motion: reduce, keep only opacity (or nothing)"))
     if not measured and not out: raise NotVerified("no trigger could be measured: " + "; ".join(out.partial[:4]))
+    return out
+
+
+@detector("motion_snap", needs=("motion.json",))
+def motion_snap(ev, cfg):
+    m = _interaction(ev, "motion", "motion.json")
+    trigs = m.get("triggers") or []
+    if not trigs: raise Skip("no transition triggers on the page")
+    out = Hits()
+    judged = 0
+    for t in trigs:
+        live = ((t["runs"].get("normal") or {}).get("live")) or None
+        w = f"{t['kind']} trigger \"{t['name'][:40]}\" ({t['selector'][-60:]})"
+        if not live:
+            out.partial.append(f"{w}: no live run (capture predates the live recorder, or the normal run failed)"); continue
+        if live.get("coverage") != "ok":
+            out.partial.append(f"{w}: live run {live.get('coverage')} ({live.get('reason', '')})"); continue
+        judged += 1
+        for sn in live.get("snaps", []):
+            if abs(sn["dPx"]) < cfg["min_px"]: continue
+            what = sn["text"] or sn["name"]
+            if sn["kind"] == "settle":
+                msg = f"\"{what[:30]}\" glides, then jumps {sn['dPx']:+.0f} px in one frame on {sn['axis']} at {sn['atMs']} ms: the movement does not land where it ends"
+                after = "Animate to the true end value (one tween or spring to the final layout); never set the end state after a tween stops short"
+            else:
+                msg = f"\"{what[:30]}\" jumps {sn['dPx']:+.0f} px in one frame on {sn['axis']} at {sn['atMs']} ms while another element is still animating: layout and animation disagree"
+                after = "Move the neighbour with the same transition (animate the container), or reserve the space before the animation starts"
+            out.append(hit(cfg, f"{w} -> {(sn.get('selector') or sn['name'])[-60:]}", msg, value=sn["dPx"], check=sn["kind"], after=after))
+            if len(out) >= cfg["max_hits"]: return out
+    if not judged: raise NotVerified("no live run could be judged: " + "; ".join(out.partial[:3]))
     return out
 
 

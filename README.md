@@ -42,7 +42,7 @@ Requirements: Node 18+, Playwright with Chromium, and Python 3.10+ with PyYAML, 
 | `skills/` | `unslop`, `intake`, `capture`, `sweep`, `lens-slop`, `lens-a11y`, `lens-concept`, `lens-structure`, `lens-typography`, `lens-color`, `lens-copy`, `synthesize`, `media-web` |
 | `scripts/` | Capture (Node), checks and sweep (Python), report synthesis, build tools, self-test |
 | `evals/seeded-defects/` | Control page (must stay clean) and seed pages (every detector must catch its seed) |
-| `research/` | The 20 source docs, the mining files the cards were built from, reader notes and the web research report |
+| `research/` | The 21 source docs, the mining files the cards were built from, reader notes and the web research report |
 | `docs/` | The plan (exported), project history and decisions, agent prompts, prompts for next sessions |
 | `evals/candidates/`, `evals/testset/` | 1,883 candidate examples; test set 1 (52 local + 39 live), results and adjudications |
 | `sources/` | Source index and `provenance.csv` (rule id → source sections) |

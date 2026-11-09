@@ -51,6 +51,8 @@
   #seed-dialog.open { animation: seed-pop 700ms linear both; }
   @keyframes seed-pop { from { transform: translateY(80px) scale(.5); opacity: 0 } 70% { transform: translateY(-12px) scale(1.12); opacity: 1 } to { transform: none; opacity: 1 } }
   #seed-panel { height: 0; overflow: hidden; } #seed-panel.open { height: 120px; }
+  /* motion_snap seed: a JavaScript tween that stops 8px short, then snaps to its place */
+  #seed-tip { transition: none !important; display: none; width: 280px; padding: 12px; background: #f3f4f6; border: 1px solid #d1d5db; }
   /* async seeds */
   .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #9ca3af; border-top-color: transparent; border-radius: 50%; animation: seed-spin 1s linear infinite; }
   @keyframes seed-spin { to { transform: rotate(360deg) } }
@@ -149,6 +151,8 @@
   <button type="button" id="seed-more" aria-expanded="false" aria-controls="seed-panel" data-seed="motion">Show more</button>
   <div id="seed-panel"><p>Extra text that pushes everything below it down while the panel grows.</p></div>
   <p>Content below the panel moves while the panel opens.</p>
+  <button type="button" id="seed-tipbtn" class="tip-toggle" aria-expanded="false" aria-controls="seed-tip" data-seed="motion_snap">Show tip</button>
+  <div id="seed-tip">A tip that slides in from JavaScript and snaps the last few pixels.</div>
 </section>
 <section>
   <button type="button" id="seed-save" data-seed="async_state">Save changes</button> <span id="seed-status" role="status"></span>
@@ -159,6 +163,15 @@
   // motion seeds
   document.getElementById("seed-open").addEventListener("click", () => { const d = document.getElementById("seed-dialog"); d.hidden = false; d.classList.add("open"); });
   document.getElementById("seed-more").addEventListener("click", (e) => { e.currentTarget.setAttribute("aria-expanded", "true"); document.getElementById("seed-panel").classList.add("open"); });
+  document.getElementById("seed-tipbtn").addEventListener("click", (e) => {
+    e.currentTarget.setAttribute("aria-expanded", "true");
+    const tip = document.getElementById("seed-tip"); tip.style.display = "block";
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const t0 = performance.now(), from = 40, stopAt = 8;
+    const step = (now) => { const k = Math.min(1, (now - t0) / 300); tip.style.transform = `translateY(${from - (from - stopAt) * k}px)`;
+      if (k < 1) requestAnimationFrame(step); else requestAnimationFrame(() => { tip.style.transform = "none"; }); };
+    tip.style.transform = `translateY(${from}px)`; requestAnimationFrame(step);
+  });
   // async seeds: success before the answer (and after a failure); no feedback while pending; a spinner that never stops
   document.getElementById("seed-save").addEventListener("click", () => { document.getElementById("seed-status").textContent = "Changes saved"; fetch("api/save", { method: "POST", body: "{}" }).catch(() => {}); });
   document.getElementById("seed-refresh").addEventListener("click", () => { fetch("api/data").then((r) => r.json()).then(() => { document.getElementById("seed-data").textContent = "Data as of 10:00"; }).catch(() => {}); });

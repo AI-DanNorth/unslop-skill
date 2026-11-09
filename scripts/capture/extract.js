@@ -82,7 +82,7 @@
     // L33 disabled pager tabindex=-1). Recorded on every interactive element (null = no attribute) and wherever it is set.
     const tabindex = el.getAttribute("tabindex");
     if (interactive || tabindex !== null) rec.tabindex = tabindex;
-    if (interactive) { rec.interactive = true; rec.name = accName(el); rec.type = el.type || null; rec.role = el.getAttribute("role"); rec.href = el.getAttribute("href"); }
+    if (interactive) { rec.interactive = true; rec.name = accName(el); rec.type = el.type || null; rec.role = el.getAttribute("role"); rec.href = el.getAttribute("href"); rec.inFooter = !!el.closest("footer,[role=contentinfo]"); }
     if (el.tagName === "IMG") { rec.img = { alt: el.getAttribute("alt"), src: el.currentSrc || el.src, nw: el.naturalWidth, nh: el.naturalHeight, complete: el.complete, loading: el.loading }; }
     if (["INPUT","SELECT","TEXTAREA"].includes(el.tagName)) { rec.field = { type: el.type, name: el.name, placeholder: el.getAttribute("placeholder"), autocomplete: el.getAttribute("autocomplete"), labelled: !!accName(el) }; }   // accName never reads the placeholder, so a real aria-label equal to it is still a label (live round 1: L27 #newsletter-email)
     if (vis && text) {      // where the glyphs actually are: rects of this element's own text nodes

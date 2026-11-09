@@ -769,6 +769,11 @@
    why: "Measured in the browser, these are what make motion read as off-the-shelf: slow, popping from far, drifting, bouncing or dragging the page with it.",
    fix: "Use one tuned curve such as cubic-bezier(0.22, 1, 0.36, 1); start overlays at 0.96-0.97 scale and 6-8px; keep menus near 200ms and dialogs near 250ms; animate transform and opacity only; drop movement under prefers-reduced-motion.",
    sources: ["transitions-dev tokens and generic demo (example.html)", "hallmark §82 §95 §323 §327 §329 §330", "uupm §14 §156 §168 §237", "huashu §337 §349", "agent §28 §78"]}
+- {id: MOT-003, title: Movement lands where it ends, domain: D09, tier: Finish, detector: motion_snap, remedy: fix-motion,
+   rule: "Recorded in real time after a click, no element glides and then jumps more than 3 px in one frame to its end state, and no content is shoved in one frame while another element is still animating. Instant changes are not judged.",
+   why: "A movement that stops short and snaps, or a neighbour that jumps while a panel glides, reads as broken motion: the eye follows the glide and sees the cut.",
+   fix: "Tween or spring to the true final layout; when content around an animating element must move, animate its container with the same transition or reserve the space first.",
+   sources: ["Stageshow references/motion.md (Things that appear, travel and leave) and scripts/jumps-core.mjs (benjitaylor/skills, MIT)", "Stageshow references/teaching.md (Landing jumps at handoff; New row shoves its neighbors)"]}
 - {id: WEB-001, title: Performance budget, domain: D15, tier: Reflex, detector: performance, remedy: fix-harden,
    rule: "Lab LCP warns at 2.5s and fails at 4.5s; no image over 400KB or more than 2x its rendered width.", why: "Slow pages lose visitors before design matters.",
    fix: "Compress, size and lazy-load images; preload the LCP asset.", sources: ["taste-skill §622", "agent-skills", "web-interface-guidelines"]}

@@ -1166,6 +1166,7 @@
   - hallmark §4, §371
   - huashu §60, §215
   - uupm §26 (banned for banking etc.)
+  - stageshow §29 §55
   mined_from: A-slop-integrity.md#SLP-062
   status: draft
 - id: SLP-163
@@ -1194,6 +1195,7 @@
   - hallmark §373
   - huashu §60
   - taste §25
+  - stageshow §29 §55
   mined_from: A-slop-integrity.md#SLP-064
   status: draft
 - id: SLP-165
@@ -1326,6 +1328,7 @@
   - taste §30
   - uupm §234, §244
   - kami §301
+  - stageshow §26
   mined_from: A-slop-integrity.md#SLP-073
   status: draft
 - id: SLP-174
@@ -1581,6 +1584,7 @@
   - hallmark §395
   - taste §30
   - huashu §59
+  - stageshow §13 §55
   mined_from: A-slop-integrity.md#SLP-091
   status: draft
 - id: SLP-192
@@ -1598,6 +1602,7 @@
   - huashu §59, §67
   - taste §30
   - kami §448
+  - stageshow §13
   mined_from: A-slop-integrity.md#SLP-092
   status: draft
 - id: SLP-193
@@ -2397,4 +2402,90 @@
   sources:
   - hallmark §147-area (§857)
   mined_from: A-slop-integrity.md#SLP-150
+  status: draft
+- id: SLP-251
+  title: 'Ban AI shorthand: a sparkle, wand or star glyph, or a gradient "AI" chip, as generic decor'
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: H
+  rule: 'Ban AI shorthand: a sparkle, wand or star glyph, or a gradient "AI" chip, as generic decoration for an AI feature, and purple used as
+    "the AI colour". Show what the AI does, with the product''s own mark or a plain label. The product''s own icon is fine even when it is a sparkle.'
+  values: SVG sparkle/wand/stars glyph (e.g. `lucide-sparkles`, `wand-2`) or ✨ beside an AI label; chip with gradient fill reading "AI"; violet
+    accent used only on AI surfaces
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §27 §55
+  mined_from: F-stageshow.md#SLP-001
+  status: draft
+- id: SLP-252
+  title: 'Ban the invented mark: a letter or glyph in a coloured square standing in for a logo, abov'
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: H
+  rule: 'Ban the invented mark: a letter or glyph in a coloured square standing in for a logo, above all a one-letter tile in a brand colour beside
+    a real company''s name. Use the real mark or a plain text wordmark; a neutral initial tile only for a fictional product.'
+  values: real company name + adjacent 1-letter tile in a saturated fill; related card IMG-171
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §28 §59
+  mined_from: F-stageshow.md#SLP-002
+  status: draft
+- id: SLP-253
+  title: 'Flag mixed or hand-made icons, "the first tell of generated UI": filled and outline glyphs'
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: H
+  rule: 'Flag mixed or hand-made icons, "the first tell of generated UI": filled and outline glyphs side by side in one nav, list or toolbar;
+    a hand-drawn glyph whose stroke weight differs from its neighbours; invented glyphs in rainbow tiles.'
+  values: 'one group: fill mode differs, or stroke width differs at one size; ≥3 icon tiles of different hues with no status meaning; related
+    card IMG-165'
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §23 §25 §55
+  mined_from: F-stageshow.md#SLP-003
+  status: draft
+- id: SLP-254
+  title: 'Flag the skeleton ladder: a list where wordless placeholder rows outnumber the real rows, '
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: M
+  rule: 'Flag the skeleton ladder: a list where wordless placeholder rows outnumber the real rows, or gray bars sit where the eye lands. Real
+    words on the subject, bars only beside it and where the crop cuts.'
+  values: list ≥4 rows in frame, ≥3 wordless, wordless > worded (realistic fidelity)
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §7 §8 §59
+  mined_from: F-stageshow.md#SLP-004
+  status: draft
+- id: SLP-255
+  title: 'Flag the over-detailed mockup ("Too much"): real text, numbers and badges on every row, so'
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: J
+  rule: 'Flag the over-detailed mockup ("Too much"): real text, numbers and badges on every row, so every row is the subject. Real detail on the
+    one row the story is about.'
+  values: e.g. branch, hash, author, duration and badge on each row
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §2 §55
+  mined_from: F-stageshow.md#SLP-005
+  status: draft
+- id: SLP-256
+  title: 'Don''t outline the featured card to point at it: an accent ring with a soft halo reads as a'
+  domain: D03
+  tier: Reflex
+  priority: P1
+  check: H
+  rule: 'Don''t outline the featured card to point at it: an accent ring with a soft halo reads as a focus state nobody gave it, and a dot beside
+    its label is a mark with no meaning. Lift it with its own surface, the raised shadow or an accent label.'
+  values: accent ring + coloured halo on a non-focused card
+  area: Slop tells in faux product UI and product illustrations
+  sources:
+  - stageshow §29
+  mined_from: F-stageshow.md#SLP-006
   status: draft

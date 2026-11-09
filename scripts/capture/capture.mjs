@@ -21,7 +21,7 @@ const BG_ALL = true;   // background-only render at every captured width (fixed-
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const VALUED = ["--widths", "--motion-budget", "--async-budget"];
+const VALUED = ["--widths", "--motion-budget", "--async-budget", "--isolate"];
 const [target, runDir] = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && VALUED.includes(args[i - 1])));
 if (!target || !runDir) { console.error("usage: capture.mjs <url-or-file> <run-dir> [--widths 375,1440]"); process.exit(2); }
 const widths = opt("--widths", "320,375,414,768,1024,1280,1440,1920").split(",").map(Number);
@@ -81,6 +81,25 @@ const PREP_HOSTS = JSON.parse(fs.readFileSync(path.join(HERE, "page-prep.json"),
 const PREP_HOST = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; } })();
 const PREP = PREP_HOSTS[PREP_HOST] || null;
 const prepLog = new Set();
+// --isolate '<json>': a test set shows one half of a controlled pair (evals/testset/set2.yaml). Not for audits.
+// {"remove": [selectors], "pair": {"parent": selector, "child": selector, "keep": n}}: matching nodes are removed from
+// the DOM as soon as they appear (not hidden: hidden text would still reach the DOM dump and the hidden-content test).
+const ISOLATE = opt("--isolate", null);
+function isolatePage(spec) {
+  const S = JSON.parse(spec), done = new WeakSet();
+  const run = () => {
+    for (const sel of S.remove || []) document.querySelectorAll(sel).forEach((e) => e.remove());
+    if (S.pair) for (const p of document.querySelectorAll(S.pair.parent)) {
+      if (done.has(p)) continue;
+      const kids = [...p.children].filter((c) => c.matches(S.pair.child));
+      if (kids.length < 2) continue;
+      done.add(p);
+      kids.forEach((c, i) => { if (i + 1 !== S.pair.keep) c.remove(); });
+    }
+  };
+  const start = () => { run(); new MutationObserver(run).observe(document.documentElement, { childList: true, subtree: true }); };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+}
 function prepPage(p) {
   const want = (p.click || []).map((l) => l.toLowerCase());
   const text = (p.clickText || "").toLowerCase();
@@ -114,6 +133,7 @@ async function open(browser, w, ctxOpts = {}) {
     if (PREP.click || PREP.clickText) await ctx.addInitScript(prepPage, PREP);
     for (const b of PREP.block || []) await ctx.route((u) => u.href.includes(b), (route) => { prepLog.add(`blocked ${b}`); return route.abort(); });
   }
+  if (ISOLATE) await ctx.addInitScript(isolatePage, ISOLATE);      // test-set isolation: recorded in manifest.isolate
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e.message || e)));
@@ -127,7 +147,8 @@ async function open(browser, w, ctxOpts = {}) {
 
 const NETS = [];
 const browser = await chromium.launch();
-const manifest = { target, url, started: new Date().toISOString(), widths: [], files: {}, control: null, log };
+const WITHHELD = flag("--withhold-target") ? "(withheld for blind review)" : null;   // test sets: the URL names the lesson
+const manifest = { target: WITHHELD || target, url: WITHHELD || url, started: new Date().toISOString(), widths: [], files: {}, control: null, log };
 
 // ---- 1. check the checker: render the known-good control first ----------------------------------
 const controlPath = path.join(ROOT, "evals/seeded-defects/control.html");
@@ -390,6 +411,7 @@ catch (e) { manifest.interaction.async = { error: e.message.split("\n")[0] }; no
 await browser.close();
 const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];
 manifest.network = { mode: NETS[0] ? NETS[0].mode : null, shimmed: uniq("shimmed"), blocked: uniq("blocked"), fontsMissing: uniq("fontsMissing") };
+if (ISOLATE) manifest.isolate = { applied: true, note: "test-set isolation removed part of the page; the spec is in the test-set manifest, kept from blind reviewers" };
 if (PREP) manifest.prep = { host: PREP_HOST, config: PREP, applied: [...prepLog] };   // nothing applied = banner or overlay still up
 manifest.network.blockedImages = manifest.network.blocked.filter((b) => b.startsWith("image ")).length;
 manifest.network.blockedFonts = manifest.network.blocked.filter((b) => b.startsWith("font ") || /fonts\.|fontshare|typekit/.test(b)).length;

@@ -732,6 +732,7 @@
   area: Grouping, proximity and spacing scale
   sources:
   - HM §79, HM §431
+  - stageshow §14
   mined_from: C-concept-layout-components.md#LAY-027
   status: draft
 - id: LAY-121
@@ -1065,6 +1066,7 @@
   area: Grids, cards, bento
   sources:
   - HM §181, HM §212, TS §118
+  - stageshow §42
   mined_from: C-concept-layout-components.md#LAY-069
   status: draft
 - id: LAY-147
@@ -2546,4 +2548,451 @@
   sources:
   - UX §243
   mined_from: C-concept-layout-components.md#LAY-247
+  status: draft
+- id: LAY-264
+  title: In a product illustration, show one hero object and at most one or two satellites (a recei
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration, show one hero object and at most one or two satellites (a receipt, a phone, a detail card) that carry the point.
+  values: ≤2 satellites
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §34
+  mined_from: F-stageshow.md#LAY-001
+  status: draft
+- id: LAY-265
+  title: In a product illustration, a satellite straddles the hero's edge about half outside, never
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a product illustration, a satellite straddles the hero's edge about half outside, never fully inside or floating apart; fully outside,
+    tie it back with a 1px leader ending in a dot.
+  values: ~50% outside; leader 1px + dot
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §34
+  mined_from: F-stageshow.md#LAY-002
+  status: draft
+- id: LAY-266
+  title: In a product illustration, two satellites are two kinds (different size and kind), never t
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration, two satellites are two kinds (different size and kind), never two cards of one width on one edge.
+  values: twin satellites = fault
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §34
+  mined_from: F-stageshow.md#LAY-003
+  status: draft
+- id: LAY-267
+  title: In a product illustration, a satellite covers the hero's chrome or margin, never its conte
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration, a satellite covers the hero's chrome or margin, never its content, settings, trigger or payoff; anchored UI
+    (popover, menu, toast) is not a satellite and sits where the product puts it.
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §34
+  mined_from: F-stageshow.md#LAY-004
+  status: draft
+- id: LAY-268
+  title: 'In a product illustration, bleed the hero rather than box it: the window or phone fills at'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a product illustration, bleed the hero rather than box it: the window or phone fills at least two thirds of the frame''s width and
+    runs off an edge, with 10 to 40% cropped. A whole window with even air on four sides floats ("Boxed") unless the brief asks for it.'
+  values: crop 10-40%; width ≥0.67 of frame; shapes that read when cut run off ≥1/3
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §2 §35 §37
+  mined_from: F-stageshow.md#LAY-005
+  status: draft
+- id: LAY-269
+  title: 'In a product illustration, the page is the ground: no plate (a backdrop or tinted field) b'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a product illustration, the page is the ground: no plate (a backdrop or tinted field) behind a window or device on a white or dark
+    page, and never a stage boxed inside another ground.'
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §37 §60
+  mined_from: F-stageshow.md#LAY-006
+  status: draft
+- id: LAY-270
+  title: 'In a product illustration, use one gutter: the hero''s inset from the frame edge, matched b'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a product illustration, use one gutter: the hero''s inset from the frame edge, matched by every other edge distance in the frame;
+    each edge gets a full gutter or well past it.'
+  values: crossing an edge by <24px or stopping a few px short = fault
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §36
+  mined_from: F-stageshow.md#LAY-007
+  status: draft
+- id: LAY-271
+  title: 'In a product illustration, leave no dead corner: no empty frame corner at rest or anywhere'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration, leave no dead corner: no empty frame corner at rest or anywhere in the loop; fix crop or layout first.'
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §36
+  mined_from: F-stageshow.md#LAY-008
+  status: draft
+- id: LAY-272
+  title: 'In a product illustration, a window keeps its device''s shape: whole at 1.25:1 or wider'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'In a product illustration, a window keeps its device''s shape: whole at 1.25:1 or wider; bled, the visible part at least square; fix
+    by crop or layout, never by squashing.'
+  values: ≥1.25:1 whole; ≥1:1 visible when bled
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §37
+  mined_from: F-stageshow.md#LAY-009
+  status: draft
+- id: LAY-273
+  title: 'In a product illustration on a coloured stage, inset the hero 8 to 20% from the sides and '
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a product illustration on a coloured stage, inset the hero 8 to 20% from the sides and run it off the bottom, so the ground frames
+    it on three sides.
+  values: 8-20%
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §36
+  mined_from: F-stageshow.md#LAY-010
+  status: draft
+- id: LAY-274
+  title: In a product illustration, start flat and frontal
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a product illustration, start flat and frontal; earn a tilt against the straight version at final size; perspective only when asked.
+    Paper stacks are the one place tilt earns its keep.
+  values: stack angles about -6, 4, -2 deg, offset 12-20px; only the top card has words
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §38
+  mined_from: F-stageshow.md#LAY-011
+  status: draft
+- id: LAY-275
+  title: In a product illustration, fade only sliding tracks, stacks and charts, plus at most one w
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a product illustration, fade only sliding tracks, stacks and charts, plus at most one window fading out at its foot over its last third,
+    by mask over filler; never fade a side or the focal content.
+  values: track mask 32px; stack/chart last 25-30%; ≤1 faded window per scene
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §39
+  mined_from: F-stageshow.md#LAY-012
+  status: draft
+- id: LAY-276
+  title: 'In a product illustration, recompose for small slots instead of shrinking: crop harder, si'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a product illustration, recompose for small slots instead of shrinking: crop harder, size the design for the slot, ship a compact
+    design for a phone column.'
+  values: lone card in 680px column 500-560 wide (text 15-20px); compact at 358 in a 390 viewport; demo never <320 wide
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §5 §41
+  mined_from: F-stageshow.md#LAY-013
+  status: draft
+- id: LAY-277
+  title: 'Across a page of product illustrations, keep one figure language: one ground, one gutter, '
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Across a page of product illustrations, keep one figure language: one ground, one gutter, one hero shadow, one radius set; a different
+    shadow says something or is a mistake.'
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §38
+  mined_from: F-stageshow.md#LAY-014
+  status: draft
+- id: LAY-278
+  title: 'In a product illustration, pick the first layout by medium: corner bleed beside copy, pinn'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a product illustration, pick the first layout by medium: corner bleed beside copy, pinned bottom bleed in a card or tile, a phone
+    pinned from the top; try a second layout before forcing the first.'
+  values: 'corner bleed: inset 10% top/left, 15-35% past right/bottom; pinned bottom: inset 8-12% left/right/top, 15-35% past bottom; wide hero
+    900-1100px at 1:1'
+  area: Product illustration framing (illustrations and mockups only, not product UI)
+  sources:
+  - stageshow §40
+  mined_from: F-stageshow.md#LAY-015
+  status: draft
+- id: LAY-279
+  title: 'Avoid near-tangents: edges 1 to 3px apart read as an accident'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Avoid near-tangents: edges 1 to 3px apart read as an accident; line them up exactly, or part them by at least the gutter.'
+  values: 1-3px = fault; parted ≥8px
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §19
+  mined_from: F-stageshow.md#LAY-016
+  status: draft
+- id: LAY-280
+  title: Keep a button or chip 8 to 12px from the field, line or card edge above it
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Keep a button or chip 8 to 12px from the field, line or card edge above it; carry the inset round the bottom; a floating card pads the
+    same on every side, measured to visible edges.
+  values: <8px = tight control
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §14
+  mined_from: F-stageshow.md#LAY-017
+  status: draft
+- id: LAY-281
+  title: 'Flag uneven padding and insets: content about a third closer to one edge than the side ins'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Flag uneven padding and insets: content about a third closer to one edge than the side inset, controls bunched at one end of their bar,
+    or a panel much closer to one side of its tile.'
+  values: asymmetry ≥33% of the side inset
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §14
+  mined_from: F-stageshow.md#LAY-018
+  status: draft
+- id: LAY-282
+  title: 'Size rows to their content: row padding 12px (8px dense)'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Size rows to their content: row padding 12px (8px dense); never a one-line row three times taller than its words, nor rows spread wider
+    apart than they are tall to fill a pane.'
+  values: 'fat row ≥3x text height; loose list: gap > row height'
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §12 §15
+  mined_from: F-stageshow.md#LAY-019
+  status: draft
+- id: LAY-283
+  title: 'Leave no empty pane: a void under a pane''s content reads unfinished'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'Leave no empty pane: a void under a pane''s content reads unfinished; add product until it runs off the crop, or crop the pane, never
+    spread the rows.'
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §2 §12
+  mined_from: F-stageshow.md#LAY-020
+  status: draft
+- id: LAY-284
+  title: Set a title and its subtitle as one item, and a title closer to its metadata than to the n
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Set a title and its subtitle as one item, and a title closer to its metadata than to the next record.
+  values: 4-6px ink between lines; <3px tight; >10px loose in small labels
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §15
+  mined_from: F-stageshow.md#LAY-021
+  status: draft
+- id: LAY-285
+  title: 'Text never touches a neighbouring box: a fixed gap, never leftover space-between.'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Text never touches a neighbouring box: a fixed gap, never leftover `space-between`.'
+  values: gap 8-12px; <5px = touching
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §16
+  mined_from: F-stageshow.md#LAY-022
+  status: draft
+- id: LAY-286
+  title: Keep a status dot or badge clear of the avatar and text it marks, inside the row's inset
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Keep a status dot or badge clear of the avatar and text it marks, inside the row's inset; a dot is not a column.
+  values: 6px clear; <5px = tight mark
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §16
+  mined_from: F-stageshow.md#LAY-023
+  status: draft
+- id: LAY-287
+  title: 'Centre optically: labels on cap height (trim the line box), an amount on its digits with t'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Centre optically: labels on cap height (trim the line box), an amount on its digits with the currency sign hung outside, a play triangle
+    shifted toward its point.'
+  values: play glyph shift 1/6 of its width
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §17
+  mined_from: F-stageshow.md#LAY-024
+  status: draft
+- id: LAY-288
+  title: 'Line up columns: every row on one grid template with fixed tracks'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Line up columns: every row on one grid template with fixed tracks; optional content keeps its track empty; a body under an avatar row
+    starts at the name''s edge.'
+  area: Spacing and alignment inside mockups (values in stage px; principles hold for dense UI)
+  sources:
+  - stageshow §20
+  mined_from: F-stageshow.md#LAY-025
+  status: draft
+- id: LAY-289
+  title: 'Don''t make every bento tile a cropped window: a third to a half of the tiles show product '
+  domain: D07
+  tier: Reflex
+  priority: P1
+  check: H
+  rule: 'Don''t make every bento tile a cropped window: a third to a half of the tiles show product UI, the rest are stats, statements, objects,
+    diagrams, collections or photos. Every tile a window reads as generated.'
+  values: UI tiles 1/3-1/2
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §42
+  mined_from: F-stageshow.md#LAY-026
+  status: draft
+- id: LAY-290
+  title: In a bento grid, a UI tile shows one component, not a window
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a bento grid, a UI tile shows one component, not a window; window chrome appears at most once (on the hero), and two window crops never
+    sit side by side.
+  values: ≤1 set of chrome per grid; 0 adjacent window crops
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §42
+  mined_from: F-stageshow.md#LAY-027
+  status: draft
+- id: LAY-291
+  title: 'Say each thing once across a bento set: no real string, avatar, colour mark or chrome repe'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Say each thing once across a bento set: no real string, avatar, colour mark or chrome repeats from tile to tile.'
+  values: 0 repeated strings
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §42
+  mined_from: F-stageshow.md#LAY-028
+  status: draft
+- id: LAY-292
+  title: 'Set a stat tile as one real number with its unit on one line, a short lead and a one-line '
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Set a stat tile as one real number with its unit on one line, a short lead and a one-line label, close under its copy; never a stat pinned
+    to the bottom of a tall tile with a void above, never "10x" filler.
+  values: number 48-72px as shown; ≤1 coloured glyph; unit never wraps
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §43
+  mined_from: F-stageshow.md#LAY-029
+  status: draft
+- id: LAY-293
+  title: 'Keep bento tile copy outside the picture and at page size: one to four words or one senten'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Keep bento tile copy outside the picture and at page size: one to four words or one sentence, at most one supporting sentence; never
+    scale the whole grid as one image so its titles shrink.'
+  values: tile copy 17-24px; important text ≥10px at a 320px host
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §43
+  mined_from: F-stageshow.md#LAY-030
+  status: draft
+- id: LAY-294
+  title: 'Give bento tiles one frame and varied contents: shared radius, gap, padding and copy posit'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Give bento tiles one frame and varied contents: shared radius, gap, padding and copy position; the gap equals the inner padding or a
+    clear fraction of it; never a picture about as wide as its tile touching both edges.'
+  area: Bento grids of product illustrations
+  sources:
+  - stageshow §43
+  mined_from: F-stageshow.md#LAY-031
+  status: draft
+- id: LAY-295
+  title: 'Use a leader line only to explain one relationship the layout does not already show: a fin'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Use a leader line only to explain one relationship the layout does not already show: a fine line in a quiet ink, straight or one bend,
+    landing short of the object, never through another surface or over the result it explains.'
+  values: 1px (1.5px at hero scale); lands 4-6px short; 4px end dot
+  area: Annotations on product illustrations
+  sources:
+  - stageshow §44
+  mined_from: F-stageshow.md#LAY-032
+  status: draft
+- id: LAY-296
+  title: 'Make transfer lines directional: a request and its reply start from different ends'
+  domain: D07
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Make transfer lines directional: a request and its reply start from different ends; moving dots only while data flows, static under reduced
+    motion; one colour per relationship.'
+  area: Annotations on product illustrations
+  sources:
+  - stageshow §44
+  mined_from: F-stageshow.md#LAY-033
   status: draft

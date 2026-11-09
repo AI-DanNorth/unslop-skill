@@ -6,7 +6,7 @@ Nov 7, 2026 · @Aidan Warwick
 
 ## Summary
 
-Unslop is one orchestrator skill that runs 47 smaller skills in a fixed order to audit any design artifact (web page, app screen, slide deck, document, diagram, social card), then routes fixes. It is built from 20 source collections in this project, roughly 10,000 distilled rules, deduplicated into an estimated 1,750 rule cards across 21 domains.
+Unslop is one orchestrator skill that runs 47 smaller skills in a fixed order to audit any design artifact (web page, app screen, slide deck, document, diagram, social card), then routes fixes. It is built from 21 source collections in this project, roughly 10,000 distilled rules, deduplicated into an estimated 1,750 rule cards across 21 domains.
 
 The core idea every strong source agrees on: separate what a script can measure from what needs judgment, run them in independent passes, and let a single synthesis step merge, dedupe and rank the findings. Mechanical floors (contrast, sizes, overflow, banned tokens) gate the work first; judgment lenses (concept, hierarchy, type, colour, copy) run after; one report comes out.
 
@@ -18,7 +18,7 @@ Three layers sit under the orchestrator:
 
 Everything shared (rule card schema, severity, report format, guardrails, precedence, lexicons, thresholds) lives once in `core/` and `data/`, so a rule is written once and every skill reads it.
 
-Sources synthesized: Concepts and rules, Design Rules and Styles 1 and 2, writing-guidelines, web-interface-guidelines, dsh-design-skills, ux-ui-agent-skills, krehel, transitions-dev, taste-vault, diagram-design, design-taste, impeccable, ui-ux-pro-max, hallmark, huashu-design, taste-skill, awesome-design-patterns, kami, agent-skills.
+Sources synthesized: Concepts and rules, Design Rules and Styles 1 and 2, writing-guidelines, web-interface-guidelines, dsh-design-skills, ux-ui-agent-skills, krehel, transitions-dev, taste-vault, diagram-design, design-taste, impeccable, ui-ux-pro-max, hallmark, huashu-design, taste-skill, awesome-design-patterns, kami, agent-skills, and (source 21, added 9 Nov 2026) stageshow.
 
 ## Design principles
 
@@ -217,7 +217,7 @@ unslop/
 │   └── golden/                   # expected reports for regression
 ├── research/mining/              # the A to G mining files, kept for provenance
 └── sources/
-    ├── index.md                  # the 20 source collections and their licences
+    ├── index.md                  # the 21 source collections and their licences
     └── provenance.csv            # rule id -> source file and section
 ```
 

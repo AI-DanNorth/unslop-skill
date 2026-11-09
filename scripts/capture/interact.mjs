@@ -6,6 +6,8 @@
 // transitions, CSS animations and WAAPI animations started by the click are paused and seeked, so every frame is
 // exact; a 10 ms sweep of the same timeline gives bounding boxes for duration and overshoot. Changes the page drives
 // from JavaScript timers cannot be seeked: those frames are taken in real time and marked `timing: "realtime"`.
+// Then a live run (prefers-reduced-motion off only) clicks again in real time and records every painted element's box
+// on every animation frame (`run.live`): the end of all click-driven movement, and one-frame snaps (see startLive).
 //
 // Async: clicks up to 4 primary actions (form submits, action buttons) with fetch and XHR held for 3 s, and records
 // the UI at 0.5 s, 2 s and after completion; then repeats with a forced failure. Nothing leaves the site: cross-origin
@@ -291,6 +293,134 @@ async function finishRun(layoutPx) {
   return { final, layoutMoved: moved.slice(0, 12), layoutMovedCount: moved.length };
 }
 
+// ---------------------------------------------------------------- live (real-time) recording
+// The seeked sweep above only drives CSS transitions, CSS animations and WAAPI. Motion a page drives from JavaScript
+// (requestAnimationFrame tweens, spring libraries) cannot be seeked, so its duration and its frames were unmeasured.
+// The live run clicks the trigger again in real time and records the box of every painted element in the viewport on
+// every animation frame. Method adapted from Stageshow's jump scanner (benjitaylor/skills, stageshow/scripts/
+// jumps-core.mjs, MIT): a jump is a change over 2 px in one frame that is over 3x the change in the frames either side.
+// What it adds for Unslop: the end of all click-driven movement (any engine), one-frame snaps at the end of a movement
+// ("settle"), and content shoved in one frame while another element is mid-animation ("shove"). Elements that already
+// move before the click (carousels, marquees, tickers) are ambient and left out. Instant changes are not judged.
+export function startLive(ms) {
+  const L = (window.__unslopLive = { frames: [], ids: new WeakMap(), meta: [], clickT: null, stop: false, t0: performance.now() });
+  const idOf = (el) => {
+    if (!L.ids.has(el)) {
+      L.ids.set(el, L.meta.length);
+      L.meta.push({ name: `${el.tagName.toLowerCase()}${el.id ? "#" + el.id : ""}${typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\s+/).slice(0, 2).join(".") : ""}`.slice(0, 60),
+        text: (el.innerText || el.getAttribute("aria-label") || "").replace(/\s+/g, " ").trim().slice(0, 30), parent: -1, el });
+    }
+    return L.ids.get(el);
+  };
+  const scan = () => {
+    const out = [];
+    for (const el of document.body ? document.body.querySelectorAll("*") : []) {
+      if (out.length >= 600) break;
+      const r = el.getBoundingClientRect();
+      if (r.width * r.height < 16 || r.bottom < -300 || r.right < -300 || r.top > innerHeight + 300 || r.left > innerWidth + 300) continue;   // margin: things entering from just off screen
+      if (/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|BR|WBR)$/.test(el.tagName)) continue;
+      const own = [...el.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim());
+      const cs = getComputedStyle(el);
+      const paints = (cs.backgroundColor !== "rgba(0, 0, 0, 0)" && cs.backgroundColor !== "transparent") || cs.backgroundImage !== "none" || cs.boxShadow !== "none" ||
+        parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth) > 0;
+      if (!own && !paints && !/^(IMG|svg|VIDEO|CANVAS|INPUT|BUTTON|SELECT|TEXTAREA)$/.test(el.tagName)) continue;
+      const id = idOf(el);
+      if (L.meta[id].parent < 0 && el.parentElement) L.meta[id].parent = idOf(el.parentElement);
+      out.push(el);
+    }
+    return out;
+  };
+  let els = scan(), n = 0;
+  const tick = () => {
+    if (L.stop) return;
+    if (++n % 8 === 0) els = scan();               // pick up what opened
+    const t = performance.now() - L.t0, items = [];
+    for (const el of els) {
+      if (!el.isConnected) continue;
+      const r = el.getBoundingClientRect();
+      if (r.width * r.height < 16) continue;
+      const shown = el.checkVisibility ? el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) : true;
+      if (!shown) continue;
+      items.push([L.ids.get(el), Math.round(r.left * 10) / 10, Math.round(r.top * 10) / 10, Math.round(r.width * 10) / 10, Math.round(r.height * 10) / 10]);
+    }
+    L.frames.push({ t, items });
+    if (t < ms) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  return true;
+}
+
+export function analyseLive(cfg) {
+  const L = window.__unslopLive, U = window.__unslopU;
+  L.stop = true;
+  const F = L.frames, out = { frames: F.length, coverage: "ok", snaps: [], ambient: 0, motionEndMs: null, stillMoving: false };
+  if (F.length < 12 || L.clickT === null) { out.coverage = "inconclusive"; out.reason = `only ${F.length} frames recorded`; return out; }
+  const dts = F.slice(1).map((f, i) => f.t - F[i].t).sort((a, b) => a - b);
+  const frameMs = dts[Math.floor(dts.length / 2)] || 16.7;
+  out.frameMs = Math.round(frameMs * 10) / 10;
+  const late = (f) => f > 0 && F[f].t - F[f - 1].t > frameMs * 1.6;
+  out.lateFrames = F.filter((_, f) => late(f)).length;
+  if (out.lateFrames > F.length / 3) { out.coverage = "inconclusive"; out.reason = `${out.lateFrames} of ${F.length} frames came late (page busy)`; }
+  const at = F.map((f) => new Map(f.items.map((i) => [i[0], i])));
+  const c0 = F.findIndex((f) => f.t >= L.clickT);
+  if (c0 < 4) { out.coverage = "inconclusive"; out.reason = "no baseline frames before the click"; return out; }
+  const step = (f, id, k) => { const a = at[f - 1] && at[f - 1].get(id), b = at[f].get(id); return a && b ? b[k] - a[k] : null; };
+  const AX = [[1, "x"], [2, "y"], [3, "width"], [4, "height"]];
+  const moved = (f, id) => AX.some(([k]) => { const d = step(f, id, k); return d !== null && Math.abs(d) > 0.4; });
+  // ambient: anything moving before the click
+  const ambient = new Set();
+  for (let f = 1; f < c0; f++) for (const id of at[f].keys()) if (moved(f, id)) ambient.add(id);
+  // ancestors of ambient elements move them too: treat descendants of an ambient box as ambient
+  const isAmbient = (id) => { for (let x = id, k = 0; x >= 0 && k < 40; x = L.meta[x].parent, k++) if (ambient.has(x)) return true; return false; };
+  out.ambient = ambient.size;
+  // the end of click-driven movement, any engine
+  let last = null;
+  for (let f = c0 + 1; f < F.length; f++) { if (late(f)) continue; for (const id of at[f].keys()) if (!isAmbient(id) && moved(f, id)) { last = f; break; } }
+  if (last !== null) { out.motionEndMs = Math.round(F[last].t - L.clickT); out.stillMoving = last >= F.length - 3; }
+  // snaps after the click
+  const found = new Map();
+  for (let f = c0 + 2; f < F.length - 1; f++) {
+    if (late(f - 1) || late(f) || late(f + 1)) continue;
+    for (const [id] of at[f]) {
+      if (isAmbient(id)) continue;
+      for (const [k, axis] of AX) {
+        const d = step(f, id, k), before = step(f - 1, id, k), after = step(f + 1, id, k);
+        if (d === null || before === null || after === null) continue;
+        const calm = Math.max(Math.abs(before), Math.abs(after), 0.4);
+        if (Math.abs(d) <= cfg.jumpPx || Math.abs(d) <= 3 * calm) continue;
+        // settle: this element glided in at least 3 of the 8 frames before the jump
+        let glided = 0;
+        for (let g = Math.max(c0 + 1, f - 8); g < f; g++) { const s = step(g, id, k); if (s !== null && Math.abs(s) > 0.4 && Math.abs(s) <= cfg.jumpPx * 3) glided++; }
+        // shove: another element is mid-glide across the jump (moving in the frames before and after it)
+        let kind = glided >= 3 ? "settle" : null;
+        if (!kind) {
+          for (const [o] of at[f]) {
+            if (o === id || isAmbient(o)) continue;
+            const pb = step(f - 1, o, 2), pa = step(f + 1, o, 2), xb = step(f - 1, o, 1), xa = step(f + 1, o, 1);
+            const glide = (u, v) => u !== null && v !== null && Math.abs(u) > 0.4 && Math.abs(v) > 0.4 && Math.abs(u) < cfg.jumpPx * 3 && Math.abs(v) < cfg.jumpPx * 3;
+            if (glide(pb, pa) || glide(xb, xa)) { kind = "shove"; break; }
+          }
+        }
+        if (!kind) continue;
+        const key = `${id}:${axis}`;
+        if (found.has(key)) { found.get(key).count++; continue; }
+        found.set(key, { id, parent: L.meta[id].parent, kind, axis, d: Math.round(d * 10) / 10, atMs: Math.round(F[f].t - L.clickT), count: 1 });
+      }
+    }
+  }
+  // a parent's jump carries its children: keep the outermost
+  const lines = [...found.values()].sort((a, b) => a.atMs - b.atMs), kept = [];
+  for (const l of lines) {
+    let anc = false;
+    for (let x = l.parent, k = 0; x >= 0 && k < 40; x = L.meta[x].parent, k++) if (kept.some((s) => s.id === x && s.axis === l.axis && Math.abs(s.atMs - l.atMs) < 40)) { anc = true; break; }
+    if (!anc) kept.push(l);
+  }
+  out.snapCount = kept.length;
+  out.snaps = kept.slice(0, 10).map((l) => ({ kind: l.kind, axis: l.axis, dPx: l.d, atMs: l.atMs, count: l.count, name: L.meta[l.id].name, text: L.meta[l.id].text,
+    selector: L.meta[l.id].el && L.meta[l.id].el.isConnected ? U.path(L.meta[l.id].el) : null }));
+  return out;
+}
+
 async function clickTrigger(page, selector, pre) {
   const [x, y, w, h] = pre.rect;
   if (pre.hit && w > 0 && h > 0) { await page.mouse.click(x + w / 2, y + h / 2); return "mouse"; }
@@ -298,12 +428,49 @@ async function clickTrigger(page, selector, pre) {
   return "element.click()";
 }
 
-export async function captureMotion({ browser, open, url, ev, note, prepWait = 0, budgetMs = 60000, maxTriggers = 6 }) {
+const pageSig = () => { const U = window.__unslopU; const o = "dialog[open],[role=dialog],[role=alertdialog],[role=menu],[role=listbox],[role=tooltip],[popover],[aria-modal=true]";
+  return [U.lines().length, document.querySelectorAll("[aria-expanded=true]").length, [...document.querySelectorAll(o)].filter(U.vis).length, location.href].join("|"); };
+
+async function liveRun(page, selector, guard, load, dirty, liveMs) {
+  const res = { coverage: "inconclusive", dirty };
+  try {
+    if (dirty) { await load(); res.dirty = false; }
+    let navigated = false;
+    const onNav = (f) => { if (f === page.mainFrame()) navigated = true; };
+    page.on("framenavigated", onNav);
+    await page.evaluate((s) => { const e = document.querySelector(s); if (e) e.scrollIntoView({ block: "center", inline: "nearest" }); }, selector);
+    await page.waitForTimeout(250);
+    let pre = await page.evaluate(preClick, selector);
+    if (pre.error) { page.off("framenavigated", onNav); return { ...res, reason: pre.error }; }
+    await page.mouse.move(pre.rect[0] + pre.rect[2] / 2, pre.rect[1] + pre.rect[3] / 2);
+    await page.waitForTimeout(400);
+    pre = await page.evaluate(preClick, selector);
+    await page.evaluate(startLive, liveMs + 400);
+    await page.waitForTimeout(400);                                       // baseline: what moves without the click is ambient
+    guard.armed = true;
+    await page.evaluate(() => { window.__unslopLive.clickT = performance.now() - window.__unslopLive.t0; });
+    res.clickedWith = await clickTrigger(page, selector, pre);
+    await page.waitForTimeout(liveMs);
+    Object.assign(res, await page.evaluate(analyseLive, { jumpPx: 2 }));
+    res.windowMs = liveMs;
+    await page.keyboard.press("Escape").catch(() => {});
+    await page.mouse.move(2, 2);
+    await page.waitForTimeout(300);
+    page.off("framenavigated", onNav);
+    guard.armed = false;
+    if (navigated) return { ...res, coverage: "inconclusive", reason: "the click navigated the page", dirty: true };
+    const sig = await page.evaluate(pageSig).catch(() => "");
+    res.dirty = sig !== pre.sig;
+  } catch (e) { guard.armed = false; return { coverage: "inconclusive", reason: `error: ${e.message.split("\n")[0]}`, dirty: true }; }
+  return res;
+}
+
+export async function captureMotion({ browser, open, url, ev, note, prepWait = 0, budgetMs = 60000, maxTriggers = 6, liveMs = 1500 }) {
   const dir = path.join(ev, "motion");
   fs.rmSync(dir, { recursive: true, force: true });       // capture output only: a re-capture replaces its own frames
   fs.mkdirSync(dir, { recursive: true });
   const t0 = Date.now();
-  const out = { version: 1, viewport: [VIEW, 900], frameTimesMs: FRAME_TIMES, budgetMs, modes: ["normal", "reduce"], triggers: [], skipped: [], notVerified: [], log: [] };
+  const out = { version: 2, viewport: [VIEW, 900], frameTimesMs: FRAME_TIMES, budgetMs, liveMs, modes: ["normal", "reduce"], triggers: [], skipped: [], notVerified: [], log: [] };
   const layoutPx = 2;
   let discovered = null;
   for (const mode of ["normal", "reduce"]) {
@@ -372,6 +539,12 @@ export async function captureMotion({ browser, open, url, ev, note, prepWait = 0
         const sig = await page.evaluate(() => { const U = window.__unslopU; const o = "dialog[open],[role=dialog],[role=alertdialog],[role=menu],[role=listbox],[role=tooltip],[popover],[aria-modal=true]";
           return [U.lines().length, document.querySelectorAll("[aria-expanded=true]").length, [...document.querySelectorAll(o)].filter(U.vis).length, location.href].join("|"); }).catch(() => "");
         if (sig !== pre.sig) { dirty = true; run.reset = "reload"; } else run.reset = "escape";
+        // live run (normal mode): the same click in real time, every animation frame recorded
+        if (mode === "normal" && liveMs > 0) {
+          if (Date.now() - t0 > budgetMs) run.live = { coverage: "skipped", reason: `time budget ${budgetMs} ms used up` };
+          else run.live = await liveRun(page, trig.selector, guard, load, dirty, liveMs);
+          dirty = run.live.dirty; delete run.live.dirty;
+        }
       } catch (e) { run.status = "not-verified"; run.reason = `error: ${e.message.split("\n")[0]}`; dirty = true; guard.armed = false; }
     }
     await ctx.close();

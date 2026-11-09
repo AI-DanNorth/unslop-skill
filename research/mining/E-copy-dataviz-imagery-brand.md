@@ -396,7 +396,7 @@ Source short names: hallmark, kami, taste (taste-skill), uupm (ui-ux-pro-max), h
 | IMG-001 | Show the real thing in source priority order | Client's own images > screenshots of real product > product built in HTML (if unbuilt) > licensed library photo > generated (only if requested) > type at full scale | Reflex | J | hallmark §114 §264, taste §549, kami §228 §639 |
 | IMG-002 | Every picture passes the deletion test | Remove it: page must lose a fact | Reflex | J | hallmark §114 §265 §272, huashu §81, kami §639 |
 | IMG-003 | Fetch content-required images before designing; for animals, places, people, products, history, images are content | Parrot site without a parrot = fail; product page that never shows the product = fail (scored 3/10) | Floor | J | huashu §81, taste §35 §554 |
-| IMG-004 | Never hand-draw objects, plants, animals, people, products, buildings or scenes past icon size in SVG/CSS | SVG only for icons from one set, the logo, charts/diagrams of real data, plain geometry | Reflex | M | hallmark §117 §277, huashu §60 §81, taste §23 §25 |
+| IMG-004 | Never hand-draw objects, plants, animals, people, products, buildings or scenes past icon size in SVG/CSS | SVG only for icons from one set, the logo, charts/diagrams of real data, plain geometry | Reflex | M | hallmark §117 §277, huashu §60 §81, taste §23 §25, stageshow §31 §43 |
 | IMG-005 | Never use CSS silhouettes, styled-div "product UI" or bevelled fakes as stand-ins for real products | Fake terminals/dashboards from divs banned; built UI must be the real UI at true size with client content | Reflex | J | hallmark §117, huashu §35 §60, taste §23 §25 |
 | IMG-006 | Never ship empty washes or gradient blocks where a picture should be | Slot/gradient ≥300×200px showing nothing = fail; empty/grey/half-loaded frame at 1440/1024/768/390 = fault | Reflex | M | hallmark §117 §268 §277, taste §563 |
 | IMG-007 | Never use counting devices | ≥24 identical marks for a quantity -> set the number in type (ISOTYPE repetition in true pictograph charts excepted) | Reflex | M | hallmark §117 §277, huashu §262 |
@@ -416,7 +416,7 @@ Source short names: hallmark, kami, taste (taste-skill), uupm (ui-ux-pro-max), h
 | IMG-017 | Capture in a telling state | 2x at 1440×900 desktop and 390×844 phone; main screen, cropped detail, second screen, phone view | Finish | M | hallmark §269 |
 | IMG-018 | Scrub every capture | No names, emails, tokens, file paths; no unintended error states or debug overlays | Floor | J | hallmark §269, huashu §36 |
 | IMG-019 | Never drawn browser bars, traffic lights, OS title bars or notches | Real screenshot in a figure or no chrome; one real device frame max with real content | Reflex | M | hallmark §118 §270 |
-| IMG-020 | Never crop away UI text, numbers, prompts or controls; never AI-redesign a real screenshot | Too tall: split into 2-3 panels; normalize frame/padding across a group | Floor | J | kami §136 §265 §646 |
+| IMG-020 | Never crop away UI text, numbers, prompts or controls; never AI-redesign a real screenshot | Too tall: split into 2-3 panels; normalize frame/padding across a group | Floor | J | kami §136 §265 §646, stageshow §35 |
 | IMG-021 | Label any redraw "schematic" or "concept"; redrawn third-party figures "Schematic redrawn"; embed originals with evidentiary value | | Floor | J | kami §136 §229 |
 | IMG-022 | A built product mock: real controls, ≥8 elements, brief's nouns, sample values that read as samples | | Finish | H | hallmark §271 |
 | IMG-023 | Terminal tools: run them and set the real output in a code block | | Finish | J | hallmark §269 |
@@ -472,17 +472,17 @@ Source short names: hallmark, kami, taste (taste-skill), uupm (ui-ux-pro-max), h
 ### Icon systems and stroke
 | ID | Rule | Values / thresholds | Tier | Check | Sources |
 |---|---|---|---|---|---|
-| IMG-064 | Never use emoji as icons or bullets (unless the brand uses emoji) | No 🚀⚡️✨🎯💡 before heads, no ✅ in feature lists | Reflex | M | hallmark §123 §278, huashu §60, uupm §234, taste §23 §25 |
-| IMG-065 | One icon library per page/surface, one stroke width, one style | A brand mark in ≤2 places may be extra; never a second line set | Reflex | M | hallmark §123 §278, uupm §234 §937, taste §361 |
+| IMG-064 | Never use emoji as icons or bullets (unless the brand uses emoji) | No 🚀⚡️✨🎯💡 before heads, no ✅ in feature lists | Reflex | M | hallmark §123 §278, huashu §60, uupm §234, taste §23 §25, stageshow §26 |
+| IMG-065 | One icon library per page/surface, one stroke width, one style | A brand mark in ≤2 places may be extra; never a second line set | Reflex | M | hallmark §123 §278, uupm §234 §937, taste §361, stageshow §25 |
 | IMG-066 | Size icons on their grid | 16/20/24/32px (24 viewBox at 24, never scaled to 19); UI controls 20, feature 24, anchors 32 | Finish | M | hallmark §278, uupm §261 §937, taste §366 |
 | IMG-067 | Icons inherit `currentColor`; outlined uses round caps/joins | | Finish | M | hallmark §278, uupm §261, taste §363 |
 | IMG-068 | No icon in a coloured coin or rounded tile above a heading | 3 equal icon-above-heading tiles = card tell | Reflex | M | hallmark §123-124, taste §23 |
 | IMG-069 | Not every heading/feature needs an icon; add one only if it carries information the label can't | "Decorative icons are a disaster" | Reflex | J | huashu §60, kami §411 |
 | IMG-070 | Hide decorative icons/SVG art from assistive tech; label meaningful standalone icons; icon buttons need accessible names and state | `aria-hidden`, `aria-label`, `<title>` | Floor | M | hallmark §123, uupm §44 §125 §937, adp §247 |
-| IMG-071 | Show a named tool's real logo in its own colours; never a look-alike, letter-in-circle or grey box | No hand-rolled SVG icons for real brands; nothing fetches/tints icons at runtime | Reflex | J | taste §360 §366 §376, huashu §34 |
+| IMG-071 | Show a named tool's real logo in its own colours; never a look-alike, letter-in-circle or grey box | No hand-rolled SVG icons for real brands; nothing fetches/tints icons at runtime | Reflex | J | taste §360 §366 §376, huashu §34, stageshow §28 |
 | IMG-072 | Use only licence-verified icon sets; nominative trademark use; credits record per icon | Footer "Product names and logos are trademarks of their owners" | Floor | J | taste §361-362 §616 |
 | IMG-073 | Never recolour third-party logos; the page's own palette bans don't apply to them | | Reflex | J | taste §365 |
-| IMG-074 | Even visual weight in a mixed logo row | Wordmark height 0.7× size, max width 4.5×; tile: landscape 70% width, portrait 68% height, square 60% | Finish | M | taste §366-367 |
+| IMG-074 | Even visual weight in a mixed logo row | Wordmark height 0.7× size, max width 4.5×; tile: landscape 70% width, portrait 68% height, square 60% | Finish | M | taste §366-367, stageshow §28 |
 | IMG-075 | Diagram icons: single line 1-1.5 stroke, no fill, consistent within a figure; no emoji faces or mascots | | Finish | M | kami §409 |
 | IMG-076 | Avoid human figures and anthropomorphic AI in editorial diagrams | Minimal line, no facial detail if required | Finish | J | kami §412 |
 | IMG-077 | Icon pictogram systems: one grid, equal stroke, 0/45/90° only, always paired with short labels | | Finish | M | huashu §271 |

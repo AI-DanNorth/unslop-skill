@@ -2108,3 +2108,95 @@
   - HM §4, HU §177, HM §216
   mined_from: C-concept-layout-components.md#CMP-276
   status: draft
+- id: CMP-265
+  title: 'Fit the text before the box: a control''s border-box holds content, padding and border'
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Fit the text before the box: a control''s border-box holds content, padding and border; small text gets a line height of at least 1.3
+    and an inset on every side.'
+  values: line-height ≥1.3
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §13
+  mined_from: F-stageshow.md#CMP-001
+  status: draft
+- id: CMP-266
+  title: A control hugs its content, never stretched with its contents at one end
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: M
+  rule: A control hugs its content, never stretched with its contents at one end; fix overflow by fitting the content, not widening the container.
+  values: lopsided = fault
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §16
+  mined_from: F-stageshow.md#CMP-002
+  status: draft
+- id: CMP-267
+  title: A filled button keeps its colour under the pointer (one step of its own colour, never a gr
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: H
+  rule: A filled button keeps its colour under the pointer (one step of its own colour, never a gray swap); a trigger with its popover open keeps
+    its pressed look; links have no hover surface, controls have a surface at rest.
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §21
+  mined_from: F-stageshow.md#CMP-003
+  status: draft
+- id: CMP-268
+  title: Inset and round hover and selection fills inside their list, unless the real product draws
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Inset and round hover and selection fills inside their list, unless the real product draws square fills.
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §21
+  mined_from: F-stageshow.md#CMP-004
+  status: draft
+- id: CMP-269
+  title: 'Give a button''s states one slot: reserve the longest label''s footprint, and change a label'
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'Give a button''s states one slot: reserve the longest label''s footprint, and change a label or icon on the same button, never by swapping
+    in a second element.'
+  values: check shortest, longest and pending labels
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §49
+  mined_from: F-stageshow.md#CMP-005
+  status: draft
+- id: CMP-270
+  title: Draw a progress ring as one track and one arc with round caps, never butt-capped dashes
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Draw a progress ring as one track and one arc with round caps, never butt-capped dashes; centre its number on the digits.
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §17 §22
+  mined_from: F-stageshow.md#CMP-006
+  status: draft
+- id: CMP-271
+  title: 'Inside an embedded product illustration, a faux app''s title is not a real heading: no h1 t'
+  domain: D08
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'Inside an embedded product illustration, a faux app''s title is not a real heading: no `h1` to `h6` in the demo, which lives inside someone
+    else''s page outline.'
+  values: 0 headings inside the illustration root
+  area: Controls and states (from faux UI; principles hold for real UI)
+  sources:
+  - stageshow §13
+  mined_from: F-stageshow.md#CMP-007
+  status: draft

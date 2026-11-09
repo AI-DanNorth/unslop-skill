@@ -25,7 +25,7 @@ Source short names: hallmark (HM), ui-ux-pro-max (UU), huashu-design (HS), taste
 | TYP-014 | Give the wordmark its own face (or the display cut/heaviest weight) on tone-rich work; a wordmark that is the body face at 600 is the undesigned default | wordmark ≠ body@600 | Finish | J | HM §64, §296 |
 | TYP-015 | When a face the page is about is not supplied, name it first in the display token as a font slot, use a free same-build stand-in, and say so | one caption disclosure | Floor | J | HM §64 |
 | TYP-016 | Do not set a full body paragraph in a monospace face | mono inflates line length ~30% | Reflex | M | HS §124; HM §61 |
-| TYP-017 | Use monospace only for code, figures, measurements, times, prices, versions, or when mono is the declared material; mono on labels/captions/meta/table heads is costume | flag ≥4 mono labels ≤14px | Reflex | M | HM §61, §396, §298; HS §59, §60; TS §30 |
+| TYP-017 | Use monospace only for code, figures, measurements, times, prices, versions, or when mono is the declared material; mono on labels/captions/meta/table heads is costume | flag ≥4 mono labels ≤14px | Reflex | M | HM §61, §396, §298; HS §59, §60; TS §30; stageshow §13 |
 | TYP-018 | Use display-only faces (single weight, hairline) only at display sizes | Instrument Serif 400 only; Cormorant ≥40px; thin/high-contrast strokes break <24px | Reflex | M | HS §124, §134 |
 | TYP-019 | Prefer variable fonts; one variable file gives every weight | — | Finish | M | HM §290, §297 |
 | TYP-020 | When the brand/user has fonts, use those first; brand fonts override all pairing rules | — | Floor | J | HS §117; HM §137 |
@@ -201,7 +201,7 @@ Source short names: hallmark (HM), ui-ux-pro-max (UU), huashu-design (HS), taste
 | CLR-017 | Lock the accent before filling any layout; on product sites take it from the product, else show candidates and let the owner choose | — | Reflex | J | KM §21, §185 |
 | CLR-018 | Keep the interface 90–95% neutral; colour comes from photographs, product, work and real logos | — | Reflex | H | TS §61 |
 | CLR-019 | Keep at most 2–3 colours in one component; ≤20% off-palette colours | — | Reflex | M | UU §296 |
-| CLR-020 | Never define a colour by alpha; alpha is for overlays and shadows only; register solid tints instead of `rgba()` fills | translucent tags print a double rectangle | Reflex | M | HM §70; KM §17, §183 |
+| CLR-020 | Never define a colour by alpha; alpha is for overlays and shadows only; register solid tints instead of `rgba()` fills | translucent tags print a double rectangle | Reflex | M | HM §70; KM §17, §183; stageshow §29 §55 |
 | CLR-021 | Reflect cultural hue meaning: drop chroma/add grey for traditional, raise for consumer | vermilion vs cola red; indigo vs #0066FF | Finish | J | HS §213 |
 | CLR-022 | Treat a custom palette as too close to an existing theme when it shares paper band and display class and accent hue is within 20° (or 10° on hue alone) | — | Reflex | M | HM §415 |
 | CLR-023 | Do not let multiple concept directions collapse to one palette | mean nearest oklab distance <0.06 = collision; three directions same background class = collision | Reflex | M | HS §69, §208 |
@@ -255,7 +255,7 @@ Source short names: hallmark (HM), ui-ux-pro-max (UU), huashu-design (HS), taste
 | CLR-055 | Re-space neutral L steps between new paper and ink; keep every chroma tint | — | Reflex | M | HM §300 |
 | CLR-056 | Check dark hairlines against paper-2, not just paper | rule L ~26–34% | Reflex | M | HM §300 |
 | CLR-057 | Hold every contrast pairing identically in both modes; fix the derivation, never the requirement | — | Floor | M | HM §299, §303; UU §242 |
-| CLR-058 | Turn drop shadows off on dark; use lightness steps or an inset hairline ring | `box-shadow: inset 0 0 0 1px var(--color-rule)` | Reflex | M | HM §302 |
+| CLR-058 | Turn drop shadows off on dark; use lightness steps or an inset hairline ring | `box-shadow: inset 0 0 0 1px var(--color-rule)` | Reflex | M | HM §302; stageshow §29 |
 | CLR-059 | Keep one heading colour on dark | all headings ink | Finish | M | HM §302 |
 | CLR-060 | Never invert/brightness-filter raster images for dark; pick dark/mid-tone photos or plate light ones | — | Reflex | M | HM §302 |
 | CLR-061 | Re-derive chart marks for dark (chroma down, L up), gridlines from dark rule; halve sparkline fill opacity | — | Reflex | M | HM §302, §309 |
@@ -306,7 +306,7 @@ Source short names: hallmark (HM), ui-ux-pro-max (UU), huashu-design (HS), taste
 ### Radius
 | ID | Rule | Values / thresholds | Tier | Check | Sources |
 |---|---|---|---|---|---|
-| CLR-093 | Make nested radii concentric | inner = outer − padding, ≥2px | Reflex | M | HM §78; HS §1300 (inner 9 in card 14) |
+| CLR-093 | Make nested radii concentric | inner = outer − padding, ≥2px | Reflex | M | HM §78; HS §1300 (inner 9 in card 14); stageshow §18 |
 | CLR-094 | Use one radius per nesting level from one radius family | e.g. lg cards/frames, md panels, sm controls; md = r−2px, sm = r−4px | Reflex | M | HM §78; TS §62; UU §337 |
 | CLR-095 | Limit pill radius to controls, tags, badges | pill on ≥5 non-control selectors is a tell | Reflex | M | HM §78, §377, §497; KM §195 |
 | CLR-096 | Match radius to material/genre | print-like 0–2px; modern-minimal 8px; atmospheric 12px; print docs 2–6pt (≥8pt screen only) | Finish | J | HM §497; KM §76, §195 |

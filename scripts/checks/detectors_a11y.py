@@ -196,7 +196,11 @@ def targets(ev, cfg):
                 crowded = any(o is not e and o.get("interactive") and math.hypot(o["rect"]["x"] + o["rect"]["w"] / 2 - cx, o["rect"]["y"] + o["rect"]["h"] / 2 - cy) < cfg["floor_px"] for o in ev.visible(w))
                 small = crowded
             if small:
-                out.append(hit(cfg, where(e), f"target {ww}x{hh}px at {w}px, closer than {cfg['floor_px']}px to another target (WCAG 2.5.8)", tier="Floor", width=w))
+                # dense footer link lists: Reflex, not Floor (owner decision 9 Nov 2026; most live-round-1 hits on the 14
+                # human controls were footer links). Still reported; fix or waive with a reason.
+                foot = e.get("inFooter") or any(a["tag"] == "footer" or a.get("role") == "contentinfo" for a in ev.ancestors(e, w))
+                tier, note = (cfg.get("footer_tier", "Reflex"), " in the footer") if foot else ("Floor", "")
+                out.append(hit(cfg, where(e), f"target {ww}x{hh}px at {w}px{note}, closer than {cfg['floor_px']}px to another target (WCAG 2.5.8)", tier=tier, width=w))
             elif touch and min(ww, hh) >= 1 and (ww < cfg["touch_px"] or hh < cfg["touch_px"]) and e["tag"] not in ("input", "textarea", "select"):
                 out.append(hit(cfg, where(e), f"touch target {ww}x{hh}px at {w}px (min {cfg['touch_px']}px)", tier=cfg.get("touch_tier", "Reflex"), width=w))
     seen, res = set(), []

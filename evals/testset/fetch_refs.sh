@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# Rebuild the source repos that test set 1 points at, each at its pinned commit.
+# Rebuild the source repos the test sets point at (sources: in every set*.yaml), each at its pinned commit.
 # usage: evals/testset/fetch_refs.sh [refs-dir]   (default: ../unslop-refs next to this repo)
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 refs="${1:-$here/../../../unslop-refs}"; mkdir -p "$refs"
 # tr strips the \r that Windows Python adds to each line; without it the SHAs never match.
-python3 - "$here/set1.yaml" <<'PY' | tr -d '\r' | while read -r name repo sha; do
-import sys, yaml
-for k, v in yaml.safe_load(open(sys.argv[1]))["sources"].items(): print(k, v["github"], v["commit"])
+python3 - "$here" <<'PY' | tr -d '\r' | while read -r name repo sha; do
+import sys, yaml, pathlib
+seen = {}
+for f in sorted(pathlib.Path(sys.argv[1]).glob("set*.yaml")):          # every test set's sources, once each
+    for k, v in (yaml.safe_load(open(f, encoding="utf-8")).get("sources") or {}).items(): seen.setdefault(k, v)
+for k, v in seen.items(): print(k, v["github"], v["commit"])
 PY
   dir="$refs/$name"
   if [ -d "$dir/.git" ] && [ "$(git -C "$dir" rev-parse HEAD)" = "$sha" ]; then echo "ok    $name"; continue; fi

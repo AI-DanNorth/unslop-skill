@@ -79,6 +79,29 @@
     reduced_move_px: 2
     reduced_scale: 0.02
     reduced_rule: A11-011
+- id: MOT-003
+  title: Movement lands where it ends
+  domain: D09
+  tier: Finish
+  detector: motion_snap
+  remedy: fix-motion
+  rule: Recorded in real time after a click, no element glides and then jumps more than 3 px in one frame to its end state, and no content is
+    shoved in one frame while another element is still animating. Instant changes are not judged.
+  why: 'A movement that stops short and snaps, or a neighbour that jumps while a panel glides, reads as broken motion: the eye follows the glide
+    and sees the cut.'
+  fix: Tween or spring to the true final layout; when content around an animating element must move, animate its container with the same transition
+    or reserve the space first.
+  sources:
+  - Stageshow references/motion.md (Things that appear, travel and leave) and scripts/jumps-core.mjs (benjitaylor/skills, MIT)
+  - Stageshow references/teaching.md (Landing jumps at handoff; New row shoves its neighbors)
+  priority: P3
+  kind: ban
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    min_px: 3
+    max_hits: 6
 - id: MOT-101
   title: Name every motion and its purpose before building
   domain: D09
@@ -562,7 +585,7 @@
   values: Every enter has an exit or explicit `none`
   area: Enter/exit asymmetry
   sources:
-  - agent §51
+  - agent §51, stageshow §50
   mined_from: D-motion-a11y-robustness.md#MOT-062
   status: draft
 - id: MOT-138
@@ -575,7 +598,7 @@
   values: No pure-blank gap >0.3s
   area: Enter/exit asymmetry
   sources:
-  - huashu §377
+  - huashu §377, stageshow §50
   mined_from: D-motion-a11y-robustness.md#MOT-063
   status: draft
 - id: MOT-139
@@ -692,7 +715,7 @@
   values: ≥0.4 frame by reading order
   area: Stagger
   sources:
-  - huashu §342, §422
+  - huashu §342, §422, stageshow §47
   mined_from: D-motion-a11y-robustness.md#MOT-075
   status: draft
 - id: MOT-148
@@ -1627,7 +1650,7 @@
   values: Every change shows a state, step or real data
   area: Loops and ambient motion
   sources:
-  - hallmark §87, taste §33, §429
+  - hallmark §87, taste §33, §429, stageshow §48
   mined_from: D-motion-a11y-robustness.md#MOT-164
   status: draft
 - id: MOT-220
@@ -1640,7 +1663,7 @@
   values: Rest 600ms before first cycle; hold last 10-15%
   area: Loops and ambient motion
   sources:
-  - taste §428
+  - taste §428, stageshow §45 §47
   mined_from: D-motion-a11y-robustness.md#MOT-165
   status: draft
 - id: MOT-221
@@ -1705,7 +1728,7 @@
     and switches jump.
   area: Reduced motion
   sources:
-  - hallmark §84, taste §439, §632
+  - hallmark §84, taste §439, §632, stageshow §54
   mined_from: D-motion-a11y-robustness.md#MOT-173
   status: draft
 - id: MOT-226
@@ -1897,4 +1920,436 @@
   sources:
   - huashu §405, taste §440
   mined_from: D-motion-a11y-robustness.md#MOT-192
+  status: draft
+- id: MOT-241
+  title: In a demo animation, tell three to five beats building to one payoff
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, tell three to five beats building to one payoff; one gesture and its response can be enough; cut any motion whose
+    removal makes the story clearer.
+  values: hero loop 10-16s
+  area: 'Demo animation: story and payoff (product illustration / demo animation only)'
+  sources:
+  - stageshow §45
+  mined_from: F-stageshow.md#MOT-001
+  status: draft
+- id: MOT-242
+  title: In a demo animation, choose the poster frame (thumbnail, reduced motion, screenshot) as th
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a demo animation, choose the poster frame (thumbnail, reduced motion, screenshot) as the beat that tells the story on its own, with
+    the result on screen, never a frame caught mid-change.
+  area: 'Demo animation: story and payoff (product illustration / demo animation only)'
+  sources:
+  - stageshow §46
+  mined_from: F-stageshow.md#MOT-002
+  status: draft
+- id: MOT-243
+  title: In a demo animation, make the payoff visible at the shown size and arrive full (never a bl
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, make the payoff visible at the shown size and arrive full (never a blank surface for a quarter second), then hold
+    it before the exit; nothing sits still much longer.
+  values: payoff hold 2s; no still >3s
+  area: 'Demo animation: story and payoff (product illustration / demo animation only)'
+  sources:
+  - stageshow §46 §47
+  mined_from: F-stageshow.md#MOT-003
+  status: draft
+- id: MOT-244
+  title: In a demo animation, a satellite arrives at the beat it pays off, carrying its payload, or
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, a satellite arrives at the beat it pays off, carrying its payload, or is present from the first frame; never an empty
+    parked object.
+  area: 'Demo animation: story and payoff (product illustration / demo animation only)'
+  sources:
+  - stageshow §34 §45
+  mined_from: F-stageshow.md#MOT-004
+  status: draft
+- id: MOT-245
+  title: In a looping demo, give every reset a seen cause (undo, clear, close) or make it invisible
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a looping demo, give every reset a seen cause (undo, clear, close) or make it invisible; remove what the loop added as one thing; never
+    play a navigation backwards.
+  values: reverse stagger, last change first, ~70ms apart, all within 0.5s
+  area: 'Demo animation: loops and resets (product illustration / demo animation only)'
+  sources:
+  - stageshow §47
+  mined_from: F-stageshow.md#MOT-005
+  status: draft
+- id: MOT-246
+  title: 'In a looping demo, data never rewinds in view: snap it back while hidden or bring the next'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a looping demo, data never rewinds in view: snap it back while hidden or bring the next loop''s data in as new.'
+  area: 'Demo animation: loops and resets (product illustration / demo animation only)'
+  sources:
+  - stageshow §47
+  mined_from: F-stageshow.md#MOT-006
+  status: draft
+- id: MOT-247
+  title: In a looping demo, leave no dead air at the seam and start on a calm frame.
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a looping demo, leave no dead air at the seam and start on a calm frame.
+  values: next action within ~1s of the exit
+  area: 'Demo animation: loops and resets (product illustration / demo animation only)'
+  sources:
+  - stageshow §47
+  mined_from: F-stageshow.md#MOT-007
+  status: draft
+- id: MOT-248
+  title: In a looping demo, a second scene earns its length by adding something new
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a looping demo, a second scene earns its length by adding something new; never repeat the beat.
+  area: 'Demo animation: loops and resets (product illustration / demo animation only)'
+  sources:
+  - stageshow §47
+  mined_from: F-stageshow.md#MOT-008
+  status: draft
+- id: MOT-249
+  title: In a demo animation, storytelling motion is unhurried on two curves, judged by distance an
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a demo animation, storytelling motion is unhurried on two curves, judged by distance and overlap; this never applies to product UI
+    (conflict register).
+  values: travel `cubic-bezier(0.45, 0, 0.1, 1)`; arrival from nowhere `cubic-bezier(0.25, 0.8, 0.25, 1)` over 0.8-1s
+  area: 'Demo animation: pace and easing (product illustration / demo animation only)'
+  sources:
+  - stageshow §48
+  mined_from: F-stageshow.md#MOT-009
+  status: draft
+- id: MOT-250
+  title: In a demo animation, UI feedback stays as quick as the real product and starts on the inpu
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, UI feedback stays as quick as the real product and starts on the input; only storytelling motion slows down.
+  values: phone in-app `cubic-bezier(0.3, 0.75, 0.1, 1)` 0.5s
+  area: 'Demo animation: pace and easing (product illustration / demo animation only)'
+  sources:
+  - stageshow §48
+  mined_from: F-stageshow.md#MOT-010
+  status: draft
+- id: MOT-251
+  title: In a demo animation, related responses overlap in causal order (a setting, then its label,
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, related responses overlap in causal order (a setting, then its label, then its dependents); dependent changes never
+    all start at once, and a result follows its cause.
+  area: 'Demo animation: pace and easing (product illustration / demo animation only)'
+  sources:
+  - stageshow §48 §54 §56
+  mined_from: F-stageshow.md#MOT-011
+  status: draft
+- id: MOT-252
+  title: 'In a demo or bento grid, give motion one place to lead: a supporting tile does one small t'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'In a demo or bento grid, give motion one place to lead: a supporting tile does one small thing once as the grid scrolls in, or on hover
+    for that tile alone; never several competing loops.'
+  values: stagger 40-80ms within a scene, 80-120ms between tiles, reading order
+  area: 'Demo animation: pace and easing (product illustration / demo animation only)'
+  sources:
+  - stageshow §43 §48
+  mined_from: F-stageshow.md#MOT-012
+  status: draft
+- id: MOT-253
+  title: 'Every change moves: no label replaced in one frame, no menu swapped for another in one fra'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'Every change moves: no label replaced in one frame, no menu swapped for another in one frame, no number that jumps; text rolls, a surface
+    morphs, a submenu slides.'
+  values: content swap in 1 frame = fault
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49 §56
+  mined_from: F-stageshow.md#MOT-013
+  status: draft
+- id: MOT-254
+  title: 'Change only what changed: animate the changed span and move what follows by its measured w'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'Change only what changed: animate the changed span and move what follows by its measured width; a status word rolls in one slot, never
+    two spans crossfading in place.'
+  values: rows changing together cascade ~60ms apart
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49
+  mined_from: F-stageshow.md#MOT-014
+  status: draft
+- id: MOT-255
+  title: 'Added content opens its space with its neighbour: an icon''s width and gap open while the l'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: 'Added content opens its space with its neighbour: an icon''s width and gap open while the label travels; a new row carries the rows below
+    it; neighbours make room continuously.'
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49 §50
+  mined_from: F-stageshow.md#MOT-015
+  status: draft
+- id: MOT-256
+  title: 'Show press feedback before the result: a small press and surface response, then the state '
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Show press feedback before the result: a small press and surface response, then the state change.'
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49 §56
+  mined_from: F-stageshow.md#MOT-016
+  status: draft
+- id: MOT-257
+  title: 'An object keeps its identity when it changes: a plus becoming a close rotates the same str'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'An object keeps its identity when it changes: a plus becoming a close rotates the same strokes rather than swapping icons.'
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49
+  mined_from: F-stageshow.md#MOT-017
+  status: draft
+- id: MOT-258
+  title: A spinner is already turning when it becomes visible and keeps turning through its fade ou
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: A spinner is already turning when it becomes visible and keeps turning through its fade out.
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §49 §56
+  mined_from: F-stageshow.md#MOT-018
+  status: draft
+- id: MOT-259
+  title: 'Solid things do not fade through: windows, phones and cards arrive by moving, opaque or ne'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'Solid things do not fade through: windows, phones and cards arrive by moving, opaque or nearly; a half-transparent phone is a ghost.'
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50
+  mined_from: F-stageshow.md#MOT-019
+  status: draft
+- id: MOT-260
+  title: Cards, toasts and pills arrive whole from just above, never uncovered by a hard edge
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: Cards, toasts and pills arrive whole from just above, never uncovered by a hard edge; a moving edge never slices text; clip only rows
+    of text.
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50 §56
+  mined_from: F-stageshow.md#MOT-020
+  status: draft
+- id: MOT-261
+  title: A popup fits before its first frame and an open popover or menu holds the edge it opened f
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: A popup fits before its first frame and an open popover or menu holds the edge it opened from while its content changes.
+  values: anchor drift = fault; reserve the longest list's height
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50
+  mined_from: F-stageshow.md#MOT-021
+  status: draft
+- id: MOT-262
+  title: A resizing surface moves size, position and content as one transition, never stretching it
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: A resizing surface moves size, position and content as one transition, never stretching its text, and retargets from its current geometry
+    when interrupted.
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50 §56
+  mined_from: F-stageshow.md#MOT-022
+  status: draft
+- id: MOT-263
+  title: 'After motion nothing moves: one object, one trip, ending in its final place'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: 'After motion nothing moves: one object, one trip, ending in its final place; the handoff frame matches size, place and look; landings
+    decelerate with no bounce or ring pulse.'
+  values: snap >2px on the settle frame = fault
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50
+  mined_from: F-stageshow.md#MOT-023
+  status: draft
+- id: MOT-264
+  title: A dashed edge never changes size and border style never transitions
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: A dashed edge never changes size and border style never transitions; fade a dashed layer over the solid one instead.
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §50
+  mined_from: F-stageshow.md#MOT-024
+  status: draft
+- id: MOT-265
+  title: Change colour between distant hues quickly, letting the label carry the slower motion.
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: Change colour between distant hues quickly, letting the label carry the slower motion.
+  values: ~200ms
+  area: Changing text, values and surfaces (from demo animations; principles hold for UI transitions)
+  sources:
+  - stageshow §29 §48
+  mined_from: F-stageshow.md#MOT-025
+  status: draft
+- id: MOT-266
+  title: 'In a demo animation, explain every cursor move: it travels to the next action, follows a h'
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: 'In a demo animation, explain every cursor move: it travels to the next action, follows a held object or clears the way; it rests on empty
+    surface between beats and stays where the press happened.'
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §51
+  mined_from: F-stageshow.md#MOT-026
+  status: draft
+- id: MOT-267
+  title: In a demo animation, the cursor never covers the words it clicks, and its kind follows the
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, the cursor never covers the words it clicks, and its kind follows the element under it (I-beam over text, hand over
+    links), switching mid-path.
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §51
+  mined_from: F-stageshow.md#MOT-027
+  status: draft
+- id: MOT-268
+  title: In a demo without a cursor, never walk a focus ring, halo or spotlight between controls as
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo without a cursor, never walk a focus ring, halo or spotlight between controls as a stand-in; states and timing carry the story.
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §51
+  mined_from: F-stageshow.md#MOT-028
+  status: draft
+- id: MOT-269
+  title: In a demo animation, a state the click sets fades in, never switching on in one frame.
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a demo animation, a state the click sets fades in, never switching on in one frame.
+  values: ~150ms in and out
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §51
+  mined_from: F-stageshow.md#MOT-029
+  status: draft
+- id: MOT-270
+  title: In a demo animation, a drag is one motion that starts where the thing is with a fixed grab
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: H
+  rule: In a demo animation, a drag is one motion that starts where the thing is with a fixed grab offset; a carried card is held, not slid; drop
+    targets never travel; a text selection stays under the I-beam every frame.
+  values: carried card scale 1.03, deeper shadow, 1-2 deg tilt of the whole card
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §52
+  mined_from: F-stageshow.md#MOT-030
+  status: draft
+- id: MOT-271
+  title: In a demo animation, push the camera in only when the payoff would be too small to read
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a demo animation, push the camera in only when the payoff would be too small to read; one push-in per story, in and back out, the cursor
+    still while the view moves; the zoom never rescues a weak frame.
+  values: ≤1 push-in
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §53
+  mined_from: F-stageshow.md#MOT-031
+  status: draft
+- id: MOT-272
+  title: In a phone demo, use a touch indicator, never the desktop arrow
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: J
+  rule: In a phone demo, use a touch indicator, never the desktop arrow; act where people do (tap the notification, act in the app), and throw
+    a swipe at the finger's speed.
+  values: swipe a third of the screen in ~0.25s; thrown page 0.5s `cubic-bezier(0.25, 1, 0.5, 1)`
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §51 §52
+  mined_from: F-stageshow.md#MOT-032
+  status: draft
+- id: MOT-273
+  title: In a demo animation, a page swap inside one window keeps the chrome and crossfades only th
+  domain: D09
+  tier: Finish
+  priority: P3
+  check: M
+  rule: In a demo animation, a page swap inside one window keeps the chrome and crossfades only the body; never slide whole pages sideways.
+  values: 200ms with an 8px rise
+  area: 'Demo animation: cursor, drags and camera (product illustration / demo animation only)'
+  sources:
+  - stageshow §50
+  mined_from: F-stageshow.md#MOT-033
   status: draft
