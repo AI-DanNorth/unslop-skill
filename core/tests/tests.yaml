@@ -17,6 +17,34 @@
    run: "Could typing 'landing page' into an agent produce this?", pass: "No.", sources: ["design-taste §6 §62"]}
 - {id: T-MEMORY, name: Memory, lens: [concept], kind: J,
    run: "Look at the first viewport only, then away.", pass: "You can describe a thing, not a mood.", sources: ["impeccable §225"]}
+- {id: T-OWN-SYSTEM, name: Own system, lens: [concept], kind: J,
+   run: "Before judging novelty, ask whether the look comes from this client's own brand or design system (its logo, palette, faces, photography and components, applied the same way across the artifact) or from a framework default or look family.",
+   pass: "Either answer is recorded with evidence. When the system is the client's own and applied throughout, it is the concept: judge whether the artifact uses it well for its job, not whether it is unconventional. A direction you would not have chosen is not a finding.",
+   sources: ["hallmark §5 §139-140 §157", "huashu §5"]}
+- {id: T-SIGNATURE, name: Signature, lens: [concept], kind: J,
+   run: "Name the artifact's signature: the brief's strongest real thing shown at its best on the first screen (on an app screen, the object the tool is known by, such as a ledger, timeline or queue).",
+   pass: "One exists, it is real material from this client, and it is on the first screen. A number drawn as marks, a greeting over stat cards or a gradient garnish is not a signature.",
+   sources: ["hallmark §13", "huashu §7 §158"]}
+- {id: T-DELETE-PICTURE, name: Delete-the-picture, lens: [concept, imagery], kind: J,
+   run: "Remove the lead image in your head and reread the first screen.", pass: "The screen loses what it says. If it says the same thing, the picture is too weak or too small.",
+   sources: ["hallmark §47"]}
+- {id: T-IDEA-CARRIES, name: Idea carries, lens: [concept], kind: J,
+   run: "Take the one-sentence idea (T-ONE-SENTENCE) and look for it on every screen or slide after the first.",
+   pass: "The idea shapes sections below the hero. An idea that stops at the hero is a template with a good hero.", sources: ["hallmark §15 §158"]}
+- {id: T-BOLD-MOVE, name: One bold move, lens: [concept], kind: J,
+   run: "List every element louder than the rest (scale, colour, motion, device). Then take one accessory off.",
+   pass: "One move carries the boldness and the rest stays quiet. None means timid; several competing means no focus.",
+   sources: ["huashu §7 §181", "taste-skill §99"]}
+- {id: T-DEFAULT-PLAN, name: Default plan, lens: [concept], kind: J,
+   run: "Mark each default-plan move present: split hero (head left, picture right), three numbered steps, label and value rows between hairlines, closing band with a form, dark footer under a huge wordmark, small grey labels, pale ground with one careful accent.",
+   pass: "At most one. Two or more in one artifact means the plan is the template.", sources: ["hallmark §15"]}
+- {id: T-KIND-FIT, name: Business-kind fit, lens: [concept], kind: J,
+   run: "Classify the business kind (software, gaming, tech hardware, product, service, place, other) and the visitor's job, then check what leads: software shows its own UI at work, a product is shown big, a place leads with photographs, a service shows the work and the people doing it.",
+   pass: "The lead material matches the kind and is the client's own. Effects, shader grounds and dark heroes appear only on tech kinds.",
+   sources: ["taste-skill §5 §7 §10-11 §16-21 §25", "hallmark §17 §203"]}
+- {id: T-PROMISE-PICTURED, name: Promise pictured, lens: [concept, imagery], kind: J,
+   run: "For the h1 and each section heading that makes a concrete promise, find the picture that shows it.",
+   pass: "Each concrete promise is shown (\"takes four crates\" shows four crates). Otherwise add the picture or cut the promise.", sources: ["taste-skill §16-17"]}
 - {id: T-SQUINT, name: Squint, lens: [structure], kind: H, detector: blur_render,
    run: "Blur the render (Gaussian 8px at 1440).", pass: "Primary, secondary and groups read in order; heavy and light rhythm.",
    sources: ["hallmark §151 §210", "huashu §99", "impeccable §62"]}

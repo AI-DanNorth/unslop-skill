@@ -55,6 +55,112 @@
    rule: "Do not put a bordered or shadowed card inside another card.", why: "Nested boxes add depth with no meaning and crowd the content.",
    fix: "Keep one container level; group inside it with spacing or a rule.", sources: ["hallmark slopped.html gate 4", "impeccable §561"]}
 
+# ---------------- D02 concept (lens-concept; judgment cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D02-CON.yaml; each source cites the draft id and its original sections.
+- {id: CON-001, title: The client's own system is the concept, domain: D02, tier: Reflex, kind: context, check: J, remedy: none, tests: [T-OWN-SYSTEM],
+   rule: "When the artifact applies the client's own brand or design system consistently, judge it as a concept: score how well it uses that system for its job, and do not report its conventions as template. A direction the reviewer would not have chosen is not a finding.",
+   why: "A locked system overrides every other choice; calling an intentional, conventional identity 'generic' punishes the client for being consistent.",
+   fix: "None when the system holds. Where a section drops the system for a framework default, bring that section back into the system.",
+   sources: ["CON-112 (HM §5, HU §5)", "CON-145 (HM §139-140)", "CON-163 (HM §157, HM §155)"]}
+- {id: CON-002, title: Every large decision belongs to this client, domain: D02, tier: Reflex, check: J, remedy: explore-directions, tests: [T-RIVAL-NAME, T-MIRROR],
+   rule: "Make the subject, place, materials, numbers and voice of every large decision belong to this client. Under a rival's name, no heading stays true; a neighbouring brief in the same category would not get this hero, nav, footer and first section.",
+   why: "A page that would work for any competitor tells the visitor nothing about this one.",
+   fix: "Replace each line that survives the swap with a noun only this client has; change the one shared decision the mirror test names.",
+   sources: ["CON-133 (HM §14)", "CON-117 (HM §11)"]}
+- {id: CON-003, title: The idea fits in one sentence, domain: D02, tier: Reflex, check: J, remedy: explore-directions, tests: [T-ONE-SENTENCE],
+   rule: "State the design's idea in one sentence and its look as ground, ink, accent and faces, each with a source. If no sentence can be written, there is no concept.",
+   values: {idea_sentences: 1},
+   why: "Without a statable idea, every later choice is a default.",
+   fix: "Write the sentence from the client's real material, then make the hero and first section say it.",
+   sources: ["CON-122 (HM §15, HU §97)"]}
+- {id: CON-004, title: One idea runs the whole artifact, domain: D02, tier: Reflex, check: J, remedy: explore-directions, tests: [T-IDEA-CARRIES],
+   rule: "Let the one idea shape every screen, slide or page, top to bottom. An idea that stops at the hero is a template with a good hero.",
+   why: "Visitors judge the page past the first screen; a strong hero over stock sections reads as a theme with a cover.",
+   fix: "Carry the idea's material or device into the first two sections below the hero, or simplify the hero to match the rest.",
+   sources: ["CON-121 (HM §15, HM §158)"]}
+- {id: CON-005, title: One real signature on the first screen, domain: D02, tier: Reflex, check: J, remedy: explore-directions, tests: [T-SIGNATURE, T-DELETE-PICTURE],
+   rule: "Give every artifact one signature: the brief's strongest real thing at its best, on the first screen. On an app screen it is the object the tool is known by (ledger, timeline, queue). A number drawn as marks, a greeting over four stat cards or a gradient garnish is not a signature.",
+   values: {signatures: 1, where: first screen},
+   why: "The first screen is where the visitor decides whether this is for them; a decorative stand-in gives them nothing to remember.",
+   fix: "Lead with the client's own photograph, product, work or data at full size; remove the garnish.",
+   sources: ["CON-118 (HM §13, HU §7)", "CON-119 (HM §13, HU §158)"]}
+- {id: CON-006, title: Spend boldness in one place, domain: D02, tier: Finish, check: J, remedy: fix-quieter, tests: [T-BOLD-MOVE],
+   rule: "Put one detail at 120% and keep the rest at 80%. Take one accessory off before shipping.",
+   values: {bold_moves: 1},
+   why: "Several loud moves cancel each other; none leaves the page forgettable.",
+   fix: "Keep the move that carries the idea; quiet or remove the others. If there is none, enlarge the signature.",
+   sources: ["CON-120 (HU §7, HU §181, TS §99)"]}
+- {id: CON-007, title: The motif grows out of the subject, domain: D02, tier: Reflex, check: J, remedy: explore-directions, tests: [T-COVER-TEXT],
+   rule: "The visual motif must be something only this subject has; the form should grow out of the content, and a reviewer should be able to say in one line where.",
+   why: "A motif borrowed from the category or the look of the month could sit on any client's page.",
+   fix: "Name the subject's own material (its objects, places, records, people) and derive the motif from it.",
+   sources: ["CON-123 (HU §6, HU §52)"]}
+- {id: CON-008, title: Refuse the default plan, domain: D02, tier: Reflex, kind: cap, check: J, remedy: fix-layout, tests: [T-DEFAULT-PLAN],
+   rule: "Do not build from the default plan: split hero (head left, picture right), three numbered steps, label and value rows between hairlines, closing band with a form, dark footer under a huge wordmark, small grey labels, pale ground with one careful accent.",
+   values: {budget: 1, template_at: 2},
+   why: "Two of these in one plan means the plan is the template, however good the parts are.",
+   fix: "Keep the one move that serves the job; replace the others with a shape the client's material suggests.",
+   sources: ["CON-135 (HM §15)"]}
+- {id: CON-009, title: No look picked for the category or by default, domain: D02, tier: Reflex, check: J, remedy: fix-colorize, tests: [T-MIRROR],
+   rule: "Do not choose the spent looks (cream paper with a high-contrast serif and clay accent; near-black with one neon; pale ground with one timid accent; purple to blue) or a hue picked because of the category (blue software, green health) without a reason from the client.",
+   why: "These looks are what any brief in the category gets; they signal that nobody chose.",
+   fix: "Move one axis at a time: accent first, then paper, then display face, each from the client's own material.",
+   sources: ["CON-136 (HM §16, HU §2, HU §58, HU §68)", "CON-137 (HM §16)"]}
+- {id: CON-010, title: The subject is known, not painted on, domain: D02, tier: Reflex, check: J, remedy: fix-quieter, tests: [T-REMOVE-DEVICE],
+   rule: "Do not dress the page as its subject: paper and grain surfaces, stamps, dials and knobs as ornament, bevels, engravings or drawings of the thing in place of the thing.",
+   why: "Costume shows the reviewer guessed at the subject instead of showing it.",
+   fix: "Replace the ornament with the real object, place or record, photographed or shown as data.",
+   sources: ["CON-141 (HM §16, HM §127)"]}
+- {id: CON-011, title: No AI tech clichés, domain: D02, tier: Reflex, check: J, remedy: fix-quieter,
+   rule: "Do not illustrate technology with gradient spheres, digital rain, circuit boards, robot faces, or the dark-code look (#0D1117 with a cyan or purple glow).",
+   why: "These images say 'tech' about every tech company and nothing about this one.",
+   fix: "Show the product working on a real task, or use an abstract form derived from what the product does.",
+   sources: ["CON-142 (HU §60, HU §104, HU §215)"]}
+- {id: CON-012, title: No forced big-idea metaphor, domain: D02, tier: Reflex, check: J, remedy: fix-distill, tests: [T-REMOVE-DEVICE],
+   rule: "Do not force the content into a prop or universal metaphor (filing cabinet, library card, subway map, prescription slip, terminal, newspaper). Remove the device: if the information gets clearer, it was too much.",
+   why: "A device that costs clarity serves the designer, not the reader.",
+   fix: "Remove the device and keep only the parts of it that carry information.",
+   sources: ["CON-144 (HU §42, HU §54)", "CON-126 (HU §54, HU §208, HU §69)"]}
+- {id: CON-013, title: Material fits the business kind, domain: D02, tier: Reflex, kind: context, check: J, remedy: explore-directions, tests: [T-KIND-FIT],
+   rule: "Classify the business kind and the visitor's job first. Reserve effects, scenes, loops, counters, shader grounds, dark pages and dark heroes for tech (software, gaming, hardware); build other kinds from photographs, flat colour, type and real icons.",
+   why: "Tech effects on a bakery or a law firm borrow another kind's look and hide the real thing the visitor came to see.",
+   fix: "Replace the effect with the client's own photographs or work; keep type and flat colour for the rest.",
+   sources: ["CON-146 (TS §5, TS §7, TS §25)", "CON-101 (TS §5, UX §229, UX §454)", "CON-102 (HM §17, HM §203)"]}
+- {id: CON-014, title: Software shows its own UI at work, domain: D02, tier: Reflex, kind: context, check: J, applies_when: [web, slides, social], remedy: explore-directions, tests: [T-KIND-FIT],
+   rule: "For software, the lead picture is the client's own interface working on what it works on (a code review tool shows a diff with Accept), as a full app window in the hero or sections 2 to 3. Never a generic dashboard, fragments only, or product UI the firm does not run.",
+   values: {where: "hero or sections 2-3", frame: full app window},
+   why: "The product is the proof; a generic dashboard could be anyone's.",
+   fix: "Capture the real product on a real task; [DATA NEEDED: product screenshot] if none was supplied.",
+   sources: ["CON-147 (TS §19-20, TS §122, TS §588)"]}
+- {id: CON-015, title: A product is shown big, domain: D02, tier: Reflex, kind: context, check: J, remedy: fix-layout, tests: [T-KIND-FIT, T-DELETE-PICTURE],
+   rule: "On a product page, the product's long side fills 80 to 100% of its frame in the hero and at least one more section. Under 60% fails; 60 to 80% warns. Never mid-size in a grey rounded panel on grey.",
+   values: {target_long_side_pct: 80, warn_below_pct: 80, fail_below_pct: 60, min_sections: 2},
+   why: "People buy what they can see; a small product in a panel reads as a placeholder.",
+   fix: "Crop the product photograph so its long side fills the frame; drop the panel.",
+   sources: ["CON-149 (TS §16-17)"]}
+- {id: CON-016, title: Places lead with photographs, services show the work, domain: D02, tier: Reflex, kind: context, check: J, remedy: explore-directions, tests: [T-KIND-FIT],
+   rule: "A place leads with a photograph whenever any frame fits, with the visit block on screen 2. A service shows the work, the team at work and the rooms; never stock handshakes, product UI the firm does not run, or invented client logos.",
+   values: {place_visit_block_screen: 2},
+   why: "Visitors to a place or a service decide on the real room and the real people; stand-ins remove the reason to choose this one.",
+   fix: "Use the client's own photographs; where none exist, a labelled [DATA NEEDED: photograph of ...] slot, never stock.",
+   sources: ["CON-150 (TS §10-11)", "CON-151 (TS §18)"]}
+- {id: CON-017, title: Every headline promise is pictured, domain: D02, tier: Finish, check: J, remedy: fix-copy, tests: [T-PROMISE-PICTURED],
+   rule: "Picture every concrete headline promise ('takes four crates' shows four crates). Otherwise add the picture or cut the promise.",
+   why: "An unshown promise reads as a claim; a shown one reads as a fact.",
+   fix: "Add the picture that proves the line, or rewrite the line to what the page can show.",
+   sources: ["CON-153 (TS §16-17)"]}
+- {id: CON-018, title: App screens disappear into the task, domain: D02, tier: Reflex, kind: context, check: J, applies_when: [app, web], remedy: fix-layout,
+   rule: "On a screen someone works in, marketing rules step aside: no hero, fold, word budget, section rhythm or reveal on load. The direction lends palette, faces, radius and surfaces, never layout or navigation, and the concept is the object the tool is known by.",
+   why: "Marketing devices on a work screen slow the task they are meant to sell.",
+   fix: "Remove the marketing device and give its space to the working object.",
+   sources: ["CON-157 (HM §143, HM §159)", "CON-106 (HM §9, HM §142)"]}
+- {id: CON-019, title: Concept veto, domain: D02, tier: Reflex, kind: context, check: J, remedy: explore-directions, tests: [T-RIVAL-NAME, T-ONE-SENTENCE],
+   rule: "Score Concept first. Specificity 5 of 5 means it could belong to no other product; 3 means it fits the category. If Concept is 5 or below out of 10, cap the overall score at 6 and fix the concept before execution details.",
+   values: {concept_veto_at: 5, overall_cap: 6},
+   why: "Polish on a template still ships a template; execution findings come after the concept holds.",
+   fix: "Rework the idea (explore-directions) before the remedy queue spends effort on details.",
+   sources: ["CON-158 (HU §97, HU §105)", "CON-160 (HM §151)"]}
+
 # ---------------- D06 colour ----------------
 - {id: CLR-001, title: Accent footprint within budget, domain: D06, tier: Reflex, kind: cap, detector: accent_footprint, remedy: fix-colorize,
    rule: "At the 1280x800 fold, solid accent area must stay under 5% (warn) and never exceed 8%.", why: "An accent sprayed everywhere stops pointing at anything.",
