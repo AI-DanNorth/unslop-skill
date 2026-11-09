@@ -37,6 +37,7 @@ Then look at the whole: count which look-family tells you can see that the sweep
 
 - Output `$RUN/03-lenses/slop.json` in the shape of `skills/unslop/templates/lens-output.json`.
 - At most 8 findings, ranked by how much of the page they make read as generated. A thin, generic first screen outranks every detail.
+- Write `evidence` and `why` to the "Writing style" rules in `core/report-format.md`: the measured value or quoted text, active voice, whole sentences.
 - Each finding: a rule id (an SLP card, or CON/CPY/INT where it fits better), tier, where, **evidence you can point to** (quoted text, a screenshot region, a test result), before, after, why, and the test id.
 - Tier: Reflex for slop, Floor only for integrity (invented proof, fake people) the sweep missed, Finish for polish.
 - Respect the brief: if the contract records an override for a tell, do not report it.

@@ -29,6 +29,21 @@ Every lens and the sweep emit findings as JSON objects with these fields (`synth
 7. **Not investigated**: every lens, check or width that did not run, with the reason.
 8. **Data gaps**: content the artifact needs that does not exist yet.
 
+## Writing style (findings and reports)
+
+An audit that flags generated prose must not read like generated prose. Lenses and `synthesize` write `evidence`, `why`, the four-line read and every report line to these rules:
+
+- **Name the mechanism or the number, not the feeling.** Write "body text is #9ca3af on #ffffff, 2.5:1, needs 4.5:1", not "the text feels faint". If a line could appear unchanged in another audit, it says nothing about this artifact. Cut it.
+- **Active voice, with the actor named.** Write "the hero CTA hides the focus ring", not "focus is hidden".
+- **Whole sentences.** Keep the articles and verbs, and spell out arrows and abbreviations. Write "the h1 wraps to four lines at 375", not "h1 → 4 lines @375".
+- **Plain words.** Use "use", not "leverage"; "help", not "facilitate"; "many", not "numerous". Avoid metaphor nouns such as landscape, north star, surface or bedrock.
+- **One idea per sentence.** Split any sentence the reader has to parse twice.
+- **No chatbot or filler phrases.** No "Great question", "I hope this helps", "It is important to note that", "in order to", or generic closers. No hedging stacks: "may" is enough.
+- **No inline-header lists.** "**Contrast:** the contrast is low" restates itself. A bold lead-in is fine when it names the item and the text after it adds new detail.
+- **Sentence-case headings, no decorative emoji.**
+
+Source: an external "unslop" writing skill reviewed 9 Nov 2026 (`research/notes/unslop-writing-skill-review.md`). These rules govern Unslop's own output. They are not detectors for audited pages.
+
 ## Score caps
 
 - An open Floor finding caps the overall score at 4.

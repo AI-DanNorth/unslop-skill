@@ -11,6 +11,8 @@ Accessibility findings are Floor unless stated: never waivable. The sweep alread
 
 `00-contract.md`, `01-evidence/` (`dom-*.json`, `focus.json` with `focus/*.png`, screenshots), `02-mechanical.json` (A11, ROB hits), `rules/D10-A11.yaml` (11 curated cards plus about 90 mined drafts with WCAG and source references).
 
+Write `evidence` and `why` to the "Writing style" rules in `core/report-format.md`.
+
 ## Checks (record each in `tests_run`)
 
 1. **Verify the sweep's Floor hits.** Open the screenshot region for 3 to 5 of them. If one is a false positive (for example a decorative text layer), add it to `not_investigated` as "disputed: <reason>" so `synthesize` can note it; never delete it.

@@ -9,7 +9,7 @@ description: Phase 4 of an Unslop audit. Merges sweep and lens findings into roo
 python3 $U/scripts/report/synthesize.py $RUN
 ```
 
-The script writes `04-findings.json` (merged, ranked findings with a quality score each; anything under 0.55 is dropped) and a draft `04-report.md`. It fills only what evidence supports: the mechanical findings, the Accessibility and Integrity scores from the sweep, and a draft verdict. **You then edit `04-report.md`** to finish it. Follow `core/report-format.md`.
+The script writes `04-findings.json` (merged, ranked findings with a quality score each; anything under 0.55 is dropped) and a draft `04-report.md`. It fills only what evidence supports: the mechanical findings, the Accessibility and Integrity scores from the sweep, and a draft verdict. **You then edit `04-report.md`** to finish it. Follow `core/report-format.md`, including its "Writing style" section.
 
 ## What you write
 
