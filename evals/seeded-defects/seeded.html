@@ -55,6 +55,11 @@
   #seed-tip { transition: none !important; display: none; width: 280px; padding: 12px; background: #f3f4f6; border: 1px solid #d1d5db; }
   .mark { display: inline-block; width: 24px; height: 24px; line-height: 24px; text-align: center; background: #2563eb; color: #fff; border-radius: 6px; font-weight: 700; }
   .toolrow li { list-style: none; display: inline-flex; gap: 6px; margin-right: 16px; }
+  .tcard { position: relative; width: 320px; padding: 16px; background: #f3f4f6; border-radius: 8px; }
+  .tchip { position: absolute; top: 2px; right: 2px; padding: 4px 8px; background: #111827; color: #fff; border-radius: 4px; }
+  .rcard { width: 320px; padding: 12px; background: #e5e7eb; border-radius: 8px; margin-top: 16px; }
+  .rinner { padding: 12px; background: #fff; border-radius: 16px; }
+  .stat { width: 60px; margin-top: 16px; } .fig { display: block; font-size: 32px; line-height: 1.2; }
   /* async seeds */
   .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #9ca3af; border-top-color: transparent; border-radius: 50%; animation: seed-spin 1s linear infinite; }
   @keyframes seed-spin { to { transform: rotate(360deg) } }
@@ -155,6 +160,11 @@
   <p>Content below the panel moves while the panel opens.</p>
   <button type="button" id="seed-tipbtn" class="tip-toggle" aria-expanded="false" aria-controls="seed-tip" data-seed="motion_snap">Show tip</button>
   <div id="seed-tip">A tip that slides in from JavaScript and snaps the last few pixels.</div>
+</section>
+<section aria-label="Craft seeds">
+  <div class="tcard"><span class="tchip" data-seed="near_tangent">Synced</span><p>Workspace files</p></div>
+  <div class="rcard"><div class="rinner" data-seed="nested_radius"><p>Inner panel</p></div></div>
+  <div class="stat"><span class="fig" data-seed="unit_wrapped">128 ms</span></div>
 </section>
 <section aria-label="Icon seeds">
   <p><button type="button" class="ai-btn"><svg class="lucide lucide-sparkles" data-seed="ai_sparkle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg> Ask AI</button></p>

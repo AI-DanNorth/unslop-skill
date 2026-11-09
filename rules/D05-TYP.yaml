@@ -563,6 +563,25 @@
   priority: P1
   waivable_by: brief
   status: active
+- id: TYP-024
+  title: A figure and its unit stay on one line
+  domain: D05
+  tier: Finish
+  detector: unit_wrapped
+  remedy: fix-typeset
+  rule: A short figure with a unit (128 ms, 4.2 GB, $45/mo) never breaks so the unit sits on its own line.
+  why: A stranded unit breaks the figure into two things and reads as a layout that was never checked at this width.
+  fix: 'Keep the pair together (white-space: nowrap), size the figure to its box, or move the unit into the label.'
+  sources:
+  - stageshow rehearse.md (unit wrapped); verify.md
+  priority: P3
+  kind: ban
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    max_chars: 14
+    max_hits: 4
 - id: TYP-101
   title: Limit a page to a display face and a body face (one family may do both)
   domain: D05

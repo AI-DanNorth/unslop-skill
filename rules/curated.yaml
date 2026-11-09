@@ -429,6 +429,11 @@
    sources: ["TYP-200 (HS §127 §138)", "TYP-206 (HS §121 §77, KM §54)", "TYP-207 (HS §120)", "TYP-209 (HS §133, KM §41 §49 §54)", "TYP-210 (HS §131)"]}
 
 # ---------------- D07 layout ----------------
+- {id: TYP-024, title: A figure and its unit stay on one line, domain: D05, tier: Finish, detector: unit_wrapped, remedy: fix-typeset,
+   rule: "A short figure with a unit (128 ms, 4.2 GB, $45/mo) never breaks so the unit sits on its own line.",
+   why: "A stranded unit breaks the figure into two things and reads as a layout that was never checked at this width.",
+   fix: "Keep the pair together (white-space: nowrap), size the figure to its box, or move the unit into the label.",
+   sources: ["stageshow rehearse.md (unit wrapped); verify.md"]}
 - {id: LAY-001, title: Spacing has rhythm, domain: D07, tier: Reflex, detector: spacing_monotony, remedy: fix-layout,
    rule: "Do not use one spacing value for more than 60% of gaps; use at least 4 distinct steps across a page.", why: "Uniform gaps make every group look equally related.",
    fix: "Tighten within groups, open between groups.", sources: ["impeccable §540", "hallmark §76"]}
@@ -545,6 +550,16 @@
    sources: ["LAY-137 (HM §38, HM §432, KM §168)", "LAY-160 (KM §168)"]}
 
 # ---------------- D11 copy ----------------
+- {id: LAY-023, title: Edges meet or part clearly, domain: D07, tier: Finish, detector: near_tangent, remedy: fix-layout,
+   rule: "A painted box does not sit 2 to 3 px from its painted container's edge or from the painted box beside it: line the edges up exactly, or part them by at least the layout's gap.",
+   why: "Edges a hair apart read as an accident: the eye sees a near-miss, not a decision.",
+   fix: "Share the edge (0 px or one border), or part the boxes by the container's padding, at least 8 px.",
+   sources: ["stageshow craft.md Spacing and alignment (no near-tangents); film-checks near-tangent (MIT)"]}
+- {id: LAY-024, title: Nested corners share a centre, domain: D07, tier: Finish, detector: nested_radius, remedy: fix-layout,
+   rule: "A rounded box evenly inset in a rounded container uses an outer radius of about the inner radius plus the inset; never an inner box rounder than its container.",
+   why: "With equal radii the gap between the curves pinches at the corners and the nesting looks off.",
+   fix: "Outer radius = inner radius + padding; or reduce the inner radius to the outer minus the padding.",
+   sources: ["stageshow craft.md Spacing and alignment (nested shapes pad evenly)"]}
 - {id: CPY-001, title: Words per screen within budget, domain: D11, tier: Reflex, kind: cap, detector: words_per_screen, remedy: fix-distill,
    rule: "Keep visible words per 900px screen under the profile budget (strict: warn 80, fail 95).", why: "Dense marketing screens are skimmed, not read.",
    fix: "Cut qualifiers and repeated claims; move detail to a page that is for reading.", sources: ["hallmark §20 §30"]}
