@@ -85,6 +85,49 @@
    sources: ["hallmark §111 §369", "kami §4", "impeccable §520"]}
 - {id: T-LABEL-TRANSFORM, name: Label transform-delete, lens: [typography, slop], kind: J,
    run: "Remove text-transform and tracking from a label.", pass: "It reads worse; if not, the caps were costume.", sources: ["hallmark §60"]}
+- {id: T-TYPE-SOURCE, name: Where the type came from, lens: [typography], kind: J,
+   run: "For each face that draws text (fonts.json), name its source: the brand or design system, the contract, the content and voice, or a default (framework stack, one UI sans for every role, a saturated face with no stated reason).",
+   pass: "Every face has a source other than a default. A brand's or client's own face is a source even when the face is popular.",
+   sources: ["huashu §117", "hallmark §137 §290 §292", "huashu §125"]}
+- {id: T-FACE-ROLES, name: Face roles, lens: [typography], kind: H,
+   run: "List each drawn face with the roles it sets (heading levels, body, controls, small labels, code, figures) from the type table that skills/lens-typography/type_table.py writes.",
+   pass: "Display and body faces, plus at most one outlier with one role; no face in unrelated roles; mono only on code and figures; display-only cuts only at 24px and up.",
+   sources: ["hallmark §52 §61 §64 §290", "huashu §124 §126", "taste-skill §57"]}
+- {id: T-LADDER, name: Ladder audit, lens: [typography], kind: H,
+   run: "List every distinct font size with its roles and the ratio between adjacent roles (type table), then compare same-kind elements across sections.",
+   pass: "Each size is a declared step on one ratio fitted to the medium; each kind of element has one size; weight steps that carry hierarchy are clear.",
+   sources: ["kami §35", "huashu §118", "hallmark §54", "taste-skill §59"]}
+- {id: T-HEADLINE-FIT, name: Headline fit, lens: [typography], kind: H,
+   run: "For the h1 and each h2, read its characters, its line count at 375 and 1440 and its last-line share (type table), then look at it on the tiles.",
+   pass: "The size suits the length, headings hold to two lines (h1 to three), breaks fall between phrases, and no button label or nav link wraps.",
+   sources: ["hallmark §56 §58 §401 §407", "taste-skill §30 §59"]}
+- {id: T-LEADING, name: Leading and tracking, lens: [typography], kind: H,
+   run: "Read line-height divided by font size, and letter-spacing in em, for body, display and caps roles (type table); then check every caps display line and every control on the screenshots for overlap or clipping.",
+   pass: "Body and display sit in their ranges, and no lines collide or clip at any width.",
+   sources: ["hallmark §55 §59 §394", "huashu §121", "kami §40 §60"]}
+- {id: T-MEASURE, name: Measure, lens: [typography], kind: M,
+   run: "For running paragraphs of 3 or more lines, divide characters by lines (type table: rect height over computed line height) at 1440 and 375.",
+   pass: "Median 45 to 75 characters per line; none at 88 or more over 3 lines; no sliver under 16 over 4 lines.",
+   sources: ["hallmark §397", "ui-ux-pro-max §89", "huashu §120", "kami §45"]}
+- {id: T-HEAD-TREATMENT, name: Head treatment, lens: [typography, slop], kind: H,
+   run: "List the children of each h1 and h2 that change face, style, weight or colour (type table), then look at them on the tiles.",
+   pass: "None, or one declared signature in the hero only.",
+   sources: ["hallmark §57 §370 §393", "huashu §59 §60"]}
+- {id: T-FIGURES, name: Figures, lens: [typography, dataviz], kind: J,
+   run: "Find every place numbers compare (tables, prices, stats, axes, counts) on the tiles, and check the stylesheet for tabular-nums.",
+   pass: "Digits line up in columns and figures are lining; or the stylesheet sets tabular-nums on those roles.",
+   sources: ["hallmark §63 §402", "huashu §129", "kami §58 §190"]}
+- {id: T-PUNCTUATION, name: Punctuation, lens: [typography, copy], kind: M,
+   run: "Count straight and curly quotes and apostrophes, three-dot runs and true ellipses in the page text (type table).",
+   pass: "One quote style throughout (conflict C32) and no three-dot ellipses.",
+   sources: ["hallmark §63 §403", "agent-skills §155", "taste-skill §60"]}
+- {id: T-FONT-RENDERED, name: Font actually rendered, lens: [typography, sweep], kind: M, detector: fallback_face,
+   run: "Compare the face that drew each text run (fonts.json, from the browser) with the declared first family.",
+   pass: "The declared face drew the text; a fallback is a failure, and a blocked font is not verified.",
+   sources: ["hallmark §462", "kami §189"]}
+- {id: T-WIDOWS, name: Widow check, lens: [typography, sweep], kind: M, detector: widows,
+   run: "Inspect paragraphs and 2 to 3 line headings at 375 and 1280.", pass: "No single-word last line and no last line under 35% of the line before.",
+   sources: ["hallmark §401"]}
 - {id: T-FINGERPRINT, name: Fingerprint, lens: [slop], kind: H, detector: fingerprint,
    run: "Record six axes and compare with the last 3 builds in the ledger.", pass: "At most 3 of 6 shared.", sources: ["hallmark §233 §234 §519"]}
 - {id: T-LOOK-LEDGER, name: Look-ledger, lens: [slop], kind: M, detector: distinctness,

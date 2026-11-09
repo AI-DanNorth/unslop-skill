@@ -173,7 +173,7 @@
 - {id: TYP-001, title: Clear type hierarchy, domain: D05, tier: Reflex, detector: flat_hierarchy, remedy: fix-typeset,
    rule: "Adjacent type roles must differ by at least 1.25x in size (or a clear weight step) when three or more roles are in use.",
    why: "Sizes that are nearly equal make everything read at one level.", fix: "Adopt a scale (1.25 to 1.5) and assign roles to steps.", sources: ["impeccable §513", "huashu §104"]}
-- {id: TYP-002, title: Sizes on a declared ladder, families limited, domain: D05, tier: Reflex, detector: type_ladder, remedy: fix-typeset,
+- {id: TYP-002, title: "Sizes on a declared ladder, families limited", domain: D05, tier: Reflex, detector: type_ladder, remedy: fix-typeset,
    rule: "Every font size is a declared step; use at most 3 families (warn) and never 4.", why: "Drifting sizes and extra families are craft errors that read as unplanned.",
    fix: "Collapse sizes to the scale; drop the extra family.", sources: ["kami §35", "hallmark §56", "huashu §104"]}
 - {id: TYP-003, title: No UI text faces as display type, domain: D05, tier: Reflex, detector: banned_fonts, remedy: fix-typeset,
@@ -183,6 +183,120 @@
 - {id: TYP-004, title: The intended font actually renders, domain: D05, tier: Floor, detector: fallback_face, remedy: fix-typeset, waivable_by: never,
    rule: "The face that draws the text must be the declared face, not a fallback.", why: "A silent fallback changes metrics, layout and voice.",
    fix: "Fix the font load (path, format, font-display) and wait for fonts before capture.", sources: ["kami §189 §624 §629", "hallmark §462"]}
+
+# ---------------- D05 typography (lens-typography; judgment and hybrid cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D05-TYP.yaml; each source cites the draft id and its original sections
+# (HM hallmark, HS huashu, KM kami, TS taste-skill, UU ui-ux-pro-max, AS agent-skills).
+# TYP-012 and TYP-014 are Reflex although their drafts (TYP-156, TYP-168, TYP-169) say Floor: tight leading and long lines
+# slow reading but do not stop it (WCAG's 80-character line is AAA, 1.4.8). Only collisions and clipping (TYP-022) are Floor.
+# Size floors stay with A11-002 (text_floor) and widows with ROB-004; these cards do not repeat them.
+- {id: TYP-005, title: Type is chosen for this brief, domain: D05, tier: Reflex, check: J, remedy: fix-typeset, waivable_by: brand-system, tests: [T-TYPE-SOURCE],
+   rule: "Choose type from the content, the language mix and the voice, and pick names last. The brand's or client's own faces come first and override every pairing rule. A default stack (one UI sans for every role, a framework default, the pairing any neighbouring brief would get) is a finding unless the brief or the brand chose it.",
+   why: "Type is the first place a brand's voice shows; a default stack makes the artifact sound like every other one.",
+   fix: "Use the brand's faces. With none, choose a display face for the content and the voice, and set the real headline in two or three candidates before deciding.",
+   sources: ["TYP-110 (HS §117)", "TYP-120 (HS §117, HM §137)", "TYP-104 (HS §125 §138, HM §291)", "TYP-111 (HM §290)"]}
+- {id: TYP-006, title: Each face has one job, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-FACE-ROLES],
+   rule: "Use a display face and a body face (one family may do both). A third face is an outlier with exactly one role: the wordmark, a headline figure, or code. A face that appears in several unrelated roles, or two faces that share one role, is drift. One family at several weights counts as one face.",
+   values: {faces: 2, outliers: 1},
+   why: "When faces swap roles between sections, the reader cannot learn what each face signals.",
+   fix: "Give each face one role and move stray elements onto it; drop a face that has no role of its own.",
+   sources: ["TYP-101 (HM §52 §290 §391, TS §57, HS §126)", "TYP-102 (HM §52, TS §57)", "TYP-114 (HM §64 §296)"]}
+- {id: TYP-007, title: Saturated faces need an argument, domain: D05, tier: Reflex, kind: context, check: H, remedy: fix-typeset, waivable_by: brand-system, tests: [T-TYPE-SOURCE],
+   rule: "A saturated face (the saturated group in data/lexicons/fonts.yaml, such as Playfair Display, Fraunces, Instrument Serif, Space Grotesk or Geist) needs an argument from the contract, the brand system or the content. Without one, it is a finding when it sets the whole display system or joins a look-family cluster. The face alone is not a finding (conflict C33).",
+   why: "These are the faces generators reach for when asked for taste; without a reason they read as the generator's choice, not the client's.",
+   fix: "Keep the face if the brand chose it; otherwise try a same-build substitute from data/lexicons/fonts.yaml.",
+   sources: ["TYP-106 (HM §292, HS §124 §125)", "TYP-105 (HM §291, TS §30, HS §61)", "TYP-107 (HS §125)"]}
+- {id: TYP-008, title: Monospace only for code and figures, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-FACE-ROLES, T-LABEL-TRANSFORM],
+   rule: "Set monospace only for code, figures, measurements, times, prices and versions, or where mono is the declared material of a technical brand. Never set a body paragraph in mono. Mono on labels, captions, meta and table heads is costume when 4 or more small labels use it.",
+   values: {min_mono_labels: 4, label_max_px: 14},
+   why: "Mono lines run about 30% longer and read slower; as label dressing it signals 'technical' with nothing technical behind it.",
+   fix: "Set body and labels in the body face; keep mono for code and for figures that align.",
+   sources: ["TYP-116 (HS §124, HM §61)", "TYP-117 (HM §61 §396 §298, HS §59 §60, TS §30)"]}
+- {id: TYP-009, title: The scale fits the medium, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-LADDER],
+   rule: "Derive sizes from one ratio taken from the body size and fitted to the medium: about 1.2 for dense UI and docs, 1.25 for general web, 1.333 for editorial, 1.5 for posters and slides. App screens use a fixed scale of 1.125 to 1.2 with no fluid headings. From 1024px wide, adjacent heading levels differ by at least 1.3x (1.2x below).",
+   values: {ratio_dense: 1.2, ratio_web: 1.25, ratio_editorial: 1.333, ratio_poster: 1.5, app_ratio: [1.125, 1.2], min_heading_step: 1.3, min_heading_step_narrow: 1.2},
+   why: "A marketing scale on a tool shouts over the work; a tool's scale on a landing page gives the eye no place to start.",
+   fix: "Pick the medium's ratio, give each role a step, and collapse the sizes between steps.",
+   sources: ["TYP-121 (HS §118, HM §54, UU §90 §297)", "TYP-122 (HM §54 §348)", "TYP-125 (TS §59, HM §170)"]}
+- {id: TYP-010, title: One size per kind of element, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-LADDER],
+   rule: "Give each kind of element one size and weight across the artifact: every card title, price, caption and figure the same. Every size is a declared step; neighbours such as 12.5, 13.5 and 14.5px are drift.",
+   why: "When one kind of element changes size between sections, the reader looks for a meaning that is not there.",
+   fix: "List the sizes per kind of element and collapse each kind to one step.",
+   sources: ["TYP-132 (TS §59)", "TYP-123 (KM §35, UU §90)"]}
+- {id: TYP-011, title: Headlines fit their length, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-HEADLINE-FIT],
+   rule: "Size a headline to its length: up to 20 characters may take full display size, 21 to 50 display, 51 to 90 small display or a split, and over 90 needs rewriting. Headings hold to two lines and the hero h1 to three, at every width. A figure never outgrows the h1 or h2 it serves, and a heading is never smaller than the text under it.",
+   values: {full_display_chars: 20, display_chars: 50, small_display_chars: 90, max_heading_lines: 2, max_h1_lines: 3, max_figure_to_h2: 1.08},
+   why: "A long line at display size becomes a wall of large type; a figure bigger than its heading takes the heading's place.",
+   fix: "Shorten the line or step the size down; move the detail into the line under it.",
+   sources: ["TYP-129 (HM §56)", "TYP-130 (TS §30 §59)", "TYP-131 (TS §59)"]}
+- {id: TYP-012, title: Running text is led for reading, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-LEADING],
+   rule: "Lead running text from its computed line-height: 1.5 to 1.65 on UI and web text, 1.65 to 1.75 on long prose, 1.5 to 1.55 in print (never 1.6 or more on print body). Lines under 30 characters may sit at 1.4 to 1.5. Multi-line prose is never under 1.3.",
+   values: {ui: [1.5, 1.65], prose: [1.65, 1.75], print: [1.5, 1.55], short_lines: [1.4, 1.5], floor: 1.3},
+   why: "Tight leading makes the eye lose the next line; loose leading breaks a paragraph into separate strips.",
+   fix: "Set a unitless line-height per role on the type tokens.",
+   sources: ["TYP-155 (HM §59, UU §88 §236 §298, HS §77, TS §60)", "TYP-156 (HM §59 §398)", "TYP-159 (HS §121, KM §40)", "TYP-160 (KM §39 §40 §179)"]}
+- {id: TYP-013, title: Display type is set tight, domain: D05, tier: Finish, check: H, remedy: fix-typeset, tests: [T-LEADING],
+   rule: "Lead display type (32px and up) at 1.0 to 1.15, tighter as it grows; 1.2 or 'normal' on a large heading reads as inherited. Track regular-width Latin display at -0.02 to -0.04em (condensed or heavy faces 0 to -0.015em). Never add positive tracking to a Latin heading, and letters never touch. Carry display with size and tight setting, not with bold-and-big.",
+   values: {display_min_px: 32, leading: [1.0, 1.15], tracking_em: [-0.04, -0.02], tracking_condensed_em: [-0.015, 0]},
+   why: "Body settings scaled up to display size leave loose gaps between lines and letters that the eye reads as unset type.",
+   fix: "Give display roles their own line-height and letter-spacing tokens.",
+   sources: ["TYP-157 (HM §55 §496, HS §121)", "TYP-163 (HM §55 §496, TS §58 §210, HS §133 §138)", "TYP-152 (TS §58 §210)"]}
+- {id: TYP-014, title: Prose has a readable measure, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-MEASURE],
+   rule: "Cap running prose at 45 to 75 characters per line (65ch by default) on the text element. Lines averaging 88 or more characters over 3 or more lines fail. Never squeeze a block under 16 characters a line over 4 or more lines; short ledes and captions under 200 characters may sit from 28 characters.",
+   values: {range: [45, 75], fail_cpl: 88, fail_min_lines: 3, sliver_cpl: 16, sliver_min_lines: 4},
+   why: "On long lines the eye loses its place on the way back; in slivers every phrase breaks.",
+   fix: "Set max-width in ch on the paragraph, not on the wrapper.",
+   sources: ["TYP-168 (HM §59 §397, UU §89 §298, HS §120, KM §45, TS §59)", "TYP-169 (HM §397)", "TYP-170 (HM §397)"]}
+- {id: TYP-015, title: Small labels earn their caps, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-LABEL-TRANSFORM],
+   rule: "Text at 15px and under in uppercase, small caps or tracked past 0.03em (labels, captions, table heads, nav, tags, meta, bylines) must pass the label transform-delete test: without the caps and tracking it reads worse. When caps stay, track them lightly (conflict C19). Wordmarks, tickers and 2 to 5 letter acronyms are exempt. Running text is never set in caps.",
+   values: {max_px: 15, max_tracking_em: 0.03},
+   why: "Tracked caps on every small label is the generator's sign for 'designed'; it slows reading and says nothing the body face a step smaller would not.",
+   fix: "Set labels in the body face a step smaller, in sentence case, untracked.",
+   sources: ["TYP-165 (HM §60 §395 §298, TS §30, HS §59)", "TYP-188 (HM §60 §395)", "TYP-179 (HM §59, UU §298)"]}
+- {id: TYP-016, title: Headings are set in one voice, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-HEAD-TREATMENT],
+   rule: "Do not set one word of a heading apart by colour, italic, weight, underline, stroke or highlight. Get stress from a line break or a second line at a second size. The one exception is a declared theme signature, used once, in the hero only, in a true italic.",
+   why: "The accent word is the most common generated headline treatment; it shouts one word and turns the rest into filler.",
+   fix: "Set the heading in one weight, one style and one colour; move the stress to a line break.",
+   sources: ["TYP-182 (HM §57 §370 §393, HS §59 §60)", "TYP-183 (HM §57 §298)", "TYP-153 (HM §57 §370)", "TYP-184 (HM §57 §393)"]}
+- {id: TYP-017, title: Figures that compare are tabular, domain: D05, tier: Finish, check: H, remedy: fix-typeset, tests: [T-FIGURES],
+   rule: "Where numbers compare (tables, prices, stats, axes, counts, display figures 24px and up), use tabular lining figures (font-variant-numeric: tabular-nums lining-nums). When the display face has only oldstyle figures, set the figures in the body face.",
+   why: "Proportional or oldstyle digits make columns wobble and totals hard to compare.",
+   fix: "Add tabular-nums to the number roles, or move figures to a face that has tabular lining digits.",
+   sources: ["TYP-189 (HM §63 §298 §402 §307, HS §129 §138, KM §58 §190)", "TYP-190 (KM §58 §190)", "TYP-192 (HM §294)"]}
+- {id: TYP-018, title: Punctuation is typeset and consistent, domain: D05, tier: Finish, check: H, remedy: fix-copy, tests: [T-PUNCTUATION],
+   rule: "Use one quote and apostrophe style throughout; a page that mixes straight and curly marks is the finding (conflict C32). Use a true ellipsis, not three dots. Keep a number with its unit on one line with a non-breaking space.",
+   why: "Mixed quotes and split units read as text pasted together from several places.",
+   fix: "Normalise quotes at the content source; join numbers and units with a non-breaking space.",
+   sources: ["TYP-193 (HM §63 §403, AS §155, TS §60)", "TYP-194 (HM §63, TS §60, AS §150 §151)"]}
+- {id: TYP-019, title: Lines break where the sense breaks, domain: D05, tier: Finish, check: H, remedy: fix-typeset, tests: [T-HEADLINE-FIT],
+   rule: "Balance headings (text-wrap: balance on h1, h2 and display lines of up to 4 lines) and let Latin body wrap pretty; not on CJK body (conflict C26). Manual line breaks fall between phrases and are checked at 375. A button label or primary nav link never wraps.",
+   why: "A heading split mid-phrase or a two-line button shows a layout nobody checked at this width.",
+   fix: "Add text-wrap: balance to heading roles, move or remove the manual break, and shorten the label rather than let it wrap.",
+   sources: ["TYP-172 (HM §58 §400, HS §79 §122, UU §94)", "TYP-174 (HM §56 §401, UU §94)", "TYP-176 (HM §407)"]}
+- {id: TYP-020, title: Weight steps are clear, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-LADDER],
+   rule: "Build hierarchy from size, weight and space. Where weight alone separates two roles, take a clear step (400 to 700, or 300 to 800), not 500 to 600; when a step is unclear, widen the gap or skip a weight rather than add an in-between size. There is no weight-count rule (conflict C08). No weight under 400 below 20px.",
+   values: {light_max_px: 20, min_weight_small: 400},
+   why: "Neighbouring weights look like a rendering accident; light weights at small sizes break up on screen.",
+   fix: "Move the two roles to weights far enough apart to see, or separate them by size.",
+   sources: ["TYP-133 (KM §47, UU §93)", "TYP-149 (HM §53 §392)", "TYP-148 (TS §58, UU §298)"]}
+- {id: TYP-021, title: Display-only faces stay at display size, domain: D05, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-FACE-ROLES],
+   rule: "Use display-only faces (single-weight, hairline or high-contrast cuts such as Instrument Serif or Cormorant) only at display sizes; their thin strokes break up under 24px. Never set whole paragraphs in a display face (in CJK, readers tire after about 200 characters).",
+   values: {min_px: 24},
+   why: "A display cut at text size loses its strokes and turns a paragraph into texture.",
+   fix: "Set text sizes in the body face; keep the display cut for headings.",
+   sources: ["TYP-118 (HS §124 §134)", "TYP-215 (HS §126 §138)"]}
+- {id: TYP-022, title: Lines never collide or clip, domain: D05, tier: Floor, check: H, remedy: fix-typeset, waivable_by: never, tests: [T-LEADING],
+   rule: "Lines of text never overlap and glyphs are never clipped, at any captured width. Wrapping uppercase display is never led under 1.0. Menus, buttons and inputs that hold descenders are not set at line-height 1 inside a fixed height. Confirm every case on the screenshot, not from the CSS alone.",
+   values: {caps_min_leading: 1.0, control_leading: 1.35},
+   why: "Letters that overlap or are cut off cannot be read.",
+   fix: "Raise the line-height (1.02 to 1.08 on caps display, about 1.35 on controls) and let the box grow with its text.",
+   sources: ["TYP-158 (HM §55 §394 §298)", "TYP-162 (KM §60)", "TYP-180 (UU §57)"]}
+- {id: TYP-023, title: CJK text is set for CJK, domain: D05, tier: Reflex, kind: context, check: H, remedy: fix-typeset, tests: [T-FACE-ROLES, T-LEADING, T-MEASURE],
+   rule: "When the artifact sets Chinese, Japanese or Korean text, give it a named CJK face, never the bare system default. Lead CJK body about 0.2 looser than Latin (Chinese body near 1.8), keep its measure at 22 to 38 characters (best 28 to 32), keep tracking near zero with no Latin negative display tracking, and never italicise hanzi.",
+   values: {leading_body: 1.8, measure: [22, 38], measure_best: [28, 32], tracking_em: [0, 0.05]},
+   why: "Latin settings applied to CJK make dense blocks with cramped lines and slanted characters that have no italic form.",
+   fix: "Add a CJK face to the stack and give CJK text its own leading, measure and tracking.",
+   sources: ["TYP-200 (HS §127 §138)", "TYP-206 (HS §121 §77, KM §54)", "TYP-207 (HS §120)", "TYP-209 (HS §133, KM §41 §49 §54)", "TYP-210 (HS §131)"]}
 
 # ---------------- D07 layout ----------------
 - {id: LAY-001, title: Spacing has rhythm, domain: D07, tier: Reflex, detector: spacing_monotony, remedy: fix-layout,
