@@ -13,7 +13,8 @@ import colorlib as cl
 
 
 def _icons(ev):
-    return [e for e in ev.visible() if e.get("icon") and not e.get("inDialog")]
+    # no inDialog filter: icons are usually aria-hidden, which extract.js folds into inDialog; closed menus are invisible anyway
+    return [e for e in ev.visible() if e.get("icon")]
 
 
 @detector("ai_sparkle")
@@ -88,12 +89,17 @@ def mixed_icons(ev, cfg):
         anc = ev.ancestors(e)
         box = next((a for a in anc[:6] if a["tag"] in GROUP_TAGS or a.get("role") in ("toolbar", "tablist", "menubar")), None)
         if box is None: box = anc[2] if len(anc) > 2 else (anc[-1] if anc else None)
-        if box is not None: groups[box["id"]].append(p)
+        if box is not None: groups[box["id"]].append((p, px(ic.get("strokeWidth") or 0)))
     out = []
-    for gid, kinds in groups.items():
-        k = collections.Counter(kinds)
+    for gid, items in groups.items():
+        k = collections.Counter(p for p, _ in items)
+        g = d["byid"].get(gid, {})
+        widths = sorted({round(w, 2) for p, w in items if p == "outline" and w > 0})
         if k["filled"] >= cfg["min_each"] and k["outline"] >= cfg["min_each"]:
-            g = d["byid"].get(gid, {})
             out.append(hit(cfg, g.get("sel", "?"), f"{k['filled']} filled and {k['outline']} outline icons in one group: glyphs of different constructions read as made up",
-                           value=dict(k), after="One icon set, one style and one stroke width per group; fill only to mark state"))
+                           value=dict(k), check="fill", after="One icon set, one style and one stroke width per group; fill only to mark state"))
+        elif len(items) >= cfg["min_group"] and len(widths) >= 2 and widths[-1] / widths[0] >= cfg["width_ratio"]:
+            # one icon set draws every glyph at one stroke width (computed in the glyph's own units, so size does not change it)
+            out.append(hit(cfg, g.get("sel", "?"), f"outline icons in one group use stroke widths {', '.join(f'{w:g}px' for w in widths)}: glyphs from different sets or drawn by hand",
+                           value=widths, check="stroke", after="Take every glyph in the group from one set at one stroke width"))
     return out[:cfg["max_hits"]]
