@@ -38,3 +38,14 @@ Expected labels come from the source repos, and most "good" labels are a repo pr
 - No live sites were audited (the workspace reaches GitHub only). The five same-prompt builder outputs, award winners and design systems are still pending.
 - Almost every "good" item is AI-made. The set has no verified human-made exemplar except Kami's documents, so false-positive risk on real human work is untested.
 - The adjudicator is not independent. Two human spot-checks would make these numbers trustworthy: one on the "label generous" rows, one on the contested rows.
+
+## Follow-up (9 Nov 2026): motion and interaction capture
+
+The three "limitation" rows (G10, S12, C01) are now testable. Capture records transition frames at 0–600 ms (reduced motion off and on) and runs primary actions with the network slowed and a forced failure. The new detectors are `motion` (MOT-002) and `async_state` (CMP-001, plus INT-008 for false success).
+
+- **Manifest correction:** `example.html` only honours `?style=` together with `embed=1`. The old S12 and G10 paths both rendered the same side-by-side compare page, with the modals in iframes. They now point at `example.html?embed=1&style=generic` (S12) and `example.html?embed=1` (G10). The labels are unchanged; the round-2 lens reads were of the compare page.
+- **S12:** caught. The menu enters from 0.85 scale (Reflex), the tab slides 30 px (Reflex), and the easing is the default `ease` (Finish).
+- **G10:** clean. Its motion is 120–150 ms with `cubic-bezier(0.22,1,0.36,1)`, entrance scale 0.97 and 8 px travel.
+- **C01:** caught. It says "Draft project created" at 186 ms but makes no request and changes nothing else (INT-008, Floor).
+
+Still not measured: exit transitions, hover-only motion, and transitions inside iframes (recorded as not verified).

@@ -67,6 +67,40 @@ detectors:
   overflow:         {rule: ROB-003, tier: Floor, tolerance_px: 1}
   widows:           {rule: ROB-004, tier: Finish, min_last_line_share: 0.35, widths: [375, 1280]}
   motion_css:       {rule: MOT-001, tier: Reflex, max_overshoot: 1.05, exit_ratio: [0.60, 0.75], banned: ["transition: all", "transition-property: all"], layout_props: [width, height, top, left, right, bottom, margin, padding]}
+  # motion: measured from motion.json (transition frames seeked at 10 ms steps after each trigger click).
+  #   max_ms           per trigger kind. MOT-126/127/128 (hallmark §95, uupm §168, agent §78, huashu §337): 150-300 ms is the
+  #                    starting range; menus and toggles ~220 ms, modal/drawer/accordion ~420 ms. Duration = last 10 ms
+  #                    step at which a changed element still differs from its end state.
+  #   min_enter_scale  MOT-141 (uupm §237, hallmark §329): modal panel 0.96 -> 1; transitions-dev tokens: dropdown 0.97,
+  #                    modal 0.96; its "generic AI" demo uses 0.85 (example.html generic block). 0.90 leaves margin.
+  #                    Applies to surfaces (min_root_px and up): glyph swaps scale from 0.25 in the same tuned tokens
+  #                    (--icon-swap-start-scale on 16 px icons).
+  #   max_travel_px    MOT-146 (huashu §349 §365, uupm §156, agent §28): entrances translate 8-16 px; MOT-188: menu drop
+  #                    6 px; transitions-dev page slide 8 px vs generic 30 px. Exempt: elements that end on a viewport
+  #                    edge (drawers and sheets slide their own width).
+  #   max_overshoot    MOT-001 / MOT-131 (hallmark §323 §327): nothing past 1.05 of its end size or travel in UI state.
+  #   banned_easing    MOT-129 (hallmark §82 §342, uupm §14 §237, taste §410): never the browser default `ease`;
+  #                    MOT-128: never linear for core UI movement (Finish tier).
+  #   layout_px        MOT-118: animations must not reflow other content; other elements caught mid-way between their
+  #                    start and end positions by more than this moved during the transition.
+  #   reduced_*        A11-011 / WCAG 2.2 2.3.3 (hallmark §330): with prefers-reduced-motion: reduce nothing moves or
+  #                    scales; opacity may change. Hits cite reduced_rule at Floor.
+  motion:           {rule: MOT-002, tier: Reflex, max_ms: {menu: 300, tab: 300, button: 300, disclosure: 450, dialog: 450},
+                     min_enter_scale: 0.90, max_travel_px: 16, max_overshoot: 1.05, min_overshoot_px: 1, banned_easing: [ease], linear_movement: true,
+                     layout_px: 2, settle_px: 1, settle_opacity: 0.02, min_root_px: 32, reduced_move_px: 2, reduced_scale: 0.02, reduced_rule: A11-011}
+  # async_state: measured from async.json (primary actions clicked with fetch/XHR held 3 s, then with a forced 500).
+  #   checks_ms        MOT-200 (hallmark §311, uupm): show progress after 150-300 ms, "Loading..." past 2 s. No visible change
+  #                    at both 0.5 s and 2 s while a request is pending = no feedback.
+  #   min_changed_px   pixels that must differ (by more than pixel_level, the near_blank level) between the pre-click and
+  #                    in-flight screenshots for the UI to count as having responded.
+  #   false success    CMP-110 / CMP-212 (HM §93 §311, ADP §55): no success before the answer, none where no request
+  #                    was made, none after a failure. success_pattern extends the fake-success lexicon with the
+  #                    past-participle confirmations of app actions (C01 "Draft project created", ux-ui-agent-skills
+  #                    critic answer key, Composition 6). Hits cite false_success_rule at Floor.
+  #   stuck spinner    CMP-108 / A11-160 (HM §311, UX §328, uupm §95): progress and aria-busy end when the request ends.
+  async_state:      {rule: CMP-001, tier: Reflex, checks_ms: [500, 2000], min_changed_px: 100, pixel_level: 24, max_success_chars: 120, false_success_rule: INT-008,
+                     success_pattern: "\\b(created|saved|added|sent|published|updated|submitted|uploaded|exported|imported|subscribed|confirmed|booked|reserved|registered|invited|deleted|removed|success(ful(ly)?)?|thanks|thank you|all set|you're (in|on the list|all set)|done)\\b",
+                     honest_pattern: "\\b(not|nothing|no longer|failed|fail|error|couldn't|could not|can't|cannot|unable|try again|invalid|required|sending|saving|loading|pending|will be)\\b"}
   performance:      {rule: WEB-001, tier: Reflex, lcp_warn_ms: 2500, lcp_fail_ms: 4500, image_max_kb: 400, image_max_ratio: 2.0}
   # ---- capture and cross-output ---------------------------------------------
   near_blank:       {rule: PRC-001, tier: Floor, max_diff_share: 0.0015, level: 24}   # capture sanity: an empty render, not a sparse page

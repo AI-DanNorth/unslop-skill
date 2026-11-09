@@ -114,7 +114,8 @@ items:
   commit: 91f215bc840cf9c1bb196518ec123fc5cbedc18e
 - id: S12
   repo: transitions-dev
-  path: example.html?style=generic
+  # 9 Nov 2026: example.html only honours ?style= with embed=1; without it S12 and G10 rendered the same compare page.
+  path: example.html?embed=1&style=generic
   expect: slop
   medium: web
   group: known-slop
@@ -224,7 +225,7 @@ items:
   commit: 91f215bc840cf9c1bb196518ec123fc5cbedc18e
 - id: G10
   repo: transitions-dev
-  path: example.html
+  path: example.html?embed=1
   expect: good
   medium: web
   group: pair-of-S12

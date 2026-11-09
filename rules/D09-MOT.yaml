@@ -34,6 +34,51 @@
     - bottom
     - margin
     - padding
+- id: MOT-002
+  title: Transitions measured from frames stay short and direct
+  domain: D09
+  tier: Reflex
+  detector: motion
+  remedy: fix-motion
+  rule: Each triggered transition (dialog, menu, tab, disclosure) ends within its kind's limit, enters from at least 0.90 scale and at most 16px
+    away, never passes its end state by more than 1.05, does not use the default ease, and does not push other content while it runs. With reduced
+    motion nothing moves (cited as A11-011).
+  why: 'Measured in the browser, these are what make motion read as off-the-shelf: slow, popping from far, drifting, bouncing or dragging the
+    page with it.'
+  fix: Use one tuned curve such as cubic-bezier(0.22, 1, 0.36, 1); start overlays at 0.96-0.97 scale and 6-8px; keep menus near 200ms and dialogs
+    near 250ms; animate transform and opacity only; drop movement under prefers-reduced-motion.
+  sources:
+  - transitions-dev tokens and generic demo (example.html)
+  - hallmark §82 §95 §323 §327 §329 §330
+  - uupm §14 §156 §168 §237
+  - huashu §337 §349
+  - agent §28 §78
+  priority: P1
+  kind: ban
+  check: M
+  waivable_by: brief
+  status: active
+  values:
+    max_ms:
+      menu: 300
+      tab: 300
+      button: 300
+      disclosure: 450
+      dialog: 450
+    min_enter_scale: 0.9
+    max_travel_px: 16
+    max_overshoot: 1.05
+    min_overshoot_px: 1
+    banned_easing:
+    - ease
+    linear_movement: true
+    layout_px: 2
+    settle_px: 1
+    settle_opacity: 0.02
+    min_root_px: 16
+    reduced_move_px: 2
+    reduced_scale: 0.02
+    reduced_rule: A11-011
 - id: MOT-101
   title: Name every motion and its purpose before building
   domain: D09

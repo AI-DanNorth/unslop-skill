@@ -45,6 +45,15 @@
   .pill { display: inline-block; padding: 4px 8px; }
   .s1 { margin: 24px; } .s2 { margin: 24px; } .s3 { margin: 24px; } .s4 { margin: 24px; } .s5 { margin: 24px; } .s6 { margin: 24px; }
   .icon-btn { width: 16px; height: 16px; padding: 0; border: 0; background: #111827; display: inline-block; }
+  /* motion seeds: a dialog that pops from 0.5 scale and 80px away, overshoots to 1.12 and takes 700ms with no reduced-motion
+     guard; a disclosure whose height transition pushes the content below it */
+  #seed-dialog { position: fixed; top: 200px; left: 400px; width: 360px; padding: 24px; background: #fff; border: 1px solid #d1d5db; }
+  #seed-dialog.open { animation: seed-pop 700ms linear both; }
+  @keyframes seed-pop { from { transform: translateY(80px) scale(.5); opacity: 0 } 70% { transform: translateY(-12px) scale(1.12); opacity: 1 } to { transform: none; opacity: 1 } }
+  #seed-panel { height: 0; overflow: hidden; } #seed-panel.open { height: 120px; }
+  /* async seeds */
+  .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #9ca3af; border-top-color: transparent; border-radius: 50%; animation: seed-spin 1s linear infinite; }
+  @keyframes seed-spin { to { transform: rotate(360deg) } }
 </style>
 </head>
 <body>
@@ -134,7 +143,26 @@
   <p class="reveal">Revealed content three. Even more hidden text so that the hidden share of the page is large enough to fail.</p>
   <p class="reveal">Revealed content four. This page hides most of its text until it scrolls into view, which is the defect being seeded.</p>
 </section>
+<section>
+  <button type="button" id="seed-open" aria-haspopup="dialog" aria-controls="seed-dialog" data-seed="motion">Open details</button>
+  <div id="seed-dialog" role="dialog" aria-label="Details" hidden><p>These details pop in from far away, bounce past their place and take 700 ms, even with reduced motion on.</p></div>
+  <button type="button" id="seed-more" aria-expanded="false" aria-controls="seed-panel" data-seed="motion">Show more</button>
+  <div id="seed-panel"><p>Extra text that pushes everything below it down while the panel grows.</p></div>
+  <p>Content below the panel moves while the panel opens.</p>
+</section>
+<section>
+  <button type="button" id="seed-save" data-seed="async_state">Save changes</button> <span id="seed-status" role="status"></span>
+  <button type="button" id="seed-refresh" data-seed="async_state">Refresh data</button> <span id="seed-data"></span>
+  <button type="button" id="seed-sync" data-seed="async_state">Sync now</button>
+</section>
 <script>
+  // motion seeds
+  document.getElementById("seed-open").addEventListener("click", () => { const d = document.getElementById("seed-dialog"); d.hidden = false; d.classList.add("open"); });
+  document.getElementById("seed-more").addEventListener("click", (e) => { e.currentTarget.setAttribute("aria-expanded", "true"); document.getElementById("seed-panel").classList.add("open"); });
+  // async seeds: success before the answer (and after a failure); no feedback while pending; a spinner that never stops
+  document.getElementById("seed-save").addEventListener("click", () => { document.getElementById("seed-status").textContent = "Changes saved"; fetch("api/save", { method: "POST", body: "{}" }).catch(() => {}); });
+  document.getElementById("seed-refresh").addEventListener("click", () => { fetch("api/data").then((r) => r.json()).then(() => { document.getElementById("seed-data").textContent = "Data as of 10:00"; }).catch(() => {}); });
+  document.getElementById("seed-sync").addEventListener("click", (e) => { const s = document.createElement("span"); s.className = "spinner"; s.setAttribute("aria-label", "Loading"); e.currentTarget.after(s); fetch("api/sync", { method: "POST" }).then(() => {}).catch(() => {}); });
   document.getElementById("signup").addEventListener("submit", (e) => { e.preventDefault(); document.getElementById("msg").textContent = "Thanks! You're on the list."; });
   const io = new IntersectionObserver((es) => es.forEach(x => x.isIntersecting && x.target.classList.add("in")));
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));

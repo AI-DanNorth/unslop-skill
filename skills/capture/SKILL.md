@@ -26,6 +26,10 @@ Widths: `quick` uses 375, 1280, 1440. `full` uses 320, 375, 414, 768, 1024, 1280
 | `focus.json`, `focus/*.png` | Tab walk with focused and unfocused crops of each stop |
 | `forms.json` | each form submitted with the network blocked, and any text that appeared |
 | `perf.json` | lab LCP, image bytes and natural vs rendered widths |
+| `motion.json`, `motion/*.png` | up to 6 transition triggers (dialog, menu, tab, disclosure, button) clicked with reduced motion off and on: frames at 0, 50, 100, 150, 250, 400 and 600 ms, the running animations (duration, easing), a 10 ms sweep of each changed element's box and opacity, other content that moved, and every skipped trigger. Used by `motion`. |
+| `async.json`, `async/*.png` | up to 4 primary actions clicked with fetch/XHR held 3 s, then with a forced HTTP 500: screenshots and DOM state before, at 0.5 s, 2 s and after completion, the request log, and text and trigger timelines. Used by `async_state`. |
+
+The interaction steps (motion and async) run last and are bounded (60 s each by default; `--motion-budget`, `--async-budget`). Skip them with `--no-motion`, `--no-async` or `--no-interact`; the sweep then marks `motion` and `async_state` not verified. For live sites nothing leaves the page: cross-origin requests are refused, navigation away is aborted, native form submits are cancelled, requests that would write get a synthetic response, and forms are filled with fake values (`unslop-test@example.com`). Transitions inside iframes are not exercised and are listed as not verified.
 
 ## Check the checker
 

@@ -53,11 +53,12 @@ python3 scripts/selftest.py                         # must print SELF-TEST PASSE
 
 - Phase 1 (core and web MVP) is built. Draft media adapters exist for slides, social, print, diagram, email and app.
 - Test set 1 local items (52): two blind review rounds. 27 of 44 raw agreement; 37 of 41 after adjudication (`evals/testset/results/round-2-adjudication.md`). Re-scored on a fresh capture after the live-round fixes: unchanged.
+- Motion and interaction capture (9 Nov 2026): transition frames and slowed-network actions, with `motion` and `async_state` detectors. S12 and C01 are now caught and G10 stays clean (`round-2-adjudication.md`, follow-up).
 - Test set 1 live (39 sites, captured 9 Nov 2026): one blind round. 27 of 34 raw, **29 of 34 after evidence-based fixes**; 30 of 33 adjusted, with 2 contested (`evals/testset/results/live-round-1-adjudication.md`). L04 is not verified (unpublished app). Every Floor hit on the 14 human controls was verified: 148 false positives were traced and fixed, and what remains is real WCAG failures, not slop calls.
 
 ## Next steps, in order
 
-1. **Human spot-check** of the "label generous" and contested rows in the round-2 adjudication and the live round-1 adjudication (L15, L20, L21). Build it with prompt 4 in `docs/NEXT-PROMPTS.md`.
+1. **Human spot-check:** a designer works through `evals/testset/results/spot-check.html` (11 rows; rebuild with `evals/testset/build_spotcheck.py`) and returns the JSON. Record the calls in both adjudications. L15 (fixture semantics) is not on the page; decide it in the same pass.
 2. **Region-aware sweeping** for pages that exhibit slop on purpose (L19, L20): ignore sections labelled as examples. Decide whether `targets` stays Floor for dense footer link lists.
-3. **Motion and interaction capture:** frame sequences for transitions, scripted clicks for async states. This covers S12, G10 and C01.
+3. **Interaction capture on live sites:** the motion and async steps have only run on local files. Run them on a few live sites before the next live round. They add up to about 2 min per capture; use `--no-interact` for slow pages such as L28, which is already at about 740 s.
 4. **Phase 2:** the other 15 lenses, the scoring rubric and `verify-fix` (roadmap in the plan doc).

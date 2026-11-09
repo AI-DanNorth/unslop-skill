@@ -138,6 +138,24 @@
   values:
     max_per_page: 2
     pattern: \[DATA NEEDED
+- id: INT-008
+  title: Feedback never outruns the truth
+  domain: D18
+  tier: Floor
+  check: M
+  remedy: fix-harden
+  waivable_by: never
+  rule: 'An action shows success only after the request it made has succeeded: never while it is still pending, never after it failed, and never
+    when no request was made and nothing else changed. Measured by the async_state detector.'
+  why: A success message the page did not earn is a false claim; the user stops checking and loses work.
+  fix: Show success from the server's answer and echo the result; on failure keep the input and show what went wrong with a way to retry.
+  sources:
+  - CMP-110 / CMP-212 (HM §93 §311, ADP §55)
+  - 'ux-ui-agent-skills critic answer key: async-lies (Composition 6)'
+  - hallmark §364 §510
+  priority: P0
+  kind: ban
+  status: active
 - id: INT-101
   title: Never invent a metric, customer count, uptime, speed multiple, saving or percentage the us
   domain: D18

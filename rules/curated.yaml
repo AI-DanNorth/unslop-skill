@@ -135,6 +135,11 @@
    sources: ["hallmark §110"]}
 
 # ---------------- D10 accessibility ----------------
+- {id: INT-008, title: Feedback never outruns the truth, domain: D18, tier: Floor, check: M, remedy: fix-harden, waivable_by: never,
+   rule: "An action shows success only after the request it made has succeeded: never while it is still pending, never after it failed, and never when no request was made and nothing else changed. Measured by the async_state detector.",
+   why: "A success message the page did not earn is a false claim; the user stops checking and loses work.",
+   fix: "Show success from the server's answer and echo the result; on failure keep the input and show what went wrong with a way to retry.",
+   sources: ["CMP-110 / CMP-212 (HM §93 §311, ADP §55)", "ux-ui-agent-skills critic answer key: async-lies (Composition 6)", "hallmark §364 §510"]}
 - {id: A11-001, title: Text contrast on real pixels, domain: D10, tier: Floor, detector: contrast, remedy: fix-a11y, waivable_by: never, tests: [T-GRADIENT-STOPS],
    rule: "Body text at least 4.5:1 and large text at least 3:1 against the worst sampled background pixel (WCAG 2.2 1.4.3). APCA reported as advisory.",
    why: "Low contrast excludes low-vision readers and everyone in sunlight.", fix: "Darken text or lighten ground; never thin weights on tinted ground.",
@@ -186,9 +191,21 @@
 - {id: MOT-001, title: Motion CSS hygiene, domain: D09, tier: Reflex, detector: motion_css, remedy: fix-motion,
    rule: "No transition: all; animate transform and opacity, not layout properties; no overshoot past 1.05 in UI; exits 60 to 75% of enters.",
    why: "These produce jank, layout thrash and toy-like motion.", fix: "List properties; use transform; one non-overshoot curve.", sources: ["hallmark §323 §327", "transitions-dev", "agent-skills §1"]}
+- {id: MOT-002, title: Transitions measured from frames stay short and direct, domain: D09, tier: Reflex, detector: motion, remedy: fix-motion,
+   rule: "Each triggered transition (dialog, menu, tab, disclosure) ends within its kind's limit, enters from at least 0.90 scale and at most 16px away, never passes its end state by more than 1.05, does not use the default ease, and does not push other content while it runs. With reduced motion nothing moves (cited as A11-011).",
+   why: "Measured in the browser, these are what make motion read as off-the-shelf: slow, popping from far, drifting, bouncing or dragging the page with it.",
+   fix: "Use one tuned curve such as cubic-bezier(0.22, 1, 0.36, 1); start overlays at 0.96-0.97 scale and 6-8px; keep menus near 200ms and dialogs near 250ms; animate transform and opacity only; drop movement under prefers-reduced-motion.",
+   sources: ["transitions-dev tokens and generic demo (example.html)", "hallmark §82 §95 §323 §327 §329 §330", "uupm §14 §156 §168 §237", "huashu §337 §349", "agent §28 §78"]}
 - {id: WEB-001, title: Performance budget, domain: D15, tier: Reflex, detector: performance, remedy: fix-harden,
    rule: "Lab LCP warns at 2.5s and fails at 4.5s; no image over 400KB or more than 2x its rendered width.", why: "Slow pages lose visitors before design matters.",
    fix: "Compress, size and lazy-load images; preload the LCP asset.", sources: ["taste-skill §622", "agent-skills", "web-interface-guidelines"]}
+
+# ---------------- D08 components ----------------
+- {id: CMP-001, title: Async actions show that they are working, domain: D08, tier: Reflex, detector: async_state, remedy: fix-harden,
+   rule: "While a request runs the clicked action visibly changes within 0.5 to 2 s (busy label, spinner, aria-busy, progress), and every progress state ends when the request ends. False success is cited as INT-008.",
+   why: "With no feedback people click again and send twice; a spinner that never stops reads as a crash.",
+   fix: "Keep the label and add an inline spinner and aria-busy=\"true\" after ~150 ms; clear both when the answer arrives, success or failure.",
+   sources: ["CMP-108 (HM §311, UX §328)", "MOT-200 (hallmark §311)", "A11-160 (uupm §95 §328)"]}
 
 # ---------------- process ----------------
 - {id: PRC-001, title: Capture must be trustworthy, domain: D17, tier: Floor, detector: near_blank, remedy: none, waivable_by: never, tests: [T-VERIFY-VERIFIER],

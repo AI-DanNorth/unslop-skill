@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 // Unslop capture: renders a web artifact and writes evidence for the sweep.
 // usage: node capture.mjs <url-or-file> <run-dir> [--widths 375,1440] [--bless-control] [--skip-control]
+//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000]
 // Writes <run-dir>/01-evidence/: shot-<w>.png, bg-<w>.png, fold-<w>.png, dom-<w>.json, fonts.json,
-// hidden.json, focus.json + focus/*.png, forms.json, perf.json, manifest.json
+// hidden.json, focus.json + focus/*.png, forms.json, perf.json, motion.json + motion/*.png, async.json + async/*.png, manifest.json
 import { createRequire } from "node:module";
 const { chromium } = createRequire(import.meta.url)("playwright");
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { installShim } from "./netshim.mjs";
+import { captureMotion, captureAsync } from "./interact.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../..");
@@ -19,7 +21,8 @@ const BG_ALL = true;   // background-only render at every captured width (fixed-
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const [target, runDir] = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1].startsWith("--widths")));
+const VALUED = ["--widths", "--motion-budget", "--async-budget"];
+const [target, runDir] = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && VALUED.includes(args[i - 1])));
 if (!target || !runDir) { console.error("usage: capture.mjs <url-or-file> <run-dir> [--widths 375,1440]"); process.exit(2); }
 const widths = opt("--widths", "320,375,414,768,1024,1280,1440,1920").split(",").map(Number);
 const toUrl = (t) => { if (/^https?:|^file:/.test(t)) return t; const [f, q] = t.split("?"); return pathToFileURL(path.resolve(f)).href + (q ? "?" + q : ""); };
@@ -371,6 +374,18 @@ const VISIBLE_CHARS = () => {
   fs.writeFileSync(path.join(ev, "perf.json"), JSON.stringify(perf, null, 1));
   await ctx.close();
 }
+
+// ---- 8. motion frames and 9. scripted async actions (interact.mjs), at 1440 ------------------------
+// Added after every other step so they cannot change what steps 1 to 7 record. Each is bounded in time; what was
+// skipped or could not be measured is listed in motion.json / async.json and becomes "not verified" in the sweep.
+manifest.interaction = {};
+const prepWait = PREP && PREP.wait ? PREP.wait : 0;
+if (flag("--no-motion") || flag("--no-interact")) manifest.interaction.motion = { skipped: "--no-motion" };
+else try { manifest.interaction.motion = await captureMotion({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--motion-budget", 60000) }); }
+catch (e) { manifest.interaction.motion = { error: e.message.split("\n")[0] }; note(`motion capture failed: ${e.message}`); }
+if (flag("--no-async") || flag("--no-interact")) manifest.interaction.async = { skipped: "--no-async" };
+else try { manifest.interaction.async = await captureAsync({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--async-budget", 60000) }); }
+catch (e) { manifest.interaction.async = { error: e.message.split("\n")[0] }; note(`async capture failed: ${e.message}`); }
 
 await browser.close();
 const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];

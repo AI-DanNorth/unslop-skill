@@ -7,7 +7,7 @@ Every detector in data/thresholds.yaml gets a status: ran | skipped: reason | no
 import argparse, json, sys, time, traceback, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from core import REGISTRY, Evidence, Skip, NotVerified, resolve
-import detectors_visual, detectors_text, detectors_a11y, detectors_cross   # noqa: F401  (register)
+import detectors_visual, detectors_text, detectors_a11y, detectors_cross, detectors_motion   # noqa: F401  (register)
 
 ORDER_LAST = ["look_family"]          # needs other detectors' results
 
@@ -34,6 +34,7 @@ def run(run_dir, profile="balanced", medium="web", only=None, overrides=None):
                 if c.get("severity") == "info": h["tier"] = "info"
             status = "ran" if control_ok or name in ("near_blank",) else "not-verified: control render failed"
             results[name] = {"status": status, "rule": c["rule"], "hits": hits, "ms": round(1000 * (time.time() - t0))}
+            if getattr(hits, "partial", None): results[name]["partial"] = list(hits.partial)     # parts that were not verified
         except Skip as e: results[name] = {"status": f"skipped: {e}", "rule": c["rule"]}
         except NotVerified as e: results[name] = {"status": f"not-verified: {e}", "rule": c["rule"]}
         except Exception as e:

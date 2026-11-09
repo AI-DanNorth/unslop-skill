@@ -11,8 +11,8 @@ intake ─▶ capture ─▶ sweep ─▶ lenses ─▶ synthesize ─▶ (remed
  00-contract   01-evidence   02-mechanical   03-lenses/   04-report.md
 ```
 
-- **Capture** renders the page with Playwright at each audit width. It first renders a known-good control page, and if the control does not reproduce, every capture finding is marked "not verified".
-- **Sweep** runs 56 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
+- **Capture** renders the page with Playwright at each audit width, then clicks its transition triggers (frames with reduced motion off and on) and its primary actions (network held, then failed). It first renders a known-good control page, and if the control does not reproduce, every capture finding is marked "not verified".
+- **Sweep** runs 58 mechanical detectors: slop tells, colour, type, spacing, copy lexicons, content integrity, accessibility, robustness, motion and performance. Each detector reads its numbers from `data/thresholds.yaml`.
 - **Lenses** are Claude skills that judge what scripts cannot. Each one runs named tests from `core/tests/tests.yaml`.
 - **Synthesize** merges findings to root causes, drops anything without evidence, scores 7 dimensions with caps, and writes a report that opens with a verdict word.
 
@@ -38,7 +38,7 @@ Requirements: Node 18+, Playwright with Chromium, and Python 3.10+ with PyYAML, 
 |---|---|
 | `core/` | Contracts every skill reads: rule schema, severity, report format, guardrails, precedence, gates, glossary, conflict register, named tests, profiles |
 | `data/` | Thresholds, 12 lexicons, look-family definitions, stress fixtures |
-| `rules/` | Rule cards: `curated.yaml` (56 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,099 mined drafts with provenance) |
+| `rules/` | Rule cards: `curated.yaml` (59 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,099 mined drafts with provenance) |
 | `skills/` | `unslop`, `intake`, `capture`, `sweep`, `lens-slop`, `lens-a11y`, `synthesize`, `media-web` |
 | `scripts/` | Capture (Node), checks and sweep (Python), report synthesis, build tools, self-test |
 | `evals/seeded-defects/` | Control page (must stay clean) and seed pages (every detector must catch its seed) |
