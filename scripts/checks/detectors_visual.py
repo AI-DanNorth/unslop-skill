@@ -324,6 +324,8 @@ def banned_fonts(ev, cfg):
             out.append(hit(cfg, where(e), f"display text at {e['style']['fontSize']} set in {fam}, a UI text face", after=f"Try {', '.join(subs)}" if subs else None))
     return out
 
+def _norm_face(s): return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
 @detector("fallback_face", needs=("fonts.json",))
 def fallback_face(ev, cfg):
     fonts = ev.json("fonts.json")
@@ -338,18 +340,30 @@ def fallback_face(ev, cfg):
     blocked_urls = " ".join(net.get("blocked", []))
     webfaces = set(faces)
     webfaces |= {x.split(" ", 1)[1].lower() for x in net.get("shimmed", []) if x.startswith("font ")}
+    kids = collections.defaultdict(list)           # parent id -> child elements, for faces declared below an element
+    for x in ev.dom()["elements"]:
+        if x.get("parent") is not None: kids[int(x["parent"])].append(x)
+    def declared_below(e):
+        st, got = list(kids[e["id"]]), set()
+        while st:
+            k = st.pop(); got.add(_norm_face(first_family(k["style"]["fontFamily"]))); st += kids[k["id"]]
+        return got
     out, seen, skipped = [], set(), set()
     for e in ev.texts(min_len=2):
         f = fonts.get(str(e["id"]))
         if not f: continue
+        if not re.search(r"[A-Za-z]", e["text"]): continue   # live round 1: L33 CJK "total sales" in Microsoft YaHei and L17 emoji fall back per script, not a failed load
         drawn = base_family(max(f, key=lambda x: x["glyphs"])["family"])
         declared = first_family(e["style"]["fontFamily"])
+        if not re.search(r"[A-Za-z]{2}", drawn): continue   # live round 1: L32 GDS Transport ships an obfuscated name table, reported as an unreadable name
         if declared.lower() in unavailable or declared.lower() not in webfaces:
             skipped.add(declared); continue          # system font absent on this renderer, or font host blocked: not the page's fault
         if any(u[:60] in blocked_urls for u in faces.get(declared.lower(), [])):
             skipped.add(declared); continue          # its font file was blocked by the capture network
-        if declared.lower() in GENERIC or drawn.lower().startswith(declared.lower()) or declared.lower().startswith(drawn.lower()): continue
+        nd, nr = _norm_face(declared), _norm_face(drawn)    # live round 1: L23 Anthropic Sans named anthropicSans, L24 Suisse Int'l named Suisseintl
+        if declared.lower() in GENERIC or nr.startswith(nd) or nd.startswith(nr): continue
         if ALIASES.get(declared.lower()) == drawn.lower(): continue
+        if any(b and (nr.startswith(b) or b.startswith(nr)) for b in declared_below(e)): continue   # live round 1: L35 child <code> in Geist Mono, L28 child <strong> in Brier (CDP counts subtree glyphs)
         key = (declared, drawn)
         if key in seen: continue
         seen.add(key)

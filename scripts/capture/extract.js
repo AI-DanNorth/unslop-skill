@@ -49,7 +49,14 @@
     if (el.tagName === "IMG") return (el.getAttribute("alt") || "").trim();
     if (el.tagName === "INPUT" && ["submit","button","reset"].includes(el.type)) return (el.value || "").trim();
     const t = (el.innerText || el.textContent || "").replace(/\s+/g, " ").trim(); if (t) return t;
-    const img = el.querySelector("img[alt]"); if (img && img.alt.trim()) return img.alt.trim();
+    // Name from content also includes descendants' aria-label and alt, as Chromium computes it. Reading only the first
+    // img[alt] gave empty names for icon buttons (live round 1: L25 x2, L27 x10, L33 x3, L34 x2; e.g. Ant's
+    // <span role="img" aria-label="left">). Descendants inside an aria-hidden subtree or not rendered do not count.
+    const parts = [...el.querySelectorAll("svg[aria-label], [role=img][aria-label], img[alt]")].filter(x => {
+      const h = x.closest("[aria-hidden='true']"); if (h && h !== el && el.contains(h)) return false;
+      return x.getClientRects().length > 0 && getComputedStyle(x).visibility !== "hidden";
+    }).map(x => (x.getAttribute("aria-label") || x.getAttribute("alt") || "").trim()).filter(Boolean);
+    if (parts.length) return parts.join(" ");
     const svgT = el.querySelector("svg title"); if (svgT) return svgT.textContent.trim();
     return (el.getAttribute("title") || "").trim();
   }
@@ -71,9 +78,13 @@
       style: st, opacity: vis ? effOpacity(el) : 0, parent: el.parentElement ? el.parentElement.getAttribute("data-unslop-id") : null,
       before: getComputedStyle(el, "::before").content, after: getComputedStyle(el, "::after").content };
     const interactive = el.matches("a[href],button,input,select,textarea,summary,[role=button],[role=link],[tabindex]:not([tabindex='-1'])");
+    // tabindex: heading anchors like <a aria-hidden="true" tabindex="-1"> are out of the tab order (live round 1: L34 x6,
+    // L33 disabled pager tabindex=-1). Recorded on every interactive element (null = no attribute) and wherever it is set.
+    const tabindex = el.getAttribute("tabindex");
+    if (interactive || tabindex !== null) rec.tabindex = tabindex;
     if (interactive) { rec.interactive = true; rec.name = accName(el); rec.type = el.type || null; rec.role = el.getAttribute("role"); rec.href = el.getAttribute("href"); }
     if (el.tagName === "IMG") { rec.img = { alt: el.getAttribute("alt"), src: el.currentSrc || el.src, nw: el.naturalWidth, nh: el.naturalHeight, complete: el.complete, loading: el.loading }; }
-    if (["INPUT","SELECT","TEXTAREA"].includes(el.tagName)) { rec.field = { type: el.type, name: el.name, placeholder: el.getAttribute("placeholder"), autocomplete: el.getAttribute("autocomplete"), labelled: !!accName(el) && accName(el) !== (el.getAttribute("placeholder") || "").trim() }; }
+    if (["INPUT","SELECT","TEXTAREA"].includes(el.tagName)) { rec.field = { type: el.type, name: el.name, placeholder: el.getAttribute("placeholder"), autocomplete: el.getAttribute("autocomplete"), labelled: !!accName(el) }; }   // accName never reads the placeholder, so a real aria-label equal to it is still a label (live round 1: L27 #newsletter-email)
     if (vis && text) {      // where the glyphs actually are: rects of this element's own text nodes
       const tr = [];
       for (const n of el.childNodes) {

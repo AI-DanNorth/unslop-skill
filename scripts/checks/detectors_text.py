@@ -12,24 +12,38 @@ def own_texts(ev, w=None):
     for e in ev.visible(w):                       # phrases split across inline elements ("Trusted by <b>10,000+</b>")
         if e.get("blockText") and not e.get("inDialog"): yield e, e["blockText"]
 
-def run_lexicon(ev, cfg, name, groups=None, field="text", per_page=True, tier=None):
+SENT_END = re.compile(r"(?<!vs)[.!?](?=\s)|\n")
+
+def sentence_at(text, i, j):
+    """The sentence of `text` that holds the match text[i:j]."""
+    a = max((m.end() for m in SENT_END.finditer(text, 0, i)), default=0)
+    b = SENT_END.search(text, j)
+    return text[a:b.start() if b else len(text)].strip()
+
+def run_lexicon(ev, cfg, name, groups=None, field="text", per_page=True, tier=None, skip=None, sentence_key=False):
     pats = lexicon_patterns(name, groups)
     counts = collections.defaultdict(list)
-    seen = set()
+    seen, sents = set(), collections.defaultdict(list)
     for e, text in own_texts(ev):
+        if skip and skip(e): continue
         for g, pol, budget, rx, term in pats:
             for m in rx.finditer(text):
+                sent = sentence_at(text, m.start(), m.end())
                 key = (m.group(0).lower(), round(e["rect"]["y"] / 60))    # same phrase in a block and its child counts once
                 if key in seen: continue
                 seen.add(key)
-                counts[(g, pol, budget)].append((e, m.group(0), term))
+                if sentence_key:     # live round 1: L26 one "50% more" claim carried by div, ul, li and a at different y; same sentence (or one inside the other) counts once
+                    ns = re.sub(r"\W+", "", sent.lower())
+                    if any(ns == p or (min(len(ns), len(p)) >= 16 and (ns in p or p in ns)) for p in sents[key[0]]): continue
+                    sents[key[0]].append(ns)
+                counts[(g, pol, budget)].append((e, m.group(0), term, sent))
     out = []
     for (g, pol, budget), hits in counts.items():
         if pol == "info": continue
         if pol == "cap" and len(hits) <= budget: continue
         t = tier or ("Finish" if pol == "context" else cfg.get("tier"))
-        for e, s, term in hits[:8]:
-            out.append(hit(cfg, where(e), f"\"{s}\" ({name}/{g}, {pol}{' budget %d, found %d' % (budget, len(hits)) if pol == 'cap' else ''})", tier=t, value=s, lexicon=f"{name}/{g}"))
+        for e, s, term, sent in hits[:8]:
+            out.append(hit(cfg, where(e), f"\"{s}\" ({name}/{g}, {pol}{' budget %d, found %d' % (budget, len(hits)) if pol == 'cap' else ''})", tier=t, value=s, lexicon=f"{name}/{g}", **({"context": sent[:200]} if sentence_key else {})))
     return out
 
 @detector("lexicon_copy")
@@ -130,13 +144,18 @@ def repeated_label(ev, cfg):
     return res[:5]
 
 # ------------------------------------------------------------------ integrity
+BASELINE = re.compile(r"\b(?:than|over|vs\.?|versus|compared (?:to|with))\s+(?:the\s+)?[A-Z][\w.-]*[a-z]")   # capitalised name with a lowercase tail: not "than alternatives", not "than 6,000", not "vs NETFLIX"
+CODE = {"code", "pre", "kbd", "samp", "textarea"}
+
 @detector("invented_metrics")
 def invented_metrics(ev, cfg):
     supplied = [s.lower() for s in cfg.get("supplied", [])]
     out = []
-    for h in run_lexicon(ev, cfg, "invented-metrics", tier="Floor"):
+    for h in run_lexicon(ev, cfg, "invented-metrics", tier="Floor", sentence_key=True):
         if any(s in h["value"].lower() for s in supplied): continue
         h["after"] = "Use the real figure with its source, a [DATA NEEDED] slot, or nothing."
+        if h["lexicon"].split("/")[1] in ("percent-claims", "multipliers") and BASELINE.search(h["context"]):
+            h["tier"] = "Finish"; h["evidence"] += " (names its baseline: verify the source)"   # live round 1: L23 "40% less to run than Opus 5", "over Claude Sonnet 5"
         out.append(h)
     return out
 
@@ -177,7 +196,8 @@ def fake_send(ev, cfg):
 
 @detector("placeholder_residue")
 def placeholder_residue(ev, cfg):
-    out = run_lexicon(ev, cfg, "self-labels", groups=["residue"], tier="Floor")
+    in_code = lambda e: e["tag"] in CODE or any(a["tag"] in CODE for a in ev.ancestors(e))   # live round 1: L26 JSX sample config={{ layout: month_view }}
+    out = run_lexicon(ev, cfg, "self-labels", groups=["residue"], tier="Floor", skip=in_code)
     d = ev.dom()
     if re.search(r"lorem ipsum", d.get("title", ""), re.I): out.append(hit(cfg, "<title>", "placeholder title", tier="Floor"))
     return out

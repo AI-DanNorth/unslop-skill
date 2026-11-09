@@ -55,7 +55,8 @@ write("invented-metrics", {"match": "regex over visible text", "rule": "INT-001"
 
 write("self-labels", {"match": "phrase in captions, alt text and visible text", "rule": "CPY-005", "sources": ["taste-skill §34 §39", "hallmark §112", "huashu §71", "kami §452 §654"]}, [
  {"name": "medium-descriptions", "policy": "fail", "scope": ["alt", "figcaption"], "terms": split("image of, picture of, photo of, pictured, view of, rendering, render of, made in code, made with code, this photo shows, for illustration, illustrative, stock photo")},
- {"name": "residue", "policy": "fail", "tier": "Floor", "note": "shipped placeholder text", "terms": ["lorem ipsum", "placeholder", "TODO", "your name here", "Title Text", "your screenshot here", "to be added", r"\[(company|brand|business|product) name\]", r"\[insert", r"\[NEED", r"\{\{[^}]+\}\}", r"\(sample\)", r"\(example\)",
+ # residue terms narrowed 9 Nov 2026 (live round 1): bare "placeholder" hit L35 guideline prose, "TODO" hit L25 status "Todo", {{...}} hit L26 JSX
+ {"name": "residue", "policy": "fail", "tier": "Floor", "note": "shipped placeholder text", "terms": ["lorem ipsum", r"\bplaceholder (text|copy|image|photo|logo|content|name|title|heading|here)\b", r"\[placeholder\]", r"(?-i:\bTODO\b)", "your name here", "Title Text", "your screenshot here", "to be added", r"\[(company|brand|business|product) name\]", r"\[insert", r"\[NEED", r"\{\{\s*[\w.$-]+\s*\}\}", r"\(sample\)", r"\(example\)",
    r"用来让(检查)?脚本", r"内容本身(并)?不重要", r"(这里|此处)是(一段|第.段)?(正文|说明|示例)", r"示例(文字|文本|内容)", r"占位(文字|符)?", r"テキストが入ります", r"ダミー(テキスト)?", r"ここに(テキスト|説明)"]},
  {"name": "figure-numbers-in-ui", "policy": "info", "terms": [r"\bfig(\.|ure) \d+\b"]},
 ])

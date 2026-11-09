@@ -54,6 +54,24 @@ async function settle(page, { wheel = false } = {}) {
   await page.waitForTimeout(600);
 }
 
+// Settle animations so the DOM dump, the shot and the bg render are one frame: one-off animations jump to their end
+// state (what a visitor sees after a reveal), infinite ones stop where they are. Live round 1: the bg render caught a
+// later frame than the shot (L26 calendar chip 1.00:1, "Join" at opacity .35 mid-fade, L14 ticker, L28 icon swap).
+async function settleAnimations(page) {
+  try {
+    return await page.evaluate(() => {
+      let finished = 0, paused = 0;
+      for (const a of document.getAnimations()) {
+        try {
+          if (a.effect && a.effect.getComputedTiming().iterations === Infinity) { a.pause(); paused++; }
+          else { a.finish(); finished++; }
+        } catch { /* finish() throws on an infinite or zero-rate animation: pause it instead */ try { a.pause(); paused++; } catch {} }
+      }
+      return { finished, paused };
+    });
+  } catch (e) { return { error: e.message }; }
+}
+
 // Per-host page preparation for live captures (page-prep.json): cookie banners, interstitials, tool overlays, extra settle.
 // Every action is logged and lands in manifest.prep, so a capture never silently differs from what a visitor sees.
 const PREP_HOSTS = JSON.parse(fs.readFileSync(path.join(HERE, "page-prep.json"), "utf8")).hosts;
@@ -131,6 +149,8 @@ for (const w of widths) {
   await settle(page, { wheel: true });
   if (PREP && PREP.wait) { await page.waitForTimeout(PREP.wait); prepLog.add(`w${w}: waited ${PREP.wait}ms`); }
   await page.addStyleTag({ content: "*,*::before,*::after{background-attachment:scroll!important}" });   // fixed backgrounds render once in full-page shots
+  const anim = await settleAnimations(page);
+  note(`w${w}: animations settled before DOM/shot: ${JSON.stringify(anim)}`);
   const dom = await page.evaluate(EXTRACT);
   dom.consoleErrors = errors;
   fs.writeFileSync(path.join(ev, `dom-${w}.json`), JSON.stringify(dom));
@@ -148,7 +168,11 @@ for (const w of widths) {
     for (let i = 0; i < n; i++) { await page.mouse.wheel(0, -vh); await page.waitForTimeout(150); }
   }
   if (BG_ALL) {      // background-only render for real-pixel contrast
-    await page.addStyleTag({ content: "*,*::before,*::after{-webkit-text-fill-color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
+    // transition:none so text-fill turns transparent at once: AntD's `transition: all .3s` left ghost glyphs in the bg
+    // render (live round 1: L33 tab, L34 menu). Animations are settled again because the scroll frames may restart them.
+    const animBg = await settleAnimations(page);
+    note(`w${w}: animations settled before bg render: ${JSON.stringify(animBg)}`);
+    await page.addStyleTag({ content: "*,*::before,*::after{transition:none!important;animation-play-state:paused!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
     await page.waitForTimeout(100);
     await page.screenshot({ path: path.join(ev, `bg-${w}.png`), fullPage: true });
   }
@@ -199,7 +223,9 @@ const VISIBLE_CHARS = () => {
   const hidden = {};
   const conds = {
     baseline: { opts: {}, init: null, scroll: true },
-    reduced_motion: { opts: { reducedMotion: "reduce" }, init: null, scroll: false },
+    // reduced_motion scrolls like the baseline, so it tests "reduced motion breaks the reveal" and not "never scrolled"
+    // (live round 1: L23 161 and L27 948 chars "lost" were below-fold content that only loads on scroll; slop L07/L09/L10 too).
+    reduced_motion: { opts: { reducedMotion: "reduce" }, init: null, scroll: true },
     observer_never_fires: { opts: {}, init: () => { window.IntersectionObserver = class { constructor() {} observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } }; }, scroll: false, wait: 4000 },
     scripts_off: { opts: { javaScriptEnabled: false }, init: null, scroll: false },
   };
@@ -229,12 +255,50 @@ const VISIBLE_CHARS = () => {
       const a = document.activeElement;
       if (!a || a === document.body) return null;
       const r = a.getBoundingClientRect();
+      // cover: is the focused element actually hidden by a fixed/sticky layer? A box-overlap test flagged skip links that
+      // sit above the header, pointer-events:none transparent shells, visibility:hidden or opacity 0 overlays and a 48px
+      // back-to-top button over a large tile (live round 1: 23 false "covered" on controls L23, L25, L27, L28, L33, L36).
+      // 9 sample points of the focused rect are hit-tested; "full" = every in-view point is owned by a painted cover
+      // (WCAG 2.4.11), "partial" = some (2.4.12), null = none.
+      const painted = (e) => { const c = getComputedStyle(e); if (c.visibility !== "visible") return false;
+        let op = 1; for (let x = e; x && x.nodeType === 1; x = x.parentElement) op *= parseFloat(getComputedStyle(x).opacity); return op > 0.05; };
       const covers = [...document.querySelectorAll("body *")].filter(e => { const p = getComputedStyle(e).position; return (p === "fixed" || p === "sticky") && !e.contains(a); })
-        .map(e => e.getBoundingClientRect()).filter(h => h.width > 0 && h.height > 0 && h.left < r.right && h.right > r.left && h.top < r.bottom && h.bottom > r.top);
+        .filter(e => { const h = e.getBoundingClientRect(); return h.width > 0 && h.height > 0 && h.left < r.right && h.right > r.left && h.top < r.bottom && h.bottom > r.top; })
+        .filter(painted);
+      // a layer hides the focused element only if it is painted at that point: a background, a backdrop filter, or
+      // content of its own (text, image, canvas, svg, video, form control). Transparent wrappers do not hide anything.
+      const opaque = (e) => {
+        const s = getComputedStyle(e);
+        if (s.visibility !== "visible") return false;
+        if (s.backgroundColor !== "rgba(0, 0, 0, 0)" && s.backgroundColor !== "transparent") return true;
+        if (s.backgroundImage !== "none" || (s.backdropFilter && s.backdropFilter !== "none")) return true;
+        if (/^(IMG|CANVAS|VIDEO|IFRAME|INPUT|BUTTON|SELECT|TEXTAREA)$/.test(e.tagName) || e instanceof SVGElement) return true;
+        return [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
+      };
+      let cover = null;
+      if (covers.length) {
+        // make pointer-events:none layers (and the focused element) hit-testable for the probe, then restore them
+        const probe = [...covers, a], saved = probe.map(c => [c, c.style.getPropertyValue("pointer-events"), c.style.getPropertyPriority("pointer-events")]);
+        probe.forEach(c => c.style.setProperty("pointer-events", "auto", "important"));
+        let inview = 0, hidden = 0;
+        for (const fx of [0.1, 0.5, 0.9]) for (const fy of [0.1, 0.5, 0.9]) {
+          const x = r.left + r.width * fx, y = r.top + r.height * fy;
+          if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) continue;
+          inview++;
+          // walk the paint stack from the top down to the focused element: a transparent shell on top must not mask
+          // a real header underneath, and layers below the focused element do not count
+          for (const e of document.elementsFromPoint(x, y)) {
+            if (e === a || a.contains(e)) break;
+            if (covers.some(c => c.contains(e)) && opaque(e)) { hidden++; break; }
+          }
+        }
+        saved.forEach(([c, v, p]) => v ? c.style.setProperty("pointer-events", v, p) : c.style.removeProperty("pointer-events"));
+        cover = inview && hidden === inview ? "full" : hidden ? "partial" : null;
+      }
       const cs = getComputedStyle(a);
       return { sel: a.getAttribute("data-unslop-id") ? `[data-unslop-id="${a.getAttribute("data-unslop-id")}"]` : a.tagName, tag: a.tagName.toLowerCase(),
         text: (a.innerText || a.value || a.getAttribute("aria-label") || "").trim().slice(0, 60), href: a.getAttribute("href"),
-        rect: { x: r.left + scrollX, y: r.top + scrollY, w: r.width, h: r.height }, covered: covers.length > 0,
+        rect: { x: r.left + scrollX, y: r.top + scrollY, w: r.width, h: r.height }, cover, covered: cover !== null,      // `covered` kept for older readers
         outline: `${cs.outlineStyle} ${cs.outlineWidth} ${cs.outlineColor}`, boxShadow: cs.boxShadow };
     });
     if (!info) continue;

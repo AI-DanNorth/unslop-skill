@@ -46,10 +46,14 @@ groups:
   entries:
   - term: lorem ipsum
     added: '2026-11-08'
-  - term: placeholder
-    added: '2026-11-08'
-  - term: TODO
-    added: '2026-11-08'
+  # live round 1: L35 Vercel guideline prose about the placeholder attribute; bare "placeholder" is not residue
+  - term: \bplaceholder (text|copy|image|photo|logo|content|name|title|heading|here)\b
+    added: '2026-11-09'
+  - term: \[placeholder\]
+    added: '2026-11-09'
+  # live round 1: L25 Linear workflow status "Todo"; only uppercase TODO is residue
+  - term: (?-i:\bTODO\b)
+    added: '2026-11-09'
   - term: your name here
     added: '2026-11-08'
   - term: Title Text
@@ -64,8 +68,9 @@ groups:
     added: '2026-11-08'
   - term: \[NEED
     added: '2026-11-08'
-  - term: \{\{[^}]+\}\}
-    added: '2026-11-08'
+  # live round 1: L26 JSX object literal config={{ layout: month_view }}; only a single template variable
+  - term: \{\{\s*[\w.$-]+\s*\}\}
+    added: '2026-11-09'
   - term: \(sample\)
     added: '2026-11-08'
   - term: \(example\)

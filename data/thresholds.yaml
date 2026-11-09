@@ -46,8 +46,12 @@ detectors:
   stat_band:        {rule: INT-007, tier: Reflex, min_px: 24, min_count: 3}
   data_slots:       {rule: INT-006, tier: Reflex, max_per_page: 2, pattern: "\\[DATA NEEDED"}
   # ---- accessibility --------------------------------------------------------
-  contrast:         {rule: A11-001, tier: Floor, body: 4.5, large: 3.0, large_px: 24, large_bold_px: 18.66, apca_body_lc: 60, apca_large_lc: 45}
-  text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2}   # Floor below hard_px; Reflex below dense_ui_px; Finish below body_px
+  contrast:         {rule: A11-001, tier: Floor, body: 4.5, large: 3.0, large_px: 24, large_bold_px: 18.66, apca_body_lc: 60, apca_large_lc: 45,
+                     scaled_ratio: 0.85, mock_hint: '(?:^|[-_]|(?<=[a-z0-9])(?=[A-Z]))(?i:graphic|mock(?:up)?|illustration|screenshot|preview|demo|frame)s?(?![a-z])'}
+                     # mock_hint / scaled_ratio: text in a product illustration (class token on a non-interactive ancestor) or CSS-scaled
+                     # (glyph box < scaled_ratio x font size) is incidental under WCAG 1.4.3 and drops to Reflex (live round 1: L25 Linear frame, L27 Stripe graphics)
+  text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2,
+                     scaled_ratio: 0.85, mock_hint: '(?:^|[-_]|(?<=[a-z0-9])(?=[A-Z]))(?i:graphic|mock(?:up)?|illustration|screenshot|preview|demo|frame)s?(?![a-z])'}   # Floor below hard_px; Reflex below dense_ui_px; Finish below body_px; mock text drops to Reflex
   focus_ring:       {rule: A11-003, tier: Floor, min_contrast: 3.0, fail_below: 2.95}
   targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex}
   img_alt:          {rule: A11-005, tier: Floor}
@@ -56,7 +60,7 @@ detectors:
   lang_and_title:   {rule: A11-008, tier: Floor}
   zoom_blocked:     {rule: A11-009, tier: Floor}
   form_labels:      {rule: A11-010, tier: Floor}
-  reduced_motion:   {rule: A11-011, tier: Floor}
+  reduced_motion:   {rule: A11-011, tier: Floor, spinner_names: 'spin|loader|loading|progress|skeleton|blink|caret', font_hosts: 'fonts\.googleapis|fonts\.gstatic|typekit\.net|fonts\.bunny'}   # live round 1: L31 spinners, L30 unreadable sheet
   # ---- robustness and motion ------------------------------------------------
   hidden_content:   {rule: ROB-001, tier: Floor, max_hidden_share: 0.30, observer_wait_ms: 4000}
   phone_parity:     {rule: ROB-002, tier: Reflex, desktop: 1440, phone: 375, max_hidden_words: 40}
