@@ -25,3 +25,22 @@ Detectors that fire only on good halves: `contrast` 2, `default_names` 2, `text_
 ## Next
 
 Run the phase-2 lenses (structure, typography, color, concept) blind on the pairs and score them with `calibrate_pairs.py --lens ...`. The composition and scene pairs are where a lens has to beat the sweep.
+
+## Lens-structure, blind (9 Nov 2026)
+
+Three blind reviewers ran `lens-structure` on all 57 halves (LENS-BRIEF-PHASE2, target withheld). Table: `structure-pairs.md`; the lens files are in each run's `03-lenses/structure.json`.
+
+**The lens scores the bad half lower on 30 of 32 pairs** (no ties), against 18 of 32 for the sweep. It gets 21 of 22 composition and scene pairs, where the sweep gets 11.
+
+| Group | Sweep separates | Lens separates |
+|---|---|---|
+| Style | 7 of 8 | 8 of 8 |
+| Composition | 7 of 13 | 13 of 13 |
+| Scene | 4 of 9 | 8 of 9 |
+| Detail | 0 of 2 | 1 of 2 |
+
+The two misses:
+- crop-filler (P21 bad 8, P42 good 7). The reviewer named the fault ("4.2 MB" cut to "4.2" at the frame edge) as a finding, but still scored the bad half 8. The good half lost a point for a 375 overflow. This is a calibration slip in the score, not a blind spot.
+- detail-copy (P44 bad 7, P09 good 6). The reviewer found the truncated email chip on the bad half, but marked the good half down for having no title or action. That is the harness crop, not the design.
+
+The lens and the sweep complement each other: the sweep is strongest where the lens is weakest (named AI tells), and the lens sees what geometry cannot (focus, crop, competing windows).
