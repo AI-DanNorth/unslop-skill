@@ -1,0 +1,82 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "Outfit sets only the hero h1, with its last phrase in brand orange, and Figtree sets everything else on a scale with 23 sizes, section h2s at six sizes from 20 to 44px and 14px body; no brand file names either face, and the settings follow the template rather than a system.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-LADDER fails on h2s at six sizes and h3 card titles at five, T-HEAD-TREATMENT fails on two accent-coloured heading phrases, and T-FACE-ROLES finds a second face used for one heading; T-LEADING and T-MEASURE pass (body 1.62, 37 characters a line median), which keeps it above 3."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-010",
+      "title": "One size per kind of element",
+      "tier": "Reflex",
+      "where": "section h2s and card h3s, 1440 (tiles/1440-02.png, 1440-04.png, 1440-06.png)",
+      "evidence": "dom-1440.json gives the ten section h2s at six sizes: 44px (\"Why teams struggle without Consile\", \"How Consile solves it\"), 40px (\"Built with security & compliance at the core\"), 32px (\"What we believe\"), 28px (\"Enterprise-grade by default\"), 24px (\"Choose your way in\", \"Questions, answered\") and 20px (the closing CTA). The type table gives h3 card titles at 14, 15, 16, 12 and 20px. The sweep's type_ladder hit counts 23 distinct sizes, including half-pixel steps (9.5, 10.5, 11.5, 12.5).",
+      "before": "Section h2s at 20, 24, 28, 32, 40 and 44px; 23 sizes on the page",
+      "after": "One section-h2 size (for example 40px at 1440, 28px at 375), one card-title size, and a ladder of about 8 steps",
+      "why": "Section heads that change size from section to section tell the reader some sections matter more, when they are peers.",
+      "test": "T-LADDER",
+      "root": "per-section text-size utilities instead of a heading token"
+    },
+    {
+      "rule": "TYP-016",
+      "title": "Headings are set in one voice",
+      "tier": "Reflex",
+      "where": "hero h1 (tiles/1440-00.png, 375-00.png) and h2 \"Choose your way in\", 1440 and 375",
+      "evidence": "The hero h1 \"Everything your team runs on, in one workspace\" sets \"in one workspace\" in brand orange at 69.6px (1440) and 41.6px (375). The type table also lists \"your\" in the h2 \"Choose your way in\" set apart by colour at 24px. Two headings carry an accent-coloured phrase.",
+      "before": "\"Everything your team runs on, **in one workspace**\" with the last phrase in orange",
+      "after": "Each heading in one colour; let the hero's size and weight carry it",
+      "why": "Recolouring the payoff phrase is the stock generated hero, and repeating it on a later h2 turns it into a habit rather than a signature.",
+      "test": "T-HEAD-TREATMENT"
+    },
+    {
+      "rule": "TYP-006",
+      "title": "Each face has one job",
+      "tier": "Reflex",
+      "where": "hero h1, 1440 and 375",
+      "evidence": "fonts.json at 1440 shows Outfit drawing only the 8 word spans of the hero h1 (39 characters at 69.6px). Figtree draws every other heading, including the 44px section h2s, and all text (248 elements). The two faces are both geometric sans with similar proportions, so the switch reads as a slight inconsistency rather than a contrast.",
+      "before": "Outfit for one heading, Figtree for every other heading and all text",
+      "after": "Figtree for the hero too, or Outfit for every display heading (h1 and h2)",
+      "why": "A second face used once, and close to the first, adds a family without adding a role.",
+      "test": "T-FACE-ROLES"
+    },
+    {
+      "rule": "TYP-009",
+      "title": "The scale fits the medium",
+      "tier": "Reflex",
+      "where": "body text and card titles, 1440 (tiles/1440-02.png, 1440-04.png)",
+      "evidence": "The type table gives body at a 14px median (38 of 42 paragraphs) and h3 card titles at a 14px median, so the h3/body step is 1.00x; the sweep's flat_hierarchy hit reports the same. Card titles such as \"Tool Overload\" and \"Workspace isolation\" differ from their descriptions only by weight 500 against 400 and a darker grey.",
+      "before": "Card titles and body both at 14px, separated by one weight step",
+      "after": "16px body on this marketing page (C12) with card titles at about 18 to 20px",
+      "why": "On a landing page read once, 14px body with same-size titles makes every card read as one grey block.",
+      "test": "T-LADDER"
+    },
+    {
+      "rule": "TYP-015",
+      "title": "Small labels earn their caps",
+      "tier": "Reflex",
+      "where": "\"OUR VALUES\" label, 1440 (tiles/1440-06.png)",
+      "evidence": "The type table counts 18 small uppercase tracked labels at 1440. Most sit inside the product preview (\"TASKS DUE\", \"ATTENDANCE\", 10px at 0.1em) and belong to that illustration. On the page itself, \"OUR VALUES\" sits in tracked orange caps above \"What we believe\", while the other section labels (\"The problem\", \"The solution\", \"Trust & security\") are sentence-case pills.",
+      "before": "OUR VALUES in tracked caps, other section labels in sentence case",
+      "after": "One label style for every section label, sentence case",
+      "why": "One label in a different setting from its peers looks like a leftover from another template.",
+      "test": "T-LABEL-TRANSFORM"
+    }
+  ],
+  "strengths": [
+    "The hero h1 is tuned: 69.6px at leading 1.02 with -0.02em tracking.",
+    "Body leading is 1.62 and paragraphs run a median of 37 characters a line at 1440 and 375.",
+    "The stylesheet sets tabular-nums and text-wrap: balance and pretty."
+  ],
+  "not_investigated": [
+    "T-PUNCTUATION: 2 straight double quotes (\"Connecting Teams. Empowering Work.\") and 13 straight apostrophes, no curly marks; consistent, so no finding under C32.",
+    "T-FIGURES: the figures in the product preview (\"18\", \"92%\", \"32\") are illustration, and the page has no comparing table.",
+    "The product preview's 10 to 12px text and its tracked caps labels are product imagery; the sweep's text_floor marks them as incidental.",
+    "Widows and small text sizes belong to the sweep."
+  ]
+}

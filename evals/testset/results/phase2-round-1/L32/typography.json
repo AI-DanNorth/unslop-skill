@@ -1,0 +1,28 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "GDS Transport, the GOV.UK design system's own face, sets every role in two weights on a fixed scale (48, 36, 24, 19px at 1440; 32, 27, 21, 19px at 375) with 19px body at 1.32 leading and a 62-character median measure.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-TYPE-SOURCE, T-LADDER, T-LEADING, T-MEASURE and T-PUNCTUATION pass; what was cut to earn it: one face, two weights, no tracked caps labels, no accent words, no display tricks, and curly apostrophes throughout."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [],
+  "strengths": [
+    "GDS Transport is the design system's own face and draws every role. fonts.json records its family name as \".\" (a mangled name table in the web font file); the tiles show GDS Transport's letterforms, so the sweep's single fallback_face hit on the \"Design System\" product name reads as a naming artefact, not a fallback.",
+    "The scale is fixed and clear: at 1440 the h1/h2 step is 1.33x, h2/h3 1.5x and h3/body 1.26x, with weight 700 for every heading and 400 for text.",
+    "Body text is 19px at 1.32 leading, and paragraphs run a median of 62 characters a line at 1440 and 34.5 at 375.",
+    "Every apostrophe is curly (9 on the page, no straight ones).",
+    "No tracked caps, no italic or colour accents in headings: the type carries the hierarchy by size and weight alone.",
+    "The stylesheet sets tabular-nums and text-wrap: balance."
+  ],
+  "not_investigated": [
+    "T-FIGURES: the only figures are a date and a version number (\"15 October 2026\", \"v6.6.0\") that do not compare.",
+    "T-WIDOWS: the sweep's 8 widows hits at 375 are short last lines in body paragraphs; none is caused by a heading measure or a manual break.",
+    "T-LADDER at 375: the h1/h2 step falls to 1.19x, which TYP-009 allows below 1024 wide.",
+    "One paragraph at 1440 runs 76 characters a line, one over the 75 limit; not a finding."
+  ]
+}

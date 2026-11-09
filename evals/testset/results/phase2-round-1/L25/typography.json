@@ -1,0 +1,41 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Inter Variable, Linear's own face across its product and site, sets every page role at tuned settings (display at leading 1.0 with -0.022em tracking, weight 510, hung opening quotes in the testimonials), and Berkeley Mono is held to figure captions, code and the product mock-ups.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-TYPE-SOURCE, T-LEADING, T-MEASURE, T-HEAD-TREATMENT and T-FIGURES pass; T-LABEL-TRANSFORM finds one tracked-caps mono label under the logo wall, and the 14 sizes the sweep counts come mostly from the product mock-ups."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-015",
+      "title": "Small labels earn their caps",
+      "tier": "Reflex",
+      "where": "logo wall caption, 1440 (tiles/1440-01.png, below the customer logos) and 375",
+      "evidence": "The type table lists \"Powering the companies building the future\" as a 12px uppercase label in Berkeley Mono, and as the only mono paragraph on the page. It is a full sentence, not a code or a figure. The other caps labels (\"FIG 0.1\" to \"FIG 0.3\", tiles/1440-02.png) are figure numbers and earn their setting.",
+      "before": "POWERING THE COMPANIES BUILDING THE FUTURE, 12px mono caps in grey",
+      "after": "The sentence in Inter at the 13 to 15px small step, sentence case",
+      "why": "A whole sentence in mono caps at 12px reads slower than the same words in sentence case, and the mono costume belongs to the figure captions.",
+      "test": "T-LABEL-TRANSFORM"
+    }
+  ],
+  "strengths": [
+    "Inter Variable is the brand's own face, set at intermediate weights (510, 590) rather than stock 500 or 600.",
+    "Display is tuned: h2 at 48 and 72px with leading 1.0 and -0.022em tracking; it steps to 24 to 38px at 375 with leading 1.1 to 1.33.",
+    "The testimonial quotes hang their opening marks outside the text edge and use curly quotes (tiles/1440-09.png).",
+    "One declared head signature: \"A new species of product tool.\" in white running into a grey run-on (tiles/1440-01.png), used once.",
+    "Measure is short: a median of 39 characters a line at 1440, no paragraph over 75.",
+    "Berkeley Mono is held to figure captions, branch names and code in the product mock-ups.",
+    "The stylesheet sets tabular-nums and text-wrap: balance and pretty."
+  ],
+  "not_investigated": [
+    "The product mock-ups (issue view, Slack thread, board, tiles/1440-00.png to 1440-03.png) imitate Linear's app and Slack; their 10 to 13px text, weight 300 chat text and three-dot runs (\"disappeared...\", \"every time...\") are product imagery, not the page's type system.",
+    "T-PUNCTUATION: 2 three-dot runs against 18 true ellipses and 4 straight double quotes, all inside the mock-ups; the page's own copy uses curly marks.",
+    "T-HEADLINE-FIT: the h1 runs 2 lines at 1440 and 4 at 375; the sweep's h1_words hit owns its length. \"Intake / and integrations\" breaks the same way at every width, so it reads as a set break.",
+    "Small text sizes and the 14-size count are the sweep's (text_floor, type_ladder)."
+  ]
+}

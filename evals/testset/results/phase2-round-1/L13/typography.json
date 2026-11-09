@@ -1,0 +1,83 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Fraunces display over Inter body, an italic terracotta accent word in the h1, tracked caps eyebrows and italic serif fake logos make up the warm-paper-serif look the sweep matches 6 of 6, with no brand or brief behind the faces; at 375 the controls wrap and the card text collapses to 7 to 12 characters a line.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-TYPE-SOURCE fails on a saturated serif inside a look-family cluster, T-HEAD-TREATMENT fails on the italic accent word, and at 375 T-MEASURE finds three card paragraphs at 7 to 12 characters a line and T-HEADLINE-FIT finds four wrapped controls; the display leading and tracking are tuned, which keeps it above 2."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-007",
+      "title": "Saturated faces need an argument",
+      "tier": "Reflex",
+      "where": "every heading and the logo row, 1440 and 375 (tiles/1440-00.png, 1440-01.png)",
+      "evidence": "fonts.json at 1440 shows Fraunces drawing the h1 (88px), both h2s (52 and 60px), the h3 card titles (22px), the wordmark \"Lumina\" and the italic fake customer logos (\"Northwind\", \"Halcyon\", \"Meridian\"). Inter draws everything else. data/lexicons/fonts.yaml lists Fraunces as saturated, and the sweep's look_family detector matches the warm-paper-serif cluster on 6 of 6 tells (cream page, terracotta accent, serif display, italic serif hero, eyebrows, numbered labels). No contract or brand names either face.",
+      "before": "Fraunces display and italic logos over Inter body, with no stated source",
+      "after": "A display face chosen for the brief (see substitutes in data/lexicons/fonts.yaml), or a recorded reason for Fraunces in the contract",
+      "why": "Fraunces with Inter on cream is the current generator default for a warm SaaS page, so the type tells the reader nothing about Lumina.",
+      "test": "T-TYPE-SOURCE",
+      "root": "the display and body font tokens"
+    },
+    {
+      "rule": "TYP-016",
+      "title": "Headings are set in one voice",
+      "tier": "Reflex",
+      "where": "h1.h1 > em, 1440 and 375 (tiles/1440-00.png, 375-00.png)",
+      "evidence": "The type table lists one heading child set apart in style and colour: \"intelligent\" in the h1 \"Build faster with intelligent workflows for modern teams\" is italic Fraunces in terracotta at 88px (1440) and 48px (375). The sweep's look_family detector records the same as its italic_serif_hero tell.",
+      "before": "\"Build faster with *intelligent* workflows\" with the adjective in italic terracotta",
+      "after": "The h1 in one style and one colour",
+      "why": "An italic accent on the vaguest word in the headline is the generator's signature move, and it puts the stress on a word that says nothing specific.",
+      "test": "T-HEAD-TREATMENT"
+    },
+    {
+      "rule": "TYP-014",
+      "title": "Prose has a readable measure",
+      "tier": "Reflex",
+      "where": "div.card > p in the features grid, 375 (tiles/375-02.png)",
+      "evidence": "At 375 the type table finds three card paragraphs below 16 characters a line: \"Move from idea to production in minutes...\" runs 10 lines at 12 characters (99px wide), \"SOC 2 compliant infrastructure...\" 8 lines at 11 (108px), and \"From your first prototype to millions of users...\" 14 lines at 7 (69px). The page overflows to about 698px wide at 375 (tiles/375-00.png), so the grid keeps three columns.",
+      "before": "Three card columns at 375, 69 to 108px wide",
+      "after": "One card column below about 640px, so card text runs about 35 to 45 characters a line",
+      "why": "Seven to twelve characters a line breaks almost every phrase, and the reader re-scans the next line every two words.",
+      "test": "T-MEASURE",
+      "root": "the features grid with no single-column breakpoint"
+    },
+    {
+      "rule": "TYP-019",
+      "title": "Lines break where the sense breaks",
+      "tier": "Finish",
+      "where": "nav.nav .nav-cta links and hero .ctas buttons, 375 (tiles/375-00.png, 375-01.png)",
+      "evidence": "The type table lists four controls that wrap to 2 lines at 375: \"Sign in\" (14px), \"Get started\" (14px), \"Start free trial →\" (15px, the arrow drops to its own line) and \"Watch demo\" (15px).",
+      "before": "\"Sign / in\", \"Start free trial / →\"",
+      "after": "white-space: nowrap on nav links and buttons, with the nav collapsing to a menu at 375",
+      "why": "A wrapped button label reads as two items, and the arrow alone on a line looks like a separate control.",
+      "test": "T-HEADLINE-FIT"
+    },
+    {
+      "rule": "TYP-011",
+      "title": "Headlines fit their length",
+      "tier": "Reflex",
+      "where": "h1.h1, 375 (tiles/375-00.png)",
+      "evidence": "The 55-character h1 sets at 48px over 5 lines of text at 375 (\"Build faster / with / intelligent / workflows for / modern teams\"), with \"with\" alone on a line, plus a caret bar below. At 1440 it runs 3 lines at 88px. The sweep's widows hit records a 1% last line at 1280.",
+      "before": "48px h1 over 5 lines at 375",
+      "after": "A 36 to 40px h1 at 375 so it holds to 3 lines",
+      "why": "At phone width the headline takes the whole first screen and breaks \"with\" out on its own.",
+      "test": "T-HEADLINE-FIT"
+    }
+  ],
+  "strengths": [
+    "Display leading and tracking are tuned: h1 at leading 1.05 and -0.02em, h2 at 1.1 and -0.02em.",
+    "At 1440 the paragraphs run a short, even 30 characters a line median."
+  ],
+  "not_investigated": [
+    "T-LABEL-TRANSFORM: the tracked caps \"AI-NATIVE WORKFLOWS\" and the 11px \"01\", \"02\", \"03\" section numbers are the sweep's eyebrow and numbered_labels hits.",
+    "T-FIGURES: no figures compare on the page.",
+    "T-PUNCTUATION: no quote marks or ellipses on the page.",
+    "Stylesheet flags: the type table could not read the stylesheets (unreadable_sheets), so tabular-nums and text-wrap are unknown.",
+    "The 375 overflow itself belongs to layout and robustness."
+  ]
+}
