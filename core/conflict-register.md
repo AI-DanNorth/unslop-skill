@@ -46,3 +46,4 @@ One recorded resolution per cross-source disagreement. A losing value is never d
 | C40 | Test widths | Four different matrices | Web adapter: 320, 375, 414, 768, 1024, 1280, 1440, 1920 (superset) |
 | C41 | LCP threshold | 2.5s field p75 (agent-skills) vs lab warn 2.5s, fail 4.5s (taste-skill) | Lab: warn 2.5s, fail 4.5s; field data reported when available |
 | C42 | Spinner timing | Show after 150 to 300ms, hold ≥300ms (hallmark) vs skeleton >1s (ui-ux-pro-max) | Show after 300ms, hold ≥300ms; skeleton when >1s |
+| C43 | Card shadows and edges | No resting card shadow (hallmark, kami) vs shadow-md with hover lift (ui-ux-pro-max) vs soft 8/12/20 shadows (taste-skill) | No rule on whether cards have a shadow. One resting shadow recipe per system plus one for floating layers; border plus shadow on one card is Finish; heavy black shadows are flagged (`research/mining/B-type-color-tokens.md`, conflict 13) |

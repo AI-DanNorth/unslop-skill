@@ -128,6 +128,33 @@
 - {id: T-WIDOWS, name: Widow check, lens: [typography, sweep], kind: M, detector: widows,
    run: "Inspect paragraphs and 2 to 3 line headings at 375 and 1280.", pass: "No single-word last line and no last line under 35% of the line before.",
    sources: ["hallmark §401"]}
+- {id: T-COLOUR-SOURCE, name: Why this colour, lens: [color], kind: J,
+   run: "For the ground, the ink and each chromatic colour (palette table), write one sentence that traces it to a brand asset or design system, the content's own imagery, or the culture of the subject (Sample, Converge, Justify).",
+   pass: "Every primary has a sentence. A colour whose only source is a framework default, a model favourite or a look family has none. A brand's own colour is a source even when it resembles a default family.",
+   sources: ["huashu §62 §211", "hallmark §134 §137"]}
+- {id: T-PALETTE-ROLES, name: Palette roles, lens: [color], kind: H,
+   run: "Map each measured colour to one role (ground, surface, ink, text level, accent, state, data) from the palette table: area palette from the background render, colours per text role, chromatic groups by hue, grounds and text levels.",
+   pass: "2 to 3 chromatic colours plus one neutral set, one accent unless the posture is full palette, at most 4 text levels and 3 grounds, and no colour in two unrelated roles.",
+   sources: ["huashu §211 §73 §144", "taste-skill §31 §61", "kami §10 §13", "hallmark §68"]}
+- {id: T-ACCENT-DOSAGE, name: Accent dosage, lens: [color], kind: H,
+   run: "Name the posture (restrained, committed, full palette, drenched), then list where the accent sits by role (palette table chromatic groups: uses, fill area, display text, page-scale fills) and look at each place on the tiles.",
+   pass: "Under a restrained posture the accent marks only the primary action, current state, focus, link hover and one focal element, and never sets display type or paints a page-scale surface. Other postures hold to their own definition.",
+   sources: ["hallmark §67 §68 §144 §410", "kami §11 §181", "taste-skill §61"]}
+- {id: T-NEUTRALS, name: Neutral temperature, lens: [color], kind: H,
+   run: "Read the neutral temperature counts and the pure black and white counts (palette table); then inspect the rgb() of the paper, the text greys and the hairlines (warm R>=G>B, cool R<G<B).",
+   pass: "The neutrals hold one temperature that agrees with the ground, and pure black or white appears only where the system documents it (conflict C09).",
+   sources: ["kami §12 §14 §23", "hallmark §65 §66 §409"]}
+- {id: T-SURFACE-LADDER, name: Surface ladder, lens: [color, structure], kind: H,
+   run: "For each grouped region on the tiles, name the rung that separates it (whitespace, hairline, tinted well, card), and read the shadow recipes, border-plus-shadow count and grounds in the palette table.",
+   pass: "Each region uses the lowest rung that works; one resting shadow recipe; shadows only on things that float; no white card on a tinted page and no bordered box in a well.",
+   sources: ["hallmark §70 §74 §76 §373 §385", "kami §74 §75"]}
+- {id: T-LINE-DELETION, name: Line deletion, lens: [color, structure], kind: J,
+   run: "Hide a line or rule in your head and reread the region.", pass: "Meaning, state, grouping or navigation is lost. If not, delete it and restore the pause with spacing.",
+   sources: ["kami §73"]}
+- {id: T-DARK-MODE, name: Dark verification, lens: [color], kind: H,
+   run: "If the artifact is dark or ships a dark theme, read the dark ground and ink lightness, surfaces darker than the page, shadows on dark and the stylesheet flags (prefers-color-scheme, color-scheme, filter invert) from the palette table; run every contrast pair numerically in both modes when both were captured.",
+   pass: "Dark paper and ink sit in their bands, elevation gets lighter, shadows give way to lightness steps, the accent is re-derived for dark, and nothing is inverted by filter. A mode that was not captured is not verified.",
+   sources: ["hallmark §71 §299 §300 §302 §303", "ui-ux-pro-max §242"]}
 - {id: T-FINGERPRINT, name: Fingerprint, lens: [slop], kind: H, detector: fingerprint,
    run: "Record six axes and compare with the last 3 builds in the ledger.", pass: "At most 3 of 6 shared.", sources: ["hallmark §233 §234 §519"]}
 - {id: T-LOOK-LEDGER, name: Look-ledger, lens: [slop], kind: M, detector: distinctness,
@@ -163,7 +190,7 @@
 - {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,
    run: "Ask a reader to state a diagram's main path.", pass: "Done in 30 seconds.", sources: ["kami §398"]}
 - {id: T-GRAYSCALE, name: Grayscale, lens: [dataviz, color], kind: H, detector: grayscale_render,
-   run: "View the chart or palette in grayscale.", pass: "Meaning survives without hue.", sources: ["ui-ux-pro-max §256"]}
+   run: "View the chart or palette in grayscale (skills/lens-color/palette_table.py writes 03-lenses/color/gray-fold-<w>.png).", pass: "Meaning survives without hue.", sources: ["ui-ux-pro-max §256"]}
 - {id: T-GRADIENT-STOPS, name: Gradient-stop contrast, lens: [color, a11y], kind: M, detector: contrast,
    run: "Sample the darkest and lightest pixels behind each text run.", pass: "Worst sample meets 4.5:1 body, 3:1 large.", sources: ["hallmark §411 §454"]}
 - {id: T-TAB-THROUGH, name: Focus by tabbing, lens: [a11y], kind: M, detector: focus_walk,

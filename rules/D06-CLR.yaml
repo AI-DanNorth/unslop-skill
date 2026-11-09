@@ -44,6 +44,457 @@
   values:
     lexicon: swatches
     min_used: 3
+- id: CLR-003
+  title: Colour has a source
+  domain: D06
+  tier: Reflex
+  check: J
+  remedy: fix-colorize
+  waivable_by: brand-system
+  tests:
+  - T-COLOUR-SOURCE
+  rule: 'Take every primary colour from the brand or its design system, the content''s own imagery, or the culture of the subject, and be able
+    to say why in one sentence. A framework default, a model favourite (#0066FF tech blue, #D97757 terracotta, #0D1117 with neon, violet at oklch
+    hue 275 to 330) or a look family''s palette is not a source. A brand''s own colour is a source even when it resembles one of these.'
+  why: Colour is the fastest signal of who made a page; a default palette says the generator chose it, not the client.
+  fix: Use the brand's colours. With none, sample from the client's photographs or product, converge to a few, and write the one-sentence reason
+    next to the tokens.
+  sources:
+  - CLR-102 (HS §62 §211, HM §134)
+  - CLR-116 (HM §137)
+  - CLR-113 (HS §60 §213 §58)
+  - CLR-114 (TS §31 §250)
+  priority: P1
+  kind: ban
+  status: active
+- id: CLR-004
+  title: The palette converges to a few roles
+  domain: D06
+  tier: Reflex
+  kind: cap
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  rule: Use 2 to 3 chromatic colours plus one neutral set, each in one role (ground, surface, ink, text level, accent, state, data). Chromatic
+    colours sit at least 60 degrees of hue or 0.3 of lightness apart. Use one accent across the artifact; a second accent needs a declared full-palette
+    posture. Each accent comes with its paired ink for text on it.
+  values:
+    max_chromatic: 3
+    min_hue_sep_deg: 60
+    min_lightness_sep: 0.3
+    accents: 1
+  why: A colour in several roles, or two accents that compete, leaves the reader no way to learn what colour means on this page.
+  fix: List each colour's role, merge near neighbours, and drop or demote the second accent.
+  sources:
+  - CLR-103 (HS §211)
+  - CLR-110 (TS §31, HM §68, HS §331, KM §10)
+  - CLR-109 (HM §65, KM §22, TS §61)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-005
+  title: Colour follows one posture
+  domain: D06
+  tier: Reflex
+  kind: context
+  check: H
+  remedy: fix-colorize
+  waivable_by: brand-system
+  tests:
+  - T-ACCENT-DOSAGE
+  rule: 'Hold one colour posture across the artifact: restrained (neutral page, accent as signal), committed (one colour fills 30 to 60% through
+    a field or paper), full palette (3 to 4 named roles) or drenched (the surface is the colour). Under a restrained posture, do not paint a page-scale
+    surface in the accent: the body, a section, header, footer, hero or band, anything 320px or 40% of the viewport tall, or a full overlay. Tints
+    under 0.3 alpha are not a surface.'
+  values:
+    committed_share_pct:
+    - 30
+    - 60
+    full_palette_roles:
+    - 3
+    - 4
+    page_scale_min_px: 320
+    page_scale_min_vh: 0.4
+    max_tint_alpha: 0.3
+  why: A restrained page that suddenly floods one band with its accent reads as two templates joined, and the accent stops pointing at anything.
+  fix: Name the posture. Under restrained, move the band to a stepped neutral ground and keep the accent on the action inside it.
+  sources:
+  - CLR-124 (HM §68)
+  - CLR-127 (HM §410)
+  priority: P1
+  status: active
+- id: CLR-006
+  title: The accent marks action and state
+  domain: D06
+  tier: Reflex
+  kind: cap
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-ACCENT-DOSAGE
+  rule: Under a restrained posture, keep the interface 90 to 95% neutral and put the accent only on the primary action, the active nav item, the
+    focus ring, link hover, the current state and one argued focal element or chart series. Colour beyond that comes from photographs, the product
+    and real logos. The sweep measures the fold footprint (CLR-001); this card judges where the accent sits.
+  values:
+    neutral_share_pct:
+    - 90
+    - 95
+  why: An accent on icons, labels, borders and headings at once stops marking the one thing to do.
+  fix: Remove the accent from decoration and labels; keep it on the action and the current state.
+  sources:
+  - CLR-126 (HM §67 §144)
+  - CLR-125 (HM §67 §410, KM §11 §181, TS §61)
+  - CLR-118 (TS §61)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-007
+  title: Display type is set in ink
+  domain: D06
+  tier: Reflex
+  check: H
+  remedy: fix-colorize
+  waivable_by: brand-system
+  tests:
+  - T-ACCENT-DOSAGE
+  rule: Set text of 48px and up in the ink colour, not the accent. A heading coloured by a brand system that does so everywhere is the brand's
+    choice; one accent heading among ink headings is the finding.
+  values:
+    min_px: 48
+  why: A large accent headline spends the whole accent budget on words the reader would read anyway, and the action loses its colour.
+  fix: Set display type in ink and keep the accent for the action under it.
+  sources:
+  - CLR-128 (HM §410)
+  priority: P1
+  kind: ban
+  status: active
+- id: CLR-008
+  title: Neutrals hold one temperature
+  domain: D06
+  tier: Finish
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-NEUTRALS
+  rule: Keep every neutral (paper, surfaces, text greys, hairlines) at one temperature that agrees with the ground, and lean it toward the anchor
+    hue at oklch chroma 0.005 to 0.018. A cool accent does not license cool surfaces on a warm page; stock cool greys on a warm system fail. Untinted
+    greys on an untinted, modern-minimal system are not a finding.
+  values:
+    neutral_chroma:
+    - 0.005
+    - 0.018
+  why: Warm paper with cool stock greys looks assembled from two kits; the greys go dirty against the ground.
+  fix: Re-derive the greys from the ground's hue; replace stock greys with tinted steps.
+  sources:
+  - CLR-106 (HM §65 §409 §486, HS §329)
+  - CLR-107 (KM §14, UU §296)
+  - CLR-108 (KM §23)
+  - CLR-148 (KM §12)
+  priority: P3
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CLR-009
+  title: Pure black and white are documented choices
+  domain: D06
+  tier: Finish
+  kind: context
+  check: H
+  remedy: fix-colorize
+  waivable_by: brand-system
+  tests:
+  - T-NEUTRALS
+  rule: 'Do not use #000 or #fff as the page ground or the main ink unless the system documents it (an OLED dark theme, a modern-minimal white
+    paper, a brand that specifies them). Otherwise tint them toward the anchor hue (chroma at least 0.005). Conflict C09: flag only when undocumented.'
+  values:
+    min_chroma: 0.005
+  why: Untinted extremes give the harshest contrast step on screen and read as nobody chose a paper.
+  fix: Replace with a near-white paper and a near-black ink tinted toward the brand hue.
+  sources:
+  - CLR-147 (HM §66 §408, HS §329, TS §61, KM §12, UU §296)
+  priority: P3
+  status: active
+- id: CLR-010
+  title: Text greys are a fixed set
+  domain: D06
+  tier: Finish
+  kind: cap
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  rule: 'Keep text to a declared set of levels (ink, secondary, muted, disabled): at most 4 greys on one ground. Do not create a fifth for one
+    component, and never set copy lighter than the last text step.'
+  values:
+    max_text_levels: 4
+  why: Greys that differ by a few points look like mistakes, and the reader cannot tell which text matters less.
+  fix: Map every text grey to the nearest declared level and delete the rest.
+  sources:
+  - CLR-149 (KM §13)
+  priority: P3
+  waivable_by: brief
+  status: active
+- id: CLR-011
+  title: Text on colour uses that colour's ink
+  domain: D06
+  tier: Reflex
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  rule: Text on a coloured fill uses the fill's paired on-colour, chosen by luminance (ink or paper), never the page's grey. Swap the text colour
+    in the same rule that paints a dark or coloured surface. Contrast failures are A11-001's; this card covers grey text that passes contrast
+    and still looks dirty.
+  why: A neutral grey on a saturated fill reads as a mistake even when it passes contrast, and it fails the moment the fill changes.
+  fix: Give each fill token an on-colour token and use it for all text on that fill.
+  sources:
+  - CLR-138 (HM §69 §412)
+  - CLR-135 (HM §69 §412, UU §313 §667, KM §22, TS §61)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CLR-012
+  title: Grounds are few and stepped
+  domain: D06
+  tier: Reflex
+  kind: cap
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  - T-SURFACE-LADDER
+  rule: Use at most 3 ground tokens per page (main, alternate, dark); a deck uses at most 2. Wells and bands step the paper by about 3 to 4% lightness,
+    not by a new hue.
+  values:
+    max_grounds: 3
+    max_grounds_deck: 2
+    step_lightness:
+    - 0.03
+    - 0.04
+  why: Each new ground restarts the page; five section colours make it read as five pages stacked.
+  fix: Collapse grounds to main, alternate and dark; make wells a lightness step of the main paper.
+  sources:
+  - CLR-131 (TS §61, HS §73 §144)
+  - CLR-185 (HM §495 §300)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-013
+  title: Depth comes from lightness and one shadow
+  domain: D06
+  tier: Reflex
+  kind: cap
+  check: H
+  remedy: fix-quieter
+  tests:
+  - T-SURFACE-LADDER
+  rule: Get depth from lightness steps and neutral shadows with real offset, tinted from the ink. Use one resting shadow recipe and one for things
+    that float (popovers, dialogs, real screenshots); never a heavy black shadow (rgba(0,0,0) at 0.25 alpha or more). Do not use a shadow to make
+    an ordinary card important. Whether cards carry a shadow at all is the system's choice (conflict C43).
+  values:
+    resting_recipes: 1
+    floating_recipes: 1
+    heavy_black_alpha: 0.25
+  why: Many shadow recipes, or a black blur under every card, make the page look like a kit of stacked tiles with no light source.
+  fix: Collapse shadows to one resting and one floating token tinted from the ink; remove shadows from cards that do not float.
+  sources:
+  - CLR-173 (HM §70 §373)
+  - CLR-175 (HM §76 §488, KM §75)
+  - CLR-176 (HM §498, KM §75)
+  - CLR-179 (KM §75, TS §216 §1485)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-014
+  title: A card has a border or a shadow
+  domain: D06
+  tier: Finish
+  check: H
+  remedy: fix-quieter
+  tests:
+  - T-SURFACE-LADDER
+  rule: Edge a card with a border or with a shadow, not both. Never stack fill, border, radius and shadow on one component. A hairline plus a
+    wide soft shadow on every card in a row is SLP-005's; this card covers single components (conflict C43).
+  why: Two edge treatments on one box double its weight and blur where it ends.
+  fix: Keep the border on flat surfaces and the shadow on floating ones; drop the other.
+  sources:
+  - CLR-178 (HM §74, KM §74 §75)
+  - CLR-177 (HM §76 §378)
+  priority: P3
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CLR-015
+  title: Regions use the lowest rung of the surface ladder
+  domain: D06
+  tier: Reflex
+  check: H
+  remedy: fix-layout
+  tests:
+  - T-SURFACE-LADDER
+  - T-LINE-DELETION
+  rule: 'Separate regions with the lowest rung that works: whitespace, then a 1px hairline, then a tinted well with no border, then a card. Do
+    not put white cards on a tinted page or a bordered box in a well. Use one divider language, and do not rule the top and bottom of every row
+    in a long list. A line exists only to separate regions, encode state or carry data. Cards inside cards are SLP-014''s.'
+  why: Boxes and rules where space would do make every region shout at the same level and bury the content in chrome.
+  fix: Delete the rule or box and restore the pause with spacing; where a group needs more, use a tinted well.
+  sources:
+  - CLR-184 (HM §74 §385)
+  - CLR-186 (HM §74 §375, TS §32 §53 §94)
+  - CLR-187 (KM §73)
+  - CLR-189 (HM §74, TS §29)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CLR-016
+  title: Dark mode is derived
+  not inverted: null
+  domain: D06
+  tier: Reflex
+  kind: context
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-DARK-MODE
+  rule: 'When the artifact is dark or ships a dark theme, derive it by recipe: paper at oklch L 0.12 to 0.18 tinted toward the anchor (not #000
+    unless true OLED), ink at L 0.92 to 0.96 (not #fff), the accent re-derived (chroma down 0.02 to 0.04, lightness up 0.05 to 0.10, hue unchanged),
+    drop shadows replaced by lightness steps or an inset hairline, and color-scheme declared. Never use filter: invert() or flipped light greys,
+    and never invert raster images.'
+  values:
+    paper_l:
+    - 0.12
+    - 0.18
+    ink_l:
+    - 0.92
+    - 0.96
+    accent_chroma_shift:
+    - -0.04
+    - -0.02
+    accent_l_shift:
+    - 0.05
+    - 0.1
+  why: Light-theme values flipped to dark glare, vibrate and lose their depth cues.
+  fix: Give dark its own paper, ink, accent and elevation tokens; remove invert filters.
+  sources:
+  - CLR-150 (HM §71 §299, HS §62, UU §149 §236 §242)
+  - CLR-152 (HM §300 §303, UU §360)
+  - CLR-154 (HM §300 §299)
+  - CLR-158 (HM §302)
+  - CLR-160 (HM §302)
+  - CLR-163 (HM §301, UU §371)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-017
+  title: Elevation gets lighter on dark
+  domain: D06
+  tier: Reflex
+  kind: context
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-DARK-MODE
+  - T-SURFACE-LADDER
+  rule: On a dark ground, raised surfaces (cards, popovers, dialogs, menus) are lighter than the canvas, about 0.03 oklch lightness per level.
+    An elevated surface is never darker than the canvas it sits on.
+  values:
+    step_l: 0.03
+  why: On dark, light is what reads as nearer; a card darker than its page reads as a hole.
+  fix: Step elevated surfaces up in lightness from the canvas.
+  sources:
+  - CLR-153 (HM §300 §302 §76)
+  - CLR-180 (HM §76 §302)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CLR-018
+  title: Glass only on navigation and controls
+  domain: D06
+  tier: Reflex
+  kind: context
+  check: H
+  remedy: fix-quieter
+  waivable_by: brand-system
+  tests:
+  - T-SURFACE-LADDER
+  rule: Do not use glass panels (backdrop blur over translucent near-white or near-black) by default. Where a system style asks for glass, keep
+    it to navigation and controls with a restrained recipe (blur 10 to 20px) and an opaque fallback under prefers-reduced-transparency (conflict
+    C25). Text contrast on glass is A11-001's.
+  values:
+    blur_px:
+    - 10
+    - 20
+  why: Frosted cards over decorative blobs are a generator default, and the text on them changes contrast with whatever scrolls behind.
+  fix: Make content panels opaque; keep glass, if the system wants it, on the nav bar.
+  sources:
+  - CLR-172 (HM §373, UU §359 §367 §448, HS §79, TS §32)
+  priority: P1
+  status: active
+- id: CLR-019
+  title: No gradient text
+  orbs or washes: null
+  domain: D06
+  tier: Reflex
+  check: H
+  remedy: fix-quieter
+  waivable_by: brand-system
+  tests:
+  - T-COLOUR-SOURCE
+  rule: 'Do not clip a gradient to text unless it is a single-hue token ramp (stops within 40 degrees) that still passes contrast. Do not put
+    aurora or mesh blobs behind text, floating blurred orbs (a positioned pseudo-element blurred past 40px), or chromatic halos. Check the renders:
+    orbs drawn by pseudo-elements and images are invisible to the sweep''s gradient and glow detectors (SLP-007, SLP-008), whose hits are cited,
+    not repeated.'
+  values:
+    max_text_gradient_hue_deg: 40
+    orb_blur_px: 40
+  why: Gradient headlines and blurred colour blobs are the stock 'AI product' garnish; they decorate instead of saying anything.
+  fix: Set the headline in ink; replace washes with a flat ground or the client's own image.
+  sources:
+  - CLR-170 (HM §70 §372)
+  - CLR-171 (HM §70 §373, HS §60)
+  priority: P1
+  kind: ban
+  status: active
+- id: CLR-020
+  title: State colours keep their meaning
+  domain: D06
+  tier: Reflex
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  rule: Keep the destructive and error colour for delete and error, and the success and warning colours for their states; never reuse one as the
+    brand accent or decoration. Status shown in red and green needs a second encoding (conflict C05); colour as the only signal is an accessibility
+    finding.
+  why: When the brand red is also the error red, the reader cannot tell an alert from a button.
+  fix: Separate the accent hue from the state hues, or re-derive the state colours away from the accent.
+  sources:
+  - CLR-130 (UU §666)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CLR-021
+  title: The browser's own parts use the palette
+  domain: D06
+  tier: Finish
+  check: H
+  remedy: fix-colorize
+  tests:
+  - T-PALETTE-ROLES
+  rule: 'Theme the parts the page did not draw from the palette: ::selection, caret-color, scrollbar-color, accent-color on native controls, link
+    underlines and the focus ring colour.'
+  why: A default blue selection or checkbox on a warm, chosen palette shows where the system stopped.
+  fix: Set selection, caret, scrollbar and accent-color from the palette tokens.
+  sources:
+  - CLR-206 (HM §72 §414)
+  priority: P3
+  kind: ban
+  waivable_by: brief
+  status: active
 - id: CLR-101
   title: Define colour in OKLCH and derive variants at constant hue
   domain: D06
