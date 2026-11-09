@@ -1,0 +1,74 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:40:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "headings-landmarks",
+    "reflow-375"
+  ],
+  "findings": [
+    {
+      "rule": "A11-005",
+      "tier": "Floor",
+      "where": "entry hero image and related thumbnails, dom-1440",
+      "evidence": "The main project image has alt=\"Page\" and the three related-project thumbnails have alt=\"Medium\" (file-size names, not descriptions). The hero image shows 'this is a teenager by alvin chang' over a purple silhouette.",
+      "before": "<img alt=\"Page\">, <img alt=\"Medium\">",
+      "after": "Hero: alt=\"Title screen of This is a Teenager: a purple teenage silhouette on a dark background\"; thumbnails: alt=\"\" because the project title link follows each one",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: the alt must convey the image's purpose, not its rendition size.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "image links, focus.json stops 13, 24, 26, 28",
+      "evidence": "Four links have empty accessible names: the hero image link to large.jpg, and the thumbnail links to /showcase/5703-gender-and-language, /5888-on-upward-mobility and /482-raw; each thumbnail link is immediately followed by a second link to the same URL with the title.",
+      "before": "<a href=…><img alt=\"Medium\"></a> <a href=…>Gender and language</a>",
+      "after": "Wrap thumbnail and title in one link, or give the image link aria-hidden=\"true\" tabindex=\"-1\"; hero link aria-label=\"View full-size image of This is a Teenager\"",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 4.1.2 Name, Role, Value; duplicate adjacent links double the tab stops.",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "focus.json order, header",
+      "evidence": "Tab goes logo -> main nav (About … Sponsor, y 107) -> back up to the top utility bar (Twitter, Facebook, Register, Sign In, search at y 0-7). Visual order is utility bar first.",
+      "before": "Utility bar after main nav in DOM",
+      "after": "Place the utility bar before the logo in source, or use CSS order only within the same container",
+      "why": "WCAG 2.2 2.4.3 Focus Order and 1.3.2 Meaningful Sequence.",
+      "test": "focus-order"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "categories links, tile 01",
+      "evidence": "Six category links ('Longlist', 'Gold', 'Winners', 'People, Language & Identity', 'Outstanding Studio', 'Shortlist') are separated only by spacing, with no underline or separator; body links are identified by colour weight only (black on white, no underline).",
+      "before": "Adjacent links distinguished by whitespace only",
+      "after": "Render as a list (<ul>) with visible separators and underline links in content areas",
+      "why": "WCAG 2.2 1.4.1 Use of Color and 1.3.1 Info and Relationships.",
+      "test": "use-of-colour"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Reflex",
+      "where": "footer, tile 01",
+      "evidence": "Footer link columns ('About', 'News', 'Email', 'Twitter', 'informationisbeautiful.net') are mid-grey on #50504e charcoal; visibly low contrast in the tile while the left column is white. Sweep lists 15 contrast hits; this region is consistent with them.",
+      "before": "Grey footer links on charcoal",
+      "after": "Use the same near-white as the left footer column (#fff on #50504e is ~8:1)",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum). Sweep hit verified by eye.",
+      "test": "verify-sweep-floor-hits"
+    }
+  ],
+  "strengths": [
+    "Reflows cleanly at 375: vote panel and related projects stack under the entry with no horizontal scroll.",
+    "Primary actions are real links with clear names ('VOTE', 'VIEW ALL PROJECTS')."
+  ],
+  "not_investigated": [
+    "Vote flow and sign-in forms not exercised.",
+    "The two tracking pixels without alt (sweep) are 0px beacons; they should get alt=\"\" but are not user-facing.",
+    "Embedded project content not reviewed."
+  ]
+}

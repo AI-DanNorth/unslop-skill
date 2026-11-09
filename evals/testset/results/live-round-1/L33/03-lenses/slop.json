@@ -1,0 +1,59 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:20:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "This is the reference demo of a human-built design system (Ant Design Pro), dense and internally consistent, with Chinese-market conventions (red-up/green-down, ¥, 周同比/日同比) that a generic agent would not choose; its weakness is that every value is placeholder, which is acceptable for a template demo but would be slop in a shipped product.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "store ranking list and search table, tiles 00-01",
+      "evidence": "Placeholder residue: ranking rows '工专路 0 号店' to '工专路 6 号店' all show the same '323,234'; search keywords are '搜索关键词-0' to '搜索关键词-4'; donut shows '其他: 1,231' and '母婴产品: 1,231'; 'Stores 0' to 'Stores 5' tabs. (Sweep counted the repeated 323,234; the indexed names and 'Stores N' are added here.)",
+      "before": "'工专路 0 号店 … 323,234' ×7, '搜索关键词-0'",
+      "after": "For a demo, realistic distinct sample data with a visible 'Sample data' tag; in any real use, [DATA NEEDED: store names and figures]",
+      "why": "Indexed placeholder names and identical values tell the reader nothing; anyone cloning this template ships them.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-007",
+      "tier": "Finish",
+      "where": "KPI card sparkline '访问量' and '运营活动效果' progress bar",
+      "evidence": "The visits sparkline is a purple-to-transparent area fill (#975FE4-ish) unlike the blue system palette elsewhere, and the 78% progress bar runs a blue-to-green gradient (#108ee9 → #87d068). T-DELETION: the gradient adds no data.",
+      "before": "Purple area sparkline; blue→green gradient bar",
+      "after": "Use the system blue flat for both; reserve green/red for the change indicators",
+      "why": "Two decorative colour moves outside the system palette in an otherwise disciplined dashboard.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Finish",
+      "where": "top KPI row",
+      "evidence": "Four equal cards each repeat their title twice: '总销售额' in the card head and again as the label above '¥ 126,560' (same for 访问量, 支付笔数, 运营活动效果).",
+      "before": "Card head '访问量' + label '访问量'",
+      "after": "Drop the card head or the inner label; keep the info icon with the inner label",
+      "why": "Doubled labels are kit chrome, not information (CPY-006 pattern).",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Locale-specific conventions are deliberate: red ▲ for increase and green ▼ for decrease, ¥ currency, 周同比/日同比 comparisons.",
+    "Information density suits an analyst dashboard: KPI row, sales bar chart with store ranking, search table with sortable columns, category donut, per-store conversion with a brushable time series.",
+    "Consistent component system (radii, spacing, table and tab styles) that is clearly authored, not assembled."
+  ],
+  "not_investigated": [
+    "Interaction states (date range picker, tab switches, brush) not exercised",
+    "Whether the placeholder data is intended: judged as a template demo, which is what the page is"
+  ]
+}

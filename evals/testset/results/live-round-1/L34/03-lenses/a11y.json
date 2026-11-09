@@ -1,0 +1,57 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow-375",
+    "forms-errors",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-175",
+      "tier": "Floor",
+      "where": "article header and body at 375px, tile 375-00",
+      "evidence": "At 375px the right-hand anchor TOC ('Design Principal', 'Types', 'Common Butto...') keeps about 150px of the width, leaving the content column ~170px: 'Edit this page' and 'LLMs.md' wrap one or two characters per line, 'Design Principal' breaks over two lines at h2 size, and the button-type demo shrinks to an unreadable thumbnail.",
+      "before": "Three-pane layout kept at 375px",
+      "after": "@media (max-width: 768px) { .ant-anchor-wrapper { display: none } } or move the TOC into a collapsible 'On this page' disclosure above the content.",
+      "why": "WCAG 2.2 1.4.10 Reflow: at 320 CSS px content must be readable without loss; text wrapped one character per line is effectively lost.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-105",
+      "tier": "Floor",
+      "where": "header and left nav, focus.json",
+      "evidence": "focus.json: 18 header stops (logo, search, nav, four unnamed avatar links, version select, 中/En, RTL, theme buttons) then the full left-nav tree (Introduction ... Contrast and beyond) all precede the article; the 40-stop capture ends inside the left nav without reaching 'Button'. There is no skip link or main landmark target to jump to content.",
+      "before": "No bypass mechanism before ~60 repeated links",
+      "after": "<a class=\"skip-link\" href=\"#main-content\">Skip to content</a> as the first focusable, with id=\"main-content\" on the article.",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "Do / Don't diagrams, 1440 tiles 01-03",
+      "evidence": "The guidance itself lives in the images (e.g. Don't: three blue primary buttons in one group; Do: primary + default + dropdown ordering). The caption text below covers only the verdict, and the images have no alt (sweep), so a screen-reader user gets 'Do / 1. Emphasize on the primary action' without the example it refers to.",
+      "before": "<img class=\"preview-img\" src=\"…A*gPmNQ6…\">",
+      "after": "alt=\"Don't: a button group with three primary (blue) buttons side by side\" — one sentence per diagram describing the arrangement shown.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: these images are instructional content, so alt=\"\" would also fail.",
+      "test": "T-READ-ALOUD"
+    }
+  ],
+  "strengths": [
+    "Do/Don't verdicts are given in text ('Do', 'Don't') as well as by the blue/red rule, so colour is not the only cue (1.4.1 passes).",
+    "Live button demos are real <button> elements with visible labels; heading outline (h1 Button > h2 Types > h3/h4) matches the TOC."
+  ],
+  "not_investigated": [
+    "disputed: fallback_face 'declared AlibabaSans but Alibaba Sans drew the text' is the same family under a different name, not a missing font.",
+    "Keyboard operation of the version select, language toggle and anchor TOC (live session).",
+    "Dark mode and RTL variants."
+  ]
+}

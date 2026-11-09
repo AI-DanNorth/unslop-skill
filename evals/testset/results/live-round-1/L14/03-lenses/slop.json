@@ -1,0 +1,88 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Off-the-shelf neo-brutalist kit (yellow grid ground, hard offset shadows, highlighter word in the h1, sticker starburst, fake window mock, scrolling ticker, three pastel cards) wrapped around copy that says nothing about any product; every heading survives a rival's-name swap.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00",
+      "evidence": "Failed T-RIVAL-NAME and T-FIVE-SECOND: 'YOUR WORK. MINUS THE WORK.' / 'The all-in-one workspace for teams that refuse to play small. Less chaos. More shipping. Zero boring.' is true for Notion, ClickUp, Monday or any tool. After five seconds you cannot say what Lumina does, for whom, or what 'START MAKING MOVES' starts.",
+      "before": "\"YOUR WORK. MINUS THE WORK.\"",
+      "after": "[DATA NEEDED: the one job Lumina does and for whom] as the head; a CTA that names the action ('Start a free workspace').",
+      "why": "Nothing on the first screen belongs to this business; Concept capped at 5.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero right, 1440 tile 00",
+      "evidence": "Failed T-DELETION: the window mock 'YOUR_NEXT_BIG_THING.exe' holds a fake checklist ('Have a big idea / DONE', 'Make a plan / DONE', 'Ship something great / TODAY'), a 'BIG THINGS LOADING 75%' bar, an 'IN THE ZONE' tag, a 'BUILT DIFFERENT.' starburst and a '✦ less grind, more go.' sticker. None of it is the product; removing it loses no information.",
+      "before": "Fake app window with motivational to-dos and a 75% bar",
+      "after": "Show the real product screen, or remove the mock and give the space to one concrete claim.",
+      "why": "A decorative 'dashboard' with fake data is a generated-page tell; the stickers stack three more on top.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-148",
+      "tier": "Reflex",
+      "where": "ticker band and feature cards, 1440 tiles 00-01",
+      "evidence": "T-FRESH-READER: '✦ WORK SMARTER ✦ SHIP LOUDER ✦ BREAK THE MOLD ✦ MAKE BIG MOVES', 'Move ridiculously fast.', 'Keep it all together.', 'Do more. Effortlessly.', 'You know the drill.' Every line fits any site. T-THREE-LINE fails on all three card claims.",
+      "before": "\"Supercharge your workflow and turn big ideas into your next big thing.\"",
+      "after": "[DATA NEEDED: three things the product actually does, each with a fact a reader could check].",
+      "why": "Swagger diction substituted for content is the over-correction habit: the voice is 'bold' but empty.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-01",
+      "evidence": "T-STOCK-ORDER: eyebrow pill hero with mock -> marquee band -> numbered section '01 / THE GOOD STUFF' -> three equal feature cards with icon tiles -> footer. The page is the stock 'hero, 3 features, CTA, footer' template reskinned brutalist; the '01' label has no 02.",
+      "before": "Hero / ticker / 3 cards / footer",
+      "after": "Drop the ticker and the lone '01' label; build the page around one real workflow shown end to end.",
+      "why": "A style swap on the default skeleton is still the default page (T-MIRROR: any 2026 'bold' SaaS brief gets this).",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "features section label, 1440 tile 00 bottom",
+      "evidence": "'01 / THE GOOD STUFF' in tracked mono caps above the h2; there is only one numbered section, and the hero eyebrow 'YOUR UNFAIR ADVANTAGE' uses the same mono caps pill.",
+      "before": "\"01 / THE GOOD STUFF\" and \"YOUR UNFAIR ADVANTAGE\"",
+      "after": "Delete both labels; let the h2 stand.",
+      "why": "Decorative numbering and caps eyebrows are default chrome (the sweep's eyebrow and numbered_labels detectors missed them).",
+      "test": "T-EYEBROW"
+    },
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "nav and hero CTAs",
+      "evidence": "'How it works', 'LET'S GO ↗' and 'START MAKING MOVES ↗' all link to #workspace, which is the decorative window mock; there is no how-it-works section and no sign-up. 'SHOW ME HOW' goes to #features (three cards).",
+      "before": "<a href=\"#workspace\">How it works</a>",
+      "after": "Point CTAs at a real sign-up [DATA NEEDED: URL]; remove 'How it works' until that section exists.",
+      "why": "Calls to action that lead to a picture are template residue and mislead the visitor.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The colour and border system is internally consistent (one black, one shadow offset, four flat fills) and the hero type is set with real confidence at 84px.",
+    "'Because your genius deserves more than seventeen tabs.' is the one line with a picturable image."
+  ],
+  "not_investigated": [
+    "Page footer labels itself an example ('Fictional product · Impeccable design-pattern example'); judged as the artifact shown, not its intent.",
+    "Blocked script /js/detect-antipatterns-browser.js (site overlay tool), recorded in manifest; not part of the design."
+  ]
+}

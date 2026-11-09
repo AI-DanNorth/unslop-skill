@@ -1,0 +1,41 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-121",
+      "tier": "Floor",
+      "where": "#global-ui controls: four .side-button (right edge, 65x65 at x 1345), .dialog-button, ten .emoji-bg cells, .continue-button (174x58 centred)",
+      "evidence": "dom-1440.json lists 17 visible control-shaped elements, all plain <div> with no role, no accessible name, no text and not interactive; focus.json has 0 stops. Nothing on the page can be reached by Tab.",
+      "before": "<div class=\"continue-button\"></div>, <div class=\"side-button\"></div>",
+      "after": "<button type=\"button\" class=\"continue-button\">Continue</button>; side buttons as <button aria-label=\"[DATA NEEDED: what each does, e.g. Map, Sound]\">; emoji cells as a radiogroup or buttons with aria-label per emoji.",
+      "why": "WCAG 2.2 2.1.1 Keyboard and 4.1.2 Name, Role, Value: controls must be focusable and expose a name and role.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-113",
+      "tier": "Floor",
+      "where": "#webgl canvas (full viewport)",
+      "evidence": "The whole experience is a WebGL canvas with no text alternative: body text is empty (dom bodyText ''), no h1, no main (sweep), and the canvas carries no aria-label or fallback content.",
+      "before": "<div id=\"webgl\"><canvas></canvas></div>",
+      "after": "<canvas role=\"img\" aria-label=\"Messenger: a small illustrated planet where you deliver letters\"> plus a visually hidden <h1>Messenger</h1> and a short text description of how to play inside <main>.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content and 1.3.1 Info and Relationships.",
+      "test": "T-READ-ALOUD"
+    }
+  ],
+  "strengths": [
+    "lang is set and the title 'Messenger' names the piece; zoom is not blocked."
+  ],
+  "not_investigated": [
+    "The App3D script was blocked during capture, so in-game UI, dialogs and keyboard handling (which may exist in the canvas layer) could not be checked; the findings rest on the DOM shell that did load.",
+    "Motion (2.2.2) and reduced-motion behaviour of the rotating world; contrast of in-game text (none rendered).",
+    "Reflow at 320px: tile 375-00 shows the canvas scaling; no text to clip."
+  ]
+}

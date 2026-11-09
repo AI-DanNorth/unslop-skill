@@ -1,0 +1,85 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:20:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "motion-and-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "header logo link (first focus stop)",
+      "evidence": "focus.json stop 0: <a href=\"/\"> with empty accessible name; the logo inside has no exposed text in the link name.",
+      "before": "<a href=\"/\"><svg…/></a>",
+      "after": "<a href=\"/\" aria-label=\"Cal.com home\">",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 4.1.2 Name, Role, Value.",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "'Talk to sales' popover, focus.json stops 8-14",
+      "evidence": "After 'Talk to sales', Tab moves into 'Just me', '1-20', '21-200', '201-1000', '1001-2000', '2001+', 'I need help' at y 125-269, a team-size popover that is not open in tile 00. Hidden controls receive focus before 'Sign in' and 'Get started'.",
+      "before": "Closed popover content remains in tab order",
+      "after": "Render the popover only when open, or set inert / hidden on it while closed",
+      "why": "WCAG 2.2 2.4.3 Focus Order and 2.4.7 Focus Visible: focus lands on invisible controls.",
+      "test": "focus-order"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "logo strip case-study links, focus.json stops 21-25",
+      "evidence": "Five links all named 'Case study' (to /customers/deel, /retell-ai, /storyblok, /angellist, /collective).",
+      "before": "<a>Case study</a> x5",
+      "after": "<a aria-label=\"Deel case study\">…</a> or include the company name in the link text",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "section h2s, dom-1440",
+      "evidence": "dom-1440 lists nine visible h2 elements (y 1982, 2883, 4505, 6017 …) whose text content is empty, although tiles show headings like 'Finding a time took a week of emails. Now it's one link.' The words appear to be drawn by animated spans outside the heading's text, so the heading outline may be empty to assistive tech.",
+      "before": "<h2> with animated word spans (empty text at capture)",
+      "after": "Keep the full sentence as real text inside each h2 and animate presentational copies marked aria-hidden",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels. Not verified with a screen reader; flagged from the DOM.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "testimonial avatars and integration icons",
+      "evidence": "Integration hub icons (Google Calendar, Outlook, Zoom, HubSpot, Slack, Zapier) render with alt=\"\" and no adjacent text in the hub graphic (tile 05); names only appear later in the list below.",
+      "before": "Decorative-marked icons carrying the only label in the hub",
+      "after": "Give the hub a figure caption naming the apps, or alt=\"Google Calendar\" etc. on each icon",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: icons that carry meaning need a text alternative.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Reflex",
+      "where": "hero chips and problem-section tabs",
+      "evidence": "Hero photo chip and 'Intro call / Booked' chip swap (animate-hp-swap class); the three problem tabs ('Stop chasing a time over email', 'Send one link…', 'Let them pick the time') appear to auto-advance with a progress tick. No pause control visible.",
+      "before": "Auto-advancing hero chips and tabs",
+      "after": "Pause on hover/focus, provide a pause button, and stop under prefers-reduced-motion",
+      "why": "WCAG 2.2 2.2.2 Pause, Stop, Hide.",
+      "test": "motion-and-timing"
+    }
+  ],
+  "strengths": [
+    "Customer logos carry correct alts ('Deel', 'Vercel', 'PlanetScale').",
+    "Problem tabs are real buttons with a visible 2px focus outline.",
+    "Main landmark present; one h1 with the full sentence."
+  ],
+  "not_investigated": [
+    "Scripts and two fonts were blocked in capture; menus (Products, Use cases) and the FAQ 'Ask anything else' input not exercised live.",
+    "Broken images in capture not assessed for alt beyond what the DOM shows.",
+    "Sweep 'no visible focus' hits on nav buttons look plausible (outline: none) but were not re-checked against crops."
+  ]
+}

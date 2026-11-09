@@ -1,0 +1,38 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A personal long-form essay on a plain WordPress theme, built around the author's real 2004 LinkedIn Series B slides with first-person Context/Advice commentary on each; the copy is specific, dated and falsifiable, and the design makes no attempt at a landing-page look.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-221",
+      "tier": "Finish",
+      "where": "section heads throughout, 1440 tiles 01-11",
+      "evidence": "T-FRESH-READER: the h2s alternate 'Context' / 'Advice' 36 times each, so the outline and any skim read carry no information; which slide or topic a section covers is only in the image.",
+      "before": "\"Context\" / \"Advice\" (×36)",
+      "after": "Name each pair by its slide, e.g. 'Slide 3: Find and contact the people you need — Context'.",
+      "why": "Repeated category labels as heads make a 9,400-word piece hard to navigate; the content is specific but the structure hides it.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "T-RIVAL-NAME passes: 'the deck I used to pitch LinkedIn to Greylock for a Series B investment back in 2004', Friendster/MySpace/Benchmark/Kleiner context, 'We changed some of the text... on slides 9, 12-14, 18, 19, 31, and 36' — none of it is transferable.",
+    "The original 2004 slides (clip-art people network, blue Arial headline) are shown as historical artefacts, not restyled; honesty about 'many stylistic errors' is part of the voice.",
+    "disputed sweep hit: placeholder_residue on 'this is somewhat an empty placeholder' and 'A placeholder slide that says only Appendix' — the word is used in the essay's own advice about decks, not left-over template text."
+  ],
+  "not_investigated": [
+    "Theme-level chrome (WordPress/WPBakery markup) is generic but unobtrusive; not judged as slop because the page's content and purpose are authored.",
+    "Analytics scripts blocked in capture (manifest network) do not affect the render."
+  ]
+}

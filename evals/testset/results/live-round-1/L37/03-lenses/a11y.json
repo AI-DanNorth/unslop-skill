@@ -1,0 +1,56 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:10:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-1.1.1", "link-purpose-2.4.4", "focus-order-2.4.3", "use-of-colour-1.4.1", "non-text-contrast-1.4.11", "reflow-1.4.10", "motion-2.2.2", "headings-landmarks-1.3.1"],
+  "findings": [
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "the email preview image (894x1257 at 1440)",
+      "evidence": "dom-1440.json: alt=\"See you next week.\" (the subject line). The image contains all of the email's information: 'Action packed. WWDC24 June 10–14', 'Watch the keynote. Monday, June 10, at 10:00 a.m. PT. Streaming from Apple Park on apple.com.', 'Add to calendar', the legal footer. A screen-reader user gets only the subject. The 'Text' tab may hold the text version, but the image itself fails.",
+      "before": "<img alt=\"See you next week.\">",
+      "after": "alt=\"Apple WWDC24 email: glowing Apple logo; 'Action packed. WWDC24, June 10–14. Watch the keynote Monday June 10 at 10:00 a.m. PT, streaming from Apple Park on apple.com.' Add to calendar.\" or aria-describedby pointing at the Text tab panel",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: an image of text needs a text alternative carrying the same information.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-171",
+      "tier": "Floor",
+      "where": "inside the email: legal footer and grey body lines (tile 1440-01)",
+      "evidence": "Footer 'TM and © 2024 Apple Inc. ... If you prefer not to receive commercial email from Apple ... click here' is mid-grey at about 12px (rendered smaller in the scaled image) on black; by eye it is under 4.5:1, and the unsubscribe link is 'click here'.",
+      "before": "grey 12px legal text on #000; link text 'click here'",
+      "after": "In the source email: #a1a1a6 or lighter on black and link text 'Unsubscribe from Apple marketing email'",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum) and 2.4.4 Link Purpose (applies to the email itself; in the gallery it is an image).",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-103",
+      "tier": "Reflex",
+      "where": "gallery page structure",
+      "evidence": "Confirms sweep: no <main> and no visible h1; the email's subject 'See you next week.' appears only as a breadcrumb link and a 'Subject:' field, while the first heading is an h3 'Save this email to start commenting' in the sidebar.",
+      "before": "<span>See you next week.</span> in the meta card",
+      "after": "<main> around the preview; <h1>See you next week. (Apple)</h1> as the page heading; make the sidebar heading an h2",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-126",
+      "tier": "Floor",
+      "where": "fixed 'Legal and Privacy info' button bottom right",
+      "evidence": "Tile 1440-00 and 375-00: the fixed pill overlaps the ad at 1440 and the email preview at 375; sweep focus_ring marks several stops as covered by a fixed element.",
+      "before": "position:fixed pill over content",
+      "after": "Put the legal link in the footer flow, or add scroll-padding-bottom equal to its height",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "View switcher uses role=tab on 'Desktop / Code / Text / Info', and a Text view exists as an alternative to the image.",
+    "Related-email thumbnails have alt equal to each email's subject line; the ad image has full alt text."
+  ],
+  "not_investigated": [
+    "the Text and Code tabs were not opened, so whether the text alternative is complete is not verified",
+    "several site scripts were blocked during capture (manifest network.blocked); dropdown menus (summary/details) not exercised",
+    "cookie banner accepted by capture prep; not part of the judgment"
+  ]
+}

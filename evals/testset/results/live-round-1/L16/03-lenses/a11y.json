@@ -1,0 +1,75 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:40:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "headings-landmarks",
+    "reflow-375"
+  ],
+  "findings": [
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "'Reach them' and 'Empty' sections, y 1150-1400 at 1440",
+      "evidence": "dom-1440: h2#h-reach, h2#h-empty, the 'Telegram' link and siblings have opacity 0 after load; focus.json still stops on 'Telegram', 'Text the plant', 'Send follow-up', 'Snooze' (sweep: no visible focus on Telegram). Tile 01 shows an empty band where they sit. Visible only with reduced motion or scripts off (hidden.json).",
+      "before": ".reveal { opacity: 0 } until an observer fires",
+      "after": "Default .reveal to opacity:1; add the hidden start state only inside a class set by JS after IntersectionObserver is attached, and always remove it on focusin",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.3.2: four focusable controls are invisible to sighted keyboard users. Confirms the sweep focus_ring Floor hit.",
+      "test": "verify-sweep-floor-hits"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "Pending feed, 'Copy' button, tile 00",
+      "evidence": "Button accessible name is 'Copy' only; out of context it does not say what is copied (the line 'Ask Harbor for the revised PO before Friday.').",
+      "before": "<button>Copy</button>",
+      "after": "<button aria-describedby=\"pending-email-1\">Copy<span class=\"sr-only\"> email task</span></button>",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context) applied to the control's name; 2.4.6 Labels.",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-010",
+      "tier": "Floor",
+      "where": "Draft reply field, tile 00 (y 842)",
+      "evidence": "focus.json stop 11 is a focusable div (not textarea) containing 'Thanks for the update. Can you send the revised PO by Thursday?'; forms.json is empty, so it is not a form control. The visible label 'Unsent reply to Harbor' is not shown to be tied programmatically.",
+      "before": "<div class=\"draft\" tabindex=\"0\">",
+      "after": "<label for=\"draft-harbor\">Unsent reply to Harbor</label><textarea id=\"draft-harbor\">…</textarea> (or role=\"textbox\" aria-multiline=\"true\" aria-labelledby on the div)",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 1.3.1 Info and Relationships.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "segmented filters and sortable column, tile 00",
+      "evidence": "'7 days' and 'All' are shown selected by white fill and blue text only; the sortable 'Account' header is a link (?sort=name) with a double-chevron icon. Capture cannot confirm aria-pressed or aria-sort.",
+      "before": "Selected segment shown visually only",
+      "after": "aria-pressed=\"true\" on the active segment buttons (or role=radiogroup with aria-checked); aria-sort=\"none|ascending\" on the Account th",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 1.4.1 Use of Color.",
+      "test": "use-of-colour"
+    },
+    {
+      "rule": "A11-004",
+      "tier": "Reflex",
+      "where": "'Powered by Vibe Rooster' badge, 375 tile 00",
+      "evidence": "A fixed badge sits bottom-right over page content at 375 (overlapping the 'Owner: Ada' row region) and at 1440 over the Draft card's right edge.",
+      "before": "Fixed third-party badge over content",
+      "after": "Place it in the footer flow, or add scroll-padding-bottom so focused controls clear it",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "reflow-375"
+    }
+  ],
+  "strengths": [
+    "Skip link is the first focus stop and every stop has a 3px blue outline.",
+    "Status cells do not rely on colour: each pairs an icon and a word ('Blocked', 'Waiting', 'Clear'); change values carry arrows and hidden Up/Down text.",
+    "Table has a caption-style description ('Urgent threads by account, with status, change, tag, and amount')."
+  ],
+  "not_investigated": [
+    "No live keyboard test of the filter pills, the details/summary 'How this note was chosen', or 'Remove filter Owner: Ada'.",
+    "Text spacing (1.4.12) not injected."
+  ]
+}

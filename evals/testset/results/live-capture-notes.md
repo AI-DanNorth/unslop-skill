@@ -44,3 +44,14 @@ No item redirected to another host, and none hit a bot check or login wall.
 | L39 | ok | |
 
 Totals: 35 ok, 1 not verified (L04), 3 with a caveat (L11, L29, L30).
+
+## Capture gaps found during blind review (live round 1)
+
+The fold check missed these; the reviewers found them further down the pages. Each reviewer marked them not verified rather than judging them. They go to the round-1 adjudication.
+
+- **Scroll-reveal sections never painted** (blank bands in the full-page tiles): L10 and L20 (judged from DOM text), L18 tiles 03–07, L28 pinned and WebGL sections, L36 scroll-linked sections, L16 "Reach them / Send follow-up" section (invisible but focusable). Same cause as L30: `settle()` scrolls with instant `scrollTo`, which doesn't trigger these animations. This is a system-level capture limitation; `scrollFrames` (L30) is a per-host workaround, not a fix.
+- **L29:** the site's own `App3D-*.js` request failed (`manifest.network.blocked`), so only the intro planet rendered. Downgraded from caveat to partial.
+- **L21:** lazy-loaded gallery thumbnails never rendered, and the demo video was blocked.
+- **L26:** some scripts and two fonts were blocked; several images show as broken.
+- **L36:** the reviewer reported a cookie banner covering focus stops. Unconfirmed: no banner text appears in `dom-1440.json`, so it may be in an iframe or at another width.
+- **`extract.js`:** a reviewer saw empty heading text for headings that wrap their text in child elements (L05, L10, L25). Not yet checked; it would affect the heading detectors.

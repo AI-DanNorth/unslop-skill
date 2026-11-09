@@ -1,0 +1,89 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:25:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "Product facts are specific (named models, before/after restorations, Character Lab), but the page is assembled from builder defaults: near-black ground with one cyan accent, cyan-to-amber gradient on the accent word of almost every heading, glass cards with icon tiles, glow halos, pill eyebrows and a stock section order ending in logo strip, app band and CTA band.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-193",
+      "tier": "Reflex",
+      "where": "h1 and every section h2 (tiles 1440-00, 1440-03, 1440-05)",
+      "evidence": "The same cyan #12c0e2 to amber #f69e23 gradient clip is applied to one word or phrase of each heading: 'MiniMax H3', 'AI that remembers your universe', 'Ecosystem of studios', 'Cineyx AI Mobile.', 'Start for free', 'Want to go all the way?'. The device repeats on 8 headings, so it no longer marks anything.",
+      "before": "AI that <span class=text-gradient-primary>remembers</span> your universe",
+      "after": "Plain heading colour; keep the gradient (if at all) for the logo or one hero moment",
+      "why": "Accented-word gradient on every heading is the most recognisable AI-landing reflex (SLP-163 gradient text by default).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "dark-single-accent family confirmed by eye: #0b0d13 page, cyan pill buttons with cyan glow (SLP-008 hits), cyan-bordered glass panels with outer glow (tile 1440-03 top, 1440-05 app band), tinted icon tiles. Failed T-MIRROR: any AI video generator (Runway, Pika, Higgsfield) landing page from a builder gets this hero, nav, glass cards and footer.",
+      "before": "Near-black + cyan neon + glass + glow",
+      "after": "Let the cinematic stills carry the page (they are the only owned asset) and drop glow, glass and the second accent; [DATA NEEDED: brand palette]",
+      "why": "The visual system is the dark-neon default for 'AI tool'; nothing in it is chosen for a film studio.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "section order, tiles 1440-00 to 1440-07",
+      "evidence": "T-STOCK-ORDER: carousel hero with pill eyebrow and two CTAs; equal 3-up outcome cards; 3 equal icon-tile feature cards ('Projects & Episodes', 'Relationship Graph', 'Identity Guard'); icon-tile bento ('Ecosystem of studios'); logo strip 'INTEGRATED WITH THE INDUSTRY'S BEST TECHNOLOGIES'; app-download band with QR; CTA band 'Start for free'; second icon-tile grid ('What's inside Cineyx AI?') with an orphan 'Titles & SEO' card; CTA again. 7+ stock sections in stock order.",
+      "before": "hero > cards > icon cards > bento > logo strip > app band > CTA > cards > CTA",
+      "after": "Cut the second module grid (it repeats 'Ecosystem of studios'), and lead with one worked example: a short film made end to end, with its script, character sheet and render",
+      "why": "Specific words on a default skeleton still read as a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "'AI that remembers your universe', 'Ecosystem of studios', 'What's inside Cineyx AI?' (tiles 1440-03, 1440-04, 1440-07)",
+      "evidence": "Every feature card has a cyan line icon in a 48px dark-teal rounded tile above or beside a bold 14-16px title and a muted one-liner; the icons (folder, network, shield, brain, film, palette, megaphone, mic) are generic Lucide glyphs. T-DELETION: removing them loses nothing.",
+      "before": "Icon tile + 'Identity Guard' + 'Faces and styles are locked. No drift between shots.'",
+      "after": "Replace icon tiles with a cropped frame from the product (the character-consistency grid, the relationship graph itself)",
+      "why": "Icon-tile feature cards are filler that replaces evidence.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-210",
+      "tier": "Reflex",
+      "where": "'What you can actually create' sub-line and other copy",
+      "evidence": "T-FRESH-READER lines that fit any site: 'Real outcomes, not abstract features.' (rebuttal frame), 'Everything you need for production — in a modular grid.', 'Forget scattered chats.' Also 'What you can actually create' (virtue word 'actually', SLP-214) and 'Thumbnails that get clicks' / 'Turn any idea into viral content'. 17 dashes on the page (sweep).",
+      "before": "\"Real outcomes, not abstract features. Here's what people make with Cineyx in minutes.\"",
+      "after": "\"Six things people made this week\" with the real outputs, or delete the sub-line",
+      "why": "Rebuttal frames and 'everything you need' read as model copy.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-190",
+      "tier": "Reflex",
+      "where": "hero",
+      "evidence": "Stacked hero accessories above and below the h1: pill 'FEATURED MODEL' with sparkle glyph, red glowing pill 'in 2K', caps tracked tagline 'AI VIDEO & CHARACTER STUDIO — NO EXPERIENCE NEEDED' (squeezed so tight it renders as 'AIVIDEO&CHARACTERSTUDIO' in tile 1440-00), and a gift-emoji pill '🎁 Sign up today: 50 AI Energy + 1 Free Character'. Four badges compete with one headline.",
+      "before": "FEATURED MODEL / in 2K / AI VIDEO & CHARACTER STUDIO — NO EXPERIENCE NEEDED / MiniMax H3 / ... / 🎁 Sign up today",
+      "after": "One line above the h1 at most ('New: MiniMax H3, up to 2K'); move the sign-up offer next to the CTA as plain text",
+      "why": "Pill eyebrows and emoji badges are hero template tells (SLP-151, SLP-173).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-217",
+      "tier": "Reflex",
+      "where": "closing CTA band (tile 1440-05) and 'Ecosystem' card",
+      "evidence": "Unsupported superlatives: 'The world's first full-cycle studio.' and 'The world's top 5 LLMs — Claude Sonnet, DeepSeek, Gemini' (lists three, claims five). T-THREE-LINE: not falsifiable as stated.",
+      "before": "\"The world's first full-cycle studio.\"",
+      "after": "State the cycle concretely: 'Script, characters, shots and sound in one project file' [DATA NEEDED: list of the 5 models]",
+      "why": "Puffery and mismatched counts undercut the specific claims elsewhere.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "Before/after photo restorations and the 6-style character grid are real product output and the strongest evidence on the page; keep them as the lead.",
+    "Feature names are concrete and ownable: 'Character Lab', 'Identity Guard', 'AI Screenwriter reads your project lore before every generation'."
+  ],
+  "not_investigated": [
+    "hero promo videos were blocked in capture (minimax-h3-promo.mp4, seedance-2-5-promo.mp4); the hero still is a poster frame and was not judged",
+    "carousel slides 2-8 not captured",
+    "no 00-contract.md brief; judged without overrides"
+  ]
+}

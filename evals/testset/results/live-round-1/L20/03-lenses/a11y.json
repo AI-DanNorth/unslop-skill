@@ -1,0 +1,67 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:00:00",
+  "tests_run": ["verify-floor-hits", "alt-text", "link-button-purpose", "focus-order", "use-of-colour", "non-text-contrast", "reflow", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "hero sub-line, tile 1440-00",
+      "evidence": "The last line of the sub-line 'they build look designed, not generated.' (about 19px regular, white) sits on the brightest part of the gradient (about #e8611c); white on that orange is roughly 3.2:1. The sweep did not list it, so this needs a pixel check.",
+      "before": "White 19px text over the #ff5b14 band",
+      "after": "End the orange stop lower (below the CTA row) or darken the gradient behind the text block so it stays at or under #a8400f.",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum): body-size text needs 4.5:1 at every gradient stop it crosses.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "App screens dashboard demo and footer wordmark",
+      "evidence": "bodyText shows rolling-digit counters as full 0-9 columns ('Orders 0 1 2 3 4 5 6 7 8 9 0 1 2 ...', 'Revenue € 0 1 2 ...') and the footer wordmark as single letters 'T a s t e S k i l l'; assistive tech reads the digit strips and spelled letters.",
+      "before": "<span>0</span><span>1</span>...<span>9</span> per digit column",
+      "after": "Give each counter <span class=\"sr-only\">1,284</span> and aria-hidden=\"true\" on the digit columns; give the wordmark aria-label=\"Taste Skill\" and aria-hidden on the letters.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships / 1.3.2 Meaningful Sequence. Nearest curated card A11-006.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "Before and after section",
+      "evidence": "The NoteFlow 'before' demo is live markup with its own nav ('Features Pricing About Get started'), buttons and h4s ('Lightning Fast'): the sweep's h2 to h4 jump comes from it, and its text appears twice in bodyText, so a screen reader reads a fake site's nav and headline as page content.",
+      "before": "Inline demo page markup in the document outline",
+      "after": "Wrap the demo in <figure role=\"img\" aria-label=\"Before: a generic purple-gradient note-taking landing page with emoji and three glass cards\"> with inert and aria-hidden on its contents.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels; inert also removes its links from tab order (2.4.3).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "'The draw' drum list, tile 1440-02",
+      "evidence": "Verified sweep hits: the 19 non-current direction names are drawn at 27-32% opacity (1.4-2.1:1). Only one name is shown at full colour; the other directions, which are the section's content, are effectively unreadable and the drum auto-advances ('1 of 20').",
+      "before": "Inactive drum items at opacity 0.3",
+      "after": "Keep a readable list of all 20 (at least 3:1 for 30px text) and add a pause control for the auto-advance.",
+      "why": "WCAG 2.2 1.4.3 Contrast and 2.2.2 Pause, Stop, Hide.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "example switcher 'Coffee shop / Club night / Architects / Contracts', tile 375-00",
+      "evidence": "Rendered as a segmented control with a white selected pill; dom-1440 has four plain <button>s with no recorded selected state, and the sweep found no visible focus indicator on 'Coffee shop'.",
+      "before": "<button>Coffee shop</button>",
+      "after": "role=\"tablist\" with role=\"tab\" aria-selected=\"true\" and aria-controls on each, plus a :focus-visible outline offset from the pill.",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value (selected state) and 2.4.7 Focus Visible.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "GitHub link has a full accessible name: 'Taste Skill on GitHub, 112k stars'.",
+    "Picture credits are real text ('D. Bollinger, Wikimedia CC BY-SA'), not baked into images.",
+    "lang=en, main and footer landmarks, FAQ as real h3 questions."
+  ],
+  "not_investigated": [
+    "disputed: contrast and lexicon hits inside the NoteFlow demo ('Unlock' 3.76:1, '🚀' 3.78:1) belong to an intentional bad example; the fix is to make the demo an image (finding 3), not to fix its colours.",
+    "Much of the 1440 capture is blank (content waits on IntersectionObserver; sweep hidden_content): alt text and the before/after stepper could not be checked visually.",
+    "No live keyboard test of the mobile menu, the tabs or the stepper."
+  ]
+}

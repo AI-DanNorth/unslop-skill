@@ -1,0 +1,99 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A stock SaaS skeleton end to end (dashboard-mock hero, featured-on marquee, numbered problem cards, solution cards, icon-tile feature grid, stat band, values, security cards, FAQ, CTA band, link-farm footer) with an orange gradient-glow hero and a tagline any HR tool could carry; the specific security detail lower down does not rescue the default skeleton.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440px tiles 00-09",
+      "evidence": "Failed T-STOCK-ORDER: hero with fake product dashboard mock -> video -> 'Featured on' logo marquee -> 1-2-3 problem cards -> 3 solution cards -> 6 equal feature cards -> 10 icon-tile 'Enterprise-grade by default' cards -> stat band (27 / 99.9% / Free) -> two-path cards -> values -> 6 security cards -> FAQ accordion -> CTA band -> multi-column link-farm footer. 10+ stock sections in stock order.",
+      "before": "Default SaaS landing sequence with every section in equal-card form",
+      "after": "Cut to the sections only this product needs (e.g. one real walkthrough of a leave request from apply to approval) and let one section carry the page instead of fourteen equal ones",
+      "why": "Specific words on a default skeleton still read as a default page; 7+ stock sections caps the read at generated.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, 1440px tile 00",
+      "evidence": "Failed T-RIVAL-NAME and T-MIRROR: h1 \"Everything your team runs on, in one workspace\" with orange accent words and the tagline \"Connecting Teams. Empowering Work.\" stay true for any HR/ops suite (BambooHR, Rippling, Connecteam). Hero is a peach radial-glow card with a browser-chrome dashboard mock ('Good morning, Otto', 'Acme Studio').",
+      "before": "\"Everything your team runs on, in one workspace\" / \"Connecting Teams. Empowering Work.\"",
+      "after": "A head naming the job only Consile claims (tasks plus attendance plus leave for 2-200 people) in concrete terms, e.g. [DATA NEEDED: the one workflow customers switch for]; drop the quoted slogan line",
+      "why": "The first screen does not belong to this business; the slogan is pure filler set in a quote rule as if it were a testimonial.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Reflex",
+      "where": "hero dashboard mock, 1440px tile 00",
+      "evidence": "Mock uses the default cast \"Acme Studio\" and \"Good morning, Otto\" with round sample numbers (18 tasks, 92%, 35 people); labelled 'PRODUCT PREVIEW · SAMPLE DATA'.",
+      "before": "\"Acme Studio\" workspace, \"Otto\"",
+      "after": "A real screenshot of a seeded workspace with a plausible name, or [DATA NEEDED: real product screenshot]",
+      "why": "Acme and a placeholder first name are the default-agent cast; a hand-coded dashboard mock in a hero is a look-family tell the sweep only partly measures.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Floor",
+      "where": "'Featured on' marquee, tile 02, and badges strip",
+      "evidence": "Social proof is a scrolling wall of launch-directory badges (SaaSHub, Product Hunt, Startup Fame, 'SaasHunt Top 1 Daily Winner', KittyLaunch, Launchstag, LaunchBuff, Boost Domain Rating, Sell With Boost, 'Made with Lovable') plus G2/Capterra tiles labelled \"Peer reviews\" and \"Software marketplace\" with no rating or review count shown.",
+      "before": "Marquee of 20+ directory badges repeated three times",
+      "after": "Show one verifiable proof (an actual G2 rating with count and link) or remove the strip; [DATA NEEDED: real customer or review count]",
+      "why": "Directory listings dressed as press/reviews inflate proof; a 'Peer reviews' tile with no reviews implies evidence that is not shown.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "'Why teams struggle' and 'How Consile solves it' sections, tiles 02-03",
+      "evidence": "Problem cards numbered \"1 Tool Overload / 2 Flying Blind / 3 Manual Busywork\" under pill eyebrows 'The problem' / 'The solution', then three solution cards \"One Platform, Zero Chaos\", \"Real-Time Team Pulse\", \"Workflows That Run Themselves\".",
+      "before": "Problem/solution pill eyebrows with 1-2-3 numbered cards and Title Case slogan heads",
+      "after": "One paragraph naming the actual switch (spreadsheet leave tracker + Trello + Slack) and a screenshot of the replacement; drop the numbers and pill labels",
+      "why": "The problem-agitation-solution triad with numbered equal cards is a default agent structure; numbers imply a sequence that does not exist (SLP-002, SLP-001).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "section heads throughout",
+      "evidence": "Failed T-FRESH-READER: \"Questions, answered\", \"Enterprise-grade by default\", \"Choose your way in\", \"What we believe\" / values 'Better together', 'Speed is a feature', 'Built for the human at the desk' fit any site.",
+      "before": "\"Questions, answered\" / \"What we believe\" / \"Speed is a feature\"",
+      "after": "Heads that state a fact, e.g. \"SSO, SCIM and audit streaming on every plan\" (if true) in place of \"Enterprise-grade by default\"; delete the values list",
+      "why": "Generic heads are the lines a model writes when it has no brief.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Reflex",
+      "where": "brand/about block below values (dom image 'brand-collaboration')",
+      "evidence": "Image alt \"Diverse team of collaborators working together around a shared workspace\": a stock-style collaboration photo standing in for the company.",
+      "before": "Generic collaboration photo",
+      "after": "[DATA NEEDED: photo of the actual team or a real customer workspace] or remove",
+      "why": "Stock people imply a team or customers the page does not show.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The enterprise and security copy is concrete and falsifiable: 'SAML 2.0 with metadata URL/XML', 'signed webhooks with retry & DLQ', 'TLS 1.2+ in transit, AES-256 at rest', 'RLS policies on every table'. Keep these specifics.",
+    "Hero sub-line names a real positioning (projects plus people in one tool, teams of 2-200)."
+  ],
+  "not_investigated": [
+    "No 00-contract.md: no brief overrides or brand facts available; orange accent treated as brand colour, not judged as a tell.",
+    "Blocked image (kittylaunch badge-light.svg) not judged.",
+    "Hero motion orbs and marquee seen only as stills."
+  ]
+}

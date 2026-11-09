@@ -1,0 +1,66 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T16:00:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "motion-and-timing",
+    "headings-landmarks",
+    "reflow-375"
+  ],
+  "findings": [
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "focus.json stops 13-33",
+      "evidence": "From 'Data visualization' onward every focus stop is covered=true (Explore Universal Experiences, Carbon for AI, Carbon MCP, Follow v12 progress, footer links), and the cookie banner's links ('cookie preferences', 'privacy statement', 'here', 'Accept All', 'More options') come last at y ~5145-5220 although the banner overlays the viewport bottom.",
+      "before": "Fixed cookie banner obscures focused links; banner reached only after the footer",
+      "after": "Put the consent dialog first in focus order (or make it a modal with focus moved into it) and add scroll-padding-bottom equal to its height while it is open",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum) and 2.4.3 Focus Order. Sweep focus_ring 'covered' hits verified as consistent.",
+      "test": "verify-sweep-floor-hits"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "cookie banner and hero tiles",
+      "evidence": "A link named only 'here' (#truste_domain_list) and a 'cookie preferences' link with href javascript:void(0) acting as a button. Hero tiles 'Start designing' / 'Start developing' are fine.",
+      "before": "<a href=\"#truste_domain_list\">here</a>; <a href=\"javascript:void(0)\">cookie preferences</a>",
+      "after": "<a href=\"#truste_domain_list\">list of IBM domains</a>; <button type=\"button\">Cookie preferences</button>",
+      "why": "WCAG 2.2 2.4.4 Link Purpose and 4.1.2 Name, Role, Value (third-party consent widget, still the site's responsibility).",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "first focus stop / header",
+      "evidence": "Sweep: first focusable is an unnamed button (the side-nav toggle) rather than a skip link; focus.json then lists the logo link at 0,0 and the header icon buttons 'Search', 'Employee login', 'Switch sites' before the side nav and main content.",
+      "before": "No skip link; unnamed menu toggle first",
+      "after": "Add <a class=\"cds--skip-to-content\" href=\"#main-content\">Skip to main content</a> as first element; aria-label=\"Open menu\" on the toggle",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks and 4.1.2.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Reflex",
+      "where": "scroll-linked sections, tiles 02-07",
+      "evidence": "Sections are revealed by scroll position (blank screens between them in the capture; 76% of text hidden after load). Content that only appears through scroll-driven animation is unavailable when motion or scripts fail.",
+      "before": "Scroll-pinned reveal sections",
+      "after": "Under prefers-reduced-motion: reduce and without JS, render all sections statically in flow",
+      "why": "WCAG 2.2 2.3.3 Animation from Interactions (AAA) and 1.3.2 Meaningful Sequence; robustness of content.",
+      "test": "motion-and-timing"
+    }
+  ],
+  "strengths": [
+    "Visible 2-3px Carbon blue focus outlines on nav and content links.",
+    "Header icon buttons have names ('Search', 'Employee login', 'Switch sites'); main, nav, header and footer landmarks present; lang set.",
+    "Reflow at 375 is clean: hero and path tiles stack, no horizontal scroll."
+  ],
+  "not_investigated": [
+    "Side-nav disclosure buttons and search field not exercised live.",
+    "Hero illustration's text alternative not found in DOM summary; assumed decorative.",
+    "Blocked scripts may cause some empty sections; contrast of unrendered sections not checked."
+  ]
+}

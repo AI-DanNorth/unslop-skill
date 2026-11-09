@@ -1,0 +1,69 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:20:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The skeleton is the familiar SaaS order (logo strip, feature bento, integrations hub, case-study stats, testimonial wall, CTA), but almost every section carries a product-specific demonstration in Cal's own typeface and neutral palette: UI chips set inside the h1, a working booking widget on a desktop mock, a real email-thread problem, attributed named customers; the generic parts are a few headings and the testimonial wall.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page section order",
+      "evidence": "T-STOCK-ORDER counts 8 stock sections in stock order: hero with product mock -> logo strip ('The fastest-growing companies use Cal.com for scheduling') -> 3-step problem/solution tabs -> feature bento ('One calendar for every way people meet.') -> integrations hub -> case-study stat pills -> testimonial wall -> CTA/footer. Each section is executed with specific product content, which is why the read stays 'made' with medium confidence.",
+      "before": "Default SaaS sequence, 1844 words over ~13 screens",
+      "after": "Cut the sections that restate others (the testimonial wall repeats the case studies; the integrations hub repeats the feature bento) so the page ends after the proof",
+      "why": "Specific content on a default sequence still reads partly as template; the length dilutes the strong first three screens.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "section heads, tiles 05, 09-10",
+      "evidence": "Failed T-FRESH-READER on heads: \"All your key tools in sync with your meetings.\", \"Scheduling for absolutely everyone.\", \"See why our users love Cal.com. Read the impact we've had from those who matter most: our customers.\" These fit Calendly or SavvyCal unchanged (T-RIVAL-NAME).",
+      "before": "\"See why our users love Cal.com.\"",
+      "after": "Lead with a quoted fact from a named customer, e.g. the Navi line about health information, as the heading",
+      "why": "Heads that any rival could run are the generic layer on an otherwise specific page.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Reflex",
+      "where": "testimonial wall, tile 10",
+      "evidence": "Masonry of 15+ testimonial cards with avatar circles; several quotes are pure superlative ('Thrilled with this scheduling app—it's a game-changer... seamless scheduling and top-notch customer service', 'One of the best tools for scheduling'); sources are named handles on X, Trustpilot and Product Hunt (real attribution, so not invented).",
+      "before": "Wall of generic praise cards behind 'Show more'",
+      "after": "Keep 3 quotes that state a specific outcome or switch ('made the move... couldn't find how to edit events in the calendly dashboard'); link each to its source post",
+      "why": "A testimonial wall is a look-family tell; the specific, sourced quotes carry it, the superlatives dilute it.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Reflex",
+      "where": "case-study stat pills and problem section, tiles 02 and 08",
+      "evidence": "'Deel spends 35% less time scheduling... and gets back more than 6,000 hours a week'; pills 'From $500M to $1.5B+ ARR', 'From 12s to <2s page loads', '50% more demo efficiency'. Each links to a case study ('Read the story'), but the ARR figure is the customer's growth, not Cal's effect.",
+      "before": "\"From $500M to $1.5B+ ARR\" as a Cal.com result",
+      "after": "State what Cal changed for that customer [DATA NEEDED: the scheduling metric from the Deel case study]",
+      "why": "Borrowed customer growth figures read as an outcome claim; keep the stat that is causally Cal's.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The h1 'Where [photo] people [Intro call 30m ✓ Booked] find [NYC clock] the time to meet' sets live product chips inside the headline: a device no default produces; keep it.",
+    "The problem section shows an actual email thread ('Re: Re: Intro call? Thursday at 10 then?') next to 'Four people, three time zones, eleven emails and still no slot.': picturable and falsifiable.",
+    "Product demo is the real booking page (Rick Astley 'Get Rickrolled' event, Europe/London, 12h/24h) inside a Windows desktop mock: playful and only-Cal.",
+    "Brand typeface (Cal Sans) and restrained neutral palette are consistent and owned."
+  ],
+  "not_investigated": [
+    "Several images render as broken or beige placeholders (avatars, Salesforce and Google Meet icons, case-study video area, events demo): capture blocked scripts and two fonts (manifest network), so these are not judged as design.",
+    "Animated hero chips and tab auto-advance seen as stills only."
+  ]
+}

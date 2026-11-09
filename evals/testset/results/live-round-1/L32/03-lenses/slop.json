@@ -1,0 +1,40 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:50:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "An institutional system used exactly as designed: GDS Transport, GOV.UK blue masthead, plain underlined links, a dated release note, a functional three-way split into Styles / Components / Patterns and copy that names its audience (government service teams) and its job; nothing on the page is decoration.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-221",
+      "tier": "Finish",
+      "where": "lower half section heads (tiles 1440-01 to 1440-03)",
+      "evidence": "T-FRESH-READER: 'Community', 'Support', 'Roadmap', 'Principles we follow' are category labels that fit any design system site. The bodies under them are specific ('maintained by a team at the Government Digital Service'), so the cost is only scannability.",
+      "before": "\"Community\"",
+      "after": "\"Join discussions, events and co-design sessions\" (the task the section offers)",
+      "why": "Category-label heads are the weakest lines on an otherwise task-led page.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "CPY-001",
+      "tier": "Finish",
+      "where": "screen 3 at 1440 ('Principles we follow', 'Community')",
+      "evidence": "172 words on one screen (sweep); 'Principles we follow' and 'Community' are two paragraphs each of link-dense prose that would scan faster as short lists of links.",
+      "before": "Two paragraphs of prose with inline links",
+      "after": "Keep the first sentence; list the three destinations as links",
+      "why": "Dense screen in an otherwise well-paced page.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "First screen answers what / for whom / what to do: 'Design your service using GOV.UK styles, components and patterns', for government service teams, 'Get started'.",
+    "Dated, specific news ('15 October 2026: We've released GOV.UK Frontend v6.6.0 ... improvements to how the Character count component works').",
+    "Owned type (GDS Transport) and colour; the sweep's accent-footprint and 'fake-versions' chrome hits are the brand masthead and a real release number, not slop.",
+    "Illustration is a flat diagram of the system's own parts (checkbox, radio, laptop with service page), not stock art."
+  ],
+  "not_investigated": [
+    "cookie banner was dismissed by capture prep and is not part of the judgment",
+    "no 00-contract.md brief"
+  ]
+}

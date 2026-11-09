@@ -1,0 +1,47 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:00:00",
+  "tests_run": ["verify-floor-hits", "alt-text", "link-button-purpose", "focus-order", "use-of-colour", "non-text-contrast", "reflow", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-009",
+      "tier": "Floor",
+      "where": "Interactions list, 'Mobile input size.' rule, tile 1440-00",
+      "evidence": "The guideline text advises: 'Or set <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\" />', two items above 'Respect zoom. Never disable browser zoom.' The page follows its own advice (sweep zoom_blocked: maximum-scale=1). Readers and agents that apply this document will copy a zoom block.",
+      "before": "\"Or set ... maximum-scale=1\"",
+      "after": "Remove the maximum-scale alternative; keep only 'input font size >= 16px on mobile', and drop maximum-scale=1 from this page's own viewport meta.",
+      "why": "WCAG 2.2 1.4.4 Resize Text: maximum-scale=1 prevents pinch zoom on browsers that honour it; the guidance contradicts its own 'Respect zoom' rule.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "focus ring colour token, every link (dark theme)",
+      "evidence": "focus.json records 'outline: solid 2px rgb(16, 16, 16)' on all 40 stops; the page background is about #0a0a0a, so the ring is near-black on black (focus/00-on.png shows only the logo triangle, no ring). This is the cause behind the sweep's focus_ring hits: the focus token was not switched for the dark theme.",
+      "before": "outline: 2px solid rgb(16,16,16) in dark mode",
+      "after": "In the dark theme set the focus token to a light value, e.g. --ds-focus-color: #52a8ff, with outline-offset: 2px.",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast (3:1 for the indicator).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "section headings 'Interactions', 'Animations', 'Layout' ... and 'Vercel-specific', 'Integrate with Agents', 'Join Vercel'",
+      "evidence": "dom-1440: category heads are h2 at 16px (same size as body bold), while 'Vercel-specific', 'Integrate with Agents' and 'Join Vercel' are extra h1 elements at 24px; the visual and programmatic levels disagree (the sweep counted 4 h1s).",
+      "before": "<h1 id=\"vercel-specific\">",
+      "after": "Make 'Vercel-specific', 'Integrate with Agents' and 'Join Vercel' h2 and the categories under them h3; size headings by level.",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships: heading levels should match the visual outline.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Body links are underlined, so they are distinguishable without colour (1.4.1).",
+    "Grey body text on near-black holds contrast; single main landmark and a logical single-column reading order that focus follows.",
+    "No images that need alt text beyond the logo link 'Vercel Home'."
+  ],
+  "not_investigated": [
+    "dom-1440 records empty text for the h2 elements (#interactions etc.); the visible labels exist, so this is treated as a capture limitation, not a missing name.",
+    "Copy button next to the install command (32x32, classes outline-none) was not focus-tested live.",
+    "The install command is clipped at 1440 ('--skill web-design-guide...'); horizontal scroll inside a code block is allowed under 1.4.10, keyboard scrollability not tested."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A studio's article page on its own Webflow system, carried by real brand work (NimbleFest mood board, lanyards, badges, speaker portraits, the live site with its Ghent date) and a named author; the design reads chosen. What reads default is the prose cadence inside the article and the sales chrome around it (gradient promo bar, 'unlock' CTA band).",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-153",
+      "tier": "Reflex",
+      "where": "article body, 1440 tiles 02-09",
+      "evidence": "Failed T-OVER-CORRECTION: the prose leans on model cadence: 'The question isn't whether this is a trend. It obviously is. The question is why...', 'Let me be direct about something...', 'this isn't a nostalgia movement. This isn't Gen Z wanting... This is something stranger and more deliberate.', 'This isn't random aesthetic preference. It's a coordinated signal about five things:', 'The implication is clear.', 'Not making machines feel warm. Making the organizations...', fragment runs 'Heritage typography. Craft traditions. The texture of film photography. Hand-drawn marks.'",
+      "before": "\"This isn't random aesthetic preference. It's a coordinated signal about five things:\"",
+      "after": "State the claim directly with the author's own evidence: 'In our NimbleFest brief to Ruben, five signals came up:'",
+      "why": "An article arguing against artificial sameness undercuts itself when its sentences use the most recognisable generated rhythms.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-007",
+      "tier": "Reflex",
+      "where": "top promo bar, 1440 tile 00",
+      "evidence": "Full-width cyan-to-blue-to-violet gradient strip reading 'Discovery our cutting-edge AI offering →' (typo 'Discovery' for 'Discover'), directly above an article about rejecting the polished AI look.",
+      "before": "\"Discovery our cutting-edge AI offering →\" on a #2fdbfb→#2442bb→#726fb0 gradient",
+      "after": "'Discover our AI offering →' in the site's black/white button style, or drop the bar on editorial pages.",
+      "why": "The one stock AI-gradient element on the page is also its first pixel row, and carries slop diction ('cutting-edge').",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-148",
+      "tier": "Reflex",
+      "where": "CTA band after the byline, 1440 tile 10",
+      "evidence": "T-FRESH-READER: 'Agentic organizations don't wait, they build.' / 'Start your GenAI Discovery Track and unlock easier, smarter experiences.' fits any AI consultancy; it does not follow from the article's argument.",
+      "before": "\"unlock easier, smarter experiences\"",
+      "after": "Tie the band to the piece: 'Want the NimbleFest brief? Talk to Stef.' with the Discover GenAI Track button.",
+      "why": "Stock CTA copy after a long first-person essay reads as a pasted template block.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "INT-105",
+      "tier": "Finish",
+      "where": "article body, sections 3-4",
+      "evidence": "T-THREE-LINE: figures such as 'Meltwater shows 54% negative response', 'The Human Flourishing Lab found that 77% of Americans...', 'Allianz's brand value grew 20% to $28.2 billion' are attributed to sources but not linked; a reader cannot check them.",
+      "before": "\"Consumer sentiment research from Meltwater shows 54% negative response...\"",
+      "after": "Link each statistic to its source report.",
+      "why": "Unlinked round statistics in an essay about trust read as filler proof.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The NimbleFest mood-board bento is real, specific brand work: 'Bar Bricolage' stickers, a lanyard, a badge for 'Romy Goossenaerts', 'Averia Serif Libre' specimen, a Ghent warehouse photo, polaroids.",
+    "First-person, named, and situated: 'The brief we gave our designer, Ruben...', 'I'm a psychologist by training', clients named (Helan, Attentia, Energie.be).",
+    "The article honestly flags its own risk ('When Humanity Becomes Another Template') and shows the AI image tool used to make the speaker portraits rather than hiding it."
+  ],
+  "not_investigated": [
+    "Sweep look_family 'violet-gradient' rests on the promo bar gradient and scattered radii; the article body itself does not show that family.",
+    "Whether the speaker portraits are generated (the article shows an AI workflow canvas of portrait variations); not judged as fake people because the article discloses the process."
+  ]
+}

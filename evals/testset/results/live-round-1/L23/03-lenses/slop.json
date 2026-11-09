@@ -1,0 +1,60 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:50:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A long statement h1 in two faces, commissioned collage illustrations (scale, compass, nautilus, columns) and real dated model announcements with system-card links; nothing on the page would survive a rival's name, and the warm-paper palette is a long-standing brand system, not a default.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-005",
+      "tier": "Finish",
+      "where": "announcement cards, 1440 tile 01",
+      "evidence": "Three equal cards with identical anatomy: '···' chip, 'Announcements' + date, 'Introducing Claude X 5.5', one-paragraph blurb, 'Model Details' row, 'System Card / View' row, full-width 'Read announcement →' button. The large blank gap between blurb and rows (about 100px in each card) is set by the tallest text, not by content.",
+      "before": "Three identical cards with a dead middle band",
+      "after": "Order the three models by what a visitor chooses on (speed, price, capability) and let card height follow content, or one row per model in a table-like list",
+      "why": "The only stretch of the page that falls back to a uniform card kit; it reads as a component grid rather than a decision aid.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-010",
+      "tier": "Finish",
+      "where": "card category chips",
+      "evidence": "Every card in both rows starts with a grey pill containing only '···' (buttons named 'Related to …'). T-DELETION: the dots tell a sighted reader nothing about what the button does.",
+      "before": "'···' pill before each category label",
+      "after": "A visible word ('Related') or remove the control from the card face",
+      "why": "Ambiguous chrome glyph repeated seven times on the page.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "h1 statement, tile 00",
+      "evidence": "T-FRESH-READER: the lines that could fit another site are 'AI will have a vast impact on the world.' (inside the h1), 'Learn more' (section label), and 'Our mission' (footer). The first half of the h1 ('AI research and products that put safety at the frontier.') is specific; the second sentence is not.",
+      "before": "\"AI will have a vast impact on the world.\"",
+      "after": "Cut the generic sentence; go straight to 'Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks.'",
+      "why": "One generic sentence in an otherwise specific hero; not a slop cluster, a polish point.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Commissioned collage illustrations (scale and dot field, compass rose, nautilus X-ray, columns over graph paper) are unique to the brand; keep them.",
+    "Two-face h1 (bold sans clause flowing into serif sentence) is a distinctive typographic move.",
+    "Proof is real and linked: dated announcements (Oct 7, Sep 28, Sep 22, 2026), system cards, model pages, the Responsible Scaling Policy and Constitution.",
+    "The hero carousel has a visible pause control."
+  ],
+  "not_investigated": [
+    "Hero carousel slides other than the one captured",
+    "Sweep INT-001 hits on '30% less' and '40% less' are disputed: they are product claims tied to linked announcements and system cards, not invented metrics"
+  ]
+}

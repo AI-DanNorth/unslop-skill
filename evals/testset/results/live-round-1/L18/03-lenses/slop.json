@@ -1,0 +1,70 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:35:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page shows its own product instead of describing it: a fan of real theme renders, a draggable before/after comparison of one prompt with issue counts, real install commands and named builds; the editorial-serif look is the product's own subject matter, though a few stock beats (grid-line hero texture, FAQ, closing install band) remain.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "hero background, 1440 tile 00",
+      "evidence": "Faint orange graph-paper grid with vertical guide lines behind the h1 (sweep gradient hits on span.guides--l/--r); the same blueprint-grid hero texture is a common default on dev-tool pages. T-DELETION: removing it loses nothing, the fan of theme renders already carries the hero.",
+      "before": "Grid lines + orange guides behind the headline",
+      "after": "Plain paper behind the h1; let the theme fan be the only image",
+      "why": "One borrowed decoration on an otherwise specific first screen.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Finish",
+      "where": "section order (from dom-1440 text; tiles 03-07 did not render, see not_investigated)",
+      "evidence": "T-STOCK-ORDER: hero, comparison, 'It designs before it codes' four steps (Asks / Deals / Lays out / Checks), theme grid, 'Same theme, different pages', 'Questions' FAQ, 'Made with Hallmark' wheel, dark install footer band. Stock beats present: 4-step how-it-works, FAQ, CTA/install band, footer (4, below the 5 threshold). The comparison and the wheel are not stock.",
+      "before": "Four-step 'how it works' + FAQ + install band",
+      "after": "Fold the four steps into the comparison (show each step on the farm-records example) so the page keeps one argument",
+      "why": "The middle of the page falls back to the standard explainer rhythm after a distinctive opening.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-007",
+      "tier": "Finish",
+      "where": "comparison widget, tile 01",
+      "evidence": "'Without 26 issues' vs 'With Hallmark 0 issues', and the note 'The issue counts come from Hallmark's linter.' The proof is graded by the product's own checker.",
+      "before": "26 issues / 0 issues (self-linted)",
+      "after": "Keep the counts but name what the 26 are on hover, or add an independent measure [DATA NEEDED: third-party or human review result]",
+      "why": "Honest that it is self-measured, which is good, but a 26-to-0 score from your own tool reads as a stat band without a source.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "h1",
+      "evidence": "T-FRESH-READER: the three lines that could fit another site are 'The design skill that ends AI slop.' (category claim any rival skill would make, fails T-RIVAL-NAME), 'One prompt, two pages', 'Questions'. The h1 is the only one in the hero.",
+      "before": "\"The design skill that ends AI slop.\"",
+      "after": "A head only this product can say, e.g. naming the mechanism ('Fifty themes, real photographs, and a linter that checks its own page')",
+      "why": "The headline is the least specific line on a specific page.",
+      "test": "T-RIVAL-NAME"
+    }
+  ],
+  "strengths": [
+    "The hero shows the output: a fanned deal of real theme pages (Fieldbook, Tilly, Relay, Driftsong, Field Office) with a 'Deal again' control; the visual is the product.",
+    "Before/after comparison on one prompt with tabs (Farm records, Bank reconciliation, Webhook API) and a drag divider: falsifiable, picturable, only-this-business.",
+    "Install command in the first screen and a closing table of real commands ('/hallmark redesign <path>', '~/.claude/skills/hallmark').",
+    "Footer credits named people ('Created by Hassan and Youssef') and a real star count."
+  ],
+  "not_investigated": [
+    "Tiles 1440-03 to 07 and 375-04 onward are blank: scroll-reveal sections never painted in the full-page capture (sweep ROB-001: 66% hidden after load). Focus crops (e.g. focus/31-on.png 'Show all 50 themes') show the content renders when scrolled to, so the empty bands are a capture limit and were not judged as design.",
+    "Brand brief: none supplied"
+  ]
+}

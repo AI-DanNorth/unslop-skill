@@ -1,0 +1,69 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:10:00",
+  "tests_run": [
+    "verify sweep Floor hits",
+    "alt text quality (1.1.1)",
+    "link and button purpose (2.4.4, 2.5.3)",
+    "focus order (2.4.3)",
+    "use of colour (1.4.1)",
+    "non-text contrast (1.4.11)",
+    "reflow (1.4.10)",
+    "headings and landmarks (1.3.1, 2.4.6)",
+    "motion (2.2.2)"
+  ],
+  "findings": [
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "hero figure (x 758, y 200, 531x372 at 1440)",
+      "evidence": "dom-1440.json: the hero <svg> is aria-hidden=\"true\"; the <figcaption> reads only 'Example: a Computer Science graduate looking for work in Poland.' The three outcomes drawn in the svg ('Data Analyst 87% match', 'BI Developer 80% match', 'Product Analyst 74% match') are hidden from assistive technology.",
+      "before": "<figure><svg aria-hidden=\"true\">…</svg><figcaption>Example: a Computer Science graduate…</figcaption></figure>",
+      "after": "Add a visually hidden list inside the figure: <ul class=\"sr-only\"><li>Data Analyst, 87% match</li><li>BI Developer, 80% match</li><li>Product Analyst, 74% match</li></ul>, or extend the figcaption",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: the image carries the page's main example and its text equivalent omits it.",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "A11-126",
+      "tier": "Floor",
+      "where": "skip link 'Skip to main content' (focus stop 0)",
+      "evidence": "focus.json stop 0 has covered=true: the skip link appears at y 16 under the sticky header (confirms sweep focus_ring hit). It is the right first stop but is obscured when it shows.",
+      "before": "Skip link positioned under the sticky header",
+      "after": ".skip-link:focus { position: fixed; top: 8px; left: 8px; z-index: 100 } (above the header's z-index)",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Reflex",
+      "where": "header 'About' and 'Legal' buttons",
+      "evidence": "dom-1440.json: 'About' and 'Legal' are <button>s with chevrons (dropdowns) while 'Home' and 'Help / Contact' are links; no aria-expanded is recorded for the dropdown buttons in the capture.",
+      "before": "<button>About ⌄</button>",
+      "after": "<button aria-expanded=\"false\" aria-controls=\"about-menu\">About</button> and toggle aria-expanded on open",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value: disclosure state must be exposed. Not verified live; flagged from the DOM.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-110",
+      "tier": "Floor",
+      "where": "whole page, scripts off",
+      "evidence": "Sweep ROB-001: 100% of text is invisible with JavaScript off; manifest also lists the React, motion and Supabase bundles. Confirms the page is client-rendered only (noted, not repeated as a new sweep hit).",
+      "before": "Client-only render",
+      "after": "Pre-render the marketing page (static HTML) so content exists before hydration",
+      "why": "WCAG 2.2 4.1.2 / robustness: assistive tech and low-power devices that fail to run the bundle get an empty page.",
+      "test": "T-HIDDEN-CONTENT"
+    }
+  ],
+  "strengths": [
+    "Skip link is the first focusable element; main, header, nav and footer landmarks are present.",
+    "Focus order (18 stops) follows the visual order: header, hero buttons, CTA, footer links.",
+    "Icon-only header buttons have names ('Dark mode', 'Sign In', 'Open menu').",
+    "Example card uses figure/figcaption and a <dl> for salary/demand/learn-first pairs."
+  ],
+  "not_investigated": [
+    "Live keyboard check of the About/Legal dropdowns and mobile menu (no Playwright run)",
+    "Dark-mode contrast (only light theme captured)",
+    "Forms: the roadmap form is on /career-setup, not captured",
+    "disputed: none; sweep contrast hit on the footer '© 2026 GradLoom' at 3.46:1 agrees with tile 02"
+  ]
+}

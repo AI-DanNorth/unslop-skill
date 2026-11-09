@@ -1,0 +1,97 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A placeholder SaaS ('Optimus', 'The platform to build/create') on the full stock skeleton: logo-stat marquee, 01-04 capability cards, three steps, global map, live metrics, integrations marquee, compliance badges, SDK tabs, testimonial carousel, three pricing tiers, CTA band; every claim fits any platform and the proof is invented.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "INT-003",
+      "tier": "Floor",
+      "where": "hero stat marquee and testimonial, 1440 tiles 00 and 08",
+      "evidence": "Stats credited to real companies with no source: '20 days saved on builds NETFLIX', '98% faster deployment STRIPE', '300% throughput increase LINEAR', '6x faster to ship NOTION'; testimonial 'Optimus transformed our deployment pipeline...' from 'Sarah Chen, CTO, Meridian Labs' with 'KEY RESULT 10x faster deployments'.",
+      "before": "\"98% faster deployment\" / STRIPE",
+      "after": "[DATA NEEDED: a real customer, a measured result and permission to name them], or remove the marquee and the testimonial",
+      "why": "Attributing invented results to real brands and a stock persona is fabricated proof; the sweep caught the multipliers but not the false attribution to Netflix, Stripe, Linear and Notion.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "Section order from dom-1440: hero + stat band, 'Everything you need.' 4 feature cards, 'Three steps.' I/II/III, 'Global by default.' map, 'Performance you can measure.' live metrics, 'Works with everything you already use.' integration marquee, 'Trust is non-negotiable.' badges, 'Built by devs.' SDK, testimonial carousel, three pricing tiers with MOST POPULAR, 'Ready to build something great?' CTA band, 4-column footer. 9 stock sections in stock order.",
+      "before": "Full stock SaaS skeleton",
+      "after": "[DATA NEEDED: what Optimus actually does and for whom]; build the page around one real workflow demo instead of eleven generic sections.",
+      "why": "7 or more stock sections means the read is generated whatever the copy says.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero and every h2",
+      "evidence": "Rival-name swap holds on every line: 'The platform to build', 'Your toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best experiences.', 'Everything you need. Nothing you don't.', 'Three steps. Infinite possibilities.', 'Trust is non-negotiable.', 'Built by devs. For devs.', 'Ready to build something great?'",
+      "before": "\"Everything you need. Nothing you don't.\"",
+      "after": "[DATA NEEDED: the one job Optimus does better than the alternative]",
+      "why": "Five-second test fails: the hero never says what is built, by whom, or why this platform.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Floor",
+      "where": "Infrastructure and Live metrics sections, tiles 1440-04 and 05",
+      "evidence": "'17 data centers across 6 continents, sub-50ms latency to 99% of the world', '99.99% Uptime SLA', city latencies 'San Francisco 12ms ... Sao Paulo 38ms', a 'Live' clock with counters reading '0 API requests today', '0.99% Uptime this quarter', '0ms Average response time' over a large empty grey panel.",
+      "before": "\"Live metrics\" with a ticking clock and counters",
+      "after": "Remove the 'Live' framing unless the numbers come from a real endpoint; [DATA NEEDED: actual region list and measured latency]",
+      "why": "A fake live dashboard is invented proof dressed as data; the captured '0.99% uptime' shows it is decoration.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "INT-002",
+      "tier": "Reflex",
+      "where": "testimonial and 'Trusted by forward-thinking teams' logo row",
+      "evidence": "Default cast and fake brands: 'Sarah Chen', 'Meridian Labs', 'Vertex Labs', 'Beacon AI'; compliance badges 'SOC 2, ISO 27001, HIPAA, GDPR, CCPA' with no audit link.",
+      "before": "Sarah Chen, CTO, Meridian Labs",
+      "after": "[DATA NEEDED: real customer quote and name], or delete the section",
+      "why": "The model's default persona and invented company names mark the page as unedited output.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "section heads, all tiles",
+      "evidence": "Rule-plus-mono eyebrow on every section ('The platform for modern teams', 'Capabilities', 'Process', 'Infrastructure', 'Live metrics', 'Integrations', 'Security', 'For developers', 'WHAT PEOPLE SAY 01 / 04'), with a two-tone h2 (black line + grey line) under each; plus the hairline-newspaper family the sweep found.",
+      "before": "—— Capabilities / Everything you need. / Nothing you don't.",
+      "after": "Drop the eyebrows and the grey second line; one plain heading that says what the section shows.",
+      "why": "The same eyebrow + split heading recipe on nine sections is a template cadence, not a hierarchy.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "hero background, tile 1440-00",
+      "evidence": "Large swirling particle-glyph sphere behind the hero copy, overlapping the h1 and CTAs; it shows nothing about the product.",
+      "before": "Decorative glyph sphere",
+      "after": "Remove it, or show the product itself in that space.",
+      "why": "Deletion test: removing it loses no information and improves the hero's legibility.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "pricing, tile 1440-10",
+      "evidence": "Mono '01', '02', '03' above Starter / Pro / Enterprise, 'MOST POPULAR' tab, 'Save 17%' chip, 'No hidden fees, no surprises.'",
+      "before": "01 Starter / 02 Pro / 03 Enterprise",
+      "after": "Remove the numbers; tiers are not a sequence.",
+      "why": "Numbering pricing tiers is decorative chrome; the three-tier block with a highlighted middle is the stock pricing pattern.",
+      "test": "T-STOCK-ORDER"
+    }
+  ],
+  "strengths": [
+    "Type is set with some care (large light grotesk h1, restrained black and off-white palette); a real product could keep the palette and scale."
+  ],
+  "not_investigated": [
+    "Several sections render as empty bands in the capture (dead_band / hidden_content in the sweep): judged on DOM text where tiles were blank.",
+    "One script chunk was blocked (manifest network); some animated content may be missing for that reason, not by design."
+  ]
+}

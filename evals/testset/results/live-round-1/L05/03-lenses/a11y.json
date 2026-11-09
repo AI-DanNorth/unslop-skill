@@ -1,0 +1,68 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:00:00",
+  "tests_run": ["verify-floor-hits", "alt-text", "link-button-purpose", "focus-order", "use-of-colour", "non-text-contrast", "reflow", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "THE DIRECTORY tool cards, 1440 tile 03",
+      "evidence": "Six buttons whose accessible name is only 'Compare' (dom-1440 buttons after h3 Claude, Perplexity, NotebookLM, ElevenLabs, Lovable, Gamma); a screen-reader button list gives six identical 'Compare' entries.",
+      "before": "<button>+ Compare</button>",
+      "after": "<button aria-label=\"Add Claude to compare\">+ Compare</button> (keep the visible word 'Compare' at the start of the name for 2.5.3)",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels / 4.1.2 Name, Role, Value: identical names for different actions; the out-of-context purpose is unknown. Nearest curated card A11-006.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "header menu button (375) and CTA band button",
+      "evidence": "dom-1440 lists two <button> elements with empty text (first and last buttons on the page); the sweep's control_names did not flag them, so they may carry aria-label, which the DOM capture does not record.",
+      "before": "<button><svg/></button>",
+      "after": "<button aria-label=\"Open menu\" aria-expanded=\"false\">",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value. Needs a check of the attribute; listed so synthesize can confirm.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "fixed 'Edit with Base44' badge, bottom right at all widths",
+      "evidence": "focus.json marks 5 stops covered ('Build a website', 'Build a SaaS product', 'Browse all tools', Gamma card, a 'Compare' button); all sit in the bottom-right zone where the fixed badge is drawn in tiles 1440-00 and 375-00. Verifies the sweep's focus_ring hits as real.",
+      "before": "Fixed badge overlapping content with no scroll-padding",
+      "after": "Remove the badge in production, or add html { scroll-padding-bottom: 72px } so focused items scroll clear of it.",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "persona stack cards, 1440 tile 02",
+      "evidence": "Tool roles truncate with an ellipsis: 'Research SEO and compet...' in two cards; the full text is cut at 1440px with no way to reveal it.",
+      "before": "text-overflow: ellipsis on the tool role line",
+      "after": "Let the role wrap to two lines (remove white-space: nowrap / truncate class).",
+      "why": "WCAG 2.2 1.4.10 Reflow / 1.3.1: content is lost visually at a standard desktop width; nearest curated card is A11-001 (no curated truncation card).",
+      "test": "T-STRESS"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "hero h1",
+      "evidence": "dom-1440 records the h1 text as 'Tell us the goal.' only; the grey second line 'We'll build the stack.' appears to be outside the heading, so the h1 announces half the promise.",
+      "before": "<h1>Tell us the goal.</h1><span>We'll build the stack.</span>",
+      "after": "<h1>Tell us the goal. <span class=\"muted\">We'll build the stack.</span></h1>",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships, 2.4.6 Headings and Labels. Confidence low: the capture may only store the first text node.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Visible rounded focus ring on nav links (focus/01-on.png).",
+    "Landmarks present: header, nav, main, footer; lang=en; heading outline h1 > h2 > h3 is logical.",
+    "No content images; monograms are text, so no missing alt."
+  ],
+  "not_investigated": [
+    "disputed: A11-001 contrast 1.15:1 on 'Build a SaaS product' (text #171412 over a #000000 sample) is most likely the fixed black Base44 badge sampled behind the card; the card itself is white.",
+    "Keyboard operation of the mobile menu and the /find question flow: no live keyboard test run.",
+    "Forms and error handling: no forms on the home page (forms.json).",
+    "Text spacing override (1.4.12) not injected."
+  ]
+}

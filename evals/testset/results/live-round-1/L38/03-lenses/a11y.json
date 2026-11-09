@@ -1,0 +1,56 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:35:00",
+  "tests_run": [
+    "verify sweep Floor hits",
+    "alt text quality (1.1.1)",
+    "link and button purpose (2.4.4, 2.5.3)",
+    "focus order (2.4.3)",
+    "use of colour (1.4.1)",
+    "non-text contrast (1.4.11)",
+    "reflow (1.4.10)",
+    "headings and landmarks (1.3.1, 2.4.6)"
+  ],
+  "findings": [
+    {
+      "rule": "A11-110",
+      "tier": "Floor",
+      "where": "email preview (img at x 75, y 312, 894x3868)",
+      "evidence": "dom-1440.json: the entire email is one <img>; none of its text ('You're Going to Love It Here', body copy, CTAs, legal text) is in the page text. A separate 'Text' tab exists in the toolbar, but the default 'Desktop' view gives screen-reader users only the image's alt (value not recorded in capture).",
+      "before": "<img src=\"…email-full.png\">",
+      "after": "Render the email HTML in an <iframe title=\"Email: Welcome to Apple Arcade\"> by default, or give the image alt=\"\" with an adjacent link 'Read the email as text' pointing to the Text tab",
+      "why": "WCAG 2.2 1.4.5 Images of Text and 1.1.1 Non-text Content: a 3,868px image of text cannot be described by alt text alone.",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "A11-001",
+      "tier": "Floor",
+      "where": "inside the email: footer legal text, tile 04",
+      "evidence": "Legal lines ('Apple Arcade requires a subscription…', 'All rights reserved. Copyright © 2019 Apple Inc.…') are light grey at about 11px on #f2f2f2 in the image; visually well under 4.5:1. The sweep cannot measure text inside the image.",
+      "before": "Light grey ~#999 small legal text on light grey",
+      "after": "Legal text at least #6e6e73 on #f2f2f2 (about 4.6:1) and 12px minimum",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); estimated from pixels, not measured.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Reflex",
+      "where": "related-email grid 'You might also like'",
+      "evidence": "dom-1440 text: each of the 8 cards has a 'Save Email' control; out of context a links/buttons list reads 'Save Email' ×8 with no email named.",
+      "before": "<button>Save Email</button>",
+      "after": "<button aria-label=\"Save email: Your next trip supports free emergency housing\">Save Email</button>",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels / 2.4.9 Link Purpose (Link Only, AAA); 4.1.2 for button names that repeat.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "A 'Text' view of the email is offered in the toolbar (Desktop / Code / Text / Info).",
+    "Breadcrumb is in a <nav> with an ordered list.",
+    "lang='en' and a descriptive title are set."
+  ],
+  "not_investigated": [
+    "Alt value of the email image (not recorded in the DOM capture; sweep img_alt did not flag it)",
+    "Live keyboard behaviour of the 'Find inspiration' / 'Create emails' <details> menus and the Ctrl K search",
+    "Sweep Floor hits (focus covered by sticky header, missing main/h1, breadcrumb contrast 3.95:1) agree with tile 00"
+  ]
+}

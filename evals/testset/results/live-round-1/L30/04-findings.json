@@ -1,0 +1,251 @@
+{
+ "verdict_draft": "fix",
+ "open_floor": 3,
+ "findings": [
+  {
+   "rule": "A11-003",
+   "tier": "Floor",
+   "where": "a \"Voice & Tone\"",
+   "evidence": "no visible focus indicator (outline: auto 1px rgb(16, 16, 16))",
+   "after": "Add :focus-visible { outline: 2px solid; outline-offset: 2px } in a colour at 3:1 against the ground.",
+   "source": "sweep",
+   "detector": "focus_ring",
+   "title": "Visible focus everywhere",
+   "remedy": "fix-a11y",
+   "fix": "Use :focus-visible with a 2px ring offset 2px in a contrasting colour.",
+   "priority": "P0",
+   "dimension": "Accessibility",
+   "quality": 0.88,
+   "instances": 7,
+   "also": [
+    "a \"Logo\"",
+    "a \"Typography\"",
+    "a \"Color\"",
+    "a \"Imagery\"",
+    "a \"Motion\"",
+    "a \"Motion\""
+   ]
+  },
+  {
+   "rule": "A11-001",
+   "tier": "Floor",
+   "where": "button.tile-menu-tile.nav-button > div.nav-button-content:nth-of-type(3) > div.nav-button-title-container:nth-of-type(1) > h3.nav-button-title.nav-button-title-1:nth-of-type(1)  \"At Dropbox, our Brand Guidelines help us infuse ev\"",
+   "evidence": "1.21:1 against the background behind the text (10th-percentile pixel #f7faff, worst 1.21:1; text #0061fe, opacity 0.13, 24px; needs 3.0:1). APCA Lc 10 (advisory)",
+   "width": 375,
+   "value": 1.21,
+   "source": "sweep",
+   "detector": "contrast",
+   "title": "Text contrast on real pixels",
+   "remedy": "fix-a11y",
+   "fix": "Darken text or lighten ground; never thin weights on tinted ground.",
+   "priority": "P0",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 4,
+   "also": [
+    "a.tile.imagery > div.tile-title:nth-of-type(1)  \"Imagery\"",
+    "button.tile-menu-tile.nav-button > div.nav-button-content:nth-of-type(3) > div.nav-button-title-container:nth-of-type(1) > h3.nav-button-title.nav-button-title-1:nth-of-type(1)  \"At Dropbox, our Brand Guidelines help us infuse ev\"",
+    "button.tile-menu-tile.nav-button > div.nav-button-content:nth-of-type(3) > div.nav-button-title-container:nth-of-type(1) > h3.nav-button-title.nav-button-title-1:nth-of-type(1)  \"At Dropbox, our Brand Guidelines help us infuse ev\""
+   ]
+  },
+  {
+   "rule": "A11-011",
+   "tier": "Floor",
+   "where": "button.tile-menu-tile.nav-button > div.home-logo-container.w-embed:nth-of-type(4) > svg.home-logo > path",
+   "evidence": "page animates (keyframes or transform transitions) but has no prefers-reduced-motion rule",
+   "source": "sweep",
+   "detector": "reduced_motion",
+   "title": "Reduced motion respected",
+   "remedy": "fix-motion",
+   "fix": "Wrap movement in @media (prefers-reduced-motion: no-preference) or add a reduce override.",
+   "priority": "P0",
+   "dimension": "Accessibility",
+   "quality": 0.88,
+   "instances": 2,
+   "also": [
+    "intro sequence, tiles 1440-00 / 01 and 375-00"
+   ]
+  },
+  {
+   "rule": "MOT-001",
+   "tier": "Reflex",
+   "where": "#nav-button",
+   "evidence": "1 elements transition \"all\" (0.6s): every property change animates, including layout",
+   "value": 1,
+   "after": "List the properties: transition: transform 160ms, opacity 160ms",
+   "source": "sweep",
+   "detector": "motion_css",
+   "title": "Motion CSS hygiene",
+   "remedy": "fix-motion",
+   "fix": "List properties; use transform; one non-overshoot curve.",
+   "priority": "P1",
+   "dimension": "Craft",
+   "quality": 1.0,
+   "instances": 5,
+   "also": [
+    ".nav-container.animating-in .home-logo-container",
+    ".tile.strategy .bezier-point",
+    ".tile.motion .bezier-tangent",
+    ".nav-container.close .nav-tile.enlarge .tile-title"
+   ]
+  },
+  {
+   "rule": "A11-004",
+   "tier": "Reflex",
+   "where": "div.outro-info:nth-of-type(3) > div.outro-links:nth-of-type(2) > a.outro-link.w-inline-block:nth-of-type(1)",
+   "evidence": "touch target 163x20px at 375px (min 44px)",
+   "width": 375,
+   "source": "sweep",
+   "detector": "targets",
+   "title": "Target size",
+   "remedy": "fix-a11y",
+   "fix": "Enlarge the hit area with padding or a pseudo-element.",
+   "priority": "P1",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 4,
+   "also": [
+    "div.outro-info:nth-of-type(3) > div.outro-links:nth-of-type(2) > a.outro-link.w-inline-block:nth-of-type(2)",
+    "div.nav-container.animating-in:nth-of-type(2) > aside.outro-page > div.outro-wrapper:nth-of-type(1) > div.outro-credits:nth-of-type(4) > a.annotation.credit-link:nth-of-type(1)  \"Dropbox Brand Studio\"",
+    "div.nav-container.animating-in:nth-of-type(2) > aside.outro-page > div.outro-wrapper:nth-of-type(1) > div.outro-credits:nth-of-type(4) > a.annotation.credit-link:nth-of-type(2)  \"Daybreak Studio\""
+   ]
+  },
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "page",
+   "evidence": "0 visible h1 elements (expected 1)",
+   "value": 0,
+   "source": "sweep",
+   "detector": "headings_landmarks",
+   "title": "Headings and landmarks",
+   "remedy": "fix-a11y",
+   "fix": "Fix levels in markup and size with CSS.",
+   "priority": "P1",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 4,
+   "also": [
+    "page",
+    "page",
+    "whole page outline"
+   ]
+  },
+  {
+   "rule": "LAY-004",
+   "tier": "Reflex",
+   "where": "y 228-569 at 1280px",
+   "evidence": "341px empty band",
+   "width": 1280,
+   "value": 341,
+   "source": "sweep",
+   "detector": "dead_band",
+   "title": "No dead bands",
+   "remedy": "fix-layout",
+   "fix": "Remove the empty band or fill it with content that earns the space.",
+   "priority": "P1",
+   "dimension": "Hierarchy",
+   "quality": 1.0,
+   "instances": 2,
+   "also": [
+    "y 246-667 at 1440px"
+   ]
+  },
+  {
+   "rule": "A11-005",
+   "tier": "Reflex",
+   "where": "credits line",
+   "evidence": "bodyText reads 'Dropbox Brand Studio 🤝 Daybreak Studio': the emoji between the two credit links is announced as 'handshake'.",
+   "before": "🤝",
+   "after": "<span aria-hidden=\"true\">🤝</span><span class=\"sr-only\">with</span>",
+   "why": "WCAG 2.2 1.1.1 Non-text Content: a decorative glyph needs to be hidden or given a meaningful text equivalent.",
+   "test": "T-FRESH-READER",
+   "source": "a11y",
+   "title": "Images have text alternatives",
+   "remedy": "fix-a11y",
+   "fix": "Write what the image tells the reader, or alt=\"\" if it tells nothing.",
+   "priority": "P1",
+   "dimension": "Accessibility",
+   "quality": 0.75,
+   "instances": 1
+  },
+  {
+   "rule": "A11-003",
+   "tier": "Reflex",
+   "where": "a \"Logo\"",
+   "evidence": "focus indicator visible but faint: 1.79:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+   "value": 1.79,
+   "priority": "P2",
+   "source": "sweep",
+   "detector": "focus_ring",
+   "title": "Visible focus everywhere",
+   "remedy": "fix-a11y",
+   "fix": "Use :focus-visible with a 2px ring offset 2px in a contrasting colour.",
+   "dimension": "Accessibility",
+   "quality": 0.88,
+   "instances": 1
+  },
+  {
+   "rule": "CPY-005",
+   "tier": "Finish",
+   "where": "div.outro-paragraphs:nth-of-type(1) > p.p:nth-of-type(1)  \"These guidelines are meant to help you create thin\"",
+   "evidence": "\"ecosystem\" (buzzwords/dead-metaphors, context)",
+   "value": "ecosystem",
+   "lexicon": "buzzwords/dead-metaphors",
+   "source": "sweep",
+   "detector": "lexicon_copy",
+   "title": "No slop diction",
+   "remedy": "fix-copy",
+   "fix": "Replace with a specific claim only this business can make, or delete.",
+   "priority": "P3",
+   "dimension": "Craft",
+   "quality": 1.0,
+   "instances": 2,
+   "also": [
+    "intro statements and closing copy, tiles 1440-00 and 1440-01"
+   ]
+  },
+  {
+   "rule": "A11-002",
+   "tier": "Finish",
+   "where": "div.outro-paragraphs:nth-of-type(1) > p.p:nth-of-type(1)  \"These guidelines are meant to help you create thin\"",
+   "evidence": "193-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+   "value": 14.0,
+   "priority": "P3",
+   "source": "sweep",
+   "detector": "text_floor",
+   "title": "Text size floors",
+   "remedy": "fix-typeset",
+   "fix": "Raise to the floor; cut words rather than shrink.",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 2,
+   "also": [
+    "div.outro-paragraphs:nth-of-type(1) > p.p:nth-of-type(2)  \"All of this information is a toolkit. Go use it to\""
+   ]
+  }
+ ],
+ "dropped_below_quality_floor": 0,
+ "not_investigated": [
+  "flat_hierarchy (TYP-001): skipped: only 2 type roles",
+  "fake_send (INT-004): skipped: no forms",
+  "distinctness (SLP-011): skipped: no ledger yet (skills/ledger records deliveries)",
+  "redesign_loss (PRC-002): skipped: redesign workflow only (no baseline_run in run.json)",
+  "capture: 1 other request(s) blocked, e.g. script https://www.dropbox.com/pithos/privacy_consent",
+  "a11y: disputed: A11-001 contrast 1.76:1 on 'Imagery' sampled a white #ffffff background; the title sits on the maroon tile, where pink #ffafa5 is about 5:1. Likely the white gutter between tiles.",
+  "a11y: Sweep focus_ring hits (no visible indicator on 'Voice & Tone', 'Typography'; 'Logo', 'Color', 'Imagery', 'Motion' covered by a fixed element) were not re-verified in focus crops.",
+  "a11y: Capture used 3 scroll frames (manifest prep); motion between frames not seen. No main landmark (sweep) not repeated.",
+  "slop: The page is a scroll-driven sequence; the capture used 3 scroll frames as tiles (manifest prep), so in-between motion states were not seen.",
+  "slop: Content of the eight sub-pages (Framework, Logo, Color, ...) not captured."
+ ],
+ "scores_mechanical": {
+  "Concept": null,
+  "Hierarchy": null,
+  "Craft": null,
+  "Accessibility": 1,
+  "Usability": null,
+  "Integrity": 10,
+  "Distinctiveness": null
+ },
+ "profile": "balanced"
+}

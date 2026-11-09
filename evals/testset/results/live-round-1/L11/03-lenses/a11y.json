@@ -1,0 +1,84 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:20:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "motion-and-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "hero action row, 1440 tile 00",
+      "evidence": "The cover carousel is painted over the 'PLAY' and 'ADD TO CART — $0.49' buttons (only a sliver of PLAY shows at x 64-170); focus.json marks every focus stop as covered=true, consistent with the full-screen overlay layers.",
+      "before": "Carousel and overlay layers on top of focusable actions",
+      "after": "Move the carousel out of the action row's box and remove pointer/visual overlap; ensure no fixed layer sits above focusable controls (z-index audit)",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum): the focused PLAY button is hidden by author content.",
+      "test": "verify-sweep-floor-hits"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Floor",
+      "where": "focus.json order",
+      "evidence": "Tab order: search -> header buttons -> footer links 'TOS/EULA', 'Privacy', 'Upload a Game' (y 868) -> 'Enter Fullscreen' (y 16) -> Like / Follow / PLAY (y 540-600) -> FILTER dock. Focus jumps bottom-to-top before reaching the main action.",
+      "before": "Footer links and fullscreen button precede main content in DOM order",
+      "after": "Reorder DOM so header -> game info and actions -> carousel -> footer; put 'Enter Fullscreen' in the header group",
+      "why": "WCAG 2.2 2.4.3 Focus Order and 1.3.2 Meaningful Sequence.",
+      "test": "focus-order"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "full-bleed background scene and theme audio",
+      "evidence": "Background is an animated game scene (transition-all 1s layers) and the page requests 'ps5_theme_*.mp3' (manifest network). A speaker icon button (x 1230) has no accessible name (sweep). No visible pause for the motion.",
+      "before": "Auto background motion and theme audio, unnamed mute toggle",
+      "after": "Do not autoplay audio; give the toggle aria-label=\"Mute music\" with aria-pressed; add a pause for the background and honour prefers-reduced-motion",
+      "why": "WCAG 2.2 1.4.2 Audio Control and 2.2.2 Pause, Stop, Hide.",
+      "test": "motion-and-timing"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "game covers (dom-1440 img)",
+      "evidence": "Cover alts are the title in caps ('XONOTIC', 'DARK', 'BLACK JACK') and the hero logo is also alt 'XONOTIC' next to the same title; the ESRB plate alt 'ESRB Teen' omits the 'Violence' descriptor shown beside it (that text is present, so acceptable).",
+      "before": "alt=\"XONOTIC\" on both logo and cover",
+      "after": "Logo: alt=\"Xonotic\" once (h1); covers: alt=\"\" when the card also has a visible or labelled title, otherwise alt=\"Xonotic cover\"",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: all-caps alt is read letter-by-letter by some screen readers and duplicates adjacent text.",
+      "test": "alt-text-quality"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "game title",
+      "evidence": "The game name exists only as the logo image; sweep finds 0 visible h1. The carousel's 'FEATURED GAMES' / 'RETRO GAMES' row labels are not headings in the capture.",
+      "before": "No h1; title only as image",
+      "after": "<h1><img src=\"xonotic-logo.svg\" alt=\"Xonotic\"></h1> and h2 for each carousel row",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-004",
+      "tier": "Floor",
+      "where": "carousel selection state",
+      "evidence": "The selected cover is shown only by a cyan glow ring (1440 tile 00) with no text or aria-current; 'NEW GAME' vs 'COMING SOON' are distinguished by yellow vs teal badge colour as well as text (text present, fine).",
+      "before": "Selected card indicated by colour ring only",
+      "after": "aria-current=\"true\" (or aria-selected in a listbox) on the selected cover and a non-colour cue such as scale plus outline thickness",
+      "why": "WCAG 2.2 1.4.1 Use of Color and 4.1.2 Name, Role, Value for the selection state.",
+      "test": "use-of-colour"
+    }
+  ],
+  "strengths": [
+    "Every game cover has a non-empty alt naming the game.",
+    "Keyboard legend on screen (arrows, Space, gamepad) shows the app was meant to be keyboard driven."
+  ],
+  "not_investigated": [
+    "No live keyboard run: arrow-key carousel, filter dock and Escape behaviour unverified.",
+    "Fonts (Exo 2) blocked; contrast of fallback rendering only.",
+    "Contrast hits on '1 subscribers' and gradient cart button not disputed; they look real in the tile."
+  ]
+}

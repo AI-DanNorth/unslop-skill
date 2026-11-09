@@ -1,0 +1,39 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The page is carried by the real product: a working-looking issue view with specific content (DRV-8852 'Faster app launch', 'Render UI before vehicle_state sync', the Slack thread that becomes issues, a triage board), in a consistent, deliberate dark brand; the generic lines are confined to a few headings.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero sub-line, logo strip caption, statement h2, closing CTA",
+      "evidence": "Fresh-reader lines that fit any AI-era SaaS: 'Purpose-built for planning and building products. Designed for the AI era.', 'POWERING THE COMPANIES BUILDING THE FUTURE', 'Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.', 'Built for the future. Available today.'",
+      "before": "\"Built for the future. Available today.\"",
+      "after": "Close on something only Linear can say, in the register of the mock: what a team stops doing once issues come from Slack threads and agents open the PRs.",
+      "why": "Rival-name swap: these four lines stay true for any product-tool competitor; they are the weakest text on an otherwise specific page.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Finish",
+      "where": "below the hero mock, tile 1440-01",
+      "evidence": "Seven-logo strip (OpenAI, Vercel, Salesforce, Figma, Cursor, Coinbase, Ramp) with a mono caps caption, then a large two-tone statement paragraph; the closing is a centred CTA band and a six-column link footer.",
+      "before": "Logo strip > statement > ... > CTA band > link footer",
+      "after": "Keep the logos (they are real customers) but drop the mono caps caption; let the logos link to their case studies.",
+      "why": "Only 3 stock sections (logo strip, CTA band, link footer) around product-led sections; below the 5 threshold, recorded as polish.",
+      "test": "T-STOCK-ORDER"
+    }
+  ],
+  "strengths": [
+    "The hero mock is real product content with a story: Slack report > issue DRV-8852 > agent ('Opus 5.5') opens a draft PR 'Reset dimmed ride rows' with '+22 -10'. Every line fails the rival-name swap in the right way.",
+    "The Slack thread (lena, didier, andreas) leading to '@Linear create issues and assign to me' shows intake instead of claiming it.",
+    "Consistent, deliberate visual system (dark ground, restrained grey scale, one type family, two-tone headings used as a house style, not borrowed)."
+  ],
+  "not_investigated": [
+    "disputed: sweep SLP-012 violet-gradient (#6d78d5, gradient pair) comes from product-mock accents such as the Slack send button and status colours, not from a page look; INT-005 'Todo' residue is a real workflow state in the board mock.",
+    "Several sections render partly dark/empty in the 1440 tiles (agent windows); 14 script chunks were blocked (manifest network), so some animation states are missing."
+  ]
+}

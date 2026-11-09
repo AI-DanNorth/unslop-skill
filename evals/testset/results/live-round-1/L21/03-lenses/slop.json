@@ -1,0 +1,71 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The drafting-sheet concept (title block, FIG. numbers, crop marks, an exploded axonometric of the skill itself, a real before/after) is chosen for a diagram product and the copy is specific, but the surface is the current Claude-default editorial look: cream grid paper, Instrument Serif hero with a terracotta italic payoff word, and mono tracked caps on almost every label.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00",
+      "evidence": "Failed T-MIRROR: cream #faf9f6-style grid paper, Instrument Serif display, the italic terracotta (#bf4520) payoff \"won't hate.\", a three-cell mono caps spec strip ('DRAWING / EDITORIAL DIAGRAMS', 'RUNS ON / CLAUDE CODE · CODEX · PI', 'OUTPUT / HTML + INLINE SVG') and a terracotta square CTA. Any other agent-skill or dev-tool landing in 2026 gets this exact hero (sweep: warm-paper-serif and hairline-newspaper both cluster).",
+      "before": "Italic serif terracotta payoff word on cream with mono spec cells",
+      "after": "Keep the drafting concept but take its colour and type from technical drawing itself (e.g. a blueprint or pencil-on-vellum palette and a drafting sans), so the hero is the product's own aesthetic rather than the editorial default",
+      "why": "A recognisable look family chosen without a stated reason counts against 'made'; here the product even promises to remove 'rounded-box slop' while wearing the next default.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "whole page, mono labels",
+      "evidence": "Sweep counts 154 tracked caps labels and 198 mono labels: 'FIG. 00 · THE SKILL AT WORK', '17S · NO SOUND', 'FIG. 02A / FIRST PASS · NO SKILL', '45 TYPES · 6 AGENTS · 0 BUILD STEPS', section sub-lines like 'IT RUNS INSIDE THE AGENT YOU ALREADY USE. NOTHING NEW TO OPEN, NOTHING TO EXPORT.' set as caps mono.",
+      "before": "Every caption, sub-line and attribution in tracked mono caps",
+      "after": "Keep FIG. numbers where a figure is referenced; set the section sub-lines and the quote attribution in sentence-case body type",
+      "why": "Caps-mono chrome on everything is the hairline-newspaper tell; it also turns real sentences into decoration.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-010",
+      "tier": "Reflex",
+      "where": "hero meta lines, tile 00",
+      "evidence": "Middot chains: \"45 TYPES · 6 AGENTS · 0 BUILD STEPS\", \"CLAUDE CODE · CODEX · PI\", \"Open source · MIT\", \"5 LAYERS · 1 ACCENT\" (sweep chrome_glyphs, 10 hits).",
+      "before": "\"45 TYPES · 6 AGENTS · 0 BUILD STEPS\"",
+      "after": "Fold the one fact that matters into the sub-line (it already says '45 diagram types'); delete the chain",
+      "why": "Middot stat chains are template chrome and repeat facts stated a line above.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "'What you get' section",
+      "evidence": "Six equal feature blocks ('45 visual types', 'Brand-matched in ~60s', 'Self-contained HTML + SVG', 'Imports draw.io, Mermaid & Excalidraw', 'Optional accessible motion', 'Accessible by default') plus a three-up benefit row ('One accent, not six.', 'Real hierarchy.', 'Structure you can read.') in fragment-period style.",
+      "before": "\"One accent, not six.\" / \"Real hierarchy.\" / \"Structure you can read.\"",
+      "after": "Annotate the before/after figure directly with these three points (callouts on FIG. 02B) and drop the separate three-up row",
+      "why": "Failed T-OVER-CORRECTION: the 'X, not Y.' fragment heads are the substitute habit of unslopped copy; the equal 6-grid is a stock section.",
+      "test": "T-OVER-CORRECTION"
+    }
+  ],
+  "strengths": [
+    "FIG. 01 draws the skill's own pipeline as an exploded axonometric with one accent layer: the product demonstrates itself in the hero.",
+    "A real before/after (FIG. 02A vs 02B) with honest alts describing both versions is proof, not a claim.",
+    "Copy is specific and only-this-product: 'No Figma. No rounded-box slop.', 'redraws (not converts)', install commands per host with real update instructions.",
+    "The 45-type gallery is numbered because readers do refer to types by number: numbering earns its place here."
+  ],
+  "not_investigated": [
+    "Gallery thumbnails (01-45) render blank: images are loading=lazy and were not loaded at capture (complete=false, natural width 0). Not judged as design.",
+    "Demo video (demo-light.mp4) blocked in capture; FIG. 00 not judged.",
+    "Medium recorded as diagram, but the artifact is a landing page for a diagram tool; judged as web."
+  ]
+}

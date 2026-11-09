@@ -7,7 +7,9 @@ never in the run directories, so lenses review blind.
 """
 import sys, json, yaml, pathlib, collections, argparse
 ap = argparse.ArgumentParser(); ap.add_argument("manifest"); ap.add_argument("runs"); ap.add_argument("--out")
+ap.add_argument("--skip", default="", help="comma-separated item ids whose capture is not verified: listed, never scored")
 a = ap.parse_args()
+skip = set(filter(None, a.skip.split(",")))
 doc = yaml.safe_load(open(a.manifest)); runs = pathlib.Path(a.runs)
 SLOP_DOMAINS = ("SLP", "CPY", "INT", "CON", "CLR", "TYP")
 
@@ -18,6 +20,9 @@ def load(p):
 rows, det_fire = [], collections.defaultdict(lambda: collections.Counter())
 for it in doc["items"]:
     run = runs / it["id"]
+    if it["id"] in skip:
+        rows.append(dict(id=it["id"], expect=it["expect"], pred="not verified", agree=False, read=None, conf=None, families="", slop_reflex=0, floor=0,
+                         lens_findings=0, medium=it["medium"], group=it["group"], why=it["why"])); continue
     mech = load(run / "02-mechanical.json")
     lenses = {f.stem: load(f) for f in sorted((run / "03-lenses").glob("*.json"))} if (run / "03-lenses").exists() else {}
     fams, slop_reflex, floor, fired = [], 0, 0, []
@@ -47,7 +52,8 @@ for it in doc["items"]:
                      slop_reflex=slop_reflex, floor=floor, lens_findings=lens_findings, medium=it["medium"], group=it["group"], why=it["why"]))
 
 L = ["# Calibration: " + doc["name"], ""]
-scored = [r for r in rows if r["expect"] in ("slop", "good") and r["pred"] != "not run"]
+scored = [r for r in rows if r["expect"] in ("slop", "good") and r["pred"] not in ("not run", "not verified")]
+if skip: L.append(f"Not verified, so not scored: {', '.join(sorted(skip))} (see the capture notes).")
 ok = sum(r["agree"] for r in scored)
 L.append(f"Verdict agreement on clear-cut items: **{ok}/{len(scored)}**. Borderline items are reported but not scored.")
 fp = [r for r in scored if r["expect"] == "good" and r["pred"] == "slop"]
@@ -55,7 +61,7 @@ fn = [r for r in scored if r["expect"] == "slop" and not r["pred"].startswith("s
 L.append(f"False positives (good flagged as slop): {len(fp)}. Misses (slop not flagged): {len(fn)}.")
 L += ["", "| Item | Expected | Unslop | Slop lens read | Look families | Slop-type Reflex | Floor | Lens findings | Medium |", "|---|---|---|---|---|---|---|---|---|"]
 for r in rows:
-    mark = "" if r["agree"] or r["expect"] == "borderline" else " ✗"
+    mark = "" if r["agree"] or r["expect"] == "borderline" or r["pred"] == "not verified" else " ✗"
     L.append(f"| {r['id']} | {r['expect']} | {r['pred']}{mark} | {r['read'] or '-'}{' (%s)' % r['conf'] if r['conf'] else ''} | {r['families'] or '-'} | {r['slop_reflex']} | {r['floor']} | {r['lens_findings']} | {r['medium']} |")
 L += ["", "## Detector discrimination", "", "Share of items each detector fired on, by expected label. A detector that fires as often on good items as on slop does not separate them; one that fires on good controls is a false-positive candidate.", "",
       "| Detector | slop | borderline | good | Read |", "|---|---|---|---|---|"]

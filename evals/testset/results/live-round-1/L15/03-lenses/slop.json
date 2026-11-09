@@ -1,0 +1,39 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A deliberately unstyled HTML ops sheet (system font, browser-default buttons, bordered tables) with specific, situated content (Harbor and Co, revised PO, dated PR states); it is plain and unfinished, but nothing on it is a model's default look.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "CPY-006",
+      "tier": "Finish",
+      "where": "Urgent table Status column and Pending list, tile 1440-00",
+      "evidence": "State word and detail are run together with no separator or styling: 'Blocked stale 9 days', 'Waiting pending reply', 'Clear warm', 'Draft Unsent', 'Done Yesterday Intro sent to the Boston plant manager.' They read as garbled phrases rather than a status plus a note.",
+      "before": "\"Waiting pending reply\"",
+      "after": "Render the state as a label and the detail as text: \"Waiting — pending reply\" or a status pill followed by the note.",
+      "why": "Without the missing badge styling, the status vocabulary collapses into nonsense strings; this is the most visible craft gap on the page.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "CPY-006",
+      "tier": "Finish",
+      "where": "range selector under the stats, tile 1440-00",
+      "evidence": "'7 days  30 days  Quarter' is plain text with no control styling or selected state; dom-1440 has no buttons for it, so it looks like a range switch but does nothing.",
+      "before": "7 days 30 days Quarter",
+      "after": "Make it a real segmented control (three buttons with aria-pressed), or state the period: \"Last 7 days\".",
+      "why": "An unlabelled set of period words reads as a stub left from a layout, not a decision.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Copy is concrete and operational: 'Harbor has gone quiet after the price change. A short note beats another status meeting.', 'Ask Harbor for the revised PO before Friday.' It fails the rival-name swap in the right way: none of it fits another business.",
+    "The campaign tracker carries real, dated state ('upstream #799 closed, not merged (Sat 10/17); VibeRooster fork safe to delete').",
+    "No eyebrows, icon tiles, gradients, glow or card kit; nothing decorative to delete."
+  ],
+  "not_investigated": [
+    "The floating 'Review required 1/5' chip and the 'Finish your review' form appear to be an injected review widget (vr-hitl classes), not page design; not judged.",
+    "Visual polish (hierarchy, spacing, table design) belongs to other lenses; the page states it is a 'before' fixture with basic styling."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:35:00",
+  "tests_run": [
+    "verify sweep Floor hits",
+    "alt text quality (1.1.1)",
+    "link and button purpose (2.4.4, 2.5.3)",
+    "focus order (2.4.3)",
+    "use of colour (1.4.1)",
+    "non-text contrast (1.4.11)",
+    "reflow (1.4.10)",
+    "headings and landmarks (1.3.1, 2.4.6)",
+    "motion (2.2.2)"
+  ],
+  "findings": [
+    {
+      "rule": "A11-138",
+      "tier": "Floor",
+      "where": "'Made with Hallmark' wheel (ul.wheel__ring, 15 cards)",
+      "evidence": "Copy says 'Drag the wheel to look around.' dom-1440.json shows the wheel cards as links but no previous/next buttons or other single-pointer control for rotating the ring.",
+      "before": "Rotate by drag only",
+      "after": "Add <button aria-label=\"Previous build\"> and <button aria-label=\"Next build\"> beside the wheel, and rotate on Left/Right arrow keys when a card has focus",
+      "why": "WCAG 2.2 2.5.7 Dragging Movements: dragging needs a single-pointer alternative. Not verified live.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-121",
+      "tier": "Reflex",
+      "where": "comparison tabs 'Farm records / Bank reconciliation / Webhook API'",
+      "evidence": "dom-1440.json: three <button role=\"tab\">; no role=\"tablist\" container or aria-selected/aria-controls recorded in the capture, and all three are separate Tab stops in focus.json (stop 14 is only 'Farm records'; the other two do not appear, suggesting roving tabindex). Visual selected state is fill colour only (black pill vs plain text).",
+      "before": "<div class=\"cmp-tabs\"><button role=\"tab\">…",
+      "after": "<div role=\"tablist\" aria-label=\"Example prompt\"><button role=\"tab\" aria-selected=\"true\" aria-controls=\"cmp-panel\">… with Left/Right arrow keys moving between tabs",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.1.1 Keyboard: the tab pattern needs its selected state exposed and arrow-key access. Not verified live.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Reflex",
+      "where": "hero theme fan (focus stops 4-12)",
+      "evidence": "focus.json: the fanned theme cards take focus in DOM order Atelier (y 646), Furrow (524), Cobalt (488), Studio, Ribbon, Dose, Coral, Bloom, then Furrow again; 'Furrow' appears twice (stops 5 and 12) linking to the same themes/furrow/.",
+      "before": "Nine focus stops, one duplicate, in a fan whose order is randomised by 'Deal again'",
+      "after": "Remove the duplicate card from the tab order (tabindex=\"-1\" and aria-hidden on the repeat) and keep DOM order equal to left-to-right visual order after each deal",
+      "why": "WCAG 2.2 2.4.3 Focus Order: focus should follow a meaningful sequence without repeated stops.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Reflex",
+      "where": "headline word animation (h1.hl.is-run)",
+      "evidence": "The h1 is built from per-word spans plus 'ghost' spans ('A', 'The') with an slash svg animating a word swap; the sweep flags overshoot easing cubic-bezier(0.3, 1.35, 0.5, 1). Ghost spans are aria-hidden, so the read name is fine, but the swap animation is not shown with a reduced-motion alternative in the evidence.",
+      "before": "Animated word swap in the h1",
+      "after": "@media (prefers-reduced-motion: reduce) { .hl__ghost { display: none } .hl__w { animation: none } }",
+      "why": "WCAG 2.2 2.3.3 Animation from Interactions (AAA) / 2.2.2 if it loops. Not verified whether it loops.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Skip link 'Skip to the page' is first; header, nav, main and footer landmarks present.",
+    "Good accessible names on icon controls: 'Copy the install command', 'Hallmark on GitHub, 50,986 stars', 'Hallmark, back to the top'.",
+    "Comparison divider is a role=\"slider\" with a name ('Divider between the two pages'), so it is reachable by keyboard.",
+    "FAQ uses native <details>/<summary>.",
+    "Focus ring is a clear orange outline (focus/31-on.png)."
+  ],
+  "not_investigated": [
+    "Content in tiles 1440-03..07 did not paint in the capture (scroll-reveal); its visual contrast and reflow were not checked.",
+    "Image alt text: dom capture does not record alt values; sweep img_alt reported no misses.",
+    "Live keyboard checks of tabs, slider and wheel (no Playwright run)."
+  ]
+}
