@@ -1,0 +1,16 @@
+{
+  "_note": "Per-host page preparation for live captures (host without www.). click: button labels, first visible exact match wins (case-insensitive); presses: how many times to press it (default 1). clickText: click the innermost element whose text contains this (interstitials). block: URL substrings to abort (tool overlays that are not part of the design). wait: extra ms to settle before screenshots. scrollFrames: for scroll-driven pages, save up to N viewport frames while wheel-scrolling (scroll-<w>-NN.png); tiles.py uses them in place of the full-page shot. Prefer reject or essential-only on cookie banners. Everything applied is recorded in manifest.json prep; a banner that stays up keeps the item not verified (evals/testset/results/live-capture-notes.md).",
+  "hosts": {
+    "consile.app": { "click": ["Reject All"] },
+    "cineyx.ai": { "click": ["Reject non-essential"] },
+    "gradloom.app": { "click": ["Essential only"] },
+    "anthropic.com": { "click": ["Reject all cookies", "Reject"] },
+    "stripe.com": { "click": ["Reject all"] },
+    "design-system.service.gov.uk": { "click": ["Reject analytics cookies", "Hide cookie message"], "presses": 2 },
+    "reallygoodemails.com": { "click": ["Allow all cookies"], "presses": 2 },
+    "impeccable.style": { "block": ["/js/detect-antipatterns-browser.js"] },
+    "gameghost.manus.space": { "clickText": "click anywhere to enter fullscreen", "click": ["Use essential only"] },
+    "skill-huasheng.vercel.app": { "wait": 8000 },
+    "brand.dropbox.com": { "scrollFrames": 12 }
+  }
+}

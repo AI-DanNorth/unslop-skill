@@ -1,44 +1,46 @@
 # Live test set: capture notes
 
-Set: `evals/testset/set1-live.yaml` (39 items). Captured 8 Nov 2026 from a Windows 11 machine with normal internet access:
-`run_set.py evals/testset/set1-live.yaml ../unslop-refs ../unslop-runs-live`, then `tiles.py` on every run.
-Each run's fold screenshot (1440, or 1920 for the slide), the full-page tiles where in doubt, and `manifest.json` were checked by hand.
-No item redirected to another host and no item hit a bot or login block.
+Set: `evals/testset/set1-live.yaml` (39 items). Final capture 9 Nov 2026 (UTC), from a Windows 11 machine with normal internet access:
+`run_set.py evals/testset/set1-live.yaml ../unslop-refs ../unslop-runs-live --only L01,...,L39`, then `tiles.py` on every run.
+I checked each run's fold screenshot (1440px, or 1920px for the slide), the tiles where in doubt, and `manifest.json` by hand.
+No item redirected to another host, and none hit a bot check or login wall.
 
-Cookie banners got one dismissal try: `scripts/capture/consent.json` lists host and button label, and each click is recorded in `manifest.json` `consent`.
+## How the capture was made
+
+- **Network mode `direct`** (`manifest.network.mode`). `netshim.mjs` now checks whether Google Fonts and jsDelivr are reachable and turns itself off if they are, so pages load their real fonts, CDN scripts and `.wasm` runtimes. The first pass (8 Nov) used the shim, which blocked Rive on L28 and dotLottie on L36. Set `UNSLOP_NET=shim` to force the old behaviour in a sandbox.
+- **Page prep per host** (`scripts/capture/page-prep.json`). Each rule is listed below and recorded in `manifest.prep.applied`. Cookie banners get their reject or essential-only button wherever one exists.
+
+| Host | Prep | Items |
+|---|---|---|
+| consile.app, cineyx.ai, gradloom.app, stripe.com | one click on the reject or essential-only button | L06, L07, L08, L27 |
+| anthropic.com | "Reject all cookies", or "Reject" on the mobile banner | L23 |
+| design-system.service.gov.uk | "Reject analytics cookies", then "Hide cookie message" | L32 |
+| reallygoodemails.com | "Allow all cookies" (the only dismiss button; up to 2 presses, 1 was enough) | L37, L38 |
+| impeccable.style | block `/js/detect-antipatterns-browser.js`, which draws the tool's own slop labels over the specimen; the homepage (L19) doesn't load it | L12–L14 |
+| gameghost.manus.space | click the "Click anywhere to enter fullscreen" splash, then "Use essential only" | L11 |
+| skill-huasheng.vercel.app | wait 8 s for the slide to finish building | L22 |
+| brand.dropbox.com | scroll-driven page: 12 wheel-scroll viewport frames max (3 used); `tiles.py` uses these frames as the tiles | L30 |
 
 ## Status
 
 | Item | Status | Notes |
 |---|---|---|
-| L01–L03, L05 | ok | Builder badges ("Edit with Lovable", "Made in Bolt", "Edit with Base44") are part of the live page and visible to reviewers. |
-| L04 | **not verified** | Replit placeholder "This app isn't live yet". The app is unpublished; nothing of the original design was captured. |
-| L06 | ok | Cookie banner dismissed ("Reject All") at every width. |
-| L07 | ok | Cookie banner dismissed ("Reject non-essential") at every width. |
-| L08 | ok | Storage banner dismissed ("Essential only") at every width. |
-| L09, L10 | ok | |
-| L11 | **not verified** | Page opens behind a blurred "Click anywhere to enter fullscreen" interstitial, and 41 of its own font files failed to load. |
-| L12–L14 | caveat | Captured fine, but the specimen pages draw impeccable's own slop labels over the design (e.g. "LOW CONTRAST TEXT", "GRADIENT TEXT"). Blind reviewers would see the answers. Close the overlay or crop it out before review. |
+| L01–L03, L05 | ok | The builder badges ("Edit with Lovable", "Made in Bolt", "Edit with Base44") are part of the live page, so reviewers will see them. |
+| L04 | **not verified** | Replit placeholder "This app isn't live yet". The app is unpublished, so the design no longer exists to capture. |
+| L06–L08 | ok | Banner dismissed at every width. |
+| L09 | ok | |
+| L10 | ok | The headline is a typewriter animation, so it can show part-typed ("The platform to…"). That's how the site behaves. |
+| L11 | caveat | Splash and privacy banner dismissed. 41 of the site's own font files fail even on a direct network: they 307-redirect to signed CloudFront URLs. The type you see is a fallback, so treat font findings as not verified. |
+| L12–L14 | ok | Overlay script blocked; the specimens render without labels. |
 | L15–L21 | ok | |
-| L22 | partial | The slide animates in (it has a REPLAY control). The capture caught it before the three comparison panels filled, so they show as empty frames. |
-| L23 | partial | Cookie banner dismissed at 1280 and 1440. At 375 the mobile banner's button reads "Reject", not "Reject all cookies", so it stays on the 375 capture. |
-| L24–L26 | ok | L25 lists 258 blocked scripts: cancelled Next.js chunk requests. The page rendered completely. |
-| L27 | ok | Cookie banner dismissed ("Reject all") at every width. |
-| L28 | **not verified** | The fold shows only the lime preloader ("LOAD NORRIS"). Content below was captured, but the top screen is not the page. The capture shim failed to serve the Rive `.wasm` runtime from unpkg and jsDelivr, which is the likely cause. |
-| L29 | caveat | WebGL scene renders correctly, but there is no DOM text, so the text and type detectors have nothing to read. Judge it on the screenshots. |
-| L30 | **not verified** | Only the intro heading and logo render. The page below is blank white: scroll-driven content never appeared. |
-| L31 | ok | |
-| L32 | ok | Cookie banner dismissed ("Reject analytics cookies"). GOV.UK then shows its standard "You've rejected analytics cookies" strip at the top, which is the real post-consent page. |
-| L33–L36 | ok | L33 rendered the dashboard (no login wall). L36 had its dotLottie `.wasm` blocked by the capture shim, so some illustrations may not animate. |
-| L37 | **not verified** | Cookie modal covers the email. The click registered, but the site asks for a second press ("Press again to continue 0/2"), and only one try is allowed. |
-| L38 | **not verified** | Same cookie modal as L37, not dismissed. |
+| L22 | ok | Captured after the build animation. All three comparison panels are filled. |
+| L23 | ok | Banner dismissed at every width. |
+| L24–L27 | ok | L25's 258 "blocked" scripts are cancelled Next.js chunk prefetches; the page renders completely. |
+| L28 | ok | Renders properly now that the Rive runtime loads, instead of the stuck preloader from the first pass. |
+| L29 | caveat | The WebGL scene renders correctly, but the page has no DOM text, so the text and type detectors have nothing to read. Judge it on the screenshots. |
+| L30 | caveat | Scroll-driven page. The tiles are wheel-scroll viewport frames, which show what a visitor sees. The full-page `shot-*.png` and `bg-*.png` show only the intro, so the pixel-contrast detectors aren't reliable here. |
+| L31–L36 | ok | L33 rendered the dashboard (no login wall). L36's dotLottie illustrations now load. |
+| L37, L38 | ok | Cookie modal dismissed at every width; the email is unobstructed. |
 | L39 | ok | |
 
-Totals: 27 ok, 6 not verified (L04, L11, L28, L30, L37, L38), 6 caveat or partial (L12–L14, L22, L23, L29).
-
-## For the next capture pass
-
-- **Capture shim on a normal network:** `netshim.mjs` rewrites unpkg and jsDelivr requests to npm packages even when the real CDN is reachable, and it can't serve `.wasm` files. That blocked Rive (L28) and dotLottie (L36). Let CDN requests through when the network allows it, or at least pass `.wasm` through.
-- **L37, L38:** add a second click for reallygoodemails.com, or set its consent cookie in the context.
-- **L23 at 375:** add "Reject" as a second label for anthropic.com.
-- **L22, L28, L30:** these need a longer settle, or the motion capture in next step 3 (frame sequences).
+Totals: 35 ok, 1 not verified (L04), 3 with a caveat (L11, L29, L30).

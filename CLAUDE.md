@@ -47,6 +47,7 @@ python3 scripts/selftest.py                         # must print SELF-TEST PASSE
 - **Reviews are blind.** Reviewers get `evals/testset/LENS-BRIEF.md` with the paths filled in, and never the manifests, candidates or source repos. Expected labels live only in the `set*.yaml` manifests.
 - **Thresholds change only on evidence:** a detector firing on a control, or missing a tell in an answer key. Record the reason in the commit message.
 - **Capture must be honest.** Blocked requests, missing fonts and failed images are recorded in `manifest.json` `network` and become "not verified", never a pass or a finding.
+- **Network and page prep for live sites.** `netshim.mjs` turns itself off when the real network is reachable (`manifest.network.mode`; force it with `UNSLOP_NET=direct|shim`). Per-host cookie-banner clicks, interstitial clicks, overlay blocks, waits and scroll frames go in `scripts/capture/page-prep.json`, never in code. Each one is recorded in `manifest.prep`; see `evals/testset/results/live-capture-notes.md`.
 
 ## Status (8 Nov 2026)
 

@@ -40,37 +40,51 @@ async function settle(page) {
   await page.waitForTimeout(600);
 }
 
-// One-try cookie-banner dismissal for listed live hosts (consent.json). Clicks are logged and land in manifest.consent.
-const CONSENT = JSON.parse(fs.readFileSync(path.join(HERE, "consent.json"), "utf8")).hosts;
-const CONSENT_HOST = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; } })();
-const consentLog = new Set();
-function dismissConsent(labels) {
-  const want = labels.map((l) => l.toLowerCase());
+// Per-host page preparation for live captures (page-prep.json): cookie banners, interstitials, tool overlays, extra settle.
+// Every action is logged and lands in manifest.prep, so a capture never silently differs from what a visitor sees.
+const PREP_HOSTS = JSON.parse(fs.readFileSync(path.join(HERE, "page-prep.json"), "utf8")).hosts;
+const PREP_HOST = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+const PREP = PREP_HOSTS[PREP_HOST] || null;
+const prepLog = new Set();
+function prepPage(p) {
+  const want = (p.click || []).map((l) => l.toLowerCase());
+  const text = (p.clickText || "").toLowerCase();
   const norm = (s) => (s || "").replace(/\s+/g, " ").trim().toLowerCase();
-  let done = false;
-  const tryClick = () => {
-    if (done) return;
-    const els = [...document.querySelectorAll("button, a, [role=button], input[type=button], input[type=submit]")];
-    for (const lab of want) {
-      const el = els.find((e) => norm(e.innerText || e.value) === lab && e.getClientRects().length);
-      if (el) { el.click(); done = true; console.log(`[unslop-consent] clicked "${lab}"`); return; }
+  const seen = (e) => e.getClientRects().length > 0;
+  let left = p.presses || 1, textDone = !text, busy = false;
+  const tick = () => {
+    if (busy) return;
+    if (left > 0 && want.length) {
+      const els = [...document.querySelectorAll("button, a, [role=button], input[type=button], input[type=submit]")];
+      for (const lab of want) {
+        const el = els.find((e) => norm(e.innerText || e.value) === lab && seen(e));
+        if (el) { el.click(); left--; console.log(`[unslop-prep] clicked "${lab}"`); busy = true; setTimeout(() => { busy = false; tick(); }, 500); return; }
+      }
+    }
+    if (!textDone) {
+      const hits = [...document.body.querySelectorAll("*")].filter((e) => seen(e) && norm(e.innerText).includes(text));
+      const el = hits.find((e) => ![...e.children].some((c) => hits.includes(c)));      // innermost match
+      if (el) { el.click(); textDone = true; console.log(`[unslop-prep] clicked text "${text}"`); }
     }
   };
-  const obs = new MutationObserver(tryClick);
-  const start = () => { tryClick(); obs.observe(document.documentElement, { childList: true, subtree: true }); setTimeout(() => obs.disconnect(), 20000); };
+  const obs = new MutationObserver(tick);
+  const start = () => { tick(); obs.observe(document.documentElement, { childList: true, subtree: true }); setTimeout(() => obs.disconnect(), 20000); };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 }
 
 async function open(browser, w, ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: HEIGHTS[w] || 900 }, deviceScaleFactor: 1, ...ctxOpts });
   NETS.push(await installShim(ctx));
-  if (CONSENT[CONSENT_HOST]) await ctx.addInitScript(dismissConsent, CONSENT[CONSENT_HOST]);
+  if (PREP) {
+    if (PREP.click || PREP.clickText) await ctx.addInitScript(prepPage, PREP);
+    for (const b of PREP.block || []) await ctx.route((u) => u.href.includes(b), (route) => { prepLog.add(`blocked ${b}`); return route.abort(); });
+  }
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e.message || e)));
   page.on("console", (m) => {
     const t = m.text();
-    if (t.startsWith("[unslop-consent] ")) { consentLog.add(`w${w}: ${t.slice(17)}`); return; }
+    if (t.startsWith("[unslop-prep] ")) { prepLog.add(`w${w}: ${t.slice(14)}`); return; }
     if (m.type() === "error") errors.push(t);
   });
   return { ctx, page, errors };
@@ -101,12 +115,24 @@ for (const w of widths) {
   const { ctx, page, errors } = await open(browser, w);
   try { await page.goto(url, { waitUntil: "load", timeout: 45000 }); } catch (e) { note(`width ${w}: load failed: ${e.message}`); await ctx.close(); continue; }
   await settle(page);
+  if (PREP && PREP.wait) { await page.waitForTimeout(PREP.wait); prepLog.add(`w${w}: waited ${PREP.wait}ms`); }
   await page.addStyleTag({ content: "*,*::before,*::after{background-attachment:scroll!important}" });   // fixed backgrounds render once in full-page shots
   const dom = await page.evaluate(EXTRACT);
   dom.consoleErrors = errors;
   fs.writeFileSync(path.join(ev, `dom-${w}.json`), JSON.stringify(dom));
   await page.screenshot({ path: path.join(ev, `shot-${w}.png`), fullPage: true });
   if (HEIGHTS[w] && [1280, 1440, 1920, 375].includes(w)) await page.screenshot({ path: path.join(ev, `fold-${w}.png`) });
+  if (PREP && PREP.scrollFrames) {      // scroll-driven page: the full-page shot is not what a visitor sees, so record viewport frames while wheel-scrolling
+    const vh = HEIGHTS[w] || 900, total = await page.evaluate(() => document.documentElement.scrollHeight);
+    let n = 0;
+    for (let y = 0; n < PREP.scrollFrames && (n === 0 || y < total); y += vh, n++) {
+      if (n) await page.mouse.wheel(0, vh);
+      await page.waitForTimeout(1500);
+      await page.screenshot({ path: path.join(ev, `scroll-${w}-${String(n).padStart(2, "0")}.png`) });
+    }
+    prepLog.add(`w${w}: ${n} scroll frames`);
+    for (let i = 0; i < n; i++) { await page.mouse.wheel(0, -vh); await page.waitForTimeout(150); }
+  }
   if (BG_ALL) {      // background-only render for real-pixel contrast
     await page.addStyleTag({ content: "*,*::before,*::after{-webkit-text-fill-color:transparent!important;text-shadow:none!important;-webkit-text-stroke:0!important;caret-color:transparent!important;text-decoration-color:transparent!important} svg text{fill:transparent!important}" });
     await page.waitForTimeout(100);
@@ -270,8 +296,8 @@ const VISIBLE_CHARS = () => {
 
 await browser.close();
 const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];
-manifest.network = { shimmed: uniq("shimmed"), blocked: uniq("blocked"), fontsMissing: uniq("fontsMissing") };
-if (CONSENT[CONSENT_HOST]) manifest.consent = { host: CONSENT_HOST, tried: CONSENT[CONSENT_HOST], clicked: [...consentLog] };   // empty clicked = banner not dismissed
+manifest.network = { mode: NETS[0] ? NETS[0].mode : null, shimmed: uniq("shimmed"), blocked: uniq("blocked"), fontsMissing: uniq("fontsMissing") };
+if (PREP) manifest.prep = { host: PREP_HOST, config: PREP, applied: [...prepLog] };   // nothing applied = banner or overlay still up
 manifest.network.blockedImages = manifest.network.blocked.filter((b) => b.startsWith("image ")).length;
 manifest.network.blockedFonts = manifest.network.blocked.filter((b) => b.startsWith("font ") || /fonts\.|fontshare|typekit/.test(b)).length;
 manifest.finished = new Date().toISOString();

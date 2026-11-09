@@ -52,8 +52,23 @@ function fontCss(fam) {
   return css.length ? css.join("\n") : null;
 }
 
+// Decide once per capture whether to shim. UNSLOP_NET=direct|shim forces it; the default (auto) probes the real
+// Google Fonts and jsDelivr hosts. On a normal network the shim stays off: it cannot serve .wasm and approximates fonts.
+let modeP = null;
+export function netMode() {
+  if (!modeP) modeP = (async () => {
+    const forced = (process.env.UNSLOP_NET || "auto").toLowerCase();
+    if (forced === "direct" || forced === "shim") return forced;
+    const probe = async (u) => { try { const r = await fetch(u, { method: "HEAD", signal: AbortSignal.timeout(6000) }); return r.status < 500; } catch { return false; } };
+    const ok = await Promise.all(["https://fonts.googleapis.com/css2?family=Inter", "https://cdn.jsdelivr.net/npm/react@18.3.1/package.json"].map(probe));
+    return ok.every(Boolean) ? "direct" : "shim";
+  })();
+  return modeP;
+}
+
 export async function installShim(ctx, log) {
-  const net = { shimmed: [], blocked: [], fontsMissing: [] };
+  const net = { mode: await netMode(), shimmed: [], blocked: [], fontsMissing: [] };
+  if (net.mode === "direct") { await installLocal(ctx, net); return net; }
   await ctx.route(/^https:\/\/fonts\.googleapis\.com\/css/, async (route) => {
     const fams = googleFamilies(route.request().url());
     let body = "";
@@ -114,6 +129,12 @@ export async function installShim(ctx, log) {
     net.shimmed.push("npm @tailwindcss/browser@4 (approximates Tailwind v3 play CDN; tailwind.config colours, fonts and radii mapped to @theme)");
     await route.fulfill({ status: 200, contentType: "application/javascript", body: fs.readFileSync(path.join(dir, "dist/index.global.js")) });
   });
+  await installLocal(ctx, net);
+  return net;
+}
+
+// Both modes: serve mapped hosts from local repo clones, and record every failed request.
+async function installLocal(ctx, net) {
   for (const pair of (process.env.UNSLOP_HOST_MAP || "").split(",").filter(Boolean)) {
     const [host, dir] = pair.split("=");
     await ctx.route(new RegExp(`^https?://(www\\.)?${host.replace(/\./g, "\\.")}/`), async (route) => {
@@ -132,5 +153,4 @@ export async function installShim(ctx, log) {
     if (u.startsWith("data:") || u.startsWith(FONT_HOST)) return;
     if (!u.startsWith("file:")) net.blocked.push(`${req.resourceType()} ${u.slice(0, 160)}`);
   });
-  return net;
 }
