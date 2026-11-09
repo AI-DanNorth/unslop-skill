@@ -1,0 +1,180 @@
+<title>Unslop Spot-Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Review queue: sticky progress bar, then one row per disputed item, screenshots left and facts right; stacks under 900px. */
+:root {
+  --paper: #f5f6f3; --surface: #ffffff; --ink: #1c2421; --muted: #5b6762; --line: #d5dbd7;
+  --accent: #0b6b5c; --accent-ink: #ffffff; --amber: #8f5300; --amber-bg: #fbefdc; --teal-bg: #dff1ec;
+  --body: "Public Sans", "Segoe UI", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step-0: 0.95rem; --step-1: 1.15rem; --step-2: 1.6rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #111614; --surface: #1a201d; --ink: #e3eae6; --muted: #9ba7a1; --line: #2c3632;
+  --accent: #52c2a8; --accent-ink: #08201b; --amber: #e5a849; --amber-bg: #3a2a12; --teal-bg: #133029; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #111614; --surface: #1a201d; --ink: #e3eae6; --muted: #9ba7a1; --line: #2c3632;
+  --accent: #52c2a8; --accent-ink: #08201b; --amber: #e5a849; --amber-bg: #3a2a12; --teal-bg: #133029; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font: 400 var(--step-0)/1.55 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.intro { padding-block: 32px 20px; display: grid; gap: 8px; }
+h1 { font-size: var(--step-2); line-height: 1.2; margin: 0; text-wrap: balance; }
+.intro p { margin: 0; max-width: 68ch; color: var(--muted); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-block: 10px; }
+.progress { display: flex; align-items: center; gap: 10px; font-variant-numeric: tabular-nums; }
+.meter { width: 160px; max-width: 40vw; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font: 600 0.8rem/1 var(--body); padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.bar .jump { margin-left: auto; color: var(--accent); font-weight: 600; text-decoration: none; }
+main { display: grid; gap: 20px; padding-block: 20px 40px; }
+.row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.row.done { border-color: var(--accent); }
+.shots { display: grid; gap: 12px; min-width: 0; align-content: start; }
+figure { margin: 0; display: grid; gap: 4px; }
+figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; cursor: zoom-in; }
+figcaption { font-size: 0.8rem; color: var(--muted); }
+.facts { min-width: 0; display: grid; gap: 10px; align-content: start; }
+.facts header { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.iid { font: 500 0.9rem/1 var(--mono); }
+.tag { font: 600 0.72rem/1 var(--body); letter-spacing: .04em; text-transform: uppercase; padding: 5px 7px; border-radius: 4px; }
+.tag.contested { background: var(--amber-bg); color: var(--amber); }
+.tag.label-generous { background: var(--teal-bg); color: var(--accent); }
+.rnd { font-size: 0.8rem; color: var(--muted); }
+h2 { font-size: var(--step-1); line-height: 1.3; margin: 0; text-wrap: balance; }
+.src { margin: 0; font-size: 0.85rem; overflow-wrap: anywhere; }
+.src a { color: var(--accent); }
+code { font: 500 0.85em var(--mono); }
+dl { margin: 0; display: grid; gap: 8px; }
+dl div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 10px; }
+dt { font-weight: 600; color: var(--muted); font-size: 0.85rem; }
+dd { margin: 0; overflow-wrap: anywhere; }
+.lab { font-weight: 700; }
+.muted { color: var(--muted); }
+.reason { color: var(--muted); font-size: 0.9rem; }
+.decide { border: 0; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.decide legend { font-weight: 600; margin-bottom: 6px; }
+.decide button { font: 600 0.9rem/1 var(--body); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; }
+.decide button[aria-pressed="true"][data-v="unslop"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.decide button[aria-pressed="true"][data-v="label"] { background: var(--amber); color: var(--surface); border-color: var(--amber); }
+.decide button[aria-pressed="true"][data-v="unsure"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.note-l { font-size: 0.85rem; color: var(--muted); }
+textarea, input[type="text"] { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
+button:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible, img:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.export { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 10px; }
+.export h2 { font-size: var(--step-1); }
+.export p { margin: 0; color: var(--muted); max-width: 68ch; }
+.export .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.primary { font: 600 0.95rem/1 var(--body); padding: 11px 16px; border-radius: 6px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.ghost { font: 600 0.9rem/1 var(--body); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+#status { font-size: 0.9rem; color: var(--accent); }
+#json { font: 500 0.8rem/1.45 var(--mono); min-height: 8rem; }
+.lightbox { position: fixed; inset: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); cursor: zoom-out; overflow: auto; }
+.lightbox img { max-width: min(1200px, 100%); height: auto; border: 1px solid var(--line); }
+@media (max-width: 900px) { .row { grid-template-columns: minmax(0, 1fr); } dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; } .bar .jump { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .meter i { transition: none; } }
+</style>
+
+<div class="wrap intro">
+  <h1>Unslop spot-check</h1>
+  <p>Each row below is a test page where Unslop's verdict and the source's label disagree, and the adjudication could not settle it from the evidence alone. Look at the screenshots, read the cited evidence, and pick who is right. Your choices are saved in this browser as you go. When you finish, copy the results at the bottom and send them back.</p>
+  <p>"Label generous" means the source praised its own output and Unslop found specific problems. "Contested" means a fair reviewer could go either way.</p>
+</div>
+
+<div class="bar" role="region" aria-label="Progress">
+  <div class="wrap">
+    <div class="progress"><span id="count">0 of {{COUNT}} decided</span><span class="meter" aria-hidden="true"><i id="meterfill"></i></span></div>
+    <div class="filters" role="group" aria-label="Show">
+      <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-f="open" aria-pressed="false">Undecided</button>
+      <button type="button" class="chip" data-f="contested" aria-pressed="false">Contested</button>
+      <button type="button" class="chip" data-f="label generous" aria-pressed="false">Label generous</button>
+    </div>
+    <a class="jump" href="#results">Results</a>
+  </div>
+</div>
+
+<main class="wrap">
+{{ROWS}}
+<section class="export" id="results" aria-labelledby="res-h">
+  <h2 id="res-h">Your results</h2>
+  <p>Copy this JSON and send it back. The orchestrating session records it in the adjudications.</p>
+  <label for="reviewer">Your name or initials</label>
+  <input type="text" id="reviewer" autocomplete="name" placeholder="e.g. A. Warwick">
+  <textarea id="json" readonly aria-label="Results as JSON"></textarea>
+  <div class="actions">
+    <button type="button" class="primary" id="copy">Copy results</button>
+    <button type="button" class="ghost" id="clear">Clear all choices</button>
+    <span id="status" role="status"></span>
+  </div>
+</section>
+</main>
+
+<script>
+(() => {
+  const KEY = "unslop-spotcheck-v1", IDS = {{IDS}};
+  let state = { reviewer: "", calls: {} };
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.calls) state = s; } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} render(); };
+  const rows = [...document.querySelectorAll(".row")];
+  const status = document.getElementById("status");
+  let filter = "all", clearArmed = false;
+
+  function render() {
+    let done = 0;
+    rows.forEach(r => {
+      const c = state.calls[r.dataset.id] || {};
+      r.querySelectorAll(".decide button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === c.call)));
+      const n = r.querySelector(".note"); if (document.activeElement !== n) n.value = c.note || "";
+      r.classList.toggle("done", !!c.call); if (c.call) done++;
+      r.hidden = filter === "open" ? !!c.call : (filter !== "all" && r.dataset.cause !== filter);
+    });
+    document.getElementById("count").textContent = `${done} of ${IDS.length} decided`;
+    document.getElementById("meterfill").style.width = `${(done / IDS.length) * 100}%`;
+    const rv = document.getElementById("reviewer"); if (document.activeElement !== rv) rv.value = state.reviewer || "";
+    document.getElementById("json").value = JSON.stringify({
+      reviewer: state.reviewer || null, exported: new Date().toISOString(),
+      decisions: IDS.map(id => ({ id, call: (state.calls[id] || {}).call || null, note: (state.calls[id] || {}).note || "" }))
+    }, null, 1);
+  }
+
+  rows.forEach(r => {
+    const id = r.dataset.id;
+    r.querySelectorAll(".decide button").forEach(b => b.addEventListener("click", () => {
+      const c = state.calls[id] || (state.calls[id] = {});
+      c.call = c.call === b.dataset.v ? null : b.dataset.v; save();
+    }));
+    r.querySelector(".note").addEventListener("input", e => { (state.calls[id] || (state.calls[id] = {})).note = e.target.value; save(); });
+    r.querySelectorAll("figure img").forEach(img => {
+      img.tabIndex = 0;
+      const open = () => {
+        const lb = document.createElement("div"); lb.className = "lightbox"; lb.tabIndex = -1;
+        const big = document.createElement("img"); big.src = img.src; big.alt = img.alt; lb.append(big);
+        const close = () => { lb.remove(); img.focus(); };
+        lb.addEventListener("click", close); lb.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+        document.body.append(lb); lb.focus();
+      };
+      img.addEventListener("click", open);
+      img.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    });
+  });
+  document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+    filter = c.dataset.f; document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", String(x === c))); render();
+  }));
+  document.getElementById("reviewer").addEventListener("input", e => { state.reviewer = e.target.value; save(); });
+  document.getElementById("copy").addEventListener("click", () => {
+    const t = document.getElementById("json");
+    const fallback = () => { t.focus(); t.select(); status.textContent = "Selected. Press Ctrl+C (or Cmd+C) to copy."; };
+    try { navigator.clipboard.writeText(t.value).then(() => { status.textContent = "Copied."; }, fallback); } catch (e) { fallback(); }
+  });
+  document.getElementById("clear").addEventListener("click", e => {
+    if (!clearArmed) { clearArmed = true; e.target.textContent = "Click again to clear"; status.textContent = ""; setTimeout(() => { clearArmed = false; e.target.textContent = "Clear all choices"; }, 4000); return; }
+    clearArmed = false; e.target.textContent = "Clear all choices"; state = { reviewer: state.reviewer, calls: {} }; save(); status.textContent = "Cleared.";
+  });
+  render();
+})();
+</script>
