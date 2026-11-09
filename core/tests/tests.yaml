@@ -46,7 +46,7 @@
    run: "For the h1 and each section heading that makes a concrete promise, find the picture that shows it.",
    pass: "Each concrete promise is shown (\"takes four crates\" shows four crates). Otherwise add the picture or cut the promise.", sources: ["taste-skill §16-17"]}
 - {id: T-SQUINT, name: Squint, lens: [structure], kind: H, detector: blur_render,
-   run: "Blur the render (Gaussian 8px at 1440).", pass: "Primary, secondary and groups read in order; heavy and light rhythm.",
+   run: "Blur the render (Gaussian 8px at 1440; lens-structure gives the Pillow snippet that writes 03-lenses/squint/).", pass: "Primary, secondary and groups read in order; heavy and light rhythm.",
    sources: ["hallmark §151 §210", "huashu §99", "impeccable §62"]}
 - {id: T-SKELETON, name: Skeleton, lens: [structure], kind: J,
    run: "Strip the copy from a section.", pass: "Structure alone says what it is.", sources: ["impeccable §290"]}
@@ -54,12 +54,32 @@
    run: "Scroll at 1440x900 one screen at a time (capture tiles).", pass: "Every screen has something big enough to be its reason. Outranks detail findings.",
    sources: ["hallmark §157 §210"]}
 - {id: T-JUDGE-TILE, name: Judge tile, lens: [structure], kind: H, detector: viewport_tiles,
-   run: "Screenshot at scrollY = k x viewport height.", pass: "Each tile shows one section, no neighbour's heading.", sources: ["taste-skill §71 §78"]}
+   run: "Screenshot at scrollY = k x viewport height (scripts/capture/tiles.py writes 01-evidence/tiles/).", pass: "Each tile shows one section, no neighbour's heading.", sources: ["taste-skill §71 §78"]}
 - {id: T-ANATOMY, name: Anatomy, lens: [structure], kind: J,
    run: "Check the primary action sits where category sites put it and the category's own sections are present.",
    pass: "Yes, yes, and the sequence could not sit under another business.", sources: ["hallmark §17 §518"]}
 - {id: T-FIVE-SECOND, name: Five-second, lens: [structure, copy], kind: J,
    run: "First screen only.", pass: "What it is, who it is for and what to do are answered.", sources: ["taste-skill §4", "huashu §158", "design-taste §39"]}
+- {id: T-HEADINGS-READ, name: Headings-and-hero read, lens: [structure], kind: J,
+   run: "Read only the hero and the section headings, in page order, and nothing else.",
+   pass: "They tell the page's story in order. A heading that only names a category ('Features', 'How it works', 'Why us') breaks the story; if the headings tell it, the body is the right length.",
+   sources: ["hallmark §30"]}
+- {id: T-COMPOSITION-RUN, name: Composition run, lens: [structure], kind: J,
+   run: "Name each section's composition in order (split, grid, bento, showcase, statement, rows, index, rail, pinned, table, form, band) and mark neighbours that share one, every card layout, and every mirrored split.",
+   pass: "3 to 6 compositions on the page; no more than two neighbours share a skeleton; any card layout at most twice; splits do not alternate A-B-A-B (conflict C24: one mirror allowed).",
+   sources: ["hallmark §41 §174 §178 §195 §205", "taste-skill §82 §92 §99", "kami §161 §270"]}
+- {id: T-LEFT-EDGES, name: Left edges, lens: [structure], kind: H,
+   run: "List the x positions where text blocks start at 1440 (computed from dom-1440.json with the snippet in lens-structure, never by eye) and look at them against the tiles.",
+   pass: "Text starts on the container's left line and at most one split line; blocks start on column starts, so edges line up from nav to footer.",
+   sources: ["taste-skill §70 §81", "hallmark §168"]}
+- {id: T-PHONE-ORDER, name: Phone reading order, lens: [structure], kind: J,
+   run: "Read shot-375 top to bottom against the 1440 section order.",
+   pass: "Every composition stacks in reading order: head block, then body; a split's visual after its text; the bento lead tile first; nothing reordered so that a section's action comes before what it acts on.",
+   sources: ["hallmark §196", "taste-skill §74 §82"]}
+- {id: T-DENSITY-FIT, name: Density fits the job, lens: [structure, media-app], kind: J,
+   run: "Set the density dial from the visitor mode (marketing low, documents mid, dashboards and tools high), then compare the measured gaps and words per screen with it.",
+   pass: "The spacing scale and the amount on each screen match the dial, and density is even across the screen: no dashboard padded like a landing page, no landing page packed like a dashboard.",
+   sources: ["ux-ui-agent-skills §246", "hallmark §145 §159"]}
 - {id: T-EYEBROW, name: Eyebrow, lens: [slop], kind: H, detector: eyebrow,
    run: "Cover the small line above a heading and reread.", pass: "A fact, destination or identifier is lost. Otherwise promote it into the heading.",
    sources: ["hallmark §111 §369", "kami §4", "impeccable §520"]}

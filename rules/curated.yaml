@@ -197,6 +197,109 @@
    rule: "No empty vertical band taller than 160px at any fold width.", why: "Dead bands read as broken layout and push content below the fold.",
    fix: "Remove the empty band or fill it with content that earns the space.", sources: ["hallmark §453"]}
 
+# ---------------- D07 structure (lens-structure; judgment cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D07-LAY.yaml; each source cites the draft id and its original sections.
+# LAY-007 is Reflex although its drafts (LAY-216, LAY-231) say Floor: an action below the fold costs a scroll, it does not block use.
+- {id: LAY-005, title: Every screen has a reason, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-SCREEN-BY-SCREEN, T-JUDGE-TILE],
+   rule: "Scroll the artifact one screen at a time (1440x900 tiles). Every screen holds one thing big enough to be its reason, and the first screen has a focal point. This outranks every detail finding.",
+   why: "A screen with nothing to look at is where visitors stop scrolling; detail fixes on it change nothing.",
+   fix: "Give the screen a lead element (the section's visual, a statement at section size, a table) or merge it into its neighbour.",
+   sources: ["LAY-110 (HM §157, HM §210)", "LAY-101 (TS §99)"]}
+- {id: LAY-006, title: Hierarchy survives the squint, domain: D07, tier: Reflex, check: H, remedy: fix-typeset, tests: [T-SQUINT],
+   rule: "With the render blurred, the primary element, the secondary elements and the groups read in that order, each section keeps a shape, and the page has a rhythm of heavy and light. Build the order from size, weight and space, never from colour or ornament alone.",
+   why: "If the order disappears when the words blur, the reader has to read everything to find what matters.",
+   fix: "Enlarge the primary element, quiet the competitors, and open the space between groups.",
+   sources: ["LAY-102 (HM §210, HM §151, HU §99)", "LAY-106 (UX §235, KM §177-178)"]}
+- {id: LAY-007, title: The first screen answers what, for whom and what next, domain: D07, tier: Reflex, check: H, remedy: fix-layout, tests: [T-FIVE-SECOND],
+   rule: "Keep the headline, the line under it, the primary action and the lead visual's focal point inside the first screen at 1280x800 and at 390 wide. On a page that persuades, the primary action is never below the first screen.",
+   values: {fold: [1280, 800], phone_width: 390},
+   why: "Visitors decide in the first screen whether to stay; an answer they must scroll to find is an answer most never see.",
+   fix: "Shorten or shrink what pushes the action down (an oversized visual, a second paragraph), never the action itself.",
+   sources: ["LAY-216 (HM §4, HM §45, HM §422)", "LAY-231 (TS §171, TS §633)"]}
+- {id: LAY-008, title: Headings and hero tell the story, domain: D07, tier: Finish, check: J, remedy: fix-copy, tests: [T-HEADINGS-READ],
+   rule: "Read only the hero and the section headings in order: they tell the page's story. A heading that only names a category ('Features', 'Why us') breaks it.",
+   why: "Most visitors read headings only; category labels give them nothing to take away.",
+   fix: "Rewrite each category heading as the section's claim, in the section's own nouns.",
+   sources: ["LAY-111 (HM §30)"]}
+- {id: LAY-009, title: Group with space before boxes, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-DELETION],
+   rule: "Group related items with whitespace first, and climb the surface ladder only as far as needed: whitespace, then a 1px hairline, then a tinted well, then a card (border or shadow, never both). Reserve cards for things that are independently interactive or of a different kind. Repeated rows carry no ornament.",
+   why: "Boxes around everything erase the groups they are meant to show; space that is tight within a group and open between groups shows them for free.",
+   fix: "Remove boxes where space already groups; keep one card style for real objects.",
+   sources: ["LAY-122 (UX §236, KM §67)", "LAY-143 (HM §74)", "LAY-142 (HM §4, HM §74, TS §94, TS §192)"]}
+- {id: LAY-010, title: One idea per section, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-SKELETON],
+   rule: "Give each section one idea: one h2, and at most one action besides the main one. A section whose content names itself (menu, timetable, product screen) may go without a head block.",
+   values: {h2_per_section: 1, extra_actions: 1},
+   why: "A section with two ideas makes the reader decide what it is about; usually they pick neither.",
+   fix: "Split the section, or cut the second idea to a line in the first.",
+   sources: ["LAY-150 (TS §89, HM §30)", "LAY-162 (HM §174)"]}
+- {id: LAY-011, title: Every section has mass, domain: D07, tier: Reflex, check: H, remedy: fix-layout, tests: [T-JUDGE-TILE, T-SCREEN-BY-SCREEN],
+   rule: "A heading and a paragraph are a head block, not a section. Give every section mass: a visual at least 300px tall, three items across spanning at least 70% of the container, a list or table of 3 or more rows, 2 or more form fields, or a statement at section size. Empty area over 35% of a section inside its container warns and over 50% fails. Never centre a short block in a tall screen to hide that it is short.",
+   values: {min_visual_px: 300, min_span_share: 0.7, warn_empty_share: 0.35, fail_empty_share: 0.5},
+   why: "Thin sections make the page read as a list of announcements with nothing behind them.",
+   fix: "Add mass (a bigger visual, a body across about 10 columns, a statement) or merge the section into its neighbour. Never add words or shrink the gap.",
+   sources: ["LAY-151 (HM §34, HM §176, HM §429)", "LAY-153 (HM §34, HM §172, KM §258)", "LAY-156 (TS §78)", "LAY-157 (TS §74, TS §78)"]}
+- {id: LAY-012, title: Vary compositions, domain: D07, tier: Reflex, kind: cap, check: J, remedy: fix-layout, tests: [T-COMPOSITION-RUN],
+   rule: "Use 3 to 6 different compositions on a page. Never more than two neighbours with the same skeleton, and any card layout at most twice. Head-then-block repeated down the page is a template.",
+   values: {min_compositions: 3, max_compositions: 6, max_same_neighbours: 2, max_card_layouts: 2},
+   why: "When every section has the same shape, the reader cannot tell where one idea ends and the next begins.",
+   fix: "Change the composition of the middle section in each run of three; pick the shape the content suggests (a table for specifications, a showcase for one picture).",
+   sources: ["LAY-167 (HM §195, HM §205, TS §92, TS §99)", "LAY-168 (HM §174, HM §41)"]}
+- {id: LAY-013, title: Dense sections are followed by quiet ones, domain: D07, tier: Finish, check: J, remedy: fix-layout, tests: [T-SQUINT],
+   rule: "Follow a dense section (grid, table, bento, index) with a quiet one (statement, showcase). After at most two visual sections, place a calm one. Earn space by mass: a large gap frames a tall section and is a hole under a short one.",
+   why: "Unbroken density tires the reader; unbroken calm reads as empty.",
+   fix: "Reorder so dense and quiet sections alternate, or scale the gap to the section it frames.",
+   sources: ["LAY-169 (HM §206, TS §92)", "LAY-165 (HM §172)"]}
+- {id: LAY-014, title: No zigzag splits, domain: D07, tier: Reflex, kind: cap, check: H, remedy: fix-layout, tests: [T-COMPOSITION-RUN],
+   rule: "Do not alternate text-and-picture splits left and right down the page. Mirror a split at most once (conflict C24), change the ratio between two splits (5/7, 4/8, 6/6), and vary weight with a larger lead row instead of A-B-A-B.",
+   values: {max_mirrors: 1},
+   why: "Zigzag alternation is the stock feature-page rhythm; it makes each feature look the same size and the same importance.",
+   fix: "Turn the run into one lead split plus a grid, rows or a table, in the order of importance.",
+   sources: ["LAY-175 (HM §178, HM §205, TS §82, KM §161, KM §270)"]}
+- {id: LAY-015, title: Section order follows the argument, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-STOCK-ORDER, T-ANATOMY],
+   rule: "Order sections by the argument the page makes, not by the default run (hero, three features, steps, figures, CTA band, footer). Lead with the strongest real thing after the hero: what it does, show it, prove it, then act. Steps only for a process the visitor really goes through; a figures row only for numbers stated outright.",
+   why: "A default sequence tells the visitor nothing about this business and puts the strongest material wherever the template put it.",
+   fix: "Move the strongest real section to second place; cut stock sections that have no material.",
+   sources: ["LAY-186 (HM §17, HM §41, HM §204, HU §63, HU §158)", "LAY-187 (HM §204, TS §100, HU §159)", "LAY-188 (HM §185, HM §204, TS §123)"]}
+- {id: LAY-016, title: Anatomy fits the visitor's job, domain: D07, tier: Reflex, kind: context, check: J, applies_when: [web], remedy: fix-layout, tests: [T-ANATOMY],
+   rule: "Name the visitor's job, then check its action sits where category sites put it and its own sections are present. Subscribe: the email field in or as the hero, a sample issue, a dated archive. Book: the picker or next free times from nav and hero, never only at the foot. Visit: today's hours and address in nav or hero, what's on, getting there. Attend: tickets in the nav, date and place as the headline, lineup, schedule, priced tiers. Buy: product, price and options as an offer, delivery and guarantee. Try: one store button per named platform under the head. Sign up: 'Start free' in nav and hero, the product at work, pricing, questions; never ends on a newsletter. Hire: the work is the page, contact in nav and after the work. Join: first visit in the hero, schedule, priced memberships. Listen: the new release with listen and order side by side, dates as rows.",
+   why: "Visitors arrive with one job; an anatomy built for another job hides the action they came for.",
+   fix: "Move the job's action into the nav and hero, and add the missing job section the client has material for; [DATA NEEDED: what] where they do not.",
+   sources: ["LAY-189 (HM §19, UX §217)", "LAY-190 (HM §20)", "LAY-191 (HM §21, TS §155)", "LAY-192 (HM §22, UX §212)", "LAY-193 (HM §23, HM §194, TS §17)",
+             "LAY-194 (HM §24)", "LAY-195 (HM §25, TS §20)", "LAY-196 (HM §26)", "LAY-197 (HM §27)", "LAY-198 (HM §28)"]}
+- {id: LAY-017, title: Proof in the category's own form, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-ANATOMY],
+   rule: "Show proof in the form the category uses (a menu, a lineup, back issues, a record of work, a changelog), never a generic band of numbers or a wall of logos standing in for it.",
+   why: "Category-shaped proof is checkable and specific; a stat band could sit on any page.",
+   fix: "Replace the band with the category's own record, built from supplied material only.",
+   sources: ["LAY-202 (HM §17, HM §518)"]}
+- {id: LAY-018, title: Edges line up on one grid, domain: D07, tier: Reflex, check: H, remedy: fix-layout, tests: [T-LEFT-EDGES],
+   rule: "Lay sections on one column grid so left edges line up from nav to footer. Text starts on at most two lines (the container's left line and one split line); blocks start on column starts.",
+   values: {max_text_start_lines: 2},
+   why: "Edges that drift by a few pixels per section read as unplanned, and the eye has to find each block's start again.",
+   fix: "Snap every block to the container line or the split column; remove one-off insets.",
+   sources: ["LAY-126 (HM §168, TS §70)", "LAY-127 (TS §81)", "LAY-130 (TS §81)"]}
+- {id: LAY-019, title: One alignment axis, domain: D07, tier: Reflex, check: H, remedy: fix-layout, tests: [T-LEFT-EDGES, T-SQUINT],
+   rule: "Choose one primary axis for the page and hold it: never more centred heading groups than left-aligned ones, body and lists left-aligned, and no hero with title, line, action and mark all stacked on one centred axis.",
+   values: {centred_groups: "<= left-aligned groups", max_centred_hero_elements: 2},
+   why: "Everything centred is the default, not a choice; it gives the eye no edge to follow and makes long text hard to read.",
+   fix: "Left-align the heading groups and body; keep centring for one short display line.",
+   sources: ["LAY-107 (HM §33)", "LAY-108 (HM §32, HM §434, TS §81)", "LAY-109 (HU §104, KM §179)", "LAY-225 (HM §48, HM §421, HM §516)"]}
+- {id: LAY-020, title: Density fits the job, domain: D07, tier: Finish, kind: context, check: J, remedy: fix-layout, tests: [T-DENSITY-FIT],
+   rule: "Set spacing by density: low (marketing) 24 to 96px, mid (documents) 16 to 64px, high (dashboards and tools) 8 to 32px. On an app screen density is even across the screen.",
+   values: {low_px: [24, 96], mid_px: [16, 64], high_px: [8, 32]},
+   why: "A tool padded like a landing page hides the work; a landing page packed like a tool hides the message.",
+   fix: "Move the spacing scale to the job's step and apply it evenly.",
+   sources: ["LAY-123 (UX §246)", "PRC-167 (HM §159)"]}
+- {id: LAY-021, title: Phone stacks in reading order, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-PHONE-ORDER],
+   rule: "Every composition stacks in reading order on a phone: head block, then body; a split's visual after its text; the bento lead tile first; a schedule becomes one column per day.",
+   why: "A phone reader meets the stack top to bottom; a visual or action before its explanation reads out of order.",
+   fix: "Fix the source order or the stacking rule so the phone order matches the desktop reading order.",
+   sources: ["LAY-251 (HM §196, TS §74, TS §82)"]}
+- {id: LAY-022, title: No orphans in grids, domain: D07, tier: Reflex, check: J, remedy: fix-layout, tests: [T-JUDGE-TILE],
+   rule: "No empty cell and no orphan on a grid's last row; logo rows split evenly (3 and 3, never 5 and 1). Change the count or the columns.",
+   why: "An orphaned last item looks forgotten and breaks the grid the rest of the section set up.",
+   fix: "Change the column count, cut or add one real item, or let the last item span the row.",
+   sources: ["LAY-137 (HM §38, HM §432, KM §168)", "LAY-160 (KM §168)"]}
+
 # ---------------- D11 copy ----------------
 - {id: CPY-001, title: Words per screen within budget, domain: D11, tier: Reflex, kind: cap, detector: words_per_screen, remedy: fix-distill,
    rule: "Keep visible words per 900px screen under the profile budget (strict: warn 80, fail 95).", why: "Dense marketing screens are skimmed, not read.",
