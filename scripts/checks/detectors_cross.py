@@ -30,7 +30,11 @@ def tells(ev, results):
     vivid = {cl.hexstr(c) for c in colours if cl.oklch(c)[1] > 0.15}
     hs = [e for e in texts if e.get("level") in (1, 2)]
     serif_display = [e for e in hs if is_serif(rendered_family(ev, e) + "," + e["style"]["fontFamily"])]
-    italic_serif = [e for e in serif_display if e["style"]["fontStyle"] == "italic" and px(e["style"]["fontSize"]) >= 48]
+    # Italic serif display text: the heading itself, or (the common case) an italic accent word in a child span of an h1/h2.
+    # Before 9 Nov 2026 only the heading element was checked, so this tell never fired on any of 84 test items.
+    italic_serif = [e for e in texts if e["style"]["fontStyle"] == "italic" and px(e["style"]["fontSize"]) >= 40
+                    and is_serif(rendered_family(ev, e) + "," + e["style"]["fontFamily"])
+                    and (e.get("level") in (1, 2) or any(a.get("level") in (1, 2) for a in ev.ancestors(e)))]
     mono_labels = [e for e in texts if MONO.search(rendered_family(ev, e)) and e["textLen"] < 40 and e["tag"] not in ("code", "pre", "kbd", "samp")]
     bordered = [e for e in vis if px(e["style"]["borderTopWidth"]) > 0 or px(e["style"]["borderBottomWidth"]) > 0]
     hair = [e for e in bordered if e["tag"] not in ("td", "th", "tr", "table", "input", "textarea", "select") and e["rect"]["w"] > 200 and (px(e["style"]["borderTopWidth"]) == 1 or px(e["style"]["borderBottomWidth"]) == 1)]
@@ -79,17 +83,17 @@ def tells(ev, results):
             "ai_purple": T(bool(purple), purple and cl.hexstr(purple[0])),
             "gradient_pair": T(bool(gp), "banned gradient pair"),
             "glow": T(fired("glow"), "glow detector"),
-            "scattered_radii": T(len(radii) >= 5, f"{len(radii)} radii: {', '.join(sorted(radii)[:6])}"),
         },
     }
 
 @detector("look_family")
 def look_family(ev, cfg, results=None):
     need = (cfg.get("_profile") or {}).get("look_family_cluster_min", 3)
+    famcfg = yaml.safe_load((ROOT / "data" / "look-families.yaml").read_text(encoding="utf-8"))["families"]
     out = []
     for fam, ts in tells(ev, results or {}).items():
         on = {k: v for k, v in ts.items() if v}
-        if len(on) >= need:
+        if len(on) >= need + (famcfg.get(fam) or {}).get("cluster_extra", 0):
             out.append(hit(cfg, "whole page", f"{fam}: {len(on)} of {len(ts)} tells ({'; '.join(f'{k} ({v})' for k, v in on.items())}); cluster minimum {need}", value=len(on), family=fam))
     return out
 
