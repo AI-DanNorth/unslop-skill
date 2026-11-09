@@ -1,0 +1,96 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'most tools manage projects or people; Consile does both in one workspace', and the hero shows it with a product dashboard, but from 'See Consile in two minutes' onward the page becomes a stock run of pill eyebrows and identical icon-card grids that would hold under any team-ops SaaS.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-ONE-SENTENCE and T-KIND-FIT pass on the hero, but T-SIGNATURE finds a greeting over four stat cards, T-IDEA-CARRIES fails from the second section, T-DEFAULT-PLAN marks five moves and most headings survive T-RIVAL-NAME."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-004",
+      "title": "One idea runs the whole artifact",
+      "tier": "Reflex",
+      "where": "from 'See Consile in two minutes' to the footer, 1440px (tiles/1440-01.png to 1440-07.png)",
+      "evidence": "T-IDEA-CARRIES fails at the second section. After the hero, the page shows no more product UI: the demo video poster is a grey panel with five initial tiles ('PR', 'TB', 'TT', 'HR', 'LV'), then 'Why teams struggle without Consile', 'How Consile solves it', a grid of about twenty identical icon cards ('Running in Minutes, Not Months', 'SAML 2.0 Single Sign-On', 'Cookie Consent'), a stat strip, 'Choose your way in', six security cards and a FAQ. None of them shows tasks and people data joined, which is the idea.",
+      "before": "Text-only icon cards for every module and promise",
+      "after": "Show the join the hero promises: one screen where a leave approval changes the task board, or a KPI review pulls attendance, then cut the module grid to the few that prove it",
+      "why": "The one specific claim on the page, projects and people in one place, is shown once and then replaced by a feature inventory any HR or task tool could publish.",
+      "test": "T-IDEA-CARRIES"
+    },
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "hero product frame, 1440px (tiles/1440-00.png)",
+      "evidence": "T-SIGNATURE finds a stand-in (draft CON-119). The dashboard opens 'Good morning, Otto' over four stat cards ('TASKS DUE 18', 'ATTENDANCE 92%', 'PEOPLE 35', 'REVIEWS 6') and a donut '92% present', in a workspace named 'Acme Studio' and labelled 'PRODUCT PREVIEW · SAMPLE DATA'. The frame shows totals, not the product's distinct object.",
+      "before": "Greeting over four stat cards and a donut",
+      "after": "Lead with the screen only Consile has: for example a task list where each assignee shows today's attendance or leave status beside the work",
+      "why": "A greeting over stat cards is the default dashboard picture, so the one product image does not show what makes this product different.",
+      "test": "T-SIGNATURE"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "whole page, 1440px",
+      "evidence": "T-DEFAULT-PLAN marks five moves: three numbered problem cards ('1 Tool Overload', '2 Flying Blind', '3 Manual Busywork'); small pill eyebrows on every section ('The problem', 'The solution', 'Features', 'FAQ'); a label-and-value strip between hairlines ('27 BUILT-IN MODULES', '99.9% MONTHLY UPTIME TARGET', 'Free STARTER PLAN UP TO 5 USERS'); a closing band 'Ready to run tasks, people ops, and performance from one workspace?'; a dark footer with long link columns. The page also uses a pale ground with one orange accent.",
+      "before": "Problem, solution, features, security, journeys, beliefs, security again, FAQ, CTA",
+      "after": "Merge the two security sections, drop the problem-solution pair, and order what remains by the buyer's question",
+      "why": "The stock order and repeated card grids make the page read as filled from a template despite the specific hero.",
+      "test": "T-DEFAULT-PLAN"
+    },
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "headings and card titles, 1440px",
+      "evidence": "T-RIVAL-NAME: with Connecteam or Factorial in place of Consile, 'One Platform, Zero Chaos', 'Real-Time Team Pulse', 'Workflows That Run Themselves', 'Enterprise-grade by default', 'Built with security & compliance at the core', 'Speed is a feature' and 'Questions, answered' all stay true. The hero motto '\"Connecting Teams. Empowering Work.\"' also holds under any rival.",
+      "before": "'One Platform, Zero Chaos' / '\"Connecting Teams. Empowering Work.\"'",
+      "after": "Keep the lines that only Consile can say ('Most tools only manage projects or only manage people') and rewrite the rest from product facts",
+      "why": "Most headings would sit unchanged on a competitor's page, so they spend the visitor's attention without separating the product.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-017",
+      "title": "Every headline promise is pictured",
+      "tier": "Finish",
+      "where": "feature grid, 1440px (tiles/1440-03.png)",
+      "evidence": "T-PROMISE-PICTURED fails. 'Shifts, Rotations & Swap Requests', 'Guided Onboarding for New Hires' and 'KPI Reviews & Performance Tracking' each make a concrete promise and are pictured only by a small orange line icon.",
+      "before": "Line icons for concrete modules",
+      "after": "One product screenshot for each of the three modules that carry the idea (shifts, leave, reviews)",
+      "why": "A buyer comparing HR tools needs to see the shift swap or the review screen, and the page shows an icon instead.",
+      "test": "T-PROMISE-PICTURED"
+    }
+  ],
+  "strengths": [
+    "T-ONE-SENTENCE passes on the hero: 'Most tools only manage projects or only manage people. Consile brings both together' is a positioning only this product claims, and the audience line 'Built for growing teams of 2–200' is specific.",
+    "T-KIND-FIT passes on the first screen: software leads with its own UI (sidebar with Tasks, Attendance, People, Performance), and the frame is honestly labelled 'SAMPLE DATA'.",
+    "The security cards are concrete ('HMAC-signed outgoing webhooks', 'Six built-in role tiers', 'AES-256 at rest') and should stay as material, merged into one section."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade from the page itself.",
+    "The demo video was not played; only its poster frame was judged.",
+    "At 375 an 'Install Consile' prompt covers the lower hero (tiles/375-00.png); it is the site's own overlay, judged for concept only as context."
+  ]
+}

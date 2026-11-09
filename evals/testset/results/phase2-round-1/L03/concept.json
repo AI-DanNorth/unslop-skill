@@ -1,0 +1,105 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The only statable idea is the h1 'Tell us the goal. We'll build the stack.', but the page never shows a built stack; it is a centred pill-badge hero, an icon-card grid, three numbered steps, a card catalogue and a dark closing band that would serve any AI-tool directory.",
+  "score": {
+    "dimension": "Concept",
+    "value": 2,
+    "reason": "T-SIGNATURE, T-DEFAULT-AGENT, T-MIRROR and T-RIVAL-NAME all fail, T-DEFAULT-PLAN marks four moves, and the sweep's saas-card-kit cluster confirms the look is a framework default rather than an own system."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "hero, 1440px and 375px (tiles/1440-00.png, tiles/375-00.png)",
+      "evidence": "T-SIGNATURE fails. The first screen holds a pill badge 'Personalized AI tool recommendations', a two-line h1 with the second line in blue #2563eb-style accent, two buttons and three grey icon labels ('20+ curated tools', 'Instant results', 'Updated for 2026'). There is no recommended stack, no quiz question and no tool logo above the fold. T-MEMORY after one look: 'a blue-and-black headline on white', a mood, not a thing.",
+      "before": "Centred headline and two buttons with no product object",
+      "after": "Put the product's object on the first screen: a real recommended stack for one goal (for example 'Start a YouTube channel': the named tools, their monthly prices and setup time), or the first quiz question live in the hero",
+      "why": "The product's whole value is the stack it builds, and the visitor has to click before seeing a single one. With no object on screen, nothing on the first screen belongs to this tool.",
+      "test": "T-SIGNATURE"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "whole page, 1440px (tiles/1440-01.png to 1440-03.png)",
+      "evidence": "T-DEFAULT-PLAN marks four moves: 'How it works' with three numbered steps in black squares ('1 Choose your goal', '2 Set your budget', '3 Share your skill level'); small grey labels under every card ('Plans, decks, and operations'); a closing dark band 'Ready to find your stack?' with a single button and a layered-icon ornament; a dark footer with Product, Company and Connect columns. The page also uses a pale ground with one careful blue accent.",
+      "before": "Hero, goal grid, three steps, featured-tools grid, dark CTA band, dark footer",
+      "after": "Drop the three-step section and the closing band; let the goal grid open real example stacks inline so the page itself demonstrates the recommendation",
+      "why": "Each of these sections is the stock order a generator emits for any SaaS landing page. The visitor learns nothing about how this tool chooses tools from them.",
+      "test": "T-DEFAULT-PLAN"
+    },
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "h1, sub-line and every h2, 1440px",
+      "evidence": "T-RIVAL-NAME: putting a rival AI-tool directory (for example 'Futurepedia' or 'There's An AI For That') into 'Tell us the goal. We'll build the stack.', 'What are you trying to accomplish?', 'How it works', 'Featured tools' and 'Ready to find your stack?' leaves every line true. The visual system holds too: the logo is a generic layered-squares icon in a black tile, and the sweep's look_family hit names the saas-card-kit cluster (4 of 5 tells).",
+      "before": "'How it works' / 'Featured tools' / 'Ready to find your stack?'",
+      "after": "Headings that state what only this tool does, for example how it weighs budget against skill level, with [DATA NEEDED: the recommendation method and an example output]",
+      "why": "When every heading and the look survive a rival's name, the page gives the visitor no reason to pick this directory over the one they already know.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "goal grid and featured tools, 1440px (tiles/1440-01.png, 1440-02.png)",
+      "evidence": "T-MIRROR and T-DEFAULT-AGENT fail. All ten goal cards carry the same blue target icon in a pale tile, from 'Study smarter' to 'Design faster'. The six tool cards replace real product logos with two-letter initial tiles ('GP', 'Cl', 'Ge', 'Px', 'Cv', 'EL') and identical yellow 'Freemium' pills. Typing 'landing page for an AI tool recommender' into an agent would produce this hero, grid, step row and card list.",
+      "before": "One repeated target icon on ten goals; initials in place of logos",
+      "after": "Give each goal its own picture of the outcome (a channel thumbnail, a site, a deck) and show the tools' real marks, or drop the icons and let the tool names carry the cards",
+      "why": "A repeated icon and initials tiles say the cards were filled from a template. The visitor cannot scan the goals or recognise the tools at a glance.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "CON-017",
+      "title": "Every headline promise is pictured",
+      "tier": "Finish",
+      "where": "h1 and closing band, 1440px",
+      "evidence": "T-PROMISE-PICTURED fails twice. The h1 promises 'We'll build the stack' and no stack appears anywhere on the page. The closing band promises 'a tailored workflow with real tools, prices, and setup time' and the page shows no workflow, only separate tool cards with prices such as 'Free / ₹1,650 mo Plus'.",
+      "before": "Promise of a built stack with no picture of one",
+      "after": "Show one finished stack: the goal, the three or four tools in order, the total monthly cost and setup time",
+      "why": "The headline makes a concrete promise and the page gives no proof of it, so the visitor has to trust the button.",
+      "test": "T-PROMISE-PICTURED"
+    },
+    {
+      "rule": "CON-004",
+      "title": "One idea runs the whole artifact",
+      "tier": "Reflex",
+      "where": "featured tools section onward, 1440px (tiles/1440-01.png bottom, 1440-02.png)",
+      "evidence": "T-IDEA-CARRIES fails at 'Featured tools'. The idea 'we build the stack for your goal' turns into an unfiltered list of six popular tools ('A few of the 20 tools in our directory.'), which is the 'endless directory' the sub-line told the visitor to stop browsing.",
+      "before": "'Featured tools: A few of the 20 tools in our directory.'",
+      "after": "Replace the featured list with two or three example stacks keyed to the goals above",
+      "why": "The page argues against directories and then becomes one, so the idea stops at the hero.",
+      "test": "T-IDEA-CARRIES"
+    }
+  ],
+  "strengths": [
+    "The h1 'Tell us the goal. We'll build the stack.' states a clear job in one line; keep it and make the page prove it.",
+    "Tool cards carry concrete local prices ('Free / ₹415 mo Starter') and use-case tags, which is real material a stack view could be built from."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade from the page itself.",
+    "The quiz flow behind 'Find my stack' was not captured, so the actual recommendation output could not be judged."
+  ]
+}

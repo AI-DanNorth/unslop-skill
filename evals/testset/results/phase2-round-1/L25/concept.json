@@ -1,0 +1,63 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The idea is 'the product development system for teams and agents', shown by the product itself: the hero is the real Linear app with issue DRV-8852 'Faster app launch' and an agent panel at work, and each later section (Intake, Planning and monitoring, AI and automations, Build, review, and ship) leads with its own working screen.",
+  "score": {
+    "dimension": "Concept",
+    "value": 8,
+    "reason": "T-OWN-SYSTEM, T-KIND-FIT, T-SIGNATURE and T-IDEA-CARRIES pass on real product UI throughout, but the three 'FIG 0.x' value cards and the closing 'Built for the future. Available today.' fail T-RIVAL-NAME."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "value row under the intro statement, 1440px (tiles/1440-02.png)",
+      "evidence": "T-RIVAL-NAME fails on this row. The three cards 'Purpose-built', 'Powered by agents' and 'Designed for speed' stay true under Jira, Asana or Height. 'Reduces noise and restores momentum to help teams ship with high velocity and focus' names no Linear feature. The isometric line drawings (stacked plates, cubes, fanned sheets) labelled 'FIG 0.1' to 'FIG 0.3' illustrate nothing in the product.",
+      "before": "Three generic values with abstract isometric figures",
+      "after": "Tie each value to one product fact the page already has, for example 'Designed for speed' over the real keyboard-driven issue view, or cut the row and let the intro statement lead into 'Intake'",
+      "why": "This is the only row between the hero and the features where the page stops showing the product, and its claims are the category's stock claims.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "closing band and footer, 1440px (tiles/1440-10.png)",
+      "evidence": "T-DEFAULT-PLAN marks two moves here: a centred closing band 'Built for the future. Available today.' with 'Get started' and 'Contact sales' buttons, then a dark six-column link footer. The closing line holds under any software company's name.",
+      "before": "'Built for the future. Available today.'",
+      "after": "End on a line that comes from the page's own idea of teams and agents working in one system, or on the changelog, which is already specific",
+      "why": "The page earns its specificity section by section and then closes on a line that could end any SaaS page.",
+      "test": "T-DEFAULT-PLAN"
+    }
+  ],
+  "strengths": [
+    "T-SIGNATURE and T-KIND-FIT pass: the first screen at 1440 and 375 shows the real app at work, issue 'DRV-8852 Faster app launch' with Slack intake, 'Triage Intelligence' labels and a Linear agent panel ('Fix the dimmed ride rows that never reset and open a PR'). Software shows its own UI (CON-014).",
+    "T-IDEA-CARRIES passes: 'Planning and monitoring' shows a real roadmap timeline and a 'Cycle time by agent' chart; 'AI and automations' and 'Build, review, and ship' each lead with product UI, so the teams-and-agents idea runs to the changelog.",
+    "T-OWN-SYSTEM passes: Linear's near-black ground, Inter Variable display set tight, the striped-circle mark and quiet grey secondary text are applied the same way on every screen.",
+    "The changelog strip ('Mobile Diffs', 'Stacked pull requests', 'New controls for Linear coding agent', with dates) is concrete proof of the product moving and must stay."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade from the page itself.",
+    "Several product scripts were blocked during capture (manifest.network); animated product panels were judged from single frames."
+  ]
+}
