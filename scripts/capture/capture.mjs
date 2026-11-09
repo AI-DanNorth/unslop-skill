@@ -40,13 +40,39 @@ async function settle(page) {
   await page.waitForTimeout(600);
 }
 
+// One-try cookie-banner dismissal for listed live hosts (consent.json). Clicks are logged and land in manifest.consent.
+const CONSENT = JSON.parse(fs.readFileSync(path.join(HERE, "consent.json"), "utf8")).hosts;
+const CONSENT_HOST = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+const consentLog = new Set();
+function dismissConsent(labels) {
+  const want = labels.map((l) => l.toLowerCase());
+  const norm = (s) => (s || "").replace(/\s+/g, " ").trim().toLowerCase();
+  let done = false;
+  const tryClick = () => {
+    if (done) return;
+    const els = [...document.querySelectorAll("button, a, [role=button], input[type=button], input[type=submit]")];
+    for (const lab of want) {
+      const el = els.find((e) => norm(e.innerText || e.value) === lab && e.getClientRects().length);
+      if (el) { el.click(); done = true; console.log(`[unslop-consent] clicked "${lab}"`); return; }
+    }
+  };
+  const obs = new MutationObserver(tryClick);
+  const start = () => { tryClick(); obs.observe(document.documentElement, { childList: true, subtree: true }); setTimeout(() => obs.disconnect(), 20000); };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+}
+
 async function open(browser, w, ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: HEIGHTS[w] || 900 }, deviceScaleFactor: 1, ...ctxOpts });
   NETS.push(await installShim(ctx));
+  if (CONSENT[CONSENT_HOST]) await ctx.addInitScript(dismissConsent, CONSENT[CONSENT_HOST]);
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e.message || e)));
-  page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
+  page.on("console", (m) => {
+    const t = m.text();
+    if (t.startsWith("[unslop-consent] ")) { consentLog.add(`w${w}: ${t.slice(17)}`); return; }
+    if (m.type() === "error") errors.push(t);
+  });
   return { ctx, page, errors };
 }
 
@@ -245,6 +271,7 @@ const VISIBLE_CHARS = () => {
 await browser.close();
 const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];
 manifest.network = { shimmed: uniq("shimmed"), blocked: uniq("blocked"), fontsMissing: uniq("fontsMissing") };
+if (CONSENT[CONSENT_HOST]) manifest.consent = { host: CONSENT_HOST, tried: CONSENT[CONSENT_HOST], clicked: [...consentLog] };   // empty clicked = banner not dismissed
 manifest.network.blockedImages = manifest.network.blocked.filter((b) => b.startsWith("image ")).length;
 manifest.network.blockedFonts = manifest.network.blocked.filter((b) => b.startsWith("font ") || /fonts\.|fontshare|typekit/.test(b)).length;
 manifest.finished = new Date().toISOString();

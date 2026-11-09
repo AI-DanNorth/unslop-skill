@@ -1,0 +1,12 @@
+{
+  "_note": "One-try cookie-banner dismissal for live captures. host (no www.) -> button labels to click, first visible match wins, compared case-insensitively. Prefer reject or essential-only so third-party scripts stay off. Every click is recorded in manifest.json consent; a host whose banner is not dismissed stays not verified (evals/testset/results/live-capture-notes.md).",
+  "hosts": {
+    "consile.app": ["Reject All"],
+    "cineyx.ai": ["Reject non-essential"],
+    "gradloom.app": ["Essential only"],
+    "anthropic.com": ["Reject all cookies"],
+    "stripe.com": ["Reject all"],
+    "design-system.service.gov.uk": ["Reject analytics cookies"],
+    "reallygoodemails.com": ["Allow all cookies"]
+  }
+}
