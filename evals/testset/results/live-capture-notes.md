@@ -45,13 +45,17 @@ No item redirected to another host, and none hit a bot check or login wall.
 
 Totals: 35 ok, 1 not verified (L04), 3 with a caveat (L11, L29, L30).
 
-## Capture gaps found during blind review (live round 1)
+## Capture gaps found during blind review (live round 1), and what was done
 
-The fold check missed these; the reviewers found them further down the pages. Each reviewer marked them not verified rather than judging them. They go to the round-1 adjudication.
+The fold check missed these. The reviewers found them further down the pages and marked them not verified instead of judging them. All 39 items were then recaptured (9 Nov 2026) with the fixes below. Round-1 lens files stay archived in `results/live-round-1/`.
 
-- **Scroll-reveal sections never painted** (blank bands in the full-page tiles): L10 and L20 (judged from DOM text), L18 tiles 03–07, L28 pinned and WebGL sections, L36 scroll-linked sections, L16 "Reach them / Send follow-up" section (invisible but focusable). Same cause as L30: `settle()` scrolls with instant `scrollTo`, which doesn't trigger these animations. This is a system-level capture limitation; `scrollFrames` (L30) is a per-host workaround, not a fix.
-- **L29:** the site's own `App3D-*.js` request failed (`manifest.network.blocked`), so only the intro planet rendered. Downgraded from caveat to partial.
-- **L21:** lazy-loaded gallery thumbnails never rendered, and the demo video was blocked.
-- **L26:** some scripts and two fonts were blocked; several images show as broken.
-- **L36:** the reviewer reported a cookie banner covering focus stops. Unconfirmed: no banner text appears in `dom-1440.json`, so it may be in an iframe or at another width.
-- **`extract.js`:** a reviewer saw empty heading text for headings that wrap their text in child elements (L05, L10, L25). Not yet checked; it would affect the heading detectors.
+| Gap | Items | Fix |
+|---|---|---|
+| Scroll-reveal sections never painted: instant `scrollTo` doesn't trigger reveal-on-scroll observers or smooth-scroll libraries | L10, L16, L18, L20, L28, L36 | `settle()` now also does a real mouse-wheel pass (30 s budget) before screenshots and in the hidden-content scroll test. L10 and L16 now render fully, and L18 has 1 blank tile left (its drag-to-compare strip). |
+| Scroll-position-driven sections (pinned or scrubbed): no full-page shot can show them | L20, L28, L36 (and L30 before) | `scrollFrames: 12` in `page-prep.json`. The tiles are now viewport frames taken while wheel-scrolling, all with content. |
+| L36 cookie banner (IBM, no reject option; not in the page text) | L36 | Confirmed in the scroll frames. Added "Accept All" for carbondesignsystem.com, and it was dismissed at every width. |
+| Headings whose words sit in child spans recorded empty; `<br>` glued words together ("Intakeand integrations") | L05, L10, L25 | `extract.js` now treats `<br>` as a space, and `h1_words` reads the whole heading (`blockText`). The L25 reviewer's run-together accessible-name finding was a capture artifact. |
+| L29's own `App3D-*.js` request failed | L29 | Not fixable from capture; status changed from caveat to partial. |
+| L21 lazy gallery thumbnails, blocked demo video; L26 some blocked scripts and fonts | L21, L26 | Partly covered by the wheel pass (lazy images). Leftovers are recorded in each manifest. |
+
+`run_set.py` per-item timeout raised from 600 to 900 s: L28 takes about 540 s with the wheel pass.

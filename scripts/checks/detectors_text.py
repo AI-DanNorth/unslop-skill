@@ -91,11 +91,13 @@ def h1_words(ev, cfg):
     if cfg.get("enabled") is False: raise Skip("disabled by profile")
     out = []
     max_chars = round(cfg.get("max_chars", 50) * cfg["fail"] / 7)
-    for e in ev.texts():
+    for e in ev.visible():
         if e.get("level") != 1: continue
-        n = len(e["text"].split())
-        if n > cfg["fail"] or len(e["text"]) > max_chars:
-            out.append(hit(cfg, where(e), f"h1 has {n} words / {len(e['text'])} characters (max {cfg['fail']} / {max_chars})", value=n))
+        t = e.get("blockText") or e["text"]      # whole heading, including words wrapped in child spans
+        if not t: continue
+        n = len(t.split())
+        if n > cfg["fail"] or len(t) > max_chars:
+            out.append(hit(cfg, where(e), f"h1 has {n} words / {len(t)} characters (max {cfg['fail']} / {max_chars}): \"{t[:60]}\"", value=n))
     return out
 
 @detector("em_dash")

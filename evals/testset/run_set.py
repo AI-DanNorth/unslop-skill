@@ -22,7 +22,7 @@ for it in doc["items"]:
     widths = ",".join(map(str, (yaml.safe_load(adapter.read_text()) or {}).get("capture_widths", [375, 1280, 1440]))) if adapter.exists() else "375,1280,1440"
     env = dict(__import__("os").environ, UNSLOP_HOST_MAP=",".join(f"{h}={pathlib.Path(a.refs) / r}" for h, r in HOSTS.items()))
     t0 = time.time()
-    c = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), target, str(run), "--widths", widths], capture_output=True, text=True, timeout=600, env=env)
+    c = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), target, str(run), "--widths", widths], capture_output=True, text=True, timeout=900, env=env)
     if c.returncode: print(it["id"], "CAPTURE FAILED", c.stderr[-300:]); continue
     subprocess.run([sys.executable, str(ROOT / "scripts/checks/sweep.py"), str(run), "--profile", a.profile, "--medium", medium, "--quiet"], capture_output=True, text=True)
     s = subprocess.run([sys.executable, str(ROOT / "scripts/report/synthesize.py"), str(run)], capture_output=True, text=True)

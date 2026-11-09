@@ -28,7 +28,7 @@
   }
   function ownText(el) {
     let t = "";
-    for (const n of el.childNodes) if (n.nodeType === 3) t += n.textContent;
+    for (const n of el.childNodes) { if (n.nodeType === 3) t += n.textContent; else if (n.nodeName === "BR") t += " "; }   // <br> separates words
     return t.replace(/\s+/g, " ").trim();
   }
   function visible(el, cs, r) {

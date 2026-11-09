@@ -29,7 +29,7 @@ fs.mkdirSync(path.join(ev, "focus"), { recursive: true });
 const log = [];
 const note = (m) => { log.push(m); console.error(m); };
 
-async function settle(page) {
+async function settle(page, { wheel = false } = {}) {
   try { await page.waitForLoadState("networkidle", { timeout: 15000 }); } catch { note("networkidle timeout; continuing after load"); }
   await page.evaluate(() => document.fonts && document.fonts.ready);
   await page.evaluate(async () => {           // trigger lazy content, then return to top
@@ -37,6 +37,20 @@ async function settle(page) {
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) { scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); }
     scrollTo(0, 0);
   });
+  // Real wheel pass: reveal-on-scroll observers and smooth-scroll libraries ignore instant scrollTo, which left blank
+  // bands in live captures (live round 1: L10, L16, L18, L20, L28, L36). Reveal-once content stays visible afterwards.
+  if (wheel) try {
+    const vp = page.viewportSize(), t0 = Date.now();      // budget: 30 s per pass, so long pages cannot stall the capture
+    await page.mouse.move(vp.width / 2, vp.height / 2);
+    for (let i = 0; i < 80; i++) {
+      const [bottom, H] = await page.evaluate(() => [scrollY + innerHeight, document.documentElement.scrollHeight]);
+      if (bottom >= H - 2 || Date.now() - t0 > 30000) break;
+      await page.mouse.wheel(0, Math.round(vp.height * 0.66)); await page.waitForTimeout(250);
+    }
+    await page.waitForTimeout(800);
+    for (let i = 0; i < 80 && (await page.evaluate(() => scrollY)) > 0; i++) { await page.mouse.wheel(0, -1500); await page.waitForTimeout(80); }
+    await page.evaluate(() => scrollTo(0, 0));
+  } catch (e) { note(`wheel pass failed: ${e.message}`); }
   await page.waitForTimeout(600);
 }
 
@@ -114,7 +128,7 @@ if (!flag("--skip-control") && fs.existsSync(controlPath)) {
 for (const w of widths) {
   const { ctx, page, errors } = await open(browser, w);
   try { await page.goto(url, { waitUntil: "load", timeout: 45000 }); } catch (e) { note(`width ${w}: load failed: ${e.message}`); await ctx.close(); continue; }
-  await settle(page);
+  await settle(page, { wheel: true });
   if (PREP && PREP.wait) { await page.waitForTimeout(PREP.wait); prepLog.add(`w${w}: waited ${PREP.wait}ms`); }
   await page.addStyleTag({ content: "*,*::before,*::after{background-attachment:scroll!important}" });   // fixed backgrounds render once in full-page shots
   const dom = await page.evaluate(EXTRACT);
@@ -194,7 +208,7 @@ const VISIBLE_CHARS = () => {
     if (c.init) await page.addInitScript(c.init);
     try {
       await page.goto(url, { waitUntil: "load", timeout: 45000 });
-      if (c.scroll) await settle(page); else await page.waitForTimeout(c.wait || 1200);
+      if (c.scroll) await settle(page, { wheel: true }); else await page.waitForTimeout(c.wait || 1200);
       hidden[name] = await page.evaluate(VISIBLE_CHARS);
     } catch (e) { hidden[name] = { error: e.message }; }
     await ctx.close();
