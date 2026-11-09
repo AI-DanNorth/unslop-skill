@@ -1,0 +1,109 @@
+# Calibration: Test set 1
+
+Verdict agreement on clear-cut items: **27/44**. Borderline items are reported but not scored.
+False positives (good flagged as slop): 6. Misses (slop not flagged): 4.
+
+| Item | Expected | Unslop | Slop lens read | Look families | Slop-type Reflex | Floor | Lens findings | Medium |
+|---|---|---|---|---|---|---|---|---|
+| S01 | slop | slop | generated (high) | - | 16 | 4 | 13 | web |
+| S02 | slop | slop | generated (high) | warm-paper-serif | 21 | 3 | 12 | web |
+| S03 | slop | slop | generated (high) | violet-gradient | 43 | 16 | 12 | web |
+| S04 | slop | slop | generated (medium) | - | 11 | 0 | 5 | web |
+| S05 | slop | slop | generated (high) | - | 15 | 17 | 12 | web |
+| S06 | slop | slop | generated (high) | saas-card-kit | 9 | 15 | 11 | app |
+| S07 | slop | slop | generated (high) | warm-paper-serif | 12 | 12 | 12 | web |
+| S08 | slop | slop | generated (high) | - | 23 | 7 | 12 | web |
+| S09 | slop | slop | generated (high) | - | 31 | 17 | 11 | web |
+| S10 | slop | slop | generated (high) | - | 8 | 16 | 15 | app |
+| S11 | slop | slop | generated (high) | - | 3 | 4 | 9 | web |
+| S12 | slop | borderline ✗ | mixed (medium) | - | 0 | 0 | 11 | web |
+| S13 | slop | slop | generated (low) | - | 0 | 2 | 8 | social |
+| G01 | good | good | made (medium) | - | 1 | 0 | 9 | web |
+| G02 | good | good | made (medium) | - | 8 | 0 | 7 | web |
+| G03 | good | good | made (medium) | - | 2 | 0 | 7 | web |
+| G04 | good | good | made (medium) | - | 1 | 0 | 5 | web |
+| G05 | good | borderline ✗ | mixed (medium) | - | 13 | 0 | 7 | web |
+| G06 | good | slop ✗ | generated (high) | warm-paper-serif,hairline-newspaper | 32 | 20 | 13 | web |
+| G07 | good | borderline ✗ | mixed (medium) | - | 9 | 0 | 11 | app |
+| G08 | good | borderline ✗ | mixed (medium) | - | 0 | 6 | 9 | web |
+| G09 | good | borderline ✗ | mixed (medium) | - | 4 | 0 | 11 | web |
+| G10 | good | borderline ✗ | mixed (medium) | - | 0 | 0 | 11 | web |
+| G11 | good | slop ✗ | generated (low) | - | 0 | 2 | 3 | social |
+| G12 | good | borderline ✗ | mixed (medium) | - | 13 | 1 | 11 | app |
+| G13 | good | good | made (medium) | - | 1 | 0 | 7 | diagram |
+| B01 | borderline | slop | generated (high) | - | 10 | 3 | 11 | web |
+| B02 | borderline | slop | generated (high) | violet-gradient | 24 | 16 | 13 | web |
+| B03 | borderline | slop | generated (medium) | - | 19 | 15 | 13 | web |
+| B04 | good | slop ✗ | generated (high) | warm-paper-serif | 17 | 18 | 15 | web |
+| B05 | borderline | slop | generated (high) | dark-single-accent | 22 | 17 | 12 | web |
+| B06 | good | slop ✗ | generated (high) | - | 13 | 7 | 12 | web |
+| B07 | borderline | slop | generated (high) | - | 3 | 23 | 11 | web |
+| B08 | good | slop ✗ | generated (high) | - | 5 | 22 | 11 | web |
+| C01 | slop | borderline ✗ | mixed (medium) | - | 2 | 0 | 7 | app |
+| C02 | slop | slop | generated (high) | - | 7 | 0 | 5 | app |
+| C03 | slop | slop | generated (medium) | - | 1 | 0 | 4 | app |
+| C04 | slop | slop | generated (medium) | - | 10 | 0 | 6 | app |
+| M01 | good | good | made (medium) | - | 27 | 12 | 10 | slides |
+| M02 | good | borderline ✗ | mixed (medium) | - | 6 | 0 | 11 | print |
+| M03 | good | good | made (high) | - | 5 | 0 | 5 | print |
+| M04 | good | good | made (medium) | - | 0 | 0 | 4 | social |
+| M05 | borderline | borderline | mixed (medium) | - | 5 | 24 | 11 | slides |
+| M06 | good | good | made (medium) | - | 3 | 26 | 9 | slides |
+| M07 | borderline | slop | generated (high) | saas-card-kit | 53 | 27 | 10 | slides |
+| M08 | borderline | borderline | mixed (medium) | - | 6 | 0 | 9 | email |
+| I01 | slop | borderline ✗ | mixed (medium) | - | 0 | 0 | 7 | web |
+| I02 | slop | borderline ✗ | mixed (medium) | - | 0 | 0 | 7 | web |
+| I03 | slop | slop | generated (medium) | - | 0 | 0 | 8 | web |
+| I04 | slop | slop | generated (high) | - | 0 | 0 | 12 | web |
+| I05 | good | slop ✗ | generated (high) | - | 0 | 0 | 9 | web |
+| I06 | slop | slop (integrity Floor) | made (medium) | - | 0 | 0 | 5 | diagram |
+
+## Detector discrimination
+
+Share of items each detector fired on, by expected label. A detector that fires as often on good items as on slop does not separate them; one that fires on good controls is a false-positive candidate.
+
+| Detector | slop | borderline | good | Read |
+|---|---|---|---|---|
+| banned_fonts | 65% | 62% | 29% | separates |
+| headings_landmarks | 76% | 62% | 43% | separates |
+| flat_hierarchy | 47% | 12% | 14% | separates |
+| stock_swatches | 41% | 0% | 14% |  |
+| motion_css | 35% | 25% | 10% |  |
+| gradient | 24% | 38% | 0% |  |
+| emoji_icons | 24% | 0% | 0% |  |
+| lexicon_copy | 47% | 25% | 24% |  |
+| spacing_monotony | 24% | 0% | 5% |  |
+| contrast | 47% | 88% | 29% |  |
+| look_family | 24% | 38% | 10% |  |
+| card_kit | 18% | 38% | 5% | rare |
+| accent_footprint | 18% | 12% | 5% | rare |
+| icon_tile | 12% | 0% | 0% | rare |
+| form_labels | 12% | 0% | 0% | rare |
+| overflow | 35% | 25% | 24% |  |
+| invented_metrics | 24% | 25% | 14% |  |
+| stat_band | 35% | 75% | 29% |  |
+| side_tab_border | 6% | 12% | 0% | rare |
+| glow | 6% | 25% | 0% | rare |
+| reduced_motion | 6% | 12% | 0% | rare |
+| default_names | 29% | 12% | 24% |  |
+| lang_and_title | 12% | 12% | 10% | rare |
+| heading_rhythm | 6% | 12% | 5% | rare |
+| placeholder_residue | 6% | 12% | 5% | rare |
+| neon_violet | 0% | 12% | 0% | rare |
+| words_per_screen | 6% | 12% | 10% | rare |
+| chrome_glyphs | 29% | 75% | 33% | fires on good too |
+| numbered_labels | 0% | 0% | 5% | rare |
+| h1_words | 0% | 0% | 5% | rare |
+| phone_parity | 0% | 0% | 5% | rare |
+| performance | 0% | 0% | 5% | rare |
+| focus_ring | 12% | 12% | 19% | rare |
+| eyebrow | 0% | 38% | 10% | rare |
+| container_monotony | 0% | 0% | 10% | rare |
+| targets | 47% | 62% | 57% | fires on good too |
+| dead_band | 12% | 25% | 24% | rare |
+| em_dash | 6% | 62% | 19% | rare |
+| repeated_label | 18% | 50% | 33% | fires on good too |
+| type_ladder | 41% | 88% | 57% | fires on good too |
+| widows | 59% | 62% | 76% | fires on good too |
+| off_scale_spacing | 0% | 25% | 19% | rare |
+| text_floor | 41% | 88% | 62% | fires on good too |

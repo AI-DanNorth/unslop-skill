@@ -49,17 +49,15 @@ python3 scripts/selftest.py                         # must print SELF-TEST PASSE
 - **Capture must be honest.** Blocked requests, missing fonts and failed images are recorded in `manifest.json` `network` and become "not verified", never a pass or a finding.
 - **Network and page prep for live sites.** `netshim.mjs` turns itself off when the real network is reachable (`manifest.network.mode`; force it with `UNSLOP_NET=direct|shim`). Per-host cookie-banner clicks, interstitial clicks, overlay blocks, waits and scroll frames go in `scripts/capture/page-prep.json`, never in code. Each one is recorded in `manifest.prep`; see `evals/testset/results/live-capture-notes.md`.
 
-## Status (8 Nov 2026)
+## Status (9 Nov 2026)
 
 - Phase 1 (core and web MVP) is built. Draft media adapters exist for slides, social, print, diagram, email and app.
-- Test set 1 local items (52): two blind review rounds. 27 of 44 raw agreement; 37 of 41 after adjudication (`evals/testset/results/round-2-adjudication.md`).
+- Test set 1 local items (52): two blind review rounds. 27 of 44 raw agreement; 37 of 41 after adjudication (`evals/testset/results/round-2-adjudication.md`). Re-scored on a fresh capture after the live-round fixes: unchanged.
+- Test set 1 live (39 sites, captured 9 Nov 2026): one blind round. 27 of 34 raw, **29 of 34 after evidence-based fixes**; 30 of 33 adjusted, with 2 contested (`evals/testset/results/live-round-1-adjudication.md`). L04 is not verified (unpublished app). Every Floor hit on the 14 human controls was verified: 148 false positives were traced and fixed, and what remains is real WCAG failures, not slop calls.
 
 ## Next steps, in order
 
-1. **Live test set** (`evals/testset/set1-live.yaml`, 39 sites). This needs normal internet access, which is why it moved to a local session.
-   - Run `python3 evals/testset/run_set.py evals/testset/set1-live.yaml ../unslop-refs ../unslop-runs-live`, then `tiles.py` on each run.
-   - Send blind reviewers in batches of about 8 with `LENS-BRIEF.md`, then archive the round (`archive_round.sh live-round-1 ../unslop-runs-live`) and calibrate.
-   - Watch for: cookie walls and bot blocks (recapture or mark not verified), redesigned sites (note the capture date), false positives on the human controls (L23 to L36).
-2. **Human spot-check** of the "label generous" and contested rows in the round-2 adjudication.
+1. **Human spot-check** of the "label generous" and contested rows in the round-2 adjudication and the live round-1 adjudication (L15, L20, L21). Build it with prompt 4 in `docs/NEXT-PROMPTS.md`.
+2. **Region-aware sweeping** for pages that exhibit slop on purpose (L19, L20): ignore sections labelled as examples. Decide whether `targets` stays Floor for dense footer link lists.
 3. **Motion and interaction capture:** frame sequences for transitions, scripted clicks for async states. This covers S12, G10 and C01.
 4. **Phase 2:** the other 15 lenses, the scoring rubric and `verify-fix` (roadmap in the plan doc).

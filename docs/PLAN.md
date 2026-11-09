@@ -612,3 +612,16 @@ Open decisions:
 - **Self-test:** all 49 seeded detectors catch their seed, and the control page reports zero findings under both the strict and balanced profiles. `distinctness` waits for the ledger, and `redesign_loss` waits for a redesign run.
 - **Change from the tree above:** skill folders are flat (`skills/lens-slop/`, not `skills/lenses/slop/`) because the plugin loader discovers one level only. Shared code lives in `scripts/`.
 - **Still needed for the exit test:** 10 to 20 real pages from the project owner (some slop, some good) to run the audit on and to calibrate thresholds.
+
+**Build status update (9 November 2026, local session).** This note is in the repo export only; copy it to the live plan doc.
+
+- Live test set (39 sites) captured, reviewed blind and adjudicated: 27 of 34 raw, 29 of 34 after fixes, 30 of 33 adjusted (`evals/testset/results/live-round-1-adjudication.md`).
+- Capture:
+  - Direct network mode, with the shim only in sandboxes.
+  - Per-host page prep: cookie banners, interstitials, tool overlays, waits and scroll frames.
+  - A wheel-scroll reveal pass.
+  - Animations settled before screenshots.
+  - A 9-point focus-cover test.
+  - Accessible names read from child icons.
+- Detectors: about 150 false-positive Floor hits on human controls traced and fixed (incidental text in mocks and aria-hidden art, font-name normalisation, baseline-named metrics, residue lexicon). Look families: `scattered_radii` removed; the italic serif tells fixed; hairline-newspaper needs all four tells.
+- Unslop's own findings and reports follow a plain-speech writing style (`core/report-format.md`).
