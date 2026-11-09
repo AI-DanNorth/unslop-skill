@@ -1,0 +1,78 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The cream paper #faf6ef, brown-black ink #1f1a15 and terracotta accent #c8552b are the warm-paper-serif look family's palette with all six of its tells present, and nothing but a terracotta dot beside the \"Lumina\" wordmark gives it a source; the accent then goes on the italic display word, the eyebrow and the section numbers rather than on any action.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-COLOUR-SOURCE finds a look family's palette with no brand behind it, T-ACCENT-DOSAGE finds the accent on display type and labels while every button is ink, and T-PALETTE-ROLES finds emoji icons outside the palette; T-NEUTRALS passes on one warm temperature."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [
+    {
+      "rule": "CLR-003",
+      "title": "Colour has a source",
+      "tier": "Reflex",
+      "where": "whole page, 1440 and 375, tiles/1440-00.png to tiles/1440-02.png",
+      "evidence": "The palette table gives the page ground #faf6ef, the ink #1f1a15, the body grey #5b4f44 and one chromatic group, terracotta #c8552b (6 uses). The sweep's look_family hit matches warm-paper-serif on 6 of 6 tells (cream_bg #faf6ef, terracotta_accent #c8552b, Fraunces display, italic serif hero). The only brand mark is a 10px terracotta dot before the \"Lumina\" wordmark, and the customer names are set as plain italic text, so no logo, product shot or photograph supplies the colours.",
+      "before": "Cream, brown-black and terracotta taken as a set from the warm-paper look",
+      "after": "An accent and paper sampled from the product's own mark or screenshots (Sample, Converge, Justify), with the cream kept only if the brand chose it",
+      "why": "The palette identifies the page as one more warm-paper template, so it cannot help a visitor remember this product.",
+      "root": "warm-paper-serif palette",
+      "test": "T-COLOUR-SOURCE"
+    },
+    {
+      "rule": "CLR-007",
+      "title": "Display type is set in ink",
+      "tier": "Reflex",
+      "where": "hero h1 word \"intelligent\", 1440 and 375, tiles/1440-00.png",
+      "evidence": "The palette table records one display-text use of #c8552b at 1440: the italic word \"intelligent\" inside the 80px h1 \"Build faster with intelligent workflows for modern teams\".",
+      "before": "One italic h1 word in terracotta #c8552b",
+      "after": "The whole h1 in the ink #1f1a15; emphasis, if any, from the italic alone",
+      "why": "The largest coloured mark on the screen is a word in a headline, not the \"Start free trial\" action, which is ink.",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-006",
+      "title": "The accent marks action and state",
+      "tier": "Reflex",
+      "where": "eyebrow and section numbers, 1440, tiles/1440-00.png, tiles/1440-01.png, tiles/1440-02.png",
+      "evidence": "Terracotta (#c8552b and the darker #a8431f) colours the eyebrow \"AI-NATIVE WORKFLOWS\", the section numbers \"01\", \"02\" and \"03\" and the logo dot. All four buttons (\"Get started\", \"Start free trial\", \"Watch demo\", \"Start your free trial\") are ink or paper. The sweep's A11-001 hit on \"03\" (#a8431f on #1f1a15, 2.87:1 at 375) is the same label colour.",
+      "before": "The accent on labels and numbers only; no action uses it",
+      "after": "Labels and numbers in the muted grey #5b4f44; the accent, if kept, given to the primary action",
+      "why": "The accent decorates labels while the actions get none, so colour tells the visitor nothing about what to press.",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-004",
+      "title": "The palette converges to a few roles",
+      "tier": "Reflex",
+      "where": "feature card icons, 1440, tiles/1440-01.png",
+      "evidence": "The three feature cards use full-colour emoji as icons: an orange lightning bolt, a yellow padlock and a blue-and-purple chart. The blue and purple appear nowhere else on the page, and the palette table measures 0% chromatic area elsewhere besides the terracotta.",
+      "before": "Emoji icons that bring yellow, blue and purple into a one-accent palette",
+      "after": "Icons drawn in the ink or the muted grey, so the palette keeps one accent",
+      "why": "The emoji add three hues with no role and make the cards read as placeholders.",
+      "test": "T-PALETTE-ROLES"
+    }
+  ],
+  "strengths": [
+    "The neutrals hold one temperature: the table counts 47 warm and 0 cool neutrals, with ink #1f1a15 and grey #5b4f44 tinted to the paper, and no pure black or white.",
+    "Only two text levels on the paper (#1f1a15 and #5b4f44), and the ink buttons stay the strongest marks in the grayscale fold (03-lenses/color/gray-fold-1440.png)."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the page is light and no dark theme is declared; the stylesheet flags show some sheets were unreadable, so a dark variant is not verified.",
+    "The peach radial wash and grid behind the hero (the #f6e2d1 area, 31.6% of the page render) are the sweep's SLP-007 and SLP-008 hits and are not repeated.",
+    "The capture blocked one script, /js/detect-antipatterns-browser.js, as page preparation; it does not change the page's colours."
+  ]
+}

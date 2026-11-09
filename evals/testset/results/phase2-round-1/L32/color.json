@@ -1,0 +1,34 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "GOV.UK's own brand blue #1d70b8 fills the masthead band and colours the links, the near-black #0b0c0c is the single text colour, and the white and #f4f8fb grounds come from the same design system the page documents; the sweep's accent_footprint hit (50.7% of the fold at 1280) lands on that brand band, which the logo, header and footer rule all share, so it is the brand's posture, not a default.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-COLOUR-SOURCE, T-PALETTE-ROLES, T-ACCENT-DOSAGE and T-SURFACE-LADDER pass: what was cut is everything but the brand blue, one ink and two pale grounds, with no gradients, no glass and one shadow recipe; links carry an underline as well as the blue, so T-GRAYSCALE passes too."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "One chromatic colour with two roles that the system defines: #1d70b8 as the brand band (masthead, the 10px footer rule) and as the link colour (27 text uses), always with an underline (tiles/1440-00.png, tiles/1440-01.png).",
+    "One text level: the palette table finds a single neutral text grey, #0b0c0c on 29 elements, with white text only on the blue band.",
+    "Three grounds, each with a job: white #ffffff for content, #f4f8fb for the \"What's new\" well and the footer, and the blue masthead; regions are separated by these wells and by full-width hairlines between content groups, which the line-deletion test keeps because each one marks a new topic.",
+    "The hero illustration reuses the system's own swatches (yellow focus, green button, blue), so the only extra hues come from the content."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the stylesheet contains a prefers-color-scheme: dark query, but the capture rendered the light scheme only, so any dark styling is not verified.",
+    "CLR-009: #ffffff is the main ground and is GOV.UK's documented background colour, so it is not a finding (conflict C09).",
+    "The accent_footprint hit (CLR-001) and the faint focus on \"Get started\" (A11-003) belong to the sweep and are not repeated."
+  ]
+}

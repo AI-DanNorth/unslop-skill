@@ -1,0 +1,90 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The orange #f97015 comes from the Consile logo and marks the main actions, but it also sets three display words, every eyebrow pill, the card icons and 30 text elements in all, while the cards stack a border, a shadow and in one section glass, on cool slate greys #1d212b and #6a7181.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-COLOUR-SOURCE passes for the orange, but T-ACCENT-DOSAGE finds it on display type, labels and icons, T-PALETTE-ROLES finds a red used as decoration, and T-SURFACE-LADDER finds border plus shadow on 60 elements and glass on content cards."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [
+    {
+      "rule": "CLR-006",
+      "title": "The accent marks action and state",
+      "tier": "Reflex",
+      "where": "eyebrow pills, card icons and card links across the page, 1440, tiles/1440-02.png, tiles/1440-05.png, tiles/1440-07.png",
+      "evidence": "The palette table counts 34 uses of #f97015 at 1440: 30 text and 4 fills. Besides the \"Start free\" buttons, it colours the eyebrow pills \"The solution\", \"Built for two journeys\" and \"FAQ\", the icons on every feature and security card (key, document, webhook, cookie), the icon tiles on the journey cards and the card links \"View list\", \"Privacy\" and \"Learn more\".",
+      "before": "Orange on eyebrows, about 15 decorative icons and the card links as well as the buttons",
+      "after": "Orange kept for \"Start free\", \"Book a demo\" and the current state; eyebrows and icons in the ink or muted grey",
+      "why": "With orange on every card, the \"Start free\" button is one orange mark among dozens and stops standing out.",
+      "root": "the orange accent token",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-007",
+      "title": "Display type is set in ink",
+      "tier": "Reflex",
+      "where": "hero h1 and the \"Choose your way in\" h2, 1440, tiles/1440-00.png and tiles/1440-05.png",
+      "evidence": "The palette table records the display words \"in\", \"one\" and \"workspace\" in #f97015 inside the 64px h1 \"Everything your team runs on, in one workspace\"; the h2 \"Choose your way in\" also sets \"your\" in orange.",
+      "before": "Half of the hero h1 and one h2 word in the accent orange",
+      "after": "Headings in the ink #1d212b; the orange left to the \"Start free\" button beside them",
+      "why": "The 64px orange words outweigh the orange \"Start free\" button 230px below and compete for the first look.",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-014",
+      "title": "A card has a border or a shadow",
+      "tier": "Finish",
+      "where": "review-site tiles, problem cards, feature cards, stats bar and FAQ rows, 1440, tiles/1440-02.png to tiles/1440-07.png",
+      "evidence": "The palette table counts 60 elements with both a border and a shadow; 58 share the recipe rgba(0, 0, 0, 0.06) 0 1px 3px plus rgba(0, 0, 0, 0.04) 0 4px 16px, and the sweep's card_kit hit counts 83 containers with that shadow. The table also lists 6 shadow recipes, including an orange glow rgba(249, 112, 21, 0.45) on the hero button and a heavy rgba(0, 0, 0, 0.25) 0 25px 50px on the video play button.",
+      "before": "Hairline border plus a two-layer shadow on every card, and 6 shadow recipes in all",
+      "after": "One edge per card (the hairline on the #f8f8f6 page) and one resting shadow reserved for the product preview",
+      "why": "When every card floats, the product preview loses the one lift that should single it out.",
+      "root": "card shadow token",
+      "test": "T-SURFACE-LADDER"
+    },
+    {
+      "rule": "CLR-018",
+      "title": "Glass only on navigation and controls",
+      "tier": "Reflex",
+      "where": "section 5 card grid, 1440, tiles/1440-04.png and tiles/1440-05.png",
+      "evidence": "The palette table lists 11 elements with backdrop-filter; besides the fixed header (blur 12px), the cards in the section-5 grid each carry blur(4px) over a flat page, where there is nothing behind them to blur.",
+      "before": "backdrop-filter: blur(4px) on content cards",
+      "after": "Opaque card fills; glass, if kept, only on the fixed header",
+      "why": "Blur on a flat ground does nothing visible and costs rendering on every scroll.",
+      "test": "T-SURFACE-LADDER"
+    },
+    {
+      "rule": "CLR-020",
+      "title": "State colours keep their meaning",
+      "tier": "Reflex",
+      "where": "\"The problem\" eyebrow and the numbers 1, 2 and 3 on the problem cards, 1440, tiles/1440-02.png",
+      "evidence": "The eyebrow \"The problem\" and the card numbers \"1\", \"2\", \"3\" are set in red (#ef4343 family) with a red-tinted pill, the only red on the page outside status dots.",
+      "before": "Error red used to colour a section label and list numbers",
+      "after": "The label and numbers in the muted grey; red kept for errors and destructive states",
+      "why": "Red here signals an error that is not there, and weakens the colour's meaning in the product's own forms.",
+      "test": "T-PALETTE-ROLES"
+    }
+  ],
+  "strengths": [
+    "The orange #f97015 has a source: it is the Consile logo colour and fills the primary \"Start free\" buttons in the header and hero, the active \"Dashboard\" item and the attendance ring in the product preview.",
+    "The page holds two grounds (#f8f8f6 and the #1d212b footer) and three text greys (#1d212b, #5a606d, #6a7181), and the orange button stays visible as a dark block in the grayscale fold (03-lenses/color/gray-fold-1440.png)."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the stylesheet has a dark class variant, but the capture rendered the light scheme only, so a dark theme is not verified.",
+    "One image was blocked during capture; its frame is not judged for colour.",
+    "The orange and green hero orbs and the hero gradient are the sweep's SLP-007 and SLP-008 hits; the Tailwind ring token and --onboarding-muted #6b7280 are its CLR-002 hits. None are repeated."
+  ]
+}

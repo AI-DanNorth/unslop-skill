@@ -1,0 +1,59 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page holds a strict warm monochrome: an off-white paper (#f9f9f8 rendered), a warm near-black ink lab(1.55 0.64 1.00) used for text, buttons and one inverse band, a warm grey lab(36 3.5 6.8) for body, and hairlines in ink at 10% alpha. No accent competes with the black actions, and the only hue is a green status dot, but nothing on the page (the wordmark is plain text) traces the warm tint to a brand.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-NEUTRALS, T-ACCENT-DOSAGE and T-GRAYSCALE pass (one warm temperature, no accent, black actions survive grayscale); T-PALETTE-ROLES finds five white alpha levels on the dark band and T-LINE-DELETION finds boxes and rules that separate nothing; T-COLOUR-SOURCE has no brand to confirm the palette."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [
+    {
+      "rule": "CLR-015",
+      "title": "Regions use the lowest rung of the surface ladder",
+      "tier": "Reflex",
+      "where": "integrations marquee, metrics grid and feature rows, 1440, tiles/1440-06.png, tiles/1440-05.png, tiles/1440-02.png",
+      "evidence": "dom-1440.json gives 73 elements a border in ink at 10% alpha (oklab(0.12 0.005 0.009 / 0.1)). Hiding them: the 18 integration chips (\"Stripe Payments\", \"Redis Cache\") lose nothing, since each is a name and a caption with whitespace around it; the feature rows 01 to 04 are already separated by 300px of space and their numbers; the full-width rules above and below the logo strip and the metrics section double the section spacing.",
+      "before": "Hairline boxes on every integration chip plus a rule between every section and every feature row",
+      "after": "Whitespace as the separator for the chips and sections; keep the hairline only on the code panel, the pricing columns and the metrics grid, where it groups figures",
+      "why": "With every block outlined, the outlines stop signalling which things belong together.",
+      "root": "border token ink/10%",
+      "test": "T-LINE-DELETION"
+    },
+    {
+      "rule": "CLR-010",
+      "title": "Text greys are a fixed set",
+      "tier": "Finish",
+      "where": "Process band (inverse ground #0a0705), 1440, tiles/1440-03.png",
+      "evidence": "On the dark band dom-1440.json sets text in the paper colour at full strength (12 elements) and at 0.6, 0.5, 0.4 and 0.3 alpha (9 elements): five levels on one ground. The inactive steps \"Build your workflow\" and \"Ship to production\" use the faintest, and the sweep's A11-001 hit on the step numeral \"II\" (1.30:1) lands on the same alpha.",
+      "before": "Five alpha steps of white text on the dark band",
+      "after": "Three levels on the inverse ground (primary, secondary, muted) matched to the three on the light paper",
+      "why": "Alpha steps 0.1 apart are not readable as distinct roles, and the faintest ones carry real content.",
+      "root": "white alpha text utilities",
+      "test": "T-PALETTE-ROLES"
+    }
+  ],
+  "strengths": [
+    "One warm temperature throughout: ink, body grey and hairlines are all tinted to the same warm hue, and the inverse band uses a warm black #0a0705 rather than a cool slate.",
+    "No accent: the primary actions (\"Start free trial\", \"Start trial\", \"Start building free\") are the ink colour and stay the strongest marks in the grayscale fold (03-lenses/color/gray-fold-1440.png).",
+    "Two grounds only (paper and one inverse band); depth comes from no shadows (one inert recipe) and one flat code panel.",
+    "The single chromatic colour is a green status dot on \"Live\" and \"Ready\", one state in one role."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the page is light and no dark theme was captured; the stylesheet has a dark class variant that was not rendered.",
+    "The palette table could not read colours written as lab() and oklab(), so text levels and accent groups were read from the computed styles in dom-1440.json instead.",
+    "T-COLOUR-SOURCE: no brand authority was supplied and the wordmark carries no colour, so the warm monochrome cannot be traced to a source; it is not a framework default either."
+  ]
+}

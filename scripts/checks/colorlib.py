@@ -22,6 +22,21 @@ def parse(s):
         r, g, b = (ch(p) for p in vals[:3])
         a = float(vals[3].rstrip("%")) / (100 if vals[3].endswith("%") else 1) if len(vals) > 3 else 1.0
         return (r, g, b, a)
+    m = re.match(r"(lab|lch)\(([^)]*)\)", s)      # CSS lab()/lch() (CIELAB D50); phase-2 round 1: L10 colours were unreadable
+    if m:
+        vals = [p for p in re.split(r"[\s,/]+", m.group(2).strip()) if p]
+        def g(p, scale=1.0): return 0.0 if p == "none" else (float(p[:-1]) / 100 * scale if p.endswith("%") else float(p.replace("deg", "")))
+        L = g(vals[0], 100.0); a_ = 1.0 if len(vals) < 4 else g(vals[3])
+        if m.group(1) == "lab": A, B = g(vals[1], 125.0), g(vals[2], 125.0)
+        else:
+            import math as _m; C, H = g(vals[1], 150.0), g(vals[2]); A, B = C * _m.cos(_m.radians(H)), C * _m.sin(_m.radians(H))
+        fy = (L + 16) / 116; fx = fy + A / 500; fz = fy - B / 200
+        inv = lambda t: t ** 3 if t ** 3 > 216 / 24389 else (116 * t - 16) / (24389 / 27)
+        X, Y, Z = inv(fx) * 0.96422, inv(fy) * 1.0, inv(fz) * 0.82521          # D50 white
+        X, Y, Z = (0.9554734 * X - 0.0230985 * Y + 0.0632593 * Z, -0.0283697 * X + 1.0099956 * Y + 0.0210414 * Z, 0.0123140 * X - 0.0205077 * Y + 1.3303659 * Z)   # Bradford D50 -> D65
+        rl, gl, bl = (3.2404542 * X - 1.5371385 * Y - 0.4985314 * Z, -0.9692660 * X + 1.8760108 * Y + 0.0415560 * Z, 0.0556434 * X - 0.2040259 * Y + 1.0572252 * Z)
+        enc = lambda u: max(0.0, min(1.0, 12.92 * u if u <= 0.0031308 else 1.055 * u ** (1 / 2.4) - 0.055))
+        return (enc(rl), enc(gl), enc(bl), a_)
     m = re.match(r"(oklch|oklab)\(([^)]*)\)", s)
     if m:
         vals = [p for p in re.split(r"[\s,/]+", m.group(2).strip()) if p]

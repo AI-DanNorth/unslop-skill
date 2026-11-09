@@ -1,0 +1,47 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A warm ivory paper #faf9f5, a warm near-black ink #141413 and a short ladder of warm greys carry the whole interface with no accent at all, and every saturated colour on the page comes from the editorial illustrations, so each colour has a source and one role.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-COLOUR-SOURCE, T-NEUTRALS and T-ACCENT-DOSAGE pass cleanly (no chromatic UI colour, 72 warm and 0 cool neutrals, no pure black or white); T-PALETTE-ROLES finds two text greys only a step apart, and the dark theme in the stylesheet was not captured."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [
+    {
+      "rule": "CLR-010",
+      "title": "Text greys are a fixed set",
+      "tier": "Finish",
+      "where": "text levels on the #faf9f5 ground, 1440, tiles/1440-01.png card metadata and body",
+      "evidence": "The palette table lists four text levels at 1440: #141413 (15), #30302e (6), #3d3d3a (6) and #5e5d59 (20). #30302e and #3d3d3a sit about 0.05 apart in OKLCH lightness and are hard to tell apart on the tiles.",
+      "before": "Two near-identical dark greys, #30302e and #3d3d3a, as separate text levels",
+      "after": "Merge them into one secondary level, leaving ink, secondary and muted",
+      "why": "A level the reader cannot see adds a token to maintain without adding hierarchy.",
+      "root": "warm grey text scale",
+      "test": "T-PALETTE-ROLES"
+    }
+  ],
+  "strengths": [
+    "The ivory paper #faf9f5, ink #141413 and warm greys hold one temperature: the table counts 72 warm and 22 untinted neutrals, 0 cool, and no pure #000 or #fff.",
+    "There is no chromatic UI colour: the area palette is 96% neutral and 0.05% chromatic at 1440, so the blue, red, green and yellow of the illustrations (tiles/1440-00.png ruler image, tiles/1440-02.png cards) read as content, not decoration.",
+    "Depth comes from lightness alone: 0 shadow recipes, 0 gradients, 0 glass; the hero carousel is a slightly darker well (#f0eee6 family) and the announcement cards are tinted panels, not shadowed boxes.",
+    "Two grounds only, the paper and the #141413 footer band; footer accordion rules are functional separators between collapsible rows."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the stylesheet declares color-scheme and a dark class theme, but the capture rendered only the light scheme, so the dark theme is not verified.",
+    "The filter: brightness(0) invert() flag in the stylesheet recolours small icons; it is not a dark-mode inversion and was not judged further.",
+    "One request was blocked (no images or fonts), so it does not affect the colour read."
+  ]
+}

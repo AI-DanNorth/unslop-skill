@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "scripts" / "checks"))
 import colorlib as cl  # noqa: E402
 
 NEUTRAL_C, CHROMA_C, ACCENT_PX_C = 0.03, 0.08, 0.10      # ACCENT_PX_C matches the accent_footprint detector's pixel mask
+GREY_TEXT_C = 0.05   # text greys: Tailwind slate/gray greys reach C ~0.045 (phase-2 round 1, L03 read 0 text levels at 0.03)
 MEDIA_TAGS = {"img", "video", "picture", "canvas", "iframe"}
 CONTROL_TAGS = {"button"}
 BODY_TAGS = {"p", "li", "blockquote", "dd", "td", "figcaption"}
@@ -161,7 +162,7 @@ def table(run, w):
         c = col(e, "color")
         if not c: continue
         by_role[role(e)][cl.hexstr(c)] += 1
-        if cl.oklch(c)[1] < NEUTRAL_C:
+        if cl.oklch(c)[1] < GREY_TEXT_C:
             b = cl.oklch(eff_bg(e))
             if b[1] >= 0.06: continue                     # ink on a coloured fill (a button label), not a text level
             (greys if (b[0] >= 0.5) == (pl >= 0.5) else inverse)[cl.hexstr(c)] += 1
@@ -189,13 +190,13 @@ def table(run, w):
     for rep, _, items in hue_groups:
         kinds = collections.Counter(k for k, *_ in items)
         shades = collections.Counter(cl.hexstr(c) for *_, c in items)
-        fills = [(e, a) for k, e, a, c in items if k == "fill"]
+        fills = [(e, a, c) for k, e, a, c in items if k == "fill"]      # keep each fill's own colour (crash on L25, L32)
         display = [ex(e, size=e["style"]["fontSize"], hex=cl.hexstr(c)) for k, e, a, c in items
                    if k == "text" and ((px(e["style"]["fontSize"]) or 0) >= 48 or (e.get("level") in (1, 2) and (px(e["style"]["fontSize"]) or 0) >= 32))]
-        page_scale = [ex(e, w=e["rect"]["w"], h=e["rect"]["h"], hex=cl.hexstr(c)) for e, a in fills
+        page_scale = [ex(e, w=e["rect"]["w"], h=e["rect"]["h"], hex=cl.hexstr(fc)) for e, a, fc in fills
                       if e["rect"]["h"] >= 320 or (e["rect"]["w"] >= 0.9 * vw and e["rect"]["h"] >= 0.4 * vh)]
         accents.append({**desc(rep), "uses": dict(kinds), "elements": len(items), "shades": dict(shades.most_common(6)),
-                        "fill_area_px": int(sum(a for _, a in fills)), "display_text": display[:5], "page_scale_fills": page_scale[:5],
+                        "fill_area_px": int(sum(a for _, a, _ in fills)), "display_text": display[:5], "page_scale_fills": page_scale[:5],
                         "examples": [ex(e, use=k, hex=cl.hexstr(c)) for k, e, a, c in items[:4]]})
     accents.sort(key=lambda d: -d["elements"])
 
