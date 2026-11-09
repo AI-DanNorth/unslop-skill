@@ -75,6 +75,11 @@ for pid, lst in sorted(cards.items()):
 with open(ROOT/"sources/provenance.csv", "w", newline="") as fh:
     w = csv.writer(fh); w.writerow(["rule_id", "file", "mined_id", "sources"]); w.writerows(sorted(prov))
 
+# A comma in an unquoted flow-style title splits it and leaves an empty key (found 9 Nov 2026 on CON-010, CON-016, CLR-016, CLR-019, LAY-007).
+for l in cards.values():
+    for c in l:
+        empty = [k for k, v in c.items() if v is None]
+        if empty: errors.append(f"{c['id']}: key(s) with no value {empty}; quote a title that contains a comma")
 act = sum(1 for l in cards.values() for c in l if c["status"] == "active")
 dr = sum(1 for l in cards.values() for c in l if c["status"] == "draft")
 print(f"active {act}, draft {dr}, files {len(cards)}")

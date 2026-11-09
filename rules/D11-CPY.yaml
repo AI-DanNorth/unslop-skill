@@ -127,6 +127,533 @@
   status: active
   values:
     min_repeats_in_card: 3
+- id: CPY-007
+  title: Copy is written for this client
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-RIVAL-NAME
+  - T-FRESH-READER
+  rule: 'Write with the brief''s own nouns, real places, the client''s numbers and the customer''s verb. Put a rival''s name into the h1, the
+    sub-line and every heading: no line stays true. A line that would sit unchanged on a competitor''s page is a finding; quote it.'
+  why: Copy that fits any competitor tells the reader nothing about this one, and they leave without a reason to choose it.
+  fix: 'Replace each line that survives the swap with a fact only this client has: a product part, a place, a price, a customer''s own words.
+    Where the fact is missing, use a [DATA NEEDED] slot.'
+  sources:
+  - CPY-165 (HM §100, TS §334)
+  - CPY-183 (HM §101)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-008
+  title: Claims carry a number or a mechanism
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-THREE-LINE
+  - T-SO-WHAT
+  rule: 'Replace an adjective claim (''fast'', ''powerful'', ''significant growth'') with the number or the mechanism behind it, in the same sentence,
+    with its unit. Each claim passes three tests: the reader can picture it, it could be proven false, and only this business could say it. The
+    number must be real (INT-001); never invent one to pass this card.'
+  values:
+    tests_per_claim: 3
+  why: An adjective asks the reader to trust the writer; a number or a mechanism lets them check.
+  fix: Name how it works or what it measures ('syncs every 30 seconds', 'Revenue grew 34% to $12M'), using supplied facts only; otherwise cut
+    the claim or leave a [DATA NEEDED] slot.
+  sources:
+  - CPY-121 (KM §222 §298, TS §334)
+  - CPY-118 (TS §325 §359, HM §362)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-009
+  title: No model-default voice
+  domain: D11
+  tier: Reflex
+  kind: context
+  check: J
+  remedy: fix-copy
+  waivable_by: brand-system
+  tests:
+  - T-READ-ALOUD
+  - T-FRESH-READER
+  rule: 'Do not write in the model''s default register: warm, wry, modest, slightly literary, deadpan-twist endings, a business that calls itself
+    honest, calm or quiet. Pick one register for the client from the buyer, the price and its real character, and borrow at most one move from
+    another. The client''s own voice overrides this card, and a plain or conventional brand voice is not a finding.'
+  why: The default register is the same on every generated page, so readers learn to recognise it and discount what it says.
+  fix: 'Write a short voice card from the brief (register, three traits, words the client uses and avoids), then rewrite the hero and headings
+    in it. Run the nine-trades test: the voice should fit none of nine other businesses.'
+  sources:
+  - CPY-166 (TS §332 §335 §43 §49)
+  - CPY-167 (TS §332 §335)
+  - CPY-179 (TS §332)
+  priority: P1
+  status: active
+- id: CPY-010
+  title: Voice holds and tone moves by moment
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-READ-ALOUD
+  - T-STATE-COPY
+  rule: 'Keep one voice across the artifact and move its tone to the moment: plain facts in prices, FAQ, booking and forms; calm and solution-first
+    in errors; brief in success; formal in legal. Write all microcopy in the page''s register: a stock error or thank-you line under a hand-tuned
+    hero is a tell. In docs, the tone follows the content type (tutorial warm, how-to terse, reference neutral).'
+  why: When the voice drops out in forms and errors, the reader meets the template at the moment they most need help.
+  fix: Rewrite the stock microcopy in the page's register; strip the voice back to facts where the reader is deciding or paying.
+  sources:
+  - CPY-170 (TS §332 §355, UU §293)
+  - CPY-224 (TS §43 §357)
+  - CPY-171 (AS §114)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-011
+  title: Cadence devices within budget
+  domain: D11
+  tier: Reflex
+  kind: cap
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-CADENCE
+  - T-OVER-CORRECTION
+  rule: 'Count these together per page and keep each within budget: contrast frames (''X, not Y'', ''isn''t'', ''not just'', ''rather than'',
+    ''instead of'', ''without the'') 2; negation runs (''No X, no Y'') 1, each item a checkable refusal; -ing riders ('', ensuring...'', '', allowing...'')
+    1; dry closing quips at paragraph ends 2, never consecutive. The sweep''s stock-phrases not-x-but-y hits count toward the first budget; cite
+    them, do not recount them.'
+  values:
+    contrast_frames: 2
+    negation_runs: 1
+    ing_riders: 1
+    closing_quips: 2
+  why: One device is a choice; the same device in every paragraph is the rhythm of generated prose, and readers hear it.
+  fix: Keep the strongest instance of each device and rewrite the rest as plain statements that end on information.
+  sources:
+  - CPY-155 (TS §40, HM §359)
+  - CPY-156 (TS §40)
+  - CPY-158 (TS §40)
+  - CPY-159 (TS §40 §51)
+  - CPY-162 (TS §40 §50)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CPY-012
+  title: No rhetorical questions or exclamation marks in body copy
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-CADENCE
+  rule: Do not pose rhetorical questions, and do not use questions as headlines outside a FAQ. Use no exclamation marks in body copy. A real question
+    the reader asks (FAQ, support, a search prompt) is not a finding.
+  values:
+    rhetorical_questions: 0
+    exclamations: 0
+  why: A rhetorical question delays the answer the reader came for; exclamation marks shout enthusiasm the facts should carry.
+  fix: Answer the question in its place as a statement; end the sentence with a full stop.
+  sources:
+  - CPY-176 (AS §113, TS §322 §48)
+  - CPY-241 (TS §40 §41 §48)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-013
+  title: Lists of three only when there are three things
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-CADENCE
+  rule: Use a list of three only when there are exactly three real things. Never write adjective triads ('fast, simple, powerful') or fragment
+    triads ('Fast. Simple. Secure.'), and never put triads in consecutive sentences.
+  why: The reflex triad pads two facts into three, or three moods into a slogan, and it is one of the most recognisable generated rhythms.
+  fix: 'Count the real items: keep two if there are two, and turn adjectives into the facts behind them (CPY-008).'
+  sources:
+  - CPY-161 (HM §104, TS §40)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-014
+  title: Headings are not formulas
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-HEADING-FORM
+  rule: 'Do not write heading formulas: ''Meet <Name>''; triads (''Fast. Simple. Secure.''); colon titles (''Focus: the app for...''); more than
+    one two-fragment head (''X. Y.''); more than one number pair (''Four X, one Y''); a bare command (''Get started'') as a heading. Give every
+    heading a naming noun: a product, part, place, section noun (prices, rooms, menu, hours, questions) or a digit. Headings that only name a
+    category are LAY-008''s.'
+  values:
+    two_fragment_heads: 1
+    number_pair_heads: 1
+  why: Formula headings are the generator's scaffolding; they could top any section on any page.
+  fix: 'Rewrite the heading as the section''s claim in its own nouns: ''Rooms from £95, all with a garden view'', not ''Meet our rooms''.'
+  sources:
+  - CPY-187 (HM §106 §360, TS §40 §322)
+  - CPY-184 (TS §317)
+  - CPY-186 (HM §103, TS §322)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-015
+  title: The first screen says what, for whom and the difference
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-FIVE-SECOND
+  rule: 'Make the h1 name the category, plus the buyer or the place for a brand the reader does not know; never a riddle, a mood or a brand line.
+    The sub-line says what it is, for whom and the one difference. Put one hard fact on the first screen: a number, place, price or date. The
+    sub-line length follows the profile (conflict C44); the h1 length is CPY-003''s.'
+  values:
+    sub_line_words_strict: 12
+    sub_line_words_balanced: 30
+    hard_facts_first_screen: 1
+  why: A visitor decides in seconds whether the page is for them; a mood line makes them read on to find out what is being sold.
+  fix: Rewrite the h1 as category plus buyer or place, and the sub-line as what, for whom and the one difference, with one supplied fact.
+  sources:
+  - CPY-180 (TS §315 §349, KM §704)
+  - CPY-189 (HM §103 §367, TS §321)
+  - CPY-182 (TS §316)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-016
+  title: Say each thing once
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-distill
+  tests:
+  - T-DELETION
+  rule: Never restate a section's heading in its body opener or its last line. Say each fact once, where it does work, with one value and one
+    wording; a fact repeated in 4 or more sections is filler (ledgers and summaries are exempt).
+  values:
+    max_sections_per_fact: 3
+  why: Restating the heading spends the reader's attention on words they have already read.
+  fix: Delete the restating sentence and open the body with the first new fact; keep a repeated fact only where it decides something.
+  sources:
+  - CPY-191 (HM §104 §363, KM §298)
+  - CPY-128 (HM §109 §363, TS §613 §616)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-017
+  title: Labels say the action, one wording per action
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-LABEL-READ
+  rule: 'Write button text as a verb and an object, 1 to 5 words, literal even in a playful register (''Book a fitting''). A bare noun only when
+    it opens that thing; ''Continue'' only as a flow''s second step. Word the main action the same everywhere: the closing action repeats the
+    hero''s word for word. Link text names its destination; one target never carries two labels. A modal''s confirm button matches its title.
+    Stock labels (''Learn more'', ''Get started'') are CPY-005''s: cite the sweep hit.'
+  values:
+    max_words: 5
+  why: Readers scan labels alone; a label that does not say what happens, or changes its wording, makes them stop and work it out.
+  fix: Name the action and its object; pick one wording for the main action and use it at every placement.
+  sources:
+  - CPY-215 (HM §107, TS §318 §356)
+  - CPY-219 (TS §319 §356)
+  - CPY-220 (AS §164-165, TS §329, HM §361)
+  - CPY-222 (AD §70)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-018
+  title: Errors name the field and the fix
+  domain: D11
+  tier: Reflex
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-STATE-COPY
+  rule: Make each error name the field and what to type, next to the field, with a recovery path ('Write the day you want to come'). A summary
+    banner may add to it but never replaces it. 'Invalid input', 'Something went wrong' or an error with no next step is a finding.
+  why: A vague error leaves the user guessing what to change, and many give up.
+  fix: Rewrite each error as the field plus the format or value it needs, and say what to do next.
+  sources:
+  - CPY-225 (TS §327 §357, UU §37 §97)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-019
+  title: States say what happened and what is next
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-STATE-COPY
+  rule: A confirmation names what was sent and the real next step ('Your table request is in. We reply within a day.', with a real time only).
+    An empty state says what it is, what to do next and offers one action. A 404 points at the nearest useful content. A success shown when nothing
+    was sent is INT-004's.
+  why: State copy is read at the moment of doubt; a generic 'Success!' or a blank panel leaves the user unsure what happened.
+  fix: Write each state from what the system actually did and what the user can do now.
+  sources:
+  - CPY-227 (TS §327 §357, UU §100)
+  - CPY-228 (AD §52, UU §96, TS §357)
+  - CPY-229 (TS §357)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-020
+  title: One spelling per term
+  domain: D11
+  tier: Finish
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-TERMS
+  rule: Keep one spelling and capitalisation for each product or domain term used 3 or more times ('Flowly AI', not also 'flowly ai' and 'FlowlyAI';
+    'LLM', not also 'llm').
+  values:
+    min_uses: 3
+  why: Drifting spellings read as unreviewed copy and make readers wonder whether two names mean two things.
+  fix: Pick the brand's spelling and apply it everywhere.
+  sources:
+  - CPY-174 (KM §251, UU §306)
+  priority: P3
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-021
+  title: Length follows the facts, not a rule
+  domain: D11
+  tier: Finish
+  check: H
+  remedy: fix-copy
+  tests:
+  - T-CADENCE
+  rule: Vary sentence length by meaning, and spend words where the facts are richest. Over 15 or more sentences, a length spread (standard deviation)
+    under 4 words, or more than 30% of sentences at 4 words or fewer, is a finding. Cards in one set that are all the same length are a tell.
+  values:
+    min_sentences: 15
+    min_stdev_words: 4
+    max_short_share: 0.3
+  why: Even lengths show the copy was written to fill slots, not to say what each item needs.
+  fix: Let the item with the most to say run longer and cut the ones with nothing to add.
+  sources:
+  - CPY-206 (TS §47 §334, HM §104)
+  - CPY-207 (TS §43 §323)
+  priority: P3
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-022
+  title: Say what it does, not corporate speak
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-READ-ALOUD
+  rule: 'Say what the product literally does: ''use the platform to share data between teams'', not ''leverage our platform to unlock synergies''.
+    Give software literal actions (''the server checks the cache''), not human or metaphor verbs (''the request lands''). The sweep''s buzzword
+    hits are CPY-005''s; this card covers the phrasing the lexicon cannot match.'
+  why: Corporate phrasing hides the mechanism, so the reader cannot tell what they would get.
+  fix: Rewrite the sentence with the product as the subject and a literal verb.
+  sources:
+  - CPY-154 (KM §243 §303)
+  - CPY-177 (AS §123 §128)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-023
+  title: No substitute tics after a fix
+  domain: D11
+  tier: Reflex
+  check: J
+  remedy: fix-copy
+  tests:
+  - T-OVER-CORRECTION
+  rule: 'When copy has been cleaned of one tell, check that a substitute has not multiplied in its place: no em dash replaced by full stops everywhere,
+    no ''not X but Y'' replaced by ''rather than'', no hype replaced by ''quietly'' or ''steady'', no triads replaced by pairs everywhere. Do
+    not flag non-tells: correct grammar, plain ''is'' and ''has'', one true ''no card needed'', a provable narrow superlative, an intentional
+    refrain, the client''s own words, selling on a sales page.'
+  why: Rewriting to beat a word list breeds the next tell; the copy stays generated with different words.
+  fix: Rewrite the passage for the reader with this client's facts, not against the list.
+  sources:
+  - CPY-164 (TS §51)
+  - CPY-163 (TS §52)
+  priority: P1
+  kind: ban
+  waivable_by: brief
+  status: active
+- id: CPY-024
+  title: 'Long-form: active voice, actor named'
+  domain: D11
+  tier: Finish
+  kind: context
+  check: H
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-SECOND-READ
+  - T-LONG-FORM
+  rule: In long-form content only (articles, docs, emails, reports), write in the active voice with the actor named; in docs, address the reader
+    as 'you' in the present tense with imperative steps. A run of two or more passive sentences in one paragraph is a finding. A single passive
+    that keeps the topic in subject position is not.
+  values:
+    max_passive_run: 1
+  why: Passive stacks hide who does what and make the reader parse each sentence twice.
+  fix: 'Name the actor as the subject: ''The chair assigns actions'', not ''Actions are assigned''.'
+  sources:
+  - research/notes/unslop-writing-skill-review.md (passive voice, plain speech)
+  - CPY-175 (AS §107-112)
+  priority: P3
+  waivable_by: brief
+  status: active
+- id: CPY-025
+  title: 'Long-form: one hedge is enough'
+  domain: D11
+  tier: Finish
+  kind: context
+  check: H
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-LONG-FORM
+  rule: 'In long-form content only, hedge a claim once or not at all: ''may'' is enough. Stacked hedges (''may perhaps'', ''arguably it could
+    be said'', ''might typically vary somewhat'') and weasel words (generally, typically, often, many, significantly) with no figure behind them
+    are findings.'
+  why: Stacked hedges say the writer does not know and will not say so; the reader cannot tell what is true.
+  fix: State the claim at the strength the evidence supports, with the figure or the source, and keep at most one qualifier.
+  sources:
+  - research/notes/unslop-writing-skill-review.md (hedging)
+  - CPY-149 (AS §119-122)
+  priority: P3
+  waivable_by: brief
+  status: active
+- id: CPY-026
+  title: 'Long-form: claims name their source'
+  domain: D11
+  tier: Reflex
+  kind: context
+  check: H
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-LONG-FORM
+  rule: In long-form content only, do not attribute a claim to an unnamed crowd ('experts say', 'studies show', 'research suggests', 'many believe',
+    'it has been suggested'). Name the study, the person or the data, or state the claim as the writer's own. An invented citation is integrity,
+    not copy.
+  why: A vague attribution borrows authority it does not have; the reader cannot check it.
+  fix: Cite the named source with a link or date, or cut the attribution and own the claim.
+  sources:
+  - research/notes/unslop-writing-skill-review.md (vague attributions)
+  priority: P1
+  waivable_by: brief
+  status: active
+- id: CPY-027
+  title: 'Long-form: one name per thing'
+  domain: D11
+  tier: Finish
+  kind: context
+  check: J
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-TERMS
+  - T-LONG-FORM
+  rule: In long-form content only, call one thing by one name. Cycling synonyms for one referent ('the meeting, the gathering, the session, the
+    sync') is a finding.
+  why: Readers assume a new word means a new thing; synonym cycling makes them check whether it does.
+  fix: Pick the reader's word for the thing and repeat it.
+  sources:
+  - research/notes/unslop-writing-skill-review.md (synonym cycling)
+  - CPY-174 (KM §251, UU §306)
+  priority: P3
+  waivable_by: brief
+  status: active
+- id: CPY-028
+  title: 'Long-form: no template framing or generic conclusions'
+  domain: D11
+  tier: Finish
+  kind: context
+  check: H
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-LONG-FORM
+  - T-SO-WHAT
+  rule: In long-form content only, do not frame sections with summary transitions ('With this setup complete...', 'The question most teams face
+    is...') or end with a generic conclusion ('In conclusion', 'Ultimately', 'the future looks bright', 'only time will tell'). The last paragraph
+    ends on the last useful fact or the reader's next step.
+  why: Framing and closing formulas fill the places where a real writer would put the point.
+  fix: Cut the framing sentence; end with the final fact, the decision or the next step.
+  sources:
+  - research/notes/unslop-writing-skill-review.md (generic conclusions)
+  - CPY-153 (AS §124 §129)
+  priority: P3
+  waivable_by: brief
+  status: active
+- id: CPY-029
+  title: 'Long-form: plain, whole sentences'
+  domain: D11
+  tier: Finish
+  kind: context
+  check: J
+  applies_when:
+  - web
+  - email
+  - print
+  remedy: fix-copy
+  tests:
+  - T-LONG-FORM
+  - T-SECOND-READ
+  rule: 'In long-form content only, write plain, whole sentences: no mannered prose (metaphor nouns and verbs where a literal one exists), no
+    over-compression (dropped articles and verbs, arrows for ''leads to''), no false ranges (''from startups to enterprises'' with nothing between
+    the ends), and -ly adverbs only where they change the meaning. Each paragraph''s first sentence stands alone as its claim.'
+  why: Mannered or compressed prose makes the reader decode the sentence before they can judge the claim.
+  fix: Rewrite with a literal subject and verb, keep the articles, and name the actual range or the actual cases.
+  sources:
+  - research/notes/unslop-writing-skill-review.md (mannered prose, over-compression, false ranges, adverbs)
+  - CPY-210 (KM §238)
+  priority: P3
+  waivable_by: brief
+  status: active
 - id: CPY-101
   title: Build a fact sheet before writing any copy
   domain: D11

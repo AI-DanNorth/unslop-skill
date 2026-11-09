@@ -179,8 +179,32 @@
    run: "Read only slide titles in order.", pass: "They tell the argument as assertions, each unique.", sources: ["kami §129 §304 §703"]}
 - {id: T-SO-WHAT, name: So-what, lens: [copy], kind: J,
    run: "Ask 'so what?' of each claim and bullet.", pass: "Each answers why the reader should care.", sources: ["kami §240 §242 §699"]}
-- {id: T-DELETION, name: Deletion (image, line, element), lens: [imagery, structure], kind: J,
-   run: "Remove it.", pass: "Meaning, state, grouping, navigation or a fact is lost.", sources: ["hallmark §114", "kami §428", "huashu §71 §180"]}
+- {id: T-HEADING-FORM, name: Heading formulas, lens: [copy], kind: H,
+   run: "Read each heading from the copy sheet (skills/lens-copy/copy_sheet.py writes 03-lenses/copy/copy-sheet.json) against the formula list: 'Meet <Name>', triads, colon titles, two-fragment heads, number pairs, bare commands, questions; then check each for a naming noun and read the body opener under it.",
+   pass: "No formula past its budget, every heading has a naming noun, and no body opener restates its heading.",
+   sources: ["hallmark §104 §106 §360", "taste-skill §317 §322"]}
+- {id: T-CADENCE, name: Cadence count, lens: [copy], kind: H,
+   run: "Read the copy sheet's counts of contrast frames, negation runs, -ing riders, triads, rhetorical questions and exclamation marks, and its sentence-length spread and card evenness; then read each example in its sentence.",
+   pass: "Each device sits within its budget (CPY-011 to CPY-013, CPY-021). A count is a pointer: a device the sentence needs is not a finding.",
+   sources: ["taste-skill §40 §47 §50 §51", "hallmark §104 §359"]}
+- {id: T-LABEL-READ, name: Labels read alone, lens: [copy], kind: H,
+   run: "Read every button and link label alone, out of context (copy sheet labels), then with its target: one wording per target, one target per wording.",
+   pass: "Each label names its action as a verb and an object, or its destination; the main action has one wording everywhere.",
+   sources: ["hallmark §107 §361", "taste-skill §318 §319 §356", "agent-skills §164-165"]}
+- {id: T-STATE-COPY, name: State copy, lens: [copy], kind: H,
+   run: "Read every error, empty, loading, confirmation and 404 text the capture recorded (copy sheet microcopy from forms.json and async.json, and the tiles), in the order a user meets it.",
+   pass: "Each says what happened; an error names the field and what to type; a confirmation names what was sent and the real next step; all in the page's register.",
+   sources: ["taste-skill §327 §357", "ui-ux-pro-max §37 §96 §97 §100", "awesome-design-patterns §52"]}
+- {id: T-TERMS, name: One name per thing, lens: [copy], kind: H,
+   run: "Read the copy sheet's term variants (one term, several spellings, used 3 or more times); in long-form text, list the nouns used for each main referent.",
+   pass: "One spelling per term, and one name per thing in long-form text.",
+   sources: ["kami §251", "ui-ux-pro-max §306", "research/notes/unslop-writing-skill-review.md (synonym cycling)"]}
+- {id: T-LONG-FORM, name: Long-form read, lens: [copy], kind: H,
+   run: "Long-form content only (articles, docs, emails, reports, or a running-text region of the copy sheet). Read each paragraph at speaking pace with the region's counts beside it, and mark passive stacks, stacked hedges, vague attributions, synonym cycling, false ranges, template framing, generic conclusions, mannered and over-compressed sentences.",
+   pass: "None of these past CPY-024 to CPY-029. Never run on landing-page copy: these tells do not separate slop from good there.",
+   sources: ["research/notes/unslop-writing-skill-review.md", "agent-skills §107-124", "writing-guidelines §10 §18"]}
+- {id: T-DELETION, name: Deletion (image, line, element), lens: [imagery, structure, copy], kind: J,
+   run: "Remove it (for copy: a sentence, an intro line, a caption or a closing line).", pass: "Meaning, state, grouping, navigation or a fact is lost.", sources: ["hallmark §114", "kami §250 §394 §428", "huashu §71 §180"]}
 - {id: T-FILLER, name: Filler, lens: [integrity], kind: J,
    run: "Remove an element; ask what problem it solves and whether its data is real.", pass: "Worse without it; solves a real problem; real data.", sources: ["huashu §71 §101"]}
 - {id: T-FAKE-SEND, name: Fake-send, lens: [integrity], kind: M, detector: fake_send,

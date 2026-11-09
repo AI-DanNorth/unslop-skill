@@ -16,7 +16,7 @@ Write `$RUN/00-contract.md` from `skills/unslop/templates/contract.md`. Fill eve
 5. **Brand authority**: is there a brand or design system that outranks the defaults? If the user names one, record its location. If the site is live, note "brand-extract not yet available in this build; brand values taken from the page's own tokens".
 6. **Brief overrides**: anything the user explicitly wants that a rule would flag (an eyebrow style, a 900-word page). These become notes, not findings, unless the rule is Floor (`core/precedence.md`).
 7. **Supplied facts**: every metric, customer name and quote the user confirms is real. The `invented_metrics` detector skips these (`supplied:` list).
-8. **Lenses**: default `slop, a11y` in this build; `concept`, `structure`, `typography` and `color` are also built and run when selected. List the lenses you are not running and why.
+8. **Lenses**: default `slop, a11y` in this build; `concept`, `structure`, `typography`, `color` and `copy` are also built and run when selected. For `copy`, record any brand voice or style guide under brand authority. List the lenses you are not running and why.
 9. **Stage**: draft or ship. At ship, placeholders are Floor (conflict C21).
 
 Then set `run.json` `profile` and `medium` to match, and write any brief overrides into `run.json` as `overrides: {detector: {key: value}}` (for example `invented_metrics: {supplied: ["99.95% uptime"]}`).
