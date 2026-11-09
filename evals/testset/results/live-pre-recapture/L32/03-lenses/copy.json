@@ -1,0 +1,49 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The h1 'Design your service using GOV.UK styles, components and patterns' and the dated release line '15 October 2026: We've released GOV.UK Frontend v6.6.0' carry this design system's own nouns in the plain voice its style guide asks for.",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 9,
+    "reason": "T-FIVE-SECOND, T-RIVAL-NAME and T-LABEL-READ pass on the hero, every h2 and every 'Browse our ...' label; only the Community paragraph's 'a strong community sitting behind it ... representative and relevant' fails T-THREE-LINE. Nothing else could be cut: there are no section intros, no taglines, and every link names its destination."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-008",
+      "title": "Adjective claim where a mechanism belongs",
+      "tier": "Reflex",
+      "where": "'Community' section, 1440, tiles/1440-02.png",
+      "evidence": "Failed T-THREE-LINE: 'The GOV.UK Design System is for everyone that works on government services, with a strong community sitting behind it. It brings together the latest research, design and development from across government to make sure it's representative and relevant for its users.' 'strong', 'latest' and 'representative and relevant' cannot be pictured or proven false; the next sentence ('joining our discussions, events and co-design collaborations') says what the community does.",
+      "before": "with a strong community sitting behind it",
+      "after": "State the mechanism: how many departments contribute, or how a component moves from a community proposal to release. [DATA NEEDED: contributor count or contribution route]",
+      "why": "It is the one paragraph on the page that asks the reader to take a quality on trust.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The hero says what, for whom and why in literal words: 'Use this design system to make government services consistent with GOV.UK. Learn from the research and experience of other service teams and avoid repeating work that's already been done.'",
+    "News is dated and versioned ('15 October 2026: We've released GOV.UK Frontend v6.6.0', 'In June 2025, GOV.UK started to refresh the brand'). The sweep's chrome_glyphs 'fake-versions' hits on v6.6.0 and Open Government Licence v3.0 are real version numbers, not template chrome.",
+    "Labels name their target ('Browse our components', 'Read the release notes for v6.6.0 on GitHub', 'Sign up with your email'), and the voice follows the GOV.UK style guide the page cites."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: the email sign-up is a link, not a form on this page; async.json was not captured.",
+    "T-LONG-FORM: the copy sheet lists no long-form region.",
+    "Contract: no 00-contract.md in the run; judged as a Read/Operate documentation home with the GOV.UK style guide as the brand authority the page names."
+  ]
+}

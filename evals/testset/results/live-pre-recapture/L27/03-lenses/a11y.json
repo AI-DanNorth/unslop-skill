@@ -1,0 +1,57 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:40:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-1.1.1", "link-purpose-2.4.4", "focus-order-2.4.3", "use-of-colour-1.4.1", "non-text-contrast-1.4.11", "reflow-1.4.10", "motion-2.2.2", "headings-landmarks-1.3.1"],
+  "findings": [
+    {
+      "rule": "A11-166",
+      "tier": "Floor",
+      "where": "hero h1 continuation over the ribbon (tile 1440-00, x 850-1130, y 270-420)",
+      "evidence": "The words 'your revenue.', 'services and', 'from' render in a blended purple (sampled about rgb(118,85,252)) directly over the pink/orange ribbon (sampled rgb(254,125,126) and rgb(190,170,252)): roughly 1.9:1 to 2.5:1. The sweep's contrast hits are all inside product mock graphics and did not catch this.",
+      "before": "h1 text with mix-blend overlay drawn over the ribbon image",
+      "after": "Keep the headline column clear of the ribbon (max-width or ribbon starting right of the text), or add a white text-shadow/backplate at 4.5:1 on the darkest stop",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum), measured on the worst gradient stop (T-GRADIENT-STOPS).",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "customer logo marquee under the hero",
+      "evidence": "div.logo-carousel__marquee scrolls continuously (logos cut off at the left edge, 'AI' in tile 1440-00); dom-1440.json has no control named pause/stop/play.",
+      "before": "Auto-scrolling logo marquee",
+      "after": "A visible pause button, and pause on hover and focus",
+      "why": "WCAG 2.2 2.2.2 Pause, Stop, Hide.",
+      "test": "T-PURPOSE"
+    },
+    {
+      "rule": "A11-122",
+      "tier": "Floor",
+      "where": "product bento expand buttons ('Accept and optimise payments globally – online and in person', 'Enable any billing model' ...)",
+      "evidence": "Confirms sweep A11-003: focus.json records outline: none on these card buttons; the small expand icon at the card corner is the only affordance and shows no ring.",
+      "before": "outline: none on .bento-card button",
+      "after": ".bento-card button:focus-visible { outline: 2px solid #533afd; outline-offset: 2px }",
+      "why": "WCAG 2.2 2.4.7 Focus Visible.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Finish",
+      "where": "nav, two 'Sign in' entries",
+      "evidence": "bodyText lists 'Sign in' twice in the header (one visible button, one in a hidden/mobile menu); both reach the same destination, so this is only a duplication check for links lists.",
+      "before": "Sign in / Sign in",
+      "after": "Ensure the hidden copy is display:none or inert at desktop widths",
+      "why": "WCAG 2.2 2.4.3 Focus Order if the hidden one is focusable.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Descriptive link text on stories ('Read Lovable's story', 'Read Gamma's story'); named arrow controls; landmarks present; lang en-CA set.",
+    "The decorative duplicate h1 used for the blend effect is aria-hidden=true, so assistive tech gets one h1."
+  ],
+  "not_investigated": [
+    "disputed: sweep A11-007 '2 visible h1 elements' — the second h1 is aria-hidden=true and visually stacked on the first for a blend effect; only one is exposed.",
+    "disputed: all 15 sweep contrast hits are text inside illustrative product mock graphics ('Continue', 'Weiter', 'taro.yamada@example.com'); these are part of pictures and may be exempt under 1.4.3 if the graphics are marked aria-hidden; confirm they are hidden from AT.",
+    "stats band captured mid-animation (numbers faded); contrast there not verified",
+    "keyboard operation of mega-menus and the testimonial carousel: no live keyboard test"
+  ]
+}

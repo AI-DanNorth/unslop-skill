@@ -1,0 +1,81 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Plus Jakarta Sans sets every heading and Inter sets every other role, with no brand or brief behind either, and the hero splits its h1 into a blue second sentence: the generator's default pairing and head treatment on a default Tailwind scale.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-TYPE-SOURCE and T-HEAD-TREATMENT fail on the default pairing and the blue accent sentence, and T-LADDER finds h3, h4 and body all at 14px; leading, tracking and measure are in range, which keeps it above 3."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-005",
+      "title": "Type is chosen for this brief",
+      "tier": "Reflex",
+      "where": "whole page, 1440 and 375 (tiles/1440-00.png to 1440-03.png)",
+      "evidence": "fonts.json at 1440 shows two drawn faces: Plus Jakarta Sans on all 28 headings (h1 60px, h2 30px, h3 14 and 16px, h4 14px) and Inter on 89 elements (body, controls, small text). The sweep's banned_fonts hit flags the 60px h1 in Plus Jakarta Sans, a UI text face. No contract or brand file names either face, and look_family matches the saas-card-kit cluster (4 of 5 tells).",
+      "before": "Plus Jakarta Sans display over Inter body, both UI sans faces, with no stated source",
+      "after": "A display face chosen for the brief (see substitutes in data/lexicons/fonts.yaml) for the h1 and h2, with Inter kept only for body and controls",
+      "why": "Two neutral UI sans faces in every role give the page no voice of its own, so it reads like every other generated tool directory.",
+      "test": "T-TYPE-SOURCE",
+      "root": "font-display and font-sans tokens in the Tailwind config"
+    },
+    {
+      "rule": "TYP-016",
+      "title": "Headings are set in one voice",
+      "tier": "Reflex",
+      "where": "hero h1.font-display, 1440 and 375 (tiles/1440-00.png top half, 375-00.png)",
+      "evidence": "The type table lists one heading child set apart by colour: the span \"We'll build the stack.\" inside the h1 \"Tell us the goal.\" turns brand blue at 60px (1440) and 36px (375). At 375 the colour change starts mid-line after \"goal.\" and the blue runs over two lines.",
+      "before": "\"Tell us the goal.\" in near-black, \"We'll build the stack.\" in blue",
+      "after": "The whole h1 in one colour; let size and weight carry it",
+      "why": "A second sentence recoloured in the accent is the generator's stock hero move, and at 375 the colour split no longer lines up with the line break.",
+      "test": "T-HEAD-TREATMENT"
+    },
+    {
+      "rule": "TYP-009",
+      "title": "The scale fits the medium",
+      "tier": "Reflex",
+      "where": "goal cards h3.font-semibold.text-sm, \"Choose your goal\" steps, footer h4, 1440",
+      "evidence": "The type table gives h3 at 14px (10 cards) and 16px (9), h4 at 14px and body median 14px, so the h3/h4 and h4/body steps are both 1.00x. The sweep's flat_hierarchy detector reports the same two steps. Between h2 (30px) and h3 there is a 2.14x jump with no tier in between.",
+      "before": "h1 60, h2 30, then h3, h4 and body all at 14 to 16px",
+      "after": "A ladder with an intermediate step (for example 20px card titles) so card heads sit at least 1.25x over their 14px descriptions",
+      "why": "Card titles separate from their descriptions only by weight, so the eye has nothing between the 30px section head and the 14px text to scan.",
+      "test": "T-LADDER"
+    },
+    {
+      "rule": "TYP-010",
+      "title": "One size per kind of element",
+      "tier": "Reflex",
+      "where": "h3 card titles, 1440 (tiles/1440-00.png goal cards, 1440-01.png step cards)",
+      "evidence": "The goal-card titles (\"Study smarter\", \"Start a business\") are 14px weight 600, while the step-card titles (\"Choose your goal\") are 16px weight 700 and the tool-card names (\"ChatGPT\") are 18px weight 700. All three are titles of a card in a grid.",
+      "before": "Card titles at 14, 16 and 18px across three grids",
+      "after": "One card-title size and weight token used by all three grids",
+      "why": "Three sizes for the same job tell the reader the cards differ in rank when they do not.",
+      "test": "T-LADDER"
+    },
+    {
+      "rule": "TYP-019",
+      "title": "Lines break where the sense breaks",
+      "tier": "Finish",
+      "where": "hero h1, 375 (tiles/375-00.png)",
+      "evidence": "At 375 the h1 sets \"Tell us the goal. We'll\" on line one and \"build the stack.\" on line two, splitting the second sentence after its subject. At 1440 each sentence has its own line. The widows detector also flags the subtitle \"Pick a goal to get started — we'll handle the rest\" with a 10% last line at 375.",
+      "before": "\"Tell us the goal. We'll / build the stack.\"",
+      "after": "A break after \"goal.\" at every width (a block span per sentence, or text-wrap: balance on the h1 with a smaller 375 size)",
+      "why": "The two-sentence headline is built on its two halves, and the phone break cuts the second one in two.",
+      "test": "T-HEADLINE-FIT"
+    }
+  ],
+  "strengths": [
+    "Leading is tuned per role: h1 at 1.0 with -0.025em tracking, h2 at 1.2, body at 1.62.",
+    "The hero subtitle runs 55 characters a line at 1440, inside 45 to 75.",
+    "No tracked caps labels: tags and badges are set in sentence case."
+  ],
+  "not_investigated": [
+    "T-FIGURES: prices (\"Free / ₹1,650 mo Plus\") sit inside separate cards and never line up in a column, so tabular figures do not matter here; the stylesheet has no tabular-nums.",
+    "T-PUNCTUATION: 4 straight apostrophes and no curly ones; consistent, so no finding under C32.",
+    "Size floors (12px card descriptions) and widows belong to the sweep's text_floor and widows hits."
+  ]
+}

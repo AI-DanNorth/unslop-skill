@@ -1,0 +1,70 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The content is specific and only-this-product (draw.mjs and its 20 named directions, CC-licensed picture credits, the inspector's FAIL list, the Bohne & Söhne example builds), but it sits in a stock wrapper: dark-to-orange glow hero with an announcement pill, sponsor cells, eyebrowed alternating feature cards, FAQ, a 'Stop guessing, start deciding.' CTA band and a link footer.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00 and 375 tile 00",
+      "evidence": "Full-bleed gradient from near-black #140a05 to #ff5b14 with a radial 'sun' glow (#ff9652, alpha 0.62) under centred white text; saturated accent covers 46% of the fold (sweep). The glow carries no information about the skill.",
+      "before": "Centred h1 over a sunset gradient and glow",
+      "after": "Lead with the example builds (the Coffee shop / Club night / Architects / Contracts previews visible at 375) on a flat ground; let the product be the hero image.",
+      "why": "Mirror test: the centred-text-over-glowing-gradient hero is what a neighbouring dev-tool brief gets; it is the one decision that makes the first screen read as default.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero sub-line, h2s, CTA band",
+      "evidence": "Pair and fragment formula repeats: 'look designed, not generated', 'Twenty directions. Three dealt per page.', 'Design sense, packaged as a skill.', 'From default to designed.', 'Common questions.', 'Stop guessing, start deciding.'",
+      "before": "\"Stop guessing, start deciding.\"",
+      "after": "Say what the command does: \"Install it and your next page starts from one of twenty directions.\"",
+      "why": "Over-correction: the page avoids buzzwords but replaces them with the clipped two-beat cadence; 'Stop guessing, start deciding' passes the rival-name swap for any product.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "Section order from dom-1440: announcement pill + centred hero, sponsor logo cells, 'The draw', 'How it works' three alternating feature cards, before/after, install tabs, TasteCode promo, FAQ 'Common questions.', sponsor wall, CTA band, 3-column link footer. Stock items present: logo strip, equal feature cards, FAQ, CTA band, link-farm footer (5).",
+      "before": "Stock landing order around the specific middle",
+      "after": "Cut the CTA band and the second sponsor block; move 'The draw' directly under the hero, since it is the idea only this product has.",
+      "why": "Five stock sections in stock order make the frame read as a template even though the middle is specific.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "section and feature heads, tiles 1440-02, 06, 07",
+      "evidence": "Small orange label above every heading: 'The draw', 'How it works', 'Pictures', 'Inspector', 'App screens', 'Before and after', 'Install', 'Questions', 'Open source'.",
+      "before": "Pictures / Finds real pictures and credits them",
+      "after": "Drop the labels; the headings already name the feature ('Finds real pictures and credits them').",
+      "why": "An eyebrow on every block is template rhythm; each label restates its heading.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-010",
+      "tier": "Reflex",
+      "where": "hero top, tile 1440-00",
+      "evidence": "Announcement pill 'TasteCode is out: Taste Skill as a desktop app →' centred above the h1.",
+      "before": "Pill badge above the h1",
+      "after": "Move the TasteCode news into the nav or the TasteCode section further down.",
+      "why": "The news pill over a centred h1 is the default hero kit; it pushes the real claim down.",
+      "test": "T-DEFAULT-AGENT"
+    }
+  ],
+  "strengths": [
+    "'The draw': twenty named directions ('The name as a monument', 'Fintech as streetwear', 'The dark room') with plain glosses; nothing else in the category says this.",
+    "Concrete, falsifiable claims: '247 curated sites', 'Openverse, Wikimedia Commons, the Art Institute of Chicago and the Met. Only CC0, public domain, CC BY and CC BY-SA', 'Roughly 30 to 45 minutes and a few hundred thousand tokens'.",
+    "The example builds (Bohne & Söhne, Leipzig) and the inspector's FAIL/WARN list show the product working rather than describing it.",
+    "Honest footer lines: 'Taste Skill has no token or coin.', photo credits."
+  ],
+  "not_investigated": [
+    "disputed: sweep SLP-012 violet-gradient family and the 'Revolutionize', 'Unlock', 'cutting-edge', 'seamless' lexicon hits come from the 'NoteFlow' demo inside 'Before and after', which is labelled 'The default ... The page every agent ships': a quoted bad example, not the page's own look or copy.",
+    "Large parts of the 1440 capture are blank (tiles 03, 04, 09, 10, 11; sweep dead_band and hidden_content 81% when IntersectionObserver never fires): judged from dom-1440 text and the 375 tiles; one script chunk was blocked (manifest network)."
+  ]
+}

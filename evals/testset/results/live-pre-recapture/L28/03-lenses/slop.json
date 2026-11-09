@@ -1,0 +1,50 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:05:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Everything is drawn from the subject: his blob-pattern helmet motif as the hero topography, LN mark, acid-lime from the helmet livery, a real 'Helmets Hall of Fame' archive (Basketball 2022, Silverstone 2020, Las Vegas 2023…), a next-race badge and own merch photography; no section survives a rival driver's name.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "manifesto block, 1440 tile 02",
+      "evidence": "T-FRESH-READER / T-RIVAL-NAME: 'REDEFINING LIMITS, FIGHTING FOR WINS, BRINGING IT ALL IN ALL WAYS. DEFINING A LEGACY IN FORMULA 1 ON AND OFF THE TRACK.' stays true for any F1 driver; 'Redefining' and 'legacy' are stock sports-brand diction and 'bringing it all in all ways' says nothing.",
+      "before": "\"Redefining limits, fighting for wins, bringing it all in all ways…\"",
+      "after": "A line in his own voice or a fact only he has [DATA NEEDED: quote or season result to lead with]",
+      "why": "The one heading-sized line on the page that any driver site could carry; the typography around it is specific, the words are not.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Finish",
+      "where": "first screen, 1440 tile 00",
+      "evidence": "T-FIVE-SECOND, partly not verified: the captured first screen shows only the topographic blob background, the logo, STORE and menu, and a tiny 8px 'NEXT RACE / LAS VEGAS GP' card. The hero subject (likely a WebGL helmet or video) did not paint in the capture, so who/what/what-to-do rests on the logo alone.",
+      "before": "First screen = logo + texture + store button",
+      "after": "Make sure the first screen carries a static fallback image of the driver or helmet when the canvas has not loaded",
+      "why": "If the 3D layer fails or loads late (lab LCP 6.8s), the first screen says almost nothing.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "The helmet archive is real, dated and only-this-driver: 'Basketball 2022', 'Silverstone 2020', 'Beachball 2023', 'Dark Mode 2024', each a cut-out on a notched card that echoes his badge shape.",
+    "Brand system taken from the subject: blob pattern from his helmet and jacket used as hero topography; lime #d2ff00 from the livery; serif/grotesk mix in the headings ('HELMETS / HALL OF FAME').",
+    "Own photography of the driver and merch (Champion hoodie, LN1 gold) rather than stock.",
+    "Next-race badge ('LAS VEGAS GP') is live, useful content."
+  ],
+  "not_investigated": [
+    "The hero and several scroll-pinned sections (tiles 01, 03-07) painted as flat colour: WebGL/scroll-driven content did not render in the full-page capture. Not judged as design.",
+    "Store section heading in tile 11 is near-invisible dark-on-dark; likely captured mid-reveal animation (sweep contrast 1.00:1 hits on 'results' are probably the same cause)."
+  ]
+}

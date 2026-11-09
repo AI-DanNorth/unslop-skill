@@ -1,0 +1,1382 @@
+{
+ "width": 1440,
+ "page_words": 2226,
+ "running_words": 1471,
+ "hero": {
+  "h1": "Web Interface Guidelines",
+  "h1_words": 3,
+  "sub_line": "Interfaces succeed because of hundreds of choices. This is a living, non-exhaustive list of those decisions. Most guidelines are framework-agnostic, some specific to React/Next.js. .",
+  "sub_line_words": 26,
+  "first_screen_actions": [
+   {
+    "label": "Feedback is welcome",
+    "href": "https://github.com/vercel-labs/web-interface-guidelines/tree/main",
+    "sel": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1) > a.text-gray-900.underline"
+   },
+   {
+    "label": "WAI-ARIA Authoring Patterns",
+    "href": "https://www.w3.org/WAI/ARIA/apg/patterns/",
+    "sel": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(1) > a.text-gray-900.underline"
+   }
+  ],
+  "first_screen_digits": [
+   "24px,",
+   "24px.",
+   "44px.",
+   "16px",
+   "(~150–300",
+   "(~300–500"
+  ]
+ },
+ "outline": [
+  {
+   "level": 1,
+   "text": "Web Interface Guidelines",
+   "words": 3,
+   "chars": 24,
+   "y": 121,
+   "sel": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Interfaces succeed because of hundreds of choices.",
+   "opener_overlap": 0.0
+  }
+ ],
+ "labels": {
+  "buttons_and_links": [
+   {
+    "label": "AGENTS.md",
+    "n": 2,
+    "words": 2
+   },
+   {
+    "label": "Vercel Home",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Feedback is welcome",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Interactions",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Keyboard works everywhere.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "WAI-ARIA Authoring Patterns",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Clear focus.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Manage focus.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "WAI-ARIA Patterns",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Match visual & hit targets.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Mobile input size.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Respect zoom.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Hydration-safe inputs.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Don’t block paste.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Loading buttons.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Minimum loading-state duration.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "URL as state.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "nuqs",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Optimistic updates.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Ellipsis for further input & loading states.",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Confirm destructive actions.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Prevent double-tap zoom on controls.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Tap highlight follows design.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Design forgiving interactions.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "prediction cones",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Tooltip timing.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "subsequent peers have no delay",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Overscroll behavior.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Desktop rubber-banding.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "suppress rubber-band bounce",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "overscroll-behavior: none",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "pointer",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Scroll positions persist.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Autofocus for speed.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "No dead zones.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Deep-link everything.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Clean drag interactions.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "inert",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Gestures have alternatives.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "tap/click control & keyboard",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Links are links.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Announce async updates.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Locale-aware keyboard shortcuts.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Animations",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Honor prefers-reduced-motion.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Implementation preference.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "motion",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Compositor-friendly.",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Necessity check.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "the northern lights",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Easing fits the subject.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Interruptible.",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Input-driven.",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": ">5 seconds",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Correct transform origin.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Never transition: all.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Cross-browser SVG transforms.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Layout",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Optical alignment.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Adjust ±1px",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Deliberate alignment.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Balance contrast in lockups.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Responsive coverage.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Respect safe areas.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "safe-area variables",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "No excessive scrollbars.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "\"Show scroll bars\" to \"Always\"",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Let the browser size things.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Content",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Inline help first.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Stable skeletons.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Accurate page titles.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "No dead ends.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "All states designed.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Typographic quotes.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Avoid widows/orphans.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Tabular numbers for comparisons.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Geist Mono",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Redundant status cues.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Icons have labels.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Don’t ship the schema.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Use the ellipsis character.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Anchored headings.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Resilient to user-generated content.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Locale-aware formats.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Prefer language settings over location.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Shield verbatim content from translation.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Accessible content.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "accessibility tree",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Icon-only buttons are named.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Semantics before ARIA.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Headings & skip link.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Accessible media.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Caption speech & meaningful sounds",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Brand resources from the logo.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Right-click the nav logo",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Non-breaking spaces for glued terms.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Forms",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Enter submits.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Textarea behavior.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Labels everywhere.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Label activation.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Submission rule.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Don’t block typing.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Don’t pre-disable submit.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "No dead zones on controls.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Error placement.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Autocomplete & names.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Spellcheck selectively.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Correct types & input modes.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Placeholders signal emptiness.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Placeholder value.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Unsaved changes.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Password managers & 2FA.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Don’t trigger password managers for non-auth fields.",
+    "n": 1,
+    "words": 7
+   },
+   {
+    "label": "Text replacements & expansions.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Windows <select> background.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Performance",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Device/browser matrix.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Measure reliably.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Track re-renders.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "React DevTools",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "React Scan",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Throttle when profiling.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Minimize layout work.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Network latency budgets.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Keystroke cost.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Large lists.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "virtua",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "content-visibility: auto",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Preload wisely.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "No image-caused CLS.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Preconnect to origins.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Preload fonts.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Subset fonts.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Don’t use the main thread for expensive work.",
+    "n": 1,
+    "words": 8
+   },
+   {
+    "label": "Web Workers",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Video over animated GIF.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Modern video is typically much smaller than GIF",
+    "n": 1,
+    "words": 8
+   },
+   {
+    "label": "Safari video-as-image.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "H.264 MP4 source to <picture>",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Design",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Layered shadows.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Crisp borders.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Nested radii.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Hue consistency.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Accessible charts.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Minimum contrast.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "APCA",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "WCAG 2",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Interactions increase contrast.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Browser UI matches your background.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "align the browser’s theme color with the page background",
+    "n": 1,
+    "words": 9
+   },
+   {
+    "label": "Set the appropriate color-scheme.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Text anti-aliasing & transforms.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Avoid gradient banding.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Background images can be used instead",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Vercel-specific",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Copywriting",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Active voice.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Headings & buttons use Title Case",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Chicago",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Be clear & concise.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Prefer & over and.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Action-oriented language.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Keep nouns consistent.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Write in second person.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Use consistent placeholders.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Use numerals for counts.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Consistent currency formatting.",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Separate numbers & units with a space.",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Default to positive language.",
+    "n": 1,
+    "words": 4
+   },
+   {
+    "label": "Error messages guide the exit.",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Avoid ambiguity.",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Integrate with Agents",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Review Command",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Copy to clipboard",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Download AGENTS.md",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Join Vercel",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Check out the job postings",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Adam",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Jimmy",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Jonnie",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Lochie",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Paco",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Joe",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Austin",
+    "n": 1,
+    "words": 1
+   }
+  ],
+  "one_target_many_labels": {
+   "https://www.w3.org/WAI/ARIA/apg/patterns/": [
+    "WAI-ARIA Authoring Patterns",
+    "WAI-ARIA Patterns"
+   ]
+  },
+  "one_label_many_targets": {
+   "agents.md": [
+    "#agentsmd",
+    "https://agents.md/"
+   ]
+  }
+ },
+ "microcopy": {
+  "form_labels": [],
+  "after_actions": [
+   {
+    "source": "async.json",
+    "status": "not captured"
+   }
+  ]
+ },
+ "rhythm": {
+  "sentences": 163,
+  "mean_words": 9.0,
+  "stdev_words": 4.4,
+  "share_4_words_or_less": 0.13,
+  "note": "CPY-206: warn when stdev is under 4 over 15 or more sentences, or over 30% are 4 words or less"
+ },
+ "sibling_evenness": [
+  {
+   "pattern": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4 > li.mb-3.text-copy-16",
+   "word_counts": [
+    6,
+    30,
+    9,
+    20,
+    16,
+    4,
+    9,
+    5,
+    8,
+    33,
+    14,
+    22,
+    21,
+    9,
+    13,
+    7,
+    7,
+    32,
+    5,
+    21,
+    18,
+    8,
+    18,
+    16,
+    27,
+    7,
+    9,
+    4,
+    8,
+    9,
+    15,
+    9,
+    6,
+    20,
+    7,
+    17,
+    19,
+    4,
+    18,
+    31,
+    13,
+    5,
+    21,
+    19,
+    9,
+    9,
+    4,
+    9,
+    5,
+    6,
+    4,
+    5,
+    8,
+    9,
+    15,
+    7,
+    7,
+    10,
+    11,
+    16,
+    8,
+    4,
+    6,
+    20,
+    7,
+    14,
+    23,
+    8,
+    13,
+    6,
+    19,
+    24,
+    8,
+    14,
+    12,
+    6,
+    6,
+    7,
+    4,
+    10,
+    8,
+    6,
+    19,
+    19,
+    11,
+    7,
+    9,
+    6,
+    5,
+    7,
+    7,
+    6,
+    7,
+    6,
+    14,
+    8,
+    20,
+    12,
+    9,
+    37,
+    9,
+    8,
+    8,
+    11,
+    7,
+    6,
+    17,
+    25,
+    11,
+    6,
+    6,
+    7,
+    16,
+    10,
+    13,
+    4
+   ],
+   "max_over_min": 9.25
+  },
+  {
+   "pattern": "div.-mb-4 > ul.pl-5.mb-4 > li.mb-3.text-copy-16 > ul.pl-5.mb-4 > li.mb-3.text-copy-16",
+   "word_counts": [
+    9,
+    6,
+    13,
+    6
+   ],
+   "max_over_min": 2.17
+  }
+ ],
+ "patterns": {
+  "contrast_frame": {
+   "count": 3,
+   "examples": [
+    {
+     "match": "instead of",
+     "where": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(7) > li.mb-3.text-copy-16:nth-of-type(10)",
+     "context": "aling text can change smoothing. Prefer animating a wrapper instead of the text node. If artifacts persist set or to promote to it"
+    },
+    {
+     "match": "Instead of",
+     "where": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(8) > li.mb-3.text-copy-16:nth-of-type(13) > ul.pl-5.mb-4 > li.mb-3.text-copy-16",
+     "context": "Instead of say The copy & buttons/links should educate & give a clear"
+    },
+    {
+     "match": "Instead of",
+     "where": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(8) > li.mb-3.text-copy-16:nth-of-type(14) > ul.pl-5.mb-4 > li.mb-3.text-copy-16",
+     "context": "Instead of the button label say ."
+    }
+   ],
+   "card": "CPY-155, budget 2 per page"
+  },
+  "negation_run": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-156, budget 1"
+  },
+  "ing_rider": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-158, budget 1"
+  },
+  "word_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161: a list of three single words"
+  },
+  "fragment_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161, CPY-187: 'Fast. Simple. Secure.'"
+  },
+  "exclamation": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-241: none in body copy"
+  },
+  "questions": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-176: no rhetorical questions; FAQ questions are not findings"
+  }
+ },
+ "long_form_regions": [
+  {
+   "container": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1)",
+   "paragraphs": 3,
+   "words": 95,
+   "y": 417,
+   "counts": {
+    "passive": {
+     "n": 0,
+     "per_100_words": 0.0,
+     "examples": [],
+     "card": "CPY-175 (passive candidate; read it)"
+    },
+    "hedge": {
+     "n": 0,
+     "per_100_words": 0.0,
+     "examples": [],
+     "card": "CPY-149 (hedging and weasel words)"
+    },
+    "vague_attribution": {
+     "n": 0,
+     "per_100_words": 0.0,
+     "examples": [],
+     "card": "writing-skill review: vague attributions"
+    },
+    "false_range": {
+     "n": 0,
+     "per_100_words": 0.0,
+     "examples": [],
+     "card": "writing-skill review: false ranges"
+    },
+    "generic_conclusion": {
+     "n": 0,
+     "per_100_words": 0.0,
+     "examples": [],
+     "card": "CPY-153, writing-skill review: generic conclusions"
+    },
+    "adverb_ly": {
+     "n": 2,
+     "per_100_words": 2.1,
+     "examples": [
+      "automatically",
+      "separately"
+     ],
+     "card": "writing-skill review: adverbs (per 100 words)"
+    }
+   }
+  }
+ ],
+ "term_variants": [
+  {
+   "term": "agents",
+   "spellings": {
+    "Agents": 1,
+    "agents": 2,
+    "AGENTS": 3
+   }
+  },
+  {
+   "term": "css",
+   "spellings": {
+    "CSS": 4,
+    "css": 1
+   }
+  },
+  {
+   "term": "10mb",
+   "spellings": {
+    "10 MB": 2,
+    "10MB": 1
+   }
+  }
+ ],
+ "sweep": {
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "hits": [],
+   "n": 0
+  },
+  "em_dash": {
+   "status": "ran",
+   "rule": "CPY-004",
+   "hits": [],
+   "n": 0
+  },
+  "h1_words": {
+   "status": "ran",
+   "rule": "CPY-003",
+   "hits": [],
+   "n": 0
+  },
+  "words_per_screen": {
+   "status": "ran",
+   "rule": "CPY-001",
+   "hits": [
+    {
+     "where": "screen 2 (y 900-1800) at 1440px",
+     "evidence": "292 words on one 900px screen (fail > 143)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 1
+  },
+  "page_words": {
+   "status": "ran",
+   "rule": "CPY-002",
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "2226 words on the page (budget 675)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 1
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "hits": [
+    {
+     "where": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(8)",
+     "evidence": "\"Instead of say .\" repeated 3 times in one container",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 1
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "hits": [],
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "hits": [],
+   "n": 0
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "hits": [],
+   "n": 0
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "hits": [],
+   "n": 0
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "hits": [],
+   "n": 0
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "hits": [],
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "hits": [],
+   "n": 0
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "hits": [],
+   "n": 0
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "hits": [],
+   "n": 0
+  }
+ }
+}

@@ -1,0 +1,549 @@
+{
+ "width": 1440,
+ "fonts_source": "fonts.json (drawn)",
+ "faces": {
+  "Inter Variable": {
+   "elements": 322,
+   "chars": 5958,
+   "roles": {
+    "control": 52,
+    "other": 3,
+    "small": 240,
+    "h3": 6,
+    "body": 13,
+    "h4": 1,
+    "h2": 7
+   },
+   "sizes_px": [
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    20.0,
+    24.0,
+    32.0,
+    48.0,
+    64.0,
+    72.0
+   ],
+   "source": "declared"
+  },
+  "Berkeley Mono": {
+   "elements": 98,
+   "chars": 1231,
+   "roles": {
+    "small": 97,
+    "control": 1
+   },
+   "sizes_px": [
+    12.0,
+    14.0
+   ],
+   "source": "declared"
+  },
+  "Berkeley Mono Variable": {
+   "elements": 7,
+   "chars": 112,
+   "roles": {
+    "small": 6,
+    "body": 1
+   },
+   "sizes_px": [
+    10.0,
+    12.0
+   ],
+   "source": "drawn"
+  }
+ },
+ "roles": {
+  "control": {
+   "count": 53,
+   "sizes_px": {
+    "13.0": 44,
+    "12.0": 4,
+    "16.0": 4,
+    "14.0": 1
+   },
+   "median_px": 13.0,
+   "weights": {
+    "400": 48,
+    "510": 5
+   },
+   "faces": {
+    "Inter Variable": 52,
+    "Berkeley Mono": 1
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  },
+  "other": {
+   "count": 3,
+   "sizes_px": {
+    "64.0": 1,
+    "48.0": 1,
+    "16.0": 1
+   },
+   "median_px": 48.0,
+   "weights": {
+    "510": 2,
+    "590": 1
+   },
+   "faces": {
+    "Inter Variable": 3
+   },
+   "italic": 0,
+   "leading_median": 1.0,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 343,
+   "sizes_px": {
+    "12.0": 128,
+    "14.0": 98,
+    "15.0": 52,
+    "13.0": 46,
+    "10.0": 18,
+    "11.0": 1
+   },
+   "median_px": 13.0,
+   "weights": {
+    "400": 220,
+    "510": 112,
+    "590": 4,
+    "500": 4,
+    "300": 3
+   },
+   "faces": {
+    "Inter Variable": 240,
+    "Berkeley Mono": 97,
+    "Berkeley Mono Variable": 6
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 11,
+   "tracking_em_median": 0.0,
+   "uppercase": 7
+  },
+  "h3": {
+   "count": 6,
+   "sizes_px": {
+    "13.0": 5,
+    "20.0": 1
+   },
+   "median_px": 13.0,
+   "weights": {
+    "510": 5,
+    "590": 1
+   },
+   "faces": {
+    "Inter Variable": 6
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 14,
+   "sizes_px": {
+    "15.0": 4,
+    "24.0": 4,
+    "13.0": 2,
+    "32.0": 2,
+    "14.0": 1,
+    "12.0": 1
+   },
+   "median_px": 15.0,
+   "weights": {
+    "400": 14
+   },
+   "faces": {
+    "Inter Variable": 13,
+    "Berkeley Mono Variable": 1
+   },
+   "italic": 0,
+   "leading_median": 1.45,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 1
+  },
+  "h4": {
+   "count": 1,
+   "sizes_px": {
+    "16.0": 1
+   },
+   "median_px": 16.0,
+   "weights": {
+    "590": 1
+   },
+   "faces": {
+    "Inter Variable": 1
+   },
+   "italic": 0,
+   "leading_median": 1.75,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 7,
+   "sizes_px": {
+    "48.0": 6,
+    "72.0": 1
+   },
+   "median_px": 48.0,
+   "weights": {
+    "510": 7
+   },
+   "faces": {
+    "Inter Variable": 7
+   },
+   "italic": 0,
+   "leading_median": 1.0,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h2/h3",
+   "ratio": 3.69
+  },
+  {
+   "pair": "h3/h4",
+   "ratio": 0.81
+  },
+  {
+   "pair": "h4/body",
+   "ratio": 1.07
+  }
+ ],
+ "distinct_sizes_px": [
+  10.0,
+  11.0,
+  12.0,
+  13.0,
+  14.0,
+  15.0,
+  16.0,
+  20.0,
+  24.0,
+  32.0,
+  48.0,
+  64.0,
+  72.0
+ ],
+ "measure": {
+  "paragraphs": 8,
+  "cpl_median": 39.0,
+  "cpl_max": 50,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "div.KFZpfa_panel > div.KFZpfa_viewBody:nth-of-type(2) > div.KFZpfa_body.KFZpfa_c",
+   "text": "Faster app launch",
+   "size": "20px",
+   "level": 3,
+   "lines": 1,
+   "chars": 17,
+   "last_line_share": null,
+   "leading": 1.33,
+   "tracking_em": -0.012,
+   "weight": "590",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div > div._5l06ia_container.MwJdiW_root:nth-of-type(1) > main._5l06ia_content > ",
+   "text": "Purpose-built for modern teams with AI workflows at its core",
+   "size": "48px",
+   "level": 2,
+   "lines": 3,
+   "chars": 154,
+   "last_line_share": 0.79,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > section.b-30Va_root.b-30Va_rootHo",
+   "text": "Intake and integrations",
+   "size": "48px",
+   "level": 2,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 2.64,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > section.b-30Va_root.b-30Va_rootHo",
+   "text": "Planning and monitoring",
+   "size": "48px",
+   "level": 2,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 1.74,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > section.b-30Va_root.b-30Va_rootHo",
+   "text": "AI and automations",
+   "size": "48px",
+   "level": 2,
+   "lines": 2,
+   "chars": 18,
+   "last_line_share": 1.97,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > section.b-30Va_root.b-30Va_rootHo",
+   "text": "Build, review, and ship",
+   "size": "48px",
+   "level": 2,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 0.66,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "main._5l06ia_content > div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > div.hide-m",
+   "text": "Changelog",
+   "size": "48px",
+   "level": 2,
+   "lines": 1,
+   "chars": 9,
+   "last_line_share": null,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "div._5l06ia_container.MwJdiW_root:nth-of-type(1) > main._5l06ia_content > div._7",
+   "text": "Built for the future. Available today.",
+   "size": "72px",
+   "level": 2,
+   "lines": 2,
+   "chars": 38,
+   "last_line_share": 0.84,
+   "leading": 1.0,
+   "tracking_em": -0.022,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_sectio",
+   "text": "Product",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.01,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_sectio",
+   "text": "Features",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 8,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.01,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_sectio",
+   "text": "Company",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.01,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_sectio",
+   "text": "Resources",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 9,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.01,
+   "weight": "510",
+   "face": "Inter Variable"
+  },
+  {
+   "sel": "footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_sectio",
+   "text": "Connect",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.01,
+   "weight": "510",
+   "face": "Inter Variable"
+  }
+ ],
+ "head_treatments": [
+  {
+   "sel": "div._5l06ia_container.MwJdiW_root:nth-of-type(1) > main._5l06ia_content > div._7",
+   "text": "A new species of product tool.",
+   "size": "48px",
+   "heading": "Purpose-built for modern teams with AI workflows at its core",
+   "differs": [
+    "color"
+   ]
+  }
+ ],
+ "small_caps_or_tracked": {
+  "count": 8,
+  "examples": [
+   {
+    "sel": "div > div._5l06ia_container.MwJdiW_root:nth-of-type(1) > main._5l06ia_content > ",
+    "text": "Powering the companies building the future",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "main._5l06ia_content > div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > div.GJ9TEa",
+    "text": "Fig 0.1",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "main._5l06ia_content > div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > div.GJ9TEa",
+    "text": "Fig 0.2",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "main._5l06ia_content > div._7bwwmq_root._7bwwmq_wide:nth-of-type(2) > div.GJ9TEa",
+    "text": "Fig 0.3",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "div.fjOtda_changelog.Fzcv4W_inset:nth-of-type(3) > div.fjOtda_changelogItem:nth-",
+    "text": "Nov 4, 2026",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "div.fjOtda_changelog.Fzcv4W_inset:nth-of-type(3) > div.fjOtda_changelogItem:nth-",
+    "text": "Oct 22, 2026",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "div.fjOtda_changelog.Fzcv4W_inset:nth-of-type(3) > div.fjOtda_changelogItem:nth-",
+    "text": "Oct 8, 2026",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   },
+   {
+    "sel": "div.fjOtda_changelog.Fzcv4W_inset:nth-of-type(3) > div.fjOtda_changelogItem:nth-",
+    "text": "Sep 24, 2026",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.0
+   }
+  ]
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [
+  {
+   "sel": "div.qM9FAa_chatMessages:nth-of-type(2) > div.qM9FAa_chatMessage:nth-of-type(2) >",
+   "text": "Anyone else noticing the iOS app feels slow to open if you h",
+   "size": "15px",
+   "weight": "300"
+  },
+  {
+   "sel": "div.qM9FAa_chatMessages:nth-of-type(2) > div.qM9FAa_chatMessage:nth-of-type(3) >",
+   "text": "Yea, we’re still blocking initial render on a full vehicle_s",
+   "size": "15px",
+   "weight": "300"
+  },
+  {
+   "sel": "div.qM9FAa_chatMessages:nth-of-type(2) > div.qM9FAa_chatMessage:nth-of-type(4) >",
+   "text": "Feels like we could render sooner and load the rest in the b",
+   "size": "15px",
+   "weight": "300"
+  }
+ ],
+ "mono": {
+  "by_role": {
+   "small": 103,
+   "body": 1,
+   "control": 1
+  },
+  "body_paragraphs": [
+   {
+    "sel": "div > div._5l06ia_container.MwJdiW_root:nth-of-type(1) > main._5l06ia_content > ",
+    "text": "Powering the companies building the future",
+    "size": "12px"
+   }
+  ]
+ },
+ "wrapped_controls": [],
+ "punctuation": {
+  "straight_double": 4,
+  "curly_double": 0,
+  "straight_apostrophe": 0,
+  "curly_apostrophe": 5,
+  "three_dots": 2,
+  "ellipsis": 18
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": true,
+  "font_synthesis_none": false,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

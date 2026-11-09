@@ -1,0 +1,69 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:15:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The argument is specific and real (one prompt, a generic 5-second cover versus three named-school directions in 5 minutes, with the actual outputs), but the slide is dressed in a recognisable house costume (dark ground, gold italic serif accents, tracked mono caps meta with middot chains, hairline rules, '02B / 09' folio) and the payoff images are too small to read while the bad example gets twice the area.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER", "T-GHOST-DECK"],
+  "findings": [
+    {
+      "rule": "SLP-192",
+      "tier": "Reflex",
+      "where": "slide chrome: top-left, top-right, panel heads, stat pills, captions",
+      "evidence": "At least 12 tracked uppercase mono labels at 9-13px, most of them joined with middots: '02B · IN PRACTICE', 'SCENE · DEEPSEEK V4 / COVER FOR WECHAT', 'DEFAULT', 'SKILL · ON', '5 SEC · 1 OUTPUT', '5 MIN · 3 OUTPUTS · 3 SCHOOLS', '实际产出 · THE OUTPUT', '实际产出 · 3 SCHOOLS, SIDE BY SIDE', 'SWISS · GRID', 'EAST · QUIET', 'LUXE · MINIMAL', 'AI · GENERATED', '02B / 09'. T-DELETION: removing the top-right scene label, the panel-head pills and the '实际产出' captions loses nothing the headline and panel titles do not already say.",
+      "before": "SCENE · DEEPSEEK V4 / COVER FOR WECHAT ; 实际产出 · THE OUTPUT",
+      "after": "Keep '5 秒 / 1 张' and '5 分钟 / 3 个方向' as the two contrasting numbers set large; delete the other meta labels",
+      "why": "Mono as costume and middot meta strings are the dark-editorial default (SLP-191, SLP-200); here they bury the one comparison that matters.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole slide",
+      "evidence": "Near-black #0a0a0a ground, Source Serif display with gold italic emphasis ('帮我做个公众号头图', 'huashu-design 启动后'), IBM Plex Mono tracked labels, hairline dividers and a centred 'VS' rule, numbered 1-5 step list, folio '02B / 09'. This is the hairline-newspaper family transposed to dark (serif + italic + mono labels + hairlines). T-MIRROR: a different talk on a different tool would get the same chrome.",
+      "before": "dark editorial + gold italic serif + mono caps chrome",
+      "after": "If this is the speaker's deliberate deck identity, record it in the brief; otherwise drop the mono chrome and let the serif headline and images carry the slide",
+      "why": "A recognisable look family without a recorded reason counts against 'made'.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-246",
+      "tier": "Reflex",
+      "where": "right panel, three output thumbnails (Pentagram / Takram / Build)",
+      "evidence": "T-FIVE-SECOND on a projected 1920 slide: the three outputs that prove the claim render at 320x136px each with body text inside at roughly 3-5px (unreadable), while the 'bad' purple DeepSeek cover on the left is 706x300px. The eye lands on the counter-example, not the result.",
+      "before": "Generic cover 706px wide; three good covers 320px wide",
+      "after": "Invert the weights: show the three directions large (or split this into two slides: the generic output, then the three directions full-width)",
+      "why": "The slide's evidence is illegible at presentation distance, so the claim rests on the step list instead.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-210",
+      "tier": "Reflex",
+      "where": "bottom takeaway line",
+      "evidence": "'普通 AI：给你一个还行的答案。Skill：给你 3 个有视角的答案 —— 然后你选。这就是「装进 AI 的工作流」做的事。' A paired contrast frame plus em dash plus a self-referential summary that restates what the slide already showed (SLP-218 staged reveal / SLP-232 recap).",
+      "before": "普通 AI：给你一个还行的答案。Skill：给你 3 个有视角的答案 —— 然后你选。",
+      "after": "Cut to the last clause or delete; the side-by-side already makes the point",
+      "why": "Contrast-frame recaps are a model writing habit (T-OVER-CORRECTION: the pair replaces the claim).",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-242",
+      "tier": "Finish",
+      "where": "right panel step list",
+      "evidence": "Each of the five steps carries a second, smaller, grey italic gloss ('检查点 1：先答四问', 'Pentagram / Takram / Build', '同时摆在我面前 →'), so every line has two type styles and two weights; the arrow glued to step 5 (SLP-201).",
+      "before": "5 分钟后，3 个差异化方案同时摆在我面前 →",
+      "after": "One style per step; drop the arrow",
+      "why": "Doubled emphasis per line flattens hierarchy (SLP-242).",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The comparison is a real, dated task with real outputs ('A real task from yesterday', the actual WeChat cover prompt) and names the three schools; it passes T-RIVAL-NAME and T-THREE-LINE.",
+    "The deliberate slop exhibit (purple gradient 'DeepSeek V4 FUTURE OF AI ⚡🧠🚀✨' cover, captioned '呃，能用，但…大家都长这样') is a quoted counter-example, correctly framed; the sweep's gradient hit on #slop is the exhibit, not the slide's own styling."
+  ],
+  "not_investigated": [
+    "the step-by-step reveal animation and REPLAY behaviour (captured after an 8s wait, final state only)",
+    "other slides of the deck (T-GHOST-DECK needs the full title run; only slide 02B was captured)",
+    "no 00-contract.md brief: cannot tell whether the dark editorial look is the presenter's established identity"
+  ]
+}

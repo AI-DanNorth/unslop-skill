@@ -1,0 +1,355 @@
+{
+ "width": 1440,
+ "fonts_source": "fonts.json (drawn)",
+ "faces": {
+  ".": {
+   "elements": 65,
+   "chars": 2851,
+   "roles": {
+    "other": 5,
+    "control": 34,
+    "h1": 1,
+    "body": 14,
+    "h2": 10,
+    "h3": 1
+   },
+   "sizes_px": [
+    19.0,
+    24.0,
+    31.0,
+    36.0,
+    48.0
+   ],
+   "source": "drawn"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 5,
+   "sizes_px": {
+    "19.0": 4,
+    "31.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 5
+   },
+   "faces": {
+    ".": 5
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 34,
+   "sizes_px": {
+    "19.0": 33,
+    "24.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 30,
+    "700": 4
+   },
+   "faces": {
+    ".": 34
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h1": {
+   "count": 1,
+   "sizes_px": {
+    "48.0": 1
+   },
+   "median_px": 48.0,
+   "weights": {
+    "700": 1
+   },
+   "faces": {
+    ".": 1
+   },
+   "italic": 0,
+   "leading_median": 1.04,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 14,
+   "sizes_px": {
+    "19.0": 13,
+    "24.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 14
+   },
+   "faces": {
+    ".": 14
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 10,
+   "sizes_px": {
+    "36.0": 10
+   },
+   "median_px": 36.0,
+   "weights": {
+    "700": 10
+   },
+   "faces": {
+    ".": 10
+   },
+   "italic": 0,
+   "leading_median": 1.11,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 1,
+   "sizes_px": {
+    "24.0": 1
+   },
+   "median_px": 24.0,
+   "weights": {
+    "700": 1
+   },
+   "faces": {
+    ".": 1
+   },
+   "italic": 0,
+   "leading_median": 1.25,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h1/h2",
+   "ratio": 1.33
+  },
+  {
+   "pair": "h2/h3",
+   "ratio": 1.5
+  },
+  {
+   "pair": "h3/body",
+   "ratio": 1.26
+  }
+ ],
+ "distinct_sizes_px": [
+  19.0,
+  24.0,
+  31.0,
+  36.0,
+  48.0
+ ],
+ "measure": {
+  "paragraphs": 7,
+  "cpl_median": 62,
+  "cpl_max": 76,
+  "over_75": 1,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row >",
+   "text": "Design your service using GOV.UK styles, components and patt",
+   "size": "48px",
+   "level": 1,
+   "lines": 3,
+   "chars": 64,
+   "last_line_share": 0.45,
+   "leading": 1.04,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "#whats-new",
+   "text": "What’s new",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "#\\31 5-october-2026-weve-released-govuk-frontend-v660",
+   "text": "15 October 2026: We’ve released GOV.UK Frontend v6.6.0",
+   "size": "24px",
+   "level": 3,
+   "lines": 1,
+   "chars": 54,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container > div.govuk-main-wrapper.govuk-main-wrapper--l > div.gov",
+   "text": "Get updates on the Design System",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 32,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Styles",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 6,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Components",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Patterns",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 8,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Update your service to use the refreshed GOV.UK brand",
+   "size": "36px",
+   "level": 2,
+   "lines": 2,
+   "chars": 53,
+   "last_line_share": 0.36,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Principles we follow",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 20,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "#community",
+   "text": "Community",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 9,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "#support",
+   "text": "Support",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Roadmap",
+   "size": "36px",
+   "level": 2,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "."
+  }
+ ],
+ "head_treatments": [],
+ "small_caps_or_tracked": {
+  "count": 0,
+  "examples": []
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 0,
+  "curly_apostrophe": 9,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

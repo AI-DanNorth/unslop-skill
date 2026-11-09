@@ -1,0 +1,84 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "Instrument Sans at weight 400 is set with care at display size (leading 1.0, -0.025em tracking, 60 to 160px), but it is a saturated face with no stated source, and the page wraps it in the generator's habits: three headings whose second sentence turns grey, an outlined accent word, and 30 JetBrains Mono labels, five of them tracked caps.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-LEADING and T-MEASURE pass with a tuned display setting, but T-TYPE-SOURCE finds a saturated face with no argument, T-HEAD-TREATMENT finds four set-apart heading parts, T-LADDER finds 13 sizes and h3 in five sizes, and T-LABEL-TRANSFORM fails on the mono caps labels."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-016",
+      "title": "Headings are set in one voice",
+      "tier": "Reflex",
+      "where": "section h2s \"Everything you need.\", \"Three steps.\", \"Built by devs.\" and \"Simple, transparent pricing\", 1440 (tiles/1440-01.png, 1440-03.png, 1440-09.png, 1440-10.png)",
+      "evidence": "The type table lists three h2s whose second sentence is set apart by colour at 60px: \"Nothing you don't.\", \"Infinite possibilities.\" and \"For devs.\" turn grey under a black first sentence. The pricing h2 sets \"pricing\" as outlined, unfilled letters (tiles/1440-10.png top). That is four set-apart heading parts with no single hero signature.",
+      "before": "\"Everything you need. / Nothing you don't.\" with the second line in grey, repeated in three sections, plus one outlined word",
+      "after": "Each h2 in one colour and one fill; if the page needs a signature, keep one treatment on one heading",
+      "why": "The same two-tone formula on every section head turns a display setting into a template, and the reader learns to skip the grey half.",
+      "test": "T-HEAD-TREATMENT",
+      "root": "the section-heading component's second-line span"
+    },
+    {
+      "rule": "TYP-007",
+      "title": "Saturated faces need an argument",
+      "tier": "Reflex",
+      "where": "every role, 1440 and 375",
+      "evidence": "fonts.json at 1440 shows Instrument Sans drawing 303 elements in every role (display at 60 to 160px, h3, body, controls, small text) and JetBrains Mono drawing 37 labels. data/lexicons/fonts.yaml lists Instrument Sans as saturated. There is no contract or brand file to supply a reason, and the brand \"Optimus\" has no wordmark face of its own (tiles/1440-00.png top left).",
+      "before": "Instrument Sans in every role plus JetBrains Mono labels, with no stated source",
+      "after": "A display face chosen for the brief (see substitutes in data/lexicons/fonts.yaml), or a recorded reason for Instrument Sans in the contract",
+      "why": "Instrument Sans over JetBrains Mono is a pairing many generated developer landing pages share, so the type gives this product no voice of its own.",
+      "test": "T-TYPE-SOURCE"
+    },
+    {
+      "rule": "TYP-008",
+      "title": "Monospace only for code and figures",
+      "tier": "Reflex",
+      "where": "section labels span.font-mono.text-xs, stat sources, pricing numbers, 1440 and 375",
+      "evidence": "The type table counts 32 small mono elements at 1440 and 49 at 375. They are not code: \"The platform for modern teams\", \"Capabilities\", \"Process\", \"Live metrics\" (eyebrow labels behind a rule, tiles/1440-01.png and 1440-05.png), \"STRIPE\" and \"NOTION\" under the hero stats, and \"01\", \"02\", \"03\" over the pricing tiers. The sweep's numbered_labels hit covers the pricing numbers. Only the workflow.ts sample (tiles/1440-03.png) is code.",
+      "before": "JetBrains Mono for eyebrows, company names and tier numbers",
+      "after": "Mono only in the code sample and the live clock; labels in Instrument Sans at the small step",
+      "why": "Mono on every label is a borrowed developer costume; it adds a third texture without telling the reader anything.",
+      "test": "T-FACE-ROLES",
+      "root": "the font-mono text-xs label class"
+    },
+    {
+      "rule": "TYP-015",
+      "title": "Small labels earn their caps",
+      "tier": "Reflex",
+      "where": "12px uppercase labels, 1440 (tiles/1440-09.png, 1440-10.png)",
+      "evidence": "The type table finds 5 small labels set in uppercase with 0.1em tracking at 12px: \"TRUSTED BY FORWARD-THINKING TEAMS\", \"KEY RESULT\", \"PRICING\", \"MOST POPULAR\" and \"WHAT PEOPLE SAY\". With the caps and tracking removed, \"Trusted by forward-thinking teams\" and \"Key result\" read as well or better.",
+      "before": "12px mono, uppercase, 0.1em tracking",
+      "after": "Sentence case at 14px in the body face, or remove the label where the heading already says it (\"Pricing\" sits over \"Simple, transparent pricing\")",
+      "why": "Tracked caps at 12px slow reading and repeat the heading below them.",
+      "test": "T-LABEL-TRANSFORM"
+    },
+    {
+      "rule": "TYP-010",
+      "title": "One size per kind of element",
+      "tier": "Reflex",
+      "where": "h3 headings across sections, 1440",
+      "evidence": "The type table gives h3 at 30px (6), 36px (4), 18px (4), 16px (4) and 14px (4), and the sweep's type_ladder hit counts 13 distinct sizes on the page (12 to 160px). Feature titles (\"Instant Deployment\", 36px, tiles/1440-01.png) and step titles (\"Connect your tools\", 30px, tiles/1440-03.png) do the same job at different sizes. The sweep's flat_hierarchy hit puts some h3s at the 18px body size.",
+      "before": "h3 in five sizes, 13 sizes on the page",
+      "after": "One section-item title size (for example 30px) and a ladder of about 8 steps",
+      "why": "Five h3 sizes make the reader re-learn the hierarchy in every section.",
+      "test": "T-LADDER"
+    }
+  ],
+  "strengths": [
+    "The display setting is tuned: Instrument Sans at weight 400, leading 1.0 and -0.025em tracking from 60 to 160px.",
+    "Measure is short and even: a median of 33 characters a line at 1440 and 29.5 at 375, with no paragraph over 75.",
+    "The stylesheet sets tabular-nums, and the live counters (\"2,847,392\", \"99.99%\") hold their width.",
+    "Body leading is 1.62."
+  ],
+  "not_investigated": [
+    "T-FONT-RENDERED: the sweep's fallback_face hit lists 4 small elements drawn in Consolas or the wrong face; the main faces drew, so face judgments stand.",
+    "T-PUNCTUATION: 2 straight double quotes and 3 straight apostrophes, no curly marks; consistent, so no finding under C32, though the 60px testimonial quote ends in a straight mark.",
+    "T-HEADLINE-FIT: the hero \"The platform to scale\" is a div, not an h1; h2s hold to 2 lines at 1440 and 3 at 375.",
+    "Eyebrows, widows and 14px text are the sweep's (eyebrow, widows, text_floor)."
+  ]
+}

@@ -1,0 +1,929 @@
+{
+ "width": 1440,
+ "page_words": 412,
+ "running_words": 210,
+ "hero": {
+  "h1": "Tell us the goal.",
+  "h1_words": 4,
+  "sub_line": "Stop browsing endless directories. Answer three quick questions and get a personalized combination of AI tools that actually fits your goal, budget, and skill level.",
+  "sub_line_words": 25,
+  "first_screen_actions": [
+   {
+    "label": "AI Stack",
+    "href": "#/",
+    "sel": "div:nth-of-type(1) > div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > a.flex.items-center"
+   },
+   {
+    "label": "Home",
+    "href": "#/",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(1)"
+   },
+   {
+    "label": "Find My Stack",
+    "href": "#/find",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(2)"
+   },
+   {
+    "label": "AI Tools",
+    "href": "#/tools",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(3)"
+   },
+   {
+    "label": "Compare",
+    "href": "#/compare",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(4)"
+   },
+   {
+    "label": "About",
+    "href": "#/about",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(5)"
+   },
+   {
+    "label": "Contact",
+    "href": "#/contact",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(6)"
+   },
+   {
+    "label": "Compare",
+    "href": "#/compare",
+    "sel": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.relative.ml-1:nth-of-type(7)"
+   },
+   {
+    "label": "Find my stack",
+    "href": "#/find",
+    "sel": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-8.flex:nth-of-type(2) > a.btn-primary.px-6:nth-of-type(1)"
+   },
+   {
+    "label": "Browse all tools",
+    "href": "#/tools",
+    "sel": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-8.flex:nth-of-type(2) > a.btn-secondary.px-6:nth-of-type(2)"
+   },
+   {
+    "label": "Study smarter Notes, summaries, and research",
+    "href": "#/find",
+    "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1)"
+   },
+   {
+    "label": "Start a YouTube channel Scripts, editing, and thumbnails",
+    "href": "#/find",
+    "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2)"
+   },
+   {
+    "label": "Create content Posts, visuals, and short-form video",
+    "href": "#/find",
+    "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3)"
+   },
+   {
+    "label": "Build a website Landing pages and full sites",
+    "href": "#/find",
+    "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(4)"
+   },
+   {
+    "label": "Build a SaaS product From idea to deployed app",
+    "href": "#/find",
+    "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(5)"
+   }
+  ],
+  "first_screen_digits": [
+   "20+",
+   "2026"
+  ]
+ },
+ "outline": [
+  {
+   "level": 1,
+   "text": "Tell us the goal.",
+   "words": 4,
+   "chars": 17,
+   "y": 183,
+   "sel": "main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > h1.font-display.text-4xl",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Stop browsing endless directories.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 2,
+   "text": "What are you trying to accomplish?",
+   "words": 6,
+   "chars": 34,
+   "y": 702,
+   "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.text-center.mb-10:nth-of-type(1) > h2.text-2xl.sm\\:text-3xl",
+   "category_label": false,
+   "formulas": [
+    "question"
+   ],
+   "next_opener": "Pick a goal to get started — we'll handle the rest.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Study smarter",
+   "words": 2,
+   "chars": 13,
+   "y": 879,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Notes, summaries, and research",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Start a YouTube channel",
+   "words": 4,
+   "chars": 23,
+   "y": 879,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Scripts, editing, and thumbnails",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Create content",
+   "words": 2,
+   "chars": 14,
+   "y": 879,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Posts, visuals, and short-form video",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Build a website",
+   "words": 3,
+   "chars": 15,
+   "y": 879,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(4) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Landing pages and full sites",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Build a SaaS product",
+   "words": 4,
+   "chars": 20,
+   "y": 879,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(5) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "From idea to deployed app",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Start a business",
+   "words": 3,
+   "chars": 16,
+   "y": 1031,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(6) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Plans, decks, and operations",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Freelance",
+   "words": 1,
+   "chars": 9,
+   "y": 1031,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(7) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Deliver client work faster",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Grow a blog",
+   "words": 3,
+   "chars": 11,
+   "y": 1031,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(8) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "SEO, writing, and publishing",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Automate repetitive work",
+   "words": 3,
+   "chars": 24,
+   "y": 1031,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(9) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Three questions.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Design faster",
+   "words": 2,
+   "chars": 13,
+   "y": 1031,
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(10) > div:nth-of-type(2) > h3.font-semibold.text-sm",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Visuals, decks, and UI",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 2,
+   "text": "How it works",
+   "words": 3,
+   "chars": 12,
+   "y": 1215,
+   "sel": "div > section.bg-white.border-y:nth-of-type(3) > div.section > div.text-center.mb-12:nth-of-type(1) > h2.text-2xl.sm\\:text-3xl",
+   "category_label": true,
+   "formulas": [],
+   "next_opener": "Three questions.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Choose your goal",
+   "words": 3,
+   "chars": 16,
+   "y": 1408,
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(1) > div.card.p-6 > h3.font-bold.text-base",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Tell us what you are trying to accomplish — from studying to building a SaaS.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Set your budget",
+   "words": 3,
+   "chars": 15,
+   "y": 1408,
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(2) > div.card.p-6 > h3.font-bold.text-base",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Pick a monthly budget range so we only recommend tools you can actually afford.",
+   "opener_overlap": 0.5
+  },
+  {
+   "level": 3,
+   "text": "Share your skill level",
+   "words": 4,
+   "chars": 22,
+   "y": 1408,
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(3) > div.card.p-6 > h3.font-bold.text-base",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Let us know how technical you are so the tools match your comfort level.",
+   "opener_overlap": 0.33
+  },
+  {
+   "level": 2,
+   "text": "Featured tools",
+   "words": 2,
+   "chars": 14,
+   "y": 1638,
+   "sel": "div > section.section.py-16:nth-of-type(4) > div.flex.items-end:nth-of-type(1) > div > h2.text-2xl.sm\\:text-3xl",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "A few of the 20 tools in our directory.",
+   "opener_overlap": 0.5
+  },
+  {
+   "level": 3,
+   "text": "ChatGPT",
+   "words": 1,
+   "chars": 7,
+   "y": 1759,
+   "sel": "div.card.card-hover:nth-of-type(1) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Conversational AI assistant for almost anything",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Claude",
+   "words": 1,
+   "chars": 6,
+   "y": 1759,
+   "sel": "div.card.card-hover:nth-of-type(2) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Thoughtful AI for long-form writing and analysis",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Gemini",
+   "words": 1,
+   "chars": 6,
+   "y": 1759,
+   "sel": "div.card.card-hover:nth-of-type(3) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Google AI with deep Workspace integration",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Perplexity",
+   "words": 1,
+   "chars": 10,
+   "y": 2027,
+   "sel": "div.card.card-hover:nth-of-type(4) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "AI search engine with cited answers",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Canva",
+   "words": 1,
+   "chars": 5,
+   "y": 2027,
+   "sel": "div.card.card-hover:nth-of-type(5) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Drag-and-drop design with AI magic features",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "ElevenLabs",
+   "words": 1,
+   "chars": 10,
+   "y": 2027,
+   "sel": "div.card.card-hover:nth-of-type(6) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition > h3.font-display.font-bold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Realistic AI voice generation and dubbing",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 2,
+   "text": "Ready to find your stack?",
+   "words": 5,
+   "chars": 25,
+   "y": 2378,
+   "sel": "div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.relative:nth-of-type(2) > h2.text-2xl.sm\\:text-3xl",
+   "category_label": false,
+   "formulas": [
+    "question"
+   ],
+   "next_opener": "It takes less than a minute and you'll get a tailored workflow with real tools, prices, and setup time.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 4,
+   "text": "Product",
+   "words": 1,
+   "chars": 7,
+   "y": 2810,
+   "sel": "footer.bg-ink-900.text-ink-300 > div.section.py-12 > div.grid.gap-8:nth-of-type(1) > div:nth-of-type(2) > h4.text-white.font-semibold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "",
+   "opener_overlap": 0
+  },
+  {
+   "level": 4,
+   "text": "Company",
+   "words": 1,
+   "chars": 7,
+   "y": 2810,
+   "sel": "footer.bg-ink-900.text-ink-300 > div.section.py-12 > div.grid.gap-8:nth-of-type(1) > div:nth-of-type(3) > h4.text-white.font-semibold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "",
+   "opener_overlap": 0
+  },
+  {
+   "level": 4,
+   "text": "Connect",
+   "words": 1,
+   "chars": 7,
+   "y": 2810,
+   "sel": "footer.bg-ink-900.text-ink-300 > div.section.py-12 > div.grid.gap-8:nth-of-type(1) > div:nth-of-type(4) > h4.text-white.font-semibold",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Built to help you find the right AI tools, faster.",
+   "opener_overlap": 0.0
+  }
+ ],
+ "labels": {
+  "buttons_and_links": [
+   {
+    "label": "Add to compare",
+    "n": 6,
+    "words": 3
+   },
+   {
+    "label": "Details",
+    "n": 6,
+    "words": 1
+   },
+   {
+    "label": "AI Stack",
+    "n": 2,
+    "words": 2
+   },
+   {
+    "label": "Find My Stack",
+    "n": 2,
+    "words": 3
+   },
+   {
+    "label": "AI Tools",
+    "n": 2,
+    "words": 2
+   },
+   {
+    "label": "Compare",
+    "n": 2,
+    "words": 1
+   },
+   {
+    "label": "About",
+    "n": 2,
+    "words": 1
+   },
+   {
+    "label": "Contact",
+    "n": 2,
+    "words": 1
+   },
+   {
+    "label": "Home",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Find my stack",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Browse all tools",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Study smarter Notes, summaries, and research",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Start a YouTube channel Scripts, editing, and thumbnails",
+    "n": 1,
+    "words": 8
+   },
+   {
+    "label": "Create content Posts, visuals, and short-form video",
+    "n": 1,
+    "words": 7
+   },
+   {
+    "label": "Build a website Landing pages and full sites",
+    "n": 1,
+    "words": 8
+   },
+   {
+    "label": "Build a SaaS product From idea to deployed app",
+    "n": 1,
+    "words": 9
+   },
+   {
+    "label": "Start a business Plans, decks, and operations",
+    "n": 1,
+    "words": 7
+   },
+   {
+    "label": "Freelance Deliver client work faster",
+    "n": 1,
+    "words": 5
+   },
+   {
+    "label": "Grow a blog SEO, writing, and publishing",
+    "n": 1,
+    "words": 7
+   },
+   {
+    "label": "Automate repetitive work Workflows and integrations",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "Design faster Visuals, decks, and UI",
+    "n": 1,
+    "words": 6
+   },
+   {
+    "label": "View all",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "ChatGPT",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Claude",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Gemini",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Perplexity",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Canva",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "ElevenLabs",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Get started",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Compare Tools",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Twitter",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "GitHub",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "LinkedIn",
+    "n": 1,
+    "words": 1
+   }
+  ],
+  "one_target_many_labels": {
+   "#/": [
+    "AI Stack",
+    "Home"
+   ],
+   "#/find": [
+    "Automate repetitive work Workflows and integrations",
+    "Build a SaaS product From idea to deployed app",
+    "Build a website Landing pages and full sites",
+    "Create content Posts, visuals, and short-form video",
+    "Design faster Visuals, decks, and UI",
+    "Find My Stack",
+    "Find my stack",
+    "Freelance Deliver client work faster",
+    "Get started",
+    "Grow a blog SEO, writing, and publishing",
+    "Start a YouTube channel Scripts, editing, and thumbnails",
+    "Start a business Plans, decks, and operations",
+    "Study smarter Notes, summaries, and research"
+   ],
+   "#/tools": [
+    "AI Tools",
+    "Browse all tools",
+    "View all"
+   ],
+   "#/compare": [
+    "Compare",
+    "Compare Tools"
+   ],
+   "#/tools/chatgpt": [
+    "ChatGPT",
+    "Details"
+   ],
+   "#/tools/claude": [
+    "Claude",
+    "Details"
+   ],
+   "#/tools/gemini": [
+    "Details",
+    "Gemini"
+   ],
+   "#/tools/perplexity": [
+    "Details",
+    "Perplexity"
+   ],
+   "#/tools/canva": [
+    "Canva",
+    "Details"
+   ],
+   "#/tools/elevenlabs": [
+    "Details",
+    "ElevenLabs"
+   ]
+  },
+  "one_label_many_targets": {
+   "details": [
+    "#/tools/canva",
+    "#/tools/chatgpt",
+    "#/tools/claude",
+    "#/tools/elevenlabs",
+    "#/tools/gemini",
+    "#/tools/perplexity"
+   ]
+  }
+ },
+ "microcopy": {
+  "form_labels": [],
+  "after_actions": [
+   {
+    "source": "async.json",
+    "status": "not captured"
+   }
+  ]
+ },
+ "rhythm": {
+  "sentences": 30,
+  "mean_words": 7,
+  "stdev_words": 4.8,
+  "share_4_words_or_less": 0.43,
+  "note": "CPY-206: warn when stdev is under 4 over 15 or more sentences, or over 30% are 4 words or less"
+ },
+ "sibling_evenness": [
+  {
+   "pattern": "section.section.py-16 > div.grid.grid-cols-2 > a.card.card-hover > div > p.text-xs.text-ink-500",
+   "word_counts": [
+    4,
+    4,
+    5,
+    5,
+    5,
+    4,
+    4,
+    4,
+    4
+   ],
+   "max_over_min": 1.25
+  },
+  {
+   "pattern": "div.section > div.grid.md\\:grid-cols-3 > div.relative > div.card.p-6 > p.text-sm.text-ink-500",
+   "word_counts": [
+    14,
+    14,
+    14
+   ],
+   "max_over_min": 1.0
+  },
+  {
+   "pattern": "div > section.section.py-16 > div.grid.sm\\:grid-cols-2 > div.card.card-hover > p.text-sm.text-ink-600",
+   "word_counts": [
+    6,
+    7,
+    6,
+    6,
+    6,
+    6
+   ],
+   "max_over_min": 1.17
+  }
+ ],
+ "patterns": {
+  "contrast_frame": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-155, budget 2 per page"
+  },
+  "negation_run": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-156, budget 1"
+  },
+  "ing_rider": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-158, budget 1"
+  },
+  "word_triad": {
+   "count": 8,
+   "examples": [
+    {
+     "match": "goal, budget, and skill",
+     "where": "main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > p.mt-5.text-lg",
+     "context": "ersonalized combination of AI tools that actually fits your goal, budget, and skill level."
+    },
+    {
+     "match": "Notes, summaries, and research",
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1) > div:nth-of-type(2) > p.text-xs.text-ink-500",
+     "context": "Notes, summaries, and research"
+    },
+    {
+     "match": "Scripts, editing, and thumbnails",
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2) > div:nth-of-type(2) > p.text-xs.text-ink-500",
+     "context": "Scripts, editing, and thumbnails"
+    },
+    {
+     "match": "Posts, visuals, and short-form",
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3) > div:nth-of-type(2) > p.text-xs.text-ink-500",
+     "context": "Posts, visuals, and short-form video"
+    },
+    {
+     "match": "Plans, decks, and operations",
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(6) > div:nth-of-type(2) > p.text-xs.text-ink-500",
+     "context": "Plans, decks, and operations"
+    }
+   ],
+   "card": "CPY-161: a list of three single words"
+  },
+  "fragment_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161, CPY-187: 'Fast. Simple. Secure.'"
+  },
+  "exclamation": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-241: none in body copy"
+  },
+  "questions": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-176: no rhetorical questions; FAQ questions are not findings"
+  }
+ },
+ "long_form_regions": [],
+ "term_variants": [],
+ "sweep": {
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "hits": [
+    {
+     "where": "main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > p.mt-5.text-lg  \"Stop browsing endless directories. Answer three qu\"",
+     "evidence": "\"actually\" (buzzwords/virtue-words, cap budget 2, found 5)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(2) > div.card.p-6 > p.text-sm.text-ink-500  \"Pick a monthly budget range so we only recommend t\"",
+     "evidence": "\"actually\" (buzzwords/virtue-words, cap budget 2, found 5)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div > section.section.py-16:nth-of-type(4) > div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(2) > p.text-sm.text-ink-600  \"Thoughtful AI for long-form writing and analysis\"",
+     "evidence": "\"Thoughtful\" (buzzwords/virtue-words, cap budget 2, found 5)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "main.flex-1 > div > section.bg-white.border-y:nth-of-type(3) > div.section > div.grid.md\\:grid-cols-3:nth-of-type(2)",
+     "evidence": "\"actually\" (buzzwords/virtue-words, cap budget 2, found 5)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "main.flex-1 > div > section.section.py-16:nth-of-type(4) > div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(2)",
+     "evidence": "\"Thoughtful\" (buzzwords/virtue-words, cap budget 2, found 5)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(1) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "link or button labelled \"Details\": says nothing about where it goes",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(2) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "link or button labelled \"Details\": says nothing about where it goes",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(3) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "link or button labelled \"Details\": says nothing about where it goes",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(4) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "link or button labelled \"Details\": says nothing about where it goes",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(5) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "link or button labelled \"Details\": says nothing about where it goes",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 11
+  },
+  "em_dash": {
+   "status": "ran",
+   "rule": "CPY-004",
+   "hits": [],
+   "n": 0
+  },
+  "h1_words": {
+   "status": "ran",
+   "rule": "CPY-003",
+   "hits": [],
+   "n": 0
+  },
+  "words_per_screen": {
+   "status": "ran",
+   "rule": "CPY-001",
+   "hits": [
+    {
+     "where": "screen 2 (y 900-1800) at 1440px",
+     "evidence": "145 words on one 900px screen (fail > 143)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 1
+  },
+  "page_words": {
+   "status": "ran",
+   "rule": "CPY-002",
+   "hits": [],
+   "n": 0
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "hits": [
+    {
+     "where": "div.min-h-screen.flex > main.flex-1 > div > section.section.py-16:nth-of-type(4) > div.grid.sm\\:grid-cols-2:nth-of-type(2)",
+     "evidence": "\"Freemium\" repeated 6 times in one container",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 1
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "hits": [],
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "hits": [],
+   "n": 0
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "hits": [],
+   "n": 0
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "hits": [],
+   "n": 0
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "hits": [],
+   "n": 0
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "hits": [],
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "hits": [],
+   "n": 0
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "hits": [],
+   "n": 0
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "hits": [],
+   "n": 0
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:10:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-1.1.1", "link-purpose-2.4.4", "focus-order-2.4.3", "use-of-colour-1.4.1", "non-text-contrast-1.4.11", "reflow-1.4.10", "motion-2.2.2", "headings-landmarks-1.3.1"],
+  "findings": [
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "hero right column, three div.floaty cards ('Your goal', 'Recommended stack', 'Workflow')",
+      "evidence": "dom-1440.json: animation 'floaty' 7s (translateY 0 to -14px) on three text-bearing cards; CSS keyframes loop with no pause control. A prefers-reduced-motion override exists, so this is 2.2.2 only, not 2.3.3.",
+      "before": ".floaty { animation: floaty 7s ease-in-out infinite }",
+      "after": "Stop after one or two cycles (animation-iteration-count: 2) or add a visible pause toggle; keep the existing reduced-motion override",
+      "why": "WCAG 2.2 2.2.2 Pause, Stop, Hide: content that moves for more than 5 seconds alongside other content needs a way to pause it.",
+      "test": "T-PURPOSE"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Floor",
+      "where": "goal card grid, third card 'Create content' at 1440",
+      "evidence": "focus.json stop 13 ('CONTENT Create content...') is covered=true: the fixed 'Edit with Lovable' badge (bottom right, tile 1440-00) sits over the card when it receives focus. Confirms sweep focus_ring hit.",
+      "before": "Fixed #lovable-badge at bottom-right overlapping content",
+      "after": "Remove the builder badge from production, or add scroll-padding-bottom equal to its height so focused items scroll clear",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Finish",
+      "where": "AI Tools Directory, six 'View details' links",
+      "evidence": "focus.json stops 23-28 all have the accessible name 'View details'; out of context a screen-reader links list shows six identical entries.",
+      "before": "<a>View details</a>",
+      "after": "<a aria-describedby=\"tool-claude-h3\">View details</a> or visually hidden text: 'View details<span class=\"sr-only\"> for Claude</span>'",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context) passes via card context, but 2.4.9 and links-list navigation fail; cheap to fix.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-115",
+      "tier": "Floor",
+      "where": "header USD / INR toggle",
+      "evidence": "Two plain <button type=button> elements 'USD' and 'INR'; the selected currency is shown only by a black pill fill (tile 1440-00). dom-1440.json records no role or pressed state on either.",
+      "before": "<button>USD</button><button>INR</button>",
+      "after": "<button aria-pressed=\"true\">USD</button><button aria-pressed=\"false\">INR</button> inside role=\"group\" aria-label=\"Currency\"",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value: the selected state must be programmatically exposed. (Capture does not list aria-pressed; confirm in source.)",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-105",
+      "tier": "Reflex",
+      "where": "page start",
+      "evidence": "First focusable is the logo link 'AAI Stack' (the 'A' logo glyph text is read into the name, so it announces 'A AI Stack').",
+      "before": "<a href=\"/\"><span>A</span>AI Stack</a>",
+      "after": "aria-hidden=\"true\" on the 'A' logo tile; add a skip link to #main as the first focusable",
+      "why": "WCAG 2.2 2.4.1 Bypass Blocks and 2.5.3 Label in Name (stray 'A' in the accessible name).",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Landmarks present (header, nav, main, footer), one h1, headings step h1 > h2 > h3 cleanly.",
+    "Visible focus outline on every stop in focus.json; mobile menu button has a name ('Open menu').",
+    "Comparison is a real <table> with header row."
+  ],
+  "not_investigated": [
+    "keyboard operation of the mobile menu and the questionnaire flow: no live keyboard testing, and site scripts were blocked during capture",
+    "forms and errors: no forms on the captured page",
+    "reflow at 320px not separately inspected; 375 tiles show no horizontal scroll"
+  ]
+}

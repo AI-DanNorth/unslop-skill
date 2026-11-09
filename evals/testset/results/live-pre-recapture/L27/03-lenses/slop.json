@@ -1,0 +1,50 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:35:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "An owned, long-standing brand system (Sohne, the Stripe indigo #533afd, the ribbon gradient, detailed working product mocks in several currencies and languages, the live GDP counter, real customer stories with figures); the mechanical violet-gradient and icon-tile hits are deliberate brand assets, not defaults, though the page is very long and its lower half drifts into generic section headings.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "mid and lower section heads (tiles 1440-04 to 1440-07)",
+      "evidence": "T-RIVAL-NAME / T-FRESH-READER: 'The backbone of global commerce', 'Powering businesses of all sizes', 'Flexible solutions for every business model.', 'Build a foundation for your startup that enables faster growth' all stay true with Adyen or PayPal swapped in. The hero and the stats under these heads are specific; the heads are not.",
+      "before": "\"The backbone of global commerce\"",
+      "after": "Lead with the number the section proves, e.g. 'US$1.9tn processed in 2025' as the head",
+      "why": "Generic heads on an otherwise specific page are where the page reads interchangeable.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-002",
+      "tier": "Finish",
+      "where": "whole page",
+      "evidence": "2,007 words and 12 screens at 1440 (sweep); after the bento of products the page repeats the same move (heading + grey continuation sentence + cards) for startups, enterprises, platforms, developers and customer stories. T-STOCK-ORDER: logo strip, stat band, testimonial carousel, story cards, CTA and link-farm footer are present but interleaved with bespoke product graphics, so under the 7-section threshold for 'generated'.",
+      "before": "Six audience sections in the same heading + lede + cards form",
+      "after": "Collapse the audience sections into one switcher, or vary their form",
+      "why": "Section-template repetition (SLP-156) dilutes a strong first half.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-193",
+      "tier": "Finish",
+      "where": "hero h1 and section heads",
+      "evidence": "Two-tone heading device on every head: dark first sentence, grey-blue continuation ('Financial infrastructure to grow your revenue. Accept payments, offer financial services...', 'Flexible solutions for every business model. Grow your business with...'). It is a house style used consistently, so it is a choice, but it makes the h1 four lines long at 48px and pushes the CTAs to the fold.",
+      "before": "h1 = headline + grey 3-line lede in the same 48px size",
+      "after": "Drop the continuation to body size under the headline in the hero only",
+      "why": "Two-tone headlines are flagged as a template device (SLP-195); here it is brand, so Finish only.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "Product mocks are real and detailed: terminal checkout in USD/EUR/JPY ('Pay Roastery US$5.46', 'Zum Bezahlen Karte auflegen'), a checkout with Link, Apple Pay, Affirm, Cash App; they show the product rather than describe it.",
+    "Live 'Global GDP running on Stripe: 1.74637798%' counter is ownable and falsifiable.",
+    "Customer stories carry figures and names ('Gamma expands to US$100m ARR and 70 million users with Stripe').",
+    "Ribbon gradient and indigo are long-standing brand assets; the violet-gradient cluster from the sweep is brand, not default."
+  ],
+  "not_investigated": [
+    "stats band (tile 1440-04) was captured mid-animation, numbers partly faded; not judged",
+    "no 00-contract.md brief; brand ownership of the ribbon and indigo judged from general knowledge of the site"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:35:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-1.1.1", "link-purpose-2.4.4", "focus-order-2.4.3", "use-of-colour-1.4.1", "non-text-contrast-1.4.11", "reflow-1.4.10", "motion-2.2.2", "headings-landmarks-1.3.1"],
+  "findings": [
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "'What you can actually create' cards 1 and 3, image links",
+      "evidence": "dom-1440.json: <a href=\"/cinematic-studio?quickstart=1\"> and <a href=\"/ai-design\"> wrapping the before/after images have accessible name 'BEFORE AFTER' (taken from the corner badges); the images inside carry alt text but the badge text wins. Out of context two links both say 'BEFORE AFTER' and go to different studios.",
+      "before": "<a href=\"/ai-design\"><span>BEFORE</span><img alt=\"Damaged vintage photograph...\"><span>AFTER</span></a>",
+      "after": "aria-hidden=\"true\" on the BEFORE/AFTER badges and aria-label=\"Restore and enhance old photos: open AI Design\" on the link, or make the image link tabindex=-1 since 'Open AI Design' duplicates it",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context) and 2.5.3 Label in Name.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-109",
+      "tier": "Floor",
+      "where": "focus order, page start",
+      "evidence": "focus.json stop 0 is the fixed bottom-right 'Send feedback' bug button (x1380 y832), before the logo and nav. There is no skip link and no <main> (sweep).",
+      "before": "Floating feedback button first in DOM order",
+      "after": "Move the feedback button to the end of the body; add <a class=\"skip\" href=\"#main\">Skip to content</a> first and wrap content in <main id=\"main\">",
+      "why": "WCAG 2.2 2.4.3 Focus Order: the first stop is a bottom-corner utility, not the page start.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "'Thumbnails' section, three rows of cover images",
+      "evidence": "dom-1440.json: div.flex.gap-3 rows run CSS animations 'marquee' 28s, 'marquee-reverse' 32s and 'marquee' 26s continuously; no pause control visible in tiles.",
+      "before": "Infinite marquee rows of thumbnails",
+      "after": "Add a pause button (and pause on hover/focus), and set animation: none under prefers-reduced-motion: reduce",
+      "why": "WCAG 2.2 2.2.2 Pause, Stop, Hide: auto-moving content longer than 5 seconds needs a pause.",
+      "test": "T-PURPOSE"
+    },
+    {
+      "rule": "A11-121",
+      "tier": "Floor",
+      "where": "'Soundtracks, music, and SFX' card",
+      "evidence": "focus.json: an <audio controls> element (stops at x624 y2170) sits inside the card <a href=\"/audio-studio\"> (stop at x536 y2046). Interactive content nested in a link: activating the player can follow the link, and the audio stop appears twice in the tab order.",
+      "before": "<a href=\"/audio-studio\"> ... <audio controls> ... </a>",
+      "after": "Make the card a <div> with the heading as the link (stretched-link pattern) so the audio player is a sibling, not a descendant",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.1.1 Keyboard: nested interactive controls are not reliably operable.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-112",
+      "tier": "Finish",
+      "where": "three 'How to?' links on the outcome cards",
+      "evidence": "Three links named 'How to?' go to three different blog posts (/blog/animate-old-photos..., /blog/character-styles..., /blog/restore-colorize...).",
+      "before": "<a>How to?</a>",
+      "after": "<a>How to animate an old photo</a> or append visually hidden context",
+      "why": "WCAG 2.2 2.4.4 Link Purpose; identical names for different targets fail 2.4.9 and confuse links lists.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-171",
+      "tier": "Floor",
+      "where": "hero tagline 'AI VIDEO & CHARACTER STUDIO — NO EXPERIENCE NEEDED' (tile 1440-00)",
+      "evidence": "Caps tagline tracked so tight the words touch ('AIVIDEO&CHARACTERSTUDIO—NOEXPERIENCENEEDED' as rendered at 1440), mid-grey on a photo; legibility fails by eye even where contrast may pass.",
+      "before": "letter-spacing negative on uppercase tagline",
+      "after": "letter-spacing: 0.02em or normal; sentence case",
+      "why": "WCAG 2.2 1.4.12 Text Spacing intent and 1.4.3 readability; draft card A11-171 covers muted text over photos.",
+      "test": "T-GRADIENT-STOPS"
+    }
+  ],
+  "strengths": [
+    "Content images have descriptive alt ('Damaged vintage photograph before restoration', 'Restored and colorized vintage photograph'); the marquee covers use alt=\"\" as decoration.",
+    "Carousel controls are named ('Previous slide', 'Next slide', 'Show Veo 3.1').",
+    "Focus outline is visible on dark ground (focus/02-on.png, 12-on.png)."
+  ],
+  "not_investigated": [
+    "disputed: sweep focus_ring marks all 40 focus stops 'covered by a fixed or sticky element'; the crops (focus/02-on.png, focus/12-on.png) show the focused items fully visible, including nav items that are themselves inside the fixed nav. Likely a detector false positive on this page.",
+    "whether the hero carousel auto-advances (2.2.2) could not be told from stills; hero promo videos were blocked in capture",
+    "keyboard behaviour of the carousel and language switch: no live keyboard test run",
+    "forms: none on the captured page"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:05:00",
+  "tests_run": [
+    "verify sweep Floor hits",
+    "alt text quality (1.1.1)",
+    "link and button purpose (2.4.4, 2.5.3)",
+    "focus order (2.4.3)",
+    "use of colour (1.4.1)",
+    "non-text contrast (1.4.11)",
+    "reflow (1.4.10)",
+    "headings and landmarks (1.3.1, 2.4.6)",
+    "motion (2.2.2)"
+  ],
+  "findings": [
+    {
+      "rule": "A11-112",
+      "tier": "Floor",
+      "where": "all hover-swap links and buttons (header, menu, footer, CTAs)",
+      "evidence": "dom-1440.json accessible names are doubled because the hover duplicate text is not hidden: 'Store STORE', 'HomeHome', 'On TrackOn Track', 'CalendarCalendar', 'tiktoktiktok', 'instagraminstagram', 'business enquiries business enquiries', 'Las Vegas LAS VEGAS gp GP', 'view on track VIEW ON TRACK'.",
+      "before": "<a><span>Store</span><span>STORE</span></a>",
+      "after": "Add aria-hidden=\"true\" to the duplicate (animated) span so the name is read once: <span aria-hidden=\"true\" class=\"hover-copy\">STORE</span>",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 2.5.3 Label in Name: every link is announced twice ('Home Home'), and voice users get a garbled target.",
+      "test": "T-READ-ALOUD"
+    },
+    {
+      "rule": "A11-103",
+      "tier": "Floor",
+      "where": "page landmarks and headings",
+      "evidence": "landmarks: main 1, nav 0, header 0, footer 0. The h1 'Lando Norris' and section h2s ('ON', 'TRACK', 'OFF', 'Helmets') are hidden copies while the visible headings are empty h2 elements (text drawn as split spans/images). No skip link; first focusable is the logo link.",
+      "before": "<h2></h2> visible, <h2 class=\"hidden\">ON</h2> separate; no <nav>/<footer>",
+      "after": "One heading per section with its real text ('On track', 'Off track', 'Helmets hall of fame'); wrap the menu in <nav aria-label=\"Main\">, the bottom links in <footer>; add a skip link",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships, 2.4.1 Bypass Blocks and 2.4.6 Headings and Labels: screen-reader users get empty headings and no navigation landmark (sweep counted 0 visible h1; the empty-h2 split and missing nav/footer are the addition).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-125",
+      "tier": "Floor",
+      "where": "focus ring on light hero (focus/03-on.png, 'Go to home')",
+      "evidence": "The focus ring is a solid 2px lime rgb(210,255,0) outline. On the off-white hero (#fcfcfa) lime gives about 1.1:1, so the ring around the centre LN mark is barely visible in the crop; it only works on the dark sections.",
+      "before": "outline: 2px solid rgb(210, 255, 0) everywhere",
+      "after": "Add a dark second ring on light areas: outline: 2px solid #d2ff00; box-shadow: 0 0 0 4px #111 (or switch to a dark outline inside .is-light sections)",
+      "why": "WCAG 2.2 2.4.7 Focus Visible and 1.4.11 Non-text Contrast (3:1 against adjacent colour).",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "hero swipe/scroll interaction (375 tile 00, bottom right)",
+      "evidence": "At 375px a lime hand-icon button sits bottom right with 8px captions 'tap to lock' / 'Back to scroll' at 1.08:1 contrast (sweep). The hero hijacks touch scrolling until toggled; the instruction text is invisible.",
+      "before": "Swipe-lock toggle explained only by near-invisible 8px text",
+      "after": "Give the toggle a visible name ('Lock 3D view') of at least 12px at 4.5:1, and default to normal page scroll",
+      "why": "WCAG 2.2 2.1.2 No Keyboard Trap analogue for touch / 3.3.2 Labels or Instructions: users must find an unlabeled control to get scrolling back.",
+      "test": "T-PHONE-PARITY"
+    },
+    {
+      "rule": "A11-126",
+      "tier": "Reflex",
+      "where": "all 26 focus stops",
+      "evidence": "focus.json marks every stop covered=true, including footer links at y 13,200+; something fixed (likely the full-screen canvas or a pinned layer) sits over focused elements.",
+      "before": "Fixed layer above focused content",
+      "after": "pointer-events: none and a lower z-index on the decorative fixed layer, or raise :focus-visible elements (position: relative; z-index above the layer)",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum). Confirms the sweep's covered flags across the page.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Icon-only controls have names ('Open navigation menu', 'Go to home', 'On Track page').",
+    "Focus ring is a solid 2px outline (works well on the dark sections).",
+    "lang and title are set; helmet cards have visible text labels (name and year)."
+  ],
+  "not_investigated": [
+    "Helmet image alt text: the DOM capture does not record alt values",
+    "Reduced-motion and canvas behaviour live (sweep says no prefers-reduced-motion rule; not re-tested)",
+    "disputed: sweep A11-001 hits at 1.00:1 on 'results' are likely captured mid reveal animation, not the final colour"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:00:00",
+  "tests_run": ["verify-floor-hits", "alt-text", "link-button-purpose", "focus-order", "use-of-colour", "non-text-contrast", "reflow", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "whole page outline",
+      "evidence": "dom-1440 headings are h3 '“' (the opening quote glyph alone), h3 'The details are not the details. They make the design.”', and two h3 intro statements; there is no h1, and the eight topic tiles (Framework ... Motion), which are the page's navigation, are plain links with no list or nav label.",
+      "before": "<h3>“</h3><h3>The details are not the details...</h3>",
+      "after": "<h1>Dropbox Brand Guidelines</h1> (can be visually hidden); put the Eames quote in <blockquote> with <cite>; wrap the tiles in <nav aria-label=\"Guidelines sections\"><ul>...",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels: a lone quote mark announced as a heading and a missing h1 leave no usable outline.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "intro sequence, tiles 1440-00 / 01 and 375-00",
+      "evidence": "The intro statements are revealed by scroll: the sweep found the same sentence at 13%, 16% and 21% opacity in successive frames, and the 375 frame shows the text alone on a mostly blank screen. With no prefers-reduced-motion rule (sweep), the reveal and the animated logo run for everyone.",
+      "before": "Scroll-scrubbed opacity and logo animation",
+      "after": "@media (prefers-reduced-motion: reduce) { .home-logo-container, .button-title-1 { transition: none; opacity: 1 } }",
+      "why": "WCAG 2.2 2.3.3 Animation from Interactions (AAA, advisory) and 2.2.2 Pause, Stop, Hide; text that is unreadable until the user scrolls a set distance also risks 1.4.3.",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "A11-005",
+      "tier": "Reflex",
+      "where": "credits line",
+      "evidence": "bodyText reads 'Dropbox Brand Studio 🤝 Daybreak Studio': the emoji between the two credit links is announced as 'handshake'.",
+      "before": "🤝",
+      "after": "<span aria-hidden=\"true\">🤝</span><span class=\"sr-only\">with</span>",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: a decorative glyph needs to be hidden or given a meaningful text equivalent.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "Tile labels are real text, not baked into images; topic colours do not carry meaning on their own (each tile is named).",
+    "Tile title colours hold contrast against their own fills at large size (e.g. navy/light blue, lime/dark green, lavender/purple)."
+  ],
+  "not_investigated": [
+    "disputed: A11-001 contrast 1.76:1 on 'Imagery' sampled a white #ffffff background; the title sits on the maroon tile, where pink #ffafa5 is about 5:1. Likely the white gutter between tiles.",
+    "Sweep focus_ring hits (no visible indicator on 'Voice & Tone', 'Typography'; 'Logo', 'Color', 'Imagery', 'Motion' covered by a fixed element) were not re-verified in focus crops.",
+    "Capture used 3 scroll frames (manifest prep); motion between frames not seen. No main landmark (sweep) not repeated."
+  ]
+}

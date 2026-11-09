@@ -1,0 +1,105 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "No product can be named from the page: 'The platform to scale' for 'modern teams' covers deployment, AI workflows, collaboration, security, an SDK and pricing, and every heading holds under any developer-platform name; the restrained mono-label and ASCII-particle styling is careful finish on a template, not an idea.",
+  "score": {
+    "dimension": "Concept",
+    "value": 3,
+    "reason": "T-ONE-SENTENCE, T-RIVAL-NAME, T-SIGNATURE, T-DEFAULT-AGENT and T-PROMISE-PICTURED fail, and T-DEFAULT-PLAN marks five moves; the styling is consistent but belongs to no client."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-003",
+      "title": "The idea fits in one sentence",
+      "tier": "Reflex",
+      "where": "hero and capabilities, 1440px (tiles/1440-00.png, 1440-01.png)",
+      "evidence": "T-ONE-SENTENCE fails. The h1 'The platform to scale', the eyebrow 'The platform for modern teams' and the sub-line 'Your toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best experiences.' never say what is built or deployed. The four capabilities ('Instant Deployment', 'AI-Native Workflows', 'Real-time Collaboration', 'Enterprise Security') describe four different products. The page title 'Optimus - Platform to Create' disagrees with the h1.",
+      "before": "'The platform to scale'",
+      "after": "[DATA NEEDED: what Optimus is: a hosting platform, a workflow builder or an SDK], then an h1 that names that one job",
+      "why": "A visitor who reads the whole first screen still cannot say what the product does, so no later section can carry an idea.",
+      "test": "T-ONE-SENTENCE"
+    },
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "h1 and every h2, 1440px",
+      "evidence": "T-RIVAL-NAME: with Vercel, Netlify or Render in place of Optimus, 'Everything you need. Nothing you don't.', 'Three steps. Infinite possibilities.', 'Global by default.', 'Performance you can measure.', 'Works with everything you already use.', 'Trust is non-negotiable.', 'Built by devs. For devs.', 'Simple, transparent' and 'Ready to build something great?' all stay true.",
+      "before": "Nine headings that fit any developer platform",
+      "after": "Headings that state facts only this product has, for example the actual deploy time or the one integration it is built around, from [DATA NEEDED: product facts]",
+      "why": "The whole page survives a competitor's name, so it gives a developer no reason to choose this platform.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "hero, 1440px and 375px (tiles/1440-00.png, 375-00.png)",
+      "evidence": "T-SIGNATURE and T-DELETE-PICTURE fail. The lead picture is an animated canvas of grey glyph marks swirling into a spiral, which shows no product. The row under the hero, '98% faster deployment STRIPE', '300% throughput increase LINEAR', '6x faster to ship NOTION', '20 days saved on builds NETFLIX', is numbers drawn as type with borrowed logos as captions (the sweep's invented_metrics already flags these). Removing the spiral leaves the screen saying the same thing.",
+      "before": "Glyph-particle spiral and a stat strip",
+      "after": "Show the product at work on the first screen: the deploy log, the workflow builder or the dashboard, whichever is the real product",
+      "why": "A developer platform is judged by its interface and its output; a decorative particle field tells the visitor nothing about either.",
+      "test": "T-SIGNATURE"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "whole page, 1440px (tiles/1440-01.png to 1440-11.png)",
+      "evidence": "T-DEFAULT-PLAN marks five moves: numbered feature rows ('01 Instant Deployment', '02 AI-Native Workflows'); 'Three steps.' with 'Connect your tools', 'Build your workflow', 'Ship to production'; label-and-value stat cells between hairlines ('2,847,392 API requests today', '99.99% Uptime this quarter'); small grey mono labels with a leading rule on every section ('Capabilities', 'Process', 'Live metrics', 'For developers'); a closing boxed band 'Ready to build something great?' over a dark footer. The page also uses a pale ground with one careful accent.",
+      "before": "Capabilities, three steps, global map, metrics, integrations, trust, developers, testimonials, pricing, CTA band",
+      "after": "Cut the section list to what this product can prove, and order it by the visitor's question rather than the stock sequence",
+      "why": "Ten stock sections in the stock order read as a filled template, however careful the type.",
+      "test": "T-DEFAULT-PLAN"
+    },
+    {
+      "rule": "CON-017",
+      "title": "Every headline promise is pictured",
+      "tier": "Finish",
+      "where": "capabilities and 'Three steps', 1440px (tiles/1440-01.png, 1440-03.png)",
+      "evidence": "T-PROMISE-PICTURED fails. 'Instant Deployment: Push to production in seconds' is pictured by a small outlined box of grey bars. 'AI-Native Workflows' is pictured by a hub-and-spoke node icon. 'Build your workflow: Design powerful automations with our visual builder' shows no builder; the code panel shows only 'optimus.connect({ source: 'your-database', sync: true })'.",
+      "before": "Abstract line icons beside concrete promises",
+      "after": "One real screenshot or recording per promise: the deploy finishing, the visual builder with a workflow in it",
+      "why": "The headings promise things a developer could see, and the pictures replace each one with a generic diagram.",
+      "test": "T-PROMISE-PICTURED"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "whole page, 1440px",
+      "evidence": "T-MIRROR and T-DEFAULT-AGENT: the off-white ground, Instrument Sans display with a two-tone grey second line ('Everything you need. / Nothing you don't.'), mono eyebrows with a hairline, a dark code panel with three window dots and an ASCII particle canvas are the current developer-tool landing look. Typing 'landing page for a developer platform' into an agent yields this set. The meta tag 'generator: v0.app' is consistent with that.",
+      "before": "Category look applied to an unnamed product",
+      "after": "Pick one visual decision that comes from the product itself, for example its real log output or its real map of regions, and drop the particle canvas",
+      "why": "A look chosen for the category makes the brand indistinguishable from the platforms it competes with.",
+      "test": "T-MIRROR"
+    }
+  ],
+  "strengths": [
+    "The type and spacing are consistent from hero to footer: one display face, one mono for labels, one off-white ground. Any rebuild can keep that discipline once there is a product to show.",
+    "The tabbed 'Install / Initialize / Deploy' code panel in 'Built by devs.' is the nearest thing to real product material and should grow, not shrink."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade from the page itself.",
+    "The hero canvas and the 'Live metrics' counter animate; only single frames were judged here."
+  ]
+}

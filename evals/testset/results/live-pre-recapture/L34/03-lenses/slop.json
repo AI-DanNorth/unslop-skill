@@ -1,0 +1,38 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A design-system spec page built for its job: three-pane docs layout, live rendered button examples with numbered callouts, paired Do/Don't diagrams with blue/red rules, and its own product chrome (version picker 6.7.0, 中/En toggle, LLMs.md link). No marketing skeleton, no generic copy; the flaws are translation and grammar, not defaults.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "headings and Do/Don't captions, 1440 tiles 00-02",
+      "evidence": "Machine-translation English, not slop diction: 'Design Principal' (for Principles) as an h2 and TOC entry, 'Prevent user to make mistakes.', 'Emphasize on the primary action.', 'default buttons is the safest choice', 'should be place on right or at bottom', 'Usually appeared alone and intend to used as a command.'",
+      "before": "\"Design Principal\" / \"The less important actions should be place on right or at bottom.\"",
+      "after": "\"Design principles\" / \"Place less important actions to the right or below.\"",
+      "why": "Uncorrected grammar on a reference spec costs authority; it is the only place the page reads unfinished.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "T-RIVAL-NAME passes: every heading and example is specific to Ant Design's own Button component (types ① to ⑤, ghost, dashed, danger, Call to Action guidance).",
+    "Do/Don't pairs show real compositions with numbered callouts rather than decorative illustration; placeholder bars in the diagrams are a deliberate wireframe convention, not residue.",
+    "The sweep's container_monotony hit (22 preview boxes) is a correct, intentional repetition for a comparison grid."
+  ],
+  "not_investigated": [
+    "Other spec pages and the components demo site.",
+    "Chinese-language version (only En captured)."
+  ]
+}

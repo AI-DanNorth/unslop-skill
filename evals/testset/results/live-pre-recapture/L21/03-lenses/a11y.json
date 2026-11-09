@@ -1,0 +1,75 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:00:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-purpose",
+    "focus-order",
+    "use-of-colour",
+    "motion-and-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-006",
+      "tier": "Floor",
+      "where": "Install section, 7 copy cards",
+      "evidence": "Seven controls are labelled only \"COPY\" (sweep repeated_label: 'Copy' x7); out of context a screen-reader list reads 'Copy, Copy, Copy...'. Instruction says 'CLICK ANY CARD TO COPY' with no confirmation text captured.",
+      "before": "<button>COPY</button>",
+      "after": "<button aria-label=\"Copy Claude Code install commands\">Copy</button> plus a polite live region announcing 'Copied'",
+      "why": "WCAG 2.2 2.4.4 Link Purpose / 2.4.6 Headings and Labels, and 4.1.3 Status Messages for the copy confirmation.",
+      "test": "link-purpose"
+    },
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "'AXONOMETRIC PLAN FIG. 04B ENLARGE' button",
+      "evidence": "Sweep focus_ring: focused element covered by the fixed header. focus.json confirms covered=true at y 3528 while the neighbouring FIG. 04A button is not covered.",
+      "before": "Sticky header overlaps focused element",
+      "after": "html { scroll-padding-top: <header height> } so focused targets scroll clear of the bar",
+      "why": "WCAG 2.2 2.4.11 Focus Not Obscured (Minimum). Sweep hit verified as plausible.",
+      "test": "verify-sweep-floor-hits"
+    },
+    {
+      "rule": "A11-002",
+      "tier": "Reflex",
+      "where": "mono caps captions throughout, tiles 00-02",
+      "evidence": "Real sentences are set in ~9.5-11px tracked uppercase mono: the quote attribution 'CATHRYN LAVERY · A GENERIC TOOL ASKS “WHERE SHOULD THIS BOX GO?” ...' (112 chars at 11px) and section sub-lines; uppercase long runs are slower to read and the light grey on cream is faint in the tile.",
+      "before": "font: 11px mono; text-transform: uppercase; letter-spacing: .12em on sentences",
+      "after": "Sentences at >= 14px in the body face, sentence case; keep caps mono for short labels only",
+      "why": "WCAG 2.2 1.4.8 Visual Presentation (AAA advisory) and 1.4.12 readability; the 11px size meets no-floor but not comfortable reading.",
+      "test": "use-of-colour"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "header theme toggle, tile 00",
+      "evidence": "The theme switch is one button named 'DARK LIGHT' with the active option shown only by a black fill on 'LIGHT'.",
+      "before": "<button>DARK LIGHT</button>",
+      "after": "<button aria-pressed=\"false\" aria-label=\"Dark theme\">…</button>, or a two-option radiogroup with aria-checked",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value and 1.4.1 Use of Color: state not exposed.",
+      "test": "headings-landmarks"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "header '66k' link",
+      "evidence": "focus.json: a link whose name is just '66k' (star icon + number) points to the GitHub repo, next to a second link 'GITHUB' to the same URL.",
+      "before": "<a href=github>★ 66k</a>",
+      "after": "aria-label=\"66k stars on GitHub\" or merge with the GITHUB link",
+      "why": "WCAG 2.2 2.4.4 Link Purpose (In Context).",
+      "test": "link-purpose"
+    }
+  ],
+  "strengths": [
+    "Alt text is exemplary: each diagram's alt says what it shows ('State machine showing an article moving from Draft through In Review and Published to Archived, including rejection and revision').",
+    "Every focus stop has a 2px terracotta outline; focus order follows the visual order (nav, hero CTAs, figures, gallery 01-45).",
+    "Main, nav, header and footer landmarks present; the product claims accessible diagrams and the page mostly backs it."
+  ],
+  "not_investigated": [
+    "Gallery thumbnails lazy-loaded and not rendered at capture; their in-place contrast not checked.",
+    "Demo video blocked; captions/controls for FIG. 00 unverified (it says '17S · NO SOUND').",
+    "Animated axonometric examples (separate pages) and the enlarge dialog's Escape/focus return not tested live."
+  ]
+}

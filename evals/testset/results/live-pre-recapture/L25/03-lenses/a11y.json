@@ -1,0 +1,57 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T14:00:00",
+  "tests_run": ["verify-floor-hits", "alt-text", "link-button-purpose", "focus-order", "use-of-colour", "non-text-contrast", "reflow", "forms", "motion", "headings-landmarks"],
+  "findings": [
+    {
+      "rule": "A11-003",
+      "tier": "Floor",
+      "where": "hero product mock (sidebar) and Slack thread mock",
+      "evidence": "focus.json stops 12-22 are the mock's sidebar buttons ('Linear', 'Pulse', 'Inbox', 'My issues', 'Reviews', 'Initiatives', 'Projects', 'Faster app launch', 'Agent tasks', 'Agent Insights', 'UI Refresh'), and stops 25-26 are 'Send message' / 'Schedule for later' in the Slack illustration. A keyboard user tabs through 13 controls of a picture before reaching real content.",
+      "before": "Illustration rendered as live <button>s in tab order",
+      "after": "Add inert (or tabindex=\"-1\" plus aria-hidden=\"true\") to the mock containers and give each a short text description (role=\"img\" aria-label=\"Linear issue view showing...\").",
+      "why": "WCAG 2.2 2.4.3 Focus Order and 4.1.2 Name, Role, Value: the buttons announce as operable but do nothing meaningful.",
+      "test": "T-TAB-THROUGH"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "section h2s",
+      "evidence": "dom-1440 headings read 'Intakeand integrations', 'Planningand monitoring', 'AI andautomations', 'Build, review,and ship': the visual line break is made with block spans and no space, so the accessible text runs words together.",
+      "before": "<h2><span>Intake</span><span>and integrations</span></h2>",
+      "after": "<h2><span>Intake</span> <span>and integrations</span></h2> (a real space or <br> between the spans)",
+      "why": "WCAG 2.2 1.3.1 Info and Relationships and 2.4.6 Headings and Labels: heading navigation reads garbled names.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-007",
+      "tier": "Reflex",
+      "where": "hero h1",
+      "evidence": "dom-1440 records the h1 with empty text; the visible title is built from per-line spans with hide-mobile/show variants (sweep phone_parity points at span.hide-mobile.QI8oKG_titleLine). If the visible spans are aria-hidden duplicates, the h1 name may be empty or doubled.",
+      "before": "<h1><span class=\"hide-mobile\">...</span><span class=\"show-mobile\">...</span></h1>",
+      "after": "<h1>The product development system for teams and agents</h1> with line breaks done in CSS, or one sr-only copy and aria-hidden on the visual lines.",
+      "why": "WCAG 2.2 1.3.1 and 2.4.6. Confidence low: needs an accessibility-tree check.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "A11-006",
+      "tier": "Reflex",
+      "where": "feature accordions ('Linear Agent +', 'Triage +', 'Projects +', ...)",
+      "evidence": "Ten disclosure buttons whose names include the '+' glyph ('Linear Agent +'); the state (open or closed) is only shown by that glyph in the tiles.",
+      "before": "<button>Linear Agent +</button>",
+      "after": "<button aria-expanded=\"false\" aria-controls=\"agent-panel\">Linear Agent<span aria-hidden=\"true\"> +</span></button>",
+      "why": "WCAG 2.2 4.1.2 Name, Role, Value: the expanded state must be programmatic, and the glyph should not be part of the name.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Skip link is the first focus stop ('Skip to content →'); nav controls have clear names ('Navigate to home').",
+    "Body text greys hold contrast on the dark ground outside the mocks; real customer logos.",
+    "lang=en, main, header and footer landmarks present."
+  ],
+  "not_investigated": [
+    "Sweep contrast hits inside the product mock ('Workspace', 'Favorites' 1.86:1; activity lines 2.21:1) are real for the pixels but sit inside an illustration; if the mock is made inert and described (finding 1) they become decorative.",
+    "Product and Resources menus: no live keyboard test of open/close and Escape.",
+    "14 script chunks were blocked (manifest network): animated sections may differ from a full load."
+  ]
+}

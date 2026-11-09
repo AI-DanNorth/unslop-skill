@@ -1,0 +1,80 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The copy is specific and honest (degree to careers, PLN salary ranges, Poland example, 'No account needed'), but it sits on the warm-paper-serif look (cream #fcfbf8, Fraunces display, terracotta line and numbered circles, small green kicker labels) and a stock hero / 1-2-3-4 steps / feature list / CTA band / link footer order.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-02",
+      "evidence": "Failed T-MIRROR: cream page, Fraunces serif headings, terracotta (#d05418) accent on the hero line and step circles, deep-green buttons, small coloured kicker over every h2 ('Career guidance for Europe', 'How it works', 'What you get'). A neighbouring brief (any course finder, any job board) would get this same look; the brand contributes only the 'GL' mark.",
+      "before": "Warm-paper serif kit applied whole",
+      "after": "Change one decision that comes from the subject, e.g. a type or colour taken from the roadmap output itself (map, timetable, transcript) rather than the generic editorial cream-and-serif",
+      "why": "A recognisable model-default look family with no stated reason in a brief; it makes a specific product read as one of many.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "kickers above h1 and each h2",
+      "evidence": "'Career guidance for Europe' above the h1, 'How it works' above 'Four answers, one roadmap', 'What you get' above 'A plan you can act on this week'. Every section heading gets the same small green label (below the sweep's caps threshold because they are sentence case).",
+      "before": "'What you get' / 'A plan you can act on this week'",
+      "after": "Drop the kickers; let the h2 carry the section ('What you get: a plan you can act on this week' only if needed)",
+      "why": "Eyebrow-over-every-heading is a template rhythm, sentence case or not.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "'How it works', tiles 00-01",
+      "evidence": "Failed T-STOCK-ORDER: sections are hero with illustration, numbered 1-2-3-4 steps on a vertical line, 'What you get' feature list with an example card, CTA band 'Ready when you are.', link-farm footer: 5 stock sections in stock order.",
+      "before": "Hero / 4 steps / features / CTA band / footer",
+      "after": "Merge steps and 'What you get' into one worked example (the Poland CS graduate) followed from input to roadmap",
+      "why": "Specific words on a default skeleton still read as default; the example in the hero already does the steps' job.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "CTA band, tile 02",
+      "evidence": "T-FRESH-READER lines that fit any site: 'Ready when you are.' (CTA heading), 'A plan you can act on this week' (h2), 'Four answers, one roadmap' (h2, numeric pair formula).",
+      "before": "\"Ready when you are.\"",
+      "after": "A close that says the outcome, e.g. 'See which careers your degree leads to in [country]'",
+      "why": "Generic sign-off heading; the only heading on the page with no product content.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-008",
+      "tier": "Finish",
+      "where": "hero illustration, right column",
+      "evidence": "Failed T-DELETION in part: the wavy terracotta line from 'You' through five vertical rules before branching to three careers is decorative; the two humps carry no data. The career labels and match % are the content.",
+      "before": "Decorative sine-wave path + vertical gridlines",
+      "after": "Keep the branch to three careers; make the path mean something (e.g. each rule is one of the four answers) or remove the humps",
+      "why": "Ornament dressed as a diagram reads as filler.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Copy states the job and the output plainly: 'You get careers that fit, what they pay in that country, and the next steps to get there.'",
+    "Concrete example with a label: 'Example: a Computer Science graduate looking for work in Poland', 'PLN 9,000-15,000 / month', 'SQL · Power BI · Statistics'. Labelled as example, not invented proof.",
+    "No fake social proof, no testimonial wall, no invented user counts; 'Free to use. No account needed to start.' is a real, useful claim.",
+    "Feature list on the right ('Live job openings', 'Skill gaps, in order', 'Side-by-side comparison', 'A report to keep') uses hairline rows rather than equal icon cards."
+  ],
+  "not_investigated": [
+    "Brand brief: no contract overrides supplied, so the look family cannot be confirmed as chosen",
+    "Pages behind 'Build my roadmap' (not captured)"
+  ]
+}

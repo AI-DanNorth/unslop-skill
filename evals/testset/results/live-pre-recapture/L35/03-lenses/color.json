@@ -1,0 +1,35 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The guidelines page is set entirely in Vercel's Geist greys: a #0a0a0a paper, #ededed body ink (--ds-gray-1000), #a1a1a1 muted text (--ds-gray-900) and #ffffff for the ten section headings (--geist-foreground), with #1a1a1a code chips as the only raised surface; every colour traces to the design system's tokens and holds one role.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-COLOUR-SOURCE, T-PALETTE-ROLES, T-NEUTRALS and T-DARK-MODE pass: what was cut is every chromatic colour (the area palette is 100% neutral), leaving three text levels and one lighter chip surface on a dark paper, which suits a Read page."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-DARK-MODE",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "Three text levels with fixed jobs: #ffffff for the ten section headings (\"Interactions\", \"Animations\", \"Forms\"), #ededed for the bold rule names and body (139 elements), #a1a1a1 for the explanatory text (284 elements), all defined as Geist tokens on :root (tiles/1440-00.png, tiles/1440-05.png).",
+    "Neutrals are untinted throughout: the table counts 523 untinted neutrals, 0 warm and 0 cool, so nothing drifts in temperature.",
+    "The dark theme steps up, not down: the paper is #0a0a0a and the inline code chips are #1a1a1a with a #292929 hairline, with no surface darker than the canvas, no shadows doing the lifting and no filter: invert.",
+    "Links are marked by an underline as well as tone, so they survive the grayscale fold (03-lenses/color/gray-fold-1440.png)."
+  ],
+  "not_investigated": [
+    "T-LINE-DELETION: the page has no repeated rules or borders apart from the code-chip outlines, which mark code, so the test has nothing to remove.",
+    "The light theme: the stylesheet declares color-scheme and a theme class, but the capture rendered the dark scheme only, so the light theme is not verified.",
+    "CLR-009: #ffffff on the section headings is the documented --geist-foreground token, so it is not a finding (conflict C09).",
+    "The focus_ring Floor hits (A11-003) belong to the sweep and lens-a11y and are not repeated."
+  ]
+}

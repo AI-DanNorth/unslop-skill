@@ -1,0 +1,87 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:20:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every section is a default: 'Build faster with intelligent workflows for modern teams' over a grid-paper peach glow, fake-brand logo strip, three emoji-icon feature cards, dark CTA band, one-line footer; nothing names what 'Lumina' actually does.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00",
+      "evidence": "Failed T-FIVE-SECOND and T-DEFAULT-AGENT: first screen says 'Build faster with intelligent workflows for modern teams' and 'The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.' After five seconds you cannot say what the product does (issue tracker? CI? docs?). No product image, screenshot or example anywhere on the page.",
+      "before": "\"Build faster with intelligent workflows for modern teams\"",
+      "after": "[DATA NEEDED: the one job Lumina does and for whom] and a real screenshot or example of it in the first screen",
+      "why": "The thin, generic first screen is what makes the page read as generated; every other tell sits on top of it.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "h1, h2s, card heads",
+      "evidence": "Failed T-RIVAL-NAME: swap in Linear, Notion or any dev-tool name and every line stays true: h1, 'Everything you need to ship great products', 'Ready to transform how your team builds?', 'Lightning Fast' / 'Enterprise Secure' / 'Built to Scale'. Concept capped at 5.",
+      "before": "Lightning Fast / Enterprise Secure / Built to Scale",
+      "after": "Card heads that name a feature only this product has [DATA NEEDED: the three real capabilities]",
+      "why": "No line belongs to this business.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "hero background and h1",
+      "evidence": "Look-family cluster beyond the sweep: graph-paper grid texture across the hero, peach radial glow, italic terracotta serif accent on one word ('intelligent'), and a fake blinking text cursor (span.fake-cursor, blink-cursor 0.9s) after 'teams'. Plus a pulsing dot in the logo (pulse-status 1.8s).",
+      "before": "Grid texture + glow + italic accent word + fake typing caret + pulsing logo dot",
+      "after": "Remove the caret and the pulse; drop the grid and glow; keep one display treatment",
+      "why": "Each is a stock 'AI product' decoration; together they are the default, and the caret pretends text is being typed when it is not.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "section order, tiles 00-02",
+      "evidence": "Failed T-STOCK-ORDER: centred hero with badge + two CTAs + count, logo strip, three equal feature cards, dark CTA band, one-line footer. 5 stock sections in stock order with numbers 01/02/03 stamped on them.",
+      "before": "Hero / logos / 3 cards / CTA band / footer",
+      "after": "Lead with the product in use; replace the card trio with one demonstrated workflow",
+      "why": "The skeleton is the template.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "features sub-line and footer",
+      "evidence": "T-FRESH-READER lines that fit any site: 'One platform. Endless possibilities. Built for teams who care about craft.' (fragment triplet), 'Powered by AI, designed for humans.', '© 2025 Lumina, Inc. — Crafted with care in San Francisco.'",
+      "before": "\"One platform. Endless possibilities. Built for teams who care about craft.\"",
+      "after": "Delete the line, or replace with one falsifiable claim [DATA NEEDED: a measured result]",
+      "why": "Filler slogans in the slots where a reader looks for substance; the fragment triplet is the rhythm tell.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "every link",
+      "evidence": "dom-1440.json: all 10 links (Product, Solutions, Pricing, Customers, Docs, Sign in, Get started, Start free trial, Watch demo, Start your free trial) have href=\"#\". 'SOC 2 compliant infrastructure' is claimed with no link or proof.",
+      "before": "href=\"#\" everywhere; unsupported SOC 2 claim",
+      "after": "Real destinations; link the SOC 2 report or remove the claim [DATA NEEDED: audit report]",
+      "why": "Placeholder residue and an unbacked compliance claim; the page cannot be used.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The type pairing (high-contrast serif display with a clean sans body) is set with care at large sizes; worth keeping if the content becomes real."
+  ],
+  "not_investigated": [
+    "Brand brief: none supplied",
+    "Watch demo target (href=#)"
+  ]
+}

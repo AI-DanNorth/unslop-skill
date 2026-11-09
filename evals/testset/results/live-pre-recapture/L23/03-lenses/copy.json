@@ -1,0 +1,62 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The hero names the company's legal form and stance ('Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks') and every card carries a dated, named release with a measured claim ('costs 40% less to run than Opus 5 on typical workloads').",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 8,
+    "reason": "T-RIVAL-NAME and T-THREE-LINE pass on the hero's first and last sentences and on the release cards, but the hero's middle sentence 'AI will have a vast impact on the world' and two of the 'Learn more' card lines would sit on any AI lab's page, and T-LABEL-READ finds 'View' and repeated 'Learn more' labels."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "hero h1 (middle sentence) and 'Learn more' cards, 1440, tiles/1440-00.png and tiles/1440-02.png",
+      "evidence": "Failed T-RIVAL-NAME on 3 lines: 'AI will have a vast impact on the world.' (h1, second sentence), 'Our effort to confront the most significant challenges that powerful AI will pose to our societies.' (Institute card) and 'Why we believe AI safety research is critical, and how we approach it' (Core views card) all stay true under another AI lab's name. The h1's first and third sentences do not.",
+      "before": "AI will have a vast impact on the world.",
+      "after": "Cut the sentence, or replace it with the specific bet the company makes; give the Institute card the one problem it works on first.",
+      "why": "The generic sentence sits in the largest type on the page between two lines that are the company's own, and dilutes them.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "Labels that do not name their target",
+      "tier": "Reflex",
+      "where": "release cards and section label, 1440, tiles/1440-01.png",
+      "evidence": "Failed T-LABEL-READ: the copy sheet shows the label 'View' going to three different system-card PDFs, and 'Learn more' appears three times in bodyText (as a link under the Public Benefit Report and as the label over the card row). The sweep's repeated_label hit on 'Read announcement' is not repeated here.",
+      "before": "System Card · View",
+      "after": "Name the file in the link: 'Download the Haiku 5.5 system card (PDF)'; rename the 'Learn more' row label to what the cards are (policies and commitments).",
+      "why": "A screen-reader user tabbing through hears 'View, View, View' with no model name.",
+      "test": "T-LABEL-READ"
+    }
+  ],
+  "strengths": [
+    "The hero states the company's legal form and purpose in its own words: 'a public benefit corporation dedicated to securing its benefits and mitigating its risks'.",
+    "Release cards carry dates, model names and comparative claims with a named baseline ('runs 30%+ faster, and costs up to 30% less for most work' against Sonnet 5); the sweep's invented_metrics hits ask for the source, which is an Integrity check, not a voice problem.",
+    "Policy titles are the documents' real names ('Responsible scaling policy', 'Claude's Constitution') rather than formula headings."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: no form or primary action state captured (async.json not captured).",
+    "T-LONG-FORM: no long-form region; the Public Benefit Report paragraph is a single 2-sentence block.",
+    "Copy sheet: the helper did not pick up the h1 (hero and outline came back with no h1); the hero was read from bodyText, the sweep's h1_words hit and tiles/1440-00.png.",
+    "The carousel slides under the hero (for example 'Pillar 3 Democracy and stability / Political even-handedness in Claude') were only partly visible in the tiles and were not read in full.",
+    "Contract: no 00-contract.md in the run; judged as a Persuade/Read corporate homepage."
+  ]
+}

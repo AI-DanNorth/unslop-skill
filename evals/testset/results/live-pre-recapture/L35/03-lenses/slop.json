@@ -1,0 +1,19 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A plain, dense reference document in the owner's own type family (Geist, Geist Mono): one column of run-in rules with concrete, falsifiable advice ('touch-action: manipulation', '~150-300 ms show-delay'), no hero, no cards, no decoration; it reads as written by people who hold these opinions.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [],
+  "strengths": [
+    "Every rule is specific and testable: 'Set touch-action: manipulation', 'add a short show-delay (~150-300 ms) & a minimum visible time (~300-500 ms)', 'Set overscroll-behavior: contain intentionally e.g., in modals/drawers'.",
+    "The form follows the content: a long list set as a single readable column with bold run-in heads and inline code, no section ornaments to delete.",
+    "Named credits ('Thanks to Adam, Jimmy, Jonnie, Lochie, Paco, Joe, & Austin') and a 'Join Vercel' line that is honest about why the page exists.",
+    "Fresh-reader check found no hero or heading that would fit any site; the closest generic line is 'Interfaces succeed because of hundreds of choices.', which the list then backs up."
+  ],
+  "not_investigated": [
+    "disputed: INT-005 placeholder_residue hits ('Placeholders signal emptiness.', 'Use consistent placeholders.') are guideline text about form placeholders, not leftover placeholder copy.",
+    "Page length (2,226 words, sweep CPY-002) is appropriate for a reference document; not treated as slop."
+  ]
+}

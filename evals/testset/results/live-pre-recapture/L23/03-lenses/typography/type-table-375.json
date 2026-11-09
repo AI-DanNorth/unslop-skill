@@ -1,0 +1,317 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "anthropicSans": {
+   "elements": 56,
+   "chars": 1524,
+   "roles": {
+    "control": 16,
+    "other": 1,
+    "small": 29,
+    "body": 4,
+    "h3": 6
+   },
+   "sizes_px": [
+    11.0,
+    13.0,
+    14.0,
+    16.0,
+    20.0,
+    25.0
+   ],
+   "source": "declared"
+  },
+  "anthropicSerif": {
+   "elements": 1,
+   "chars": 143,
+   "roles": {
+    "other": 1
+   },
+   "sizes_px": [
+    25.0
+   ],
+   "source": "declared"
+  },
+  "anthropicMono": {
+   "elements": 2,
+   "chars": 4,
+   "roles": {
+    "small": 2
+   },
+   "sizes_px": [
+    11.0
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "control": {
+   "count": 16,
+   "sizes_px": {
+    "13.0": 10,
+    "20.0": 3,
+    "16.0": 3
+   },
+   "median_px": 13.0,
+   "weights": {
+    "400": 13,
+    "700": 3
+   },
+   "faces": {
+    "anthropicSans": 16
+   },
+   "italic": 0,
+   "leading_median": 1.54,
+   "leading_normal": 0,
+   "tracking_em_median": 0.01,
+   "uppercase": 0
+  },
+  "other": {
+   "count": 2,
+   "sizes_px": {
+    "25.0": 2
+   },
+   "median_px": 25.0,
+   "weights": {
+    "600": 1,
+    "400": 1
+   },
+   "faces": {
+    "anthropicSans": 1,
+    "anthropicSerif": 1
+   },
+   "italic": 0,
+   "leading_median": 1.3,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 31,
+   "sizes_px": {
+    "13.0": 16,
+    "14.0": 12,
+    "11.0": 3
+   },
+   "median_px": 13.0,
+   "weights": {
+    "400": 31
+   },
+   "faces": {
+    "anthropicSans": 29,
+    "anthropicMono": 2
+   },
+   "italic": 0,
+   "leading_median": 1.54,
+   "leading_normal": 0,
+   "tracking_em_median": 0.01,
+   "uppercase": 2
+  },
+  "body": {
+   "count": 4,
+   "sizes_px": {
+    "14.0": 3,
+    "13.0": 1
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 4
+   },
+   "faces": {
+    "anthropicSans": 4
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 6,
+   "sizes_px": {
+    "20.0": 4,
+    "13.0": 2
+   },
+   "median_px": 20.0,
+   "weights": {
+    "700": 4,
+    "400": 2
+   },
+   "faces": {
+    "anthropicSans": 6
+   },
+   "italic": 0,
+   "leading_median": 1.25,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h3/body",
+   "ratio": 1.43
+  }
+ ],
+ "distinct_sizes_px": [
+  11.0,
+  13.0,
+  14.0,
+  16.0,
+  20.0,
+  25.0
+ ],
+ "measure": {
+  "paragraphs": 4,
+  "cpl_median": 29.5,
+  "cpl_max": 39,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "li.xiAwRW_slide:nth-of-type(1) > article.xiAwRW_card > a.xiAwRW_link.xiAwRW_anch",
+   "text": "The Anthropic Institute",
+   "size": "20px",
+   "level": 3,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 0.61,
+   "leading": 1.25,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "anthropicSans"
+  },
+  {
+   "sel": "li.xiAwRW_slide:nth-of-type(2) > article.xiAwRW_card > a.xiAwRW_link.xiAwRW_anch",
+   "text": "Claude's Constitution",
+   "size": "20px",
+   "level": 3,
+   "lines": 1,
+   "chars": 21,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "anthropicSans"
+  },
+  {
+   "sel": "li.xiAwRW_slide:nth-of-type(3) > article.xiAwRW_card > a.xiAwRW_link.xiAwRW_anch",
+   "text": "Responsible scaling policy",
+   "size": "20px",
+   "level": 3,
+   "lines": 2,
+   "chars": 26,
+   "last_line_share": 0.31,
+   "leading": 1.25,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "anthropicSans"
+  },
+  {
+   "sel": "li.xiAwRW_slide:nth-of-type(4) > article.xiAwRW_card > a.xiAwRW_link.xiAwRW_anch",
+   "text": "Core views on AI safety",
+   "size": "20px",
+   "level": 3,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 0.39,
+   "leading": 1.25,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "anthropicSans"
+  },
+  {
+   "sel": "footer.theme-slate.dU5k9q_footer > div.dU5k9q_footerLayout:nth-of-type(2) > div.",
+   "text": "Our mission",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 11,
+   "last_line_share": null,
+   "leading": 1.54,
+   "tracking_em": 0.01,
+   "weight": "400",
+   "face": "anthropicSans"
+  },
+  {
+   "sel": "footer.theme-slate.dU5k9q_footer > div.dU5k9q_footerLayout:nth-of-type(2) > div.",
+   "text": "Log in",
+   "size": "13px",
+   "level": 3,
+   "lines": 1,
+   "chars": 6,
+   "last_line_share": null,
+   "leading": 1.54,
+   "tracking_em": 0.01,
+   "weight": "400",
+   "face": "anthropicSans"
+  }
+ ],
+ "head_treatments": [],
+ "small_caps_or_tracked": {
+  "count": 2,
+  "examples": [
+   {
+    "sel": "div.xiAwRW_inner > div.xiAwRW_carousel.xiAwRW_fits-desktop > div.n4MhcW_carousel",
+    "text": "01",
+    "size": "11px",
+    "transform": "uppercase",
+    "tracking_em": 0.018
+   },
+   {
+    "sel": "div.xiAwRW_inner > div.xiAwRW_carousel.xiAwRW_fits-desktop > div.n4MhcW_carousel",
+    "text": "04",
+    "size": "11px",
+    "transform": "uppercase",
+    "tracking_em": 0.018
+   }
+  ]
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {
+   "small": 2
+  },
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [
+  {
+   "sel": "div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(1) > div.fUM8lW_titleBlock > ",
+   "text": "Introducing Claude Haiku 5.5",
+   "size": "20px",
+   "lines": 2
+  },
+  {
+   "sel": "div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(2) > div.fUM8lW_titleBlock > ",
+   "text": "Introducing Claude Sonnet 5.5",
+   "size": "20px",
+   "lines": 2
+  },
+  {
+   "sel": "div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(3) > div.fUM8lW_titleBlock > ",
+   "text": "Introducing Claude Opus 5.5",
+   "size": "20px",
+   "lines": 2
+  }
+ ],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 1,
+  "curly_apostrophe": 1,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": true,
+  "font_synthesis_none": true,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

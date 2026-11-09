@@ -1,0 +1,68 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:40:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The content is specific and human (Harbor and Co, the revised PO, 'A short note beats another status meeting') but the skin is a stock Tailwind-slate dashboard: three equal unsourced stat cards, segmented pills, blue-600 accent, mono display face on a non-code page and side-stripe accents, with the action section left invisible by a scroll-reveal.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "top of page, 1440 tile 00",
+      "evidence": "Failed T-DEFAULT-AGENT and T-MIRROR: 'internal ops dashboard' yields exactly this first screen: a row of three equal white cards ('Open threads 128', 'Waiting on us 14', 'Pipeline $42.6k'), segmented filter pills, a bordered table with a tinted header, on #F8FAFC with #3B82F6/#1E293B tokens (sweep stock_swatches).",
+      "before": "Three equal KPI cards + pill filters + slate palette",
+      "after": "Lead with the one thing the weekly ops reader acts on (the Urgent table) and fold the three counts into its header line, e.g. 'Urgent · 3 of 128 open threads · $42.6k pipeline'",
+      "why": "The skeleton is the default dashboard kit; only the copy is Northline's.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-004",
+      "tier": "Reflex",
+      "where": "Urgent table row 'Harbor and Co' and insight callout, tiles 00-01",
+      "evidence": "A 3px red left border marks the flagged table row and a 4px orange left border frames the note \"Harbor has gone quiet after the price change...\".",
+      "before": "Side-tab accent borders on row and callout",
+      "after": "Let the 'Blocked' status carry the row; set the note as a plain paragraph under a small heading 'Suggested next step'",
+      "why": "One-side accent stripes are a stock emphasis device (SLP-004).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "headings, 1440 tile 00",
+      "evidence": "h1 'Northline weekly ops' and section labels 'Urgent 3 threads', 'Pending 3 items' are set in Fira Code, a monospace face, on an ops page with no code; body in Fira Sans.",
+      "before": "Monospace display face for prose headings",
+      "after": "Set headings in Fira Sans semibold; keep mono for figures in the Amount and Change columns only",
+      "why": "Mono-as-personality on non-code labels is a look-family tell (dark-single-accent / hairline-newspaper 'mono_labels').",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "ROB-001",
+      "tier": "Reflex",
+      "where": "lower page, 1440 tile 01 (y 1100-1429)",
+      "evidence": "A 329px empty band follows 'How this note was chosen'; dom shows the 'Empty' state and the 'Reach them' section (Telegram, Text the plant, Send follow-up, Snooze) at opacity 0. hidden.json: 114 characters stay invisible unless reduced motion is on.",
+      "before": "Scroll-reveal leaves the action section invisible",
+      "after": "Render sections visible by default; animate from visible (opacity .001 -> 1 only when JS and IntersectionObserver are confirmed)",
+      "why": "The page's call to action ('Send follow-up') never appears: decoration over function.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "Copy is concrete and only-this-business: 'Ask Harbor for the revised PO before Friday', 'Intro sent to the Boston plant manager', 'Harbor has gone quiet after the price change. A short note beats another status meeting.'",
+    "Status column pairs icon, colour and word (Blocked / Waiting / Clear) with a secondary reason ('Stale 9 days'): a real decision, keep it.",
+    "Numbers are tabular and right-aligned in the Amount column."
+  ],
+  "not_investigated": [
+    "No 00-contract.md; the page says it is styled by a named skill's design system, so palette choices are judged as unchosen defaults, not brand.",
+    "The before/after comparison page was not opened."
+  ]
+}

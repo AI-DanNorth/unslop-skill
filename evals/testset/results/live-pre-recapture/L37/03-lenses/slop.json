@@ -1,0 +1,30 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:05:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The artifact is Apple's WWDC24 invitation email shown in the Really Good Emails gallery: one owned image (the event's glowing logo art), 'Action packed.', the date, time, place and an add-to-calendar action, nothing else; the glow and neon colours are that year's event identity, not a default, and the surrounding gallery chrome is a working product UI.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-222",
+      "tier": "Finish",
+      "where": "email headline (tile 1440-01 top)",
+      "evidence": "T-RIVAL-NAME: 'Action packed.' would hold for any conference invitation; it is the only line that is not specific. Everything else ('WWDC24 June 10–14', 'Monday, June 10, at 10:00 a.m. PT. Streaming from Apple Park on apple.com.') is concrete.",
+      "before": "\"Action packed.\"",
+      "after": "Keep as a tagline (it is the event's campaign line); no change needed beyond noting it carries no information",
+      "why": "One generic line on an otherwise fully specific piece; Finish only.",
+      "test": "T-RIVAL-NAME"
+    }
+  ],
+  "strengths": [
+    "T-FIVE-SECOND passes in the first screen of the email: what (WWDC24 keynote), when (June 10, 10:00 a.m. PT), where (Apple Park, apple.com), what to do (Add to calendar).",
+    "The glowing Apple mark is the event's own key art; with the sweep's glow/neon tells in mind, this is a deliberate campaign identity, not a model default.",
+    "Restraint: one image, one line, one action, legal footer; T-DELETION removes nothing."
+  ],
+  "not_investigated": [
+    "the gallery page's Omnisend ad and the 'You might also like' grid are third-party content around the artifact and were not judged as part of it; the sweep's INT-001 '35% less' hit is in that ad",
+    "email rendered as a flattened PNG by the gallery; live HTML of the email not available",
+    "no 00-contract.md brief"
+  ]
+}

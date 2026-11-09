@@ -1,0 +1,368 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "GDS Transport": {
+   "elements": 60,
+   "chars": 2798,
+   "roles": {
+    "other": 5,
+    "control": 29,
+    "h1": 1,
+    "body": 14,
+    "h2": 10,
+    "h3": 1
+   },
+   "sizes_px": [
+    19.0,
+    21.0,
+    27.0,
+    31.0,
+    32.0
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 5,
+   "sizes_px": {
+    "19.0": 4,
+    "31.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 5
+   },
+   "faces": {
+    "GDS Transport": 5
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 29,
+   "sizes_px": {
+    "19.0": 28,
+    "21.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 24,
+    "700": 5
+   },
+   "faces": {
+    "GDS Transport": 29
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h1": {
+   "count": 1,
+   "sizes_px": {
+    "32.0": 1
+   },
+   "median_px": 32.0,
+   "weights": {
+    "700": 1
+   },
+   "faces": {
+    "GDS Transport": 1
+   },
+   "italic": 0,
+   "leading_median": 1.09,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 14,
+   "sizes_px": {
+    "19.0": 13,
+    "21.0": 1
+   },
+   "median_px": 19.0,
+   "weights": {
+    "400": 14
+   },
+   "faces": {
+    "GDS Transport": 14
+   },
+   "italic": 0,
+   "leading_median": 1.32,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 10,
+   "sizes_px": {
+    "27.0": 10
+   },
+   "median_px": 27.0,
+   "weights": {
+    "700": 10
+   },
+   "faces": {
+    "GDS Transport": 10
+   },
+   "italic": 0,
+   "leading_median": 1.11,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 1,
+   "sizes_px": {
+    "21.0": 1
+   },
+   "median_px": 21.0,
+   "weights": {
+    "700": 1
+   },
+   "faces": {
+    "GDS Transport": 1
+   },
+   "italic": 0,
+   "leading_median": 1.19,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h1/h2",
+   "ratio": 1.19
+  },
+  {
+   "pair": "h2/h3",
+   "ratio": 1.29
+  },
+  {
+   "pair": "h3/body",
+   "ratio": 1.11
+  }
+ ],
+ "distinct_sizes_px": [
+  19.0,
+  21.0,
+  27.0,
+  31.0,
+  32.0
+ ],
+ "measure": {
+  "paragraphs": 14,
+  "cpl_median": 34.5,
+  "cpl_max": 39,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row >",
+   "text": "Design your service using GOV.UK styles, components and patt",
+   "size": "32px",
+   "level": 1,
+   "lines": 4,
+   "chars": 64,
+   "last_line_share": 0.6,
+   "leading": 1.09,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "#whats-new",
+   "text": "What’s new",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "#\\31 5-october-2026-weve-released-govuk-frontend-v660",
+   "text": "15 October 2026: We’ve released GOV.UK Frontend v6.6.0",
+   "size": "21px",
+   "level": 3,
+   "lines": 2,
+   "chars": 54,
+   "last_line_share": 0.75,
+   "leading": 1.19,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container > div.govuk-main-wrapper.govuk-main-wrapper--l > div.gov",
+   "text": "Get updates on the Design System",
+   "size": "27px",
+   "level": 2,
+   "lines": 2,
+   "chars": 32,
+   "last_line_share": 0.29,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Styles",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 6,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Components",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Patterns",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 8,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Update your service to use the refreshed GOV.UK brand",
+   "size": "27px",
+   "level": 2,
+   "lines": 2,
+   "chars": 53,
+   "last_line_share": 1.08,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Principles we follow",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 20,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "#community",
+   "text": "Community",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 9,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "#support",
+   "text": "Support",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  },
+  {
+   "sel": "div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapp",
+   "text": "Roadmap",
+   "size": "27px",
+   "level": 2,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "700",
+   "face": "GDS Transport"
+  }
+ ],
+ "head_treatments": [],
+ "small_caps_or_tracked": {
+  "count": 0,
+  "examples": []
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [
+  {
+   "sel": "div.govuk-main-wrapper.govuk-main-wrapper--l > div.govuk-grid-row:nth-of-type(4)",
+   "text": "upcoming components and patterns",
+   "size": "19px",
+   "lines": 2
+  },
+  {
+   "sel": "div.govuk-main-wrapper.govuk-main-wrapper--l > div.govuk-grid-row:nth-of-type(6)",
+   "text": "GOV.UK Design System Roadmap",
+   "size": "19px",
+   "lines": 2
+  }
+ ],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 0,
+  "curly_apostrophe": 9,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

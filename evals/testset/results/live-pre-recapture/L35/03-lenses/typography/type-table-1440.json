@@ -1,0 +1,243 @@
+{
+ "width": 1440,
+ "fonts_source": "fonts.json (drawn)",
+ "faces": {
+  "Geist": {
+   "elements": 297,
+   "chars": 12977,
+   "roles": {
+    "h1": 1,
+    "body": 98,
+    "control": 39,
+    "other": 159
+   },
+   "sizes_px": [
+    16.0,
+    24.0,
+    32.0
+   ],
+   "source": "drawn"
+  },
+  "Geist Mono": {
+   "elements": 102,
+   "chars": 1434,
+   "roles": {
+    "small": 96,
+    "body": 1,
+    "other": 5
+   },
+   "sizes_px": [
+    13.0,
+    13.7143,
+    14.0,
+    16.0
+   ],
+   "source": "declared"
+  },
+  "GeistSans": {
+   "elements": 34,
+   "chars": 972,
+   "roles": {
+    "body": 6,
+    "other": 14,
+    "control": 14
+   },
+   "sizes_px": [
+    16.0,
+    24.0
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "h1": {
+   "count": 1,
+   "sizes_px": {
+    "32.0": 1
+   },
+   "median_px": 32.0,
+   "weights": {
+    "600": 1
+   },
+   "faces": {
+    "Geist": 1
+   },
+   "italic": 0,
+   "leading_median": 1.25,
+   "leading_normal": 0,
+   "tracking_em_median": -0.04,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 105,
+   "sizes_px": {
+    "16.0": 105
+   },
+   "median_px": 16.0,
+   "weights": {
+    "400": 105
+   },
+   "faces": {
+    "Geist": 98,
+    "GeistSans": 6,
+    "Geist Mono": 1
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 53,
+   "sizes_px": {
+    "16.0": 50,
+    "24.0": 3
+   },
+   "median_px": 16.0,
+   "weights": {
+    "400": 40,
+    "500": 10,
+    "600": 3
+   },
+   "faces": {
+    "Geist": 39,
+    "GeistSans": 14
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "other": {
+   "count": 178,
+   "sizes_px": {
+    "16.0": 178
+   },
+   "median_px": 16.0,
+   "weights": {
+    "550": 130,
+    "400": 48
+   },
+   "faces": {
+    "Geist": 159,
+    "GeistSans": 14,
+    "Geist Mono": 5
+   },
+   "italic": 12,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 96,
+   "sizes_px": {
+    "13.7143": 87,
+    "14.0": 8,
+    "13.0": 1
+   },
+   "median_px": 13.71,
+   "weights": {
+    "400": 96
+   },
+   "faces": {
+    "Geist Mono": 96
+   },
+   "italic": 0,
+   "leading_median": 1.46,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h1/body",
+   "ratio": 2.0
+  }
+ ],
+ "distinct_sizes_px": [
+  13.0,
+  13.7143,
+  14.0,
+  16.0,
+  24.0,
+  32.0
+ ],
+ "measure": {
+  "paragraphs": 17,
+  "cpl_median": 69,
+  "cpl_max": 87,
+  "over_75": 4,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div",
+   "text": "Web Interface Guidelines",
+   "size": "32px",
+   "level": 1,
+   "lines": 1,
+   "chars": 24,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.04,
+   "weight": "600",
+   "face": "Geist"
+  }
+ ],
+ "head_treatments": [],
+ "small_caps_or_tracked": {
+  "count": 0,
+  "examples": []
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {
+   "small": 96,
+   "body": 1,
+   "other": 5
+  },
+  "body_paragraphs": [
+   {
+    "sel": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nt",
+    "text": "font size is ≥ 16px on mobile to prevent iOS Safari auto-zoo",
+    "size": "16px"
+   }
+  ]
+ },
+ "wrapped_controls": [
+  {
+   "sel": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-",
+   "text": "Feedback is welcome",
+   "size": "16px",
+   "lines": 2
+  },
+  {
+   "sel": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-typ",
+   "text": "WAI-ARIA Authoring Patterns",
+   "size": "16px",
+   "lines": 2
+  }
+ ],
+ "punctuation": {
+  "straight_double": 30,
+  "curly_double": 32,
+  "straight_apostrophe": 2,
+  "curly_apostrophe": 15,
+  "three_dots": 1,
+  "ellipsis": 8
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": true,
+  "font_synthesis_none": true,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

@@ -1,0 +1,58 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The job is reading and applying a reference list of interface rules (Read mode): one column at a readable measure on a 360px edge, category heads (Interactions, Animations, Layout, Content, Forms, Performance, Design) over bold-lead rules, then a Vercel-specific part and an agent-integration part, which is the structure the material needs.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 7,
+    "reason": "T-HEADINGS-READ, T-LEFT-EDGES and T-FIVE-SECOND pass, but T-SQUINT finds the seven category heads set at body size, so the groups in an 8,815px list do not hold their shape, and T-ANATOMY finds no in-page navigation for a 2,226-word reference."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "category heads Interactions to Design, tiles 1440-00 to 1440-07, 1440px",
+      "evidence": "In dom-1440.json the seven category h2s (\"Interactions\" at y=317 to \"Design\" at y=6313) are 16px, the same size as the body and the bold rule leads under them (\"Keyboard works everywhere.\", \"Clear focus.\"). The later part heads (\"Vercel-specific\", \"Integrate with Agents\", \"Join Vercel\") are 24px. Under the squint the category heads read at the same weight as each rule lead.",
+      "before": "Category heads at 16px, part heads at 24px, rule leads at 16px bold.",
+      "after": "Set the category heads one step up (at least the 24px used for the part heads) or add space above them, so each category starts visibly.",
+      "why": "A reader scrolling to the Forms rules cannot find where Forms starts without reading every bold lead; the categories are the page's only grouping.",
+      "test": "T-SQUINT"
+    },
+    {
+      "rule": "LAY-016",
+      "tier": "Reflex",
+      "where": "top of page, tile 1440-00, 1440px and 375px",
+      "evidence": "The page has no nav landmark and no list of categories; the first screen goes from the intro paragraph straight into the 119 rule items (the start-line count gives 119 blocks at x=380). The category heads are anchor links, so targets exist, but nothing links to them. The page is 8,815px tall at 1440 and 14,211px at 375.",
+      "before": "A long single-column reference with no table of contents.",
+      "after": "Add a short list of the category anchors under the intro, or a sticky list in the empty left margin at 1440 (the column starts at x=360).",
+      "why": "Reference pages are read by jumping to a category; without a contents list the reader scrolls or uses find-in-page.",
+      "test": "T-ANATOMY"
+    }
+  ],
+  "strengths": [
+    "Every block starts on one of three related edges: x=360 for heads and paragraphs, x=380 for rule items, x=400 for nested examples. Nothing drifts.",
+    "The headings read alone outline the material: seven rule categories, then Vercel-specific preferences, then how to use the list with agents.",
+    "Each rule is one bold lead plus one sentence, so the skeleton itself says 'rule list' and every item carries one idea.",
+    "The first screen states what the page is and starts the first category inside the fold at every width; the 375 order matches 1440."
+  ],
+  "not_investigated": [
+    "T-STOCK-ORDER and T-COMPOSITION-RUN: a Read page, where composition variety does not apply.",
+    "words_per_screen (292 words on screen 2) and page_words (2,226) are sweep findings; that density fits a reference list, so T-DENSITY-FIT passes.",
+    "One script chunk was blocked during capture (manifest network); copy buttons and similar interactions were not checked."
+  ]
+}

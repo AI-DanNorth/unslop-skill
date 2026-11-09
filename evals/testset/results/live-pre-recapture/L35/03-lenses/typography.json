@@ -1,0 +1,51 @@
+{
+  "lens": "typography",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Geist and Geist Mono, Vercel's own faces, set this reading page with 16px body at 1.5 leading, a 69-character median measure and mono held to inline code, but the section heads (\"Interactions\", \"Layout\") are 16px weight 500, the same size as the text and lighter than the 550 lead-ins of each rule.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-TYPE-SOURCE, T-FACE-ROLES, T-LEADING and T-MEASURE pass for a Read page; T-LADDER fails because section heads have no size or weight step over the text, and T-PUNCTUATION finds straight and curly quotes mixed in the prose."
+  },
+  "tests_run": ["T-FONT-RENDERED", "T-TYPE-SOURCE", "T-FACE-ROLES", "T-LADDER", "T-HEADLINE-FIT", "T-LEADING", "T-MEASURE", "T-LABEL-TRANSFORM", "T-HEAD-TREATMENT", "T-FIGURES", "T-PUNCTUATION", "T-WIDOWS"],
+  "findings": [
+    {
+      "rule": "TYP-020",
+      "title": "Weight steps are clear",
+      "tier": "Reflex",
+      "where": "section heads (a elements \"Interactions\", \"Layout\", \"Content\", \"Forms\", \"Performance\", \"Design\", \"Copywriting\"), 1440 and 375 (tiles/1440-00.png, middle)",
+      "evidence": "dom-1440.json gives every section head at 16px, weight 500, white, 24px line height. The bold lead-in of each rule below it (\"Keyboard works everywhere.\") is also 16px, at weight 550 in #ededed. The body text is 16px at 400. The type table finds only two size steps on the page: the 32px h1 and 16px for everything else. A section head is therefore lighter than the rule titles it groups, and only the space above it marks it.",
+      "before": "Section head 16px/500, rule lead-in 16px/550, body 16px/400",
+      "after": "Section heads one clear step up (for example 20 to 24px at weight 600), so the h1, section and rule levels each have their own size",
+      "why": "In a long list of rules the reader scans for the section, and a head lighter than its own items does not stop the eye.",
+      "test": "T-LADDER",
+      "root": "the section-heading link style"
+    },
+    {
+      "rule": "TYP-018",
+      "title": "Punctuation is typeset and consistent",
+      "tier": "Finish",
+      "where": "rule text, 1440 (tiles/1440-01.png)",
+      "evidence": "The type table counts 30 straight and 32 curly double quotes, 2 straight and 15 curly apostrophes, and 1 three-dot run against 8 true ellipses. Some straight marks sit correctly inside code (content=\"width=device-width...\"), but others are prose: \"Rename…\", \"Loading…\" and \"Saving…\" in the ellipsis rule use straight double quotes, and \"selection/hover don't occur\" uses a straight apostrophe a few lines below \"Don’t leave users guessing\" with a curly one.",
+      "before": "\"Loading…\" (straight) beside Don’t (curly)",
+      "after": "Curly quotes and apostrophes in all prose; straight marks only inside code elements",
+      "why": "The mix shows on the same screen, on a page whose own copy rules ask for typeset punctuation.",
+      "test": "T-PUNCTUATION"
+    }
+  ],
+  "strengths": [
+    "Geist and Geist Mono are Vercel's own faces; Geist Mono is held to inline code (96 small elements, all code tokens).",
+    "Body text is 16px at 1.5 leading, and the measure runs a median of 69 characters a line at 1440 and 33 at 375.",
+    "The h1 is tuned at 32px, weight 600, -0.04em tracking.",
+    "The stylesheet sets tabular-nums, text-wrap: balance and pretty, and font-synthesis: none."
+  ],
+  "not_investigated": [
+    "T-FONT-RENDERED: fonts.json lists both \"Geist\" and \"GeistSans\" as drawn faces; they are the same family under two names, and the sweep's type_ladder family count of 3 includes that duplicate.",
+    "T-HEADLINE-FIT: the only heading is the 24-character h1 on 1 line at 1440 and 2 at 375; the section heads are links, not headings, which is the structure lens's to judge.",
+    "T-FIGURES: no figures compare on the page.",
+    "T-MEASURE: 4 paragraphs run over 75 characters at 1440 (maximum 87), none at 88 or more; not a finding.",
+    "Wrapped controls in the type table are inline links in running text, which may wrap."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T16:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Unmistakably IBM Carbon: IBM Plex Serif ExtraLight display, Plex Sans, the Carbon blue ramp, square 2x-grid tiles with corner arrows and a line-drawn component illustration in the hero; the system's own language, not a default, with only a few interchangeable mission sentences in the copy.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "section statements, tiles 04 and 11",
+      "evidence": "Failed T-FRESH-READER / T-RIVAL-NAME on the large statement lines: \"Pre-built, reusable assets that enable teams to build consistent digital experiences faster.\" and \"Carbon thrives because it is built by the community, for the community. Help us build it even stronger.\" Swap in Material or Polaris and both stay true.",
+      "before": "\"Pre-built, reusable assets that enable teams to build consistent digital experiences faster.\"",
+      "after": "A statement only Carbon can make, e.g. counts and names: [DATA NEEDED: number of components, frameworks supported (React, Web Components...), IBM products using it]",
+      "why": "These are set at display size, so the generic sentence is the most prominent text on its screen.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "ROB-001",
+      "tier": "Reflex",
+      "where": "between sections, 1440 tiles 02-03, 05-06, 07, 10",
+      "evidence": "Sweep dead_band: 1616px, 2400px and 1626px empty bands; tiles 02 and 07 are blank grey screens. Sweep hidden_content: 76% of text hidden after load and scrolling, 100% with scripts off. The sections appear to be scroll-pinned reveals that leave whole screens empty.",
+      "before": "Scroll-driven sections that render as empty screens",
+      "after": "Render each section's content in flow by default; keep scroll-linked motion as enhancement only",
+      "why": "Failed T-SCREEN-BY-SCREEN equivalent: several screens have nothing on them, which reads as broken rather than designed. Partly a capture limit for scroll-linked animation; flagged, not scored hard.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "Hero 'Let's make together' in IBM Plex Serif ExtraLight on Carbon blue-20 with a line illustration built from actual Carbon components (tags, data table, checkboxes, pie chart): only-this-system.",
+    "Two clear entry paths, 'Start designing' and 'Start developing', as full-height tiles: the five-second test passes (what: IBM design system; for: designers and developers; do: pick a path).",
+    "Specific current content: 'Carbon MCP' and 'Follow v12 progress' name real, dated work."
+  ],
+  "not_investigated": [
+    "Cookie consent (TrustArc) was not dismissed and sits in the focus order; not judged as design.",
+    "Many scripts were blocked (manifest network), which may explain some empty scroll sections; motion not judged from stills."
+  ]
+}

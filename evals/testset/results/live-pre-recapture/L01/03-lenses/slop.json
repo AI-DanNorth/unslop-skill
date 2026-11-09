@@ -1,0 +1,98 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A stock Tailwind/Inter SaaS skeleton (pill badge, two-line h1, mock-card hero, stat trio, equal card grids with caps labels, sticky CTA pills) that an agent prompted with 'landing page for an AI tool recommender' would produce nearly verbatim; the only specific content is the tool list itself.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440 and 375",
+      "evidence": "Failed T-DEFAULT-AGENT: pale blue-grey page (oklch 0.973 0.006 264), Inter body with Space Grotesk display, one royal-blue accent, pill badge 'Personalized AI tool bundles' with status dot, white rounded-2xl cards with hairline border and soft shadow, black pill 'View details' buttons. This is the saas-card-kit look family end to end; the 'Edit with Lovable' badge in tile 1440-00 confirms the builder default was shipped unchanged.",
+      "before": "Default Tailwind/shadcn kit: Inter + Space Grotesk, blue accent, rounded-2xl white cards, pill badge above h1",
+      "after": "Pick one visual decision that belongs to a 'stack builder' (e.g. stacked-layer motif, or a real recommendation output as the hero) and let the kit recede; [DATA NEEDED: brand direction]",
+      "why": "Nothing in the visual system was chosen for this product; it is the builder's default.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "'What are you trying to accomplish?' grid and 'AI Tools Directory' grid (tiles 1440-00 to 1440-02)",
+      "evidence": "Ten identical goal cards (caps blue label, h3, one-line description) in a 3-column grid leaving one orphan card ('Design faster') alone on the last row, then six identical tool cards each ending in a full-width black 'View details' pill. Failed T-STOCK-ORDER: badge hero with mock UI, stat trio, equal feature cards, equal product cards, table, minimal footer = 5 stock sections in stock order.",
+      "before": "10 equal goal cards, 3-up, with an orphan; 6 equal tool cards with 6 identical CTAs",
+      "after": "Make the goal picker an actual control (a single select row or chip set that leads into the questionnaire) and drop the duplicate per-card 'View details' buttons; let the card itself be the link",
+      "why": "Equal card grids are the default skeleton; the orphan card shows the layout was not composed for the content count.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "goal and tool cards, hero badge",
+      "evidence": "Every card carries a tracked caps label above its heading that repeats the heading: 'VIDEO' over 'Start a YouTube channel', 'DESIGN' over 'Design faster', 'WRITING' over 'Grow a blog'; plus the pill eyebrow 'Personalized AI tool bundles' above the h1.",
+      "before": "LEARNING / Study smarter; VIDEO / Start a YouTube channel",
+      "after": "Delete the caps labels on goal cards (the heading already says it); keep category only on tool cards if it is a filter",
+      "why": "Eyebrow-over-heading on every card is a template reflex; deleting them loses nothing (T-DELETION).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-169",
+      "tier": "Reflex",
+      "where": "hero right column",
+      "evidence": "Floating mock cards 'Your goal / Start a YouTube channel', 'Recommended stack', 'Workflow 1-2-3' over a pale gradient slab: a static dashboard-style mock with illustrative data, the standard 'product UI floating in the hero' device.",
+      "before": "Three floating faux-UI cards on a tinted slab",
+      "after": "Show the real first question of the flow inline so the hero is the product, or one real recommendation output with a link",
+      "why": "Mock-UI hero is a look-family tell the sweep cannot measure.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "INT-007",
+      "tier": "Reflex",
+      "where": "hero stat row",
+      "evidence": "'17 curated tools · 5 budget tiers · 3 questions' stat trio under the CTAs; the stat band is filler proof (counts of the product's own config, not outcomes).",
+      "before": "17 curated tools / 5 budget tiers / 3 questions",
+      "after": "Drop the row, or replace with one concrete example output",
+      "why": "Stat trio is a stock hero accessory; T-THREE-LINE: not picturable as value to the visitor.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "hero sub-line and card descriptions",
+      "evidence": "T-FRESH-READER lines that fit any site: 'Search the full library of curated tools.', 'Side-by-side on price, level, and best use.', 'Win clients, deliver faster, and look bigger than you are.' Em-dash pair in the sub-line 'Answer three questions — your goal, budget, and technical level — and get a tailored bundle'.",
+      "before": "\"Search the full library of curated tools.\"",
+      "after": "Say what is in it: '17 tools, priced in USD or INR, filtered by what you want to make'",
+      "why": "Generic subheads make the page interchangeable.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Finish",
+      "where": "footer, tile 1440-03",
+      "evidence": "Footer is the logo plus the h1 repeated ('Tell us the goal. We'll build the stack.'); 'A' letter-in-blue-square logo is a placeholder mark.",
+      "before": "Blue rounded square with 'A' + repeated tagline",
+      "after": "[DATA NEEDED: real logo mark]; footer with contact, about, data sources/affiliate disclosure",
+      "why": "Placeholder logo and echoed tagline read as scaffold left in place.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The concept is concrete: a goal -> budget -> level flow returning named tools (Perplexity, ElevenLabs, CapCut) with real prices and a USD/INR toggle for an Indian audience.",
+    "The comparison table is plain and useful ('Best for: Faceless video and podcast narration')."
+  ],
+  "not_investigated": [
+    "no 00-contract.md brief in the run directory; judged without brand overrides",
+    "site scripts were blocked in capture (manifest network.blocked), so the interactive flow behind 'Find my stack' was not seen"
+  ]
+}

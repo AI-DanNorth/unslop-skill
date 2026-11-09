@@ -1,0 +1,40 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The idea is the intro line, 'Interfaces succeed because of hundreds of choices. This is a living, non-exhaustive list of those decisions', and the page is exactly that: one narrow column of bold-lead rules with inline code, set in Vercel's own Geist on near-black under the Vercel triangle, with nothing else on it.",
+  "score": {
+    "dimension": "Concept",
+    "value": 9,
+    "reason": "T-OWN-SYSTEM, T-KIND-FIT, T-ONE-SENTENCE, T-RIVAL-NAME and T-IDEA-CARRIES pass for a Read page with one content type; it cut every marketing device (no hero image, no cards, no stats, no closing band) and keeps only the list, an agent-install section and a credits line."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [],
+  "strengths": [
+    "T-OWN-SYSTEM passes: GeistSans and Geist Mono, the triangle mark, the #0A0A0A ground and grey secondary text are Vercel's own system, applied the same way at 1440 and 375 (CON-001).",
+    "T-KIND-FIT passes for a Read page: one content type, a reference list, and one job per section ('Interactions', 'Forms' and so on), as draft CON-113 asks. Each rule is a bold imperative followed by a specific value, for example 'Match visual & hit targets. … expand its hit target to ≥ 24px. On mobile, the minimum size is 44px.'",
+    "T-RIVAL-NAME passes: the rules cite the client's own stack ('some specific to React/Next.js', 'Vercel SDK' in the non-breaking-space example, 'Right-click the nav logo to surface brand assets') and the page closes on 'Join Vercel' and named contributors.",
+    "T-IDEA-CARRIES passes: the list idea runs to the end, and the closing 'Integrate with Agents' section turns the same list into an installable skill and an AGENTS.md download rather than switching to marketing."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Read (reference guidelines) from the page itself.",
+    "T-DELETE-PICTURE was skipped: the page has no lead image, which suits its job.",
+    "One script was blocked in capture (manifest.network); the anchor-link icons that appear on hover were not judged."
+  ]
+}

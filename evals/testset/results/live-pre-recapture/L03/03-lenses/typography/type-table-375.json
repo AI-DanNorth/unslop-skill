@@ -1,0 +1,593 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "Inter": {
+   "elements": 81,
+   "chars": 1947,
+   "roles": {
+    "small": 52,
+    "body": 14,
+    "control": 14,
+    "other": 1
+   },
+   "sizes_px": [
+    12.0,
+    14.0,
+    16.0,
+    18.0
+   ],
+   "source": "declared"
+  },
+  "Plus Jakarta Sans": {
+   "elements": 36,
+   "chars": 428,
+   "roles": {
+    "other": 9,
+    "h1": 1,
+    "h2": 4,
+    "h3": 19,
+    "h4": 3
+   },
+   "sizes_px": [
+    14.0,
+    15.84,
+    16.0,
+    18.0,
+    24.0,
+    36.0
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 10,
+   "sizes_px": {
+    "15.84": 6,
+    "18.0": 2,
+    "36.0": 1,
+    "16.0": 1
+   },
+   "median_px": 15.84,
+   "weights": {
+    "700": 6,
+    "800": 3,
+    "400": 1
+   },
+   "faces": {
+    "Plus Jakarta Sans": 9,
+    "Inter": 1
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 52,
+   "sizes_px": {
+    "12.0": 51,
+    "14.0": 1
+   },
+   "median_px": 12.0,
+   "weights": {
+    "600": 24,
+    "400": 21,
+    "500": 7
+   },
+   "faces": {
+    "Inter": 52
+   },
+   "italic": 0,
+   "leading_median": 1.33,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h1": {
+   "count": 1,
+   "sizes_px": {
+    "36.0": 1
+   },
+   "median_px": 36.0,
+   "weights": {
+    "800": 1
+   },
+   "faces": {
+    "Plus Jakarta Sans": 1
+   },
+   "italic": 0,
+   "leading_median": 1.1,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 14,
+   "sizes_px": {
+    "14.0": 9,
+    "16.0": 3,
+    "18.0": 1,
+    "12.0": 1
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 14
+   },
+   "faces": {
+    "Inter": 14
+   },
+   "italic": 0,
+   "leading_median": 1.62,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 14,
+   "sizes_px": {
+    "12.0": 6,
+    "14.0": 5,
+    "16.0": 3
+   },
+   "median_px": 14.0,
+   "weights": {
+    "600": 9,
+    "400": 5
+   },
+   "faces": {
+    "Inter": 14
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 4,
+   "sizes_px": {
+    "24.0": 4
+   },
+   "median_px": 24.0,
+   "weights": {
+    "700": 4
+   },
+   "faces": {
+    "Plus Jakarta Sans": 4
+   },
+   "italic": 0,
+   "leading_median": 1.33,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 19,
+   "sizes_px": {
+    "14.0": 10,
+    "16.0": 9
+   },
+   "median_px": 14.0,
+   "weights": {
+    "600": 10,
+    "700": 9
+   },
+   "faces": {
+    "Plus Jakarta Sans": 19
+   },
+   "italic": 0,
+   "leading_median": 1.25,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  },
+  "h4": {
+   "count": 3,
+   "sizes_px": {
+    "14.0": 3
+   },
+   "median_px": 14.0,
+   "weights": {
+    "600": 3
+   },
+   "faces": {
+    "Plus Jakarta Sans": 3
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h1/h2",
+   "ratio": 1.5
+  },
+  {
+   "pair": "h2/h3",
+   "ratio": 1.71
+  },
+  {
+   "pair": "h3/h4",
+   "ratio": 1.0
+  },
+  {
+   "pair": "h4/body",
+   "ratio": 1.0
+  }
+ ],
+ "distinct_sizes_px": [
+  12.0,
+  14.0,
+  15.84,
+  16.0,
+  18.0,
+  24.0,
+  36.0
+ ],
+ "measure": {
+  "paragraphs": 2,
+  "cpl_median": 33.5,
+  "cpl_max": 34,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.sectio",
+   "text": "Tell us the goal.",
+   "size": "36px",
+   "level": 1,
+   "lines": 2,
+   "chars": 39,
+   "last_line_share": 0.75,
+   "leading": 1.1,
+   "tracking_em": -0.025,
+   "weight": "800",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.text-center.mb-10",
+   "text": "What are you trying to accomplish?",
+   "size": "24px",
+   "level": 2,
+   "lines": 2,
+   "chars": 34,
+   "last_line_share": 0.59,
+   "leading": 1.33,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Study smarter",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 13,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Start a YouTube channel",
+   "size": "14px",
+   "level": 3,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 0.51,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Create content",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 14,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Build a website",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 15,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Build a SaaS product",
+   "size": "14px",
+   "level": 3,
+   "lines": 2,
+   "chars": 20,
+   "last_line_share": 0.69,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Start a business",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 16,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Freelance",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 9,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Grow a blog",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 11,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Automate repetitive work",
+   "size": "14px",
+   "level": 3,
+   "lines": 2,
+   "chars": 24,
+   "last_line_share": 0.26,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.c",
+   "text": "Design faster",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 13,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.025,
+   "weight": "600",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div > section.bg-white.border-y:nth-of-type(3) > div.section > div.text-center.m",
+   "text": "How it works",
+   "size": "24px",
+   "level": 2,
+   "lines": 1,
+   "chars": 12,
+   "last_line_share": null,
+   "leading": 1.33,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type",
+   "text": "Choose your goal",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 16,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type",
+   "text": "Set your budget",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 15,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.section > div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type",
+   "text": "Share your skill level",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 22,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div > section.section.py-16:nth-of-type(4) > div.flex.items-end:nth-of-type(1) >",
+   "text": "Featured tools",
+   "size": "24px",
+   "level": 2,
+   "lines": 1,
+   "chars": 14,
+   "last_line_share": null,
+   "leading": 1.33,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(1) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "ChatGPT",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(2) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "Claude",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 6,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(3) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "Gemini",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 6,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(4) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "Perplexity",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(5) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "Canva",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 5,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div.card.card-hover:nth-of-type(6) > div.flex.items-start:nth-of-type(1) > div.m",
+   "text": "ElevenLabs",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  },
+  {
+   "sel": "div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.re",
+   "text": "Ready to find your stack?",
+   "size": "24px",
+   "level": 2,
+   "lines": 2,
+   "chars": 25,
+   "last_line_share": 0.38,
+   "leading": 1.33,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Plus Jakarta Sans"
+  }
+ ],
+ "head_treatments": [
+  {
+   "sel": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth",
+   "text": "We'll build the stack.",
+   "size": "36px",
+   "heading": "Tell us the goal.",
+   "differs": [
+    "color"
+   ]
+  }
+ ],
+ "small_caps_or_tracked": {
+  "count": 0,
+  "examples": []
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 4,
+  "curly_apostrophe": 0,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": false,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": false,
+  "unreadable_sheets": false
+ }
+}

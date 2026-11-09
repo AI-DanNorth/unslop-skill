@@ -1,0 +1,98 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A stock AI-builder SaaS skeleton (pill badge, two-tone centred hero, trust-chip row, 10 identical icon cards, 1-2-3 steps, equal tool cards, dark CTA band, link-farm footer with dead social links) with no brand, voice or proof of its own; the 'Made in Bolt' badge confirms the origin.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440px tiles 00-03",
+      "evidence": "Failed T-STOCK-ORDER: sections run pill badge + centred hero with blue second line -> trust chips -> equal feature-card grid -> 'How it works' 1-2-3 steps -> 'Featured tools' equal 3-up cards -> dark rounded CTA band 'Ready to find your stack?' -> 4-column footer. 7 stock sections in stock order, so the read is generated despite real tool names.",
+      "before": "Hero / chips / 10-card grid / 3 steps / 6 cards / CTA band / footer",
+      "after": "Lead with the product itself: put the three-question picker in the first screen and show a real resulting stack, cutting the 'How it works' and CTA bands that only restate it.",
+      "why": "Specific nouns on a default skeleton still read as a default page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "'What are you trying to accomplish?' grid, 1440 tile 00-01",
+      "evidence": "Failed T-DELETION: all ten goal cards ('Study smarter', 'Start a YouTube channel', 'Build a website'...) carry the same blue concentric-target icon in a tinted tile. Removing it loses nothing; it does not even distinguish the goals.",
+      "before": "Identical target icon tile above every goal heading",
+      "after": "Drop the icon tile, or give each goal a meaningful mark (e.g. the 2-3 tool logos that goal resolves to).",
+      "why": "A repeated placeholder icon is the clearest sign nobody chose the decoration.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00",
+      "evidence": "Failed T-RIVAL-NAME / T-MIRROR: 'Tell us the goal. We'll build the stack.' and 'Stop browsing endless directories... AI tools that actually fits your goal, budget, and skill level' stay true for any AI-tool recommender (Futurepedia, There's An AI For That quiz). The brand is literally the category name, 'AI Stack', with a stacked-layers glyph.",
+      "before": "\"Tell us the goal. We'll build the stack.\"",
+      "after": "[DATA NEEDED: what this recommender knows or does that directories don't, e.g. who curates the 20 tools and on what test] stated in the head.",
+      "why": "Nothing on the first screen belongs to this business; Concept capped at 5.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "INT-005",
+      "tier": "Floor",
+      "where": "footer 'Connect' icons, 1440 tile 03",
+      "evidence": "Twitter, GitHub and LinkedIn icon links all have href=\"#\" (dom-1440.json).",
+      "before": "<a href=\"#\" aria-label=\"Twitter\">",
+      "after": "Link real profiles or remove the 'Connect' column: [DATA NEEDED: actual social URLs].",
+      "why": "Dead social links are template residue and imply a presence that does not exist.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero chips under CTAs, 1440 tile 00",
+      "evidence": "Failed T-THREE-LINE: '20+ curated tools', 'Instant results', 'Updated for 2026' with shield / bolt / trend icons are not picturable, not falsifiable and not only-this-business; they are the stock trust-chip row. The page itself later says 'A few of the 20 tools', so '20+' is also padding.",
+      "before": "\"20+ curated tools · Instant results · Updated for 2026\"",
+      "after": "One concrete proof line, e.g. [DATA NEEDED: who reviewed the tools and when], or remove the row.",
+      "why": "Generic reassurance chips are a default hero accessory.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-221",
+      "tier": "Reflex",
+      "where": "section heads and CTA band, 1440 tiles 01-02",
+      "evidence": "T-FRESH-READER: 'What are you trying to accomplish?', 'How it works / Three questions. One personalized stack.', 'Ready to find your stack?' would fit any quiz-funnel site; the fragment pair 'Three questions. One personalized stack.' is a stock cadence.",
+      "before": "\"Ready to find your stack?\"",
+      "after": "Replace with a head that carries information, e.g. a sample result: 'A YouTube starter stack: [tools], [price]/mo'.",
+      "why": "Headings that fit any site add length without telling the reader anything.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-005",
+      "tier": "Reflex",
+      "where": "Featured tools, 1440 tile 02",
+      "evidence": "Six equal tool cards with initials avatars ('GP', 'Cl', 'Ge', 'Px', 'Cv', 'EL') in brand-ish colours instead of logos, the same yellow 'Freemium' pill on every card, and identical 'Free / ₹1,650 mo' pricing on four of six.",
+      "before": "Initials-in-a-square avatars and a 'Freemium' badge repeated six times",
+      "after": "Use the real tool marks and drop the badge where every item has it; differentiate cards by what the tool is for in this stack.",
+      "why": "Generated directories default to initials avatars and repeated status pills; the repetition carries no information.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The tool cards do name real products with concrete use tags and local-currency prices (₹), which is more specific than a generic feature grid.",
+    "The goal list ('Start a YouTube channel', 'Freelance', 'Grow a blog') speaks in user tasks, not features."
+  ],
+  "not_investigated": [
+    "The 'Find My Stack' quiz flow and result page (only the home route was captured).",
+    "Whether prices are current: '₹1,650 mo' may be accurate conversions; not verified."
+  ]
+}

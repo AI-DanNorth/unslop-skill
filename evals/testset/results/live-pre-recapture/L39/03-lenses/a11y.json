@@ -1,0 +1,47 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T12:00:00",
+  "tests_run": [
+    "verify-sweep-floor-hits",
+    "alt-text-quality",
+    "link-button-purpose",
+    "focus-order",
+    "use-of-colour",
+    "non-text-contrast",
+    "reflow-375",
+    "forms-errors",
+    "motion-timing",
+    "headings-landmarks"
+  ],
+  "findings": [
+    {
+      "rule": "A11-114",
+      "tier": "Floor",
+      "where": "the 39 pitch-deck slide images, 1440 tiles 02-11",
+      "evidence": "dom-1440.json: 13 slide images have alt=\"\" (the first five, e.g. e20y1cmsstuxxzr4jb0wzn3zgyp31epmj.jpeg, which carry text such as 'Find and Contact the People You Need Through...'), and 26 have only 'LinkedIn Series B Pitch Deck to Greylock: Slide N'. The numbering is also off by one (Slide06.jpg is labelled 'Slide 5'). The slides are the subject of the essay and are images of text.",
+      "before": "alt=\"\" / alt=\"LinkedIn Series B Pitch Deck to Greylock: Slide 5\"",
+      "after": "alt=\"Slide 6: [the slide's headline and key bullets as written]\", or a visually hidden transcript of each slide's text beneath it; fix the off-by-one numbering.",
+      "why": "WCAG 2.2 1.1.1 Non-text Content and 1.4.5 Images of Text: a screen-reader user cannot follow commentary about slides whose text is unavailable.",
+      "test": "T-READ-ALOUD"
+    },
+    {
+      "rule": "A11-102",
+      "tier": "Floor",
+      "where": "heading outline",
+      "evidence": "76 headings: 36 'Context', 36 'Advice', 2 empty h2s, and the page title 'Pitch Advice for Entrepreneurs' is an h2 (no h1). A headings list is 72 identical entries.",
+      "before": "<h2>Context</h2> … <h2>Advice</h2> (×36)",
+      "after": "<h1>LinkedIn's Series B pitch to Greylock</h1>, then <h2>Slide 6: [slide title]</h2> with <h3>Context</h3><h3>Advice</h3> under it; remove the empty h2s.",
+      "why": "WCAG 2.2 2.4.6 Headings and Labels and 1.3.1 Info and Relationships.",
+      "test": "T-READ-ALOUD"
+    }
+  ],
+  "strengths": [
+    "Body text is dark grey on white at ~18px with a comfortable measure; reflow at 375px (tile 375-01) is a clean single column with no sideways scroll.",
+    "A 'Skip to content' link exists; lists in the text are real <ul>/<ol>."
+  ],
+  "not_investigated": [
+    "Sweep Floor hits on zoom blocking (user-scalable=0, maximum-scale=1) and the slider-revolution header link without a name were confirmed in the evidence and not repeated.",
+    "Focus 'covered by fixed or sticky element' hits on 'Skip to content' and the header links: the header card is sticky; not re-verified on the focus crops.",
+    "Header nav pill links ('Books', 'Podcasts', 'Writing') keyboard behaviour on mobile menu."
+  ]
+}

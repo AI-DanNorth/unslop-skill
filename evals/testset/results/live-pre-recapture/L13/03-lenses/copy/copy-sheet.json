@@ -1,0 +1,457 @@
+{
+ "width": 1440,
+ "page_words": 166,
+ "running_words": 90,
+ "hero": {
+  "h1": "Build faster with workflows for modern teams",
+  "h1_words": 7,
+  "sub_line": "The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.",
+  "sub_line_words": 19,
+  "first_screen_actions": [
+   {
+    "label": "Get started",
+    "href": "#",
+    "sel": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)"
+   },
+   {
+    "label": "Start free trial →",
+    "href": "#",
+    "sel": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)"
+   },
+   {
+    "label": "Watch demo",
+    "href": "#",
+    "sel": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-ghost:nth-of-type(2)"
+   }
+  ],
+  "first_screen_digits": [
+   "01"
+  ]
+ },
+ "outline": [
+  {
+   "level": 1,
+   "text": "Build faster with workflows for modern teams",
+   "words": 7,
+   "chars": 44,
+   "y": 276,
+   "sel": "html > body > section.hero:nth-of-type(1) > h1.h1",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "The all-in-one platform that helps product teams ship better software in record time.",
+   "opener_overlap": 0.2
+  },
+  {
+   "level": 2,
+   "text": "Everything you need to ship great products",
+   "words": 7,
+   "chars": 42,
+   "y": 1246,
+   "sel": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "One platform.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Lightning Fast",
+   "words": 2,
+   "chars": 14,
+   "y": 1609,
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Move from idea to production in minutes, not months.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Enterprise Secure",
+   "words": 2,
+   "chars": 17,
+   "y": 1609,
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(2) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "SOC 2 compliant infrastructure with end-to-end encryption.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Built to Scale",
+   "words": 3,
+   "chars": 14,
+   "y": 1609,
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(3) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "From your first prototype to millions of users — Lumina grows with your team without breaking a sweat.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 2,
+   "text": "Ready to transform how your team builds?",
+   "words": 7,
+   "chars": 40,
+   "y": 2058,
+   "sel": "html > body > section.cta-section:nth-of-type(4) > h2",
+   "category_label": false,
+   "formulas": [
+    "question"
+   ],
+   "next_opener": "Join thousands of teams already shipping faster with Lumina.",
+   "opener_overlap": 0.0
+  }
+ ],
+ "labels": {
+  "buttons_and_links": [
+   {
+    "label": "Product",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Solutions",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Pricing",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Customers",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Docs",
+    "n": 1,
+    "words": 1
+   },
+   {
+    "label": "Sign in",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Get started",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Start free trial →",
+    "n": 1,
+    "words": 3
+   },
+   {
+    "label": "Watch demo",
+    "n": 1,
+    "words": 2
+   },
+   {
+    "label": "Start your free trial →",
+    "n": 1,
+    "words": 4
+   }
+  ],
+  "one_target_many_labels": {},
+  "one_label_many_targets": {}
+ },
+ "microcopy": {
+  "form_labels": [],
+  "after_actions": [
+   {
+    "source": "async.json",
+    "status": "not captured"
+   }
+  ]
+ },
+ "rhythm": {
+  "sentences": 11,
+  "mean_words": 8.2,
+  "stdev_words": 4.5,
+  "share_4_words_or_less": 0.18,
+  "note": "CPY-206: warn when stdev is under 4 over 15 or more sentences, or over 30% are 4 words or less"
+ },
+ "sibling_evenness": [
+  {
+   "pattern": "body > section.features > div.grid > div.card > p",
+   "word_counts": [
+    22,
+    12,
+    17
+   ],
+   "max_over_min": 1.83
+  }
+ ],
+ "patterns": {
+  "contrast_frame": {
+   "count": 1,
+   "examples": [
+    {
+     "match": ", not months",
+     "where": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > p",
+     "context": "Move from idea to production in minutes, not months. Our AI handles the heavy lifting so you can focus on what"
+    }
+   ],
+   "card": "CPY-155, budget 2 per page"
+  },
+  "negation_run": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-156, budget 1"
+  },
+  "ing_rider": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-158, budget 1"
+  },
+  "word_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161: a list of three single words"
+  },
+  "fragment_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161, CPY-187: 'Fast. Simple. Secure.'"
+  },
+  "exclamation": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-241: none in body copy"
+  },
+  "questions": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-176: no rhetorical questions; FAQ questions are not findings"
+  }
+ },
+ "long_form_regions": [],
+ "term_variants": [],
+ "sweep": {
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "hits": [
+    {
+     "where": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2  \"Everything you need to ship great products\"",
+     "evidence": "\"Everything you need to\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4) > h2  \"Ready to transform how your team builds?\"",
+     "evidence": "\"Ready to transform\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4) > p  \"Join thousands of teams already shipping faster wi\"",
+     "evidence": "\"Join thousands of\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1)",
+     "evidence": "\"Everything you need to\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4)",
+     "evidence": "\"Join thousands of\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4)",
+     "evidence": "\"Ready to transform\" (stock-phrases/openers, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)  \"Start free trial →\"",
+     "evidence": "arrow glued to label \"Start free trial →\" (2 on page)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4) > a.btn.btn-primary  \"Start your free trial →\"",
+     "evidence": "arrow glued to label \"Start your free trial →\" (2 on page)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 8
+  },
+  "em_dash": {
+   "status": "ran",
+   "rule": "CPY-004",
+   "hits": [],
+   "n": 0
+  },
+  "h1_words": {
+   "status": "ran",
+   "rule": "CPY-003",
+   "hits": [],
+   "n": 0
+  },
+  "words_per_screen": {
+   "status": "ran",
+   "rule": "CPY-001",
+   "hits": [],
+   "n": 0
+  },
+  "page_words": {
+   "status": "ran",
+   "rule": "CPY-002",
+   "hits": [],
+   "n": 0
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "hits": [],
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "hits": [],
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "hits": [
+    {
+     "where": "html > body > section.hero:nth-of-type(1)",
+     "evidence": "\"Trusted by 10,000+\" (invented-metrics/social-proof-counts, fail)",
+     "tier": "Floor"
+    }
+   ],
+   "n": 1
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "hits": [],
+   "n": 0
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "hits": [
+    {
+     "where": "html > body > section.logos:nth-of-type(2) > div.logos-inner > span:nth-of-type(1)  \"Northwind\"",
+     "evidence": "\"Northwind\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.logos:nth-of-type(2) > div.logos-inner > span:nth-of-type(2)  \"Halcyon\"",
+     "evidence": "\"Halcyon\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.logos:nth-of-type(2) > div.logos-inner > span:nth-of-type(4)  \"Fieldnote\"",
+     "evidence": "\"Fieldnote\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.logos:nth-of-type(2)",
+     "evidence": "\"Fieldnote\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.logos:nth-of-type(2)",
+     "evidence": "\"Halcyon\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.logos:nth-of-type(2)",
+     "evidence": "\"Northwind\" (default-names/fake-brands, fail)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 6
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "hits": [
+    {
+     "where": "html > body > section.hero:nth-of-type(1) > span.section-number  \"01\"",
+     "evidence": "template chrome (numbering-tokens): \"01\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > span.section-number  \"02\"",
+     "evidence": "template chrome (numbering-tokens): \"02\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.cta-section:nth-of-type(4) > span.section-number  \"03\"",
+     "evidence": "template chrome (numbering-tokens): \"03\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.hero:nth-of-type(1)",
+     "evidence": "template chrome (numbering-tokens): \"01 AI-NATIVE WORKFLOWS Build faster with intelligent workflo\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1)",
+     "evidence": "template chrome (numbering-tokens): \"02 Everything you need to ship great products One platform. \"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon  \"⚡\"",
+     "evidence": "template chrome (emoji-bullets): \"⚡\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "evidence": "template chrome (emoji-bullets): \"⚡ Lightning Fast Move from idea to production in minutes, no\"",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 7
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "hits": [
+    {
+     "where": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon  \"⚡\"",
+     "evidence": "emoji used as an icon: \"⚡\" (3 on page)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(2) > div.icon  \"🔒\"",
+     "evidence": "emoji used as an icon: \"🔒\" (3 on page)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(3) > div.icon  \"📈\"",
+     "evidence": "emoji used as an icon: \"📈\" (3 on page)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 3
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "hits": [],
+   "n": 0
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "hits": [],
+   "n": 0
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "hits": [],
+   "n": 0
+  }
+ }
+}

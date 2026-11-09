@@ -1,0 +1,88 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A two-section v0-style SaaS skeleton (pill badge, two-line 'Stop X. Start Y.' hero with the second line in brand blue, mock product card, avatar-initials social proof, 01/02/03 step cards) with no footer and nothing that belongs to this product beyond the tool names in the mock.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero, 1440px tile 00",
+      "evidence": "Failed T-DEFAULT-AGENT: pill badge with sparkle icon 'A better way to discover AI', h1 'Stop searching. / Start building.' with the second line coloured #1d4ed8, primary + ghost button pair, overlapping initial avatars 'A S M J', and a floating mock card on the right. Every element is the stock v0/shadcn landing hero; dom meta generator is 'v0.app'.",
+      "before": "\"Stop searching. Start building.\" + pill badge + mock card + avatar row",
+      "after": "A hero built around the actual job: e.g. the goal picker itself (goal, budget, comfort level) live in the first screen, so the visitor starts using it instead of reading about it",
+      "why": "The whole first screen is a category template; swap the product and nothing changes.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "h1 and h2",
+      "evidence": "Failed T-RIVAL-NAME: 'Stop searching. Start building.' and 'Less browsing. More doing.' stay true for any tool directory, no-code builder or productivity app. Both use the same two-fragment antithesis.",
+      "before": "\"Stop searching. Start building.\" / \"Less browsing. More doing.\"",
+      "after": "A head only this product can say, e.g. what the stack recommendation is based on [DATA NEEDED: how the matching works, how many tools are covered]",
+      "why": "The headline does no work; the paired-fragment formula repeats across both headings (T-OVER-CORRECTION substitute habit).",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "'How it works' section, tile 01",
+      "evidence": "Failed T-STOCK-ORDER: three equal white cards labelled 01 / 02 / 03 with 'Tell us what you want to do', 'Get your personalized stack', 'Make something great'; the card bodies are one line each and the third ('Follow the steps and start building today.') says nothing. Section order: badge hero + mock, 1-2-3 steps, end. No footer.",
+      "before": "01 Tell us what you want to do / 02 Get your personalized stack / 03 Make something great",
+      "after": "Show one worked example end to end (goal in, stack out with why each tool was picked) instead of three abstract steps",
+      "why": "Equal step cards are the default explanation section; 'Make something great' fails T-THREE-LINE (not picturable, not falsifiable, not specific).",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Floor",
+      "where": "hero, under the buttons",
+      "evidence": "Coloured initial avatars 'A', 'S', 'M', 'J' stacked next to the count: placeholder faces standing in for people. (The '12,000+' count itself is a sweep hit.)",
+      "before": "Four letter-avatar circles + 'Trusted by 12,000+ curious builders'",
+      "after": "Remove the avatar stack; show real users only with consent [DATA NEEDED: real user count and source]",
+      "why": "Letter avatars are fake-people filler that imply a crowd the page cannot show.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-010",
+      "tier": "Reflex",
+      "where": "hero mock card",
+      "evidence": "Failed T-DELETION: 'YOUR PERSONALIZED STACK' caps label, 'Ready to go' green status pill, and 01-04 numbers on each tool row add nothing; letter tiles 'C', 'CC', '11' stand in for real tool logos. At 375px the 'Ready to go' pill wraps and clips ('Ready to / go').",
+      "before": "Mock card with status pill, row numbers and initial tiles",
+      "after": "Show the recommendation with the reason each tool was chosen and its own price, drop the row numbers and the status pill",
+      "why": "Decorative dashboard chrome makes the mock look like a component demo rather than this product's output.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CON-102",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "Page is 1228px tall at 1440: hero plus one three-card section, no footer, no tool list, no pricing, no about. Nav items 'AI tools', 'Compare', 'About' are <button>s with no href.",
+      "before": "Two sections, no footer",
+      "after": "[DATA NEEDED: real tool catalogue, comparison content, who runs this] and a footer with contact and ownership",
+      "why": "A thin page with dead nav reads as a generated shell, not a product site; the visitor's job (pick tools) has no content to act on.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "The hero mock names concrete tools (ChatGPT, Canva, CapCut, ElevenLabs) and a rupee monthly cost, which hints at a real local audience; keep that specificity.",
+    "Sub-line 'Tell us the goal. We'll build the stack.' states the mechanism plainly."
+  ],
+  "not_investigated": [
+    "Behaviour of the goal picker behind 'Find my AI stack' (not captured)",
+    "Brand brief: no contract overrides supplied"
+  ]
+}

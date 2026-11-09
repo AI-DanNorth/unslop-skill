@@ -1,0 +1,152 @@
+{
+ "verdict_draft": "fix",
+ "open_floor": 1,
+ "findings": [
+  {
+   "rule": "TYP-004",
+   "tier": "Floor",
+   "where": "body > div.err-box > div.message:nth-of-type(1) > div.title-box:nth-of-type(2) > h1  \"This app isn't live yet\"",
+   "evidence": "declared \"Replit Diatype\" but Segoe UI drew the text",
+   "value": "Segoe UI",
+   "after": "Fix the font load (path, format, font-display) or declare the face you actually ship.",
+   "source": "sweep",
+   "detector": "fallback_face",
+   "title": "The intended font actually renders",
+   "remedy": "fix-typeset",
+   "fix": "Fix the font load (path, format, font-display) and wait for fonts before capture.",
+   "priority": "P0",
+   "dimension": "Craft",
+   "quality": 1.0,
+   "instances": 1
+  },
+  {
+   "rule": "LAY-004",
+   "tier": "Reflex",
+   "where": "y 1-217 at 1280px",
+   "evidence": "216px empty band",
+   "width": 1280,
+   "value": 216,
+   "source": "sweep",
+   "detector": "dead_band",
+   "title": "No dead bands",
+   "remedy": "fix-layout",
+   "fix": "Remove the empty band or fill it with content that earns the space.",
+   "priority": "P1",
+   "dimension": "Hierarchy",
+   "quality": 1.0,
+   "instances": 2,
+   "also": [
+    "y 1-267 at 1440px"
+   ]
+  },
+  {
+   "rule": "A11-004",
+   "tier": "Reflex",
+   "where": "div.err-box > div:nth-of-type(2) > div.footer-item:nth-of-type(1) > div.repl-links:nth-of-type(2) > a  \"Learn how to publish your app on Replit\"",
+   "evidence": "touch target 247x19px at 375px (min 44px)",
+   "width": 375,
+   "source": "sweep",
+   "detector": "targets",
+   "title": "Target size",
+   "remedy": "fix-a11y",
+   "fix": "Enlarge the hit area with padding or a pseudo-element.",
+   "priority": "P1",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 2,
+   "also": [
+    "div.err-box > div:nth-of-type(2) > div.footer-item:nth-of-type(2) > div.repl-links:nth-of-type(2) > a  \"Learn more about hosting on Replit\""
+   ]
+  },
+  {
+   "rule": "A11-007",
+   "tier": "Reflex",
+   "where": "page",
+   "evidence": "no <main> landmark",
+   "source": "sweep",
+   "detector": "headings_landmarks",
+   "title": "Headings and landmarks",
+   "remedy": "fix-a11y",
+   "fix": "Fix levels in markup and size with CSS.",
+   "priority": "P1",
+   "dimension": "Accessibility",
+   "quality": 0.88,
+   "instances": 2,
+   "also": [
+    "page"
+   ]
+  },
+  {
+   "rule": "TYP-003",
+   "tier": "Reflex",
+   "where": "body > div.err-box > div.message:nth-of-type(1) > div.title-box:nth-of-type(2) > h1  \"This app isn't live yet\"",
+   "evidence": "display text at 24px set in Segoe UI, a UI text face",
+   "source": "sweep",
+   "detector": "banned_fonts",
+   "title": "No UI text faces as display type",
+   "remedy": "fix-typeset",
+   "fix": "Pick a display face for the brief; see substitutes in data/lexicons/fonts.yaml.",
+   "priority": "P1",
+   "dimension": "Craft",
+   "quality": 1.0,
+   "instances": 1
+  },
+  {
+   "rule": "A11-002",
+   "tier": "Finish",
+   "where": "body > div.err-box > div.message:nth-of-type(1) > div.description-box:nth-of-type(3) > h2  \"We couldn't find a Replit App at this address. If \"",
+   "evidence": "106-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+   "value": 14.0,
+   "priority": "P3",
+   "source": "sweep",
+   "detector": "text_floor",
+   "title": "Text size floors",
+   "remedy": "fix-typeset",
+   "fix": "Raise to the floor; cut words rather than shrink.",
+   "dimension": "Accessibility",
+   "quality": 1.0,
+   "instances": 3,
+   "also": [
+    "div.err-box > div:nth-of-type(2) > div.footer-item:nth-of-type(1) > div.repl-links:nth-of-type(2) > a  \"Learn how to publish your app on Replit\"",
+    "div.err-box > div:nth-of-type(2) > div.footer-item:nth-of-type(2) > div.repl-links:nth-of-type(2) > a  \"Learn more about hosting on Replit\""
+   ]
+  },
+  {
+   "rule": "ROB-004",
+   "tier": "Finish",
+   "where": "body > div.err-box > div.message:nth-of-type(1) > div.description-box:nth-of-type(3) > h2  \"We couldn't find a Replit App at this address. If \"",
+   "evidence": "last line is 22% of the measure at 375px (3 lines)",
+   "width": 375,
+   "value": 0.22,
+   "source": "sweep",
+   "detector": "widows",
+   "title": "No widows in headings and short paragraphs",
+   "remedy": "fix-polish",
+   "fix": "text-wrap: balance on headings, pretty on paragraphs (Latin only).",
+   "priority": "P3",
+   "dimension": "Usability",
+   "quality": 1.0,
+   "instances": 1
+  }
+ ],
+ "dropped_below_quality_floor": 0,
+ "not_investigated": [
+  "flat_hierarchy (TYP-001): skipped: only 2 type roles",
+  "spacing_monotony (LAY-001): skipped: only 9 spacing values",
+  "fake_send (INT-004): skipped: no forms",
+  "reduced_motion (A11-011): skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+  "distinctness (SLP-011): skipped: no ledger yet (skills/ledger records deliveries)",
+  "redesign_loss (PRC-002): skipped: redesign workflow only (no baseline_run in run.json)",
+  "capture: 1 other request(s) blocked, e.g. font https://ai-stack--techaffiliate.replit.app/__replco/static/fonts/ReplitDiatypeVariabl"
+ ],
+ "scores_mechanical": {
+  "Concept": null,
+  "Hierarchy": null,
+  "Craft": null,
+  "Accessibility": 6,
+  "Usability": null,
+  "Integrity": 10,
+  "Distinctiveness": null
+ },
+ "profile": "balanced"
+}

@@ -1,0 +1,78 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:20:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A deliberate console-dashboard concept (PS5-style hero art, cover carousel, controller legend) that no landing-page prompt would produce, but executed with AI-default finishes (violet-to-cyan gradient buttons, glow ring, gradient 'made with' credit, stock catalog copy) and visibly unreviewed collisions at desktop width.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-007",
+      "tier": "Reflex",
+      "where": "primary actions, 1440 tile 00 and 375 tile 00",
+      "evidence": "'PLAY' is a violet-to-magenta gradient pill and '$0.49' cart button is a cyan-to-blue gradient; 'Subscribe' is a cyan pill; the selected cover has a cyan glow ring. These are the violet/cyan defaults rather than colours drawn from the console theme or game art.",
+      "before": "Violet gradient PLAY + cyan gradient cart + cyan glow focus ring",
+      "after": "One flat action colour taken from the brand (the GG ghost mark is white on black) and a plain white selection ring like the console UI being referenced",
+      "why": "Purple/cyan gradient pairs with glow are the strongest machine-default colour tell (SLP-007, SLP-008, look family violet-gradient).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "hero info block over carousel, 1440 tile 00",
+      "evidence": "At 1440 the cover carousel sits on top of the 'PLAY' and 'ADD TO CART — $0.49' buttons, the 'FEATURED GAMES' label overprints 'Follow game', and 'Enter Fullscreen' overprints 'Install App'. The layout was not checked at this width.",
+      "before": "Carousel overlapping primary actions",
+      "after": "Reserve the carousel's height below the action row (e.g. grid rows: info / actions / carousel) so nothing overlaps at 1280-1440",
+      "why": "Unreviewed overlap is the signature of generated output shipped without a look; it also hides the main CTA.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "game description and catalog panel",
+      "evidence": "Failed T-FRESH-READER: \"Experience intense multiplayer combat with a variety of weapons, power-ups, and game modes\", \"delivers classic arena shooter gameplay with modern graphics and responsive controls\", \"Refine the catalog without leaving the action.\"",
+      "before": "\"Experience intense multiplayer combat with a variety of weapons, power-ups, and game modes.\"",
+      "after": "Concrete facts: [DATA NEEDED: modes, player count, what runs in-browser and how long it takes to load]",
+      "why": "Store-blurb filler that would fit any shooter page.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "footer credit, 1440 tile 00",
+      "evidence": "\"made with ♥ by Alex St. Louis for gamers everywhere\" set in mono with a multi-stop gradient fill (sweep gradient hit) and purple heart.",
+      "before": "Gradient mono 'made with ♥' credit",
+      "after": "Plain text credit in the UI face, or remove",
+      "why": "'Made with love' gradient credit line is a vibe-coded template residue; deleting it loses nothing (T-DELETION).",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "INT-001",
+      "tier": "Reflex",
+      "where": "carousel badges, 1440 tile 00",
+      "evidence": "Five consecutive covers badged 'NEW GAME' (sweep repeated_label) including Xonotic (2011) and The Simpsons: Hit & Run; badges carry no information.",
+      "before": "'NEW GAME' on 5 of 7 visible covers",
+      "after": "Badge only what is actually new this week, with a date, or drop the badge",
+      "why": "A label on everything is a label on nothing; misleading 'new' on a 2011 game.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "The concept is specific and chosen: a console-home metaphor with full-bleed game art, an ESRB rating plate, keyboard/gamepad legend ('SELECT / ROW / LAUNCH') and a cover-flow row. Keep the console idea.",
+    "Mobile adapts the metaphor ('Tap to Select | Swipe to Navigate') rather than collapsing to a generic list."
+  ],
+  "not_investigated": [
+    "Exo 2 display font and theme audio were blocked (manifest network); typography judged on the fallback face only.",
+    "Background is a video/animated scene seen as a still; motion not judged.",
+    "Rights to commercial game covers (Simpsons, Super Monkey Ball, Stormgate) are outside this lens."
+  ]
+}

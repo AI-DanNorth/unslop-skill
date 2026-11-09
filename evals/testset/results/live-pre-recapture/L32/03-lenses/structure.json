@@ -1,0 +1,58 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The job is finding and adopting design guidance (Read mode): one left-aligned column on a single 170px edge, a hero that names what the system is with one \"Get started\" action, then the three entry points (Styles, Components, Patterns) and plain head-and-link sections for news, brand update, principles, community, support and roadmap.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-FIVE-SECOND, T-HEADINGS-READ and T-LEFT-EDGES pass cleanly (18 text blocks on one start line); T-ANATOMY finds the three main entry points placed under the news and email blocks, and T-JUDGE-TILE finds a thin closing section."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-016",
+      "tier": "Reflex",
+      "where": "\"What's new\" and \"Get updates on the Design System\" before \"Styles / Components / Patterns\", tiles 1440-00 to 1440-01, 1440px and 375px",
+      "evidence": "In dom-1440.json the h2 order is \"What's new\" (y=575), \"Get updates on the Design System\" (y=855), then \"Styles\", \"Components\", \"Patterns\" (y=1106). At 375 the three entry points start at y=1210, the second phone screen down.",
+      "before": "Release note and email sign-up between the hero and the three main entry points.",
+      "after": "Move the Styles, Components and Patterns row directly under the hero, and put \"What's new\" and the email sign-up after it.",
+      "why": "Most visitors come to browse components or patterns; the release note and the newsletter push the routes they need below the first screen at 1440 and 375.",
+      "test": "T-ANATOMY"
+    },
+    {
+      "rule": "LAY-011",
+      "tier": "Reflex",
+      "where": "\"Roadmap\" section, tile 1440-03, 1440px",
+      "evidence": "The last section is a 36px \"Roadmap\" head over one two-line sentence with one link, about 170px of content between a divider and the footer.",
+      "before": "A full section with its own h2 for one link.",
+      "after": "Merge the roadmap link into the \"Community\" or \"Support\" section, where the upcoming-components link already sits.",
+      "why": "The section is a head block with one line, and \"Community\" already links to upcoming work, so the visitor reads two places for the same plan.",
+      "test": "T-JUDGE-TILE"
+    }
+  ],
+  "strengths": [
+    "Every heading and paragraph starts on one 170px edge at 1440 (the start-line count gives 18 blocks at x=168 and only the two Components and Patterns columns elsewhere), and at 375 everything starts at x=15.",
+    "The headings read alone outline the site: what it is, what's new, styles, components, patterns, brand update, principles, community, support, roadmap. None is a slogan.",
+    "The first screen answers what it is and what to do: the h1 \"Design your service using GOV.UK styles, components and patterns\" and \"Get started\" at y=451 to 494, inside the fold at every width.",
+    "The structure uses the system's own components (hero, section break dividers, plain link rows) and does nothing a Read page does not need."
+  ],
+  "not_investigated": [
+    "T-STOCK-ORDER and T-COMPOSITION-RUN: a Read page, where composition variety does not apply.",
+    "words_per_screen (172 words on screen 3) and off_scale_spacing are sweep findings and are not repeated; 172 words is within what a Read page should carry.",
+    "The cookie banner was dismissed by capture prep (manifest prep)."
+  ]
+}

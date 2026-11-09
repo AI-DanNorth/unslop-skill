@@ -1,0 +1,117 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The hero 'The platform to scale' over 'Your toolkit to stop configuring and start innovating' never says what Optimus does, and seven of eight section heads are the same two-beat formula ('Everything you need. Nothing you don't.', 'Three steps. Infinite possibilities.', 'Built by devs. For devs.').",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 2,
+    "reason": "T-FRESH-READER cannot say what the product is or who it is for, T-RIVAL-NAME leaves the h1, the sub-line and every h2 true for any developer platform, and T-HEADING-FORM and T-CADENCE find a fragment-pair formula in every section; the only concrete lines ('AES-256 encryption for data at rest and TLS 1.3 in transit', '$24 /month') are category stock."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-015",
+      "title": "Hero that does not say what the product is",
+      "tier": "Reflex",
+      "where": "hero, 1440, tiles/1440-00.png",
+      "evidence": "Failed T-FIVE-SECOND and T-FRESH-READER: the eyebrow 'The platform for modern teams', the animated h1 'The platform to scale' (the word cycles; bodyText shows 'to b u i l d') and the sub-line 'Your toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best experiences.' never name what is deployed, for whom, or how it differs. The first-screen digits are the unsourced stat band ('98% faster deployment STRIPE'), which the sweep already reports under stat_band and invented_metrics.",
+      "before": "The platform to scale",
+      "after": "Name the job and the user in the h1: what kind of application Optimus hosts or runs, and for which team. [DATA NEEDED: what Optimus actually is]",
+      "why": "A visitor cannot tell after five seconds whether this is hosting, a workflow builder or an AI platform; the page claims all three.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "CPY-014",
+      "title": "One heading formula in every section",
+      "tier": "Reflex",
+      "where": "every h2, 1440, tiles/1440-01.png onward",
+      "evidence": "Failed T-HEADING-FORM: 'Everything you need. Nothing you don't.', 'Three steps. Infinite possibilities.', 'Global by default.', 'Performance you can measure.', 'Trust is non-negotiable.', 'Built by devs. For devs.', 'Simple, transparent pricing' and 'Ready to build something great?'. Four are fragment pairs, the rest are stock category slogans, and none names a noun only this product has. The copy sheet flagged none of these as formulas because the second beat sits in a separate line.",
+      "before": "Three steps. Infinite possibilities.",
+      "after": "Write each heading as the fact the section proves: the number of regions, the integration count, the SDK size, the plan price.",
+      "why": "The outline reads as the stock SaaS template; a reader scanning heads learns nothing about Optimus.",
+      "root": "Two-beat slogan formula used for every section head",
+      "test": "T-HEADING-FORM"
+    },
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "hero, features and footer, 1440",
+      "evidence": "Failed T-RIVAL-NAME: the h1, the sub-line, every h2 and the footer line 'The platform for teams who ship. Build, deploy, and scale with unprecedented velocity.' stay true under Vercel's, Netlify's or Render's name. The sweep's lexicon_copy hits ('seamlessly', 'Enterprise-grade', 'thoughtfully') support this and are not repeated.",
+      "before": "Build, deploy, and scale with unprecedented velocity.",
+      "after": "Replace with the one mechanism only this platform has. [DATA NEEDED: the product's differentiator]",
+      "why": "Nothing on the page gives a developer a reason to choose this platform over the one they already use.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-008",
+      "title": "Adjective claims where a mechanism belongs",
+      "tier": "Reflex",
+      "where": "feature cards and developer section, 1440",
+      "evidence": "Failed T-THREE-LINE: 'Our edge network ensures your applications load instantly, anywhere in the world', 'version control that actually makes sense' and 'Ship faster with intuitive APIs and exceptional documentation' cannot be pictured or proven false. The figures elsewhere ('17 data centers', '99.99% Uptime SLA') are the sweep's stat_band and invented_metrics hits.",
+      "before": "version control that actually makes sense.",
+      "after": "Name the mechanism: how branches, previews or rollbacks work in this product.",
+      "why": "Adjective claims ask the reader to trust words the page never backs.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-011",
+      "title": "Cadence devices past budget",
+      "tier": "Reflex",
+      "where": "security, features and pricing sections, 1440",
+      "evidence": "Failed T-CADENCE: the copy sheet counts 3 reflex triads ('build, deploy, and scale' twice, 'automatic updates, HTTPS, and DDoS protection'), 1 contrast frame ('Enterprise-grade security isn't optional. It's built into every layer'), 1 -ing rider ('spans 17 data centers across 6 continents, delivering sub-50ms latency') and closing quips after statements ('No exceptions.', 'Your data stays yours.', 'No hidden fees, no surprises.', 'Start free, scale infinitely.'). Sentences average 6.7 words with a spread of 3.1 over 48 sentences, under the CPY-206 floor of 4.",
+      "before": "Every request is authenticated and authorized. No exceptions.",
+      "after": "Cut the tag lines after statements; let the fact stand alone.",
+      "why": "The same beat in every block makes the page read as one template voice.",
+      "test": "T-CADENCE"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "One action under many labels",
+      "tier": "Reflex",
+      "where": "nav, hero, pricing and closing band, 1440",
+      "evidence": "Failed T-LABEL-READ: the sign-up action is 'Start creating' (nav), 'Start free trial' (hero), 'Start free' and 'Start trial' (pricing) and 'Start building free' (closing); sales is 'Contact sales' and 'Talk to sales'. The copy sheet also shows #developers labelled 'Developers', 'Documentation' and 'SDK'.",
+      "before": "Start creating / Start free trial / Start building free",
+      "after": "One label for the free sign-up across nav, hero, pricing and closing, and one for sales.",
+      "why": "Five wordings for one action make a reader wonder whether a trial and a free plan are different things.",
+      "test": "T-LABEL-READ"
+    },
+    {
+      "rule": "CPY-016",
+      "title": "Lines that restate the heading",
+      "tier": "Reflex",
+      "where": "integrations and developer sections, 1440",
+      "evidence": "Failed T-DELETION: 'Works with everything you already use.' is followed by 'Connect your entire stack in minutes.', which restates it and the step 'Integrate with your existing stack in minutes' above; 'Zero config' is followed by 'Sensible defaults that just work'; '12KB gzipped' by 'Lightweight with zero dependencies'.",
+      "before": "Zero config — Sensible defaults that just work.",
+      "after": "Keep the heading fact and replace the line with the detail behind it (what the defaults are), or cut it.",
+      "why": "Each restated line doubles the reading with no new information.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The SDK facts are literal and checkable: 'TypeScript native', 'Runs anywhere: Node, Deno, Bun, browsers', '12KB gzipped', 'npm install @optimus/sdk'.",
+    "Pricing tiers state plain limits ('Up to 3 projects', '1GB storage', '$24 /month'), even if they are category-standard."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: no form on the page and async.json was not captured.",
+    "T-LONG-FORM: no long-form region; landing page.",
+    "Copy sheet: the helper found no h1 (the h1 is split into animated letters); the hero was read from tiles/1440-00.png and bodyText.",
+    "T-TERMS: the copy sheet's variants (STRIPE/Stripe, LINEAR/Linear) are CSS uppercase on logo captions, not spelling changes; no finding.",
+    "Contract: no 00-contract.md in the run; judged as a Persuade landing page."
+  ]
+}

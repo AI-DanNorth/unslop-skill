@@ -1,0 +1,80 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The words and screenshots belong to a real product (Mom/Dad thread isolation, port numbers, Telegram bot, /fast and /deep, Gatekeeper step), but they sit on the default dark-cyan landing kit: pill badge, two-tone centred hero, numbered steps, an 18-card icon-tile grid under 'Everything you need. Nothing you don't.', FAQ accordion.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "SLP-156",
+      "tier": "Reflex",
+      "where": "'Everything you need. Nothing you don't.' feature grid, 1440 tiles 02-05",
+      "evidence": "Eighteen equal 3-up cards, each a teal icon tile + title + 1-3 lines, from 'Global Hotkey Overlay' to 'Guided Family Setup'. Failed T-DELETION on the icons (keyboard, users, lock, server, mic, file...) and the section runs 4+ screens at the same rhythm; strong items ('What Mom asks stays Mom's', 'Says What It Is Doing') are buried at the same weight as 'Markdown & LaTeX'.",
+      "before": "18 identical icon cards under a stock head",
+      "after": "Lead with the 3-4 features only KinAI has (per-member privacy, Telegram family bot, two model slots, backend auto-detect) as large rows with their screenshots; collapse the rest into a plain list.",
+      "why": "A long uniform feature wall is the default agent output and flattens the product's real differentiators.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-151",
+      "tier": "Reflex",
+      "where": "hero, 1440 tile 00 and 375 tile 00",
+      "evidence": "Failed T-MIRROR: pill badge with bolt icon 'Now with a guided family setup' above a centred two-tone h1 'Share your local AI / with your family.' with the second line in the accent cyan, glowing pill CTA + ghost second CTA, on a near-black page with a radial teal wash. This is the stock dark AI-product hero; a neighbouring local-LLM app would get the same.",
+      "before": "Pill + two-tone centred head + glow CTA pair",
+      "after": "Open on the product: the 'What Mom asks stays Mom's' welcome screenshot is the strongest image; put it beside a plain head instead of below the fold in a frame.",
+      "why": "The hero's structure says 'AI startup template' before the copy says 'family'.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "SLP-221",
+      "tier": "Reflex",
+      "where": "section heads, 1440 tiles 01-07",
+      "evidence": "T-FRESH-READER: 'How it works', 'Everything you need. Nothing you don't.', 'Common questions' fit any site; 'Plays nice with your setup' is the stock integrations head.",
+      "before": "\"Everything you need. Nothing you don't.\"",
+      "after": "A head that carries a fact, e.g. 'One Mac hosts. Everyone else joins with a code.'",
+      "why": "Category-label and stock-cadence heads add length without information.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "whole page, 1440 tiles 00-08",
+      "evidence": "T-STOCK-ORDER: mock-product hero -> numbered steps -> equal feature cards -> integrations list -> three equal platform cards (pricing-tier shape) -> FAQ accordion -> roadmap -> footer: 6 stock sections in stock order. Below the 7 threshold because the install guide tabs and roadmap are product-specific.",
+      "before": "Stock section order",
+      "after": "Merge 'How it works' into the install guide (they repeat the same host/client facts) and cut one band.",
+      "why": "The skeleton is default even where the content is not.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-148",
+      "tier": "Reflex",
+      "where": "hero sub-line and feature copy",
+      "evidence": "Failed T-THREE-LINE: '100% private', 'Seamlessly finds Ollama...', 'Beautiful streaming markdown formatting', 'free forever' are unfalsifiable stock claims sitting next to concrete ones ('Per-peer isolation in the host's database').",
+      "before": "\"No cloud, no accounts, 100% private.\"",
+      "after": "\"No cloud, no accounts. Chats stay in a database on your Mac, isolated per family member.\"",
+      "why": "Stock reassurance dilutes the specific privacy mechanism the product actually has.",
+      "test": "T-THREE-LINE"
+    }
+  ],
+  "strengths": [
+    "Copy is concrete and only-this-product in many places: 'Per-peer isolation in the host's database — Mom doesn't see Dad's threads', ports 11434/1234/8000, 'Right-click KinAI in Applications → Open / Required the first time to bypass Gatekeeper', '/fast or /deep'.",
+    "Real product screenshots in the carousel and the integrations panel instead of an invented dashboard mock.",
+    "Honest limits stated up front: 'macOS-only for now', 'Cannot host models directly yet'.",
+    "disputed sweep hit: chrome_glyphs on 'v0.2.147' / 'v0.3-v0.5' reads as a real release number and a real roadmap, not fake versions."
+  ],
+  "not_investigated": [
+    "Carousel slides beyond the first (only the active slide is visible in the tiles).",
+    "Install-guide tabs other than 'Mac Host'."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The idea is 'a research institution that puts safety at the frontier', carried by the client's own system: a custom serif and sans pairing in one sentence, an ivory ground, near-black ink and scanned-print collage art (a ruler, a compass rose, a nautilus x-ray, Doric columns) on every content screen.",
+  "score": {
+    "dimension": "Concept",
+    "value": 8,
+    "reason": "T-OWN-SYSTEM, T-SIGNATURE, T-COVER-TEXT and T-IDEA-CARRIES pass because the collage art and the two-face headline run top to bottom, but the model-announcement row falls back to a three-card grid with label-and-value rows between hairlines (T-DEFAULT-PLAN, one move)."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "model announcements row, 1440px (tiles/1440-01.png)",
+      "evidence": "T-DEFAULT-PLAN marks one move here. The three cards 'Introducing Claude Haiku 5.5', 'Introducing Claude Sonnet 5.5' and 'Introducing Claude Opus 5.5' share one template: grey category pill, date, title, two lines of body, then 'Model Details / Haiku' and 'System Card / View' as label-and-value rows between hairlines, then a full-width 'Read announcement' button. It is the only section on the page without a collage image, and under a rival lab's model names the cards would hold unchanged.",
+      "before": "Three identical text cards with hairline label rows",
+      "after": "Carry the collage system into this row (one artwork per model family, as the 'Learn more' row does) or let one model lead with what it does at work, instead of three equal cards",
+      "why": "This row is where the visitor meets the products, and it is the one place the page drops its own art direction for a stock card kit.",
+      "test": "T-DEFAULT-PLAN"
+    }
+  ],
+  "strengths": [
+    "T-OWN-SYSTEM passes: the custom 'anthropicSans' with a serif second voice inside the same h1 sentence ('AI research and products that put safety at the frontier.' in sans, the rest in serif) is the client's own and is applied the same way at 1440 and 375.",
+    "T-SIGNATURE and T-COVER-TEXT pass: the scanned-print collage art (a ruler between blue and red halftone in the hero, a compass rose for 'Claude's Constitution', a nautilus x-ray for 'Responsible scaling policy', Doric columns for 'The Anthropic Institute') stays recognisable with all text hidden and belongs to no other lab.",
+    "T-RIVAL-NAME passes on the h1: 'a public benefit corporation dedicated to securing its benefits and mitigating its risks' and the 'Learn more' links (Responsible scaling policy, Claude's Constitution) are true of this company only.",
+    "T-BOLD-MOVE passes: the hero artwork is the one loud element; navigation, cards and footer stay quiet on the ivory ground."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade and Read (company home page) from the page itself.",
+    "The hero is a carousel; only the first slide ('Pillar 3 Democracy and stability') was captured, so the other slides were not judged.",
+    "The grey '···' pills on the announcement and 'Learn more' cards may be icons that did not load (one script was blocked in manifest.network); they were treated as capture context, not design."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A brand-owned index: the Dropbox blue, the brand's own display face and a mosaic of eight full-colour tiles, each with a drawn emblem of its topic (bezier handles for Motion, 'Aa' for Typography, quote marks for Voice & Tone); nothing here is a borrowed template.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "intro statements and closing copy, tiles 1440-00 and 1440-01",
+      "evidence": "Fresh-reader lines: 'our Brand Guidelines help us infuse everything we make with identity.', 'this collection is the foundation for how Dropbox looks, feels, and sounds like Dropbox.', 'create things that live in the Dropbox ecosystem ... But they're just the beginning. What's next is up to you.'",
+      "before": "\"help us infuse everything we make with identity.\"",
+      "after": "Say what a partner can do here: \"Logos, colours, type and voice rules for anything that carries the Dropbox name.\"",
+      "why": "With 'Dropbox' swapped for any brand, these lines stay true; they are the only generic text on a page whose visuals are entirely its own.",
+      "test": "T-RIVAL-NAME"
+    }
+  ],
+  "strengths": [
+    "The tile mosaic: each topic gets its own colour from the brand palette and an emblem that demonstrates the topic, not a stock icon.",
+    "Consistent use of the brand's own display face and Dropbox blue #0061fe; the scroll sequence (statement, blue card with flanking colour blocks, mosaic) is specific to this brand.",
+    "Credits name the people who made it ('Dropbox Brand Studio', 'Daybreak Studio')."
+  ],
+  "not_investigated": [
+    "The page is a scroll-driven sequence; the capture used 3 scroll frames as tiles (manifest prep), so in-between motion states were not seen.",
+    "Content of the eight sub-pages (Framework, Logo, Color, ...) not captured."
+  ]
+}

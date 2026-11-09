@@ -1,0 +1,56 @@
+{
+  "lens": "a11y",
+  "ran_at": "2026-11-08T15:20:00",
+  "tests_run": ["verify-sweep-floor", "alt-text-1.1.1", "link-purpose-2.4.4", "focus-order-2.4.3", "use-of-colour-1.4.1", "non-text-contrast-1.4.11", "motion-2.2.2", "headings-landmarks-1.3.1"],
+  "findings": [
+    {
+      "rule": "A11-171",
+      "tier": "Floor",
+      "where": "right-panel step glosses and left-panel muted text",
+      "evidence": "Confirms sweep A11-001 by eye on tile 1920-00: grey-brown italic glosses ('Midjourney / DALL·E / SDXL', '没风格、没受众、没视角', 'Pentagram / Takram / Build') at 13px sit at about 2.6:1 on #0a0a0a; on a projector with ambient light these disappear. They carry content (what the generic agent skipped), not decoration.",
+      "before": "color: #5c5447 on #0a0a0a, 13px italic",
+      "after": "Raise to at least #a39a8a (about 7:1) and 20px+ on a 1920 canvas, or cut the glosses",
+      "why": "WCAG 2.2 1.4.3 Contrast (Minimum); slides need a higher margin than screens.",
+      "test": "T-GRADIENT-STOPS"
+    },
+    {
+      "rule": "A11-110",
+      "tier": "Floor",
+      "where": "three output thumbnails",
+      "evidence": "dom-1920.json: alt texts are 'Pentagram · DeepSeek V4', 'Takram · DeepSeek V4', 'Build · DeepSeek V4'. They name the school but not what each cover shows, and the thumbnails' own text ('几乎贴近前沿，价格只是零头。', '深度求索 V4 在百万 token 中思考。') is unreadable at 320px and absent from the alt.",
+      "before": "alt=\"Takram · DeepSeek V4\"",
+      "after": "alt=\"Takram direction: warm paper cover, headline '深度求索 V4 在百万 token 中思考', triangle diagram, quiet serif\"",
+      "why": "WCAG 2.2 1.1.1 Non-text Content: the images are the evidence of the slide and their alt must carry it.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "A11-011",
+      "tier": "Floor",
+      "where": "step reveal animation",
+      "evidence": "Confirms sweep: steps fade in with class 'show' (42% of text hidden until the sequence runs) and the stylesheet has no prefers-reduced-motion rule; the only control is a REPLAY button.",
+      "before": ".step { opacity:0; animation: ... }",
+      "after": "@media (prefers-reduced-motion: reduce) { .step, .slop { opacity:1; animation:none; transform:none } }",
+      "why": "WCAG 2.2 2.3.3 Animation from Interactions (AAA) and 2.2.2 for auto-starting sequences; content must exist without the animation.",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "A11-101",
+      "tier": "Reflex",
+      "where": "html lang and English runs",
+      "evidence": "html lang=\"zh\" but large English runs ('A real task from yesterday', 'IN PRACTICE', 'huashu-design', 'SWISS · GRID') are not marked lang=\"en\"; a Chinese voice will mispronounce them. No headings or landmarks: the slide headline is a div.",
+      "before": "<div class=\"kicker\">A real task from yesterday · ...</div>",
+      "after": "<span lang=\"en\">A real task from yesterday</span>; make the headline an <h1>",
+      "why": "WCAG 2.2 3.1.2 Language of Parts and 1.3.1 Info and Relationships.",
+      "test": "T-TAB-THROUGH"
+    }
+  ],
+  "strengths": [
+    "Headline and panel titles are large serif at high contrast (white/gold on near-black).",
+    "The only control, '↻ REPLAY', is a real button with a name and visible focus."
+  ],
+  "not_investigated": [
+    "fixed-canvas slide: reflow (1.4.10) and target size not applicable",
+    "the purple exhibit cover's low-contrast caption is part of a quoted counter-example and was not scored",
+    "keyboard navigation between slides: only one slide captured"
+  ]
+}

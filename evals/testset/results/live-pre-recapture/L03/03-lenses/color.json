@@ -1,0 +1,91 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The palette is Tailwind's defaults used as the system: blue-600 #2563eb as the only accent, slate-50 #f8fafc paper, slate-900 #0f172a ink and five slate text greys, with no brand mark or imagery that chose them, and the accent also sets half the hero headline and every goal-tile icon.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-COLOUR-SOURCE finds only framework swatches, T-ACCENT-DOSAGE finds display type and decorative icons in the accent, and T-PALETTE-ROLES finds five text greys; the grounds and the grayscale fold hold up."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [
+    {
+      "rule": "CLR-003",
+      "title": "Colour has a source",
+      "tier": "Reflex",
+      "where": "whole page, :root and Tailwind utilities, 1440 and 375",
+      "evidence": "The palette table at 1440 lists the page ground #f8fafc, the ink #0f172a, the greys #334155, #475569, #64748b, #94a3b8 and #cbd5e1, and the accent #2563eb with hover #1d4ed8: these are Tailwind slate-50/300/400/500/600/700/900 and blue-600/700 exactly. The only colour tokens on :root are --tw-ring-color and --tw-ring-offset-color (stock_swatches flags --tw-ring-color #3b82f6). The logo is a slate-900 square with a white stack glyph, so nothing on the page supplies the blue.",
+      "before": "Framework slate greys and blue-600 as the whole colour system",
+      "after": "An accent and neutral set sampled from the product's own mark or content (Sample, Converge, Justify), written as named tokens rather than utility defaults",
+      "why": "A visitor cannot tell this page from any other Tailwind starter, because every colour on it is the framework's default.",
+      "root": "Tailwind default theme (slate + blue-600)",
+      "test": "T-COLOUR-SOURCE"
+    },
+    {
+      "rule": "CLR-007",
+      "title": "Display type is set in ink",
+      "tier": "Reflex",
+      "where": "hero h1 second line, 1440 and 375, tiles/1440-00.png and tiles/375-00.png",
+      "evidence": "The palette table records one display-text use of the accent at 1440: \"We'll build the stack.\" at 60px in #2563eb, directly under \"Tell us the goal.\" in #0f172a.",
+      "before": "The second line of the h1 is set in the accent blue #2563eb",
+      "after": "The whole h1 in the ink #0f172a; the accent kept for the \"Find my stack\" action",
+      "why": "The 60px blue line competes with the blue \"Find my stack\" button 170px below, so the accent no longer points only at the action.",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-006",
+      "title": "The accent marks action and state",
+      "tier": "Reflex",
+      "where": "goal tiles and How it works cards, 1440, tiles/1440-00.png bottom and tiles/1440-01.png",
+      "evidence": "All 10 goal tiles carry the same blue target icon on a pale blue tile, and the three How it works cards add blue target, wallet and code icons beside the numbered badges. None of these icons is an action or a state; the same blue fills the \"Find my stack\" and \"Get started\" buttons and the active \"Home\" nav item.",
+      "before": "Accent blue on 13 decorative icons and their tinted tiles",
+      "after": "Icons in the text grey; the accent held for the two primary buttons and the current nav item",
+      "why": "Repeating the action colour on 13 non-clickable icons dilutes the signal that blue means \"press this\".",
+      "test": "T-ACCENT-DOSAGE"
+    },
+    {
+      "rule": "CLR-010",
+      "title": "Text greys are a fixed set",
+      "tier": "Finish",
+      "where": "body, small and link text on the #f8fafc ground, 1440",
+      "evidence": "The text roles at 1440 use five greys on the light ground: #0f172a (23 headings), #334155 (7 links), #475569 (20 small, 5 body, 6 links), #64748b (23 small, 7 body) and #94a3b8 (3 small, 2 body). Body copy alone appears in three of them.",
+      "before": "Five slate text greys, with body text in #475569, #64748b and #94a3b8",
+      "after": "Three text levels on one ground: ink, secondary, and muted, each with one job",
+      "why": "Three body greys within a few screens make the reader guess which text is secondary; the lightest, #94a3b8, also fails contrast (the sweep's A11-001 hit on \"20+ curated tools\").",
+      "root": "slate grey scale",
+      "test": "T-PALETTE-ROLES"
+    },
+    {
+      "rule": "CLR-014",
+      "title": "A card has a border or a shadow",
+      "tier": "Finish",
+      "where": "goal tiles, How it works cards and tool cards, 1440, tiles/1440-01.png and tiles/1440-02.png",
+      "evidence": "The palette table counts 19 elements with both a border and the shadow rgba(15, 23, 42, 0.04) 0 1px 2px; the tiles show a #e2e8f0 hairline plus a soft shadow on each card.",
+      "before": "Hairline border plus a 1px shadow on every card",
+      "after": "One edge per card: the hairline on the #f8fafc wells, with the shadow removed",
+      "why": "The second edge adds noise to 19 cards without separating anything the border does not already separate.",
+      "root": "the .card class",
+      "test": "T-SURFACE-LADDER"
+    }
+  ],
+  "strengths": [
+    "The tool avatars (ChatGPT green #10a37f, Claude #d97757, Gemini #4285f4, Perplexity #20b8cd, ElevenLabs #7c3aed) take each product's own brand colour, so the extra hues are content, not decoration.",
+    "Only two grounds (#f8fafc and #0f172a for the CTA panel and footer), and the primary button stays distinct in the grayscale fold (03-lenses/color/gray-fold-1440.png)."
+  ],
+  "not_investigated": [
+    "T-DARK-MODE: the page is light and the stylesheet ships no dark theme (no prefers-color-scheme, no color-scheme, no dark class).",
+    "The radial blue glows in the hero and CTA panel are the sweep's SLP-008 hit and are not repeated here; the Tailwind ring token is the sweep's CLR-002 hit.",
+    "The palette table reports 0 neutral text levels because slate greys have chroma about 0.04; the levels above were read from the text roles instead."
+  ]
+}

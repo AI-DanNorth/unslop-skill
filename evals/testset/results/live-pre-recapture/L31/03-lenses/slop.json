@@ -1,0 +1,58 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:40:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A long-lived awards-site template (DVS purple ring logo, Proxima Nova Soft and PT Serif, a vote sidebar and related-project thumbnails) built for this one job of showcasing an entry; nothing in it is the AI-default kit, and its faults are old-CMS data residue, not generated filler.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-005",
+      "tier": "Reflex",
+      "where": "entry byline, 1440 tile 00",
+      "evidence": "\"by , Jan Diehm, Amber Thomas (The Pudding)\": an empty first author leaves a leading comma, while Credits lists 'Alvin Chang, Journalist-Engineer, The Pudding' who is missing from the byline.",
+      "before": "\"by , Jan Diehm, Amber Thomas (The Pudding)\"",
+      "after": "\"by Alvin Chang, Jan Diehm, Amber Thomas (The Pudding)\" (join only non-empty names)",
+      "why": "Template residue in the most visible credit line misattributes the work.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "SLP-014",
+      "tier": "Finish",
+      "where": "below the details card, 1440 tile 01",
+      "evidence": "An empty white card (about 725x80px) sits under the Credits/Award/Categories card with no content.",
+      "before": "Empty bordered container",
+      "after": "Do not render the container when its field (likely comments or embed) is empty",
+      "why": "Failed T-DELETION: removing it loses nothing.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "categories row, tile 01",
+      "evidence": "Categories run together as plain links 'Longlist Gold Winners People, Language & Identity Outstanding Studio Shortlist' with no separators, so 'Gold Winners' reads as one phrase and the entry's actual standing (Gold? Shortlist?) is unclear.",
+      "before": "Longlist Gold Winners People, Language & Identity Outstanding Studio Shortlist",
+      "after": "Separate status from category: 'Gold, People, Language & Identity · Outstanding Studio' with longlist/shortlist history below",
+      "why": "The one fact a visitor wants (did it win?) is hidden in a tag soup.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "The page leads with the entry's own artwork (The Pudding's purple silhouette title screen) at full content width; the design gets out of the way of the work.",
+    "Copy is specific and functional: 'If you think this project should win the People, Language & Identity category for the Information is Beautiful Awards 2024, cast your vote below'.",
+    "Related projects use their real thumbnails (On Upward Mobility, Gender and language, Creative Routines) rather than placeholder cards."
+  ],
+  "not_investigated": [
+    "AddThis share script and analytics were blocked; share widgets absent from the render are not judged.",
+    "The embedded project itself (pudding.cool) is out of scope; only the showcase page is reviewed."
+  ]
+}

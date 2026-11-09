@@ -1,0 +1,35 @@
+{
+  "lens": "color",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A near-black paper #08090a with lighter raised surfaces #101112 and #171819, four documented text tokens (--color-text-primary #f7f8f8, secondary #d0d6e0, tertiary #8a8f98, quaternary #62666d) and the brand indigo #5e6ad2 held to the product UI; the other hues are syntax highlighting, status icons and customer brand colours inside the product shots and testimonials, so every colour has a source and one role.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-COLOUR-SOURCE, T-PALETTE-ROLES, T-ACCENT-DOSAGE and T-DARK-MODE pass: what was cut is any accent on the marketing chrome (both CTAs are neutral pills, headings are ink), leaving colour to the product itself; the shadow variety sits inside the product mock-ups, not the page."
+  },
+  "tests_run": [
+    "T-COLOUR-SOURCE",
+    "T-PALETTE-ROLES",
+    "T-ACCENT-DOSAGE",
+    "T-NEUTRALS",
+    "T-GRAYSCALE",
+    "T-SURFACE-LADDER",
+    "T-LINE-DELETION",
+    "T-DARK-MODE",
+    "T-GRADIENT-STOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "The text greys are a fixed, named set: :root defines --color-text-primary #f7f8f8, --color-text-secondary #d0d6e0, --color-text-tertiary #8a8f98 and --color-text-quaternary #62666d, and the page uses them in those roles (21, 87, 153 and 62 elements). The extra #e2e4e7 the table lists is code text inside the diff mock-up (tiles/1440-07.png).",
+    "Elevation gets lighter on dark: the page #08090a steps up to #101112 and #171819 for panels, with 0 surfaces darker than the canvas, so T-DARK-MODE passes on the rendered theme.",
+    "The marketing chrome carries no accent: \"Sign up\", \"Get started\" and \"Contact sales\" are neutral pills (tiles/1440-00.png, tiles/1440-10.png), and the 0% chromatic first screen leaves the product mock-up as the only colour.",
+    "The saturated colours belong to content: pink, orange, cyan and yellow text (31, 22, 9 and 10 elements) are syntax highlighting in the code diff, red #eb5757 and yellow mark Bug and In Progress states in the board mock-up (tiles/1440-03.png), and the yellow #e4f222 and lilac testimonial panels carry Ramp's and OpenAI's quotes (tiles/1440-09.png)."
+  ],
+  "not_investigated": [
+    "The light theme: the stylesheet ships prefers-color-scheme and a theme class, but the capture rendered only the dark scheme, so the light theme is not verified.",
+    "The 13 shadow recipes, 2 heavy black shadows and 27 gradients the table counts sit inside the product mock-ups (chat panel, roadmap, timeline gridlines); the sweep's SLP-007, SLP-005 and SLP-014 hits cover them and are not repeated.",
+    "260 requests were blocked during capture (no images or fonts among them), so the colour of the page is not affected."
+  ]
+}

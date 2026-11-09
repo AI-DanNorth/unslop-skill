@@ -1,0 +1,40 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The idea is the h1 itself, 'Design your service using GOV.UK styles, components and patterns', and the page is built from those same styles and components: the GOV.UK crown header, GDS Transport type, #1d70b8 blue masthead, underlined links and plain sections that route a service team to styles, components, patterns, principles, community, support and roadmap.",
+  "score": {
+    "dimension": "Concept",
+    "value": 9,
+    "reason": "T-OWN-SYSTEM, T-KIND-FIT, T-ONE-SENTENCE, T-RIVAL-NAME and T-IDEA-CARRIES pass because the design system's home page is set entirely in its own components; it cut the marketing set (no stat strip, no logo row, no testimonials, no three-step section) and keeps only dated news and routes into the system."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [],
+  "strengths": [
+    "T-OWN-SYSTEM passes: the page is the GOV.UK Design System applied to itself. The crown logotype, GDS Transport, the blue masthead, the bold underlined 'Browse our styles / components / patterns' links and the white 'Get started' button with its dark bottom edge on the blue masthead are the system's own parts, used the same way at 1440 and 375 (CON-001).",
+    "T-KIND-FIT passes for a Read page: one content type and one job per section (draft CON-113). 'What's new' opens with a dated release, '15 October 2026: We've released GOV.UK Frontend v6.6.0', then Styles, Components and Patterns each get one sentence and one link.",
+    "T-RIVAL-NAME passes: 'Make government services look like GOV.UK', 'Update your service to use the refreshed GOV.UK brand' and the links to the Government Design Principles and Service Manual are true of this system only.",
+    "The masthead illustration is drawn from the system's own parts (a checkbox, a radio, the colour swatches, a green button inside a 'Service' window), so even the one picture is the client's material. Removing it (T-DELETE-PICTURE) would lose little, which suits a Read page where the text carries the job."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Read (documentation home) from the page itself.",
+    "The cookie banner was dismissed by capture prep (manifest.prep); its design was not judged."
+  ]
+}

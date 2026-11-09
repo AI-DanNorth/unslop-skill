@@ -1,0 +1,89 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "A warm-paper default (cream page, orange accent, mono caps eyebrows on every section, 01/02/03 steps, icon-tile card grid, dark CTA band with decorative bars) carries copy built from 'X, not Y' pairs; the INR persona stacks are the only part that belongs to this product.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page, 1440px tiles 00-04",
+      "evidence": "Sections run: hero with eyebrow, 10 equal icon-tile goal cards, 'HOW IT WORKS' 01/02/03 steps, 3 equal persona cards, 'THE DIRECTORY' equal tool cards, 'READY WHEN YOU ARE' dark CTA band with three decorative bars, 3-column link footer. Stock items: equal feature cards, 1-2-3 steps, three-tier-style cards, CTA band, link-farm footer = 5 of the stock list in stock order.",
+      "before": "Hero > equal cards > 1-2-3 steps > three cards > card grid > CTA band > footer",
+      "after": "Let the goal picker be the page: answer question 1 inline and show the resulting stack on the same screen instead of explaining the flow in a separate 01/02/03 band.",
+      "why": "Specific words on a default skeleton still read as a default page; the 1-2-3 band repeats what the picker above it already shows.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "eyebrow, h2s, CTA band",
+      "evidence": "Negation-pair formula on four headings: 'AI tool stacks, not directories', 'A workflow, not a list. Built around you.', '23 hand-picked tools. No filler.', 'Stop collecting tools. Start using the right ones.'",
+      "before": "\"A workflow, not a list. Built around you.\"",
+      "after": "State what the visitor gets, e.g. \"Five tools, in order, with the monthly cost for each.\"",
+      "why": "The 'not X' and fragment-pair habit is the substitute tic that replaces adjectives in model copy; four in one page make it a pattern.",
+      "test": "T-OVER-CORRECTION"
+    },
+    {
+      "rule": "SLP-001",
+      "tier": "Reflex",
+      "where": "every section head",
+      "evidence": "Mono tracked caps eyebrow above every h2 ('HOW IT WORKS', 'SAME GOAL, DIFFERENT PEOPLE', 'THE DIRECTORY', 'READY WHEN YOU ARE'), plus a red dot bullet on the hero eyebrow; together with cream #f9f8f5 and orange #ee491b this is the warm-paper family the sweep counted.",
+      "before": "HOW IT WORKS / A workflow, not a list.",
+      "after": "Drop the eyebrows; keep 'Question 1 of 3', which is real state.",
+      "why": "Only one eyebrow carries information ('Question 1 of 3'); the rest are template chrome.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-003",
+      "tier": "Reflex",
+      "where": "goal picker, tiles 1440-00 and 1440-01",
+      "evidence": "10 identical cards, each a grey rounded icon tile (mortarboard, play, pen, globe, rocket, shop, briefcase, newspaper, nodes, palette) over a title, one-line sub and arrow.",
+      "before": "Icon tile + 'Study smarter' + 'Research, notes and revision that stick' + arrow",
+      "after": "A plain list or segmented choice of goals; the icons add nothing the label does not say.",
+      "why": "Deleting the icon tiles loses no meaning; the rocket-for-SaaS, globe-for-website set is the stock icon vocabulary.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Reflex",
+      "where": "How it works band, tile 1440-01",
+      "evidence": "Orange mono '01', '02', '03' over 'Share your goal', 'Set budget and skill', 'Get your workflow' in three equal cells.",
+      "before": "01 Share your goal / 02 Set budget and skill / 03 Get your workflow",
+      "after": "Delete the band; the 'Question 1 of 3' picker already demonstrates the steps.",
+      "why": "Decorative step numbering on a three-step explainer is a default section.",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-008",
+      "tier": "Reflex",
+      "where": "CTA band, tile 1440-03",
+      "evidence": "Dark rounded band 'Stop collecting tools. Start using the right ones.' with three decorative horizontal bars (orange, two greys) running off the right edge.",
+      "before": "Decorative bar graphic in CTA band",
+      "after": "Remove the bars, or replace them with a real stack result preview.",
+      "why": "The bars carry no data; deleting them loses nothing.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "CPY-005",
+      "tier": "Reflex",
+      "where": "directory card descriptions",
+      "evidence": "Fresh-reader lines that fit any AI directory: 'A thoughtful AI assistant for long-form writing, analysis and code.', 'Beautiful presentations and docs, generated in seconds.', 'Let software do the busywork'.",
+      "before": "\"Beautiful presentations and docs, generated in seconds.\"",
+      "after": "[DATA NEEDED: what this site's curator found each tool best at, e.g. the task it was picked for in a stack]",
+      "why": "Vendor-tagline blurbs make the 'hand-picked' claim unverifiable.",
+      "test": "T-FRESH-READER"
+    }
+  ],
+  "strengths": [
+    "The 'Same goal, different people' persona stacks are specific: student/no budget/doesn't code vs freelancer INR 500-2,000 vs developer, with monthly cost in rupees and a role for each tool. Keep these.",
+    "The footer note 'Prices are approximate monthly amounts in INR and may change' is honest and local.",
+    "Hero h1 'Tell us the goal. We'll build the stack.' answers what and what to do within five seconds."
+  ],
+  "not_investigated": [
+    "Result pages (/results, /find): only the home page was captured.",
+    "The 'Edit with Base44' badge is platform chrome, not judged as design."
+  ]
+}

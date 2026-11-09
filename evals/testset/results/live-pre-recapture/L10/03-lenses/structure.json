@@ -1,0 +1,98 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The job is signing up for a developer platform, but the page never names what the platform does and runs ten stock sections in stock order (capabilities, three steps, global map, metrics, integrations, security, developers, pricing, CTA band, footer).",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-SQUINT holds on the first screen, but T-STOCK-ORDER finds ten stock sections, T-HEADINGS-READ finds only slogans, and T-JUDGE-TILE and the sweep's dead_band hits find several thin screens."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-015",
+      "tier": "Reflex",
+      "where": "whole page, tiles 1440-01 to 1440-11, 1440px",
+      "evidence": "The h2 run in dom-1440.json is \"Everything you need.\", \"Three steps.\", \"Global by default.\", \"Performance you can measure.\", \"Works with everything you already use.\", \"Trust is non-negotiable.\", \"Built by devs.\", \"Simple, transparent\", \"Ready to build something great?\". Each section has a mono eyebrow (\"Capabilities\", \"Process\", \"Live metrics\", \"Security\"). That is ten stock sections, including the footer, in the stock SaaS order.",
+      "before": "Hero with stat ticker, 4 capability rows, 3 steps, globe, metrics grid, logo wall, security list, developer specs, 3-tier pricing, CTA band, footer.",
+      "after": "Rebuild the order around what the product does: show the product's own working screen or code path first, then the two or three things only it does, then pricing. Cut sections that only assert (global, metrics, security) to a single proof row. [DATA NEEDED: what the platform builds and for whom]",
+      "why": "The section sequence and every heading would sit unchanged on any hosting or AI platform page, so a visitor who scrolls 11,600px still does not learn what Optimus makes.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "LAY-007",
+      "tier": "Reflex",
+      "where": "hero, tile 1440-00, 1440px and 375px",
+      "evidence": "The h1 is \"The platform to scale\" at 160px, over \"Your toolkit to stop configuring and start innovating.\" Neither line says what is built, deployed or scaled, or for whom. The eyebrow reads \"The platform for modern teams\".",
+      "before": "A 160px generic claim with the action at y=650 to 706 (inside the fold).",
+      "after": "Keep the scale of the h1 but give it the product's job in plain words. [DATA NEEDED: the one thing the platform does]",
+      "why": "The action passes the fold check, but the visitor cannot answer what this is after five seconds, so the button asks for a trial of an unnamed thing.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "LAY-008",
+      "tier": "Finish",
+      "where": "all section heads, 1440px",
+      "evidence": "Read alone, the heads are paired slogans: \"Everything you need. Nothing you don't.\", \"Three steps. Infinite possibilities.\", \"Trust is non-negotiable.\", \"Ready to build something great?\". None names a product fact.",
+      "before": "Slogan headings with category eyebrows.",
+      "after": "Write each head as the fact the section proves, for example the actual deploy time or the actual integrations count, sourced.",
+      "why": "The headings-only read tells no story beyond 'a platform', so a scanning visitor gets nothing from the outline.",
+      "test": "T-HEADINGS-READ"
+    },
+    {
+      "rule": "LAY-011",
+      "tier": "Reflex",
+      "where": "capabilities head and rows, tile 1440-01; pricing to CTA gap, tile 1440-11; 1440px",
+      "evidence": "Tile 1440-01 holds a two-line head in the top third, then about 180px of nothing (the sweep's dead_band reports y 1124 to 1303 at 1280), then capability rows whose only visual is a 136px line icon pinned at x=1208, leaving about 500px empty between the paragraph and the icon. Tile 1440-11 has about 290px empty between the pricing note and the CTA box (dead_band y 10064 to 10352 at 1280).",
+      "before": "Large empty bands between a head and its content, and rows with a small icon at the far edge.",
+      "after": "Merge the capabilities head into the first row, and set the four capabilities as a compact two-by-two or a single list so each screen carries mass.",
+      "why": "Under the squint these screens read as a heading and grey dots, so the visitor scrolls past them for nothing.",
+      "test": "T-JUDGE-TILE"
+    },
+    {
+      "rule": "LAY-018",
+      "tier": "Reflex",
+      "where": "section starts, tiles 1440-00 to 1440-11, 1440px",
+      "evidence": "The start-line count gives text starting on x=68 (10 blocks), x=148 (5), x=128 (4), x=132 (3) and x=96, 100, 108, 116 (one each). The hero h1 starts at 96, section heads at 68, capability rows at 149, the pricing head at 128 and the CTA head at 133. The three step titles step right by 7px each (x=100, 107, 115).",
+      "before": "At least four text start lines, changing from section to section.",
+      "after": "Put every section head and body on the 68px edge; indent only the numbered capability rows, on one fixed offset.",
+      "why": "The edge moves at each section, so the page does not read as one grid.",
+      "test": "T-LEFT-EDGES"
+    },
+    {
+      "rule": "LAY-017",
+      "tier": "Reflex",
+      "where": "hero stat ticker and metrics section, tiles 1440-00 and 1440-05, 1440px",
+      "evidence": "Proof appears twice as a number band: the hero ticker (\"98% faster deployment STRIPE\", \"300% throughput increase LINEAR\", repeated) and a four-cell grid (\"2,847,392 API requests today\", \"99.99%\", \"23ms\", \"184\"). The sweep's stat_band hits flag both as unsourced.",
+      "before": "Two stat bands as the page's proof.",
+      "after": "Use the category's own proof: one customer's real build or a public status page link. [DATA NEEDED: a named customer case or live status source]",
+      "why": "A developer platform proves itself with a deploy, a code sample or a status history; big numbers in two places do not let the visitor check anything.",
+      "test": "T-ANATOMY"
+    }
+  ],
+  "strengths": [
+    "The first screen has a single focal point under the squint: the 160px h1, with the action pair at y=650 inside the fold at 1440, 1280 and 375.",
+    "The three-steps section (tile 1440-03) pairs the step list with a working code panel, the one place where a section shows the product instead of describing it.",
+    "The phone order at 375 keeps the 1440 order; nothing reorders."
+  ],
+  "not_investigated": [
+    "heading_rhythm (three heads closer to the block above), type_ladder (13 sizes), page_words (950 words) and stat_band are sweep findings and are not repeated.",
+    "One script chunk was blocked during capture (manifest network); animated parts such as the ticker and the globe may not show their full state."
+  ]
+}

@@ -1,0 +1,737 @@
+{
+ "width": 1440,
+ "fonts_source": "fonts.json (drawn)",
+ "faces": {
+  "Instrument Sans": {
+   "elements": 303,
+   "chars": 4842,
+   "roles": {
+    "other": 103,
+    "control": 35,
+    "body": 22,
+    "small": 113,
+    "h2": 8,
+    "h3": 22
+   },
+   "sizes_px": [
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    24.0,
+    30.0,
+    36.0,
+    48.0,
+    60.0,
+    72.0,
+    96.0,
+    160.0
+   ],
+   "source": "declared"
+  },
+  "JetBrains Mono": {
+   "elements": 37,
+   "chars": 375,
+   "roles": {
+    "small": 30,
+    "other": 4,
+    "h2": 1,
+    "body": 1,
+    "control": 1
+   },
+   "sizes_px": [
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    48.0,
+    60.0
+   ],
+   "source": "declared"
+  },
+  "Consolas": {
+   "elements": 3,
+   "chars": 36,
+   "roles": {
+    "control": 1,
+    "small": 2
+   },
+   "sizes_px": [
+    12.0,
+    14.0
+   ],
+   "source": "drawn"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 107,
+   "sizes_px": {
+    "18.0": 53,
+    "24.0": 18,
+    "48.0": 11,
+    "16.0": 9,
+    "60.0": 5,
+    "96.0": 4,
+    "160.0": 2,
+    "30.0": 2,
+    "36.0": 2,
+    "72.0": 1
+   },
+   "median_px": 18.0,
+   "weights": {
+    "500": 55,
+    "400": 52
+   },
+   "faces": {
+    "Instrument Sans": 103,
+    "JetBrains Mono": 4
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 145,
+   "sizes_px": {
+    "14.0": 121,
+    "12.0": 24
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 145
+   },
+   "faces": {
+    "Instrument Sans": 113,
+    "JetBrains Mono": 30,
+    "Consolas": 2
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 5
+  },
+  "control": {
+   "count": 37,
+   "sizes_px": {
+    "14.0": 33,
+    "16.0": 4
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 29,
+    "500": 8
+   },
+   "faces": {
+    "Instrument Sans": 35,
+    "JetBrains Mono": 1,
+    "Consolas": 1
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 23,
+   "sizes_px": {
+    "16.0": 8,
+    "18.0": 5,
+    "20.0": 5,
+    "14.0": 3,
+    "24.0": 1,
+    "60.0": 1
+   },
+   "median_px": 18.0,
+   "weights": {
+    "400": 23
+   },
+   "faces": {
+    "Instrument Sans": 22,
+    "JetBrains Mono": 1
+   },
+   "italic": 0,
+   "leading_median": 1.62,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 9,
+   "sizes_px": {
+    "60.0": 7,
+    "72.0": 2
+   },
+   "median_px": 60.0,
+   "weights": {
+    "400": 9
+   },
+   "faces": {
+    "Instrument Sans": 8,
+    "JetBrains Mono": 1
+   },
+   "italic": 0,
+   "leading_median": 1.0,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 22,
+   "sizes_px": {
+    "30.0": 6,
+    "36.0": 4,
+    "18.0": 4,
+    "16.0": 4,
+    "14.0": 4
+   },
+   "median_px": 18.0,
+   "weights": {
+    "500": 12,
+    "400": 10
+   },
+   "faces": {
+    "Instrument Sans": 22
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h2/h3",
+   "ratio": 3.33
+  },
+  {
+   "pair": "h3/body",
+   "ratio": 1.0
+  }
+ ],
+ "distinct_sizes_px": [
+  12.0,
+  14.0,
+  16.0,
+  18.0,
+  20.0,
+  24.0,
+  30.0,
+  36.0,
+  48.0,
+  60.0,
+  72.0,
+  96.0,
+  160.0
+ ],
+ "measure": {
+  "paragraphs": 4,
+  "cpl_median": 33.0,
+  "cpl_max": 46,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "section.relative.py-24:nth-of-type(2) > div.max-w-\\[1400px\\].mx-auto > div.mb-16",
+   "text": "Everything you need.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 38,
+   "last_line_share": 0.86,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.group.relative:nth-of-type(1) > div.flex.flex-col > div.flex-1.grid:nth-of-t",
+   "text": "Instant Deployment",
+   "size": "36px",
+   "level": 3,
+   "lines": 1,
+   "chars": 18,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.group.relative:nth-of-type(2) > div.flex.flex-col > div.flex-1.grid:nth-of-t",
+   "text": "AI-Native Workflows",
+   "size": "36px",
+   "level": 3,
+   "lines": 1,
+   "chars": 19,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.group.relative:nth-of-type(3) > div.flex.flex-col > div.flex-1.grid:nth-of-t",
+   "text": "Real-time Collaboration",
+   "size": "36px",
+   "level": 3,
+   "lines": 1,
+   "chars": 23,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.group.relative:nth-of-type(4) > div.flex.flex-col > div.flex-1.grid:nth-of-t",
+   "text": "Enterprise Security",
+   "size": "36px",
+   "level": 3,
+   "lines": 1,
+   "chars": 19,
+   "last_line_share": null,
+   "leading": 1.11,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.jsx-d0fb98a0b853be6f.relative:nth-of-type(3) > div.jsx-d0fb98a0b853be6f.",
+   "text": "Three steps.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 35,
+   "last_line_share": 1.57,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.jsx-d0fb98a0b853be6f.space-y-0:nth-of-type(1) > button.jsx-d0fb98a0b853be6f.",
+   "text": "Connect your tools",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 18,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.jsx-d0fb98a0b853be6f.space-y-0:nth-of-type(1) > button.jsx-d0fb98a0b853be6f.",
+   "text": "Build your workflow",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 19,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.jsx-d0fb98a0b853be6f.space-y-0:nth-of-type(1) > button.jsx-d0fb98a0b853be6f.",
+   "text": "Ship to production",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 18,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.relative.py-24:nth-of-type(4) > div.max-w-\\[1400px\\].mx-auto > div.grid.",
+   "text": "Global by default.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 18,
+   "last_line_share": 0.81,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.flex.",
+   "text": "Performance you can measure.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 28,
+   "last_line_share": 0.77,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "JetBrains Mono"
+  },
+  {
+   "sel": "section.relative.py-24:nth-of-type(6) > div.max-w-\\[1400px\\].mx-auto:nth-of-type",
+   "text": "Works with everything you already use.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 38,
+   "last_line_share": 0.7,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.relative.py-24:nth-of-type(7) > div.max-w-\\[1400px\\].mx-auto > div.grid.",
+   "text": "Trust is non-negotiable.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 24,
+   "last_line_share": 2.29,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.gap-6:nth-of-type(2) > div.p-6.border:nth-of-type(1) > div.flex.items-s",
+   "text": "SOC 2 Type II",
+   "size": "18px",
+   "level": 3,
+   "lines": 1,
+   "chars": 13,
+   "last_line_share": null,
+   "leading": 1.56,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.gap-6:nth-of-type(2) > div.p-6.border:nth-of-type(2) > div.flex.items-s",
+   "text": "End-to-end encryption",
+   "size": "18px",
+   "level": 3,
+   "lines": 1,
+   "chars": 21,
+   "last_line_share": null,
+   "leading": 1.56,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.gap-6:nth-of-type(2) > div.p-6.border:nth-of-type(3) > div.flex.items-s",
+   "text": "Zero-trust architecture",
+   "size": "18px",
+   "level": 3,
+   "lines": 1,
+   "chars": 23,
+   "last_line_share": null,
+   "leading": 1.56,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.gap-6:nth-of-type(2) > div.p-6.border:nth-of-type(4) > div.flex.items-s",
+   "text": "GDPR & HIPAA",
+   "size": "18px",
+   "level": 3,
+   "lines": 1,
+   "chars": 12,
+   "last_line_share": null,
+   "leading": 1.56,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.relative.py-24:nth-of-type(8) > div.max-w-\\[1400px\\].mx-auto > div.grid.",
+   "text": "Built by devs.",
+   "size": "60px",
+   "level": 2,
+   "lines": 2,
+   "chars": 23,
+   "last_line_share": 0.69,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.",
+   "text": "TypeScript native",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 17,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.",
+   "text": "Zero config",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 11,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.",
+   "text": "Edge-ready",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.",
+   "text": "12KB gzipped",
+   "size": "16px",
+   "level": 3,
+   "lines": 1,
+   "chars": 12,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.max-w-3xl.m",
+   "text": "Simple, transparent",
+   "size": "72px",
+   "level": 2,
+   "lines": 2,
+   "chars": 26,
+   "last_line_share": 0.36,
+   "leading": 1.0,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p",
+   "text": "Starter",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p",
+   "text": "Pro",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 3,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p",
+   "text": "Enterprise",
+   "size": "30px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": 0.0,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.relative.border > div.relative.z-10:nth-of-type(2) > div.flex.flex-col > div",
+   "text": "Ready to build something great?",
+   "size": "72px",
+   "level": 2,
+   "lines": 2,
+   "chars": 31,
+   "last_line_share": 1.26,
+   "leading": 0.95,
+   "tracking_em": -0.025,
+   "weight": "400",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.relative.z-10:nth-of-type(2) > div.py-16.lg\\:py-24:nth-of-type(1) > div.grid",
+   "text": "Product",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.43,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.relative.z-10:nth-of-type(2) > div.py-16.lg\\:py-24:nth-of-type(1) > div.grid",
+   "text": "Developers",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.43,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  },
+  {
+   "sel": "div.relative.z-10:nth-of-type(2) > div.py-16.lg\\:py-24:nth-of-type(1) > div.grid",
+   "text": "Company",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 7,
+   "last_line_share": null,
+   "leading": 1.43,
+   "tracking_em": 0.0,
+   "weight": "500",
+   "face": "Instrument Sans"
+  }
+ ],
+ "head_treatments": [
+  {
+   "sel": "section.relative.py-24:nth-of-type(2) > div.max-w-\\[1400px\\].mx-auto > div.mb-16",
+   "text": "Nothing you don't.",
+   "size": "60px",
+   "heading": "Everything you need.",
+   "differs": [
+    "color"
+   ]
+  },
+  {
+   "sel": "section.jsx-d0fb98a0b853be6f.relative:nth-of-type(3) > div.jsx-d0fb98a0b853be6f.",
+   "text": "Infinite possibilities.",
+   "size": "60px",
+   "heading": "Three steps.",
+   "differs": [
+    "color"
+   ]
+  },
+  {
+   "sel": "div.max-w-\\[1400px\\].mx-auto > div.grid.lg\\:grid-cols-2 > div.transition-all.dur",
+   "text": "For devs.",
+   "size": "60px",
+   "heading": "Built by devs.",
+   "differs": [
+    "color"
+   ]
+  }
+ ],
+ "small_caps_or_tracked": {
+  "count": 5,
+  "examples": [
+   {
+    "sel": "main.relative.min-h-screen > section.relative.py-32:nth-of-type(9) > div.max-w-7",
+    "text": "What people say",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "div.max-w-7xl.mx-auto:nth-of-type(1) > div.grid.lg\\:grid-cols-12:nth-of-type(2) ",
+    "text": "Key Result",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "main.relative.min-h-screen > section.relative.py-32:nth-of-type(9) > div.max-w-7",
+    "text": "Trusted by forward-thinking teams",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.max-w-3xl.m",
+    "text": "Pricing",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.grid.md\\:gr",
+    "text": "Most Popular",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   }
+  ]
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {
+   "small": 32,
+   "other": 4,
+   "h2": 1,
+   "body": 1,
+   "control": 2
+  },
+  "body_paragraphs": [
+   {
+    "sel": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.",
+    "text": "Runs anywhere: Node, Deno, Bun, browsers.",
+    "size": "14px"
+   }
+  ]
+ },
+ "wrapped_controls": [],
+ "punctuation": {
+  "straight_double": 2,
+  "curly_double": 0,
+  "straight_apostrophe": 3,
+  "curly_apostrophe": 0,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

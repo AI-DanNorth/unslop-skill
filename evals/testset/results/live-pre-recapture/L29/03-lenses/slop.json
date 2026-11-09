@@ -1,0 +1,36 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "A WebGL game world: a hand-illustrated tiny planet with houses, a lighthouse-orange structure, river and trees in a flat cel-shaded style on a teal void, plus custom side, emoji and checklist UI; nothing resembles a landing-page kit. Confidence is low because the 3D app script was blocked and the capture shows only the intro planet with no text.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CON-121",
+      "tier": "Finish",
+      "where": "first screen, 1440 tile 00 and 375 tile 00",
+      "evidence": "Failed T-FIVE-SECOND (in this capture): the first screen is the planet alone on teal with no visible title, prompt or control; the only words are in the meta description ('It's a small planet, but someone's gotta make the deliveries.'). The 'continue-button' and checklist panels exist in the DOM but render empty.",
+      "before": "Planet with no on-screen title or start prompt",
+      "after": "Show the game name 'Messenger' and a 'Click to start' prompt over the intro until the 3D scene is interactive.",
+      "why": "A visitor who arrives before the scene loads cannot tell what it is or what to do.",
+      "test": "T-FIVE-SECOND"
+    }
+  ],
+  "strengths": [
+    "T-RIVAL-NAME / T-MIRROR / T-DEFAULT-AGENT all pass: a bespoke illustrated planet with its own architecture and palette; no stock sections, no SaaS chrome, no copy to swap.",
+    "Single teal ground with flat-shaded, outlined props gives the piece a consistent, authored visual voice."
+  ],
+  "not_investigated": [
+    "Blocked script https://messenger.abeto.co/assets/App3D-DwM1eiaC.js (manifest network): the interactive world, UI buttons, emoji panel and checklist content did not render, so gameplay UI and any copy are not verified.",
+    "Motion and interaction (scripted clicks) not captured."
+  ]
+}

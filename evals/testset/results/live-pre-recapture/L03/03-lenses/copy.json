@@ -1,0 +1,104 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The hero 'Tell us the goal. We'll build the stack.' and the closer 'Ready to find your stack?' would ship unchanged on any AI-tool recommender; the only client facts are the 20-tool count and the rupee prices on the tool cards.",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 4,
+    "reason": "T-RIVAL-NAME fails on the h1, the sub-line and 4 of 5 h2s, T-FIVE-SECOND finds no price or owner for the service itself, and T-HEADING-FORM finds two question headings and a 'How it works' formula; the rupee prices and the goal list are the few real facts."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "hero h1 and h2s, 1440, tiles/1440-00.png and tiles/1440-02.png",
+      "evidence": "Failed T-RIVAL-NAME: the h1 'Tell us the goal. We'll build the stack.', the sub-line 'Stop browsing endless directories. Answer three quick questions and get a personalized combination of AI tools that actually fits your goal, budget, and skill level.', and the h2s 'What are you trying to accomplish?', 'How it works', 'Featured tools' and 'Ready to find your stack?' all stay true under the name of any other AI-tool directory or quiz.",
+      "before": "Tell us the goal. We'll build the stack.",
+      "after": "Lead with what only this service has: who curates the 20 tools, that prices are shown in rupees for Indian buyers, and what the result page gives (a named stack with monthly cost). [DATA NEEDED: who picks and tests the tools]",
+      "why": "A visitor comparing recommenders gets no reason to trust this one over the next result.",
+      "root": "Hero and section headings written from the generic quiz-site template",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-015",
+      "title": "First screen carries no hard fact about the offer",
+      "tier": "Reflex",
+      "where": "hero, 1440, tiles/1440-00.png",
+      "evidence": "Failed T-FIVE-SECOND and T-FRESH-READER: the first screen's digits are '20+ curated tools' and 'Updated for 2026'. Nothing says whether the recommendation is free, who runs the site, or what the result looks like. 'Instant results' is a claim, not a fact.",
+      "before": "20+ curated tools · Instant results · Updated for 2026",
+      "after": "Put the cost of the service (free or not) and one concrete output on the first screen, for example the number of tools in a stack and that each comes with its monthly price in rupees.",
+      "why": "The reader hesitates over cost and credibility, and the hero answers neither.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "CPY-014",
+      "title": "Formula headings",
+      "tier": "Reflex",
+      "where": "h2s and step heading, 1440, tiles/1440-00.png and tiles/1440-02.png",
+      "evidence": "Failed T-HEADING-FORM: two of five h2s are questions ('What are you trying to accomplish?', 'Ready to find your stack?'), one is the stock 'How it works' with the fragment pair 'Three questions. One personalized stack.' under it, and the closing band follows the 'Ready to X?' plus 'Get started' formula.",
+      "before": "Ready to find your stack?",
+      "after": "Name the outcome as a statement with a noun the reader wants, for example the stack for their goal with its monthly total; label the closing button with the same words as the hero action.",
+      "why": "Formula headings make the outline read as a template and say nothing a reader can scan for.",
+      "test": "T-HEADING-FORM"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "Labels that change or do not name their target",
+      "tier": "Reflex",
+      "where": "nav, hero, closing band and tool cards, 1440",
+      "evidence": "Failed T-LABEL-READ: the copy sheet shows #/find reached by 'Find My Stack', 'Find my stack' and 'Get started' (plus 10 goal cards), so the closing action is worded differently from the hero's; #/compare is labelled 'Compare' and 'Compare Tools'; 'Compare' appears twice in the nav. The 'Details' links are the sweep's CPY-005 hits and are not repeated here.",
+      "before": "Get started",
+      "after": "Use 'Find my stack' for every link to #/find, and one 'Compare' entry in the nav.",
+      "why": "Three wordings for one action make the reader wonder whether they lead to different places.",
+      "test": "T-LABEL-READ"
+    },
+    {
+      "rule": "CPY-008",
+      "title": "Adjective claims where a mechanism belongs",
+      "tier": "Reflex",
+      "where": "tool cards and closing band, 1440, tiles/1440-02.png",
+      "evidence": "Failed T-THREE-LINE: 'a personalized combination of AI tools that actually fits your goal', 'Conversational AI assistant for almost anything' and 'a tailored workflow with real tools, prices, and setup time' cannot be pictured or proven false, and any directory could say them.",
+      "before": "you'll get a tailored workflow with real tools, prices, and setup time.",
+      "after": "Show one sample result: a named goal, the tools picked for it, the monthly total and the setup time in minutes.",
+      "why": "The promise of personalisation is the product, and the page never shows what it produces.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-016",
+      "title": "Lines that restate the heading",
+      "tier": "Reflex",
+      "where": "'How it works' steps and footer, 1440",
+      "evidence": "Failed T-DELETION: 'Choose your goal' is followed by 'Tell us what you are trying to accomplish', which repeats the h2 above it; the footer repeats the hero line 'Tell us the goal. We'll build the stack.' and adds 'Built to help you find the right AI tools, faster.'; 'Pick a goal to get started — we'll handle the rest.' adds nothing to the question above it.",
+      "before": "Pick a goal to get started — we'll handle the rest.",
+      "after": "Cut the line, or replace it with the fact a reader lacks here: how many questions follow and whether an account is needed.",
+      "why": "Repeated lines spend the reader's attention without adding information.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The ten goal cards name real jobs in plain words ('Start a YouTube channel', 'Grow a blog', 'Automate repetitive work') with literal sub-lines.",
+    "Tool cards carry concrete prices in rupees ('Free / ₹1,650 mo Plus', '₹415 mo Starter'), a fact that places the audience."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: no form on the page and async.json was not captured, so no confirmation, error or result state was seen.",
+    "T-LONG-FORM: the copy sheet lists no long-form region; this is a landing page.",
+    "Contract: no 00-contract.md in the run, so no brand voice or audience was supplied; judged as a Persuade page."
+  ]
+}

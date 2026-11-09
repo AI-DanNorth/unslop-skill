@@ -1,0 +1,747 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "Figtree": {
+   "elements": 204,
+   "chars": 7228,
+   "roles": {
+    "other": 9,
+    "body": 42,
+    "small": 89,
+    "control": 16,
+    "h3": 38,
+    "h2": 10
+   },
+   "sizes_px": [
+    10.0,
+    10.5,
+    11.0,
+    11.5,
+    12.0,
+    12.5,
+    13.0,
+    14.0,
+    15.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    24.0,
+    28.0
+   ],
+   "source": "declared"
+  },
+  "Inter": {
+   "elements": 5,
+   "chars": 120,
+   "roles": {
+    "small": 3,
+    "body": 1,
+    "control": 1
+   },
+   "sizes_px": [
+    12.0,
+    14.0
+   ],
+   "source": "declared"
+  },
+  "Outfit": {
+   "elements": 8,
+   "chars": 39,
+   "roles": {
+    "other": 8
+   },
+   "sizes_px": [
+    41.6
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "small": {
+   "count": 92,
+   "sizes_px": {
+    "14.0": 26,
+    "12.0": 17,
+    "11.0": 16,
+    "10.5": 9,
+    "12.5": 8,
+    "13.0": 6,
+    "10.0": 5,
+    "11.5": 4,
+    "15.0": 1
+   },
+   "median_px": 12.0,
+   "weights": {
+    "500": 44,
+    "400": 28,
+    "600": 20
+   },
+   "faces": {
+    "Figtree": 89,
+    "Inter": 3
+   },
+   "italic": 0,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 16
+  },
+  "body": {
+   "count": 43,
+   "sizes_px": {
+    "14.0": 39,
+    "12.0": 2,
+    "13.0": 1,
+    "11.5": 1
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 42,
+    "500": 1
+   },
+   "faces": {
+    "Figtree": 42,
+    "Inter": 1
+   },
+   "italic": 0,
+   "leading_median": 1.62,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 17,
+   "sizes_px": {
+    "14.0": 12,
+    "15.0": 2,
+    "13.0": 2,
+    "12.0": 1
+   },
+   "median_px": 14.0,
+   "weights": {
+    "500": 15,
+    "600": 2
+   },
+   "faces": {
+    "Figtree": 16,
+    "Inter": 1
+   },
+   "italic": 0,
+   "leading_median": 1.5,
+   "leading_normal": 0,
+   "tracking_em_median": -0.03,
+   "uppercase": 0
+  },
+  "other": {
+   "count": 17,
+   "sizes_px": {
+    "41.6": 8,
+    "19.0": 3,
+    "28.0": 3,
+    "17.0": 2,
+    "20.0": 1
+   },
+   "median_px": 28.0,
+   "weights": {
+    "700": 10,
+    "600": 7
+   },
+   "faces": {
+    "Figtree": 9,
+    "Outfit": 8
+   },
+   "italic": 0,
+   "leading_median": 1.02,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 38,
+   "sizes_px": {
+    "14.0": 33,
+    "12.0": 3,
+    "18.0": 2
+   },
+   "median_px": 14.0,
+   "weights": {
+    "600": 19,
+    "500": 19
+   },
+   "faces": {
+    "Figtree": 38
+   },
+   "italic": 0,
+   "leading_median": 1.45,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 1
+  },
+  "h2": {
+   "count": 10,
+   "sizes_px": {
+    "20.0": 7,
+    "24.0": 3
+   },
+   "median_px": 20.0,
+   "weights": {
+    "600": 9,
+    "700": 1
+   },
+   "faces": {
+    "Figtree": 10
+   },
+   "italic": 0,
+   "leading_median": 1.35,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h2/h3",
+   "ratio": 1.43
+  },
+  {
+   "pair": "h3/body",
+   "ratio": 1.0
+  }
+ ],
+ "distinct_sizes_px": [
+  10.0,
+  10.5,
+  11.0,
+  11.5,
+  12.0,
+  12.5,
+  13.0,
+  14.0,
+  15.0,
+  17.0,
+  18.0,
+  19.0,
+  20.0,
+  24.0,
+  28.0,
+  41.6
+ ],
+ "measure": {
+  "paragraphs": 29,
+  "cpl_median": 37,
+  "cpl_max": 47,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "div.min-w-0.flex-1:nth-of-type(3) > div.grid.min-w-0 > section.min-w-0.overflow-",
+   "text": "Tasks",
+   "size": "12px",
+   "level": 3,
+   "lines": 1,
+   "chars": 5,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.min-w-0.flex-1:nth-of-type(3) > div.grid.min-w-0 > section.min-w-0.overflow-",
+   "text": "Attendance",
+   "size": "12px",
+   "level": 3,
+   "lines": 1,
+   "chars": 10,
+   "last_line_share": null,
+   "leading": 1.2,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "#homepage-trust-heading",
+   "text": "See Consile in two minutes",
+   "size": "20px",
+   "level": 2,
+   "lines": 1,
+   "chars": 26,
+   "last_line_share": null,
+   "leading": 1.35,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "#homepage-trust-featured-on",
+   "text": "Featured on",
+   "size": "12px",
+   "level": 3,
+   "lines": 1,
+   "chars": 11,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": 0.05,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.min-h-dvh.bg-background:nth-of-type(2) > section.scroll-mt-16.bg-muted\\/25:n",
+   "text": "Why teams struggle without Consile",
+   "size": "24px",
+   "level": 2,
+   "lines": 2,
+   "chars": 34,
+   "last_line_share": 0.26,
+   "leading": 1.25,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "Tool Overload",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 13,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "Flying Blind",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 12,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "Manual Busywork",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 15,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.min-h-dvh.bg-background:nth-of-type(2) > section.scroll-mt-16.bg-muted\\/25:n",
+   "text": "How Consile solves it",
+   "size": "24px",
+   "level": 2,
+   "lines": 1,
+   "chars": 21,
+   "last_line_share": null,
+   "leading": 1.25,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "One Platform, Zero Chaos",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 24,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "Real-Time Team Pulse",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 20,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto >",
+   "text": "Workflows That Run Themselves",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 29,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "section.scroll-mt-16:nth-of-type(4) > div.landing-section.mx-auto > div.text-cen",
+   "text": "Tasks, people ops, and performance — done in one workspace",
+   "size": "24px",
+   "level": 2,
+   "lines": 3,
+   "chars": 58,
+   "last_line_share": 0.39,
+   "leading": 1.25,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "Running in Minutes, Not Months",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 30,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "Guided Onboarding for New Hires",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 31,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "Leave & Attendance on Autopilot",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 31,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "Shifts, Rotations & Swap Requests",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 33,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "Task & Project Management",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 25,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-typ",
+   "text": "KPI Reviews & Performance Tracking",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 34,
+   "last_line_share": null,
+   "leading": 1.5,
+   "tracking_em": -0.02,
+   "weight": "500",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.min-h-dvh.bg-background:nth-of-type(2) > section.landing-section.w-full:nth-",
+   "text": "Enterprise-grade by default",
+   "size": "20px",
+   "level": 2,
+   "lines": 1,
+   "chars": 27,
+   "last_line_share": null,
+   "leading": 1.35,
+   "tracking_em": -0.025,
+   "weight": "700",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(1) > div.round",
+   "text": "SAML 2.0 Single Sign-On",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 23,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(2) > div.round",
+   "text": "SCIM 2.0 Provisioning",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 21,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(3) > div.round",
+   "text": "Audit Log Streaming",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 19,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(4) > div.round",
+   "text": "Privileged Access Management",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 28,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(5) > div.round",
+   "text": "Public API & Webhooks",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 21,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(6) > div.round",
+   "text": "Live Status Page",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 16,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(7) > div.round",
+   "text": "Sub-Processor Registry",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 22,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(8) > div.round",
+   "text": "GDPR Data Rights",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 16,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(9) > div.round",
+   "text": "Recurring Tasks",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 15,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  },
+  {
+   "sel": "div.grid.grid-cols-1:nth-of-type(2) > a.block.min-w-0:nth-of-type(10) > div.roun",
+   "text": "Cookie Consent",
+   "size": "14px",
+   "level": 3,
+   "lines": 1,
+   "chars": 14,
+   "last_line_share": null,
+   "leading": 1.38,
+   "tracking_em": -0.02,
+   "weight": "600",
+   "face": "Figtree"
+  }
+ ],
+ "head_treatments": [
+  {
+   "sel": "section.landing-section.bg-muted\\/20:nth-of-type(7) > div.mx-auto.max-w-6xl > di",
+   "text": "your",
+   "size": "20px",
+   "heading": "Choose way in",
+   "differs": [
+    "color"
+   ]
+  }
+ ],
+ "small_caps_or_tracked": {
+  "count": 17,
+  "examples": [
+   {
+    "sel": "div.flex.min-h-\\[26rem\\]:nth-of-type(2) > div.grid.min-w-0:nth-of-type(2) > div.",
+    "text": "Tasks due",
+    "size": "10px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "div.flex.min-h-\\[26rem\\]:nth-of-type(2) > div.grid.min-w-0:nth-of-type(2) > div.",
+    "text": "Attendance",
+    "size": "10px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "div.flex.min-h-\\[26rem\\]:nth-of-type(2) > div.grid.min-w-0:nth-of-type(2) > div.",
+    "text": "People",
+    "size": "10px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "div.flex.min-h-\\[26rem\\]:nth-of-type(2) > div.grid.min-w-0:nth-of-type(2) > div.",
+    "text": "Reviews",
+    "size": "10px",
+    "transform": "uppercase",
+    "tracking_em": 0.1
+   },
+   {
+    "sel": "div.flex.min-h-\\[26rem\\]:nth-of-type(2) > p.text-\\[10px\\].uppercase",
+    "text": "Product preview · sample data",
+    "size": "10px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   },
+   {
+    "sel": "#homepage-trust-featured-on",
+    "text": "Featured on",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.05
+   },
+   {
+    "sel": "div.mx-auto.max-w-6xl > div.rounded-2xl.border > div.grid.grid-cols-1 > div.flex",
+    "text": "Built-in modules",
+    "size": "10.5px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   },
+   {
+    "sel": "div.mx-auto.max-w-6xl > div.rounded-2xl.border > div.grid.grid-cols-1 > div.flex",
+    "text": "Monthly uptime target",
+    "size": "10.5px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   },
+   {
+    "sel": "div.mx-auto.max-w-6xl > div.rounded-2xl.border > div.grid.grid-cols-1 > div.flex",
+    "text": "Starter plan up to 5 users",
+    "size": "10.5px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   },
+   {
+    "sel": "section.landing-section.bg-muted\\/20:nth-of-type(7) > div.mx-auto.max-w-6xl > di",
+    "text": "I run a company",
+    "size": "11px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   }
+  ]
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [
+  {
+   "sel": "div.landing-hero-stage.landing-hero-bento > div.landing-bento-copy.relative:nth-",
+   "text": "see how it works",
+   "size": "13px",
+   "lines": 2
+  }
+ ],
+ "punctuation": {
+  "straight_double": 2,
+  "curly_double": 0,
+  "straight_apostrophe": 13,
+  "curly_apostrophe": 0,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": true,
+  "text_wrap_pretty": true,
+  "font_synthesis_none": false,
+  "font_display": true,
+  "unreadable_sheets": false
+ }
+}

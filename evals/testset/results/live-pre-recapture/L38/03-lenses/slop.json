@@ -1,0 +1,49 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T15:35:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The artifact (Apple's 'Welcome to Apple Arcade' email, shown as one image inside the Really Good Emails gallery) is built from the product's own game art (Oceanhorn hero, Sayonara Wild Hearts, Jenny LeClue - Detectivu) with real conditions and an address; only its headline diction is stock marketing.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-005",
+      "tier": "Finish",
+      "where": "email headline under the hero image, tile 01",
+      "evidence": "T-FRESH-READER / T-RIVAL-NAME: 'You're Going to Love It Here' and 'All You Can Play' would fit any subscription welcome email (Netflix, Xbox Game Pass); body copy leans on 'something amazing to play', 'tons of helpful tips', 'groundbreaking new games', 'an incredible new way to play'.",
+      "before": "\"You're Going to Love It Here\" / \"an incredible new way to play\"",
+      "after": "Lead with what only Arcade offers: no ads, no in-app purchases, play offline, one price for the family [DATA NEEDED: which of these to stress]",
+      "why": "The one generic layer in an otherwise specific email; the art carries the identity, the words do not.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-007",
+      "tier": "Finish",
+      "where": "CTA buttons 'Play Now', 'Set Up Your Family'",
+      "evidence": "Small red-to-orange gradient buttons with Title Case labels, repeated identically down the email; next to full-bleed game art they read as a generic email-template button.",
+      "before": "Gradient red pill buttons",
+      "after": "One flat button colour from the Arcade palette, sentence case",
+      "why": "Minor template chrome; not a cluster.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Real product imagery per game, with captions naming the game ('Sayonara Wild Hearts', 'Jenny LeClue - Detectivu').",
+    "Concrete, falsifiable facts: 'up to 6 family members … at no extra cost', '100+ games rolling out this fall', full legal conditions and 'One Apple Park Way, Cupertino, CA 95014'.",
+    "Single clear action per block (Play Now; Set Up Your Family)."
+  ],
+  "not_investigated": [
+    "The surrounding Really Good Emails gallery chrome (header, ad slot, 'You might also like' grid) is host UI, not the artifact under review; not judged for slop beyond noting it.",
+    "The email is shown as a single raster image (894x3868); live HTML email rendering, dark mode and client quirks were not available."
+  ]
+}

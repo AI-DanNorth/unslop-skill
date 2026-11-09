@@ -1,0 +1,88 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The job is trying a team-operations tool, and the hero is built for it with a working dashboard preview, but below it the page runs eleven stock sections in stock order (video, featured-on logos, problem cards, solution cards, feature grid, enterprise grid, plan choice, beliefs, a second security grid, FAQ, CTA), which caps the read at generated.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-FIVE-SECOND and T-SQUINT pass on the first screen, but T-STOCK-ORDER finds eleven stock sections, T-COMPOSITION-RUN finds five card grids in a row, and T-SQUINT below the fold shows the same grey grid on tile after tile."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-015",
+      "tier": "Reflex",
+      "where": "whole page below the hero, tiles 1440-01 to 1440-09, 1440px",
+      "evidence": "The h2 run in dom-1440.json is \"See Consile in two minutes\", \"Why teams struggle without Consile\", \"How Consile solves it\", \"Tasks, people ops, and performance — done in one workspace\", \"Enterprise-grade by default\", \"Choose way in\", \"What we believe\", \"Built with security & compliance at the core\", \"Questions, answered\", \"Ready to run tasks, people ops, and performance from one workspace?\". With the \"Featured on\" logo row that is eleven stock sections in the stock problem, solution, features, security, pricing, FAQ, CTA order, each with a pill eyebrow (\"The problem\", \"The solution\").",
+      "before": "Eleven stock sections, 8,407px at 1440 and 13,466px at 375.",
+      "after": "Cut to the sections the job needs: the hero preview, one section per product area (tasks, attendance, leave, reviews) shown as real screens, plan choice, FAQ. Merge the two security sections into one.",
+      "why": "Below the hero the sequence would sit unchanged on any B2B SaaS page, and the visitor has to scroll past three card grids before reaching anything about attendance or leave, the things the title promises.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "LAY-012",
+      "tier": "Reflex",
+      "where": "problem, solution, features, enterprise and security sections, tiles 1440-02 to 1440-07, 1440px",
+      "evidence": "Five sections in a row share one skeleton: a centred h2 and subline over a three-column grid of white rounded cards with a small tinted icon or number, a 14px h3 and a grey paragraph (3, 3, 6, 10 and 6 cards). The sweep's card_kit hit reports 83 containers sharing radius 14px and one shadow; icon_tile reports 12 repeats.",
+      "before": "Card grid, card grid, card grid, card grid, card grid.",
+      "after": "Change the composition of the product sections to show screens (split or showcase), and set the enterprise and security items as one compact list or table.",
+      "why": "Under the squint (03-lenses/squint/1440-03.png) these tiles are a centred grey heading over identical pale boxes; nothing tells the visitor which section matters most.",
+      "test": "T-COMPOSITION-RUN"
+    },
+    {
+      "rule": "LAY-010",
+      "tier": "Reflex",
+      "where": "\"Enterprise-grade by default\" (y=3742) and \"Built with security & compliance at the core\" (y=6089), tiles 1440-04 and 1440-07, 1440px",
+      "evidence": "Both sections list the same items: SSO and SCIM (\"SAML 2.0 Single Sign-On\", \"SCIM 2.0 Provisioning\" versus \"SSO & SCIM provisioning\"), audit logs (\"Audit Log Streaming\" versus \"Audit-log streaming\") and API (\"Public API & Webhooks\" versus \"Signed webhooks & scoped API keys\"). The enterprise grid also holds \"Recurring Tasks\" and \"Cookie Consent\", which are not enterprise features.",
+      "before": "Two security sections 2,300px apart, the first mixing in task and cookie features.",
+      "after": "Merge them into one security section and move \"Recurring Tasks\" to the feature grid.",
+      "why": "The visitor reads the same claims twice and meets a task feature under a security heading, so the section labels stop being reliable.",
+      "test": "T-SKELETON"
+    },
+    {
+      "rule": "LAY-019",
+      "tier": "Reflex",
+      "where": "section heads, tiles 1440-01 to 1440-09, 1440px",
+      "evidence": "Ten of the eleven h1 and h2 elements are text-align center; only the hero h1 is left-aligned. The start-line count gives text on at least eight lines with 3 or more blocks (x=152, 168, 176, 196, 384, 560, 564, 932), because section containers change width (max-w-4xl, max-w-6xl) from section to section.",
+      "before": "A left-aligned hero over centred section heads in containers of changing width.",
+      "after": "Keep the hero's left edge at x=151 for the section heads, and use one container width for the card sections.",
+      "why": "The hero sets a left edge that no later section keeps, and the card grids start at 145, 169, 176 or 197 depending on the section.",
+      "test": "T-LEFT-EDGES"
+    },
+    {
+      "rule": "LAY-020",
+      "tier": "Finish",
+      "where": "features and enterprise sections, tiles 1440-03 to 1440-05, 1440px",
+      "evidence": "The sweep reports 213 words on screen 4 (words_per_screen) and 1,318 words on the page (page_words, budget 675). The enterprise grid alone holds ten cards, each with a heading, a two-line paragraph and a \"Learn more\" link.",
+      "before": "Persuade page carrying feature-reference density.",
+      "after": "Move the 24-feature and enterprise detail to the features page that \"View all 24 features\" already links to, and keep the top three on the home page.",
+      "why": "A visitor deciding whether to try the tool meets a reference list; the density belongs to a features page, not to the home page.",
+      "test": "T-DENSITY-FIT"
+    }
+  ],
+  "strengths": [
+    "The first screen is built for the job: a left-aligned h1 \"Everything your team runs on, in one workspace\" beside a working dashboard preview with tasks, attendance and people counts, and \"Start free\" at y=671 to 719 inside the fold at 1440, 1280 and 375.",
+    "The hero preview is the product's own focal point and holds as the heaviest mass under the squint."
+  ],
+  "not_investigated": [
+    "The cookie banner was dismissed by capture prep, and one third-party badge image was blocked (manifest network); neither affects structure.",
+    "type_ladder (23 sizes), flat_hierarchy, card_kit, icon_tile and phone_parity are sweep findings and are not repeated.",
+    "At 375 a \"Maybe later\" button sits at y=755 in the first screen; it may be a leftover overlay, so T-PHONE-ORDER was checked for section order only, which is kept."
+  ]
+}

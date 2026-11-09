@@ -1,0 +1,418 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "Inter": {
+   "elements": 25,
+   "chars": 802,
+   "roles": {
+    "control": 10,
+    "small": 7,
+    "body": 6,
+    "other": 2
+   },
+   "sizes_px": [
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    18.0,
+    20.0,
+    28.0
+   ],
+   "source": "declared"
+  },
+  "Fraunces": {
+   "elements": 14,
+   "chars": 238,
+   "roles": {
+    "other": 8,
+    "h1": 1,
+    "h2": 2,
+    "h3": 3
+   },
+   "sizes_px": [
+    22.0,
+    36.0,
+    48.0
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 10,
+   "sizes_px": {
+    "22.0": 7,
+    "28.0": 2,
+    "48.0": 1
+   },
+   "median_px": 22.0,
+   "weights": {
+    "400": 9,
+    "600": 1
+   },
+   "faces": {
+    "Fraunces": 8,
+    "Inter": 2
+   },
+   "italic": 7,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "control": {
+   "count": 10,
+   "sizes_px": {
+    "14.0": 7,
+    "15.0": 3
+   },
+   "median_px": 14.0,
+   "weights": {
+    "400": 6,
+    "500": 4
+   },
+   "faces": {
+    "Inter": 10
+   },
+   "italic": 0,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 7,
+   "sizes_px": {
+    "11.0": 3,
+    "13.0": 3,
+    "12.0": 1
+   },
+   "median_px": 12.0,
+   "weights": {
+    "600": 5,
+    "400": 2
+   },
+   "faces": {
+    "Inter": 7
+   },
+   "italic": 0,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": 0.16,
+   "uppercase": 1
+  },
+  "h1": {
+   "count": 1,
+   "sizes_px": {
+    "48.0": 1
+   },
+   "median_px": 48.0,
+   "weights": {
+    "400": 1
+   },
+   "faces": {
+    "Fraunces": 1
+   },
+   "italic": 0,
+   "leading_median": 1.05,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  },
+  "body": {
+   "count": 6,
+   "sizes_px": {
+    "15.0": 3,
+    "18.0": 2,
+    "20.0": 1
+   },
+   "median_px": 16.5,
+   "weights": {
+    "400": 6
+   },
+   "faces": {
+    "Inter": 6
+   },
+   "italic": 0,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h2": {
+   "count": 2,
+   "sizes_px": {
+    "36.0": 2
+   },
+   "median_px": 36.0,
+   "weights": {
+    "400": 2
+   },
+   "faces": {
+    "Fraunces": 2
+   },
+   "italic": 0,
+   "leading_median": 1.1,
+   "leading_normal": 0,
+   "tracking_em_median": -0.02,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 3,
+   "sizes_px": {
+    "22.0": 3
+   },
+   "median_px": 22.0,
+   "weights": {
+    "500": 3
+   },
+   "faces": {
+    "Fraunces": 3
+   },
+   "italic": 0,
+   "leading_median": 1.55,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h1/h2",
+   "ratio": 1.33
+  },
+  {
+   "pair": "h2/h3",
+   "ratio": 1.64
+  },
+  {
+   "pair": "h3/body",
+   "ratio": 1.33
+  }
+ ],
+ "distinct_sizes_px": [
+  11.0,
+  12.0,
+  13.0,
+  14.0,
+  15.0,
+  18.0,
+  20.0,
+  22.0,
+  28.0,
+  36.0,
+  48.0
+ ],
+ "measure": {
+  "paragraphs": 4,
+  "cpl_median": 11.5,
+  "cpl_max": 24,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": [
+   {
+    "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+    "text": "Move from idea to production in minutes, not months. Our AI ",
+    "size": "15px",
+    "lines": 10,
+    "chars": 119,
+    "cpl": 12,
+    "width_px": 99
+   },
+   {
+    "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+    "text": "SOC 2 compliant infrastructure with end-to-end encryption. Y",
+    "size": "15px",
+    "lines": 8,
+    "chars": 85,
+    "cpl": 11,
+    "width_px": 108
+   },
+   {
+    "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+    "text": "From your first prototype to millions of users — Lumina grow",
+    "size": "15px",
+    "lines": 14,
+    "chars": 102,
+    "cpl": 7,
+    "width_px": 69
+   }
+  ]
+ },
+ "headings": [
+  {
+   "sel": "html > body > section.hero:nth-of-type(1) > h1.h1",
+   "text": "Build faster with workflows for modern teams",
+   "size": "48px",
+   "level": 1,
+   "lines": 6,
+   "chars": 55,
+   "last_line_share": 0.03,
+   "leading": 1.05,
+   "tracking_em": -0.02,
+   "weight": "400",
+   "face": "Fraunces"
+  },
+  {
+   "sel": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1)",
+   "text": "Everything you need to ship great products",
+   "size": "36px",
+   "level": 2,
+   "lines": 3,
+   "chars": 42,
+   "last_line_share": 0.51,
+   "leading": 1.1,
+   "tracking_em": -0.02,
+   "weight": "400",
+   "face": "Fraunces"
+  },
+  {
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+   "text": "Lightning Fast",
+   "size": "22px",
+   "level": 3,
+   "lines": 2,
+   "chars": 14,
+   "last_line_share": 0.42,
+   "leading": 1.55,
+   "tracking_em": -0.01,
+   "weight": "500",
+   "face": "Fraunces"
+  },
+  {
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+   "text": "Enterprise Secure",
+   "size": "22px",
+   "level": 3,
+   "lines": 2,
+   "chars": 17,
+   "last_line_share": 0.65,
+   "leading": 1.55,
+   "tracking_em": -0.01,
+   "weight": "500",
+   "face": "Fraunces"
+  },
+  {
+   "sel": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-",
+   "text": "Built to Scale",
+   "size": "22px",
+   "level": 3,
+   "lines": 3,
+   "chars": 14,
+   "last_line_share": 1.1,
+   "leading": 1.55,
+   "tracking_em": -0.01,
+   "weight": "500",
+   "face": "Fraunces"
+  },
+  {
+   "sel": "html > body > section.cta-section:nth-of-type(4) > h2",
+   "text": "Ready to transform how your team builds?",
+   "size": "36px",
+   "level": 2,
+   "lines": 3,
+   "chars": 40,
+   "last_line_share": 0.37,
+   "leading": 1.1,
+   "tracking_em": -0.02,
+   "weight": "400",
+   "face": "Fraunces"
+  }
+ ],
+ "head_treatments": [
+  {
+   "sel": "html > body > section.hero:nth-of-type(1) > h1.h1 > em",
+   "text": "intelligent",
+   "size": "48px",
+   "heading": "Build faster with workflows for modern teams",
+   "differs": [
+    "fontStyle",
+    "color"
+   ]
+  }
+ ],
+ "small_caps_or_tracked": {
+  "count": 4,
+  "examples": [
+   {
+    "sel": "html > body > section.hero:nth-of-type(1) > span.section-number",
+    "text": "01",
+    "size": "11px",
+    "transform": "none",
+    "tracking_em": 0.18
+   },
+   {
+    "sel": "html > body > section.hero:nth-of-type(1) > div.eyebrow:nth-of-type(1)",
+    "text": "AI-native workflows",
+    "size": "12px",
+    "transform": "uppercase",
+    "tracking_em": 0.16
+   },
+   {
+    "sel": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1)",
+    "text": "02",
+    "size": "11px",
+    "transform": "none",
+    "tracking_em": 0.18
+   },
+   {
+    "sel": "html > body > section.cta-section:nth-of-type(4) > span.section-number",
+    "text": "03",
+    "size": "11px",
+    "transform": "none",
+    "tracking_em": 0.18
+   }
+  ]
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [
+  {
+   "sel": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a:nth-of-type(1)",
+   "text": "Sign in",
+   "size": "14px",
+   "lines": 2
+  },
+  {
+   "sel": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type",
+   "text": "Get started",
+   "size": "14px",
+   "lines": 2
+  },
+  {
+   "sel": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-",
+   "text": "Start free trial →",
+   "size": "15px",
+   "lines": 2
+  },
+  {
+   "sel": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-",
+   "text": "Watch demo",
+   "size": "15px",
+   "lines": 2
+  }
+ ],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 0,
+  "curly_apostrophe": 0,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": false,
+  "text_wrap_balance": false,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": false,
+  "unreadable_sheets": true
+ }
+}

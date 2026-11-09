@@ -1,0 +1,85 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T14:45:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "Every element is the violet-gradient SaaS default: purple-to-pink gradient h1 and buttons with glow, '🚀 POWERED BY AI' pill, fake logo strip, three emoji-icon feature cards, 'Ready to transform' CTA band; no line on the page belongs to any real product.",
+  "tests_run": ["T-RIVAL-NAME", "T-MIRROR", "T-DEFAULT-AGENT", "T-FIVE-SECOND", "T-THREE-LINE", "T-DELETION", "T-STOCK-ORDER", "T-OVER-CORRECTION", "T-FRESH-READER"],
+  "findings": [
+    {
+      "rule": "SLP-222",
+      "tier": "Reflex",
+      "where": "hero h1 and sub-line, 1440 tile 00",
+      "evidence": "Failed T-RIVAL-NAME and T-FIVE-SECOND: 'Build faster with intelligent workflows' / 'The all-in-one platform that helps modern teams ship better products in record time. Powered by AI, designed for humans.' stays true for any of hundreds of tools; the first screen never says what the product does or for whom. Concept capped at 5.",
+      "before": "\"Build faster with intelligent workflows\"",
+      "after": "[DATA NEEDED: what Lumina actually does, for which team, and one concrete outcome]",
+      "why": "A hero that names no job, user or mechanism is the purest generated tell.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "SLP-012",
+      "tier": "Reflex",
+      "where": "whole page",
+      "evidence": "violet-gradient family seen in full: #0a0a14 ground, violet radial spotlight behind the hero plus a teal orb at right, #8b5cf6 to #ec4899 gradient on the h1, the logo, 'Get started' and 'Join the waitlist' (both with violet glow), gradient icon tiles on the feature cards, '✨' sparkle in the wordmark.",
+      "before": "Purple-pink gradient + radial glow + Inter 88px",
+      "after": "One brand colour used flat, no glow; [DATA NEEDED: brand]",
+      "why": "Three or more tells of one family make it a default, not a choice (C10).",
+      "test": "T-DEFAULT-AGENT"
+    },
+    {
+      "rule": "SLP-138",
+      "tier": "Reflex",
+      "where": "section order",
+      "evidence": "T-STOCK-ORDER: nav with pill CTA > centred hero with eyebrow and two CTAs > 'Backed by top-tier investors' logo strip > 'Everything you need to ship faster' + three equal cards > 'Ready to transform how your team builds?' CTA band > one-line footer. The canonical hero / logos / 3 features / CTA / footer template.",
+      "before": "hero > logos > 3 features > CTA > footer",
+      "after": "Replace the 3 feature cards with one demonstration of the product doing its job",
+      "why": "Stock skeleton end to end.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "INT-003",
+      "tier": "Floor",
+      "where": "logo strip under hero (tile 1440-01)",
+      "evidence": "'Backed by top-tier investors' followed by six wordmark-style names 'Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity' set as grey text: these are stock placeholder company names presented as social proof.",
+      "before": "Backed by top-tier investors: Northwind Halcyon Meridian...",
+      "after": "Remove the strip, or [DATA NEEDED: real investors or customers with permission to show logos]",
+      "why": "Invented proof misleads visitors; it is an integrity floor, not a style issue.",
+      "test": "T-FILLER"
+    },
+    {
+      "rule": "SLP-139",
+      "tier": "Reflex",
+      "where": "features section",
+      "evidence": "Three equal centred cards, each with an emoji in a gradient tile ('⚡', '🔒', '📈') above 'Lightning Fast', 'Enterprise Secure', 'Built to Scale'. T-DELETION: icons add nothing; T-THREE-LINE: 'Your data is safe, always.' and 'grows with your team without breaking a sweat' are neither picturable nor falsifiable.",
+      "before": "⚡ Lightning Fast / 🔒 Enterprise Secure / 📈 Built to Scale",
+      "after": "[DATA NEEDED: the three things the product actually does], each shown with a screenshot or number with a source",
+      "why": "Speed/security/scale triad with emoji tiles is the default feature row.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "SLP-209",
+      "tier": "Reflex",
+      "where": "section sub-lines and CTA band",
+      "evidence": "T-FRESH-READER: 'One platform. Endless possibilities. Built for the future.', 'Ready to transform how your team builds?', 'Join thousands of teams already shipping faster with Lumina.' (unsupported count), 'Powered by AI, designed for humans.'",
+      "before": "\"One platform. Endless possibilities. Built for the future.\"",
+      "after": "Delete; or one sentence naming a real capability",
+      "why": "Stock phrases in headings and the CTA band.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-201",
+      "tier": "Reflex",
+      "where": "all CTAs",
+      "evidence": "Arrows glued to labels on 'Get started →', 'Join the waitlist →', 'Get early access →'; three different CTA verbs for the same action (waitlist / started / early access).",
+      "before": "Get started → / Join the waitlist → / Get early access →",
+      "after": "One verb for one action, no arrow glyph: 'Join the waitlist'",
+      "why": "Template chrome and inconsistent calls to action.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "no 00-contract.md brief; nothing on the page is specific enough to protect as a strength",
+    "all links are href=\"#\" so no downstream pages exist to check"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "lens": "slop",
+  "ran_at": "2026-11-08T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page is built around its own product: an interactive before/after specimen that labels the tells it removes, a live detector toggle over real slop specimens, a command fader board and a real agent transcript; the condensed display face and yellow annotation tags are a chosen system. Weak spots are a stock testimonial wall and some generic section heads.",
+  "tests_run": [
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-FIVE-SECOND",
+    "T-THREE-LINE",
+    "T-DELETION",
+    "T-STOCK-ORDER",
+    "T-OVER-CORRECTION",
+    "T-FRESH-READER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-104",
+      "tier": "Reflex",
+      "where": "testimonial marquee under the hero, 1440 tiles 00-01",
+      "evidence": "31 tweet cards (each duplicated for the loop) of near-identical praise: 'It's so good.', 'Impeccable is so so good. I love it.', 'This is the best plugin ever created imo.', 'How is this free?? 🔥🔥'. Attributed with real handles and avatars, so not invented, but T-DELETION: removing 25 of them loses nothing, and the wall pushes the page to 2,436 words.",
+      "before": "31-card horizontal testimonial wall directly after the hero",
+      "after": "Keep 3-4 quotes that say what changed ('I owe like 3 customer conversions to you', 'Upgraded an internal tool... reduced AI slop') and link to the rest.",
+      "why": "A testimonial wall is the stock social-proof section; volume reads as default rather than evidence.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "SLP-221",
+      "tier": "Reflex",
+      "where": "section heads, 1440 tiles 05-07",
+      "evidence": "T-FRESH-READER: 'Built around your project.', 'Respects your design system.', 'Design for the job at hand.' would fit any dev-tool site; contrast with the specific 'Detects and removes AI slop.' and 'Give your design a different starting point.'",
+      "before": "\"Built around your project.\"",
+      "after": "Head with the mechanism, e.g. 'Reads your tokens, Tailwind config and DESIGN.md before it touches a page.'",
+      "why": "Generic heads are the one place the page drops into default voice.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-224",
+      "tier": "Finish",
+      "where": "hero CTAs, 1440 tile 00",
+      "evidence": "'Install Impeccable →' paired with a stock text second action 'How it works'.",
+      "before": "\"How it works\"",
+      "after": "A second action that names something only this product has, e.g. 'Try it on a sample page' (the console already exists below).",
+      "why": "Stock secondary CTA label.",
+      "test": "T-FRESH-READER"
+    },
+    {
+      "rule": "SLP-002",
+      "tier": "Finish",
+      "where": "'Give your design a different starting point', 1440 tile 06",
+      "evidence": "Yellow tags '01 · EXPLORE DIRECTIONS' and '02 · SEE ONE BUILT' and the debug line 'roll nxgujtks:0 · pool c3b204a1eed6' read as chrome; the numbering adds nothing to a two-column layout.",
+      "before": "\"01 · EXPLORE DIRECTIONS\" / \"roll nxgujtks:0 · pool c3b204a1eed6\"",
+      "after": "Drop the numbers and the roll/pool hash from the visible UI.",
+      "why": "Decorative numbering and exposed debug tokens are small template residues on an otherwise considered page.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "Hero specimen is the product: a before/after slider over a card with yellow tags naming 'AI kicker', 'Italic serif', 'Side-tab border', 'AI beige' and /polish /distill /clarify toggles (T-RIVAL-NAME passes: no competitor could run this hero).",
+    "'Detects and removes AI slop.' section with a working 'Detector on' toggle over labelled specimens; the sweep's eyebrow, side_tab_border, gradient, nested_cards, neon_violet, default_names and chrome_glyphs hits sit on these deliberate specimens and the sample 'Invite your team' / hotel demo, not on the page's own design.",
+    "Distinct type voice (condensed Alumni Sans display, JetBrains Mono for commands) used consistently; real agent transcript and DESIGN.md / PRODUCT.md examples.",
+    "Footer is short and specific (Created by Paul Bakaus), not a link farm."
+  ],
+  "not_investigated": [
+    "Explore-directions thumbnails render as blank grey in tiles 1440-06 although dom reports the images complete; likely a fade-in not triggered by capture, not judged as design.",
+    "Gallery, Docs and Slop sub-pages."
+  ]
+}

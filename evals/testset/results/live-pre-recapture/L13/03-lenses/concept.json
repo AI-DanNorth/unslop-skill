@@ -1,0 +1,105 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "No idea can be stated beyond 'Build faster with intelligent workflows for modern teams'; the page is a cream-paper, Fraunces-italic, terracotta-accent template with an italic-word h1, a row of invented italic customer names, three emoji feature cards and a dark closing band, with no product shown anywhere.",
+  "score": {
+    "dimension": "Concept",
+    "value": 1,
+    "reason": "T-ONE-SENTENCE, T-RIVAL-NAME, T-SIGNATURE, T-KIND-FIT, T-MIRROR and T-DEFAULT-AGENT all fail, T-DEFAULT-PLAN marks four moves, and the sweep finds every tell of the warm-paper-serif look family (6 of 6)."
+  },
+  "tests_run": [
+    "T-MEMORY",
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-IDEA-CARRIES",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED"
+  ],
+  "findings": [
+    {
+      "rule": "CON-003",
+      "title": "The idea fits in one sentence",
+      "tier": "Reflex",
+      "where": "hero, 1440px and 375px (tiles/1440-00.png, 375-00.png)",
+      "evidence": "T-ONE-SENTENCE fails. The eyebrow 'AI-NATIVE WORKFLOWS', the h1 'Build faster with intelligent workflows for modern teams' and the sub-line 'The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.' never say what a workflow in Lumina is or does. T-MEMORY after one look: 'a peach glow behind a big serif with one orange italic word', a mood, not a thing.",
+      "before": "'Build faster with intelligent workflows for modern teams'",
+      "after": "[DATA NEEDED: what Lumina does, for whom, and one thing it does that others do not], then an h1 that names it",
+      "why": "Without a statable job, there is nothing for the rest of the page to carry and nothing a visitor can repeat.",
+      "test": "T-ONE-SENTENCE"
+    },
+    {
+      "rule": "CON-014",
+      "title": "Software shows its own UI at work",
+      "tier": "Reflex",
+      "where": "whole page, 1440px",
+      "evidence": "T-KIND-FIT and T-SIGNATURE fail. The kind is software for product teams, yet the page has no screenshot, no product frame and no image of any kind: the DOM lists no image wider than 150px. The first screen's only picture is a peach radial glow over a grid of hairlines (the sweep's glow and gradient hits). 'Watch demo' is the only hint that a product exists.",
+      "before": "Peach glow and grid lines as the lead picture",
+      "after": "Lead with the product at work: one real workflow in the Lumina interface on the first screen [DATA NEEDED: product screenshot]",
+      "why": "A visitor judging workflow software needs to see the workflow; a glow says nothing about the tool.",
+      "test": "T-KIND-FIT"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "whole page, 1440px",
+      "evidence": "T-MIRROR and T-DEFAULT-AGENT fail. Cream ground #faf6ef, Fraunces display with one italic terracotta word ('intelligent' in #c8552b), small numbered section labels '01', '02', '03', a letter-spaced eyebrow and a grid-paper hero are the cream-serif-clay look the sweep names warm-paper-serif (6 of 6 tells). Typing 'landing page for an AI workflow tool, warm and editorial' into an agent produces this page.",
+      "before": "Cream paper, Fraunces italic accent word, terracotta",
+      "after": "Choose the look from the product's own material once it exists; move at least one axis off the spent look, for example the accent first (CON-137)",
+      "why": "The look is picked for 'tasteful AI startup' rather than for this product, so it matches many neighbouring pages.",
+      "test": "T-MIRROR"
+    },
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "h1, h2s and feature cards, 1440px (tiles/1440-01.png, 1440-02.png)",
+      "evidence": "T-RIVAL-NAME: with Notion, Linear or Asana in place of Lumina, 'Build faster with intelligent workflows for modern teams', 'Everything you need to ship great products', 'One platform. Endless possibilities.', 'Lightning Fast', 'Enterprise Secure', 'Built to Scale' and 'Ready to transform how your team builds?' all stay true. The logo row 'Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity' is set as italic text, not logos (the sweep's default_names flags these).",
+      "before": "Seven lines that fit any team software",
+      "after": "Headings built from facts only Lumina has [DATA NEEDED: product facts, real customers]",
+      "why": "The whole page survives a rival's name, so it gives a visitor no reason to pick this product.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "whole page, 1440px",
+      "evidence": "T-DEFAULT-PLAN marks four moves: small numbered labels on every section ('01', '02', '03'); three equal feature cards with emoji icons (lightning, padlock, chart); a dark closing band 'Ready to transform how your team builds?' with one button; a pale ground with one careful accent. The page is hero, logo row, three cards, closing band and a one-line footer, the stock order.",
+      "before": "Hero, logo strip, three emoji cards, dark CTA band",
+      "after": "Replace the three cards with one section that shows a real workflow end to end",
+      "why": "Every section is the default a generator emits, so nothing on the page is a decision.",
+      "test": "T-DEFAULT-PLAN"
+    },
+    {
+      "rule": "CON-017",
+      "title": "Every headline promise is pictured",
+      "tier": "Finish",
+      "where": "feature cards, 1440px (tiles/1440-01.png)",
+      "evidence": "T-PROMISE-PICTURED fails. 'Move from idea to production in minutes, not months', 'SOC 2 compliant infrastructure with end-to-end encryption' and 'From your first prototype to millions of users' are pictured only by a lightning emoji, a padlock emoji and a chart emoji.",
+      "before": "Emoji tiles beside concrete promises",
+      "after": "Show the promise or cut it: a real before-and-after time, the actual SOC 2 report link [DATA NEEDED]",
+      "why": "Concrete promises with emoji in place of proof read as filler.",
+      "test": "T-PROMISE-PICTURED"
+    }
+  ],
+  "strengths": [
+    "The type pairing and the cream ground are applied consistently from hero to footer; if a real product and idea are supplied, that consistency is worth keeping while the look is moved off the spent family."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent; visitor mode read as Persuade from the page itself.",
+    "A detector script on the host was blocked by capture prep (manifest.prep); it is not part of the page design.",
+    "At 375 the header and hero do not fit the viewport (tile 375-00 shows the page wider than the screen); that is a layout issue for another lens."
+  ]
+}
