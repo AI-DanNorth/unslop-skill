@@ -60,5 +60,5 @@ python3 scripts/selftest.py                         # must print SELF-TEST PASSE
 
 1. **Human spot-check:** a designer works through `evals/testset/results/spot-check.html` (11 rows; rebuild with `evals/testset/build_spotcheck.py`) and returns the JSON. Record the calls in both adjudications. L15 (fixture semantics) is not on the page; decide it in the same pass.
 2. **Region-aware sweeping** for pages that exhibit slop on purpose (L19, L20): ignore sections labelled as examples. Decide whether `targets` stays Floor for dense footer link lists.
-3. **Interaction capture on live sites:** the motion and async steps have only run on local files. Run them on a few live sites before the next live round. They add up to about 2 min per capture; use `--no-interact` for slow pages such as L28, which is already at about 740 s.
+3. **Interaction capture on live sites:** tried on L06, L13 and L26 (9 Nov 2026). The guards held (no request left the page), motion took about 33 s, L06 got a reduced-motion Floor and the Cal.com control got no hits. Recapture the full live set with interaction before the next live round; use `--no-interact` for slow pages such as L28, which is already at about 740 s.
 4. **Phase 2:** the other 15 lenses, the scoring rubric and `verify-fix` (roadmap in the plan doc).
