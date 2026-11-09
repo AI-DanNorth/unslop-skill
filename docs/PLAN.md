@@ -625,3 +625,5 @@ Open decisions:
   - Accessible names read from child icons.
 - Detectors: about 150 false-positive Floor hits on human controls traced and fixed (incidental text in mocks and aria-hidden art, font-name normalisation, baseline-named metrics, residue lexicon). Look families: `scattered_radii` removed; the italic serif tells fixed; hairline-newspaper needs all four tells.
 - Unslop's own findings and reports follow a plain-speech writing style (`core/report-format.md`).
+- Phase 2 lenses built: concept, structure, typography, color and copy (157 active cards). On 8 live items each lens's score separates slop from good with no overlap (`evals/testset/results/phase2-round-1/SUMMARY.md`).
+- Motion and interaction capture with `motion` and `async_state` detectors; S12 and C01 caught, G10 clean.

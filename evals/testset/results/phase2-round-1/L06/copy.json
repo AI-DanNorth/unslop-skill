@@ -1,0 +1,107 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The security cards carry real, checkable facts ('Per-workspace SAML SSO with metadata URL/XML, allowed email domains, and full audit history'), but the page around them runs on the model's template: the problem/solution pair 'Why teams struggle without Consile' and 'How Consile solves it', the heads 'One Platform, Zero Chaos' and 'Running in Minutes, Not Months', and the tagline 'Connecting Teams. Empowering Work.'",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 5,
+    "reason": "T-FIVE-SECOND passes on the hero's '2–200' and 'Free for up to 5 people', and the security and feature cards pass T-THREE-LINE, but T-HEADING-FORM finds the problem/solution and slogan formulas in most sections, T-RIVAL-NAME fails on the tagline, the problem cards and the values list, and T-CADENCE finds dash-joined lists and a contrast frame in nearly every block."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-014",
+      "title": "Heading formulas across the page",
+      "tier": "Reflex",
+      "where": "h2s and h3s from 'The problem' to 'What we believe', 1440, tiles/1440-02.png to tiles/1440-06.png",
+      "evidence": "Failed T-HEADING-FORM: the page runs the problem/solution template ('Why teams struggle without Consile' with 'Fragmented tools create chaos. Here's what we fix.', then 'How Consile solves it'); the h3s are slogans with no naming noun ('Tool Overload', 'Flying Blind', 'Manual Busywork', 'One Platform, Zero Chaos', 'Workflows That Run Themselves', 'Running in Minutes, Not Months', 'Leave & Attendance on Autopilot'); the FAQ is 'Questions, answered' and the close is 'Ready to run tasks, people ops, and performance from one workspace?'.",
+      "before": "One Platform, Zero Chaos",
+      "after": "Head each card with the module and what it does: 'Leave requests approved in the app, balances updated automatically'; drop the problem/solution pair and lead with the modules.",
+      "why": "A reader scanning heads meets slogans before the modules that are the product's actual content.",
+      "root": "Problem/solution landing template with slogan h3s",
+      "test": "T-HEADING-FORM"
+    },
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "hero tagline, problem cards and values list, 1440, tiles/1440-00.png and tiles/1440-06.png",
+      "evidence": "Failed T-RIVAL-NAME: '\"Connecting Teams. Empowering Work.\"' (hero and footer), 'Fragmented tools create chaos', 'Without a single source of truth, managers are guessing' and the values 'Built for the human at the desk', 'Better together', 'Speed is a feature', 'Accessible to everyone' stay true under BambooHR's or Connecteam's name. The sweep's lexicon_copy hit on 'Empowering' is not repeated.",
+      "before": "\"Connecting Teams. Empowering Work.\"",
+      "after": "Cut the tagline; the line under it ('Built for growing teams of 2–200') already does its job. Replace the values list with one sentence each on what the value changes in the product, or cut it.",
+      "why": "The tagline sits in the hero beside the client's real facts and makes them read as template.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-011",
+      "title": "Cadence devices past budget",
+      "tier": "Reflex",
+      "where": "feature and solution cards, 1440, tiles/1440-03.png",
+      "evidence": "Failed T-CADENCE: the copy sheet counts a contrast frame ('Running in Minutes, Not Months') plus the 'not across four disconnected tools' and 'no glue code, no context loss' tails, 6 word triads ('people, tasks, and reporting', 'work, people, and performance', 'security, compliance, and operations'), and a closing quip in most cards ('One login, one dashboard.', 'no questions needed', 'Your policies are set.'). The sweep counts 17 dashes against a budget of 2; most join a list to a payoff ('Leave approvals, task notifications, attendance logs, EOD summaries — automated so your team can focus on actual work').",
+      "before": "See who's in, what's blocked, and how your team is performing — instantly, from any device, no questions needed.",
+      "after": "End each card on its fact; cut the payoff tails after the dash.",
+      "why": "The same list-dash-payoff beat in every card reads as one template voice and hides which claims are real.",
+      "test": "T-CADENCE"
+    },
+    {
+      "rule": "CPY-012",
+      "title": "Rhetorical questions in body copy",
+      "tier": "Reflex",
+      "where": "'Flying Blind' card and FAQ intro, 1440",
+      "evidence": "Failed T-CADENCE: 'Who's present today? What's blocked? How much leave is left?' opens a card, and 'Still curious? Talk to us.' closes the FAQ intro. The FAQ questions themselves are not findings.",
+      "before": "Who's present today? What's blocked? How much leave is left?",
+      "after": "State the fact the dashboard gives: today's attendance, blocked tasks and leave balances on one screen.",
+      "why": "A run of three questions is a stock opener; the product mock beside it already answers them.",
+      "test": "T-CADENCE"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "Labels that repeat their heading or change wording",
+      "tier": "Reflex",
+      "where": "feature cards, security cards and actions, 1440",
+      "evidence": "Failed T-LABEL-READ: each feature card's link repeats the whole slogan head ('Explore Running in Minutes, Not Months', 'Explore Leave & Attendance on Autopilot'); the security cards use 'Learn more' six times; the demo is offered as 'Book a demo', 'Explore the live demo', 'Watch the demo' and 'Play Consile demo video', and /how-it-works is 'How It Works' and 'see how it works'.",
+      "before": "Explore Running in Minutes, Not Months",
+      "after": "Name the module in the link ('Leave and attendance'), and name each security link's page ('SAML SSO setup').",
+      "why": "Slogan-length link text is hard to scan, and six 'Learn more' links read as one in a link list.",
+      "test": "T-LABEL-READ"
+    },
+    {
+      "rule": "CPY-016",
+      "title": "Lines that restate their heading",
+      "tier": "Reflex",
+      "where": "'Choose your way in' and closing band, 1440",
+      "evidence": "Failed T-DELETION: 'Tasks, attendance, leave, performance, vault, and announcements — under one roof.' appears twice in a row (section intro and first card); the closing band 'Ready to run tasks, people ops, and performance from one workspace?' is followed by 'Tasks, people ops and performance in one workspace.', which restates it and the h2 'Tasks, people ops, and performance — done in one workspace'. The same 'X, Y and Z in one workspace' line appears 5 times on the page.",
+      "before": "Tasks, people ops and performance in one workspace.",
+      "after": "Say it once in the hero; give the closing band the plan fact ('Free Starter plan for up to 5 people') and the button.",
+      "why": "Five restatements of one positioning line cost a 1,318-word page reading time without new information.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The security cards are specific and checkable: 'SCIM 2.0 Provisioning ... with rotatable bearer tokens', 'Stream every audit event to Splunk, Datadog, or your SIEM via signed webhooks with retry & DLQ', 'Self-service data export (JSON/CSV) and 30-day grace-period account deletion'.",
+    "The hero states audience and price facts: 'Built for growing teams of 2–200', 'Free for up to 5 people', 'US, EU, UK & APAC regions'.",
+    "Several feature lines are literal and owned: 'Employees apply for leave. Managers approve. Balances update automatically.' and 'let teammates request swaps without spreadsheets or DMs'."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: no form on the page and async.json was not captured; the FAQ answers were collapsed and not read.",
+    "T-LONG-FORM: no long-form region; landing page.",
+    "T-TERMS: the copy sheet's variants (Tasks/TASKS, Attendance/ATTENDANCE) are CSS uppercase labels in the product mock and section eyebrows; no finding.",
+    "Copy sheet: the helper did not return the h1 (hero empty); the hero was read from tiles/1440-00.png and bodyText.",
+    "Contract: no 00-contract.md in the run; judged as a Persuade landing page."
+  ]
+}

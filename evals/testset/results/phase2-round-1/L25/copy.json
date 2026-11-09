@@ -1,0 +1,74 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The h1 'The product development system for teams and agents' and the changelog ('Stacked pull requests are now displayed in Linear Diffs') carry this product's own nouns, but the mission band 'A new species of product tool... Linear sets a new standard' and the closer 'Built for the future. Available today.' are stock category lines.",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 7,
+    "reason": "T-RIVAL-NAME passes on the h1, the section heads (Intake, Planning, AI, Build) and the dated changelog, but fails on the mission band, the three FIG cards and the closing h2, and T-LABEL-READ finds four 'Learn more →' links."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-TERMS",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "mission band and FIG 0.1 to 0.3 cards under the hero mock, 1440, tiles/1440-01.png and tiles/1440-02.png",
+      "evidence": "Failed T-RIVAL-NAME: 'A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.', 'Linear is shaped by the practices and principles of world-class product teams.' and 'Reduces noise and restores momentum to help teams ship with high velocity and focus.' stay true under Jira's or Height's name. The sweep's lexicon_copy hits ('world-class', 'Streamline') sit in these lines and are not repeated.",
+      "before": "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.",
+      "after": "Lead the band with one of the facts the page already has further down: 'Linear powers over 50,000 product teams', or what agents do inside an issue.",
+      "why": "The band is the h2 right under the product mock, and it is the most generic text on a page whose other lines are specific.",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-014",
+      "title": "Formula heading at the close",
+      "tier": "Reflex",
+      "where": "closing band h2, 1440, last 1440 tile",
+      "evidence": "Failed T-HEADING-FORM: the closing h2 'Built for the future. Available today.' is a two-fragment formula (the copy sheet flags it as two_fragments) with no naming noun; the hero sub-line 'Purpose-built for planning and building products. Designed for the AI era.' uses the same two-beat shape.",
+      "before": "Built for the future. Available today.",
+      "after": "Close on the action and the product noun from the h1, for example the product development system for teams and agents, with the sign-up button beside it.",
+      "why": "The last thing a reader sees before 'Get started' says nothing about Linear.",
+      "test": "T-HEADING-FORM"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "Link labels that do not name their target",
+      "tier": "Reflex",
+      "where": "Intake, Planning, AI and Build sections, 1440",
+      "evidence": "Failed T-LABEL-READ: the copy sheet shows 'Learn more →' going to four targets (/intake, /plan, /ai, /build); /signup is labelled 'Sign up' in the nav and 'Get started' in the closing band. The sweep's lexicon_copy hit on 'Learn more →' covers the stock wording; this finding is the target mismatch.",
+      "before": "Learn more →",
+      "after": "Name the destination: 'More on Intake', 'More on planning'; use 'Sign up' in both the nav and the closing band.",
+      "why": "Four identical links read as one in a screen-reader link list, and two wordings for sign-up ask the reader to check they lead to the same place.",
+      "test": "T-LABEL-READ"
+    }
+  ],
+  "strengths": [
+    "The h1 names the category and the new user in plain words: 'The product development system for teams and agents'.",
+    "The product mock's copy is a real working scenario (DRV-8852 'Render UI before vehicle_state sync when minimum required state is present, instead of blocking on full refresh during iOS startup'), so the page shows rather than claims.",
+    "The changelog entries are dated and literal ('NOV 4, 2026 Slack and GitHub loop triggers'), and the proof is named people at named companies ('Nik Koblov, Head of Engineering, Ramp').",
+    "Section heads use the product's own module names (Intake, Planning, AI, Build) with literal sub-lines."
+  ],
+  "not_investigated": [
+    "T-STATE-COPY: no form on the page and async.json was not captured.",
+    "T-LONG-FORM: no long-form region; landing page.",
+    "T-TERMS: the copy sheet's variants (vehicleState/vehicle_state, OCT/Oct) come from the product mock's code and uppercase date labels, not from page copy; no finding.",
+    "Copy sheet: the helper did not return the h1 (hero empty, h1 duplicated in the DOM for animation); the hero was read from tiles/1440-00.png and the sweep's h1_words hit.",
+    "Contract: no 00-contract.md in the run; judged as a Persuade landing page."
+  ]
+}

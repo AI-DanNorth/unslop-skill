@@ -60,6 +60,11 @@ SWEEP = ["lexicon_copy", "em_dash", "h1_words", "words_per_screen", "page_words"
 STOP = set("a an the and or but of to in on for with by at from as is are be it its this that your you our we us".split())
 
 
+def etext(e):
+    """Whole visible text of an element: blockText includes words in child spans (headings built from spans read empty
+    from `text`, which is the element's own text only; phase-2 round 1: no h1 found on L10, L23, L25, L06)."""
+    return (e.get("blockText") or e.get("text") or "") if e else ""
+
 def words(t): return WORD.findall(t or "")
 
 
@@ -89,15 +94,15 @@ def main(run, width=None):
     byid = {e["id"]: e for e in dom["elements"]}
 
     # headings in page order, with the first running block after each
-    heads = sorted((e for e in els if e["tag"] in HEAD_TAGS and e.get("text")), key=lambda e: (e["rect"]["y"], e["rect"]["x"]))
-    running = sorted((e for e in els if e["tag"] in RUNNING_TAGS and len(words(e.get("text"))) >= 4), key=lambda e: (e["rect"]["y"], e["rect"]["x"]))
+    heads = sorted((e for e in els if e["tag"] in HEAD_TAGS and etext(e)), key=lambda e: (e["rect"]["y"], e["rect"]["x"]))
+    running = sorted((e for e in els if e["tag"] in RUNNING_TAGS and len(words(etext(e))) >= 4), key=lambda e: (e["rect"]["y"], e["rect"]["x"]))
     outline = []
     for h in heads:
-        t = h["text"].strip(); hw = words(t)
+        t = etext(h).strip(); hw = words(t)
         hb, hx0, hx1 = h["rect"]["y"] + h["rect"]["h"] - 2, h["rect"]["x"], h["rect"]["x"] + h["rect"]["w"]
         nxt = next((p for p in running if hb <= p["rect"]["y"] < hb + 400                 # the block under this heading, same column
                     and min(hx1, p["rect"]["x"] + p["rect"]["w"]) - max(hx0, p["rect"]["x"]) > 0), None)
-        first = sentences(nxt["text"])[0] if nxt else ""
+        first = sentences(etext(nxt))[0] if nxt else ""
         hc = {x.lower() for x in hw if x.lower() not in STOP}
         overlap = round(len(hc & {x.lower() for x in words(first)}) / len(hc), 2) if hc and first else 0
         outline.append({"level": int(h["tag"][1]), "text": t, "words": len(hw), "chars": len(t), "y": h["rect"]["y"], "sel": h["sel"],
@@ -110,13 +115,13 @@ def main(run, width=None):
     sub = None
     if h1:
         sub = next((p for p in sorted(els, key=lambda e: e["rect"]["y"]) if p["tag"] in RUNNING_TAGS | {"h2", "h3", "div", "span"}
-                    and p.get("text") and p["rect"]["y"] > h1["rect"]["y"] and p["rect"]["y"] < SCREEN and len(words(p["text"])) >= 5
+                    and etext(p) and p["rect"]["y"] > h1["rect"]["y"] and p["rect"]["y"] < SCREEN and len(words(etext(p))) >= 5
                     and not p.get("interactive")), None)
     actions = [e for e in els if e.get("interactive") and e["tag"] in ("a", "button") and (e.get("name") or "").strip()]
     first_actions = [{"label": e["name"].strip(), "href": e.get("href"), "sel": e["sel"]} for e in actions
                      if e["rect"]["y"] < SCREEN and e["rect"]["h"] >= 32]
-    hero = {"h1": h1["text"].strip() if h1 else None, "h1_words": len(words(h1["text"])) if h1 else 0,
-            "sub_line": sub["text"].strip()[:400] if sub else None, "sub_line_words": len(words(sub["text"])) if sub else 0,
+    hero = {"h1": etext(h1).strip() if h1 else None, "h1_words": len(words(etext(h1))) if h1 else 0,
+            "sub_line": etext(sub).strip()[:400] if sub else None, "sub_line_words": len(words(etext(sub))) if sub else 0,
             "first_screen_actions": first_actions,
             "first_screen_digits": re.findall(r"[^\s]*\d[^\s]*", " ".join(e.get("text", "") for e in els
                                               if e["rect"]["y"] < SCREEN and e["tag"] in RUNNING_TAGS | HEAD_TAGS | {"span", "div"}))[:12]}
@@ -132,7 +137,7 @@ def main(run, width=None):
               "one_label_many_targets": {l: sorted(ts) for l, ts in by_label.items() if len(ts) > 1}}
 
     # microcopy: form labels and text that appears after a submit or a primary action
-    micro = {"form_labels": [e["text"].strip() for e in els if e["tag"] == "label" and e.get("text")][:30], "after_actions": []}
+    micro = {"form_labels": [etext(e).strip() for e in els if e["tag"] == "label" and etext(e)][:30], "after_actions": []}
     for name in ("forms.json", "async.json"):
         p = ev / name
         if not p.exists(): micro["after_actions"].append({"source": name, "status": "not captured"}); continue
@@ -152,7 +157,7 @@ def main(run, width=None):
                                                    "status": r.get("status"), "text": seen[:12]})
 
     # running text: regions, sentence rhythm, sibling evenness
-    items = [(e["sel"], e["text"]) for e in running]
+    items = [(e["sel"], etext(e)) for e in running]
     allsent = [s for _, t in items for s in sentences(t)]
     lens_ = [len(words(s)) for s in allsent]
     rhythm = {"sentences": len(lens_), "mean_words": round(statistics.mean(lens_), 1) if lens_ else 0,
@@ -160,16 +165,16 @@ def main(run, width=None):
               "share_4_words_or_less": round(sum(1 for x in lens_ if x <= 4) / len(lens_), 2) if lens_ else 0,
               "note": "CPY-206: warn when stdev is under 4 over 15 or more sentences, or over 30% are 4 words or less"}
     groups = collections.defaultdict(list)
-    for e in running: groups[strip_nth(e["sel"])].append(len(words(e["text"])))
+    for e in running: groups[strip_nth(e["sel"])].append(len(words(etext(e))))
     # repeated containers only (cards, list items, columns): the selectors differ above the text element itself
     even = [{"pattern": k, "word_counts": v, "max_over_min": round(max(v) / max(1, min(v)), 2)} for k, v in groups.items()
             if len(v) >= 3 and len({e["sel"].rsplit(" > ", 1)[0] for e in running if strip_nth(e["sel"]) == k}) >= 3]
     regions = collections.defaultdict(list)
     for e in running:
-        if len(sentences(e["text"])) >= 2 and len(words(e["text"])) >= 30: regions[e.get("parent")].append(e)
+        if len(sentences(etext(e))) >= 2 and len(words(etext(e))) >= 30: regions[e.get("parent")].append(e)
     long_regions = []
     for pid, ps in regions.items():
-        txt = " ".join(p["text"] for p in ps); n = len(words(txt))
+        txt = " ".join(etext(p) for p in ps); n = len(words(txt))
         if len(ps) < 3 and n < 250: continue
         par = byid.get(int(pid)) if pid is not None else None
         r = {"container": par["sel"] if par else None, "paragraphs": len(ps), "words": n, "y": ps[0]["rect"]["y"], "counts": {}}
@@ -194,7 +199,7 @@ def main(run, width=None):
             variants.append({"term": key, "spellings": dict(c)})
     variants = sorted(variants, key=lambda v: -sum(v["spellings"].values()))[:12]
 
-    pats = {k: dict(examples(re.compile(rx, re.I if k not in ("fragment_triad",) else 0), items + [(h["sel"], h["text"]) for h in heads]),
+    pats = {k: dict(examples(re.compile(rx, re.I if k not in ("fragment_triad",) else 0), items + [(h["sel"], etext(h)) for h in heads]),
                     card=why) for k, (rx, why) in PATTERNS.items()}
     pats["questions"] = {"count": sum(1 for s in allsent if s.endswith("?")), "examples": [s for s in allsent if s.endswith("?")][:5],
                          "card": "CPY-176: no rhetorical questions; FAQ questions are not findings"}

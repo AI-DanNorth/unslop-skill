@@ -1,0 +1,91 @@
+{
+  "lens": "copy",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "No line on the page is Lumina's own: the h1 'Build faster with intelligent workflows for modern teams' and the sub-line 'The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.' would ship unchanged on any product tool.",
+  "score": {
+    "dimension": "Distinctiveness",
+    "value": 1,
+    "reason": "T-FRESH-READER cannot say what Lumina does, T-RIVAL-NAME leaves every heading, the sub-line and all three feature cards true for any SaaS product, and T-CADENCE finds a contrast frame, a fragment triad and a closing quip in 166 words; nothing could be kept as the client's fact."
+  },
+  "tests_run": [
+    "T-FRESH-READER",
+    "T-FIVE-SECOND",
+    "T-RIVAL-NAME",
+    "T-THREE-LINE",
+    "T-READ-ALOUD",
+    "T-HEADING-FORM",
+    "T-CADENCE",
+    "T-LABEL-READ",
+    "T-DELETION",
+    "T-SO-WHAT",
+    "T-OVER-CORRECTION"
+  ],
+  "findings": [
+    {
+      "rule": "CPY-007",
+      "title": "Copy that survives the rival's-name swap",
+      "tier": "Reflex",
+      "where": "h1, sub-line and both h2s, 1440, tiles/1440-00.png and tiles/1440-01.png",
+      "evidence": "Failed T-RIVAL-NAME and T-FRESH-READER: 'Build faster with intelligent workflows for modern teams', 'The all-in-one platform that helps product teams ship better software in record time. Powered by AI, designed for humans.', 'Everything you need to ship great products' and 'Ready to transform how your team builds?' stay true under Linear's, Asana's or any product tool's name. From the text alone a reader cannot say what a 'workflow' in Lumina is, what it costs or why it beats another tool. The sweep's stock-phrase hits on the two h2s and 'Join thousands of' are not repeated.",
+      "before": "Build faster with intelligent workflows for modern teams",
+      "after": "Name the job Lumina does and for whom in the h1. [DATA NEEDED: what Lumina actually does and the one thing it does differently]",
+      "why": "A visitor leaves the first screen not knowing what the product is.",
+      "root": "Every line written from the generic SaaS template, with no client facts supplied",
+      "test": "T-RIVAL-NAME"
+    },
+    {
+      "rule": "CPY-008",
+      "title": "Adjective claims where a mechanism belongs",
+      "tier": "Reflex",
+      "where": "feature cards, 1440, tiles/1440-01.png",
+      "evidence": "Failed T-THREE-LINE on all three cards: 'Lightning Fast: Move from idea to production in minutes, not months. Our AI handles the heavy lifting so you can focus on what matters.', 'Your data is safe, always.' and 'Lumina grows with your team without breaking a sweat.' None can be pictured or proven false. 'SOC 2 compliant infrastructure with end-to-end encryption' is the only checkable claim, and it is category stock. 'Trusted by 10,000+' is the sweep's invented_metrics hit.",
+      "before": "Our AI handles the heavy lifting so you can focus on what matters.",
+      "after": "Say which step the AI does (for example, which part of the workflow it writes or routes) and show one real example.",
+      "why": "Adjective claims give the reader nothing to test or remember.",
+      "test": "T-THREE-LINE"
+    },
+    {
+      "rule": "CPY-011",
+      "title": "Cadence devices in every block",
+      "tier": "Reflex",
+      "where": "sub-line, features intro and cards, 1440",
+      "evidence": "Failed T-CADENCE: the copy sheet counts a contrast frame ('in minutes, not months'); the features intro is a fragment triad ('One platform. Endless possibilities. Built for teams who care about craft.'); the sub-line ends on a chiasmus pair ('Powered by AI, designed for humans.'); two cards end on a quip ('Your data is safe, always.', 'without breaking a sweat'). That is a device in every block of a 166-word page.",
+      "before": "One platform. Endless possibilities. Built for teams who care about craft.",
+      "after": "Cut the intro line; let the cards carry specific facts.",
+      "why": "The repeated rhythm reads as the model's default register, not a brand voice.",
+      "test": "T-CADENCE"
+    },
+    {
+      "rule": "CPY-009",
+      "title": "Model-default voice",
+      "tier": "Reflex",
+      "where": "footer and cards, 1440, tiles/1440-02.png",
+      "evidence": "Failed T-READ-ALOUD: the footer line '© 2025 Lumina, Inc. — Crafted with care in San Francisco.', 'Built for teams who care about craft' and 'designed for humans' are the warm, modest self-description that fits nine of nine SaaS sites; no brand voice is supplied in the run.",
+      "before": "Crafted with care in San Francisco.",
+      "after": "Cut the self-description; if the place matters, state the fact plainly.",
+      "why": "A business calling itself careful is a claim the reader cannot check.",
+      "test": "T-READ-ALOUD"
+    },
+    {
+      "rule": "CPY-017",
+      "title": "One action under several labels",
+      "tier": "Reflex",
+      "where": "nav, hero and closing band, 1440",
+      "evidence": "Failed T-LABEL-READ: the sign-up action reads 'Get started' (nav), 'Start free trial →' (hero) and 'Start your free trial →' (closing), so the closing action is worded differently from the hero's. The sweep covers the glued arrows.",
+      "before": "Get started / Start free trial / Start your free trial",
+      "after": "Use 'Start free trial' in all three places.",
+      "why": "Three wordings for one action ask the reader to check whether they differ.",
+      "test": "T-LABEL-READ"
+    }
+  ],
+  "strengths": [],
+  "not_investigated": [
+    "T-STATE-COPY: no form on the page and async.json was not captured.",
+    "T-LONG-FORM: no long-form region; landing page of 166 words.",
+    "T-TERMS: no term is used 3 or more times.",
+    "Strengths: none listed; no line carries a fact only this client has.",
+    "Contract: no 00-contract.md in the run; judged as a Persuade landing page."
+  ]
+}
