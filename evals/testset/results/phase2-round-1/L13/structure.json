@@ -1,0 +1,88 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The job is starting a trial of a workflow product, but the page is the stock five-part sequence (centred hero, logo row, three feature cards, dark CTA band, footer) with no section that shows the product or could only belong to it.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-SQUINT finds a clear h1 on the first screen, but T-STOCK-ORDER finds five stock sections, T-ANATOMY finds no product view, and T-FIVE-SECOND fails at 375 where the primary action falls below the fold."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-015",
+      "tier": "Reflex",
+      "where": "whole page, tiles 1440-00 to 1440-02, 1440px",
+      "evidence": "The page is five sections in stock order: a centred hero with eyebrow \"01 AI-NATIVE WORKFLOWS\", a row of six italic wordmarks (Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity), three icon cards (\"Lightning Fast\", \"Enterprise Secure\", \"Built to Scale\"), a dark CTA band (\"Ready to transform how your team builds?\") and a one-line footer. The sections are numbered 01, 02, 03 as if the order were an argument.",
+      "before": "Hero, logos, three feature cards, CTA band, footer.",
+      "after": "Replace the feature cards with one section that shows a workflow being run in the product, and put it directly under the hero. [DATA NEEDED: a real product screen or workflow example]",
+      "why": "Every section would sit unchanged under another product's name, so the visitor cannot tell what Lumina does after reading the whole page.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "LAY-016",
+      "tier": "Reflex",
+      "where": "whole page, 1440px and 375px",
+      "evidence": "The image list holds no product screenshot, demo or example; the only visuals are a grid background, three emoji-style icons and text wordmarks. The job is trying a workflow tool, and the page offers \"Watch demo\" without showing anything of it.",
+      "before": "A trial page with no view of the product.",
+      "after": "Add the category's own section: the product's main screen or a short workflow walk-through beside the hero. [DATA NEEDED: product screenshots]",
+      "why": "Visitors to a software trial page decide on what the product looks like in use; without it, the trial button asks for trust the page has not earned.",
+      "test": "T-ANATOMY"
+    },
+    {
+      "rule": "LAY-007",
+      "tier": "Reflex",
+      "where": "hero, tile 375-00, 375px",
+      "evidence": "In dom-375.json the \"Start free trial\" link sits at y=834 with h=77, so its bottom edge is at 911px, below the 812px fold. The h1 wraps to five lines at 48px and the subhead to five more before the button.",
+      "before": "Primary action below the first phone screen.",
+      "after": "Shorten the h1 or reduce its phone size so the action sits inside the first 812px.",
+      "why": "On a phone the first screen holds only an eyebrow, a headline and a paragraph; the visitor must scroll to reach the one action the page exists for.",
+      "test": "T-FIVE-SECOND"
+    },
+    {
+      "rule": "LAY-019",
+      "tier": "Reflex",
+      "where": "every section, tiles 1440-00 to 1440-02, 1440px",
+      "evidence": "All three h1 and h2 elements are text-align center, and the three feature cards centre their icon, h3 and body text too. The hero stacks the number, the eyebrow, the h1, the subhead, both buttons and the trust line on one centred axis.",
+      "before": "Every block on the centre axis.",
+      "after": "Set the feature section and its cards on a left edge, and keep centring only for the hero if at all.",
+      "why": "With everything on one centred axis there is no edge for the eye to follow, and the centred card text has ragged starts on both sides.",
+      "test": "T-LEFT-EDGES"
+    },
+    {
+      "rule": "LAY-008",
+      "tier": "Finish",
+      "where": "h1 and h2s, 1440px",
+      "evidence": "Read in order, the headings are \"Build faster with intelligent workflows for modern teams\", \"Everything you need to ship great products\", \"Ready to transform how your team builds?\". The h3s are \"Lightning Fast\", \"Enterprise Secure\", \"Built to Scale\".",
+      "before": "Headings that name categories and promises only.",
+      "after": "Write each head as a specific claim about what the workflow does. [DATA NEEDED: the product's actual workflows]",
+      "why": "The heading outline says 'a faster platform' and nothing else; a scanning visitor learns no fact.",
+      "test": "T-HEADINGS-READ"
+    }
+  ],
+  "strengths": [
+    "The first screen at 1440 has one focal point: the 88px serif h1 with an italic accent, and both actions at y=688 to 741 inside the fold.",
+    "The page is short (2,551px at 1440) and the dark CTA band gives the one heavy-light change under the squint."
+  ],
+  "not_investigated": [
+    "The 375 capture overflows sideways to 698px (overflow, Floor); T-PHONE-ORDER was read for section order only, which is kept. The overflow belongs to the sweep and lens-a11y.",
+    "Capture prep blocked the page's own anti-pattern detector script (manifest prep); this is capture context, not a design choice.",
+    "heading_rhythm, flat_hierarchy and type_ladder are sweep findings and are not repeated."
+  ]
+}

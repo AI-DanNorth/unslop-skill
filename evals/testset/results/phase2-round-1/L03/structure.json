@@ -1,0 +1,89 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The job is getting a tool recommendation, and only the goal picker (tiles 1440-00 to 1440-01) is shaped by it; the rest is a stock run of centred hero, how-it-works steps, a featured-card grid and a dark CTA band.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 5,
+    "reason": "T-FIVE-SECOND and T-SQUINT pass on the first screen, but T-STOCK-ORDER finds five stock sections and T-COMPOSITION-RUN finds four card grids in a row."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-015",
+      "tier": "Reflex",
+      "where": "whole page below the hero, tiles 1440-01 to 1440-03, 1440px",
+      "evidence": "The h2 run in dom-1440.json is \"What are you trying to accomplish?\", \"How it works\", \"Featured tools\", \"Ready to find your stack?\". After the centred hero, the page runs how-it-works steps (y 1215), a featured grid (y 1638), a dark CTA band (y 2378) and a three-column footer: five stock sections in stock order.",
+      "before": "Hero, goal grid, three numbered steps, six featured-tool cards, dark CTA band, footer.",
+      "after": "Let the goal picker carry the page: open the first question in the hero, then show one worked stack for a real goal in place of the steps and the generic featured grid. Example stacks are [DATA NEEDED: one finished recommendation with tools, prices and setup time].",
+      "why": "Only the goal grid belongs to a recommender. The steps, featured cards and CTA band would sit unchanged on any AI directory, so the visitor never sees what a finished stack looks like before committing.",
+      "test": "T-STOCK-ORDER"
+    },
+    {
+      "rule": "LAY-012",
+      "tier": "Reflex",
+      "where": "goal grid, how it works, featured tools; tiles 1440-00 to 1440-02, 1440px",
+      "evidence": "Three neighbouring sections share one skeleton: a centred or left heading over a grid of white 14px-radius cards (10 goal cards, 3 step cards, 6 tool cards). The sweep's card_kit hit reports 19 containers sharing radius 14px and one shadow.",
+      "before": "Grid of cards, grid of cards, grid of cards.",
+      "after": "Change the composition of at least two of them: the goal choice as a plain index or form row, the three steps as a single line of text under the picker, the tools as a compact table or rows.",
+      "why": "With the same card box three times, nothing tells the visitor which section is the action and which is background, so the goal picker loses its weight as the first step.",
+      "test": "T-COMPOSITION-RUN"
+    },
+    {
+      "rule": "LAY-010",
+      "tier": "Reflex",
+      "where": "\"How it works\" section, tile 1440-01, 1440px",
+      "evidence": "The section repeats the hero's own promise (\"Answer three quick questions\") as three numbered cards: \"Choose your goal\", \"Set your budget\", \"Share your skill level\". The goal grid directly above already is step 1.",
+      "before": "A three-card steps section after the goal grid that already starts step 1.",
+      "after": "Delete the steps section, or fold it into one line under the goal grid heading (\"Step 1 of 3\").",
+      "why": "The section explains a flow the visitor is already inside, and it pushes the tool list a full screen further down.",
+      "test": "T-DELETION"
+    },
+    {
+      "rule": "LAY-019",
+      "tier": "Reflex",
+      "where": "hero and section heads, tiles 1440-00 to 1440-02, 1440px",
+      "evidence": "Four of the five h1 and h2 elements are text-align center (dom-1440.json); the hero stacks the pill, the two-line h1, the paragraph, both buttons and the trust row on one centred axis at x=720. Only \"Featured tools\" is left-aligned, at x=168.",
+      "before": "Centred hero, centred section heads, one left-aligned head.",
+      "after": "Pick one axis: left-align the section heads on the 168px content edge that the card grids already use.",
+      "why": "The heads switch between the centre axis and the 168px grid edge, so the eye re-finds the start of each section.",
+      "test": "T-LEFT-EDGES"
+    },
+    {
+      "rule": "LAY-017",
+      "tier": "Reflex",
+      "where": "hero trust row, tile 1440-00, 1440px",
+      "evidence": "Proof is a row of three small grey icon labels under the buttons: \"20+ curated tools\", \"Instant results\", \"Updated for 2026\".",
+      "before": "Generic icon-and-label trust row.",
+      "after": "Use the category's own proof: a sample recommendation output for one goal. [DATA NEEDED: one real result screen]",
+      "why": "A recommender proves itself by showing a recommendation. Three labels give the visitor no way to judge the quality of the output.",
+      "test": "T-ANATOMY"
+    }
+  ],
+  "strengths": [
+    "The first screen answers the five-second test: the h1 \"Tell us the goal. We'll build the stack.\" is the heaviest mass under the squint, and \"Find my stack\" sits at y=444 to 492, inside the 800px fold at 1280 and at y=460 to 508 inside the 812px fold at 375.",
+    "The goal grid is the job's own section: ten goals as clickable cards directly under the hero, which is where a recommender should start.",
+    "Every section holds its shape under the squint; alternating white and #f8fafc bands separate them without dividers.",
+    "The phone order at 375 keeps the 1440 order; nothing reorders."
+  ],
+  "not_investigated": [
+    "flat_hierarchy (h3 and h4 at 14px), icon_tile (10 identical target icons) and words_per_screen (145 words on screen 2) are sweep findings and are not repeated here.",
+    "The 'Made in Bolt' badge at the bottom right is a host overlay, not part of the design."
+  ]
+}

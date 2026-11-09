@@ -1,0 +1,70 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The job is reading what a research company stands for and what it just shipped: a mission statement, a featured-research showcase, the three latest model releases and four policy documents follow that job, and no section is a stock feature, steps or CTA band.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 7,
+    "reason": "T-SQUINT and T-SCREEN-BY-SCREEN pass on every tile and T-STOCK-ORDER finds no stock run, but T-HEADINGS-READ finds only one section heading (\"Learn more\") and T-JUDGE-TILE finds empty bands inside the release cards."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-008",
+      "tier": "Finish",
+      "where": "section heads, tiles 1440-01 to 1440-02, 1440px",
+      "evidence": "dom-1440.json has one h1 (the mission statement at y=132) and one h2, \"Learn more\", set at 13px at y=1707. The featured-research showcase and the three release cards have no section heading at all; the release cards sit under no label.",
+      "before": "h1 statement, then one 13px h2 \"Learn more\".",
+      "after": "Give the release group and the showcase a short heading that names what they are (for example \"Latest models\" and \"Featured research\"), and replace \"Learn more\" with a head that names the four documents as commitments.",
+      "why": "A reader scanning headings sees the mission and then \"Learn more\"; the outline does not say that the page holds new models and safety commitments.",
+      "test": "T-HEADINGS-READ"
+    },
+    {
+      "rule": "LAY-011",
+      "tier": "Reflex",
+      "where": "three release cards, tile 1440-01, 1440px",
+      "evidence": "Each card's description ends near y=445 in the tile and the \"Model Details\" row starts at y=550, leaving a band of about 100px of empty card inside each of the three 440px-tall cards.",
+      "before": "Equal-height cards with a fixed gap between a three-line description and the link rows.",
+      "after": "Let the link rows follow the description, or use the space for one fact per model [DATA NEEDED: one benchmark or price line per model].",
+      "why": "The empty band is the largest area inside each card, so under the squint the cards read as empty boxes with a footer.",
+      "test": "T-JUDGE-TILE"
+    },
+    {
+      "rule": "LAY-018",
+      "tier": "Reflex",
+      "where": "footer, tiles 1440-02 to 1440-03, 1440px",
+      "evidence": "The footer accordion starts at x=507 while every section above starts at x=80; the left 427px of the footer holds nothing until the copyright line at the bottom of tile 1440-03.",
+      "before": "Footer content on a 507px start line under a page that starts at 80px.",
+      "after": "Keep the offset only if it repeats a column of the page grid; otherwise put the brand mark or the mission text in the empty left column.",
+      "why": "The footer opens a new edge that no section above uses, so the dark block reads as a separate page.",
+      "test": "T-LEFT-EDGES"
+    }
+  ],
+  "strengths": [
+    "The first screen has one focal point: the mission statement in a bold-to-serif run across the full width, then a single showcase image under it.",
+    "The order follows the job: mission, featured research, latest releases with model details and system cards, then the policy documents. No section would sit unchanged on another company's home page.",
+    "Every block starts on the 80px edge at 1440 until the footer, and the squint shows clear heavy and light rhythm: statement, image, three cards, four images.",
+    "At 375 the order is kept, and the four document cards become a carousel with a 01 / 04 counter instead of a long stack."
+  ],
+  "not_investigated": [
+    "T-FIVE-SECOND primary action: a corporate home page with no single action; the \"Try Claude\" menu in the header is the only action and its rect was not checked against the fold.",
+    "The h1 length (34 words, h1_words) and 121 words on screen 2 (words_per_screen) are sweep findings and are not repeated.",
+    "One script chunk was blocked during capture (manifest network); the showcase carousel may not show its full behaviour. Cookie banner was dismissed by page prep."
+  ]
+}

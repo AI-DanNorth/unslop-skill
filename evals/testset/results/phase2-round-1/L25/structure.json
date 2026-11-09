@@ -1,0 +1,79 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The job is trying a product-development tool, and the page is built around the product itself: a working app screen under the h1, then four sections named for the product's own workflow stages (intake, planning, AI, build and ship), each shown as a real screen, then a changelog.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-FIVE-SECOND, T-SQUINT and T-HEADINGS-READ pass and the order follows the product's workflow; T-COMPOSITION-RUN finds four neighbouring sections on one skeleton and T-JUDGE-TILE finds two thin tiles near the end."
+  },
+  "tests_run": [
+    "T-FIVE-SECOND",
+    "T-SCREEN-BY-SCREEN",
+    "T-SQUINT",
+    "T-HEADINGS-READ",
+    "T-SKELETON",
+    "T-JUDGE-TILE",
+    "T-COMPOSITION-RUN",
+    "T-STOCK-ORDER",
+    "T-ANATOMY",
+    "T-DELETION",
+    "T-LEFT-EDGES",
+    "T-PHONE-ORDER",
+    "T-DENSITY-FIT"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-012",
+      "tier": "Reflex",
+      "where": "\"Intake and integrations\", \"Planning and monitoring\", \"AI and automations\", \"Build, review, and ship\"; tiles 1440-02 to 1440-08, 1440px",
+      "evidence": "The four h2 sections at y=2674, 3910, 5149 and 6391 share one skeleton: a 48px head at x=78 on the left, a paragraph and \"Learn more\" at x=752 on the right, a wide product mock below, then a feature-link index. Each is about 1,240px tall.",
+      "before": "Four sections with the same head, paragraph, mock and index skeleton.",
+      "after": "Keep the product mocks, but vary at least one section's composition, for example run the AI section as a single full-width agent transcript, or merge the four link indexes into one index after the last section.",
+      "why": "The fourth repeat reads as more of the same, and the 297-word screen in the build section (words_per_screen) is where the reader is most likely to stop.",
+      "test": "T-COMPOSITION-RUN"
+    },
+    {
+      "rule": "LAY-011",
+      "tier": "Reflex",
+      "where": "feature index under \"Build, review, and ship\", tile 1440-08; closing CTA, tile 1440-10; 1440px",
+      "evidence": "Tile 1440-08 opens with a \"Features\" label at x=80 and six links (Issues, Guided reviews, Diffs, Git automations, Cycles, Releases) in the right half, with about 650px of empty width on the left and about 130px of empty height below. Tile 1440-10 holds the centred \"Built for the future. Available today.\" with two buttons and then about 220px of empty black before the footer rule.",
+      "before": "A link index and a CTA band that each fill less than half of their screen.",
+      "after": "Fold the per-section link indexes into one footer-style index, and close the gap under the CTA buttons so the CTA sits with the footer.",
+      "why": "These are the two places where the squint shows black with a few grey lines; the rest of the page carries product screens.",
+      "test": "T-JUDGE-TILE"
+    },
+    {
+      "rule": "LAY-008",
+      "tier": "Finish",
+      "where": "closing CTA head, tile 1440-10, 1440px",
+      "evidence": "The closing h2 is \"Built for the future. Available today.\" at 72px centred, after section heads that each name a workflow stage.",
+      "before": "\"Built for the future. Available today.\"",
+      "after": "End on a head that names the next step in the product's own terms (for example what a new workspace starts with).",
+      "why": "The heading outline reads as the product's workflow until the last line, which could close any SaaS page.",
+      "test": "T-HEADINGS-READ"
+    },
+    {
+      "rule": "LAY-019",
+      "tier": "Reflex",
+      "where": "\"A new species of product tool\" statement, tile 1440-01, 1440px",
+      "evidence": "The statement h2 starts at x=46 while the h1, the logo row and every later section head start at x=78 (start-line count: 80 holds 5 blocks, 48 holds 2).",
+      "before": "One section head 32px left of the page edge the others share.",
+      "after": "Put the statement on the 78px edge with the rest.",
+      "why": "A 32px shift at a 48px head is visible as a jog in the left edge between the logo row and the statement.",
+      "test": "T-LEFT-EDGES"
+    }
+  ],
+  "strengths": [
+    "The first screen has one focal point: the 64px h1 \"The product development system for teams and agents\" over a working issue screen that shows an agent fixing a bug, so the visitor sees the product before reading about it.",
+    "The section order follows the product's own workflow, from intake to planning to AI to build and ship, then the changelog; it would not sit unchanged under another business.",
+    "Proof is in the category's form: a customer logo row directly under the product screen and a dated changelog, not a stat band.",
+    "Section heads share one 78px edge on a dark ground, and the squint shows a clear heavy-light rhythm between product mocks and head blocks."
+  ],
+  "not_investigated": [
+    "Several script chunks were blocked during capture (manifest network), so animated or interactive parts of the product mocks may not show their full state.",
+    "phone_parity (925 words hidden at 375), dead_band, heading_rhythm, type_ladder and page_words are sweep findings and are not repeated. Because so much is hidden at 375, T-PHONE-ORDER was checked only for the order of the h2 sections, which is kept."
+  ]
+}
