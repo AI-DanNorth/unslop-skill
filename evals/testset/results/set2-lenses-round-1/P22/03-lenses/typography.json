@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The window title is 13px/600, the panel head 'Campaign assets' 16px/550, the popover head 'Package ready' 13px/550 and all settings and meta 10 to 11px. The 16px caption above the frame is the capture's page furniture and is left out of the judgment.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-TYPE-SOURCE, T-LEADING and T-HEADLINE-FIT pass; T-LADDER finds the setting values set apart from their labels by 400 to 450 only (TYP-020)."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "settings rows 'Format' / 'PNG' and 'Resolution' / '2× original', 1440",
+   "evidence": "Labels are 11px/400 and their values 11px/450 (01-evidence/tiles/1440-00.png, left panel).",
+   "before": "Label 11px/400; value 11px/450",
+   "after": "Value at a clear step (500 to 600), or the label set lighter in colour and the value in the text colour at one size",
+   "why": "A 50-unit weight step is invisible, so labels and values read as one run.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "The panel head 'Campaign assets' has its own 16px step with 1.38 leading.",
+  "Meta such as '24 files · 18.6 MB' uses typographic middle dots, and '2× original' uses the multiplication sign."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

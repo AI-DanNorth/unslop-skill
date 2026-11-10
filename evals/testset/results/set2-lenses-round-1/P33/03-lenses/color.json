@@ -1,0 +1,31 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The workspace list uses untinted greys only: #222222 heading, #444444 row labels, #888888 counts and #777777 icons on white, with one #e9e9e9 card edge.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass: three text levels, one icon grey and one ground; the icon set differs in shape and weight, which is not a colour matter."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [],
+ "strengths": [
+  "All three icons share one grey (#777777, measured on each svg), so colour does not add to the icon mismatch."
+ ],
+ "not_investigated": [
+  "Icon style (filled versus outline, size): not a colour question; left to other lenses.",
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

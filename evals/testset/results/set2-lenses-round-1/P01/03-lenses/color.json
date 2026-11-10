@@ -1,0 +1,33 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "An untinted grey scale (#222222, #444444, #888888) on white carries every role, and the one hue, a muted green check #6a8572, marks the synced state only.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass with three untinted text levels and one ground, and T-SURFACE-LADDER finds one 3% shadow recipe; the palette is small and clean but has few roles to prove."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The card holds one untinted grey family (#222222 ink, #444444 body, #888888 meta) on a white card with one 3% shadow.",
+  "The only hue is the muted green-grey check (#6a8572) beside 'All files synced', which marks the one success state and nothing else."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "T-LINE-DELETION: the card draws no repeated rules"
+ ]
+}

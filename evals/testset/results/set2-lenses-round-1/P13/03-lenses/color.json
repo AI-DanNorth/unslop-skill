@@ -1,0 +1,45 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Untinted greys with a near-black #1f1f1f 'Deploy' button carry the card, and small green, grey and red icons mark live, building and failed rows.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES passes with one ground and state colours in one role each; T-GRAYSCALE passes because each state icon has its own shape; T-NEUTRALS finds two near-identical meta greys."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "row meta and times, 1440",
+   "evidence": "The text roles list #9a9a9a on 3 elements and #8a8a8a on 1, about 0.05 apart in lightness, for secondary text of one kind.",
+   "before": "Two secondary greys one small step apart.",
+   "after": "One secondary grey for all row metadata.",
+   "why": "Two nearly equal greys look like an accident rather than two levels.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "State colours are held to the icons and keep their meaning.",
+  "One near-black primary and no other fill in the card."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

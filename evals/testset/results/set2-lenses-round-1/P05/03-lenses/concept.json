@@ -1,0 +1,71 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "A billing card ('Starter plan', '$24 / month', '3 of 5 seats') where every row is boxed in the same blue border, so no fact leads.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-BOLD-MOVE fails (four bordered boxes of equal weight inside a bordered card), T-MIRROR and T-RIVAL-NAME hold for any SaaS plan card, and T-SIGNATURE fails because seat use is the smallest text."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-006",
+      "title": "Spend boldness in one place",
+      "tier": "Finish",
+      "where": "whole card, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the plan name, price and seat row each sit in their own blue-bordered box inside a blue-bordered card, and the button repeats the same blue.",
+      "before": "Four framed boxes plus a framed card, all in one blue.",
+      "after": "Remove the inner boxes; let the price be the one large element and separate rows with space.",
+      "why": "When every row is framed equally, the reader cannot tell what matters.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Team seats' row, 1440",
+      "evidence": "In tiles/1440-00.png '3 of 5 seats' is set at about 10 px, the smallest text in the card, although seat use is the fact that decides whether to manage the plan.",
+      "before": "Seat use in the smallest type.",
+      "after": "Show seat use as the working object, for example '3 of 5 seats used' with a short meter.",
+      "why": "The fact that drives the card's only action is the hardest to read.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "palette, 1440",
+      "evidence": "In tiles/1440-00.png headings, price, labels, borders, badge and button all use the same mid blue on pale blue.",
+      "before": "A single blue applied to every element.",
+      "after": "Set text in neutral ink and keep blue for the action and the 'Active' badge.",
+      "why": "A one-hue card reads as a framework default, not as this product.",
+      "test": "T-MIRROR",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The content is the right content for the job: plan, price, seat use and one 'Manage plan' action."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

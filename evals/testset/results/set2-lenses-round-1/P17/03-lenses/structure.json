@@ -1,0 +1,54 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "An asset-export window with a 'Package ready' card dropped over the middle of the form, where it covers the Format and Resolution values and the right end of the 'Export package' button.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 4,
+  "reason": "T-SQUINT finds the floating card as the brightest block over the form, and T-DELETION finds the covered settings and button unreadable at 1440 and 375."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-267",
+   "tier": "Reflex",
+   "where": "'Package ready' card over the export form, 1440 and 375",
+   "evidence": "In dom-1440.json the card spans x=314 to 540, y=161 to 288; the form's Format and Resolution rows (y=193 to 242) and the 'Export package' button (x=220, y=264, 126px wide) run under it. In 01-evidence/tiles/1440-00.png the button is cut at its right edge, and in 01-evidence/tiles/375-00.png it reads 'Export pa'.",
+   "before": "A confirmation card covering the settings and the trigger it confirms.",
+   "after": "Anchor the confirmation where it does not cover content: a toast straddling the window's lower edge, or in place of the button after export.",
+   "why": "The reader cannot see the settings that produced the package or the action that made it, so cause and result are not on screen together.",
+   "test": "T-DELETION",
+   "source": "structure"
+  },
+  {
+   "rule": "LAY-271",
+   "tier": "Finish",
+   "where": "lower half of the window, 1440",
+   "evidence": "In 01-evidence/tiles/1440-00.png the window body below y=300 is empty to the stage foot at y=451, apart from pale placeholder blocks on the right at x=463 (117 by 186px) that the card half covers.",
+   "before": "About a third of the window's body is empty.",
+   "after": "Crop the window to its content, or move the card down into the empty lower area.",
+   "why": "The empty lower half and the crowded middle put all the weight in one band.",
+   "test": "T-JUDGE-TILE",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The window's left column holds a clear order: 'Campaign assets', '24 assets selected', settings, then the button."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "A caption above the stage is page text and was not used as evidence."
+ ]
+}

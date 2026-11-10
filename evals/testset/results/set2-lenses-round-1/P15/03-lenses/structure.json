@@ -1,0 +1,54 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A payments scene where the phone satellite sits over the middle of the dashboard and hides the bar chart, the payment row and, at 375, the total itself.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 4,
+  "reason": "T-SQUINT shows the phone as one dark-edged slab over the centre of the window, and T-PHONE-ORDER finds the total cut to '$12' at 375."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-267",
+   "tier": "Reflex",
+   "where": "phone over dashboard window, 1440 and 375",
+   "evidence": "In dom-1440.json the phone spans x=340 to 568 and the dashboard content column x=200 to 434, so the phone covers the right 94px of the content: in 01-evidence/tiles/1440-00.png the chart shows three of its five bars and the '$2,400' amount beside 'Fable Studio' is hidden.",
+   "before": "Phone satellite placed over the window's content (chart and payment row).",
+   "after": "Move the phone so it straddles the window's right edge and covers only empty margin or chrome, as a satellite should.",
+   "why": "The scene hides the dashboard's own facts behind its satellite, so neither object can be read whole.",
+   "test": "T-SQUINT",
+   "source": "structure"
+  },
+  {
+   "rule": "LAY-021",
+   "tier": "Finish",
+   "where": "whole scene at 375",
+   "evidence": "In 01-evidence/tiles/375-00.png the phone covers the window from about 80px in, so the total reads '$12', 'received' is cut, and the chart and 'Fable Studio · Invoice 1042' are cut at the phone's left edge.",
+   "before": "At 375 the dashboard's lead number is the first thing the phone hides.",
+   "after": "Recompose at 375: stack the phone below the dashboard's content, or crop the window so the total stays whole.",
+   "why": "On a phone the reader sees the satellite before the fact it confirms.",
+   "test": "T-PHONE-ORDER",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The phone's own screen holds a clear order: title, the '$2,400' payment card, then 'View payment'."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "A caption above the stage is page text and was not used as evidence."
+ ]
+}

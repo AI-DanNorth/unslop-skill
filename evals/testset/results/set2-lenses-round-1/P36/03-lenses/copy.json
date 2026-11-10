@@ -1,0 +1,57 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The four cards carry only their headings, 'Write together', 'Find anything', 'Works offline' and 'Connects your tools', over grey placeholder bars; no fact, number or name appears.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 3,
+  "reason": "T-RIVAL-NAME and T-FRESH-READER fail: all four headings stay true under any document tool's name, and the frame answers neither what the product is nor why this one."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION",
+  "T-RIVAL-NAME"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-007",
+   "tier": "Reflex",
+   "where": "feature card headings, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The item's whole copy is four headings: 'Write together', 'Find anything', 'Works offline', 'Connects your tools'. Each sits over three grey bars with no text. Every heading holds under any rival's name.",
+   "before": "\"Write together\" / \"Find anything\" / \"Works offline\" / \"Connects your tools\"",
+   "after": "Give each card its own fact: a launch date, a search time, how offline edits merge, the tools it connects [DATA NEEDED: product facts]",
+   "why": "With no body text the reader learns only a category of features, not anything about this product.",
+   "test": "T-RIVAL-NAME",
+   "root": "feature-card headings"
+  },
+  {
+   "rule": "CPY-014",
+   "tier": "Reflex",
+   "where": "feature card headings, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "All four headings use one pattern, a two- or three-word verb phrase with no product noun.",
+   "before": "\"Find anything\"",
+   "after": "A heading that names the product's own noun or number",
+   "why": "The repeated verb-phrase formula is the default feature-grid shape.",
+   "test": "T-HEADING-FORM",
+   "root": "feature-card headings"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text for cadence and state tests: 11 words.",
+  "The caption above the frame ('Composition problem') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

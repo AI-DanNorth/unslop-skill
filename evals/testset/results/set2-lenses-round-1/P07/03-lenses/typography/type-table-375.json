@@ -1,0 +1,217 @@
+{
+ "width": 375,
+ "fonts_source": "computed font-family (declared; fonts.json is 1440 only)",
+ "faces": {
+  "system-ui": {
+   "elements": 10,
+   "chars": 103,
+   "roles": {
+    "small": 7,
+    "h3": 2,
+    "h4": 1
+   },
+   "sizes_px": [
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    21.0,
+    28.0
+   ],
+   "source": "declared"
+  },
+  "-apple-system": {
+   "elements": 5,
+   "chars": 72,
+   "roles": {
+    "other": 5
+   },
+   "sizes_px": [
+    16.0,
+    20.0,
+    21.0,
+    42.0
+   ],
+   "source": "declared"
+  },
+  "SF Pro Text": {
+   "elements": 1,
+   "chars": 4,
+   "roles": {
+    "other": 1
+   },
+   "sizes_px": [
+    17.67
+   ],
+   "source": "declared"
+  }
+ },
+ "roles": {
+  "other": {
+   "count": 6,
+   "sizes_px": {
+    "20.0": 2,
+    "16.0": 1,
+    "17.67": 1,
+    "42.0": 1,
+    "21.0": 1
+   },
+   "median_px": 20.0,
+   "weights": {
+    "400": 4,
+    "590": 1,
+    "550": 1
+   },
+   "faces": {
+    "-apple-system": 5,
+    "SF Pro Text": 1
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 1,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  },
+  "small": {
+   "count": 7,
+   "sizes_px": {
+    "10.0": 3,
+    "11.0": 2,
+    "13.0": 1,
+    "12.0": 1
+   },
+   "median_px": 11.0,
+   "weights": {
+    "400": 5,
+    "600": 1,
+    "500": 1
+   },
+   "faces": {
+    "system-ui": 7
+   },
+   "italic": 0,
+   "leading_median": 1.6,
+   "leading_normal": 0,
+   "tracking_em_median": 0.0,
+   "uppercase": 0
+  },
+  "h3": {
+   "count": 2,
+   "sizes_px": {
+    "28.0": 2
+   },
+   "median_px": 28.0,
+   "weights": {
+    "550": 2
+   },
+   "faces": {
+    "system-ui": 2
+   },
+   "italic": 0,
+   "leading_median": 1.21,
+   "leading_normal": 0,
+   "tracking_em_median": -0.0,
+   "uppercase": 0
+  },
+  "h4": {
+   "count": 1,
+   "sizes_px": {
+    "21.0": 1
+   },
+   "median_px": 21.0,
+   "weights": {
+    "500": 1
+   },
+   "faces": {
+    "system-ui": 1
+   },
+   "italic": 0,
+   "leading_median": 1.43,
+   "leading_normal": 0,
+   "tracking_em_median": -0.01,
+   "uppercase": 0
+  }
+ },
+ "steps": [
+  {
+   "pair": "h3/h4",
+   "ratio": 1.33
+  }
+ ],
+ "distinct_sizes_px": [
+  10.0,
+  11.0,
+  12.0,
+  13.0,
+  16.0,
+  17.67,
+  20.0,
+  21.0,
+  28.0,
+  42.0
+ ],
+ "measure": {
+  "paragraphs": 0,
+  "cpl_median": null,
+  "cpl_max": null,
+  "over_75": 0,
+  "at_or_over_88": [],
+  "slivers_under_16": []
+ },
+ "headings": [
+  {
+   "sel": "div.cs-scene.cs-device > div.ss-window.ss-recede:nth-of-type(1) > div.ss-window_",
+   "text": "$12,480",
+   "size": "28px",
+   "level": 3,
+   "lines": 2,
+   "chars": 15,
+   "last_line_share": 2.79,
+   "leading": 1.21,
+   "tracking_em": 0.0,
+   "weight": "550",
+   "face": "system-ui"
+  },
+  {
+   "sel": "div.ss-phone__window > div.ss-phone__screen > div.ss-phone__content:nth-of-type(",
+   "text": "Payments",
+   "size": "28px",
+   "level": 3,
+   "lines": 1,
+   "chars": 8,
+   "last_line_share": null,
+   "leading": 1.21,
+   "tracking_em": -0.008,
+   "weight": "550",
+   "face": "system-ui"
+  }
+ ],
+ "head_treatments": [],
+ "small_caps_or_tracked": {
+  "count": 0,
+  "examples": []
+ },
+ "caps_running_text": [],
+ "light_weight_under_20px": [],
+ "mono": {
+  "by_role": {},
+  "body_paragraphs": []
+ },
+ "wrapped_controls": [],
+ "punctuation": {
+  "straight_double": 0,
+  "curly_double": 0,
+  "straight_apostrophe": 0,
+  "curly_apostrophe": 0,
+  "three_dots": 0,
+  "ellipsis": 0
+ },
+ "css": {
+  "tabular_nums": true,
+  "text_wrap_balance": false,
+  "text_wrap_pretty": false,
+  "font_synthesis_none": false,
+  "font_display": false,
+  "unreadable_sheets": false
+ }
+}

@@ -1,0 +1,56 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The job is showing an export finishing: the form on the left (title, two settings, one button) leads to the \"Package ready\" receipt card that overlaps the window's lower right.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (the dark \"Export package\" button and the white receipt card read first and second) and T-SKELETON shows a cause and its result; T-JUDGE-TILE finds an empty pane and two faint placeholders."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-283",
+      "tier": "Finish",
+      "where": "window body under the button, x 200 to 450, y 296 to 451, 1440px",
+      "evidence": "dom-1440.json: the left column ends with the \"Export package\" button at y=296, and the window body runs on to the frame crop at y=451, leaving 155px of empty pane under the button.",
+      "before": "A void under the form, left of the receipt card.",
+      "after": "Crop the window higher, or move the composition down so the button sits nearer the crop.",
+      "why": "An empty pane under the content reads unfinished.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-009",
+      "tier": "Finish",
+      "where": "pale blocks behind the receipt card, x 463 to 580, y 175 to 361, 1440px",
+      "evidence": "dom-1440.json: cs-export-preview (117x186px) shows two pale green blocks, and the receipt card covers the lower one.",
+      "before": "Two empty tinted blocks behind the receipt card.",
+      "after": "Delete the blocks, or show the asset thumbnails they stand for: [DATA NEEDED: asset previews].",
+      "why": "Deleting them loses nothing, so they only add a third pale layer to the right half.",
+      "test": "T-DELETION",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "One primary action (the dark \"Export package\" button) and one result (the receipt card) give the frame a clear first and second element.",
+    "The form text starts on one line at x=220, with labels on the left and values right-aligned to x=425."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

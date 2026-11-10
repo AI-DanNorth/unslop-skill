@@ -1,0 +1,58 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A plum #6d5964 holds the one action 'Download package' on a warm mauve #eee6e5 stage with mauve placeholder tiles, but the window text mixes cool slate greys with mauve greys across six levels.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-COLOUR-SOURCE and T-ACCENT-DOSAGE pass for the plum, while T-NEUTRALS finds two neutral families and T-PALETTE-ROLES finds six text greys."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "window text: eyebrow 'Campaign launch', subtitle 'Everything your team needs to publish.', heading 'Launch package', 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P43\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table counts 9 warm mauve neutrals (#6c6269, #8f858c, #969095, stage #ede5e5) against 4 cool slate ones (#83909a, #84909a, #35414a): the eyebrow, subtitle and h1 use the cool slate while the sidebar and meta use the mauve greys. The mauve placeholder tiles on the right match the stage family.",
+   "before": "Cool slate text (#35414a, #83909a) beside mauve greys (#6c6269, #969095) on a warm #f6f5f4 panel",
+   "after": "One neutral family tinted toward the plum anchor, used for every text grey",
+   "why": "Two grey families in one window read as two kits; the cool slate text looks out of place on the warm panel.",
+   "test": "T-NEUTRALS",
+   "source": "color",
+   "root": "the text grey tokens"
+  },
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "window text, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P43\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 6 text levels on one light ground: #262628, #35414a, #6c6269, #8f858c, #83909a and #969095.",
+   "before": "Six text greys",
+   "after": "Three text greys from one family: ink, secondary, meta",
+   "why": "Six close greys blur the roles; the eyebrow and the sidebar items sit one or two steps apart with no reason.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The plum #6d5964 appears on the one primary action only.",
+  "The placeholder tiles and the stage share one mauve family."
+ ],
+ "not_investigated": [
+  "The window is scaled down inside the frame; its text renders at a few pixels, so text greys were read from the DOM, not the tile.",
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

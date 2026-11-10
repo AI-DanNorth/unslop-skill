@@ -25,7 +25,7 @@ def seeds_of(html):
     return s
 
 def capture(page, run, widths):
-    r = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), str(page), str(run), "--widths", widths], capture_output=True, text=True)
+    r = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), str(page), str(run), "--widths", widths, "--passive", "3000"], capture_output=True, text=True)
     if r.returncode: raise SystemExit(f"capture failed for {page.name}:\n{r.stderr[-2000:]}")
 
 def main():

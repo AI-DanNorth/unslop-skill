@@ -1,0 +1,60 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The invoice-and-deposit story is there, but the ground, invoice and deposit card are all one orange family, so the deposit card sinks into the invoice.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE and T-BOLD-MOVE fail: the invoice ground #ecac84, deposit card #e29b7c and frame orange sit within one value band, with #813d31 text everywhere."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "tier": "Reflex",
+      "where": "bank deposit card, 1440 and 375",
+      "evidence": "The deposit card (#e29b7c) is darker than the invoice it sits on (#ecac84) and close to the orange frame, so the newest information reads as a shadow.",
+      "before": "Deposit card in the same orange as its surroundings",
+      "after": "Give the deposit card its own material, lighter and neutral, above the invoice",
+      "why": "The deposit is the news in this scene; when it sinks, the composition has no subject.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-006",
+      "tier": "Finish",
+      "where": "whole composition, 1440",
+      "evidence": "Frame, invoice and card all use orange grounds with the same #813d31 ink; 'Paid' and 'Arriving tomorrow' get no contrast of their own.",
+      "before": "One colour on every layer",
+      "after": "Spend the colour in one place, for example the paid status, and keep the layers neutral",
+      "why": "With the colour everywhere, no element is louder than the rest.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The layered invoice and deposit arrangement is a sound idea worth keeping."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

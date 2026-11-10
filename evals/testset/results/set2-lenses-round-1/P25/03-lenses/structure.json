@@ -1,0 +1,66 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The job is scanning three tasks, but the card squeezes a four-column table (Task, Owner, Due, Status) into a 300px card, so every value gets the same weight and nothing reads first.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 3,
+    "reason": "T-SQUINT fails (four even grey columns, no first element), T-DENSITY-FIT fails (four tracks and 22px rows in a 276px body) and T-DELETION finds a header row that restates the values."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-020",
+      "tier": "Finish",
+      "where": "task card body, tiles/1440-00.png, x 401 to 676, 1440px",
+      "evidence": "dom-1440.json: four column tracks of 102px (Task), 51px (Owner), 56px (Due) and 51px (Status) share a 276px body, with rows 22px apart (y=73, 95, 117). The text sits at 10 to 12px. The sweep's near_blank hit (PRC-001) finds only 0.09% of pixels differ from the page colour.",
+      "before": "A four-column data table at full table density inside a small card.",
+      "after": "Stack owner and due date under the task name as one metadata line, keep status on the right edge, and give each record two lines.",
+      "why": "A table layout packed into a card leaves 51px tracks, so the owner, date and status read as specks rather than facts.",
+      "test": "T-DENSITY-FIT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "whole card, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "In the squint render the card shows four equal grey columns and no heavier element. The task names are 12px/400 and the owner, due and status cells are 11px/400, so size and weight separate nothing. The 14px/550 \"Project tasks\" header is the only heavier mark.",
+      "before": "Task name, owner, due date and status all at one weight in one row.",
+      "after": "Make the task name the primary element of each record and set owner and due date as quieter metadata beneath it.",
+      "why": "With no first element per row, the reader has to read every cell to find which task is which.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-009",
+      "tier": "Reflex",
+      "where": "column header row, y=55, 1440px",
+      "evidence": "The 10px header row reads \"Task  Owner  Due  Status\" above values that name themselves: \"Maya\", \"Today\", \"Ready\".",
+      "before": "A column header row over three rows of self-explaining values.",
+      "after": "Delete the header row; the record layout (name, then \"owner · due\") carries the meaning.",
+      "why": "Deleting the row loses nothing, so it only adds a fourth band of small grey text.",
+      "test": "T-DELETION",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The header line \"Project tasks\" with \"3 open\" on the right edge gives the card one clear title."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

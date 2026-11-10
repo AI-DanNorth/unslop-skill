@@ -1,0 +1,44 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "The four feature cards are white on a warm #f4f3f1 well with #e9e9e9-family placeholder bars, and the only ink is a cool slate #35414a on the headings.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-PALETTE-ROLES passes with one ground, one surface and one ink, but T-NEUTRALS finds a cool slate ink on a warm well, and the cards carry no colour role beyond greys."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "card headings ('Write together', 'Find anything', 'Works offline', 'Connects your tools'), 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P36\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table counts 4 cool neutrals (hue 180 to 300) against 14 untinted ones: the heading ink is #35414a, a blue slate, while the well behind the cards is a warm #f4f3f1.",
+   "before": "Heading ink #35414a (cool) on a warm #f4f3f1 well",
+   "after": "One neutral temperature: either an untinted or warm ink to match the well, or a cool well to match the ink",
+   "why": "A blue-grey ink on a warm paper makes the two neutrals argue; the mismatch reads as two kits put together.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "One ground, one surface and no shadows: the cards are separated by a lightness step only."
+ ],
+ "not_investigated": [
+  "The cards hold placeholder bars instead of text, so text levels beyond the headings could not be judged.",
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

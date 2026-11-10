@@ -1,0 +1,43 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A file panel with a title, a search field and an export and preview pair; the order fits the job, but each control's label sits about 3px above its icon's centre.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 6,
+  "reason": "T-SQUINT and T-SKELETON pass (title, field, actions in order), but T-JUDGE-TILE finds every label riding high against its icon, and the field and the button at two different heights."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-287",
+   "tier": "Finish",
+   "where": "search field, Export files button and Preview link, 1440",
+   "evidence": "dom-1440.json: in the search field (y=103, h=36, centre 121) the magnifier centres at 122 and the placeholder 'Search files' at 118. In the Export files button (y=151, h=34, centre 168) the icon centres at 168 and the label at 165. In the Preview link the arrow centres at 168 and the word at 165. The field is 36px tall and the button 34px.",
+   "before": "Labels 3 to 4px above their icons' centres; field 36px and button 34px tall.",
+   "after": "Centre each label on its cap height so text and icon share one centre line, and give the field and the button one control height.",
+   "why": "Every control in the panel looks slightly off, and two control heights stacked in one 246px column read as two kits.",
+   "test": "T-JUDGE-TILE",
+   "source": "structure",
+   "title": "Centre optically"
+  }
+ ],
+ "strengths": [
+  "One 246px content column from x=415 holds the title, the field and the action row, so the left edge is clean."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

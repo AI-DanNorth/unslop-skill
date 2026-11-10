@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The list names real exports with counts ('Campaign assets, 24 files', 'Brand library, 18 files') and the toast says 'Export complete, 24 files saved'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 7,
+  "reason": "T-STATE-COPY passes on a toast that names what finished and how many files; the sweep's repeated_label hit on 'Ready' (CPY-006) is the sweep's finding and is not repeated here."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The toast 'Export complete, 24 files saved' names the result and its count."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: 29 words. The repeated 'Ready' status is the sweep's CPY-006 hit.",
+  "At both widths the toast covers the first row's 'Ready' status; overlap is a layout matter."
+ ]
+}

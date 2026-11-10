@@ -1,0 +1,32 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "A release-checklist card with a weighted title over quieter meta, task rows on one name-and-status grid, and a footer that puts the count on the left line and the action on the right.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 9,
+  "reason": "T-SQUINT passes (title, then Open project, then rows) and T-LEFT-EDGES finds one left line at x=413 and one right line at x=663 for every row, with a hairline parting the footer; what was cut is any second alignment axis and any status column that is not shared."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [],
+ "strengths": [
+  "Every row's status ends on x=663, the same right line as the Open project button.",
+  "The title (14px, weight 550) sits 2px above its 11px meta, so the head reads as one item.",
+  "A hairline and 12px of space part the list from the footer, so the action belongs to the card, not to the last row."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

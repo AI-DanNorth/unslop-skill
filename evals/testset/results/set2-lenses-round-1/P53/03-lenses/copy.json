@@ -1,0 +1,46 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Each step states its own status ('24 assets ready', 'All comments resolved', 'Reviewed by Maya and Jon'), and the action reads 'Publish release'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 7,
+  "reason": "T-LABEL-READ and T-STATE-COPY pass on 'Publish release' and the checked statuses; T-TERMS finds the one act called launch, publish and release."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-020",
+   "tier": "Finish",
+   "where": "Publish window, heading and button, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The heading reads 'Ready to launch', the window title 'Publish' and the button 'Publish release'; the subtitle names 'Summer release'.",
+   "before": "\"Ready to launch\" over \"Publish release\"",
+   "after": "One verb for the act, for example 'Ready to publish' over 'Publish release'",
+   "why": "The reader meets three words for one action in one window.",
+   "test": "T-TERMS"
+  }
+ ],
+ "strengths": [
+  "'Reviewed by Maya and Jon' names who signed off, not just that it happened.",
+  "'Homepage · Summer release' names the target and the release."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "The caption above the frame ('Considered composition') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'each deploy is one traceable row': status icon, status word, branch, commit hash, author and age, with one 'Deploy' action.",
+  "score": {
+    "dimension": "Concept",
+    "value": 7,
+    "reason": "T-ONE-SENTENCE, T-SIGNATURE and T-BOLD-MOVE pass; the row metadata is clipped at both widths, and T-RIVAL-NAME holds for any deploy tool."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "row metadata lines, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the second row's meta ends 'perf/search · b41e09d · J' and the third ends '· Ana'; the DOM text continues 'Jon Park · 42s' and 'Ana Ruiz · 42s'. The author and build time are cut.",
+      "before": "Clipped author names and hidden build durations.",
+      "after": "Let the meta line wrap or drop the duration to a second column so the author shows in full.",
+      "why": "The details that make the row traceable are the ones cut off.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Status is stated three ways per row: icon, coloured word ('Live', 'Building', 'Failed') and age.",
+    "Branch and short commit hash ('main · 8f2c1a4') make each deploy specific."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

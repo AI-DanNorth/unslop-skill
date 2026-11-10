@@ -1,0 +1,45 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The job is checking recent deploys: the header and rows are well grouped, but three saturated status tiles and a gradient chip are the heaviest marks, so ornament leads the order.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 6,
+    "reason": "T-SQUINT reads the three coloured tiles before the row titles and the Deploy button; T-SKELETON and T-LEFT-EDGES pass."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "status tiles left of the row titles, rows at y=82, 142 and 189, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "The squint render shows three solid blots (a violet tile, an orange disc and a pink tile) and a teal chip in the Deploy button, and they read before the 14px/500 row titles. The sweep's gradient hit (SLP-007) finds a 52-degree gradient on the button chip.",
+      "before": "Four saturated marks in a three-row card.",
+      "after": "Use small status marks at the text's weight, and keep colour for the one state that needs attention.",
+      "why": "When the icons lead, the reader sees colours before knowing which deploy failed.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The header is one line: \"Recent deploys\" at 14px/600 on the left and the Deploy button on the right.",
+    "Each row keeps its title close to its metadata (\"Checkout redesign\" at y=82, \"main · Maya Chen\" at y=102), and the timestamps share one right edge at x=670."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

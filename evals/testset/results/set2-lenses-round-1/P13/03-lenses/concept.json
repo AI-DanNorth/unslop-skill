@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A deploy list ('Checkout redesign', 'Search speedup', 'Pricing copy') set so small that the working object fills a third of its own stage.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-SIGNATURE is weak (the list is set at about 10 to 11 px inside a mostly empty grey stage) and the failed deploy is marked only by a small red icon; T-RIVAL-NAME holds."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "deploy card, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the card's text is about 10 to 11 px and the card occupies roughly the middle third of the grey stage, with large empty bands above and below.",
+      "before": "A small, compressed list in a large empty stage.",
+      "after": "Set the rows at a readable body size and let the card fill the stage.",
+      "why": "The working object is the smallest thing in the frame.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "'Pricing copy' row, 1440",
+      "evidence": "In tiles/1440-00.png the failed deploy shows only a small red circle icon and '1h ago'; no word says it failed.",
+      "before": "Failure shown by a small icon only.",
+      "after": "Add a status word ('Failed') next to the icon.",
+      "why": "The one row that needs action is the easiest to miss.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "One dark 'Deploy' action and per-row status icons: the content is right for the task."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

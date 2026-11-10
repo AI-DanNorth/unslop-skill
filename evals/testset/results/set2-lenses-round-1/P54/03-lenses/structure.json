@@ -1,0 +1,43 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The same preference card as a nested panel, but the inner panel sinks to 3px above the outer frame's bottom edge while the other three sides keep 12px, so the card looks cut off.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 6,
+  "reason": "T-SQUINT holds (action first, title second), but T-JUDGE-TILE finds the inner panel's bottom inset at 3px against 12px on the other sides, with the Save button 4px above the panel's edge."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-281",
+   "tier": "Finish",
+   "where": "inner preference panel inside the grey frame, 1440 and 375",
+   "evidence": "dom-1440.json: the outer frame spans y=40 to 213 and the inner panel y=52 to 210, so the panel is inset 12px at the top and sides but 3px at the bottom. The Save preferences button ends at y=206, 4px above the panel's bottom edge, while the title starts 14px below its top edge (P54/01-evidence/tiles/1440-00.png). The sweep's near_tangent hit on div.cp-preferences records the same 3px edge.",
+   "before": "Inner panel inset 12px at the top, left and right, 3px at the bottom; button 4px from the panel's bottom edge.",
+   "after": "Carry the 12px inset round the bottom of the frame, and give the panel the same 14px padding under the button as above the title.",
+   "why": "The uneven bottom edge reads as a panel that slid down or got clipped, which breaks the nesting the frame is there to show.",
+   "test": "T-JUDGE-TILE",
+   "source": "structure",
+   "title": "Uneven padding and insets"
+  }
+ ],
+ "strengths": [
+  "Rows and the action share one 232px column with left and right lines at x=422 and x=654."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

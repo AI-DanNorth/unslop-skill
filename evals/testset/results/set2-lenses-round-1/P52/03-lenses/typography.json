@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "high",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on a consistent 12/10px list ladder, but the 'Export complete' toast covers the top of the first row's 'Ready' status and clips its glyphs.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-LEADING fails with an open TYP-022 (Floor), which caps the score at 4. The list type is otherwise consistent."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-022",
+   "title": "Lines never collide or clip",
+   "tier": "Floor",
+   "where": "First list row 'Campaign assets' and the toast, 1440 and 375",
+   "evidence": "In dom-1440.json the toast's 'Export complete' box spans y=53 to 105, and the first row's 'Ready' sits at y=98 to 116, x=650. On P52/01-evidence/tiles/1440-00.png (zoomed) the toast hides the top half of 'Ready'. The 375 tile shows the same overlap.",
+   "before": "Toast placed over the status column, cutting off the first 'Ready'",
+   "after": "Place the toast where it covers no live text (below the header bar and clear of the list), or reserve space for it",
+   "why": "A half-covered word cannot be read and looks like a layout failure.",
+   "test": "T-LEADING",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "List rows use one style each: 12px names over 10px counts, with the status column right-aligned."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The fourth row cut off by the frame is capture framing"
+ ]
+}

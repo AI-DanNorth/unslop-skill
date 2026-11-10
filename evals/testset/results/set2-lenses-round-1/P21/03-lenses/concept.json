@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'the file you just added is the subject', but at 1440 the window runs past the stage and cuts that file's size to '4.2'.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-ONE-SENTENCE and T-BOLD-MOVE pass on the highlighted 'Launch deck.pdf' row; T-SIGNATURE fails at 1440 because the Size column is clipped by the stage edge."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Size' column, 1440",
+      "evidence": "In tiles/1440-00.png the window extends past the stage's right edge: the header reads 'Size' cut at the edge and the value reads '4.2' with 'MB' hidden. At 375 (tiles/375-00.png) the column shows '4.2 MB' in full.",
+      "before": "The signature row's data clipped at desktop width.",
+      "after": "Fit the window inside the stage at 1440 or narrow the Name column.",
+      "why": "The one real row loses data at the width most readers see first.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "One highlighted real row against muted placeholder rows makes the subject clear."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The names and roles are realistic and specific ('Bartholomew Featherstonehaugh: Owner', 'Al: Editor with comment access'); the long role label does not match the one-word role beside it.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-TERMS and T-LABEL-READ find a role written as a phrase ('Editor with comment access') next to a one-word role ('Owner'); the rest is plain data."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-020",
+   "tier": "Finish",
+   "where": "role column, second row, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The first role reads 'Owner'; the second reads 'Editor with comment access' and wraps to two lines. The invite chip shows 'alexandra.whitfield@northwind...' with the domain cut.",
+   "before": "\"Editor with comment access\"",
+   "after": "One-word role names from one set ('Owner', 'Editor', 'Commenter'), with the permission detail in a tooltip or menu",
+   "why": "Two naming styles in one column make the reader parse the second role as a sentence.",
+   "test": "T-TERMS"
+  }
+ ],
+ "strengths": [
+  "The names are real-length, not placeholder names."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: 12 words. Truncation of the email is a layout matter."
+ ]
+}

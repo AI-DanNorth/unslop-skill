@@ -1,0 +1,31 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "The visible part of the deploy list is untinted greys on white with one mint globe icon (#90ceab family) for the live state; the frame shows only the first row, so the rest of the palette is not visible.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES passes for what is visible (ink #1f1f1f, meta #8a8a8a, one state hue on an icon), but most of the component is outside the frame, so confidence is low."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The one visible hue sits on a status icon and nowhere else."
+ ],
+ "not_investigated": [
+  "The capture frame shows only the heading and the first row at both widths; the other rows, the action and any further state colours are not verified.",
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

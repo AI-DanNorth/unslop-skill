@@ -1,0 +1,57 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Untinted greys carry the export window and the toast, with one muted green dot for 'Export complete', but the text spreads over five greys and the toast uses a border with a shadow.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-PALETTE-ROLES finds five text levels and T-SURFACE-LADDER finds a border plus shadow on the toast and two shadow recipes; the green is held to the one success state."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "window and toast text, 1440, tiles/1440-00.png",
+   "evidence": "The text levels are #333333 (1), #444444 (4), #555555 (1), #888888 (5) and #999999 (6): five greys, with #333333, #444444 and #555555 one step apart.",
+   "before": "Five text greys.",
+   "after": "Three text levels: ink, secondary, tertiary.",
+   "why": "Near-duplicate greys show the scale was not fixed.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "text grey scale"
+  },
+  {
+   "rule": "CLR-014",
+   "title": "A card has a border or a shadow",
+   "tier": "Finish",
+   "where": "'Export complete' toast, 1440",
+   "evidence": "The toast shadow is rgba(0,0,0,0.11) 0 3px 12px with a 1px #e8e8e8 ring; the window uses a second recipe, rgba(0,0,0,0.043) 0 4px 14px. The palette table counts 1 border plus shadow and 2 shadow recipes.",
+   "before": "A border plus a shadow on the toast, and a different shadow on the window.",
+   "after": "The toast with a shadow alone, from one shadow recipe.",
+   "why": "Two edge treatments on one floating surface make it heavier than its message.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The green dot is the only hue and marks the one completed state."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

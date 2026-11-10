@@ -1,0 +1,71 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "The system UI stack sets every role at 12px/400 in rgb(119,119,119), including the h3 'Release checklist'. The card has no type hierarchy, and its status column starts at two different x positions.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-LADDER fails outright: one size, one weight and one colour serve the head, the meta, the task names, the statuses and the summary. Only the 11px/500 button label differs."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "h3 'Release checklist' and every text role, 1440 and 375",
+   "evidence": "In dom-1440.json 'Release checklist' (h3), 'Due Friday · 4 tasks', 'Review copy', 'Ready', 'Test mobile', 'In review' and '2 tasks remaining' are all 12px/400, 18px line, rgb(119,119,119). On P41/01-evidence/tiles/1440-00.png the head cannot be told apart from its meta line.",
+   "before": "Head, meta, items, statuses and summary all 12px/400 grey",
+   "after": "Head at 14px/550 in the darkest ink; task names at 12px/400; meta, statuses and summary one step down (10 to 11px, lighter grey)",
+   "why": "With one size, weight and colour, the reader has to read every line to find the card's subject.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "a single text style applied to every element"
+  },
+  {
+   "rule": "TYP-010",
+   "title": "One size per kind of element",
+   "tier": "Reflex",
+   "where": "Task rows, 1440",
+   "evidence": "In dom-1440.json 'Review copy' starts at x=413 and 'Test mobile' at x=420. 'Ready' starts at x=493 and 'In review' at x=511. On P41/01-evidence/tiles/1440-00.png the status words do not form a column.",
+   "before": "Task names and statuses placed by text width, so the left edges drift by 7 and 18px",
+   "after": "Put the task names on one left edge and the statuses in one right-aligned column",
+   "why": "Values that do not line up cannot be scanned down as a column.",
+   "test": "T-FIGURES",
+   "source": "typography"
+  },
+  {
+   "rule": "TYP-133",
+   "title": "Create hierarchy with size, weight and space",
+   "tier": "Reflex",
+   "where": "Footer, '2 tasks remaining' and 'Open project', 1440",
+   "evidence": "On P41/01-evidence/tiles/1440-00.png the summary '2 tasks remaining' and the button are centred under left-aligned rows, and the summary is the same 12px grey as the rows above.",
+   "before": "Centred summary in the body style",
+   "after": "Left-align the summary at a smaller meta size, and place the button on the same baseline at the right",
+   "why": "A centred line in the body style reads as one more row rather than a summary.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "'Open project' is 11px/500 on one line and does not wrap."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here"
+ ]
+}

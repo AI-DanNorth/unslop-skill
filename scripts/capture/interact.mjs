@@ -358,6 +358,7 @@ export function analyseLive(cfg) {
   const L = window.__unslopLive, U = window.__unslopU;
   L.stop = true;
   const F = L.frames, out = { frames: F.length, coverage: "ok", snaps: [], ambient: 0, motionEndMs: null, stillMoving: false };
+  if (cfg.passive && F.length >= 12) L.clickT = F[4].t;   // passive: no click; the first frames only seed the step test
   if (F.length < 12 || L.clickT === null) { out.coverage = "inconclusive"; out.reason = `only ${F.length} frames recorded`; return out; }
   const dts = F.slice(1).map((f, i) => f.t - F[i].t).sort((a, b) => a - b);
   const frameMs = dts[Math.floor(dts.length / 2)] || 16.7;
@@ -373,7 +374,7 @@ export function analyseLive(cfg) {
   const moved = (f, id) => AX.some(([k]) => { const d = step(f, id, k); return d !== null && Math.abs(d) > 0.4; });
   // ambient: anything moving before the click
   const ambient = new Set();
-  for (let f = 1; f < c0; f++) for (const id of at[f].keys()) if (moved(f, id)) ambient.add(id);
+  if (!cfg.passive) for (let f = 1; f < c0; f++) for (const id of at[f].keys()) if (moved(f, id)) ambient.add(id);
   // ancestors of ambient elements move them too: treat descendants of an ambient box as ambient
   const isAmbient = (id) => { for (let x = id, k = 0; x >= 0 && k < 40; x = L.meta[x].parent, k++) if (ambient.has(x)) return true; return false; };
   out.ambient = ambient.size;
@@ -470,6 +471,35 @@ async function liveRun(page, selector, guard, load, dirty, liveMs) {
     res.dirty = sig !== pre.sig;
   } catch (e) { guard.armed = false; return { coverage: "inconclusive", reason: `error: ${e.message.split("\n")[0]}`, dirty: true }; }
   return res;
+}
+
+// ---------------------------------------------------------------- passive recording
+// Motion that plays without a click (an intro, a looping demo, a ticker) is ambient to the click runs above and left
+// out. The passive pass records it: it loads the page, records every painted element's box for `ms` from the load
+// event, and runs the same snap analysis with nothing treated as ambient. Off by default (capture.mjs --passive <ms>):
+// on most pages ambient motion is a carousel or marquee, and the click runs are the right test.
+export async function capturePassive({ browser, open, url, ev, note, prepWait = 0, ms = 6000 }) {
+  const out = { version: 1, viewport: [VIEW, 900], ms, log: [] };
+  for (const mode of ["normal", "reduce"]) {
+    const { ctx, page } = await open(browser, VIEW, mode === "reduce" ? { reducedMotion: "reduce" } : { reducedMotion: "no-preference" });
+    await ctx.addInitScript(pageHelpers, { delay: { slow: 0, fail: 0 } });
+    const guard = await routeGuard(ctx, page, url, out.log);
+    try {
+      await page.goto(url, { waitUntil: "load", timeout: 45000 });
+      if (prepWait) await page.waitForTimeout(prepWait);
+      guard.armed = true;                                   // nothing may leave the page while it plays
+      await page.evaluate(startLive, ms);
+      await page.waitForTimeout(ms + 200);
+      out[mode] = await page.evaluate(analyseLive, { jumpPx: 2, passive: true });
+      out[mode].windowMs = ms;
+    } catch (e) { out[mode] = { coverage: "inconclusive", reason: `error: ${e.message.split(String.fromCharCode(10))[0]}` }; }
+    guard.armed = false;
+    await ctx.close();
+  }
+  fs.writeFileSync(path.join(ev, "passive.json"), JSON.stringify(out, null, 1));
+  const n = out.normal || {};
+  note(`passive: ${n.frames || 0} frames over ${ms} ms, ${n.snapCount || 0} snap(s), motion ${n.motionEndMs === null || n.motionEndMs === undefined ? "none" : n.stillMoving ? "still running at the end" : `ends at ${n.motionEndMs} ms`}`);
+  return { ms, coverage: n.coverage, snaps: n.snapCount || 0 };
 }
 
 export async function captureMotion({ browser, open, url, ev, note, prepWait = 0, budgetMs = 60000, maxTriggers = 6, liveMs = 1500 }) {

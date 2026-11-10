@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. Every label is set in capitals and tracked: the head 'RECENT DEPLOYS' (12px, 0.12em), the button 'DEPLOY', the meta 'MAIN · MAYA CHEN' and the times 'JUST NOW', '12M AGO', '1H AGO' (10px, 0.08em), with a tracked line 'PRODUCTION · 3 DEPLOYS' under the head.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-LABEL-TRANSFORM fails on 7 tracked caps labels (TYP-015), including a person's name and relative times that read worse in caps; T-LADDER and T-LEADING otherwise pass."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-015",
+   "title": "Small labels earn their caps",
+   "tier": "Reflex",
+   "where": "span.st-title, span.st-button, span.st-meta, span.st-time, 1440 and 375",
+   "evidence": "The type table counts 7 small caps or tracked labels, for example 'RECENT DEPLOYS' at 12px with 0.12em, 'MAIN · MAYA CHEN' at 10px with 0.08em and '12M AGO' at 10px with 0.08em (01-evidence/tiles/1440-00.png). The capitals are in the text itself (text-transform: none). The line 'PRODUCTION · 3 DEPLOYS' is an eyebrow and stays with the sweep (SLP-001).",
+   "before": "Head, button, meta and times in tracked capitals at 10 to 12px",
+   "after": "Sentence case, untracked, in the body face a step smaller: 'Recent deploys', 'main · Maya Chen', '12m ago'",
+   "why": "Removing the caps makes every label easier to read: '12M AGO' can read as twelve months, and a person's name in capitals loses its word shape.",
+   "test": "T-LABEL-TRANSFORM",
+   "source": "typography",
+   "root": "label style (uppercase text with 0.08 to 0.14em tracking)"
+  }
+ ],
+ "strengths": [
+  "Row names stay in sentence case at 14px/500, the one role the caps style leaves alone."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded",
+  "T-FIGURES: no numbers compare in this composition"
+ ]
+}

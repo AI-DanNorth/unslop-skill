@@ -1,0 +1,56 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The exports window is untinted greys on white with one green dot on the 'Export complete' toast, but it uses five text greys and a toast with both an edge ring and a drop shadow.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-ACCENT-DOSAGE passes (one green dot for the done state), while T-PALETTE-ROLES finds five text greys on one ground and T-SURFACE-LADDER finds border plus shadow on the toast."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "window text (titles, meta, 'Ready' states, window title 'Exports'), 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P52\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 5 text levels on the white ground: #333333 (1), #444444 (4), #555555 (1), #888888 (5) and #999999 (6).",
+   "before": "Five greys: #333333, #444444, #555555, #888888, #999999",
+   "after": "Three text greys: ink, secondary and meta; merge #333333 to #555555 into one ink and #888888 with #999999 into one meta step",
+   "why": "Steps of 7 to 10 per cent lightness are too close to read as roles and drift from one component to the next.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "the text grey scale"
+  },
+  {
+   "rule": "CLR-014",
+   "title": "A card has a border or a shadow",
+   "tier": "Finish",
+   "where": "'Export complete' toast, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P52\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table lists one border-plus-shadow element: box-shadow 'rgba(0,0,0,0.11) 0 3px 12px' with a 1px #e8e8e8 ring; the window uses a second recipe 'rgba(0,0,0,0.043) 0 4px 14px'.",
+   "before": "Toast with a 1px ring and a drop shadow; a second shadow recipe on the window",
+   "after": "The toast lifted by one shadow recipe shared with the window, with no ring",
+   "why": "Two edge treatments on one small surface add noise without adding separation.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The green dot is the only hue and marks the done state on the toast."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

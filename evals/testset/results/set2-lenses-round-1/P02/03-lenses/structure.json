@@ -1,0 +1,54 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A recent-deploys list whose row grid breaks on the last row: an 'Ask AI' gradient pill replaces the time column and becomes the loudest mark in the card, level with the 'Deploy' action.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 5,
+  "reason": "T-SQUINT puts the 'Ask AI' pill level with the 'Deploy' button, and T-SKELETON finds the time column missing on row 3 and the meta line present on row 1 only."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-006",
+   "tier": "Reflex",
+   "where": "row 'Pricing copy', 'Ask AI' pill, 1440 and 375",
+   "evidence": "In 03-lenses/squint/1440-00.png the violet-to-pink pill at x=589, y=186 (81 by 22px) is the only saturated block in the card and reads as heavy as the black 'Deploy' button at x=609, y=40. The sweep's gradient, glow and look_family hits sit on the same pill.",
+   "before": "A gradient 'Ask AI' pill in the failed row competes with the card's primary 'Deploy' action.",
+   "after": "Make the failed state the row's signal (the red status icon and a plain text action such as 'Retry' or 'View log' in the time column), and keep 'Deploy' as the one filled control.",
+   "why": "The eye lands on a generic AI button before the header action or the failed status, so the card's order of importance is wrong.",
+   "test": "T-SQUINT",
+   "source": "structure"
+  },
+  {
+   "rule": "LAY-288",
+   "tier": "Finish",
+   "where": "rows 2 and 3 of the deploys list, 1440",
+   "evidence": "In dom-1440.json row 1 is 60px tall with a meta line ('main · Maya Chen'), rows 2 and 3 are 42 and 44px with no meta line, and row 3 has no time: the time column holds 'Just now' at x=624 and '12m ago' at x=623, then the 'Ask AI' pill at x=589.",
+   "before": "Three rows with three different anatomies.",
+   "after": "Put every row on one template: name, meta line, time; let missing data keep its track empty rather than giving the track to another control.",
+   "why": "A list scans by column; when one row drops its time and another drops its meta, the reader re-reads each row to find the same fact.",
+   "test": "T-SKELETON",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The header pairs the title 'Recent deploys' with a single filled 'Deploy' action on one line.",
+  "Status icons sit in one column at the same x on every row."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

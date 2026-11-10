@@ -1,0 +1,67 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A release-checklist card whose title, meta, task rows and footer are all set at 12px weight 400, with task rows on drifting columns and a centred footer under left-aligned rows.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 3,
+  "reason": "T-SQUINT fails (only the Open project button survives the blur; the title and rows dissolve into one grey), and T-LEFT-EDGES finds three left lines and two status columns inside one card."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-006",
+   "tier": "Reflex",
+   "where": "card head and task rows, 1440 and 375",
+   "evidence": "dom-1440.json: 'Release checklist' (h3), 'Due Friday · 4 tasks', 'Review copy', 'Test mobile' and '2 tasks remaining' are all 12px at weight 400; the sweep skipped flat_hierarchy because only one type role exists. In P41/03-lenses/squint/1440-00.png only the dark Open project button reads; the title has no more weight than the rows.",
+   "before": "Title, meta and rows at one size and weight.",
+   "after": "Make the title the heaviest text in the card, and set the meta and the footer count quieter than the task rows.",
+   "why": "The reader has to read every line to find the one that names the checklist.",
+   "test": "T-SQUINT",
+   "source": "structure",
+   "title": "Hierarchy survives the squint"
+  },
+  {
+   "rule": "LAY-288",
+   "tier": "Reflex",
+   "where": "task rows, 1440",
+   "evidence": "dom-1440.json: 'Review copy' starts at x=413 and 'Test mobile' at x=420; their statuses start at x=493 ('Ready') and x=511 ('In review'). Each row sizes its own tracks, so neither the names nor the statuses form a column.",
+   "before": "Two rows, two name starts and two status starts.",
+   "after": "Put every row on one grid template: names on the card's left line, statuses on one track ending at the card's right line (x=663).",
+   "why": "Statuses that do not line up cannot be scanned down; the list reads as loose text.",
+   "test": "T-LEFT-EDGES",
+   "source": "structure",
+   "title": "Line up columns"
+  },
+  {
+   "rule": "LAY-019",
+   "tier": "Reflex",
+   "where": "footer with '2 tasks remaining' and Open project, 1440 and 375",
+   "evidence": "dom-1440.json: '2 tasks remaining' (x=492) and the Open project button (x=495) are centred in the card, while the icon, title and rows start at x=413 and x=451.",
+   "before": "A centred footer under a left-aligned body.",
+   "after": "Put the footer on the body's axis: the count on the left line and the button on the right line, parted from the rows by a rule or 16px of space.",
+   "why": "Two alignment axes in a 284px card leave the action floating apart from the list it belongs to.",
+   "test": "T-LEFT-EDGES",
+   "source": "structure",
+   "title": "One alignment axis"
+  }
+ ],
+ "strengths": [
+  "The icon tile and the title-and-meta pair hold together as one 38px head block."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; a 22px/550 page head leads a clear ladder down to the 13/600 window title, 12/500 card title, 11px nav and 10px meta, with nothing tracked or set in caps.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER and T-HEAD-TREATMENT pass. The one long jump (22px head over 11px subtitle, 2x) suits a page title. The score stays at 7 because the meta and labels sit at 10 to 11px."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "'Launch package' at 22px/550 is the only large size and is set at 1.32 leading.",
+  "'Campaign launch' above the head is plain 10px sentence-case text, not tracked caps.",
+  "The counts '24 assets · 18.6 MB' use tabular-nums (stylesheet flag)."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

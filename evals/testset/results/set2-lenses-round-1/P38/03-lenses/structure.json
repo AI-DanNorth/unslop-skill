@@ -1,0 +1,45 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The layout is an invoice with an overlapping deposit card, but the ground and both cards sit in one band of orange and the floating card is darker than the card under it, so the layers merge.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-SQUINT fails on layering: the deposit card reads as a darker patch on the invoice rather than a card above it; T-SKELETON still shows a document and its result."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "deposit card over invoice, x 454 to 676, y 261 to 416, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: ground rgb(218,128,91), invoice rgb(236,172,132), deposit card rgb(226,155,124); relative luminance 0.31, 0.49 and 0.41. The overlapping card is darker than the card it sits on (1.2:1 between them), and the squint render shows one orange field with soft edges.",
+      "before": "Three surfaces within one orange value band, with the top layer darker than the one below.",
+      "after": "Make the cards near-white surfaces with the overlay lightest, and keep the orange on the ground.",
+      "why": "When the top card is darker than the one beneath, the reader loses which card is in front and where the invoice ends.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The invoice keeps its order: header, client, 30px total, line items and paid line on one left edge at x=224."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists.",
+    "Hue choice and text contrast on orange belong to the color and a11y lenses."
+  ]
+}

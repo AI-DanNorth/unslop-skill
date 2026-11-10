@@ -1,0 +1,45 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The job is reading today's agenda: the time column and titles line up, but each event's people line sits as far from its title as from the next event, so the records do not group.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 5,
+    "reason": "T-SQUINT reads the \"Today\" header first, but T-SKELETON and T-JUDGE-TILE find metadata spaced evenly between records, so the order reads only on a second look."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-009",
+      "tier": "Reflex",
+      "where": "event records, x 488 to 663, y 66 to 218, 1440px",
+      "evidence": "dom-1440.json: \"Design review\" ends at y=84 and \"Maya and Jon\" starts at y=94 (10px gap). \"Maya and Jon\" ends at y=110 and the next title \"Customer call\" starts at y=120 (also 10px). The 11:00 and 2:00 records repeat the same spacing. Draft LAY-284 asks for a title closer to its metadata than to the next record.",
+      "before": "Equal 10px gaps above and below each metadata line.",
+      "after": "Set each title and its metadata as one item with a 2 to 4px gap, and open the gap between records.",
+      "why": "With even gaps, \"Maya and Jon\" reads as belonging to either neighbouring event.",
+      "test": "T-SKELETON",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "Times sit on their own track at x=413 and titles at x=488, so the agenda has two clean columns.",
+    "The \"Today\" header (14px/550) with the date on the right gives the card one title."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A share-document panel where every element is set in one pale grey on a grey ground, so the squint shows an even grey block with no order between title, settings and action.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 3,
+  "reason": "T-SQUINT fails: the title, the access row and the 'Copy link' button blur into one grey field, although T-LEFT-EDGES finds a single clean left edge."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-006",
+   "tier": "Reflex",
+   "where": "panel cp-contrast-panel, 1440 and 375",
+   "evidence": "In dom-1440.json the title 'Share document', the access row and 'Can view' are rgb(164,173,179) and 'Launch brief' rgb(174,183,189), on a grey panel over a grey ground; the button is a pale fill with rgb(238,241,243) text. 03-lenses/squint/1440-00.png shows one even grey rectangle with no element heavier than another.",
+   "before": "One grey value for title, body, controls and action.",
+   "after": "Set the order by value: dark title, mid-grey secondary text, and a filled dark 'Copy link' as the heaviest block.",
+   "why": "With no step in weight or value, the reader must read every line to find the action, and the panel reads as disabled.",
+   "test": "T-SQUINT",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "Title, subtitle, access row and button share one left edge at x=420, and the button spans the inner width."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "Text contrast against WCAG is lens-a11y's and the sweep's call, not this lens's."
+ ]
+}

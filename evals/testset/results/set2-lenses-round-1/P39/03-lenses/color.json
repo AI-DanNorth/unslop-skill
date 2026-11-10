@@ -1,0 +1,44 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The preferences card is untinted greys with one sage #6e8474 on the switch's on state and a #333333 'Save preferences' fill, but the white card sits inside a thick #eaeaea frame.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-PALETTE-ROLES and T-ACCENT-DOSAGE pass, but T-SURFACE-LADDER finds a box in a well: a white card inside a grey ring that separates nothing."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-015",
+   "title": "Regions use the lowest rung of the surface ladder",
+   "tier": "Reflex",
+   "where": "card container, 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P39\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The tile shows the white card inset about 12px inside a #eaeaea rounded frame (0.8% of the area at 1440, 3.5% at 375); the frame holds only this one card.",
+   "before": "White card inside a #eaeaea ring, two surfaces for one group",
+   "after": "One rung: the card on the page ground with a hairline edge, or the tinted well alone with no inner card",
+   "why": "Two surfaces for one group spend contrast on framing; deleting the ring loses nothing.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The sage #6e8474 marks only the switch's on state.",
+  "The primary action is in ink (#333333), so the one hue is kept for state."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

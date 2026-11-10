@@ -1,0 +1,49 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'the export finishes and its package appears beside the settings that made it': 'Campaign assets', PNG at 2x, and 'Campaign-assets.zip · 24 files · 18.6 MB'.",
+  "score": {
+    "dimension": "Concept",
+    "value": 7,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass, and the result card leaves the form readable at both widths; T-DEFAULT-AGENT partly holds on the window-chrome prop."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-010",
+      "title": "The subject is known, not painted on",
+      "tier": "Reflex",
+      "where": "window title bar, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the export window carries three traffic-light dots, a generic prop that says nothing about the export.",
+      "before": "Browser-window dots on an app panel.",
+      "after": "Drop the dots; the title 'Asset export' already frames the panel.",
+      "why": "A default prop sits on an otherwise specific scene.",
+      "test": "T-DEFAULT-AGENT",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The result card sits over the window's empty lower right, so 'Format PNG', 'Resolution 2x original' and 'Export package' stay readable.",
+    "The result is concrete: file name, count, size and 'Saved to downloads'."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

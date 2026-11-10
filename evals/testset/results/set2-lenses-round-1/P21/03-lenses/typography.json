@@ -1,0 +1,46 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. Column heads (10px/400) and data (13px/500) are set well, but at 1440 the Size column is cut by the frame: the head 'Size' is cut short and the value '4.2' loses 'MB'. The 16px caption above the frame is the capture's page furniture and is left out of the judgment.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-LEADING fails on clipped glyphs at 1440 (TYP-022, Floor, caps the score at 4); T-LADDER and T-FIGURES pass and the 375 capture shows the full column."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-022",
+   "title": "Lines never collide or clip",
+   "tier": "Floor",
+   "where": "Size column of the Projects window, 1440",
+   "evidence": "The DOM value is '4.2 MB' (13px/500); the screenshot shows '4.2' with the unit cut at the frame edge and the head 'Size' cut (01-evidence/tiles/1440-00.png, right edge). At 375 the column is whole (01-evidence/tiles/375-00.png).",
+   "before": "Value and column head cut at the frame edge at 1440",
+   "after": "Narrow the columns or the window so the last column ends inside the visible frame at every width",
+   "why": "The reader sees a size with no unit and cannot read the column head.",
+   "test": "T-LEADING",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "Data cells at 13px/500 stand clearly above 10px column heads."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

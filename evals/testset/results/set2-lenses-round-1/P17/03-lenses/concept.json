@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "The idea is 'export the campaign and get a package', but the 'Package ready' card is placed over the export settings and the 'Export package' button.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass on the package card ('Campaign-assets.zip · 24 files · 18.6 MB'); T-REMOVE-DEVICE fails because the card hides the Format and Resolution values at both widths."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "'Package ready' card over the export form, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the card covers the values of 'Format' and 'Resolution' and the right half of 'Export package'. In tiles/375-00.png it covers the same values and cuts the button to 'Export pa'.",
+      "before": "The result card overlaps the settings that produced it.",
+      "after": "Place the result beside or below the form so settings and result are both readable.",
+      "why": "The reader cannot check what was exported against the result.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The result is concrete: 'Campaign-assets.zip', '24 files · 18.6 MB', 'Saved to downloads'."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

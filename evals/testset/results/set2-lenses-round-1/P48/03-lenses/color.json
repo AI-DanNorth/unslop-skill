@@ -1,0 +1,68 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "A violet-to-pink-to-amber gradient fills the stage, a lavender-to-pink wash fills the card, the heading is gradient text, and every text element and status icon is violet (#4c1d95 or #a78bfa), so there is no neutral ink and no state colour.",
+ "score": {
+  "dimension": "Craft",
+  "value": 2,
+  "reason": "T-COLOUR-SOURCE finds washes and gradient text with no source, T-ACCENT-DOSAGE finds the accent on every label and icon, and T-PALETTE-ROLES finds all three states in one violet."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-019",
+   "title": "No gradient text, orbs or washes",
+   "tier": "Reflex",
+   "where": "stage, card background and heading 'Recent deploys', 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P48\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table lists 4 gradients: the stage #7c3aed to #db2777 to #f59e0b, the card wash #faf5ff to #fdf2f8 and the gradient-filled heading and button. The sweep's gradient detector flags the stage and the heading (SLP-007).",
+   "before": "Gradient stage, tinted card wash and gradient heading text",
+   "after": "A neutral card on a plain ground, with the heading in ink and colour kept for the action",
+   "why": "The washes and gradient text decorate every layer, so nothing in the card is marked by colour any more.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color",
+   "root": "the violet-pink gradient theme"
+  },
+  {
+   "rule": "CLR-006",
+   "title": "The accent marks action and state",
+   "tier": "Reflex",
+   "where": "row titles, meta, times and icons, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P48\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds no neutral text: #4c1d95 on 3 titles and #a78bfa on 4 meta and time labels, with the icons in the same violet; the neutral temperature count is empty.",
+   "before": "Violet on every label, time and icon",
+   "after": "Ink for titles, a neutral grey for meta, and the accent only on the action",
+   "why": "An accent on every element stops marking the action.",
+   "test": "T-ACCENT-DOSAGE",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "status icons (globe, spinner, cross), 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P48\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The live globe, the building spinner and the failed cross are all the same violet; in the tile the failed deploy looks the same as the live one.",
+   "before": "One violet for live, building and failed",
+   "after": "A distinct, fixed colour per state (with the icon shape as a second cue)",
+   "why": "A failed deploy must not look like a successful one.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The status icons still differ in shape, so the state can be recovered without colour."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

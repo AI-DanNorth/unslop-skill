@@ -1,0 +1,48 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on a clear 14/12/11px ladder, but in all three controls the text sits above the optical centre of its icon.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LEADING: the sizes are fine, but the search placeholder, 'Export files' and 'Preview' each ride about 2px high against their icons and boxes."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-162",
+   "title": "Give menus/controls with descenders enough leading to avoid clipping",
+   "tier": "Finish",
+   "where": "Search field, 'Export files' button and 'Preview' link, 1440",
+   "evidence": "On P40/01-evidence/tiles/1440-00.png (zoomed), 'Search files' sits above the magnifier's centre, 'Export files' sits above the download icon's centre, and 'Preview' sits above its arrow. In dom-1440.json the labels are 11 to 12px text in an 18px line box (1.5 to 1.64), which puts the x-height above the box centre.",
+   "before": "Labels at 11 to 12px in an 18px line box, centred by the box and not by the glyphs",
+   "after": "Centre each label on its x-height against the icon: use a line-height near 1.2 to 1.35 inside the control and align the items to centre, or nudge the icon",
+   "why": "Text that rides high next to an icon looks misaligned at a glance, even though the box metrics are centred.",
+   "test": "T-LEADING",
+   "source": "typography",
+   "root": "control label line-height"
+  }
+ ],
+ "strengths": [
+  "A clear head (14/550) over 12px input text and an 11px button label.",
+  "Button and link labels do not wrap."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

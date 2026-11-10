@@ -1,0 +1,50 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition with the same sizes and weights as a tuned ladder, but every text role in each panel is set in one colour, so only size and weight separate the heads from the meta.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-LADDER: the size and weight steps are intact, but each panel uses one colour for all roles (dom-1440.json), so the secondary step that orders rows and meta is gone."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-133",
+   "title": "Create hierarchy with size, weight and space",
+   "tier": "Reflex",
+   "where": "Window panel and preview card, 1440 and 375",
+   "evidence": "In dom-1440.json every text element in the window ('Workspace files', 'Launch assets', 'Launch brief', 'Updated today', 'PDF') is rgb(101,113,124). Every element in the preview card ('Document preview', 'Launch brief' 17px/550, 'The release', 'Ready for review') is rgb(161,170,181). On P34/01-evidence/tiles/1440-00.png the file names read at the same strength as their 'Updated' lines.",
+   "before": "Head, item and meta share one colour per panel",
+   "after": "Keep the size and weight steps, and give primary text and meta two distinct tones (primary near the panel's darkest text value, meta one step lighter)",
+   "why": "When the head, the item and the meta share one tone, the reader has to read sizes to find the head.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "the panel text colour token"
+  }
+ ],
+ "strengths": [
+  "The size and weight ladder is intact: 13/600, 16/550 and 17/550 heads over 10 to 11px text.",
+  "Leading is 1.3 to 1.6 throughout, and nothing is tracked or set in caps."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "The low contrast of the washed palette is for the color lens and the sweep (A11-001)",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

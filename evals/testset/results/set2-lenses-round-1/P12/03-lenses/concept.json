@@ -1,0 +1,49 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'the file you just added is the subject': 'Launch deck.pdf · Just now · 4.2 MB' is the one real, highlighted row and the rest recede to placeholders.",
+  "score": {
+    "dimension": "Concept",
+    "value": 7,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass and T-BOLD-MOVE passes on the highlighted row; at 375 the window runs past the stage and cuts the size."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Size' column, 375",
+      "evidence": "In tiles/375-00.png the window extends past the stage's right edge, so the row reads '4.2' with 'MB' cut off.",
+      "before": "The signature row's size value is clipped at 375.",
+      "after": "Fit the window to the stage at 375 or drop the Size column there.",
+      "why": "The one real row loses part of its data at the narrow width.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "One highlighted row with real data against muted placeholder rows: the subject is clear at a glance.",
+    "Name, Modified and Size columns are the right material for a file list."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

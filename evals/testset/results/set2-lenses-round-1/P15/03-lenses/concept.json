@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "The idea is 'the payment in the ledger arrives on your phone', but the phone is placed over the ledger and hides the chart and the matching row.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-ONE-SENTENCE passes, but T-REMOVE-DEVICE fails: removing the phone makes the ledger readable, and at 375 the phone covers all but '$12' of the desktop."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-010",
+      "title": "The subject is known, not painted on",
+      "tier": "Reflex",
+      "where": "phone over the Payments window, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the phone covers the last two bars and the '$2,400' amount of the Fable Studio row. In tiles/375-00.png it covers the window from the second character of '$12,480' onward.",
+      "before": "The phone mockup sits on top of the desktop's data.",
+      "after": "Move the phone beside or below the ledger so the shared invoice shows on both screens.",
+      "why": "The scene's link between the two screens is hidden by one of them.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Both screens carry the same invoice ('Fable Studio · Invoice 1042', '$2,400'), a real idea for a payments product."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

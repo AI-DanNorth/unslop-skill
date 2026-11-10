@@ -1,0 +1,60 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A release checklist with no single structure: the title, meta, tasks and statuses all use the same 12px #777 text, and the layout switches from left-aligned to centred.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE and T-BOLD-MOVE fail: 'Release checklist' is 12px #777 at weight 400, the same as 'Due Friday · 4 tasks', and the statuses start at x 493 and x 511."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "tier": "Reflex",
+      "where": "card header and task rows, 1440",
+      "evidence": "'Release checklist', 'Due Friday · 4 tasks', 'Review copy', 'Ready', 'Test mobile' and 'In review' are all 12px, weight 400, #777. 'Test mobile' starts at x 420 while 'Review copy' starts at x 413, and 'In review' starts at x 511 while 'Ready' starts at x 493.",
+      "before": "Title, tasks and statuses in one style, on drifting columns",
+      "after": "Title at heading weight; tasks in one left column and statuses in one right column",
+      "why": "A checklist is read as rows and columns; without them the reader cannot scan which task is in which state.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-006",
+      "tier": "Finish",
+      "where": "footer, 1440",
+      "evidence": "'2 tasks remaining' and 'Open project' are centred under left-aligned content, so the only loud element floats free of the list.",
+      "before": "Centred footer under a left-aligned card",
+      "after": "Align the footer with the list: count on the left, button on the right",
+      "why": "The one bold element should anchor the structure, not break it.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The content is right for the job: a due date, task states, a remaining count and one action."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Unslop capture: renders a web artifact and writes evidence for the sweep.
 // usage: node capture.mjs <url-or-file> <run-dir> [--widths 375,1440] [--bless-control] [--skip-control]
-//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000]
+//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000] [--passive <ms>]
 // Writes <run-dir>/01-evidence/: shot-<w>.png, bg-<w>.png, fold-<w>.png, dom-<w>.json, fonts.json,
 // hidden.json, focus.json + focus/*.png, forms.json, perf.json, motion.json + motion/*.png, async.json + async/*.png, manifest.json
 import { createRequire } from "node:module";
@@ -10,7 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { installShim } from "./netshim.mjs";
-import { captureMotion, captureAsync } from "./interact.mjs";
+import { captureMotion, captureAsync, capturePassive } from "./interact.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../..");
@@ -410,6 +410,8 @@ const prepWait = PREP && PREP.wait ? PREP.wait : 0;
 if (flag("--no-motion") || flag("--no-interact")) manifest.interaction.motion = { skipped: "--no-motion" };
 else try { manifest.interaction.motion = await captureMotion({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--motion-budget", 60000) }); }
 catch (e) { manifest.interaction.motion = { error: e.message.split("\n")[0] }; note(`motion capture failed: ${e.message}`); }
+if (opt("--passive", null) !== null) try { manifest.interaction.passive = await capturePassive({ browser, open, url, ev, note, prepWait, ms: +opt("--passive", 6000) }); }
+catch (e) { manifest.interaction.passive = { error: e.message.split(String.fromCharCode(10))[0] }; note(`passive capture failed: ${e.message}`); }
 if (flag("--no-async") || flag("--no-interact")) manifest.interaction.async = { skipped: "--no-async" };
 else try { manifest.interaction.async = await captureAsync({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--async-budget", 60000) }); }
 catch (e) { manifest.interaction.async = { error: e.message.split("\n")[0] }; note(`async capture failed: ${e.message}`); }

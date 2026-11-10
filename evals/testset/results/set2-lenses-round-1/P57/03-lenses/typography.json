@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the head (14/550, rgb(51,51,51)), the meta (11px grey), the task names (12px) and the right-aligned statuses (10px grey) step down cleanly, and the summary and button share a footer baseline.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-LADDER and T-FIGURES pass: every role has its own size and tone, and the statuses form a right-aligned column. To earn 8, the card has no tracking, no caps and no extra weights."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The head is the only 550 weight and the darkest ink.",
+  "The statuses 'Ready' and 'In review' are right-aligned in one column.",
+  "The summary '2 tasks remaining' is set as 10px meta, not body."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here"
+ ]
+}

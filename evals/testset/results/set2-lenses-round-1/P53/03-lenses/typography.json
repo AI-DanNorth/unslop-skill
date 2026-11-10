@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the front window's 16/550 head, 11px meta, 10px check items and 11px button label step down cleanly, and the windows behind use the same styles in lighter ink.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER and T-HEAD-TREATMENT pass: the window titles share one 13/600 style, and only the front panel has a head. The score stays at 7 because the check items sit at 10px."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "Every window title uses one style (13px/600).",
+  "The front panel's 'Ready to launch' (16/550) is the only head on the stage."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

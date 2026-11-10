@@ -1,0 +1,47 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'show which libraries are in sync': the card does that, but the 'All files synced' toast is fused to the card's bottom edge and repeats what the rows already say.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass on the card; T-REMOVE-DEVICE fails because removing the toast loses nothing, and the fused toast makes the frame read as one malformed object."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "toast under the 'Workspace sync' card, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the toast's top edge (y about 162) meets the card's bottom edge (y about 161) with no gap, so it reads as a tab of the card. Its text 'All files synced' restates 'Up to date' and '2 min ago' in the rows above.",
+      "before": "A toast touching the card that repeats the rows' status.",
+      "after": "Either drop the toast or detach it as a transient message with clear space, and let the rows carry the sync state.",
+      "why": "The reader sees two status signals for one fact and one shape that is neither card nor toast.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The rows pair each library with its own state ('Design library / Up to date', 'Brand assets / 2 min ago'), which is the working object of a sync panel."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

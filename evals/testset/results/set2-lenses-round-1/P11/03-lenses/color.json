@@ -1,0 +1,45 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "Untinted greys with a near-black #1f1f1f primary carry the card, and three status colours (green #1f9d55 Live, amber #b7791f Building, red #d1453b Failed) each hold one state with a tinted pill, an icon and a word.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-PALETTE-ROLES passes with one ground and state colours that keep their meaning; T-GRAYSCALE passes because each state is also named; T-NEUTRALS finds two near-identical meta greys."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "row meta ('main · 8f2c1a4 · Maya Chen') and times ('Just now', '12m ago'), 1440",
+   "evidence": "The text roles list #8a8a8a on 3 elements and #9a9a9a on 3 elements, about 0.05 apart in lightness, for two kinds of secondary text.",
+   "before": "Two secondary greys one small step apart.",
+   "after": "One secondary grey for all row metadata.",
+   "why": "Two nearly equal greys look like an accident rather than two levels.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "Each state colour has one role: Live, Building and Failed each get a pale tinted pill, its own text colour and a word.",
+  "The only filled action is the near-black 'Deploy' button."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The calendar card uses only untinted greys on a white ground: ink #222222 for the heading, #444444 for event titles and #888888 for times and meta, with no chromatic colour and one #e9e9e9 hairline card edge.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass with three untinted text levels and one ground; nothing in the palette is chosen beyond the greys, so it stops at 7."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [],
+ "strengths": [
+  "Three text greys (#222222, #444444, #888888) each hold one role: heading, event title, time and meta.",
+  "One ground and one hairline edge: no shadow, no tint, no second surface."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

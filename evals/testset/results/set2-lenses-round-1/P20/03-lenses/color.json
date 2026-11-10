@@ -1,0 +1,56 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "An untinted grey scale carries the task card (#222222 title, #444444 names, #999999 on 10 elements for metadata, the count and the status), with a hairline under the header and between each row.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-NEUTRALS passes with one temperature; T-LINE-DELETION finds rules that spacing already does, and T-PALETTE-ROLES finds status in the same grey as metadata."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-187",
+   "title": "Draw lines only to separate regions, encode state, or carry data",
+   "tier": "Reflex",
+   "where": "task rows, 1440, tiles/1440-00.png",
+   "evidence": "The card draws a hairline under 'Project tasks' and between each of the 3 rows inside a bordered card. Hiding the row rules leaves the rows grouped by their spacing.",
+   "before": "A rule on every row inside a bordered card.",
+   "after": "Rows separated by space, with one rule under the header at most.",
+   "why": "Lines that carry no structure add noise to a short list.",
+   "test": "T-LINE-DELETION",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "status labels 'Ready' and 'In review', 1440",
+   "evidence": "The text roles list #999999 on 10 small elements: the count '3 open', names with dates, and both status labels.",
+   "before": "Status values share the metadata grey.",
+   "after": "Status in ink or a state colour with its word, distinct from metadata.",
+   "why": "The status, the thing a reader scans for, has no colour role of its own.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "One untinted grey family with no shadows."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

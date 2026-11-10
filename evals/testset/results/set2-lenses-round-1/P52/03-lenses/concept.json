@@ -1,0 +1,60 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "An exports list with an 'Export complete' toast placed over the first row; the toast covers the 'Ready' status and runs off the frame, and the last row is cut.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE fails: the toast, the news of the scene, overlaps the list and is clipped at the frame's right edge at both widths, and the fourth row shows only 'H'."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "tier": "Reflex",
+      "where": "toast and first row, 1440 and 375",
+      "evidence": "The 'Export complete, 24 files saved' toast sits on top of the 'Campaign assets' row, hides most of its 'Ready' label and is cut by the frame at its right edge.",
+      "before": "Toast overlapping the row and clipped by the frame",
+      "after": "Place the toast in clear space, fully inside the frame",
+      "why": "The completed export is the subject; half-hidden, it reads as a layout accident.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "tier": "Reflex",
+      "where": "bottom of the list, 1440 and 375",
+      "evidence": "The fourth row ('Homepage' in the DOM) is cut by the frame after its first letter.",
+      "before": "List cut mid-row",
+      "after": "End the frame on a row boundary, or show fewer rows",
+      "why": "A cut row makes the composition look cropped by accident, not framed.",
+      "test": "T-MEMORY",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Each export row is clear: icon, name, file count, status."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

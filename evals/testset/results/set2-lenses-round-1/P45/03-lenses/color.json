@@ -1,0 +1,31 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The plan card is untinted greys on white with one sage hue, #698471 text on a #eef3ef tint, used only for the 'Active' status badge; the action 'Manage plan' is a #333333 fill.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-COLOUR-SOURCE, T-PALETTE-ROLES and T-ACCENT-DOSAGE pass: one muted hue holds one state role and sits on its own tint; nothing was added to decorate, which earns 8."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The sage #698471 appears only on the 'Active' badge, with its text on a tint of the same hue (CLR-011 kept).",
+  "The action is in ink (#333333), so the one hue is reserved for state."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "The screen uses one near-black ink #1f1f1f and untinted grey steps (#f2f2f1 well, #e6e6e4 skeletons and icon buttons) with no hue: a coherent neutral system that gives colour little to do.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass with one ink and one temperature; T-ACCENT-DOSAGE has no accent or state to judge, so the palette shows restraint but few designed roles."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [],
+ "strengths": [
+  "One ink and one untinted grey family, with skeletons a single step lighter than the controls."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "T-ACCENT-DOSAGE and T-GRAYSCALE: the screen shows a loading state with no action or state colour to judge",
+  "T-LINE-DELETION: no repeated rules"
+ ]
+}

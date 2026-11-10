@@ -1,0 +1,48 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition, but each event's meta line sits 10px below its title and 10px above the next title, so the title-meta pairs come apart.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-LADDER fails on spacing: the size and weight steps are clear (14/550 head, 12/450 titles, 10/400 meta), but the meta lines float halfway between rows."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-133",
+   "title": "Create hierarchy with size, weight and space",
+   "tier": "Reflex",
+   "where": "Event rows, div.cp-density, 1440 and 375",
+   "evidence": "In dom-1440.json 'Design review' ends at y=84 and its meta 'Maya and Jon' starts at y=94 (10px gap); the meta ends at y=110 and the next title 'Customer call' starts at y=120 (another 10px gap). The tile P29/01-evidence/tiles/1440-00.png shows each meta line equidistant from two titles.",
+   "before": "Meta line 10px below its own title and 10px above the next title",
+   "after": "Meta line 0 to 2px below its title, with the row gap (about 16px) carried between events",
+   "why": "With equal gaps the reader cannot tell which title 'Maya and Jon' or 'Ana · 30 minutes' belongs to.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "row spacing on .cp-density rows"
+  }
+ ],
+ "strengths": [
+  "Clear size steps: head 14px/550, event titles 12px/450, times and meta 10px/400.",
+  "Times sit in their own left column, and the stylesheet sets tabular-nums."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "T-FIGURES: the times are a list, not compared figures; tabular-nums is set"
+ ]
+}

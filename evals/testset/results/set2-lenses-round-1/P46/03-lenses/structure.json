@@ -1,0 +1,44 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The deploy list card laid out at about twice its slot's size, so the frame shows only the title and the first row and cuts off the Deploy action, every time and two of three rows.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 3,
+  "reason": "T-JUDGE-TILE and T-SKELETON fail: the card's action and most of its content sit outside the frame at both widths, so the visible part has no action and no list."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-276",
+   "tier": "Reflex",
+   "where": "deploy card inside its frame, 1440 and 375",
+   "evidence": "dom-1440.json: the card measures 592x396 (x=384 to 976, y=16 to 412) inside a 340x252 frame (x=368 to 708). The Deploy button (x=823), 'Just now' (x=852) and the rows 'Search speedup' (y=256) and 'Pricing copy' (y=340) fall outside it; P46/01-evidence/tiles/1440-00.png and P46/01-evidence/tiles/375-00.png show only 'Recent deploys' and 'Checkout redesign'.",
+   "before": "A card sized for a 600px slot, clipped by a 340px frame.",
+   "after": "Size the card for the slot, or recompose a compact version that keeps the action and all three rows inside the frame.",
+   "why": "The visitor sees a title and one row with no action and no times; the card no longer does its job.",
+   "test": "T-JUDGE-TILE",
+   "source": "structure",
+   "title": "Recompose for small slots instead of shrinking"
+  }
+ ],
+ "strengths": [
+  "The visible fragment keeps the row template: icon, then name over branch meta."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here.",
+  "The oversizing may come from how the frame scales its scene rather than from the card's own CSS; the capture manifest records no blocked fonts or images, so it is judged as rendered."
+ ]
+}

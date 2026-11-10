@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; a 14px/550 head, 12px/400 setting rows, a 10px grey time and an 11px/500 button label make a short, clear ladder.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER and T-HEADLINE-FIT pass: the ladder is clear and the button label sits on one line. The tight bottom padding is a spacing question, not type."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "Short, consistent ladder: 14/550, 12/400, 10/400.",
+  "'Save preferences' sits on one line with room."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The tight bottom padding under the button is for the structure lens",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

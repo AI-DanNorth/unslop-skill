@@ -1,0 +1,44 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The stacked windows use a lavender-grey #e8e5ef ground stepped to #f2f1f4 windows, a dusty plum #62547e on the one action 'Publish release', and a sage #527764 on the done checks.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-COLOUR-SOURCE, T-ACCENT-DOSAGE and T-SURFACE-LADDER pass (one action hue, one state hue, receding windows dimmed, the front window brightest); T-PALETTE-ROLES finds six text greys."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "window text across the three windows, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P53\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 6 text levels on one light ground: #262628, #35414a, #8c8998, #9895a3, #a5a2ae and the sage #527764; part of the spread comes from dimming the two receding windows.",
+   "before": "Six text greys, several within a few per cent of each other (#8c8998, #9895a3, #a5a2ae)",
+   "after": "Three text greys for the front window; the receding windows dimmed by one shared step, not by new greys",
+   "why": "Close greys with no clear role make the set harder to keep consistent.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The plum #62547e marks only the primary action, and the sage #527764 only the done checks.",
+  "The front window is the lightest surface and the receding windows step down, so depth reads from lightness."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

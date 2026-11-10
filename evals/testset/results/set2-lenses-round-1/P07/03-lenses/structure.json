@@ -1,0 +1,33 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A payments scene with a dashboard window and a phone: the phone overlaps the dashboard's empty lower right and leaves its total, chart and payment row uncovered.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT reads the $12,480 total, the bar chart, then the phone's '$2,400' card, and T-DELETION finds each object carrying a different part of the story."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [],
+ "strengths": [
+  "The phone (x=448, y=169) covers only the dashboard's empty lower right; the $12,480 total, chart and Fable Studio row stay whole (LAY-267).",
+  "Two objects of two kinds and sizes: a hero window and one phone satellite (LAY-264).",
+  "At 375 the phone moves below the payment row and still leaves the dashboard's content uncovered."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "A caption above the stage is page text and was not used as evidence."
+ ]
+}

@@ -1,0 +1,47 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A 'Project tasks' table (task, owner, due, status) squeezed into a small card so that every value is set at about 7 to 8 px.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE and T-MEMORY fail: the table is the subject but cannot be read at either width; T-RIVAL-NAME holds for any task tool."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "task table, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the four-column table ('Task', 'Owner', 'Due', 'Status') sits in a card about 300 px wide, with values like 'Design review', 'Maya' and 'Today' at roughly 7 to 8 px.",
+      "before": "A four-column table shrunk into a small card.",
+      "after": "Use a list with task on one line and owner, due day and status beneath, at body size.",
+      "why": "The working object is present but unreadable.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The data is the right data for the job: task, owner, due day and status, with '3 open' in the header."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

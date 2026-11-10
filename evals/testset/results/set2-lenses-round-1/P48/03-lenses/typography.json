@@ -1,0 +1,59 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on the same 14/12px ladder as a plain deploy card, but the head is filled with a gradient and every role is tinted violet, so the head is the only text that does not read as solid type.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-HEAD-TREATMENT fails (the head has a gradient fill), and T-LADDER fails on the 14px/600 head against 14px/500 rows."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-016",
+   "title": "Headings are set in one voice",
+   "tier": "Reflex",
+   "where": "Card head 'Recent deploys', 1440 and 375",
+   "evidence": "In dom-1440.json 'Recent deploys' has color rgba(0,0,0,0), which means a clipped background gradient paints it. On P48/01-evidence/tiles/1440-00.png the head runs from violet to pink. The row titles are solid rgb(76,29,149).",
+   "before": "Gradient-filled head",
+   "after": "Set the head in one solid ink, the same one as the row titles, and carry its rank by size or weight",
+   "why": "A gradient fill makes the head a decoration rather than a label, and it has no single contrast value to check.",
+   "test": "T-HEAD-TREATMENT",
+   "source": "typography"
+  },
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "Card head and row titles, 1440 and 375",
+   "evidence": "In dom-1440.json the head 'Recent deploys' is 14px/600 and the row titles 'Checkout redesign', 'Search speedup' and 'Pricing copy' are 14px/500. The head and the rows have the same size, and only a 100-weight step separates them. On P48/01-evidence/tiles/1440-00.png the head reads no stronger than the rows.",
+   "before": "Head 14px/600 and row titles 14px/500",
+   "after": "Separate the head from the rows by size (head 15 to 16px, or rows 13px), or by a clear weight step (400 against 600 or 700)",
+   "why": "A 500-to-600 step at the same size looks like a rendering difference, so the card has no clear entry point.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "Sizes and leading match a consistent 14/12px ladder, and nothing is tracked or set in caps."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The violet tint on meta text (rgb(167,139,250)) is a contrast question for the color lens and the sweep",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The table is drawn at half size: .cp-task-design has transform: scale(0.5), so the declared 14px head, 12px names and 10 to 11px columns render at about 7px, 6px and 5px.",
+ "score": {
+  "dimension": "Craft",
+  "value": 2,
+  "reason": "T-LADDER fails on a type scale shrunk to roughly 5 to 7px on screen (TYP-135); the sweep's text_floor measured the declared 10 to 11px sizes and does not see the scale transform."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-135",
+   "title": "Never shrink text to fit or to hide a content problem",
+   "tier": "Reflex",
+   "where": "div.cp-task-design (the whole table), 1440 and 375",
+   "evidence": "The stylesheet sets '.cp-task-design { width: 600px; transform: scale(0.5) }'. The DOM sizes, 'Project tasks' 14px, task names 12px, owners, dates and status 11px and column heads 10px, therefore render at about 7, 6, 5.5 and 5px (01-evidence/tiles/1440-00.png and 01-evidence/tiles/375-00.png: the column heads 'Task', 'Owner', 'Due', 'Status' are barely legible).",
+   "before": "A 600px table scaled to 300px, every role halved on screen",
+   "after": "Lay the table out at its real width, or drop columns so it fits 300px with names at 13 to 14px and meta at 12px",
+   "why": "Halving a table to fit its box puts every word under any readable size; the content needs cutting, not shrinking.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "transform: scale(0.5) on .cp-task-design"
+  },
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "task rows, 1440",
+   "evidence": "The 17 small elements are all weight 400; names (12px) and the owner, due and status columns (11px) differ by 1px only.",
+   "before": "Names 12px/400; columns 11px/400",
+   "after": "Names one clear step above the columns (500 to 600, or a size step)",
+   "why": "Without a step the eye cannot find the task name first in a four-column row.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "One face and one leading value across the table."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded",
+  "T-FIGURES: no numbers compare in this composition"
+ ]
+}

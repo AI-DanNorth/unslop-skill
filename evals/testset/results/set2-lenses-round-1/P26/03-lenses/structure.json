@@ -1,0 +1,33 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The job is showing an inbox screen: the 26px/700 \"Inbox\" title is the focal point, with the nav controls in the top corners and placeholder rows below that run off the frame.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (title, then corner controls, then rows), T-SKELETON reads as a phone screen, and T-DELETION finds nothing to remove."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [],
+  "strengths": [
+    "\"Inbox\" at 26px/700 is the only heavy mark, so the screen has one first element.",
+    "The back and more controls sit symmetrically in the top corners, and the rows run off the bottom of the frame."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

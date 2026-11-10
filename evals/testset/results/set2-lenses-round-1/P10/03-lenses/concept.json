@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A 'Weekly activity' stat card ('124 tasks completed', five gradient bars) on a lavender-to-pink gradient: a number drawn as marks, with no subject of its own.",
+  "score": {
+    "dimension": "Concept",
+    "value": 3,
+    "reason": "T-SIGNATURE fails (a number drawn as bars is the stand-in CON-005 names), T-COVER-TEXT fails (hide the text and only a pastel gradient remains), and T-DEFAULT-AGENT holds for the whole card."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "stat and chart, 1440 and 375",
+      "evidence": "In tiles/1440-00.png '124 tasks completed / 18 more than last week' sits over five unscaled bars labelled M to F with no values.",
+      "before": "A total plus decorative bars.",
+      "after": "Show which tasks or which day mattered, for example the day with the most completions and what was finished. [DATA NEEDED: task breakdown]",
+      "why": "The card repeats a count without telling the reader anything they can act on.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "card ground and bars, 1440",
+      "evidence": "In tiles/1440-00.png the card ground runs pink to lavender to pale blue, the bars use a violet-to-pink gradient, and the title, number and link are all violet.",
+      "before": "Pastel violet gradient on every surface.",
+      "after": "Use a neutral ground, one data colour for the bars and neutral ink for text.",
+      "why": "The gradient look belongs to a look family, not to this product, and it lowers text contrast.",
+      "test": "T-COVER-TEXT",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The comparison line '18 more than last week' gives the number a reference point."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

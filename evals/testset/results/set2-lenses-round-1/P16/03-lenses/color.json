@@ -1,0 +1,45 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "An untinted grey scale carries the share dialog (#222222 title, #444444 labels, a light grey title bar and pill), with one near-black #333333 'Copy link' button.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass with two text levels and one temperature; T-LINE-DELETION finds the title bar marked by both a tint and a hairline, and the document row boxed with a border and a fill."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-015",
+   "title": "Regions use the lowest rung of the surface ladder",
+   "tier": "Reflex",
+   "where": "title bar, 'Launch brief' row and footer rule, 1440, tiles/1440-00.png",
+   "evidence": "The title bar has a grey fill and a hairline below it; the 'Launch brief' row is a bordered box with its own pale fill inside the dialog; a second hairline sets off the footer. Hiding the title-bar hairline or the row's border loses no grouping.",
+   "before": "A tint plus a hairline on the title bar, and a bordered, filled box for a single row.",
+   "after": "One rung per seam: a tint or a hairline, and the document row as plain text with its icon.",
+   "why": "Doubled separators add weight to a small dialog without adding structure.",
+   "test": "T-LINE-DELETION",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The near-black #333333 fill is used once, on the primary action.",
+  "One untinted grey family and no shadow."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

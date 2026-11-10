@@ -1,0 +1,45 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The card's labels are literal ('Project files', 'Search files', 'Export files'), but the link 'Preview' does not say what it previews.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-LABEL-READ passes on 'Export files' and the search placeholder and flags the bare 'Preview' link; the card has 7 words."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-017",
+   "tier": "Reflex",
+   "where": "'Preview' link beside 'Export files', 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The secondary action reads 'Preview' with an arrow. No file is selected on the card, so the reader cannot tell what will open.",
+   "before": "\"Preview\"",
+   "after": "Name the object, for example 'Preview export' or 'Preview files'",
+   "why": "A bare verb beside a verb-and-object button leaves its target unclear.",
+   "test": "T-LABEL-READ"
+  }
+ ],
+ "strengths": [
+  "'Export files' and the 'Search files' placeholder name the action and the object."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: 7 words."
+ ]
+}

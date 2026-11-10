@@ -1,0 +1,59 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. Every role sits between 10px and 11px: the window title 'Share handoff' is 11px/450 beside 11px/400 text, so the head is set apart by a weight step no one can see.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-LADDER fails: the title, document name, access text and button all sit at 10 to 11px and the only head step is 400 to 450 (TYP-020, TYP-009)."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "h3 'Share handoff' in the window bar, 1440 and 375",
+   "evidence": "The DOM gives 'Share handoff' 11px/450, 'Launch brief' and 'Anyone with the link' 11px/400, 'Can view' 10px/400 and 'Copy link' 11px/500 (01-evidence/tiles/1440-00.png).",
+   "before": "Head 11px/450 among 11px/400 text",
+   "after": "Give the dialog head its own step on the fixed scale (13 to 14px at 550 to 600) and keep the body at one size",
+   "why": "A 400 to 450 step is invisible, so the dialog has no first read.",
+   "test": "T-LADDER",
+   "source": "typography"
+  },
+  {
+   "rule": "TYP-009",
+   "title": "The scale fits the medium",
+   "tier": "Reflex",
+   "where": "the whole dialog, 1440",
+   "evidence": "The type table lists only 10px and 11px for five roles (head, document, access, permission, button).",
+   "before": "Five roles on two sizes, 10px and 11px",
+   "after": "A fixed app scale of 1.125 to 1.2 from a 13px body: 13px body, 11 to 12px meta, 15 to 16px head",
+   "why": "With every role at the same size, the dialog leans on the boxes around the text to show structure.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "dialog type scale"
+  }
+ ],
+ "strengths": [
+  "One face and one leading band (1.72 to 1.82) across the dialog."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded",
+  "T-FIGURES: no numbers compare in this composition"
+ ]
+}

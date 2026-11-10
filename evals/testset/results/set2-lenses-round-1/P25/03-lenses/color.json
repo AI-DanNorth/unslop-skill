@@ -1,0 +1,57 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "An untinted grey table (#222222 title, #444444 task names, #999999 on 14 elements for headers, owners, dates and status) with a rule under the header and every row.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-NEUTRALS passes with one temperature; T-PALETTE-ROLES finds status, owners and dates all in one grey, and T-LINE-DELETION finds a rule on every row."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "Status column, 1440, tiles/1440-00.png",
+   "evidence": "The text roles list #999999 on 14 small elements: column headers, owners, due dates, the count and the status values 'Ready' and 'In review'.",
+   "before": "Status shares the metadata grey.",
+   "after": "Status in ink or a state colour with its word, distinct from headers and metadata.",
+   "why": "The column a reader scans for has no colour role.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-187",
+   "title": "Draw lines only to separate regions, encode state, or carry data",
+   "tier": "Reflex",
+   "where": "table rows, 1440",
+   "evidence": "The table draws a hairline under the header row and between each of the 3 rows inside a bordered card.",
+   "before": "A rule on every row.",
+   "after": "Rows separated by space, with one rule under the header.",
+   "why": "Repeated rules add noise to a three-row table.",
+   "test": "T-LINE-DELETION",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "One untinted grey family and no shadows."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "The table renders as a scaled mock (the sweep notes an 8px glyph box for 11px type), so fine grey steps are hard to read on the tile"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "high",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on a clear 13/10px table ladder, but at 375 the nowrap file name 'Launch deck.pdf' runs into the Modified column and reads 'Launch deck.pdfJust now'.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-LEADING fails with an open TYP-022 (Floor), which caps the score at 4. The table type is otherwise consistent at 1440."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-022",
+   "title": "Lines never collide or clip",
+   "tier": "Floor",
+   "where": "Projects table, first row, 375",
+   "evidence": "In dom-375.json 'Launch deck.pdf' is 13px/500 with white-space: nowrap in a 108px column (x=58 to 166), and 'Just now' starts at x=176. On P42/01-evidence/tiles/375-00.png the two values touch with no gap and read 'Launch deck.pdfJust now'.",
+   "before": "'Launch deck.pdf' nowrap in a 108px column, running into 'Just now'",
+   "after": "Let the name truncate with an ellipsis inside its column (min-width: 0; overflow: hidden; text-overflow: ellipsis) with the full name available, or give the Name column the width it needs at 375",
+   "why": "Two values that run together cannot be read as separate cells.",
+   "test": "T-LEADING",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "At 1440 the header labels (10px), the 13px/500 selected row and the 13/600 window title form a clear table ladder."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system"
+ ]
+}

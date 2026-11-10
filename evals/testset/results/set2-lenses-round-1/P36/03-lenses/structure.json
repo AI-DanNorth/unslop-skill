@@ -1,0 +1,66 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The job is showing four product features, but the frame is four identical white cards in a 2x2 grid, each a heading over three grey bars, so no feature leads and the picture shows no product.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 2,
+    "reason": "T-SQUINT shows four equal blocks with no first element, T-JUDGE-TILE finds every card over half empty, and T-DELETION finds bars that carry nothing."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "whole frame, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: four cards of 240x180px at (192,55), (444,55), (192,247) and (444,247), each with a 13px/550 heading and three bars. The squint render shows four equal white blocks and no heavier one.",
+      "before": "Four equal tiles.",
+      "after": "Make one feature the hero tile across two rows and give the other three smaller tiles different contents: [DATA NEEDED: a product view, a figure, a sentence and marks for the features].",
+      "why": "With four equal tiles the reader has no place to start and no feature stands out.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-011",
+      "tier": "Reflex",
+      "where": "each card, tiles/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: in each card the bars (cs-tile-bars) end 82px below the card top (y=137 in a card from y=55 to 235), so 54% of each card is empty, over the 50% fail line of draft LAY-156.",
+      "before": "Content in the top 46% of each card.",
+      "after": "Size each tile to its content, or fill it with the feature's own material.",
+      "why": "Half-empty cards read as unfinished placeholders.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-009",
+      "tier": "Reflex",
+      "where": "grey bars in all four cards, 1440px",
+      "evidence": "Each card holds three grey bars of falling length under its heading, and the same recipe repeats four times (same size, radius, padding and white fill).",
+      "before": "Placeholder bars as the only content.",
+      "after": "Delete the bars and show one real thing per feature: [DATA NEEDED: feature content].",
+      "why": "Deleting the bars loses nothing, so the cards carry no evidence for the four claims.",
+      "test": "T-DELETION",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The four cards share one 12px gap and one inset, so the grid lines up."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

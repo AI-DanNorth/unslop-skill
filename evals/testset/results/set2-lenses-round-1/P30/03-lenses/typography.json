@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the window title (13/600), the section head (16/550), the list rows (11/400 over 10/400) and the preview card head (17/550) form a clear, consistent ladder, and the two-line preview copy is led at 1.6.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER and T-LEADING pass. The only step the sweep flags is h4 11px over body 10px (TYP-001, flat_hierarchy), and the h4's 500 weight carries it."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "Each panel has one head and one step down: 'Launch assets' 16px/550 over an 11px subtitle; 'Launch brief' 17px/550 over a 10px subtitle.",
+  "Running text at 10px is led at 1.6, and nothing is tracked or set in caps."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

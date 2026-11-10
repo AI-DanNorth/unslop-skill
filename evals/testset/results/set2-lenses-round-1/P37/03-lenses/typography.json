@@ -1,0 +1,36 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the invoice runs a deliberate ladder (11px labels, 17px/550 client name, 30px/500 total, 25px/550 deposit), and the line-item amounts are right-aligned with tabular-nums.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-LADDER and T-FIGURES pass: the totals are the only large type, and '$800.00' and '$40.00' line up on the right. To earn 8, the card has no tracked caps, no accent words and no extra sizes."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The total '$840.00' at 30px/500 is the one dominant figure.",
+  "Line-item amounts are right-aligned and tabular-nums is set.",
+  "Labels are plain 10 to 11px sentence case, with no tracking or caps."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system"
+ ]
+}

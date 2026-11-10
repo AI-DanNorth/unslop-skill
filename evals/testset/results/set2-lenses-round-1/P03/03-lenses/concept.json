@@ -1,0 +1,72 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'assets, feedback and publish line up into one release', but three stacked fake browser windows hide the assets and the feedback the story depends on.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-ONE-SENTENCE passes ('Ready to launch / Homepage · Summer release'); T-REMOVE-DEVICE fails because the window stack hides content, and T-SIGNATURE fails because the assets are shown as blank lavender squares."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-012",
+      "title": "No forced big-idea metaphor",
+      "tier": "Reflex",
+      "where": "window stack on the lavender stage, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the 'Publish' window covers the lower half of 'Feedback', which covers 'Assets'; only one lavender thumbnail of the '24 assets ready' remains visible. In tiles/375-00.png the same stack hides the assets entirely.",
+      "before": "Three overlapping browser windows with traffic-light dots.",
+      "after": "Show the release as one screen, or lay the three steps side by side so each one's content stays visible.",
+      "why": "The overlap device costs the information that proves the release is ready.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Assets' window, 1440",
+      "evidence": "In tiles/1440-00.png '24 assets ready' is illustrated by flat lavender rectangles, not by any asset.",
+      "before": "Placeholder squares for the campaign's assets.",
+      "after": "Show two or three real asset thumbnails from the Summer release. [DATA NEEDED: asset images]",
+      "why": "The one thing this release is about is drawn as a stand-in.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "stage and accents, 1440",
+      "evidence": "In tiles/1440-00.png the ground, thumbnails, checks, link text and the 'Publish release' button are all the same lavender-violet family.",
+      "before": "One lavender tint used for ground, content and action.",
+      "after": "Keep one accent for the action and let ground and content be neutral.",
+      "why": "With every element tinted, nothing tells the reader where to act.",
+      "test": "T-MIRROR",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The copy ties the steps into one story: 'Assets approved' and 'Feedback resolved' on the Publish card repeat the two windows behind it."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

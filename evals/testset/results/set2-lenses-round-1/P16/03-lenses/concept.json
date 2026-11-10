@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A share dialog for 'Launch brief' with access 'Anyone with the link · Can view' and 'Copy link', dressed in browser-window chrome it does not need.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-BOLD-MOVE passes on 'Copy link', but T-REMOVE-DEVICE shows the window dots add nothing, the title 'Share handoff' is vague, and the document name sits in a box that reads as an input."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-010",
+      "title": "The subject is known, not painted on",
+      "tier": "Reflex",
+      "where": "dialog title bar, 1440 and 375",
+      "evidence": "In tiles/1440-00.png a small dialog carries three traffic-light dots and a centred title 'Share handoff'.",
+      "before": "Browser-window chrome on a dialog.",
+      "after": "Drop the dots; title the dialog with its action, for example 'Share Launch brief'.",
+      "why": "The prop makes a dialog look like a window demo and spends the title on a vague noun pair.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "'Launch brief' row, 1440",
+      "evidence": "In tiles/1440-00.png 'Launch brief' sits centred in a bordered field the width of the dialog, the same shape as a text input.",
+      "before": "The shared document shown as an input field.",
+      "after": "Show the document as a label or a file chip, not a field.",
+      "why": "Readers may try to type into it; the object of the share reads as a control.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Access and permission are stated in plain words ('Anyone with the link', 'Can view') with one dark 'Copy link' action."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

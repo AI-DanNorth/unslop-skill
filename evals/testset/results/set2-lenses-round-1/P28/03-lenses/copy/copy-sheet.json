@@ -1,0 +1,240 @@
+{
+ "width": 1440,
+ "page_words": 32,
+ "running_words": 8,
+ "hero": {
+  "h1": null,
+  "h1_words": 0,
+  "sub_line": null,
+  "sub_line_words": 0,
+  "first_screen_actions": [],
+  "first_screen_digits": [
+   "Q3",
+   "0.2s"
+  ]
+ },
+ "outline": [
+  {
+   "level": 3,
+   "text": "Write together",
+   "words": 2,
+   "chars": 14,
+   "y": 71,
+   "sel": "div.ss-fit.cs-stage > div.ss-stage > div.cs-scene.cs-tiles > div.cs-tile.cs-tile-hero:nth-of-type(1) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "",
+   "opener_overlap": 0
+  },
+  {
+   "level": 3,
+   "text": "Find anything",
+   "words": 2,
+   "chars": 13,
+   "y": 71,
+   "sel": "div.ss-fit.cs-stage > div.ss-stage > div.cs-scene.cs-tiles > div.cs-tile:nth-of-type(2) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Edits on the plane merge when you land.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Works offline",
+   "words": 2,
+   "chars": 13,
+   "y": 199,
+   "sel": "div.ss-fit.cs-stage > div.ss-stage > div.cs-scene.cs-tiles > div.cs-tile:nth-of-type(3) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "Edits on the plane merge when you land.",
+   "opener_overlap": 0.0
+  },
+  {
+   "level": 3,
+   "text": "Connects your tools",
+   "words": 3,
+   "chars": 19,
+   "y": 327,
+   "sel": "div.ss-fit.cs-stage > div.ss-stage > div.cs-scene.cs-tiles > div.cs-tile:nth-of-type(4) > h3",
+   "category_label": false,
+   "formulas": [],
+   "next_opener": "",
+   "opener_overlap": 0
+  }
+ ],
+ "labels": {
+  "buttons_and_links": [],
+  "one_target_many_labels": {},
+  "one_label_many_targets": {}
+ },
+ "microcopy": {
+  "form_labels": [],
+  "after_actions": [
+   {
+    "source": "async.json",
+    "status": "not captured"
+   }
+  ]
+ },
+ "rhythm": {
+  "sentences": 1,
+  "mean_words": 8,
+  "stdev_words": 0,
+  "share_4_words_or_less": 0.0,
+  "note": "CPY-206: warn when stdev is under 4 over 15 or more sentences, or over 30% are 4 words or less"
+ },
+ "sibling_evenness": [],
+ "patterns": {
+  "contrast_frame": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-155, budget 2 per page"
+  },
+  "negation_run": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-156, budget 1"
+  },
+  "ing_rider": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-158, budget 1"
+  },
+  "word_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161: a list of three single words"
+  },
+  "fragment_triad": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-161, CPY-187: 'Fast. Simple. Secure.'"
+  },
+  "exclamation": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-241: none in body copy"
+  },
+  "questions": {
+   "count": 0,
+   "examples": [],
+   "card": "CPY-176: no rhetorical questions; FAQ questions are not findings"
+  }
+ },
+ "long_form_regions": [],
+ "term_variants": [],
+ "sweep": {
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "hits": [],
+   "n": 0
+  },
+  "em_dash": {
+   "status": "ran",
+   "rule": "CPY-004",
+   "hits": [],
+   "n": 0
+  },
+  "h1_words": {
+   "status": "ran",
+   "rule": "CPY-003",
+   "hits": [],
+   "n": 0
+  },
+  "words_per_screen": {
+   "status": "ran",
+   "rule": "CPY-001",
+   "hits": [],
+   "n": 0
+  },
+  "page_words": {
+   "status": "ran",
+   "rule": "CPY-002",
+   "hits": [],
+   "n": 0
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "hits": [],
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "hits": [],
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "hits": [],
+   "n": 0
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "hits": [],
+   "n": 0
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "hits": [
+    {
+     "where": "div.cs-tile.cs-tile-hero:nth-of-type(1) > div.ss-window.ss-recede > div.ss-window__body:nth-of-type(2) > div.cs-tile-doc > span.cs-tile-caret  \"Priya\"",
+     "evidence": "\"Priya\" (default-names/default-cast, cap budget 0, found 4)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "#root",
+     "evidence": "\"Priya\" (default-names/default-cast, cap budget 0, found 4)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.tc-lessons > section.cs-lesson > div.cs-pair > figure.cs-figure > div.cs-frame:nth-of-type(2)",
+     "evidence": "\"Priya\" (default-names/default-cast, cap budget 0, found 4)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.ss-fit.cs-stage > div.ss-stage > div.cs-scene.cs-tiles > div.cs-tile.cs-tile-hero:nth-of-type(1) > div.ss-window.ss-recede",
+     "evidence": "\"Priya\" (default-names/default-cast, cap budget 0, found 4)",
+     "tier": "Reflex"
+    }
+   ],
+   "n": 4
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "hits": [],
+   "n": 0
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "hits": [],
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "hits": [],
+   "n": 0
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "hits": [],
+   "n": 0
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "hits": [],
+   "n": 0
+  }
+ }
+}

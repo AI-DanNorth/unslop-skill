@@ -1,0 +1,46 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The job is showing one new file arriving: the highlighted \"Launch deck.pdf\" row is the only full-weight row among nine placeholder rows, and the window bleeds off the right edge.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (the tinted 38px row reads first, then the window title), and T-JUDGE-TILE finds a deliberate bleed; one crop cuts a value at 1440."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-268",
+      "tier": "Finish",
+      "where": "Size column, right edge of the frame, tiles/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: the window runs from x=200 to x=860 and the frame ends at x=708, so 152px (23%) bleeds off. The Size column starts at x=690, so the frame edge cuts \"4.2 MB\" to \"4.2\". At 375 the scene recomposes and shows \"4.2 MB\" whole.",
+      "before": "The crop line falls 18px into the Size column.",
+      "after": "Move the crop so the frame edge falls between columns: either show the Size column whole or cut it out entirely.",
+      "why": "A crop that halves a number reads as a rendering fault rather than a bleed.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The one real row carries a tint (rgb(238,244,253)), a blue file icon and 13px/500 type, so it is the clear focal point among placeholder rows.",
+    "Rows sit on a 38px pitch, which keeps the placeholders quiet.",
+    "The window bleeds off the right edge by 23%, inside the 10 to 40% range of LAY-268."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

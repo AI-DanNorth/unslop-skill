@@ -1,0 +1,45 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The rows carry status words and facts ('Live', 'Building', 'Failed', 'perf/search · b41e09d · Jon Park · 42s'), but every row shows the same duration, '42s'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-STATE-COPY passes on the status words 'Live', 'Building' and 'Failed'; T-THREE-LINE flags the repeated '42s', and the four-part meta line is cut off at both widths."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-008",
+   "tier": "Reflex",
+   "where": "meta line under each deploy, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The DOM meta lines read 'main · 8f2c1a4 · Maya Chen · 42s', 'perf/search · b41e09d · Jon Park · 42s' and 'copy/pricing · 3a7f6c2 · Ana Ruiz · 42s'. On screen they are cut to 'Maya Chen ·', 'b41e09d · J' and '3a7f6c2 · Ana', so the author and duration are lost.",
+   "before": "\"perf/search · b41e09d · Jon Park · 42s\"",
+   "after": "Keep two facts in the meta line (branch and author), move the duration to the status column, and give each deploy its real duration",
+   "why": "Three different builds with one duration read as filler. A line of four facts that is cut off hides the author the reader scans for.",
+   "test": "T-THREE-LINE"
+  }
+ ],
+ "strengths": [
+  "The status words 'Live', 'Building' and 'Failed' state each deploy's outcome in plain words."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "The truncation itself is a layout fault; it is cited only because it hides words."
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The dashboard window sets '$12,480' at 28px/550 over 10 to 13px labels, and the phone mock carries its own scale (30px title, 42px amount) drawn at a reduced size. The 16px caption above the frame is the capture's page furniture and is left out of the judgment. The sweep's type_ladder count of 11 sizes and the banned_fonts hit on the 42px '$2,400' come from the two device scales and from UI text in a product mock, which fits the mode.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER finds two coherent device scales rather than drift, T-FIGURES passes (tabular-nums is set, amounts align), and T-LEADING passes (1.21 to 1.6)."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-010",
+   "title": "One size per kind of element",
+   "tier": "Reflex",
+   "where": "amount '$2,400' in the dashboard row and in the phone card, 1440",
+   "evidence": "The same amount is set at 12px/500 in the dashboard row and at 42px/550 in the phone card (01-evidence/tiles/1440-00.png). The phone title 'Payments' is 30px at 1440 and 28px at 375.",
+   "before": "One amount at 12px in one window and 42px in the other; phone title 30px then 28px",
+   "after": "Keep the phone mock's sizes on the same steps as the window (the hero amount one step, row amounts one step)",
+   "why": "The sizes are explained by two device scales, but the reader still sees the same figure at two levels of importance.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "'$12,480' is set at 28px/550 with 1.21 leading, a tuned figure size for the one number that matters.",
+  "The stylesheet sets tabular-nums, so the amounts line up."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

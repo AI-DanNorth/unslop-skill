@@ -1,0 +1,59 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "low",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on the same 14/12px ladder as the deploy card, but a scale transform doubles the card, so the row title draws 28px tall and the frame cuts off the Deploy button and every timestamp.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-LADDER: the card is enlarged to twice its size, so the 14px row title becomes the largest type in the frame, and the head-to-row step stays at 600 against 500."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-009",
+   "title": "The scale fits the medium",
+   "tier": "Reflex",
+   "where": "Card inside the frame, 1440 and 375",
+   "evidence": "In dom-1440.json 'Checkout redesign' (14px, 18px line) draws in a 36px-tall box, and 'Recent deploys' (14px, 20px line) in a 40px box: a scale of 2. 'Deploy' sits at x=823, and 'Just now', '12m ago' and '1h ago' sit at x=850 to 871. The frame ends near x=708 on P46/01-evidence/tiles/1440-00.png, so these labels do not show.",
+   "before": "Card scaled to 2, so the 14px row title draws at about 28px",
+   "after": "Show the card at 1:1 so the head, rows, timestamps and button stay in frame, or crop to a region whose type stays at its set size",
+   "why": "Doubling the card makes body-size UI text act as display type and pushes the status column out of view.",
+   "test": "T-LADDER",
+   "source": "typography"
+  },
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "Card head and row titles, 1440 and 375",
+   "evidence": "In dom-1440.json the head 'Recent deploys' is 14px/600 and the row titles 'Checkout redesign', 'Search speedup' and 'Pricing copy' are 14px/500. The head and the rows have the same size, and only a 100-weight step separates them. On P46/01-evidence/tiles/1440-00.png the head reads no stronger than the rows.",
+   "before": "Head 14px/600 and row titles 14px/500",
+   "after": "Separate the head from the rows by size (head 15 to 16px, or rows 13px), or by a clear weight step (400 against 600 or 700)",
+   "why": "A 500-to-600 step at the same size looks like a rendering difference, so the card has no clear entry point.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "The underlying type is consistent: 14px/500 row titles over 12px/400 meta."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The cropped right column (timestamps and the Deploy button) is mainly a framing question for the structure lens",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

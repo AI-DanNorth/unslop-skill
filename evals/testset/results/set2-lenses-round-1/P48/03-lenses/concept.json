@@ -1,0 +1,71 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "A deploy list dressed in a purple-to-pink-to-orange gradient, with purple text throughout; the look comes from the AI default, not from the task.",
+  "score": {
+    "dimension": "Concept",
+    "value": 2,
+    "reason": "T-DEFAULT-AGENT and T-MIRROR fail: the gradient frame, gradient heading text and gradient button are the stock AI look, and T-SIGNATURE fails because state is no longer readable."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-011",
+      "tier": "Reflex",
+      "where": "frame, heading and Deploy button, 1440 and 375",
+      "evidence": "The frame uses linear-gradient(135deg, #7c3aed, #db2777, orange); the 'Recent deploys' heading and the 'Deploy' button use a #7c3aed to #db2777 gradient.",
+      "before": "Violet-pink gradient frame, gradient text and gradient button",
+      "after": "A neutral ground; one solid colour for the action",
+      "why": "The violet gradient is the most common generated-UI look and says nothing about deploys.",
+      "test": "T-DEFAULT-AGENT",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "tier": "Reflex",
+      "where": "status icons and meta text, 1440",
+      "evidence": "All three status icons are the same violet outline, and names (#4c1d95) and timestamps (#a78bfa) are tinted violet: live, building and failed look alike.",
+      "before": "One tint for every state",
+      "after": "Colour reserved for deploy state (live, building, failed)",
+      "why": "The failed 'Pricing copy' deploy, the one row that needs action, does not stand out.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-009",
+      "tier": "Reflex",
+      "where": "card ground, 1440",
+      "evidence": "The card itself uses a #faf5ff to #fdf2f8 gradient with a violet ring, so even the content layer carries the theme.",
+      "before": "Theme applied to every layer",
+      "after": "Plain card ground; let the content carry the screen",
+      "why": "When every layer is themed, the theme is the content and the task recedes.",
+      "test": "T-MIRROR",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The underlying list structure (name, branch and author, time, one action) is sound and worth keeping."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

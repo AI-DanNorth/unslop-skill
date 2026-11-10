@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the head, event titles and meta step by size (14, 12, 10px), and each meta line sits 1px under its title with 16px between events.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-LADDER and T-LEADING pass: the ladder is clear and the space groups each title with its meta. The score stays at 7 because the meta and times sit at 10px."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "Meta lines tucked 1px under their titles, with 16px between events (dom-1440.json y values).",
+  "Clear size steps: head 14px/550, event titles 12px/450, meta 10px/400.",
+  "Times in a fixed left column with tabular-nums set."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "T-FIGURES: the times are a list, not compared figures; tabular-nums is set"
+ ]
+}

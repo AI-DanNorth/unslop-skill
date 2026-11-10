@@ -1,0 +1,79 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "Violet carries every role: a lavender-pink-blue wash under the card, four violet text shades for heading, figure, labels and link, gradient bars with violet glows and purple shadows, with no neutral ink and no source.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-COLOUR-SOURCE finds no source for the violet family, T-PALETTE-ROLES finds four violet text shades and no ink, and T-ACCENT-DOSAGE finds the large figure and the heading in the accent."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-114",
+   "title": "Do not use violet/lavender in the page's own palette",
+   "tier": "Reflex",
+   "where": "the whole activity card, 1440 and 375, tiles/1440-00.png and bg-1440.png",
+   "evidence": "The area palette lists #e8e2fb at 4.4% and #b59fde bars; text is #7567a6, #7964b1, #7e5caf and #9887b8 (hue about 293). Shadows are rgba(178,146,212,0.42) 0 0 10px on 5 bars and rgba(146,132,197,0.18) 0 0 24px on the card. The sweep's gradient and glow hits land here.",
+   "before": "A lavender wash, violet text, violet bars and violet glows.",
+   "after": "An accent sampled from the client's own imagery or brand (Sample, Converge, Justify), on neutral paper.",
+   "why": "With no source, the palette reads as the generator's default violet, not this product's colour.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color",
+   "root": "violet theme"
+  },
+  {
+   "rule": "CLR-004",
+   "title": "The palette converges to a few roles",
+   "tier": "Reflex",
+   "where": "'Weekly activity', '124', 'tasks completed', '18 more than last week', 'View report', 1440",
+   "evidence": "The palette table lists 0 neutral text levels and 4 violet text shades: #7567a6 on the heading, #7964b1 on two elements, #7e5caf and #9887b8.",
+   "before": "Every text element is a slightly different violet.",
+   "after": "A neutral ink for heading and figures, one grey for secondary text, and the accent only on 'View report'.",
+   "why": "With no ink role, nothing on the card is quieter or louder by colour, and the link does not read as a link.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-007",
+   "title": "Display type is set in ink",
+   "tier": "Reflex",
+   "where": "the figure '124', 1440",
+   "evidence": "The figure is the largest type on the card and is set in the violet #7964b1 family.",
+   "before": "Display figure in the accent.",
+   "after": "The figure in ink; the accent kept for the action.",
+   "why": "Display type in the accent spends the accent on emphasis that size already gives.",
+   "test": "T-ACCENT-DOSAGE",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-174",
+   "title": "Do not use gradients in chart marks",
+   "tier": "Reflex",
+   "where": "the five bars M to F, 1440",
+   "evidence": "The palette table lists gradient stops on the bars (#cba4df into a deeper violet) and a coloured zero-offset glow on each bar.",
+   "before": "Gradient, glowing chart bars.",
+   "after": "Flat bars in one colour, with the current day in a stronger step.",
+   "why": "Gradients and glows on data marks add colour that carries no data.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

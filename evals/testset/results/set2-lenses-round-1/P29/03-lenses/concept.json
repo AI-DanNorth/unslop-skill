@@ -1,0 +1,50 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'today's three meetings on a time rail': the time column carries it, but each meeting's people line floats between rows.",
+  "score": {
+    "dimension": "Concept",
+    "value": 6,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass on the time rail; T-SIGNATURE is weakened because the meeting object splits into six evenly spaced rows."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "tier": "Reflex",
+      "where": "agenda rows, 1440 and 375",
+      "evidence": "The people line 'Maya and Jon' sits 27px below 'Design review' and 27px above '11:00 AM', so the eye reads six equal rows, not three meetings (tile 1440-00.png, card x 396-680).",
+      "before": "Title and people line spaced like separate rows",
+      "after": "Group each meeting: people line tight under its title, larger gap between meetings",
+      "why": "The meeting is the object this card exists for; when it splits, the reader has to pair lines by hand.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The left time column (9:30 AM, 11:00 AM, 2:00 PM) is the signature: a schedule read by time first.",
+    "One quiet card, no decoration: it disappears into the task (CON-018)."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

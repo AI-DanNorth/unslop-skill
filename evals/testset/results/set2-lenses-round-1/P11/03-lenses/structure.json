@@ -1,0 +1,43 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A recent-deploys list that gives each row a full anatomy (status, badge, time, commit meta), but the badge track squeezes the meta line to 120 to 141px, so every meta line is cut mid-word.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 6,
+  "reason": "T-SQUINT reads title and Deploy first and three even rows after, but T-DENSITY-FIT finds the row grid too narrow for its meta line on all three rows."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-020",
+   "tier": "Finish",
+   "where": "meta line of all three rows, 1440 and 375",
+   "evidence": "In dom-1440.json the text column is 140, 120 and 141px wide because the status badges ('live', 'building', 'failed') take a track of their own; the meta lines 'main · 8f2c1a4 · Maya Chen · 42s', 'perf/search · b41e09d · Jon Park · 42s' and 'copy/pricing · 3a7f6c2 · Ana Ruiz · 42s' render cut as 'Maya Chen ·', 'b41e09d · J' and '3a7f6c2 · Ana' in 01-evidence/tiles/1440-00.png.",
+   "before": "Four fields per row in a 296px card: text column 120 to 141px, meta line clipped on every row.",
+   "after": "Move the badge onto the meta line or below the name so the text column runs to the time track, or drop the commit hash at this width.",
+   "why": "Every row loses the author or the duration, so the extra density costs the facts it was added to show.",
+   "test": "T-DENSITY-FIT",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "Every row follows one template: status icon, name, meta line, badge, time.",
+  "The time column holds a shared right edge at x=670 on all three rows."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "Every role (heading, labels, link and the primary button) is drawn in one band of pale cool grey (#a4adb3, #aeb7bd, a #c6cfd5 button with #eef1f3 text) on a near-identical #e7ebed panel, so there is no ink and no accent.",
+ "score": {
+  "dimension": "Craft",
+  "value": 2,
+  "reason": "T-PALETTE-ROLES finds no ink role and T-GRAYSCALE finds the primary action fading into the panel: colour works against reading."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-004",
+   "title": "The palette converges to a few roles",
+   "tier": "Reflex",
+   "where": "the whole share panel, 1440 and 375, tiles/1440-00.png",
+   "evidence": "The text roles list the heading 'Share document' and 2 small labels in #a4adb3 and one in #aeb7bd (OKLCH L about 0.73 to 0.77), on a panel #e7ebed (L about 0.93). The palette has 0 chromatic groups and 8 cool neutrals.",
+   "before": "Heading, body, metadata and button all in one pale grey band.",
+   "after": "A dark ink for the heading and labels, one secondary grey, and a filled primary action in ink or the product's accent.",
+   "why": "With no ink role, the reader cannot tell the title from metadata, and the panel reads as disabled.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "text colour token"
+  },
+  {
+   "rule": "CLR-141",
+   "title": "Never convey information by colour alone",
+   "tier": "Reflex",
+   "where": "'Copy link' button, 1440, 03-lenses/color/gray-fold-1440.png",
+   "evidence": "The button fill #c6cfd5 sits one small lightness step from the panel #e7ebed, and its label #eef1f3 is nearly the panel colour. In the grayscale fold the button reads as a disabled bar.",
+   "before": "A primary action in pale grey with near-white text.",
+   "after": "The primary action as the darkest element on the panel.",
+   "why": "The one action looks unavailable.",
+   "test": "T-GRAYSCALE",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-015",
+   "title": "Regions use the lowest rung of the surface ladder",
+   "tier": "Reflex",
+   "where": "panel on its ground, 1440",
+   "evidence": "The panel and the ground around it are nearly the same grey; the area palette lists #e7ebed at 5.5% with no distinct second ground step.",
+   "before": "A box on a well of nearly the same tone.",
+   "after": "One surface, or a clear step between ground and panel.",
+   "why": "The surface step is too small to separate anything, so it adds an edge without a region.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

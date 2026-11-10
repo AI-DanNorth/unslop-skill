@@ -1,0 +1,32 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A weekly-activity card with a clear order: title, the '124' total, a one-line comparison, five day bars, then 'View report'.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 7,
+  "reason": "T-SQUINT reads the '124' total first and the bar row second, and T-LEFT-EDGES finds title, total, chart and link on one left edge at x=414."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [],
+ "strengths": [
+  "One number leads, the chart follows, and one text link closes the card.",
+  "Every block in the card starts at x=414."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "The tinted gradient plate and glow are the sweep's gradient and glow hits and a colour matter, not a structure finding."
+ ]
+}

@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A share or members panel: an invite field holding 'maya@northwind.com' above two members with roles, but the people are blank circles and the invite has no next step.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-SIGNATURE fails (blank avatars for named people) and T-ONE-SENTENCE is only partly writable because the panel has no heading or invite action; T-RIVAL-NAME holds."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "member rows, 1440 and 375",
+      "evidence": "In tiles/1440-00.png 'Jon Park' and 'Ana Ruiz' sit beside empty grey circles, with no initials or photos.",
+      "before": "Blank grey avatar circles.",
+      "after": "Show initials or photos for each member. [DATA NEEDED: member photos]",
+      "why": "The people are the object of a members panel; empty circles read as an unfinished template.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "invite field, 1440",
+      "evidence": "In tiles/1440-00.png the field holds the chip 'maya@northwind.com' but the card shows no role choice and no 'Invite' or 'Send' action, and no heading names the panel.",
+      "before": "An entered address with no way to send it.",
+      "after": "Add the role for the new person and one 'Invite' action next to the field.",
+      "why": "The task the field starts cannot be finished inside the card.",
+      "test": "T-ONE-SENTENCE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Roles ('Owner', 'Editor') sit right-aligned against each name, which is the right information for access control."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

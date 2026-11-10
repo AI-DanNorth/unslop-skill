@@ -1,0 +1,42 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "An inbox list on one row template except that the two unread rows shift their avatar and text 8px right of the read row, so the text column has two start lines.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 6,
+  "reason": "T-SQUINT passes, but T-LEFT-EDGES finds sender text at x=434 on rows 1 and 3 and x=426 on row 2."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-288",
+   "tier": "Finish",
+   "where": "rows 'Maya Chen' and 'Ana Ruiz' against 'Jon Park', 1440 and 375",
+   "evidence": "In dom-1440.json the sender and subject spans start at x=434 on rows 1 and 3 (unread) and x=426 on row 2 (read), and the avatar initials sit at x=404 and 406 against 400. 01-evidence/tiles/1440-00.png shows the 'M' and 'A' avatars visibly right of the 'J' avatar.",
+   "before": "The unread dot pushes its row's avatar and text 8px right.",
+   "after": "Give the dot its own fixed gutter so every row keeps the same avatar and text start, read or unread.",
+   "why": "A text column with two start lines breaks the list's scan line and makes the read row look indented.",
+   "test": "T-LEFT-EDGES",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The time column holds one right edge at x=688 on every row, and the row rhythm is even."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

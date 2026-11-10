@@ -1,0 +1,88 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A four-tile feature grid for a writing tool ('Write together', 'Find anything 0.2s', 'Works offline', 'Connects your tools'); one line, 'Edits on the plane merge when you land', is specific and the rest is category copy.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-DEFAULT-PLAN fails (a bento grid of labelled feature tiles), T-RIVAL-NAME holds for three of four tile titles, and T-PROMISE-PICTURED fails on 'Connects your tools'; T-SIGNATURE passes partly on the shared-editor tile."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-DELETE-PICTURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-COVER-TEXT",
+    "T-REMOVE-DEVICE",
+    "T-PROMISE-PICTURED",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-002",
+      "title": "Every large decision belongs to this client",
+      "tier": "Reflex",
+      "where": "tile titles, 1440 and 375",
+      "evidence": "In tiles/1440-00.png 'Write together', 'Find anything' and 'Connects your tools' stay true under the name of any shared-document product.",
+      "before": "Three generic feature titles.",
+      "after": "Title each tile with what only this product does. [DATA NEEDED: the product's name and its specific features]",
+      "why": "Most of the grid would hold for a rival.",
+      "test": "T-RIVAL-NAME",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-017",
+      "title": "Every headline promise is pictured",
+      "tier": "Finish",
+      "where": "'Connects your tools' tile, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the promise is pictured by three empty grey rounded squares.",
+      "before": "Placeholder squares for integrations.",
+      "after": "Show the actual tools it connects. [DATA NEEDED: integration names and logos]",
+      "why": "A concrete promise with an empty picture reads as unfinished.",
+      "test": "T-PROMISE-PICTURED",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Find anything' tile, 1440",
+      "evidence": "In tiles/1440-00.png search is shown as the number '0.2s' with no query or result.",
+      "before": "A number standing in for the feature.",
+      "after": "Show one search with its result. [DATA NEEDED: a sample query and result]",
+      "why": "A bare number is the stand-in signature CON-005 names.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-008",
+      "title": "Refuse the default plan",
+      "tier": "Reflex",
+      "where": "whole grid, 1440",
+      "evidence": "In tiles/1440-00.png the layout is the default bento: one tall tile and three stacked tiles, each with a small label and one prop, on a pale ground.",
+      "before": "A bento grid of four feature tiles.",
+      "after": "Lead with the editor tile as the one large image and set the other features as supporting lines.",
+      "why": "The grid is the plan a default agent would choose for 'features of a writing app'.",
+      "test": "T-DEFAULT-PLAN",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "'Edits on the plane merge when you land.' names a concrete situation only an offline-first editor can promise.",
+    "The editor tile shows a real line ('Beta opens to every team on May 14.') with a 'Priya' presence tag, which pictures 'Write together'."
+  ],
+  "not_investigated": [
+    "T-IDEA-CARRIES: one composition only, no screens after the first.",
+    "00-contract.md is absent: visitor mode (Persuade, a feature section) and audience were inferred; no brand authority was supplied.",
+    "Motion: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

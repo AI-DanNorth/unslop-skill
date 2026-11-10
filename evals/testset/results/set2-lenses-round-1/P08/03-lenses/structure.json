@@ -1,0 +1,31 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "An inbox list in a conventional order: avatar, sender, subject and time on one row template, with unread dots in their own gutter.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT reads three even rows with avatars as the anchors, and T-LEFT-EDGES finds the sender and subject text on one start line at x=426 on all three rows."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [],
+ "strengths": [
+  "All three rows share one text start line at x=426 and one time column at x=668.",
+  "The unread dots sit in the gutter left of the avatars, clear of the avatar and the text (LAY-286)."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

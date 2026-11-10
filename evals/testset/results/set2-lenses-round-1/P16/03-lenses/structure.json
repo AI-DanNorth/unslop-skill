@@ -1,0 +1,42 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A share dialog that mixes two alignment axes: the title, the document chip and the access row are centred, while the 'Copy link' button sits right-aligned in a footer.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 6,
+  "reason": "T-SQUINT reads the dark 'Copy link' button first and the centred rows above as one pale stack, and T-LEFT-EDGES finds no shared left edge: text starts at x=504, 518 and 448 on three rows."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-019",
+   "tier": "Reflex",
+   "where": "title, document chip and permission row against the footer button, 1440 and 375",
+   "evidence": "In dom-1440.json the card spans x=397 to 679 (centre 538). 'Share handoff' (x=504, 68px), 'Launch brief' (x=518, 60px) and the access row (x=448 to 628) are each centred on 538, while 'Copy link' (x=580, 87px) is right-aligned. 01-evidence/tiles/1440-00.png shows three centred lines over a right-aligned action.",
+   "before": "Three centred rows and one right-aligned action: two axes in a 282px card.",
+   "after": "Put the dialog on one axis: left-align the title, document and access row on the card's inner edge, and keep the action right in the footer as a dialog convention.",
+   "why": "Centred short lines give the eye no start edge, and the move from centre to right makes the action look detached from the settings it applies.",
+   "test": "T-LEFT-EDGES",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The single filled action, 'Copy link', is the heaviest block and sits where dialog actions are expected."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

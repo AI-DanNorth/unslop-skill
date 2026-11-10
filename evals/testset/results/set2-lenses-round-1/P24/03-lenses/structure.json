@@ -1,0 +1,55 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The job is checking recent deploys: the list order holds, but a second header line and uppercase tracking on every label flatten the card's header, metadata and timestamps into one texture.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 5,
+    "reason": "T-SQUINT reads the black DEPLOY button first but the 12px header after the 14px row titles, and T-DELETION finds a sub-header that repeats the list's count."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "card header and metadata, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: the card title \"RECENT DEPLOYS\" is 12px/600, smaller than the 14px/500 row titles. The sub-header, the metadata (\"MAIN · MAYA CHEN\") and the timestamps (\"JUST NOW\", \"12M AGO\") are all uppercase 10px. In the squint render they form even grey bands with the title.",
+      "before": "Header, metadata and timestamps all in tracked 10 to 12px capitals.",
+      "after": "Set the title above the row titles in size or weight, and set the metadata and timestamps in sentence case.",
+      "why": "When the header reads after the rows, the reader finds the list before knowing what it is.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-010",
+      "tier": "Reflex",
+      "where": "sub-header line, y=72, 1440px",
+      "evidence": "The line \"PRODUCTION · 3 DEPLOYS\" sits between the header row and the list; the sweep's chrome_glyphs hit (SLP-010) flags its middot chain. The list below shows the three rows itself.",
+      "before": "A two-line header before any content.",
+      "after": "Delete the sub-header, or fold \"Production\" into the title row.",
+      "why": "Deleting it loses nothing, and it pushes the first record down.",
+      "test": "T-DELETION",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "Each row keeps its title and metadata as one item (title at y=100, metadata at y=120), and the timestamps share one right edge at x=670."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

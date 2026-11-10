@@ -66,6 +66,16 @@
 </style>
 </head>
 <body>
+<p class="autoplay"><span id="seed-autoplay" data-seed="motion_snap">Synced just now</span></p>
+<script>
+  // passive motion seed: plays three times from load with no click, glides 40 -> 8 px, then snaps the last 8 px
+  (() => { const el = document.getElementById("seed-autoplay"); if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let n = 0; const play = () => { const t0 = performance.now();
+      const step = (now) => { const k = Math.min(1, (now - t0) / 400); el.style.transform = `translateX(${40 - 32 * k}px)`;
+        if (k < 1) requestAnimationFrame(step); else requestAnimationFrame(() => { el.style.transform = "none"; if (++n < 3) setTimeout(play, 500); }); };
+      el.style.transform = "translateX(40px)"; requestAnimationFrame(step); };
+    addEventListener("load", () => setTimeout(play, 300)); })();
+</script>
 <nav><a href="#">Home</a> <a href="#" data-seed="lexicon_copy">Learn more →</a> <span data-seed="chrome_glyphs">v2.4.1</span></nav>
 <section class="hero" data-seed="gradient">
   <h1 data-seed="banned_fonts h1_words">Supercharge your workflow with the seamless all-in-one platform built for the modern team</h1>

@@ -1,0 +1,48 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; meta and timestamps step down cleanly to 12px/400 grey, but the card head and the row titles share 14px and differ only by 500 against 600.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LADDER fails on one step (TYP-020): the head and the row titles share 14px. The type is otherwise consistent, and the glow effects are not type."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "Card head and row titles, 1440 and 375",
+   "evidence": "In dom-1440.json the head 'Recent deploys' is 14px/600 and the row titles 'Checkout redesign', 'Search speedup' and 'Pricing copy' are 14px/500. The head and the rows have the same size, and only a 100-weight step separates them. On P56/01-evidence/tiles/1440-00.png the head reads no stronger than the rows.",
+   "before": "Head 14px/600 and row titles 14px/500",
+   "after": "Separate the head from the rows by size (head 15 to 16px, or rows 13px), or by a clear weight step (400 against 600 or 700)",
+   "why": "A 500-to-600 step at the same size looks like a rendering difference, so the card has no clear entry point.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "Meta and timestamps are one 12px/400 grey role, right-aligned, with tabular-nums set.",
+  "Leading is 1.3 to 1.4, and nothing is tracked."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The glow around the card and icons is for the color lens",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

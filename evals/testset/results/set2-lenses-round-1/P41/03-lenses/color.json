@@ -1,0 +1,44 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "Every text element on the checklist card, the heading 'Release checklist' included, is the same #777777 grey on white; the only other values are the #333333 'Open project' fill and its white label.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-PALETTE-ROLES finds one text level for heading, meta, rows and states, so the ink role is missing; the action and ground are fine, which keeps it at 5."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "all text in the card (h3 'Release checklist', 'Due Friday · 4 tasks', row labels, 'Ready', 'In review', '2 tasks remaining'), 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P41\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds one text level: #777777 on 7 elements, including the h3 heading, with white only on the button label.",
+   "before": "Heading, meta, task and state text all in #777777",
+   "after": "A fixed set of greys with an ink step: the heading and task names in the darkest ink, meta and state one step lighter",
+   "why": "With one grey for every role the reader cannot tell title from meta by value; the card reads faded.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "the single text grey #777777"
+  }
+ ],
+ "strengths": [
+  "The action is the only dark fill (#333333) and survives the grayscale fold."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

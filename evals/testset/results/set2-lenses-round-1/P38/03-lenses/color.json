@@ -1,0 +1,68 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "One terracotta hue fills everything: the #da805b stage, the #ecac84 invoice, the #e29b7c deposit card and every text element in #813d31 or #a96754, so ground, surface, ink and the 'Paid' state are the same colour.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-ACCENT-DOSAGE finds a page-scale band in the accent with no neutral surface for content, T-SURFACE-LADDER finds the raised card darker than the card below it, and T-PALETTE-ROLES finds the state in the same hue as the ink."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-005",
+   "title": "Colour follows one posture",
+   "tier": "Reflex",
+   "where": "whole scene, 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P38\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table lists page-scale fills in hue 43: #da805b at 540 by 420px and #ecac84 at 350 by 400px; chromatic area is 5.5% at 1440 and 14.3% at 375, and the hue colours 14 text elements. The sweep's accent_footprint reports 5.7% of the fold (CLR-001).",
+   "before": "Terracotta as ground, card surface, ink and state",
+   "after": "One posture: a neutral or lightly tinted paper for the content surfaces, with the terracotta held to the stage or to one accent role",
+   "why": "When one hue is every role, the content has no neutral surface to rest on and the accent marks nothing.",
+   "test": "T-ACCENT-DOSAGE",
+   "source": "color",
+   "root": "the single hue-43 ramp"
+  },
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Reflex",
+   "where": "deposit card over the invoice, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P38\\01-evidence\\tiles\\1440-00.png and C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P38\\03-lenses\\color\\gray-fold-1440.png",
+   "evidence": "The front deposit card fills with #e29b7c, darker than the #ecac84 invoice it overlaps; in the grayscale fold the raised card is the darker of the two.",
+   "before": "Raised card #e29b7c on a lighter #ecac84 card",
+   "after": "Raised surfaces one step lighter than what they sit on",
+   "why": "A raised surface that is darker reads as a hole, so the layering contradicts the shadow.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "'Paid' status and the paid check, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P38\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The 'Paid' label is #a3433c, in the same red-orange band as the ink #813d31 and the fills; no other hue marks the state.",
+   "before": "State text in the accent hue",
+   "after": "A state colour outside the accent hue, or the state shown by an icon and label in ink",
+   "why": "When the state shares the hue of every other element, colour stops signalling that the invoice is paid.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "Text on the terracotta uses darker shades of the same hue rather than grey (CLR-011 kept)."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

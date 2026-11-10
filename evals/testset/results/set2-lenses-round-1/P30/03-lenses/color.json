@@ -1,0 +1,45 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The scene is a cool slate system: a #1f2936 stage, a lighter #303a45 window, a #405263 selected row and a white preview card, with text greys #dce3e9, #9caab7 and #87929d all on one cool temperature.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-NEUTRALS and T-DARK-MODE pass (one cool temperature, raised surfaces lighter than the stage), but T-SURFACE-LADDER finds two heavy black shadows on a dark stage where lightness already separates the layers."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-DARK-MODE"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Reflex",
+   "where": "window and preview card, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P30\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 2 shadow recipes, both counted as heavy black shadows: 'rgba(0,0,0,0.533) 0 20px 40px -18px' and 'rgba(0,0,0,0.4) 0 16px 32px -12px'.",
+   "before": "Two black shadows at 0.4 and 0.53 alpha",
+   "after": "One shadow recipe, lighter and tinted toward the slate hue; let the lightness steps carry the layering",
+   "why": "On a dark stage a black shadow is almost invisible, so the second recipe adds weight without adding depth.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "Raised surfaces get lighter on dark: stage #1f2936, window #303a45, selected row #405263 (CLR-017 kept).",
+  "All neutrals hold one cool temperature (20 of 21 text and fill neutrals in hue 180 to 300)."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here.",
+  "T-DARK-MODE: run on the dark product window shown in the scene; the page's own dark class theme was not rendered and is not verified."
+ ]
+}

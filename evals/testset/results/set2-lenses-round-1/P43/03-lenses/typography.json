@@ -1,0 +1,48 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "high",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition with the same ladder as a tuned library window, but a transform scales the whole window down, so the 22px head draws about 18px tall and every 10 to 11px label draws in a 9 to 11px box.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-LADDER: the declared sizes are fine, but the scale transform shrinks every role, and the sweep's text_floor hit records the result (a 9px glyph box for 11px type)."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-135",
+   "title": "Never shrink text to fit or to hide a content problem",
+   "tier": "Reflex",
+   "where": "Library window (.ss-window), 1440 and 375",
+   "evidence": "In dom-1440.json the h3 'Launch package' is set at 22px with a 29px line-height but draws 18px tall. 'Everything your team needs to publish.' (11px, 17px line) draws 11px tall, and 'Campaign launch' (10px, 16px line) draws 10px tall. That is a scale of about 0.62. On P43/01-evidence/tiles/1440-00.png and P43/01-evidence/tiles/375-00.png the nav, meta and button text are hard to read. The sweep's text_floor hit records 'a 9px glyph box for 11px type, a transform'.",
+   "before": "Window scaled to about 0.62 so it fits beside the thumbnail grid",
+   "after": "Render the window at 1:1 and give it the width it needs; crop or drop the thumbnail grid instead of scaling the type",
+   "why": "A transform shrinks the whole ladder at once, so the 10 and 11px labels draw at roughly 6 to 7px.",
+   "test": "T-LADDER",
+   "source": "typography",
+   "root": "the transform on the window"
+  }
+ ],
+ "strengths": [
+  "The underlying ladder is clear: 22/550 head, 13/600 window title, 12/500 card title, 10 to 11px labels."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

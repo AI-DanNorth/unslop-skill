@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "Only one row has text: 'Launch deck.pdf', 'Just now', '4.2 MB'; the other rows are skeleton bars.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-LABEL-READ and T-TERMS pass on the column heads 'Name', 'Modified' and 'Size' and the one filled row; there is too little copy to judge more."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The column heads 'Name', 'Modified' and 'Size' are literal."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge: 14 words, and the remaining rows are placeholder bars with no text.",
+  "The caption above the frame ('Composition problem') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

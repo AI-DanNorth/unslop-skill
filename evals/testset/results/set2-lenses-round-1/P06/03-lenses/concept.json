@@ -1,0 +1,47 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "A 'Project files' card with search, 'Export files' and 'Preview', but no files: the controls are there and the object they act on is not.",
+  "score": {
+    "dimension": "Concept",
+    "value": 6,
+    "reason": "T-BOLD-MOVE passes (one dark primary, one quiet link); T-SIGNATURE fails because the file list is absent; T-RIVAL-NAME holds for any file tool."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Project files' card, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the card titled 'Project files' holds a search field and two actions; no file name, count or thumbnail appears.",
+      "before": "A files card with no files.",
+      "after": "Show the files the actions work on, even two rows with name and size. [DATA NEEDED: file names]",
+      "why": "An export action with nothing to export reads as a control demo, not a working screen.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "One dark 'Export files' button and a quiet 'Preview' link: boldness is spent in one place."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

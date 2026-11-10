@@ -1,0 +1,53 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A plan card in which every row is boxed: the head, the price and the seats row each sit in their own bordered box inside the bordered card, so borders do the grouping that space should do.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 5,
+  "reason": "T-DELETION fails: removing the three inner boxes loses nothing, and T-SQUINT shows four outlined rectangles of similar weight before the price reads."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-009",
+   "tier": "Reflex",
+   "where": "inner boxes cp-plan-head, cp-plan-price and cp-plan-seats inside the plan card, 1440 and 375",
+   "evidence": "In dom-1440.json the card (x=396, 284 by 215px) holds three bordered boxes at y=35 (38px tall), y=85 (49px) and y=144 (34px), each 252px wide, then the button. 03-lenses/squint/1440-00.png shows four nested outlines before any text mass. The sweep's nested_radius hit (6px radius inset 16px in a 10px container) sits on the same boxes.",
+   "before": "Card border plus three inner bordered boxes plus a filled button: five rectangles for four facts.",
+   "after": "Remove the inner borders. Group with space: plan name and badge, then the price as the largest element, then a hairline and the seats row, then the button.",
+   "why": "When every row is boxed, nothing is grouped: the reader sees a stack of equal boxes and the price does not lead.",
+   "test": "T-DELETION",
+   "source": "structure"
+  },
+  {
+   "rule": "LAY-006",
+   "tier": "Finish",
+   "where": "price '$24 / month', 1440",
+   "evidence": "In dom-1440.json '$24' is 24px and the plan name 'Starter plan' is 14px, both in the same blue rgb(66,109,169), with the 'Team seats' row in that blue at 10px. In 03-lenses/squint/1440-00.png the price reads at about the same weight as the head box and the button.",
+   "before": "One colour for title, price, seats and outlines.",
+   "after": "Let the price carry the weight: dark neutral text for name and price, blue kept for the badge and the button.",
+   "why": "With one colour on every element, size alone has to carry the order, and 24px against outlined boxes is not enough.",
+   "test": "T-SQUINT",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "The 'Manage plan' button spans the card's inner width on the same edges as the rows above it."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

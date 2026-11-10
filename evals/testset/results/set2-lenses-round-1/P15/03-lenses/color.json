@@ -1,0 +1,60 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A slate-blue family holds the scene: a pale blue-grey ground #e3ecf2, chart bars stepped from #b8cbd8 to #597d96 for the current month, cool ink #33414a, and one muted green #527764 for the received payment.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-COLOUR-SOURCE and T-PALETTE-ROLES pass with one hue family and green held to success; T-NEUTRALS finds cool greys on a warm window body, and T-SURFACE-LADDER finds a second shadow recipe on the phone."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "desktop window body (.ss-window__body), 1440 and 375, tiles/1440-00.png",
+   "evidence": "The window body is warm #f5f5f4, while the text greys are cool: #33414a on 7 elements and #83909a on 5 (17 cool counts in the neutral temperature table). The scene ground #e3ecf2 is also cool.",
+   "before": "Cool slate text on a warm off-white panel inside a cool scene.",
+   "after": "A body tint taken from the same slate hue as the ground and the ink.",
+   "why": "The warm panel is the one neutral that does not belong to the slate family.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Finish",
+   "where": "phone frame shadow, 1440, tiles/1440-00.png",
+   "evidence": "The palette table lists 2 shadow recipes: the window's rgba(24,52,59,0.22) 0 16px and the phone's rgba(50,50,93,0.25) 0 21px 43px -9px, which it counts as 1 heavy shadow.",
+   "before": "Two shadow recipes with different tints for two floating objects.",
+   "after": "One shadow recipe tinted from the ink, applied to both objects.",
+   "why": "Two recipes make the scene's depth inconsistent.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color",
+   "root": "shadow token"
+  }
+ ],
+ "strengths": [
+  "The chart uses lightness steps of one hue, with the darkest bar #597d96 marking the current month.",
+  "Green #527764 appears only on the 'Payment received' marks."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "The phone's black bezel (#0b0b0c) and status bar are device chrome, not palette, and were left out of the text levels",
+  "The caption above the scene (#666666) is the capture's framing and was left out of the text levels"
+ ]
+}

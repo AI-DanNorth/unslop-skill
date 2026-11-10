@@ -1,0 +1,57 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The cool slate scene is muted to one value band: the window text is #65717c on #303a45, and the front preview card is a grey #cbd1d8 with #a1aab5 text, so no layer carries full ink or paper.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-SURFACE-LADDER and T-GRAYSCALE find no layer that stands forward, and T-PALETTE-ROLES finds one grey per surface for headings and meta alike; the cool source holds, which keeps it at 3."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-DARK-MODE"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Reflex",
+   "where": "preview card and workspace window, 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P34\\01-evidence\\tiles\\1440-00.png and C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P34\\03-lenses\\color\\gray-fold-1440.png",
+   "evidence": "The front card fills with #cbd1d8 (17.1% of the area at 375) instead of a paper white, and the window behind it is #303a45; in the grayscale fold every layer sits in the middle of the range and the front card does not read as the focus.",
+   "before": "Front card #cbd1d8 with #a1aab5 text; window #303a45 with #65717c text",
+   "after": "A lightness ladder with one end at full paper and ink: the front card at the page's paper value with dark ink, the receding window darker and quieter",
+   "why": "When every layer is dimmed, nothing tells the eye which object is the subject.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color",
+   "root": "the dimmed surface and text tokens"
+  },
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "all text in the window and the preview card, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P34\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 2 text greys: #65717c on 9 elements on the dark window (including the h3 'Launch assets' and the window title) and #a1aab5 on 7 elements on the card (including the heading 'Launch brief').",
+   "before": "Headings and meta share one grey per surface",
+   "after": "An ink step per surface: headings at full ink for that surface, meta one step lighter",
+   "why": "With headings and meta in one grey, the hierarchy inside each layer is lost as well.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The neutrals hold one cool temperature (22 cool against 1 untinted), so the palette's source is consistent."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here.",
+  "T-DARK-MODE: run on the dark product window shown in the scene; the page's own dark class theme was not rendered and is not verified."
+ ]
+}

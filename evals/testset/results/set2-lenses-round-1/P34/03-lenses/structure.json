@@ -1,0 +1,56 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The layout is a file list with an overlapping preview card, but the selected row barely separates from the window and the preview card is a pale slab whose heading sits close to its fill, so the squint finds no first element.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-SQUINT fails: the selected row and the preview heading do not lead, so the reader has to read to find the selected file; T-SKELETON still shows a list and its preview."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "selected row and preview card, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: the selected row fill rgb(52,65,77) sits on the window fill rgb(48,58,69) (luminance 0.050 against 0.041). The preview card fill rgb(203,209,216) carries its h3 \"Launch brief\" in rgb(161,170,181). In the squint render the card is an even pale slab and the selected row disappears.",
+      "before": "A selection and a preview heading that do not stand out from their grounds.",
+      "after": "Make the preview card the lightest surface and its heading the darkest text in it, and give the selected row a clearly lighter fill.",
+      "why": "Without a visible selection and heading, the reader cannot see which file the preview belongs to.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-283",
+      "tier": "Finish",
+      "where": "window body under the file rows, x 200 to 454, y 307 to 451, 1440px",
+      "evidence": "dom-1440.json: the second file row ends at y=307 and the window runs on to the frame crop at y=451, leaving 144px of empty pane.",
+      "before": "Two rows over an empty pane.",
+      "after": "Add rows until the list runs off the crop, or move the window down: [DATA NEEDED: further file names].",
+      "why": "An empty pane reads unfinished.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The skeleton holds: a list window with an overlapping preview card whose inner order (meta, title, rule, section, footer) is intact."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists.",
+    "Text contrast values belong to the a11y and color lenses (sweep contrast hits); they are cited here only as the cause of the flat squint."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The job is previewing a shared file: the selected \"Launch brief\" row in the dark window links to the white preview card that overlaps it, and the card is the heaviest element in the frame.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (white preview card, then the selected row, then the window title) and T-SKELETON shows a list and its preview; T-JUDGE-TILE finds an empty lower-left pane."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-283",
+      "tier": "Finish",
+      "where": "window body under the file rows, x 200 to 454, y 307 to 451, 1440px",
+      "evidence": "dom-1440.json: the second file row ends at y=307 and the window runs on to the frame crop at y=451, leaving 144px of empty dark pane under two rows.",
+      "before": "Two rows over an empty pane.",
+      "after": "Add rows until the list runs off the crop, or move the window down: [DATA NEEDED: further file names].",
+      "why": "An empty pane reads unfinished next to the busy preview card.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The white preview card (luminance 1.0) on a dark window (0.04) is the clear focal point, and the selected row's lighter fill (0.08) ties it to the list.",
+    "The preview card has its own order: meta line, title, rule, 11px section head, body, footer with an arrow."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "An activity card that leads with one figure and its label, a comparison line, a five-day bar row with the current day highlighted, and a quiet View report link.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT passes (the 124 figure and the dark Friday bar read first) and T-DELETION finds the bars earn their place, since they show which day carried the week."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [],
+ "strengths": [
+  "The figure and its label sit on one line, with the comparison close under them.",
+  "Only the current day's bar is dark, so the chart has one focal element."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

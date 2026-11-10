@@ -1,0 +1,49 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The cards carry specific facts ('Beta opens to every team on May 14.', '0.2s', 'Edits on the plane merge when you land.'), but the four headings are a feature-grid formula that holds for any document tool.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-THREE-LINE passes on '0.2s' and the offline-merge line; T-RIVAL-NAME on the headings and T-HEADING-FORM find four verb-phrase feature heads that would sit on any rival's page."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION",
+  "T-RIVAL-NAME"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-007",
+   "tier": "Reflex",
+   "where": "feature card headings, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The four headings read 'Write together', 'Find anything', 'Works offline' and 'Connects your tools'. Each stays true under any collaborative-docs competitor's name. 'Connects your tools' is followed by three blank squares, not named tools.",
+   "before": "\"Connects your tools\"",
+   "after": "Lead each card with its fact: name the integrations under 'Connects your tools' [DATA NEEDED: which tools], as the offline card does with 'Edits on the plane merge when you land.'",
+   "why": "Generic heads make the reader rely on the card bodies, and one card has no body to rely on.",
+   "test": "T-RIVAL-NAME",
+   "root": "feature-card headings"
+  }
+ ],
+ "strengths": [
+  "'Edits on the plane merge when you land.' explains offline sync with a concrete scene.",
+  "'Beta opens to every team on May 14.' is a dated fact."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little running text for cadence counts: 32 words.",
+  "The caption above the frame ('Considered composition') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

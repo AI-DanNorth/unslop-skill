@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "A share dialog ('Share document / Launch brief / Anyone with the link / Can view / Copy link') rendered entirely in pale grey, so its one action reads as disabled.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-BOLD-MOVE fails: no element is louder than the rest, and the 'Copy link' button reads as disabled; T-ONE-SENTENCE passes on the content."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-006",
+      "title": "Spend boldness in one place",
+      "tier": "Finish",
+      "where": "whole dialog, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the title, labels and the 'Copy link' button are all low-contrast grey on a grey card on a grey stage; the button's white text sits on a pale grey fill.",
+      "before": "Every element at the same washed-out weight.",
+      "after": "Give 'Copy link' a solid fill with full-contrast text and set the title in full ink.",
+      "why": "With nothing louder than the rest, the dialog's single action looks unavailable.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The content is the right minimum for sharing: document name, access, permission and one action."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "Capture timing: the dialog may have been caught mid fade-in; manifest.json prep is empty and network is direct, so it was judged as rendered."
+  ]
+}

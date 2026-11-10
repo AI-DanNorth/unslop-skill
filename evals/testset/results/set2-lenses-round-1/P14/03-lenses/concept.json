@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "An 'Inbox' screen with a more button where both message rows are grey skeleton bars: the frame shows the chrome and none of the mail.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE and T-MEMORY fail: after looking away one remembers only 'Inbox' and grey bars; T-RIVAL-NAME holds for any mail app."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "message list, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the two rows under 'Inbox' are grey circles and grey bars with no sender, subject or time.",
+      "before": "Skeleton rows only.",
+      "after": "Show the loaded inbox, or if this is the loading state, show it next to the loaded state it resolves to. [DATA NEEDED: messages]",
+      "why": "Without content the screen has no subject; it could be any app's loading frame.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "phone frame, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the rounded phone frame runs off the bottom of the grey stage after two rows.",
+      "before": "A cropped device frame with two rows visible.",
+      "after": "Show the whole screen or crop to the list on purpose without the device frame.",
+      "why": "The crop cuts the screen before any content would appear.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The large 'Inbox' title and the more button follow a familiar mobile pattern."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

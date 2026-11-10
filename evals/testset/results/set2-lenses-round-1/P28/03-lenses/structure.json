@@ -1,0 +1,46 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The job is showing four product features: one tall hero tile with a cropped document window sits beside three smaller tiles that each show a different kind of content (a stat, a sentence, marks).",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (the hero window and the 32px \"0.2s\" read first and second) and T-SKELETON finds four different tile contents in one frame; T-JUDGE-TILE finds an empty lower window."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-283",
+      "tier": "Finish",
+      "where": "hero tile window body, x 208 to 472, y 229 to 427, 1440px",
+      "evidence": "dom-1440.json: the window body starts at y=145 and its content (one sentence and two placeholder bars, cs-tile-doc) ends at y=229. The tile runs to y=427, so about 200px of the visible window is empty.",
+      "before": "One line of document text above an empty window.",
+      "after": "Add document content until it runs off the crop, or crop the window shorter: [DATA NEEDED: more lines of the Q3 plan].",
+      "why": "An empty pane in the largest tile reads unfinished and weakens the focal tile.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "Window chrome appears once, on the hero tile; the other tiles show a stat, a sentence and marks (LAY-289, LAY-290).",
+    "The tiles share one radius and padding, with a 12px gap against 16px inner padding."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists.",
+    "Display text set in Segoe UI belongs to the typography lens (sweep hit banned_fonts)."
+  ]
+}

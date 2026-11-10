@@ -1,0 +1,71 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "A lavender scene ground #e8e5ef, lavender tiles, violet status text #694ba8 and a plum button #62547e have no traceable source, and the same 'done' state is violet in two windows and green in the third.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-COLOUR-SOURCE finds no source for the violet family, T-PALETTE-ROLES finds one state in two colours, and T-NEUTRALS finds cool greys on a warm window body; the plum is at least held to the one action."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "'24 assets ready' and 'All comments resolved' (violet) against 'Assets approved' and 'Feedback resolved' (green), 1440 and 375, tiles/1440-00.png",
+   "evidence": "The palette table lists #694ba8 (hue 296) on 2 text elements and #527764 (green) on 2 text elements. All four are check-marked completion labels.",
+   "before": "Completed states are violet in the Assets and Feedback windows and green in the Publish window.",
+   "after": "One success colour for every completed check, with the accent kept for the action.",
+   "why": "The reader has to learn two colours for 'done', and violet also marks the action, so state and action blur.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "status colour token"
+  },
+  {
+   "rule": "CLR-114",
+   "title": "Do not use violet/lavender in the page's own palette",
+   "tier": "Reflex",
+   "where": "scene ground and placeholder tiles, 1440 and 375, bg-1440.png",
+   "evidence": "The area palette at 1440 lists #e8e5ef at 4.8%, lavender tiles #ddd3f4 and #62547e on the 'Publish release' button. The window shadow is tinted purple: rgba(143,126,182,0.2) 0 0 0 1px with rgba(76,54,99,0.3) 0 12px. Nothing in the composition names a brand that owns violet.",
+   "before": "Lavender ground, lavender tiles, violet text, a plum button and purple-tinted shadows.",
+   "after": "An accent sampled from the client's own imagery or brand (Sample, Converge, Justify), held to the primary action.",
+   "why": "With no source, the violet family reads as a model default rather than this product's colour.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "window bodies (.ss-window__body), 1440, tiles/1440-00.png",
+   "evidence": "The window body is warm #f6f5f4, while the heading ink #35414a and the meta grey #84909a are cool (4 cool counts in the neutral temperature table).",
+   "before": "Cool blue-grey text on a warm off-white body inside a lavender scene.",
+   "after": "One neutral temperature: text greys tinted toward the body's hue, or a body tinted toward the greys.",
+   "why": "Three temperatures in one window make the neutrals look assembled rather than derived.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The plum #62547e is used once, on the one primary action 'Publish release'.",
+  "The windows share one shadow recipe, and no card doubles a border with a shadow."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "The caption above the scene (#666666) is the capture's framing and was left out of the text levels"
+ ]
+}

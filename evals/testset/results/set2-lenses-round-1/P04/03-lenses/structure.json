@@ -1,0 +1,31 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A sync-status card with a confirmation toast: the toast sits 14px below the card, set towards its right edge, so card and satellite read as two related objects.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT reads title, rows, then toast in order, and T-LEFT-EDGES finds the toast parted from the card by 14px (card bottom y=162, toast top y=176)."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [],
+ "strengths": [
+  "The toast is parted from the card by a clear 14px gap rather than touching it.",
+  "Rows share one left edge at x=413 and one right edge, and the phone order matches the desktop order."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid"
+ ]
+}

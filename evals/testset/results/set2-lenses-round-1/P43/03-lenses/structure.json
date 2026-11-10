@@ -1,0 +1,67 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "A whole asset-library window (sidebar, content pane and a six-tile placeholder grid) shrunk and centred on a tinted stage, so no part of it is big enough to carry the point.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 4,
+  "reason": "T-SQUINT finds no first read (the sidebar, the Launch package block and the six grey tiles blur to equal weight), and T-JUDGE-TILE finds a third of the window filled by empty placeholder tiles."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-276",
+   "tier": "Reflex",
+   "where": "asset-library window on the stage, 1440 and 375",
+   "evidence": "dom-1440.json: the full window, with title bar, four-item sidebar, content pane and grid, is fitted into a 476x288 box inside a 540x420 stage; its text line boxes are 11px tall ('Overview', 'Everything your team needs to publish.', 'Download package'). At 375 the same window shrinks further (P43/01-evidence/tiles/375-00.png).",
+   "before": "The whole app shell shrunk to fit the slot.",
+   "after": "Crop to the part that carries the point (the Launch package block and its Download package action), size it for the slot, and let the window run off one or two edges.",
+   "why": "Shrinking a full window makes every label too small to read and leaves the eye no single place to land.",
+   "test": "T-SQUINT",
+   "source": "structure",
+   "title": "Recompose for small slots instead of shrinking"
+  },
+  {
+   "rule": "LAY-283",
+   "tier": "Reflex",
+   "where": "right pane of the window, 1440",
+   "evidence": "P43/01-evidence/tiles/1440-00.png: the right third of the window holds six empty pink-grey tiles in a 2x3 grid with no image, label or state; in P43/03-lenses/squint/1440-00.png they blur to the same weight as the content pane.",
+   "before": "Six blank placeholder tiles fill the right pane.",
+   "after": "Cut the pane, or crop the window so the grid runs off the edge as texture behind the focal block.",
+   "why": "The blank grid takes as much room as the content and competes with it for the first look.",
+   "test": "T-DELETION",
+   "source": "structure",
+   "title": "Leave no empty pane"
+  },
+  {
+   "rule": "LAY-273",
+   "tier": "Finish",
+   "where": "window placement on the tinted stage, 1440",
+   "evidence": "dom-1440.json: the window sits 32px from the stage's sides, 58px from its top and 74px from its bottom, floating centred with the tinted ground showing on all four sides.",
+   "before": "Window centred with a margin on every side.",
+   "after": "Inset the window from the sides and run it off the bottom of the stage so the ground frames it.",
+   "why": "A window boxed in the middle of a plate reads as a pasted screenshot rather than a composed scene.",
+   "test": "T-SKELETON",
+   "source": "structure",
+   "title": "On a coloured stage, inset and run off the bottom"
+  }
+ ],
+ "strengths": [
+  "Inside the content pane the order is right: eyebrow, Launch package title, one asset card, a ready line and the Download package action."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The head 'Weekly activity' is 14px/550, the figure '124' 26px/550 with 1.15 leading, the unit 11px, and the change line 10px.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LADDER and T-LEADING pass for the head and the figure; the 9px day labels and 10px change line are the sweep's text_floor hits and crowd the small end of the scale."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The figure '124' at 26px/550 with 1.15 leading carries the card, with its unit 'tasks completed' set beside it at 11px."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

@@ -1,0 +1,50 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The idea is 'the payment you see in the ledger arrives on your phone': Fable Studio's $2,400 for invoice 1042 appears on the desktop list and as the phone's confirmation.",
+  "score": {
+    "dimension": "Concept",
+    "value": 7,
+    "reason": "T-ONE-SENTENCE and T-SIGNATURE pass, and both frames stay readable; T-DEFAULT-AGENT partly holds because a desktop-plus-phone mockup on a pastel stage is a common product-shot default."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-010",
+      "title": "The subject is known, not painted on",
+      "tier": "Reflex",
+      "where": "stage, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the composition uses the stock pairing: a window with traffic-light dots and an iPhone frame with a '9:41' status bar on a pale blue ground.",
+      "before": "Generic device props carry the scene.",
+      "after": "Keep the pairing but drop chrome that adds nothing, such as the window dots, so the two screens' content carries it.",
+      "why": "The device frames are what a default agent would add; the shared invoice is what belongs to this product.",
+      "test": "T-DEFAULT-AGENT",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The same invoice ('Fable Studio · Invoice 1042', '$2,400') links the two screens, so the scene tells one story.",
+    "The phone sits to the right of the ledger at 1440 and below it at 375, so the bar chart and the ledger row stay readable.",
+    "The darkest bar in the chart marks the current period, one bold move."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

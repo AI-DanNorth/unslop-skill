@@ -1,0 +1,35 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "low",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition; the only type is four identical 13px/550 card heads over placeholder bars, so there is little system to judge.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LADDER: the four heads are consistent (one size per kind, TYP-010 passes), but a 13px head is the largest type in a frame about 1000px wide, and there is no other text."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [],
+ "strengths": [
+  "One size and weight for all four card heads (13px/550, 1.38 leading)."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "The 'Considered composition' / 'Composition problem' caption above the frame is playground furniture, not part of the composition's type system",
+  "T-FIGURES and T-PUNCTUATION: no figures or punctuation to judge",
+  "Body text is grey placeholder bars, so body settings cannot be judged"
+ ]
+}

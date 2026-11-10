@@ -1,0 +1,46 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The section head 'Recent exports' is 12px/550, file names 12px/400, counts and status 10px, and the window title 'Exports' 10px.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LEADING passes; T-LADDER finds the section head set apart from the rows by weight only, at one size (TYP-020)."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "strong 'Recent exports' against file names, 1440",
+   "evidence": "'Recent exports' is 12px/550 and 'Campaign assets' and 'Brand library' are 12px/400 (01-evidence/tiles/1440-00.png).",
+   "before": "Section head and rows both 12px; 550 against 400",
+   "after": "Give the head a size step (14px) or a clearer weight (600 to 700) over 400 rows",
+   "why": "Weight alone at the same small size is a weak signal for the one line that names the list.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "Each file row repeats one setting: name 12px/400 over a 10px count."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded",
+  "T-FIGURES: no numbers compare in this composition"
+ ]
+}

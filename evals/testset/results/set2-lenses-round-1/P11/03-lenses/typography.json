@@ -1,0 +1,60 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "mixed",
+ "confidence": "high",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The row names (14px/500) and timestamps (12px) are set well, but the 11px meta lines are cut off at the column edge with no ellipsis: 'perf/search · b41e09d · J' loses 'on Park · 42s'.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-LEADING fails on clipped meta text in the rows (TYP-022, Floor, which caps the score at 4); T-LADDER also finds the head and row names one weight apart."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-022",
+   "title": "Lines never collide or clip",
+   "tier": "Floor",
+   "where": "span.st-meta in the deploy rows, 1440 and 375",
+   "evidence": "The DOM text is 'perf/search · b41e09d · Jon Park · 42s' (38 characters at 11px) in a 120px box; the screenshot shows 'perf/search · b41e09d · J' (01-evidence/tiles/1440-00.png, second row), and at 375 the first row ends 'Maya Chen ·' with '42s' cut (01-evidence/tiles/375-00.png). No ellipsis marks the cut.",
+   "before": "Meta runs past its column and is cut mid-name with no ellipsis",
+   "after": "Let the meta line wrap or drop fields (the hash or the duration) so it fits; if it must truncate, end on an ellipsis and expose the full text",
+   "why": "The reader sees 'J' instead of the author's name and cannot tell the text was cut.",
+   "test": "T-LEADING",
+   "source": "typography",
+   "root": "span.st-meta column width"
+  },
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "card head 'Recent deploys' against row names, 1440",
+   "evidence": "'Recent deploys' is 14px/600 and the row names 14px/500.",
+   "before": "Head 14px/600; row names 14px/500",
+   "after": "Separate the head by size or by a clear weight step (400 rows under a 600 head)",
+   "why": "A 500 to 600 step at one size does not read as hierarchy.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "The status badges 'Live', 'Building' and 'Failed' share one 10px/600 setting.",
+  "Timestamps share one 12px/400 setting and the stylesheet sets tabular-nums."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "A day agenda with a date head, then three appointments on a time column and an event column, each event title over its people.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT passes (Today, then the three event titles) and T-LEFT-EDGES finds two clean columns, times on one line and events on another."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [],
+ "strengths": [
+  "Times share one column and events another, so the agenda can be scanned down either.",
+  "Each title sits closer to its own meta than to the next appointment."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A sage ground #e2ede7, a warm window body #f5f5f3, a slate-blue primary #344f61 and a muted green check form a quiet palette with clear action and success roles, but the text greys spread over five levels in two temperatures.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-PALETTE-ROLES finds five text levels and T-NEUTRALS finds sage, cool and warm neutrals together; T-ACCENT-DOSAGE passes with the slate held to 'Export package'."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-010",
+   "title": "Text greys are a fixed set",
+   "tier": "Finish",
+   "where": "window and popover text, 1440, tiles/1440-00.png",
+   "evidence": "Leaving out the page caption, the text levels are #262628, #35414a (4), #7a8982 (2), #84909a (2) and #9aa39d. #7a8982 (sage) and #84909a (cool) sit at nearly the same lightness and do the same job ('Campaign-assets.zip', '24 assets selected').",
+   "before": "Five text greys, two of them near-duplicates in different hues.",
+   "after": "Three text levels (ink, secondary, tertiary) in one hue.",
+   "why": "Near-duplicate greys show the scale was not fixed.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color",
+   "root": "text grey scale"
+  },
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "window body and popover, 1440",
+   "evidence": "The neutral temperature table counts 6 cool, 5 other (sage) and 3 untinted neutrals, and the window body is warm #f5f5f3.",
+   "before": "Sage, cool slate and warm off-white neutrals in one scene.",
+   "after": "One neutral temperature derived from the sage ground.",
+   "why": "Mixed temperatures make the neutrals look assembled.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Finish",
+   "where": "window and popover shadows, 1440",
+   "evidence": "The palette table lists 2 shadow recipes: rgba(24,52,59,0.22) 0 16px on the window and rgba(22,60,43,0.22) 0 12px on the popover.",
+   "before": "Two shadow tints and offsets.",
+   "after": "One shadow recipe for both floating surfaces.",
+   "why": "Two recipes for the same job blur the depth system.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color",
+   "root": "shadow token"
+  }
+ ],
+ "strengths": [
+  "The slate #344f61 is used once, on the primary action.",
+  "Green is held to the 'Saved to downloads' check and the download icon tile."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "The caption above the scene (#666666) is the capture's framing and was left out of the text levels"
+ ]
+}

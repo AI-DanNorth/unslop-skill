@@ -1,0 +1,60 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T10:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A deploy list whose status icons come from three different kits, so the card has no single visual system.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-OWN-SYSTEM and T-MIRROR fail: a purple gradient tile, an orange filled circle and a pink square with a red triangle sit in one list, plus a teal check inside the Deploy button."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-DEFAULT-PLAN",
+    "T-REMOVE-DEVICE",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-001",
+      "tier": "Reflex",
+      "where": "status icons, 1440",
+      "evidence": "'Checkout redesign' has a purple gradient tile with a white check, 'Search speedup' an orange filled circle with a refresh glyph, 'Pricing copy' a pink square with a red triangle, and the 'Deploy' button a teal check badge.",
+      "before": "Four icon treatments from different sets",
+      "after": "One icon set in one style, with colour used only for deploy state",
+      "why": "Mixed kits make the card read as assembled from parts, not drawn by one hand.",
+      "test": "T-OWN-SYSTEM",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "tier": "Reflex",
+      "where": "status column, 1440",
+      "evidence": "The icon shapes (check, refresh, triangle) carry state, but their loud fills (purple, orange, pink) carry nothing, so the colour competes with the deploy names.",
+      "before": "Decorative colour fills on every status",
+      "after": "Neutral list with state in a small, consistent mark",
+      "why": "On an Operate screen the deploy names and their state are the task; decoration pulls the eye away.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The content structure (name, branch and author, relative time, one Deploy action) fits the job."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no brand authority, audience or overrides were available, so the item was read as an Operate composition (CON-018).",
+    "T-RIVAL-NAME cap: the composition names no client, so every placeholder label holds under any rival; the cap at 5 was not applied and the test was used only to spot default copy.",
+    "T-IDEA-CARRIES: single composition, there is no second screen to carry the idea.",
+    "T-DELETE-PICTURE and T-PROMISE-PICTURED: no lead image and no marketing promise, except where a finding says so.",
+    "T-COVER-TEXT: no brand theme or motif to recognise.",
+    "The caption above some frames ('Considered composition' / 'Composition problem') is fixture text from the capture host and was not judged."
+  ]
+}

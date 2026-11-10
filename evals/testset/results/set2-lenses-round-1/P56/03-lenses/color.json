@@ -1,0 +1,57 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The deploy card's status icons keep their meaning (green live, grey building, red failed), but the action is a framework indigo #4f46e5 and the card and icons sit in indigo and cyan glows with no brand behind them.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-PALETTE-ROLES passes for the states, while T-COLOUR-SOURCE finds a default indigo accent and T-SURFACE-LADDER finds three shadow recipes, two of them coloured glows."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-003",
+   "title": "Colour has a source",
+   "tier": "Reflex",
+   "where": "'Deploy' button and card ring, 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P56\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The only chromatic group is #4f46e5 (hue 277), the framework's indigo, on the Deploy fill, with a card ring rgba(99,102,241) and a cyan #22d3ee halo; nothing in the frame sources it. The sweep's glow detector flags the indigo and cyan glows (SLP-008).",
+   "before": "Framework indigo #4f46e5 as the accent, with indigo and cyan glows",
+   "after": "An accent sampled from the product's own brand, held to the action, with no glow",
+   "why": "A default indigo with glows reads as a generator's palette, not this product's.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color",
+   "root": "the indigo accent token"
+  },
+  {
+   "rule": "CLR-013",
+   "title": "Depth comes from lightness and one shadow",
+   "tier": "Reflex",
+   "where": "card and status icons, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P56\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table finds 3 shadow recipes: an inset hairline, an indigo ring with a 0.4 alpha indigo spread, and 'rgba(99,102,241,0.8) 0 0 14px' with a #a5b4fc ring; the tile also shows green and red halos around the status icons.",
+   "before": "Three shadow recipes, two of them coloured glows",
+   "after": "One neutral shadow recipe for the card and no glow on the icons",
+   "why": "Coloured glows add a second depth system and blur the state icons.",
+   "test": "T-SURFACE-LADDER",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "State colours keep their meaning: green for live, grey for building, red for failed.",
+  "Text is untinted greys (#1f1f1f ink, #8a8a8a and #9a9a9a meta)."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

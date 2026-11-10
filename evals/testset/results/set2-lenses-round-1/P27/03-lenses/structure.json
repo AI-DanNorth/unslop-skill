@@ -1,0 +1,66 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The window shows a file list, but its one real row is set like the column headers among fifteen 20px placeholder rows, so the composition has no moment to look at.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 4,
+    "reason": "T-SQUINT fails (fifteen even stripes, no first element) and T-DENSITY-FIT fails (20px rows, supported by the sweep's spacing_monotony hit); the window title is the only anchor."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [
+    {
+      "rule": "LAY-006",
+      "tier": "Reflex",
+      "where": "file list, 03-lenses/squint/1440-00.png, 1440px",
+      "evidence": "dom-1440.json: \"Launch deck.pdf\", \"Just now\" and \"4.2 MB\" are 10px/400, the same size and weight as the \"Name\", \"Modified\" and \"Size\" headers, and the row has no fill. The squint render shows the list as even grey stripes with no heavier row.",
+      "before": "One real row set at header size, with no fill, among placeholder rows.",
+      "after": "Make the real row the focal point: larger type, a selection fill and a coloured file icon.",
+      "why": "Without a first element the reader cannot tell which file the picture is about.",
+      "test": "T-SQUINT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-020",
+      "tier": "Finish",
+      "where": "file list rows 2 to 16, y=131 to 431, 1440px",
+      "evidence": "dom-1440.json: fifteen rows (cs-fl-row 2 to 16) sit on a 20px pitch. The sweep's spacing_monotony hit (LAY-001) finds 8px in 93% of spacing values.",
+      "before": "A dense table rhythm of 15 rows at 20px.",
+      "after": "Use fewer, taller rows (about 38px) and let the list run off the bottom of the frame.",
+      "why": "Table density in a small illustration packs the frame with stripes and hides the one row that matters.",
+      "test": "T-DENSITY-FIT",
+      "source": "structure"
+    },
+    {
+      "rule": "LAY-268",
+      "tier": "Finish",
+      "where": "right edge of the frame, 1440px",
+      "evidence": "dom-1440.json: the window spans x=200 to 760 and the frame ends at x=708, so it bleeds 52px (9%) off the right edge.",
+      "before": "A 9% bleed.",
+      "after": "Either show the window whole or crop it harder (10 to 40%) so the bleed reads as a choice.",
+      "why": "A slight trim looks like a window that did not quite fit rather than a deliberate crop.",
+      "test": "T-JUDGE-TILE",
+      "source": "structure"
+    }
+  ],
+  "strengths": [
+    "The window title \"Projects\" is centred in the title bar and the column headers line up with their values on fixed tracks."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

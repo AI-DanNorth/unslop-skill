@@ -1,0 +1,44 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The file list is warm-grey neutrals (#ebebe9 stage, #f6f5f4 panel) with one blue used only for the selected row: a #eef4fd tint and a blue file icon; the column heads use a cool #8a8f94.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-ACCENT-DOSAGE pass (one hue, one role: selection), and T-NEUTRALS finds one drift: cool grey column heads on a warm panel."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-008",
+   "title": "Neutrals hold one temperature",
+   "tier": "Finish",
+   "where": "column heads 'Name', 'Modified', 'Size', 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P42\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table counts 7 cool neutrals against 28 untinted: the column heads are #8a8f94 and the ink #35414a, both blue-grey, on a warm #f6f5f4 panel and #ebebe9 stage.",
+   "before": "Cool #8a8f94 and #35414a text on a warm #f6f5f4 panel",
+   "after": "Text greys tinted to the warm panel, or an untinted set",
+   "why": "A small temperature mismatch between text and panel; it is the one place the neutrals drift.",
+   "test": "T-NEUTRALS",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "Blue appears only on the selected row (tint #eef4fd and the file icon), so selection is the one coloured state.",
+  "Placeholder rows are a quiet grey that never competes with the selected row."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

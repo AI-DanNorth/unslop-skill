@@ -1,0 +1,57 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "high",
+ "overall_reason": "The deploy card runs on untinted greys with a near-black #1f1f1f primary and green, grey and red status icons, but a violet-to-pink 'Ask AI' pill adds a second accent with no source in the card.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-PALETTE-ROLES finds two competing accents (the black Deploy button and the violet-pink pill) and T-COLOUR-SOURCE finds no source for the violet; the neutral base and status colours otherwise hold their roles."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-110",
+   "title": "One accent across the page, never two (unless a declared full-palette posture)",
+   "tier": "Reflex",
+   "where": "span.st-ai 'Ask AI' in the third row, 1440 and 375, tiles/1440-00.png lower right of the card",
+   "evidence": "The palette table lists one gradient on span.st-ai with stops #8b5cf6 and #ec4899, and a third shadow recipe, rgba(168,85,247,0.4) 0 0 12px. The card's primary action, 'Deploy', is #1f1f1f. The sweep's gradient, glow and look_family (violet-gradient, 3 of 3 tells) hits all land on this one element.",
+   "before": "A violet-to-pink gradient pill with a violet glow sits in a grey card, beside the red failed icon.",
+   "after": "One accent: 'Ask AI' as a secondary control in the card's own ink and grey surface, or in the single accent the product defines.",
+   "why": "The pill outranks the Deploy button and the red failure state in its row, so the eye lands on a feature promotion instead of the failed deploy.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  },
+  {
+   "rule": "CLR-003",
+   "title": "Colour has a source",
+   "tier": "Reflex",
+   "where": "span.st-ai, 1440, tiles/1440-00.png",
+   "evidence": "No other element in the card uses hues 265 to 360: the chromatic area at 1440 is 0.14%, all of it in the 270-360 bands from this pill. Nothing in the composition (a logo, a product mark, imagery) carries violet or pink.",
+   "before": "Violet #8b5cf6 into pink #ec4899.",
+   "after": "A colour traced to the product's own brand or design system, or no colour at all for this control.",
+   "why": "A hue that appears once with no source reads as a default added for 'AI', not a choice for this product.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "The status icons keep fixed meanings: a green globe for live, a grey spinner for building and a red cross for failed, each with its own shape.",
+  "The base is one untinted grey family on white with a near-black primary button."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here"
+ ]
+}

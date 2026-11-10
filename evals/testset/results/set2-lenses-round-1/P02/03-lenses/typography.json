@@ -1,0 +1,47 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T00:05:07",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "One UI sans (Segoe UI drawn at 1440, from a -apple-system, BlinkMacSystemFont, \"Segoe UI\" stack; system-ui at 375) sets every role, which fits a product component in Operate mode, so TYP-005 does not apply. The card head 'Recent deploys' (14px/600) and the row names (14px/500) differ only by one weight step at the same size, and two control labels sit at 12px in 500 and 550.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-LADDER fails on an unclear weight step between the card head and the row names (TYP-020); T-TYPE-SOURCE, T-LEADING and T-PUNCTUATION pass."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-FIGURES",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-020",
+   "title": "Weight steps are clear",
+   "tier": "Reflex",
+   "where": "card head span 'Recent deploys' against row names, 1440 and 375",
+   "evidence": "The DOM shows 'Recent deploys' at 14px/600 and 'Checkout redesign', 'Search speedup' and 'Pricing copy' at 14px/500 (01-evidence/tiles/1440-00.png, top of the card). The 'Deploy' label is 12px/550 and the 'Ask AI' label is 12px/500.",
+   "before": "Card head 14px/600; row names 14px/500; control labels 12px at 550 and 500",
+   "after": "Separate the card head from the rows by size (a step of the fixed scale above 14px) or by a clear weight step (400 rows, 600 head); put both control labels on one weight",
+   "why": "A 500 to 600 step at the same size reads as a rendering accident, so the head does not stand above the list it names.",
+   "test": "T-LADDER",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "Timestamps ('Just now', '12m ago') sit at one size and weight, 12px/400, right-aligned.",
+  "The stylesheet sets tabular-nums."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width (type table measure.paragraphs = 0)",
+  "00-contract.md is absent: visitor mode taken as Operate (a product component captured on its own) and no brand authority recorded"
+ ]
+}

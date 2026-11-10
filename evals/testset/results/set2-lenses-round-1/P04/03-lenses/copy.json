@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The card says 'Design library: Up to date', 'Brand assets: 2 min ago' and 'All files synced': literal status words for a sync panel.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 7,
+  "reason": "T-LABEL-READ and T-STATE-COPY pass on plain status words; T-FRESH-READER cannot answer much beyond 'files are synced' because the card has 15 words."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The status pair 'Up to date' and '2 min ago' names state and time without decoration.",
+  "The confirmation 'All files synced' says what happened in three words."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: 15 words."
+ ]
+}

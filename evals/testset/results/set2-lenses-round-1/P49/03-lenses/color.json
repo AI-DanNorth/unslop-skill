@@ -1,0 +1,31 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The deploy list is untinted greys on white with state hues used only on status icons: a green globe for live, a grey spinner for building and a red cross for failed; the 'Deploy' action is a #1f1f1f fill.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-PALETTE-ROLES and T-ACCENT-DOSAGE pass: each hue holds one state meaning, the action stays in ink and no hue decorates; the spinner in grey keeps the in-progress state quiet, which earns 8."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [],
+ "strengths": [
+  "State colours keep their meaning: green for live, grey for building and red for failed, each on one small icon.",
+  "The action is in near-black, so no hue competes with the status icons."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

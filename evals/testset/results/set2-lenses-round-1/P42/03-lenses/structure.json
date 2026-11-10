@@ -1,0 +1,44 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "A product scene that bleeds one file window off the stage's right and bottom edges and lets one highlighted row carry the point while the other rows are quiet placeholders.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 7,
+  "reason": "T-SQUINT passes at 1440 (the blue Launch deck.pdf row reads first, the window title second), but T-PHONE-ORDER at 375 finds the name column running into the Modified column."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-285",
+   "tier": "Reflex",
+   "where": "highlighted file row, 375",
+   "evidence": "dom-375.json: 'Launch deck.pdf' is white-space: nowrap in a 108px track (x=58 to 166) and the Modified track starts at x=176; the 375 tile shows 'Launch deck.pdfJust now' with no gap (P42/01-evidence/tiles/375-00.png).",
+   "before": "Name and Modified columns touch at 375.",
+   "after": "Recompose the window for the narrow slot: drop the Size column or give the name track the width it needs, keeping at least the 10px column gap.",
+   "why": "The one row the scene exists to show is the row that breaks on a phone.",
+   "test": "T-PHONE-ORDER",
+   "source": "structure",
+   "title": "Text never touches a neighbouring box"
+  }
+ ],
+ "strengths": [
+  "The window bleeds off the stage's right and bottom edges at 1440, so the stage frames it instead of boxing it (LAY-268, LAY-273).",
+  "Only one row carries real text and colour; the other eight are placeholder bars, so the focal point is decided."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

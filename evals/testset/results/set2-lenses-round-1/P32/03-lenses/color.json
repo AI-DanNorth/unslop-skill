@@ -1,0 +1,56 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The deploy card's neutrals are clean, but its status marks are Tailwind 400 and 500 swatches set as gradients (#34d399 to #06b6d4, #a78bfa to #6366f1, #fbbf24 to #f97316) plus a #fecdd3 rose tile, with no source and two different hues for success.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-COLOUR-SOURCE finds framework swatches as the status palette and T-PALETTE-ROLES finds five hue bands and two success colours; the untinted neutrals and the ink action keep it at 4."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION"
+ ],
+ "findings": [
+  {
+   "rule": "CLR-003",
+   "title": "Colour has a source",
+   "tier": "Reflex",
+   "where": "status icons and the Deploy button's check, 1440 and 375, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P32\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The palette table lists 3 gradients with stops #34d399 to #06b6d4, #a78bfa to #6366f1 and #fbbf24 to #f97316, and a #fecdd3 fill; these are framework default swatches. The sweep's gradient detector flags the Deploy button blob (SLP-007).",
+   "before": "Framework 400 and 500 swatches as gradient status tiles",
+   "after": "A small state set (live, building, failed) with one flat colour each, sampled from the product's own palette",
+   "why": "Default swatches and gradients on small marks read as kit decoration rather than state.",
+   "test": "T-COLOUR-SOURCE",
+   "source": "color",
+   "root": "the status blob styles"
+  },
+  {
+   "rule": "CLR-020",
+   "title": "State colours keep their meaning",
+   "tier": "Reflex",
+   "where": "'Checkout redesign' row icon and the 'Deploy' button check, 1440, C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P32\\01-evidence\\tiles\\1440-00.png",
+   "evidence": "The success check on the first row is a violet-to-indigo tile, while the success check on the Deploy button is emerald-to-cyan; the palette table spreads 0.12% chroma over five hue bands (270 to 300, 60 to 90, 0 to 30, 30 to 60, 180 to 210).",
+   "before": "Two hues for one success state; five hue bands for three states",
+   "after": "One hue per state, used the same way on the button and in the list",
+   "why": "When success is violet in one place and green in another, colour stops carrying meaning.",
+   "test": "T-PALETTE-ROLES",
+   "source": "color"
+  }
+ ],
+ "strengths": [
+  "Text and surfaces are untinted greys (#1f1f1f ink, #8a8a8a and #9a9a9a meta) and the action is in near-black."
+ ],
+ "not_investigated": [
+  "Brand authority: the run has no 00-contract.md, so no brand colours or design system were available; T-COLOUR-SOURCE was judged from the composition alone, and the visitor mode was taken as Operate (a product UI component).",
+  "T-DARK-MODE: the stylesheet ships a dark class theme, but the capture rendered only the light scheme, so dark mode is not verified.",
+  "T-GRADIENT-STOPS and contrast: owned by the sweep (A11-001); small-text contrast hits are not restated here."
+ ]
+}

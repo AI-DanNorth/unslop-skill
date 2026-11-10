@@ -1,0 +1,32 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "A notification-preference card: title, two setting rows and a full-width save action sit inside an inner panel that is inset evenly on all four sides.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 8,
+  "reason": "T-SQUINT passes (the dark Save preferences bar reads first, then the title, then the rows) and T-JUDGE-TILE finds an even 12px inset on every side of the inner panel; the card is small, so there is little to rank."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [],
+ "strengths": [
+  "The inner panel (x=408 to 668, y=42 to 210) sits 12px inside the grey outer frame on all four sides, so the nesting reads as deliberate.",
+  "Rows share one left line at x=422 and one right line at x=654; the action spans the same 232px column."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here.",
+  "The sweep's near_tangent hit is the toggle knob sitting 2px inside its track; that is how a switch is drawn, and it is left to the sweep adjudication."
+ ]
+}

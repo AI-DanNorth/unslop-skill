@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "An 'Exports' window listing recent exports, with an 'Export complete · 24 files saved' toast above it; the stage cuts the list after two of its four rows.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-ONE-SENTENCE passes; T-SIGNATURE fails because the stage hides two of four rows, and T-REMOVE-DEVICE shows the toast repeats 'Campaign assets · 24 files · Ready'."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "'Recent exports' list, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the window is cut by the stage's bottom edge after 'Brand library'; the DOM lists 'Product launch · 32 files' and 'Homepage · 8 files', which never show.",
+      "before": "Half the list cropped away.",
+      "after": "Fit the window to the stage or shorten the list to what fits.",
+      "why": "The working object is half missing from the frame.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "toast above the window, 1440 and 375",
+      "evidence": "In tiles/1440-00.png the toast 'Export complete / 24 files saved' repeats the first row 'Campaign assets / 24 files / Ready'.",
+      "before": "A toast that restates the first row.",
+      "after": "Keep the toast only if it adds an action, such as 'Open folder'.",
+      "why": "Two signals for one event add reading without information.",
+      "test": "T-REMOVE-DEVICE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "Each export row names the set and its file count ('Campaign assets / 24 files')."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

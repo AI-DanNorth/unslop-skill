@@ -1,0 +1,43 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T18:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "An exports window whose list is ordered well, but the Export complete toast sits over the list head and the first row's status and runs past the window's right edge.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 5,
+  "reason": "T-SKELETON passes for the list, but T-JUDGE-TILE finds the toast covering 'This week' and the first 'Ready' and running about 19px past the window."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-LEFT-EDGES",
+  "T-JUDGE-TILE",
+  "T-DENSITY-FIT",
+  "T-PHONE-ORDER"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-267",
+   "tier": "Reflex",
+   "where": "Export complete toast over the list, 1440 and 375",
+   "evidence": "dom-1440.json: the toast spans x=564 to 710 and y=53 to 105. It covers 'This week' (x=634, y=55) and the first row's 'Ready' (x=650, y=98), and its right edge runs past the window (which ends near x=691) to the stage edge, where it is clipped (P52/01-evidence/tiles/1440-00.png, P52/01-evidence/tiles/375-00.png).",
+   "before": "Toast over the list head and the first row's status, clipped by the stage.",
+   "after": "Anchor the toast to the window's chrome or bottom margin, inside the window's right edge, where it covers no list content.",
+   "why": "The confirmation hides the very status it confirms, and the clipped edge makes the toast look misplaced.",
+   "test": "T-JUDGE-TILE",
+   "source": "structure",
+   "title": "A satellite covers chrome or margin, never content"
+  }
+ ],
+ "strengths": [
+  "Rows share one template: icon at x=399, name and file count at x=424, status ending at x=677, with hairlines between rows."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent, so no audience, visitor mode or brief overrides were read; the item is judged as the single UI composition it is (an Operate-style component).",
+  "T-FIVE-SECOND fold check, T-SCREEN-BY-SCREEN beyond the single tile, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY were not run: the artifact is one composition on one screen with no section sequence.",
+  "Colour, type sizes, contrast and copy belong to other lenses and the sweep; they are not judged here."
+ ]
+}

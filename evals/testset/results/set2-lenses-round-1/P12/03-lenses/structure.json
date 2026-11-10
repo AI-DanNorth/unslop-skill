@@ -1,0 +1,45 @@
+{
+ "lens": "structure",
+ "ran_at": "2026-11-09T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "A file-list window with one real row ('Launch deck.pdf') highlighted over eight placeholder rows, on one column grid of Name, Modified and Size.",
+ "score": {
+  "dimension": "Hierarchy",
+  "value": 7,
+  "reason": "T-SQUINT reads the highlighted row first and the table grid second, and T-LEFT-EDGES finds every row on the header's three column starts (x=220, 514, 644)."
+ },
+ "tests_run": [
+  "T-SQUINT",
+  "T-SKELETON",
+  "T-DELETION",
+  "T-JUDGE-TILE",
+  "T-LEFT-EDGES",
+  "T-PHONE-ORDER",
+  "T-DENSITY-FIT"
+ ],
+ "findings": [
+  {
+   "rule": "LAY-276",
+   "tier": "Finish",
+   "where": "Size column at 375",
+   "evidence": "In 01-evidence/tiles/375-00.png the window bleeds off the stage's right edge and the one real row's size is cut to '4.2', with the 'Size' header at the edge.",
+   "before": "The same layout cropped at 375, so the last column loses its value.",
+   "after": "Recompose for the slot at 375: drop the Size column or let the window bleed on the left so the real row's values stay whole.",
+   "why": "A crop that cuts a value in the one real row hides the fact the row exists to show.",
+   "test": "T-PHONE-ORDER",
+   "source": "structure"
+  }
+ ],
+ "strengths": [
+  "Every row shares one three-column template with fixed tracks, and the one real row is the only tinted one.",
+  "The window bleeds off the stage at 1440 rather than sitting boxed in its middle."
+ ],
+ "not_investigated": [
+  "00-contract.md is absent from the run, so the visitor mode was inferred from the artifact: a single product composition (card, window or scene), judged as a component in Operate terms",
+  "T-FIVE-SECOND, T-SCREEN-BY-SCREEN, T-HEADINGS-READ, T-STOCK-ORDER, T-COMPOSITION-RUN and T-ANATOMY: the artifact is one composition on one tile, with no page, fold or section sequence",
+  "flat_hierarchy: the sweep skipped it where only one type role exists; the squint render stands in only as a viewing aid",
+  "spacing_monotony (8px is 89% of 73 spacing values) is the sweep's finding; in a table of even rows it supports the grid read rather than undercutting it.",
+  "A caption above the stage is page text and was not used as evidence."
+ ]
+}

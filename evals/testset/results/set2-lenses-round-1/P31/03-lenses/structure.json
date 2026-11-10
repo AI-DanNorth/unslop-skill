@@ -1,0 +1,34 @@
+{
+  "lens": "structure",
+  "ran_at": "2026-11-09T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The job is getting a launch package: the window bleeds off the right edge, the sidebar marks \"Assets\" as current, and the main pane runs from a 22px title through one bundle card to one primary button.",
+  "score": {
+    "dimension": "Hierarchy",
+    "value": 8,
+    "reason": "T-SQUINT passes (title, bundle card, then the \"Download package\" button), T-SKELETON reads as a sidebar and a main pane, and T-LEFT-EDGES finds two start lines (x=212 and x=340)."
+  },
+  "tests_run": [
+    "T-SQUINT",
+    "T-SKELETON",
+    "T-DELETION",
+    "T-JUDGE-TILE",
+    "T-LEFT-EDGES",
+    "T-DENSITY-FIT",
+    "T-PHONE-ORDER",
+    "T-SCREEN-BY-SCREEN"
+  ],
+  "findings": [],
+  "strengths": [
+    "The window bleeds 252 of 760px (33%) off the right edge, inside the 10 to 40% range of LAY-268, so the frame shows the working part of the app.",
+    "The main pane has one order: eyebrow, 22px/550 title, one-line description, bundle card, status line, one primary button.",
+    "Text starts on two lines only: the sidebar at x=212 and the main pane at x=340."
+  ],
+  "not_investigated": [
+    "00-contract.md is absent: no visitor mode, audience or brief overrides; judged as a single product illustration (an app component shown in a frame), with Operate-style rules for the component itself.",
+    "T-FIVE-SECOND, T-HEADINGS-READ, T-COMPOSITION-RUN, T-STOCK-ORDER and T-ANATOMY: the artifact is one composition in one 1440x900 tile, not a page with sections, a fold or a visitor job.",
+    "The label text above the frame and the plate around it belong to the viewing page, not the composition; they were not judged.",
+    "Squint render made with Pillow (GaussianBlur 8) in 03-lenses/squint/ as a viewing aid; no blur_render detector exists."
+  ]
+}

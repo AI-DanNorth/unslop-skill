@@ -1,0 +1,54 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The deploy rows are literal ('Checkout redesign', 'main · Maya Chen', 'Just now'), but the failed row 'Pricing copy' ends in an 'Ask AI' chip where its time belongs.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 5,
+  "reason": "T-LABEL-READ fails on 'Ask AI', which names no object or outcome, and T-STATE-COPY fails because no row gives a status word; the remaining labels are plain."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-017",
+   "tier": "Reflex",
+   "where": "'Pricing copy' row, right side, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The chip reads 'Ask AI' with sparkle glyphs on both sides. The other two rows show a time ('Just now', '12m ago') in the same position; this row shows no time.",
+   "before": "\"Ask AI\"",
+   "after": "A label that names the action on this deploy, for example 'View log' or 'Retry deploy', with the row's time restored",
+   "why": "'Ask AI' says nothing about what the reader will get. It also displaces the row's time, so the failed deploy is the one row without a timestamp.",
+   "test": "T-LABEL-READ"
+  },
+  {
+   "rule": "CPY-019",
+   "tier": "Reflex",
+   "where": "deploy list rows, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The 'Pricing copy' row carries only a red circled-x icon and a time; the 'Search speedup' row carries only a spinner icon. No word on the card says 'Failed' or 'Building', or what to do next.",
+   "before": "\"Pricing copy\" with a status icon only",
+   "after": "A status word per row ('Live', 'Building', 'Failed') and, on the failed row, the next step (for example 'View log')",
+   "why": "A reader who cannot tell the icons apart learns nothing from the words about which deploy failed.",
+   "test": "T-STATE-COPY"
+  }
+ ],
+ "strengths": [
+  "The project names 'Checkout redesign', 'Search speedup' and 'Pricing copy' read as real branches of work."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read."
+ ]
+}

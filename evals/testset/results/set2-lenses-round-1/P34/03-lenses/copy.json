@@ -1,0 +1,57 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The file labels are literal ('Launch brief, Updated today, PDF'), but the document preview leads with a stock tagline, 'A simpler way to work together.', and a reflex triad.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 5,
+  "reason": "T-LABEL-READ passes on the file list; T-RIVAL-NAME and T-CADENCE fail on the preview's 'A simpler way to work together.' and 'Shared projects, clear ownership, and one place for feedback.'"
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-007",
+   "tier": "Reflex",
+   "where": "document preview card, subtitle, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The preview of 'Launch brief' shows the subtitle 'A simpler way to work together.' The line stays true under any collaboration product's name.",
+   "before": "\"A simpler way to work together.\"",
+   "after": "The brief's own subject: what is launching and when [DATA NEEDED: the launch's name and date]",
+   "why": "The preview is the one place the product shows document content, and it shows a line that belongs to no one.",
+   "test": "T-RIVAL-NAME"
+  },
+  {
+   "rule": "CPY-013",
+   "tier": "Reflex",
+   "where": "document preview card, 'The release' section, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The body under 'The release' reads 'Shared projects, clear ownership, and one place for feedback.': three abstract nouns with no fact.",
+   "before": "\"Shared projects, clear ownership, and one place for feedback.\"",
+   "after": "One concrete line about the release, for example what changes for whom",
+   "why": "A three-part list of qualities is the default cadence and says nothing the reader can check.",
+   "test": "T-CADENCE"
+  }
+ ],
+ "strengths": [
+  "The file list states type and recency ('Updated today', 'Updated yesterday', 'PDF').",
+  "'Shared with the product team' names the audience."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "The whole composition renders at very low contrast at both widths; that is the colour lens's call.",
+  "The caption above the frame ('Composition problem') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

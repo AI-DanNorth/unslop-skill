@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A three-row inbox (sender, subject, time, unread dot) that serves the task, with placeholder times and an avatar colour that means nothing.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-SIGNATURE is weak because every time reads '9:41'; T-BOLD-MOVE fails on the single pink avatar; T-RIVAL-NAME and T-MIRROR hold for any mail client."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "timestamp column, 1440 and 375",
+      "evidence": "In tiles/1440-00.png all three rows show '9:41', the device-mockup placeholder time.",
+      "before": "'9:41' on every message.",
+      "after": "Use real, different times so the list can be read in order. [DATA NEEDED: message times]",
+      "why": "Identical times remove the one cue an inbox is scanned by.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-006",
+      "title": "Spend boldness in one place",
+      "tier": "Finish",
+      "where": "avatars, 1440",
+      "evidence": "In tiles/1440-00.png only Maya Chen's avatar is pink; Jon Park's and Ana Ruiz's are grey, although Ana's row is also unread.",
+      "before": "One coloured avatar with no stated meaning.",
+      "after": "Give every avatar the same treatment, or tie colour to one state and apply it to every row in that state.",
+      "why": "A colour that marks nothing draws the eye to one row for no reason.",
+      "test": "T-BOLD-MOVE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The unread dots hang in the left margin, so the avatar column stays aligned for read and unread rows."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

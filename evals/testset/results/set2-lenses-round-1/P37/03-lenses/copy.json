@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "The invoice states every fact a payer needs: 'Invoice 1042, Paid, Studio Lake, Design retainer · June, $840.00', the line items '$800.00' and 'Tax $40.00', 'Paid June 12' and 'Bank deposit $840.00, Arriving tomorrow, Checking ··2048'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 8,
+  "reason": "T-FRESH-READER answers what, for whom and how much; T-THREE-LINE passes because the sum checks ($800 plus $40 is $840); T-STATE-COPY passes on 'Arriving tomorrow' with the account."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "The amounts add up and the deposit names the account ('Checking ··2048').",
+  "'Arriving tomorrow' says what happens next in two words."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "The caption above the frame ('Considered composition') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

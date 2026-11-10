@@ -44,3 +44,23 @@ The two misses:
 - detail-copy (P44 bad 7, P09 good 6). The reviewer found the truncated email chip on the bad half, but marked the good half down for having no title or action. That is the harness crop, not the design.
 
 The lens and the sweep complement each other: the sweep is strongest where the lens is weakest (named AI tells), and the lens sees what geometry cannot (focus, crop, competing windows).
+
+## All five phase-2 lenses, blind (10 Nov 2026)
+
+Seven blind reviewers ran `lens-typography`, `lens-color` and `lens-concept` (two reviewers each: P01 to P28 and P29 to P57) and `lens-copy` (one reviewer, all 57) under LENS-BRIEF-PHASE2. The target was withheld. The brief added one line of capture context: each item is one isolated composition, so missing page furniture is the framing. Table: `lens-pairs.md`. Judgments: `../set2-lenses-round-1/` (PNG working files left out).
+
+| Lens | Bad half lower | Ties | Inverts | Where it separates |
+|---|---|---|---|---|
+| structure | **30 of 32** | 0 | 2 | everywhere |
+| concept | 26 of 32 | 5 | 1 | scene 9 of 9, style 7 of 8, composition 10 of 13 |
+| typography | 20 of 32 | 12 | 0 | compact-reflow, ui-anatomy, caps, tiny, detail, story-crop, result-weight |
+| color | 15 of 32 | 17 | 0 | purple, glow, icons, decorative-noise, surface-contrast, visual-restraint, colored-layers, material-contrast |
+| copy | 2 of 32 | 30 | 0 | tile-lead only: the halves of a pair share their words |
+
+- **At least one lens separates every pair: 32 of 32.** Structure's two misses are each caught elsewhere. Concept catches crop-filler (5 against 6) and typography catches detail-copy (6 against 7).
+- The mean of the four design lenses separates 30 of 32, with 1 tie (crop-filler) and 1 inversion (detail-copy).
+- Only 3 of 160 judgments invert, all on the two pairs where the isolated crop misleads the reviewer. Typography and color never invert: off their own domain they tie and do not guess. That is the behaviour a per-dimension score needs.
+- The lenses are specific. Color separates the color faults (purple, glow, onion layers) and ties on spacing. Typography separates the scaled-down and caps faults and ties on scene faults. Copy cannot separate pairs that share copy, which is expected rather than a gap.
+- What the lenses add over the sweep: the half-scale transforms (`transform: scale(0.5)` in P25, about 0.62 in P43). The sweep's `text_floor` reads declared sizes, so it missed them, and both typography reviewers flagged them (TYP-135). Candidate detector: measure text size after transforms.
+
+The motion pairs are not in this set yet. Capture now has a passive recording mode (`capture.mjs --passive <ms>`, `01-evidence/passive.json`, read by `motion_snap`) for motion that plays without a click.

@@ -1,0 +1,58 @@
+{
+ "lens": "typography",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The system UI stack (Segoe UI drew every glyph at 1440 per fonts.json; system-ui computed at 375) sets every role, which fits a product-UI (Operate) composition on a 13/12px ladder, but the 26-character role 'Editor with comment access' breaks onto two right-aligned lines, and the invited email is cut to 'alexandra.whitfield@northwind...'.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-HEADLINE-FIT: the long name wraps cleanly over two lines, but the role label wraps mid-phrase and the email truncates. The type does not absorb either long-content case."
+ },
+ "tests_run": [
+  "T-FONT-RENDERED",
+  "T-TYPE-SOURCE",
+  "T-FACE-ROLES",
+  "T-LADDER",
+  "T-HEADLINE-FIT",
+  "T-LEADING",
+  "T-LABEL-TRANSFORM",
+  "T-HEAD-TREATMENT",
+  "T-PUNCTUATION",
+  "T-WIDOWS"
+ ],
+ "findings": [
+  {
+   "rule": "TYP-019",
+   "title": "Lines break where the sense breaks",
+   "tier": "Finish",
+   "where": "Member row 'Al', role label, 1440 and 375",
+   "evidence": "In dom-1440.json 'Editor with comment access' is 12px in a 110px box and draws two lines (36px tall). On P44/01-evidence/tiles/1440-00.png it breaks as 'Editor with / comment access', right-aligned, so the two lines start at different x positions.",
+   "before": "Role label wrapped onto two ragged right-aligned lines",
+   "after": "Keep the role on one line (a shorter label such as 'Can comment', or a wider role column), or let it wrap left-aligned under the name",
+   "why": "A two-line right-aligned label has no shared left edge and reads as two separate values.",
+   "test": "T-HEADLINE-FIT",
+   "source": "typography"
+  },
+  {
+   "rule": "TYP-181",
+   "title": "Prefer wrapping over truncation",
+   "tier": "Reflex",
+   "where": "Invite chip, 1440 and 375",
+   "evidence": "In dom-1440.json 'alexandra.whitfield@northwindlabs.com' is a 12px nowrap span, and the tile P44/01-evidence/tiles/1440-00.png shows it cut to 'alexandra.whitfield@northwind...'. The capture does not show whether the full address is exposed, for example in a title attribute.",
+   "before": "Email truncated inside the chip",
+   "after": "Let the chip grow to the field width, or truncate the middle of the address and keep the domain, with the full address exposed",
+   "why": "The truncated part is the domain, which is the piece that tells two invitees apart.",
+   "test": "T-HEADLINE-FIT",
+   "source": "typography"
+  }
+ ],
+ "strengths": [
+  "'Bartholomew Featherstonehaugh' wraps onto two lines at 1.38 leading instead of being cut."
+ ],
+ "not_investigated": [
+  "T-MEASURE: no paragraph of 3 or more lines at either width",
+  "Size floors under 12px (A11-002) and contrast belong to the sweep and the color lens; not repeated here",
+  "T-FIGURES: no figures that compare in this composition"
+ ]
+}

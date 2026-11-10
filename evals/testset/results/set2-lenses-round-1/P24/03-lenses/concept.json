@@ -1,0 +1,59 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A deploy list with useful context ('PRODUCTION · 3 DEPLOYS') where every label, name and time is set in tracked capitals.",
+  "score": {
+    "dimension": "Concept",
+    "value": 5,
+    "reason": "T-SIGNATURE passes on the rows; T-MIRROR and T-DEFAULT-AGENT hold because all-caps tracked labels are a stock developer-tool look, and T-BOLD-MOVE is diluted when every label is styled as a heading."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-009",
+      "title": "No look picked for the category or by default",
+      "tier": "Reflex",
+      "where": "heading, button, meta and timestamps, 1440 and 375",
+      "evidence": "In tiles/1440-00.png 'RECENT DEPLOYS', 'DEPLOY', 'PRODUCTION · 3 DEPLOYS', 'MAIN · MAYA CHEN', 'JUST NOW' and '12M AGO' are all tracked capitals; only the deploy names are in sentence case.",
+      "before": "Tracked capitals on six kinds of text, including a person's name and times.",
+      "after": "Keep capitals for one label level at most; set names, branches and times in sentence case.",
+      "why": "The style is applied by default to everything, so it marks nothing.",
+      "test": "T-MIRROR",
+      "source": "concept"
+    },
+    {
+      "rule": "CON-018",
+      "title": "App screens disappear into the task",
+      "tier": "Reflex",
+      "where": "'Pricing copy' row, 1440",
+      "evidence": "In tiles/1440-00.png the failed deploy is marked only by a small red icon; no word says it failed.",
+      "before": "Failure shown by an icon only.",
+      "after": "Add a status word next to the icon.",
+      "why": "The row that needs action is easy to miss.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The sub-line 'PRODUCTION · 3 DEPLOYS' names the environment, which most deploy lists leave out."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only."
+  ]
+}

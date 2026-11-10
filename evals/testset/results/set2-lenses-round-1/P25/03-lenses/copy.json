@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "The task rows are literal: 'Design review, Maya, Today, Ready', 'Onboarding, Jon, Tomorrow, In review', 'Billing audit, Ana, Friday, Ready', under 'Project tasks · 3 open'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 7,
+  "reason": "T-LABEL-READ and T-TERMS pass on plain status words and due days; there is no action or state copy to test further."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "Due days ('Today', 'Tomorrow', 'Friday') are written as a reader says them."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: about 20 words.",
+  "At 1440 the table text renders very small; size is the typography lens's call."
+ ]
+}

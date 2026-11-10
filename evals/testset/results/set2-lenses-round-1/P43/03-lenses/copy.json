@@ -1,0 +1,47 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The facts are specific ('Summer release, 24 assets · 18.6 MB', 'All 24 assets ready', 'Download package'), but the sub-line 'Everything your team needs to publish.' could sit on any asset tool.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 6,
+  "reason": "T-STATE-COPY and T-LABEL-READ pass on 'All 24 assets ready' and 'Download package'; T-RIVAL-NAME and T-DELETION fail on the sub-line under 'Launch package'."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [
+  {
+   "rule": "CPY-016",
+   "tier": "Reflex",
+   "where": "sub-line under the 'Launch package' heading, 1440 and 375 (01-evidence/tiles/1440-00.png)",
+   "evidence": "The heading 'Launch package' is followed by 'Everything your team needs to publish.' The line restates the heading and stays true under any rival's name.",
+   "before": "\"Everything your team needs to publish.\"",
+   "after": "Cut the line, or replace it with the package's contents or deadline [DATA NEEDED: what the package holds]",
+   "why": "Deleting it loses nothing; the card below already says '24 assets · 18.6 MB'.",
+   "test": "T-DELETION"
+  }
+ ],
+ "strengths": [
+  "'All 24 assets ready' and '24 assets · 18.6 MB' give counts, not adjectives.",
+  "'Download package' is a verb and an object."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "At both widths the window renders small inside the frame and the body text is hard to read on the tiles; words were confirmed from the DOM.",
+  "The caption above the frame ('Composition problem') is the capture's teaching label, not the product's copy, and was not judged."
+ ]
+}

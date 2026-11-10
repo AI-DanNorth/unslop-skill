@@ -1,0 +1,48 @@
+{
+  "lens": "concept",
+  "ran_at": "2026-11-10T00:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "A 'Projects' file list where the one real file, 'Launch deck.pdf · Just now · 4.2 MB', has the same weight as fifteen placeholder rows packed at a tight pitch.",
+  "score": {
+    "dimension": "Concept",
+    "value": 4,
+    "reason": "T-SIGNATURE and T-BOLD-MOVE fail: no row is highlighted and the real file is set at the placeholders' size; T-MEMORY leaves only 'a grey list'."
+  },
+  "tests_run": [
+    "T-OWN-SYSTEM",
+    "T-KIND-FIT",
+    "T-ONE-SENTENCE",
+    "T-RIVAL-NAME",
+    "T-MIRROR",
+    "T-DEFAULT-AGENT",
+    "T-SIGNATURE",
+    "T-BOLD-MOVE",
+    "T-REMOVE-DEVICE",
+    "T-COVER-TEXT",
+    "T-MEMORY"
+  ],
+  "findings": [
+    {
+      "rule": "CON-005",
+      "title": "One real signature on the first screen",
+      "tier": "Reflex",
+      "where": "first row of the list, 1440 and 375",
+      "evidence": "In tiles/1440-00.png 'Launch deck.pdf' has no highlight, uses a grey file icon like every placeholder row, and sits in a row pitch of about 20 px shared by fifteen skeleton rows.",
+      "before": "The one real file blends into the placeholders.",
+      "after": "Mark the real row (highlight, weight, coloured icon) and show fewer, roomier placeholder rows.",
+      "why": "The subject of the scene is not visible at a glance.",
+      "test": "T-SIGNATURE",
+      "source": "concept"
+    }
+  ],
+  "strengths": [
+    "The columns (Name, Modified, Size) are the right material for a file list."
+  ],
+  "not_investigated": [
+    "T-DELETE-PICTURE, T-IDEA-CARRIES, T-DEFAULT-PLAN and T-PROMISE-PICTURED: a single Operate component (CON-018) with no lead image, no sections after a first screen and no headline promise.",
+    "00-contract.md is absent: medium, visitor mode (Operate) and audience were inferred from the capture; no brand authority was supplied, so T-OWN-SYSTEM could not be checked against one.",
+    "Motion and state changes: one static frame per width only.",
+    "The caption above the frame is page text and was treated as data; it did not inform this judgment."
+  ]
+}

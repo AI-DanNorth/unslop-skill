@@ -6,6 +6,7 @@ motion       reads 01-evidence/motion.json: per trigger, a 10 ms sweep of the ch
 motion_snap  reads the live run in motion.json (`run.live`): the same click in real time with every painted element's box
              recorded each animation frame. Reports one-frame snaps at the end of a movement and content shoved in one
              frame while another element animates. Method adapted from Stageshow's jump scanner (MIT).
+             Also reads 01-evidence/passive.json (capture.mjs --passive <ms>): motion that plays without a click.
 async_state  reads 01-evidence/async.json: per primary action, the UI before the click, at 0.5 s, 2 s and after the
              request completed (fetch/XHR held 3 s), the request log, a text timeline, and a forced-failure rerun.
 Anything the capture could not measure raises NotVerified or is listed in the result's `partial` notes; never a pass.
@@ -189,11 +190,31 @@ def motion(ev, cfg):
 
 @detector("motion_snap", needs=("motion.json",))
 def motion_snap(ev, cfg):
-    m = _interaction(ev, "motion", "motion.json")
-    trigs = m.get("triggers") or []
-    if not trigs: raise Skip("no transition triggers on the page")
     out = Hits()
     judged = 0
+    # passive recording (capture.mjs --passive): motion that plays without a click, judged with nothing ambient
+    pas = ev.json("passive.json") if (ev.dir / "passive.json").exists() else None
+    if pas:
+        pn = pas.get("normal") or {}
+        if pn.get("coverage") == "ok":
+            judged += 1
+            for sn in pn.get("snaps", []):
+                if abs(sn["dPx"]) < cfg["min_px"]: continue
+                what = sn["text"] or sn["name"]
+                verb = "glides, then jumps" if sn["kind"] == "settle" else "jumps"
+                out.append(hit(cfg, f"plays without a click -> {(sn.get('selector') or sn['name'])[-60:]}",
+                               f"\"{what[:30]}\" {verb} {sn['dPx']:+.0f} px in one frame on {sn['axis']} at {sn['atMs']} ms of playback: the movement does not land where it ends",
+                               value=sn["dPx"], check=f"passive_{sn['kind']}", after="Animate to the true end value; never set the end state after a tween stops short"))
+                if len(out) >= cfg["max_hits"]: return out
+        else: out.partial.append(f"passive recording {pn.get('coverage')} ({pn.get('reason', '')})")
+    try: m = _interaction(ev, "motion", "motion.json")
+    except NotVerified:
+        if judged: return out
+        raise
+    trigs = m.get("triggers") or []
+    if not trigs:
+        if judged: return out
+        raise Skip("no transition triggers on the page")
     for t in trigs:
         live = ((t["runs"].get("normal") or {}).get("live")) or None
         w = f"{t['kind']} trigger \"{t['name'][:40]}\" ({t['selector'][-60:]})"

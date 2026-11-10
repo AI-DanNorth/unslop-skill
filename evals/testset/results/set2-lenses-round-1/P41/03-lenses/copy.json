@@ -1,0 +1,35 @@
+{
+ "lens": "copy",
+ "ran_at": "2026-11-10T09:00:00",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "The checklist gives a deadline, a count and statuses: 'Release checklist, Due Friday · 4 tasks', 'Review copy: Ready', 'Test mobile: In review', '2 tasks remaining', 'Open project'.",
+ "score": {
+  "dimension": "Distinctiveness",
+  "value": 7,
+  "reason": "T-FRESH-READER and T-LABEL-READ pass on a dated count and 'Open project'; the frame has 18 words, so the score stops at 7."
+ },
+ "tests_run": [
+  "T-FRESH-READER",
+  "T-THREE-LINE",
+  "T-HEADING-FORM",
+  "T-CADENCE",
+  "T-LABEL-READ",
+  "T-STATE-COPY",
+  "T-DELETION",
+  "T-TERMS",
+  "T-OVER-CORRECTION"
+ ],
+ "findings": [],
+ "strengths": [
+  "'Due Friday · 4 tasks' and '2 tasks remaining' give the reader the deadline and progress.",
+  "'Open project' is a verb and an object."
+ ],
+ "not_investigated": [
+  "T-LONG-FORM: no running-text region; the item is a single product composition with under 50 words.",
+  "T-FIVE-SECOND and T-RIVAL-NAME on interface labels: skipped, the item is an app component (Operate mode) with no hero; page title and navigation sit outside the capture frame.",
+  "T-READ-ALOUD: no brand voice supplied and too few sentences to hear a voice.",
+  "Async and after-action states: async.json was not captured, so no state copy after a click was read.",
+  "Too little text to judge voice: 18 words."
+ ]
+}

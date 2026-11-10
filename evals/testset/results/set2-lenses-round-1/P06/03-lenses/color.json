@@ -1,0 +1,33 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "An untinted grey scale carries the card (#222222 heading, #555555 link, #777777 placeholder, a #e9e9e9 hairline), with one near-black #333333 'Export files' button.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-NEUTRALS pass with three text levels and one temperature, and T-ACCENT-DOSAGE finds the dark fill on the one primary action only; the palette is clean but has few roles to prove."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The primary action is the only filled element, in near-black #333333, and 'Preview' stays a text link.",
+  "One untinted neutral family, with no shadow and one hairline weight."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "T-LINE-DELETION: only the card edge and the field edge are drawn, and both carry structure"
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "lens": "color",
+ "ran_at": "2026-11-10T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Untinted greys (#1f1f1f names, #7a7a7a roles) on a white card carry the list, and the one blue, #2459c9 on a pale blue chip, marks the entered email token only.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-PALETTE-ROLES and T-ACCENT-DOSAGE pass with two text levels and one accent in one role; T-SURFACE-LADDER finds a field inset ring and a card shadow, both doing structural work."
+ },
+ "tests_run": [
+  "T-COLOUR-SOURCE",
+  "T-PALETTE-ROLES",
+  "T-ACCENT-DOSAGE",
+  "T-NEUTRALS",
+  "T-GRAYSCALE",
+  "T-SURFACE-LADDER",
+  "T-LINE-DELETION",
+  "T-GRADIENT-STOPS"
+ ],
+ "findings": [],
+ "strengths": [
+  "The blue #2459c9 is held to the one entered token.",
+  "Two text levels and one neutral temperature."
+ ],
+ "not_investigated": [
+  "T-DARK-MODE: the page renders light; the stylesheet has a dark class theme that the capture did not render, so dark mode is not verified",
+  "brand authority: the run has no 00-contract.md, so no brand colours were available for T-COLOUR-SOURCE; sources were traced from the composition itself",
+  "contrast and focus: owned by the sweep (A11-001, A11-003) and not restated here",
+  "T-LINE-DELETION: no repeated rules",
+  "The grey placeholder avatars are image placeholders, not palette"
+ ]
+}
