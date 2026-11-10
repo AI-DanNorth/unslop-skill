@@ -804,6 +804,97 @@
    why: "A movement that stops short and snaps, or a neighbour that jumps while a panel glides, reads as broken motion: the eye follows the glide and sees the cut.",
    fix: "Tween or spring to the true final layout; when content around an animating element must move, animate its container with the same transition or reserve the space first.",
    sources: ["Stageshow references/motion.md (Things that appear, travel and leave) and scripts/jumps-core.mjs (benjitaylor/skills, MIT)", "Stageshow references/teaching.md (Landing jumps at handoff; New row shoves its neighbors)"]}
+# ---------------- D09 motion (lens-motion; judgment and hybrid cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D09-MOT.yaml; each source cites the draft id and its original sections.
+# Motion findings are Reflex or Finish. Reduced motion (A11-011, the `reduced_motion` check), content hidden behind
+# animation (ROB-001), pause controls on motion past 5 s (WCAG 2.2.2) and missing or stuck progress (CMP-001) stay with
+# the sweep and lens-a11y. Scope follows the conflict register: product UI keeps the UI scale (C15, C38, C39, C50, C51);
+# a showpiece, a product illustration or a demo animation may run longer storytelling motion (C45).
+- {id: MOT-004, title: Every motion has a job, domain: D09, tier: Reflex, check: J, remedy: fix-motion, tests: [T-PURPOSE],
+   rule: "Name the job of each animation: feedback (the input was received), orientation (where something came from or went), continuity (the same thing in a new state) or a deliberate showpiece the visitor chose to watch. Motion whose loss would go unnoticed if the change were instant has no job; static is the default answer.",
+   why: "Motion with no job costs the visitor time on every use and says the page was assembled from a kit that animates everything.",
+   fix: "Cut the motion that has no job, or make the change instant; keep the motion that explains a change.",
+   sources: ["MOT-101 (agent §1, hallmark §323, taste §408, huashu §324)", "MOT-102 (hallmark §323 §84)"]}
+- {id: MOT-005, title: Duration follows how often the motion is seen, domain: D09, tier: Reflex, kind: context, check: H, remedy: fix-motion, tests: [T-FREQUENCY],
+   rule: "Time each motion by how often a visitor sees it and what triggered it. Feedback on a control used many times (a tab, a menu, a toggle, a disclosure, a copy button) stays on the product's short scale: press and toggle 100 to 200ms, menus near 200ms, overlays up to about 420ms, and never linear on movement. A long arrival is allowed only for a showpiece the visitor started or sees once (a hero reveal, a shuffle the visitor asks for, a demo), and never on a control's own feedback. A sweep `duration`, `easing`, `travel` or `overshoot` hit on a showpiece is fitting; on repeated feedback it stands (conflict C52).",
+   values: {toggle_ms: [100, 200], menu_ms: 200, overlay_max_ms: 420, showpiece_ms: [800, 1000]},
+   why: "A 750ms tab switch is pleasant once and a tax on the twentieth click; the same length on a one-time reveal is a choice.",
+   fix: "Put repeated feedback on the short scale; keep the long timing only on the moment the visitor sees once.",
+   sources: ["MOT-126 (uupm §8 §237)", "MOT-127 (agent §78, huashu §337)", "MOT-128 (uupm §143)", "MOT-125 (hallmark §83 §324 §438)", "MOT-250 (stageshow §48)"]}
+- {id: MOT-006, title: Motion has a budget per page, domain: D09, tier: Reflex, kind: cap, check: H, remedy: fix-motion, tests: [T-MOTION-BUDGET],
+   rule: "Keep a page to about three motion primitives (one reveal, one hover signal, one functional loop) and one or two moving things per view. Do not give every block the same fade-up, and do not run two self-moving things in one screen.",
+   values: {max_primitives: 3, max_per_view: 2, max_self_moving_per_screen: 1},
+   why: "When everything moves, nothing points anywhere, and the same entrance on every block is the clearest sign that motion was applied, not designed.",
+   fix: "Pick the one moment that earns motion; make the rest still or quieter.",
+   sources: ["MOT-103 (hallmark §323, taste §407 §441)", "MOT-104 (uupm §7 §237)", "MOT-105 (taste §33, huashu §364 §324)", "MOT-106 (taste §431 §428)"]}
+- {id: MOT-007, title: One curve family and one duration scale, domain: D09, tier: Finish, check: H, remedy: fix-motion, tests: [T-MOTION-SYSTEM],
+   rule: "Route durations and easings through one declared set: one non-overshoot curve family for UI (conflict C38) and one three-step duration scale (conflict C39). Raw framework defaults on every element (the browser's `ease`, Tailwind's 150ms cubic-bezier(0.4, 0, 0.2, 1)) and several unrelated curves for the same kind of change show that nobody set the motion.",
+   values: {scale_steps: 3, curve_families: 1},
+   why: "Motion tuned as a system feels like one product; a mix of defaults feels like several libraries joined.",
+   fix: "Declare motion tokens (micro, short, long; enter, exit, move) and replace raw values with them.",
+   sources: ["MOT-124 (hallmark §438, uupm §8 §237)", "MOT-125 (hallmark §83 §324 §438)", "MOT-111 (hallmark §340)"]}
+- {id: MOT-008, title: The curve fits the direction and the scope, domain: D09, tier: Finish, check: H, remedy: fix-motion, tests: [T-MOTION-SYSTEM],
+   rule: "Ease out on arrival, ease in on exit, ease in and out on travel and toggles, and linear only for progress, spinners, loops and scroll scrubbing. Overshoot and springs belong to showpieces, demo films and declared playful moments, never to UI state (conflict C15).",
+   why: "An arrival that starts slowly feels late, an exit that lingers blocks the next action, and a bounce on a menu reads as a toy.",
+   fix: "Use a decelerating curve such as cubic-bezier(0.16, 1, 0.3, 1) for arrivals and a short ease-in for exits.",
+   sources: ["MOT-129 (hallmark §82 §342, uupm §14 §237, agent §80, huashu §335)", "MOT-130 (hallmark §438, huashu §332)", "MOT-131 (hallmark §82 §324 §438, taste §410 §443, uupm §160)"]}
+- {id: MOT-009, title: Exits are quicker than entrances and leave no gap, domain: D09, tier: Finish, check: H, remedy: fix-motion, tests: [T-ENTER-EXIT],
+   rule: "Pair every enter with an exit (or an explicit none), make the exit 60 to 75% of the enter, and never leave a blank frame of more than 0.3s between outgoing and incoming content.",
+   values: {exit_ratio: [0.6, 0.75], max_blank_s: 0.3},
+   why: "A view that vanishes in one frame after a long entrance feels broken; a blank pause between views reads as a crash.",
+   fix: "Add the matching exit at about two thirds of the enter, and overlap or cross-fade the two states.",
+   sources: ["MOT-135 (hallmark §83 §324, uupm §237 §162, agent §79)", "MOT-137 (agent §51, stageshow §50)", "MOT-138 (huashu §377, stageshow §50)"]}
+- {id: MOT-010, title: The kind of transition matches what changed, domain: D09, tier: Reflex, check: J, remedy: fix-motion, tests: [T-SPATIAL-MEANING],
+   rule: "A shared-element morph means the same thing, deeper; a directional slide means an ordered sequence or a step in a hierarchy; a cross-fade means a lateral swap; an overlay grows from its trigger. Do not slide tabs or unordered views sideways, and keep next from the right and previous from the left (mirrored for right-to-left).",
+   why: "Motion tells the visitor where things live. A slide between peers invents a hierarchy that is not there.",
+   fix: "Cross-fade lateral swaps, slide only ordered steps, and open overlays from the control that opened them.",
+   sources: ["MOT-165 (agent §3 §7-§14)", "MOT-166 (agent §8 §49)", "MOT-167 (agent §49, uupm §237 §364)", "MOT-141 (uupm §237, hallmark §329)"]}
+- {id: MOT-011, title: Staggers are short and in reading order, domain: D09, tier: Reflex, kind: cap, check: H, remedy: fix-motion, tests: [T-CHOREOGRAPHY],
+   rule: "Stagger at most about 8 items, 30 to 50ms between rows and 60 to 100ms between blocks, 500ms in all, in reading order and once (conflict C50: a demo or a bento grid scrolling in once may use 40 to 80ms in a scene and 80 to 120ms between tiles). Never stagger results on filtering or search.",
+   values: {max_items: 8, row_ms: [30, 50], block_ms: [60, 100], max_total_ms: 500},
+   why: "A long cascade makes the visitor wait for the last item; a cascade on every filter keystroke turns a fast tool into a slow show.",
+   fix: "Cap the cascade, shorten the step, and show filtered results at once.",
+   sources: ["MOT-142 (hallmark §83, uupm §237, huashu §342 §349)", "MOT-143 (uupm §157 §159, hallmark §330)", "MOT-144 (hallmark §338, agent §43)", "MOT-252 (stageshow §43 §48)"]}
+- {id: MOT-012, title: The page arrives once and is never gated, domain: D09, tier: Reflex, check: H, remedy: fix-motion, tests: [T-CHOREOGRAPHY],
+   rule: "Allow at most one page-load reveal, in DOM order, once, with the content readable without it (conflict C16). Do not give every section heading its own rise, do not fade in the hero picture, and do not put a loader, intro or delay before reading. Content hidden until an animation runs is ROB-001's (Floor) and stays with the sweep.",
+   values: {max_load_reveals: 1, total_s: [0.4, 0.8]},
+   why: "Rising headings on every section and a hero that fades in from nothing are the stock entrance of generated pages, and they make the visitor wait to read.",
+   fix: "Keep one short entrance for the hero, or none, and let every other section sit still.",
+   sources: ["MOT-148 (hallmark §84 §339, taste §427 §33)", "MOT-149 (taste §33 §459 §427)", "MOT-150 (taste §427)", "MOT-108 (taste §427 §33)"]}
+- {id: MOT-013, title: Hover answers with one small signal, domain: D09, tier: Reflex, check: H, remedy: fix-motion, tests: [T-HOVER-SIGNAL],
+   rule: "Give each linked element one hover signal on its container (a colour step, a 1 to 2px lift or a border step) within about 150ms. Do not put the same lift or scale on every card, and do not tilt, skew, glow, sweep a shine, follow the cursor or pull a magnetic button. Never give a non-interactive element a hover state.",
+   values: {lift_px: [1, 2], max_lift_px: 6, hover_ms: 150},
+   why: "Tilt, glow and magnetic pulls are generator flourishes; a uniform card lift tells the visitor nothing about which card matters.",
+   fix: "Keep one quiet hover signal per interactive element and drop the decorative ones.",
+   sources: ["MOT-183 (hallmark §85 §311 §440, taste §414)", "MOT-185 (hallmark §440)", "MOT-187 (taste §413 §420 §33, hallmark §87 §459)", "MOT-188 (taste §412 §414, uupm §153)", "MOT-184 (hallmark §85 §440, taste §414 §420, uupm §33)"]}
+- {id: MOT-014, title: Loops show a state or real data, domain: D09, tier: Reflex, check: H, remedy: fix-motion, tests: [T-LOOPS],
+   rule: "Run an infinite loop only for a loader, one small loop or one declared ambient loop. Ban decorative attention loops: pulsing dots, twinkling, flicker, hue cycling, scrambled text, typing dots, a blinking caret after a headline, and marquees of logos or claims with nothing to show. A loop past 5s with no pause control is WCAG 2.2.2 and stays with lens-a11y.",
+   values: {small_loop_max_s: 4, ambient_min_s: 8, max_loops_per_screen: 1},
+   why: "A pulse or shimmer that shows no state pulls the eye away from the content for nothing, every second the page is open.",
+   fix: "Stop the decorative loops; keep a loop only where it shows progress, a live state or real data.",
+   sources: ["MOT-219 (hallmark §87, taste §33 §429, stageshow §48)", "MOT-215 (hallmark §87, uupm §12 §145, taste §428)", "MOT-106 (taste §431 §428)"]}
+- {id: MOT-015, title: A change moves only what changed, domain: D09, tier: Finish, check: H, remedy: fix-motion, tests: [T-CONTINUITY],
+   rule: "Where a surface animates, its content changes with it: no label, menu or number swapped in one frame while the surface glides; the changed span moves and what follows makes room continuously. In product UI a one-time reflow is fine (conflict C51); content shoved in one frame while another element is mid-animation is MOT-003's and stays with the sweep.",
+   why: "A glide with a hard cut inside it draws the eye to the cut; motion that half-explains a change is worse than none.",
+   fix: "Animate the changed span with its container, or make the whole change instant.",
+   sources: ["MOT-253 (stageshow §49 §56)", "MOT-254 (stageshow §49)", "MOT-255 (stageshow §49 §50)", "MOT-256 (stageshow §49 §56)"]}
+- {id: MOT-016, title: Solid surfaces arrive whole and hold their anchor, domain: D09, tier: Finish, check: H, remedy: fix-motion, tests: [T-CONTINUITY],
+   rule: "Windows, cards, sheets and toasts arrive by moving, opaque or nearly, never as a half-transparent ghost and never uncovered by a hard moving edge that slices text. A popover or menu fits before its first frame and holds the edge it opened from while its content changes; a resizing surface moves size, position and content as one transition without stretching its text.",
+   why: "Ghosted solids and sliced text break the illusion that the surface is one object, which is the whole point of animating it.",
+   fix: "Animate the surface with transform from just off its resting place, keep it opaque, and size it before it opens.",
+   sources: ["MOT-259 (stageshow §50)", "MOT-260 (stageshow §50 §56)", "MOT-261 (stageshow §50)", "MOT-262 (stageshow §50 §56)"]}
+- {id: MOT-017, title: A demo animation builds to one payoff, domain: D09, tier: Finish, kind: context, check: J, remedy: fix-motion, tests: [T-POSTER],
+   rule: "In a product illustration or demo animation, tell three to five beats that build to one payoff, show the payoff full at the shown size and hold it (about 2s) before the exit, and choose a poster frame (the still for thumbnails and reduced motion) with the result on screen. A second scene adds something new or is cut. UI feedback inside the demo keeps the product's own speed; only storytelling motion slows down (conflict C45).",
+   values: {beats: [3, 5], payoff_hold_s: 2, max_still_s: 3},
+   why: "A demo that moves without a payoff shows activity, not the product; the poster frame is what most visitors actually see.",
+   fix: "Cut beats until one result carries the story, then hold it and make it the poster frame.",
+   sources: ["MOT-241 (stageshow §45)", "MOT-242 (stageshow §46)", "MOT-243 (stageshow §46 §47)", "MOT-248 (stageshow §47)", "MOT-250 (stageshow §48)"]}
+- {id: MOT-018, title: A demo loop resets with a cause, domain: D09, tier: Finish, kind: context, check: H, remedy: fix-motion, tests: [T-DEMO-LOOP],
+   rule: "In a looping demo, give every reset a seen cause (undo, clear, close) or make it invisible, remove what the loop added as one thing, never rewind data or a navigation in view, and leave no dead air at the seam: the next action starts within about 1s of the exit, from a calm, complete frame.",
+   values: {seam_max_s: 1},
+   why: "A loop that visibly rewinds or sits empty at the seam shows the machinery and loses the story it just told.",
+   fix: "Reset while hidden or through a seen action, and start the next loop on a calm, complete frame.",
+   sources: ["MOT-245 (stageshow §47)", "MOT-246 (stageshow §47)", "MOT-247 (stageshow §47)", "MOT-220 (taste §428, stageshow §45 §47)"]}
 - {id: WEB-001, title: Performance budget, domain: D15, tier: Reflex, detector: performance, remedy: fix-harden,
    rule: "Lab LCP warns at 2.5s and fails at 4.5s; no image over 400KB or more than 2x its rendered width.", why: "Slow pages lose visitors before design matters.",
    fix: "Compress, size and lazy-load images; preload the LCP asset.", sources: ["taste-skill §622", "agent-skills", "web-interface-guidelines"]}

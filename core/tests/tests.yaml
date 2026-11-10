@@ -223,9 +223,53 @@
    run: "Load with reduced motion, with IntersectionObserver never firing for 4s, and with scripts off.", pass: "All content visible in all three; under 30% of text hidden after load.",
    sources: ["taste-skill §437", "hallmark §445"]}
 - {id: T-PURPOSE, name: Purpose and 50th use, lens: [motion], kind: J,
-   run: "Say what each animation communicates; imagine its 50th use today.", pass: "It has a job and is still wanted.", sources: ["agent-skills §1", "Design Rules 1 §2"]}
+   run: "Say what each animation communicates (feedback, orientation, continuity, or a showpiece the visitor chose; skills/lens-motion/motion_table.py lists what each trigger moved); imagine its 50th use today.", pass: "It has a job and is still wanted.", sources: ["agent-skills §1", "Design Rules 1 §2"]}
 - {id: T-RAPID-TOGGLE, name: Rapid toggle, lens: [motion], kind: M, detector: rapid_toggle,
    run: "Click a control repeatedly mid-transition.", pass: "Final state correct; nothing stuck.", sources: ["ui-ux-pro-max §16"]}
+- {id: T-FREQUENCY, name: Frequency gate, lens: [motion], kind: H,
+   run: "For each measured trigger and the passive recording (skills/lens-motion/motion_table.py writes 03-lenses/motion/motion-table.json), name what started it (a click on a control used many times, a one-time click, page load, nothing) and how often a visitor sees it; then read its duration, live end and easing against that frequency.",
+   pass: "Motion seen often (tabs, menus, toggles, disclosures, copy buttons) sits on the short UI scale; long, springy or storytelling timing appears only on a showpiece the visitor started or sees once, and UI feedback inside a demo keeps product speed (conflict C45).",
+   sources: ["uupm §8 §143 §237", "agent §78", "hallmark §83", "stageshow §48"]}
+- {id: T-MOTION-BUDGET, name: Motion budget, lens: [motion], kind: H,
+   run: "List every motion primitive on the page from the motion table (triggers, running animations, passive recording) and the tiles: page-load reveals, hover signals, loops, transitions. Count the things that move in one screen at once.",
+   pass: "About three primitives on the page, one or two moving things per view, at most one self-moving thing per screen, and no identical entrance on every block.",
+   sources: ["hallmark §323", "taste-skill §33 §407 §428 §431 §441", "uupm §7 §237", "huashu §324 §364"]}
+- {id: T-MOTION-SYSTEM, name: Motion system, lens: [motion], kind: H,
+   run: "Read the motion table's measured_system (easings and durations of the animations the clicks started) and declared (the transitions and easings the visible elements declare, with flags for the browser's ease, Tailwind's default curve, linear and overshoot).",
+   pass: "One curve family and one duration scale (conflicts C38, C39), arrival and exit curves that fit their direction, and overshoot only on a showpiece or demo (conflict C15).",
+   sources: ["hallmark §82 §83 §340 §438", "uupm §8 §14 §237", "huashu §332 §335"]}
+- {id: T-ENTER-EXIT, name: Enter and exit, lens: [motion], kind: H,
+   run: "For each overlay, view or panel that opens, find its exit (a second click, Escape, a close control) in the frames or the declared transitions, and compare the two durations; look for blank frames between the old and new content on the contact sheet.",
+   pass: "Every enter has an exit at 60 to 75% of its length, and no blank gap over 0.3s.",
+   sources: ["hallmark §83 §324", "agent §51 §79", "huashu §377", "stageshow §50"]}
+- {id: T-SPATIAL-MEANING, name: Spatial meaning, lens: [motion], kind: J,
+   run: "For each transition, say what changed (the same thing deeper, an ordered step, a lateral swap, an overlay) and the direction the frames show it moving.",
+   pass: "Morphs for the same thing, slides only for ordered steps in the reading direction, cross-fades for peers, overlays from their trigger.",
+   sources: ["agent §3 §7-§14 §49", "uupm §237 §364", "hallmark §329"]}
+- {id: T-CHOREOGRAPHY, name: Choreography, lens: [motion], kind: H,
+   run: "Read each trigger's stagger (items, step, spread) and the page's running animations at load (motion table, declared), and scroll the tiles for entrances on headings, cards and the hero picture.",
+   pass: "One load reveal at most, once, in reading order; staggers of 8 items or fewer at 30 to 100ms a step, 500ms in all (conflict C50 for demos and bento grids); no stagger on filtering; no gate before reading.",
+   sources: ["hallmark §83 §84 §330 §338 §339", "taste-skill §33 §427 §459", "uupm §157 §237", "stageshow §43 §48"]}
+- {id: T-HOVER-SIGNAL, name: Hover signal, lens: [motion], kind: H,
+   run: "Read the declared transitions on links, buttons and cards (motion table, declared; dom-1440.json transitionProperty and the stylesheet text) and name each hover signal. Hover is not captured as frames, so judge only what the declarations show.",
+   pass: "One quiet signal per interactive element (a colour step, a 1 to 2px lift or a border step), no uniform lift or scale on every card, no tilt, glow, shine, magnetic pull or cursor-follow, and no hover on non-interactive elements.",
+   sources: ["hallmark §85 §311 §440", "taste-skill §412 §413 §414 §420"]}
+- {id: T-LOOPS, name: Loops, lens: [motion], kind: H,
+   run: "List what moves on its own: running animations at load and stylesheet `infinite` counts (motion table, declared), the passive recording, and the live runs' ambient count; name what each loop shows.",
+   pass: "Every loop shows progress, a live state or real data, or is the one declared ambient loop; no decorative pulse, shimmer, twinkle, typing dots or logo marquee with nothing to show.",
+   sources: ["hallmark §87", "taste-skill §33 §428 §429", "uupm §12 §145", "stageshow §48"]}
+- {id: T-CONTINUITY, name: Continuity, lens: [motion], kind: H,
+   run: "Step through each trigger's frame stills on the contact sheet (03-lenses/motion/contact-sheet.png) and read the live snaps and layout movement in the motion table.",
+   pass: "Content changes with its surface (no label or number swapped in one frame while the surface glides), solid surfaces arrive opaque and whole, popovers hold their anchor, and resizing surfaces move as one.",
+   sources: ["stageshow §49 §50 §56"]}
+- {id: T-POSTER, name: Poster test, lens: [motion], kind: J,
+   run: "Demo animations and product illustrations only. Cover the motion and look at the still the page shows with reduced motion and in the screenshot; then ask what happened in the demo and where its payoff is held.",
+   pass: "The poster frame answers on its own with the result on screen; three to five beats build to one payoff that arrives full and is held about 2s.",
+   sources: ["stageshow §45 §46 §47"]}
+- {id: T-DEMO-LOOP, name: Demo loop seam, lens: [motion], kind: H,
+   run: "Looping demos only. Read the passive recording (motion end, still moving, snaps) and watch the seam where the loop resets.",
+   pass: "Every reset has a seen cause or is invisible, nothing rewinds in view, and the next action starts within about 1s of the exit from a calm, complete frame. An empty, short or gapped recording is inconclusive, never a pass.",
+   sources: ["stageshow §45 §47 §61", "taste-skill §428"]}
 - {id: T-STRESS, name: Stress matrix, lens: [robustness], kind: H, detector: stress,
    run: "Inject fixtures (data/fixtures) varying length, script, quantity and state.", pass: "Nothing visibly breaks.", sources: ["krehel §113"]}
 - {id: T-SLOW-LINE, name: Slow mobile line, lens: [robustness], kind: M, detector: slow_network,
