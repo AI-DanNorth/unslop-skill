@@ -31,6 +31,12 @@ const ev = path.join(runDir, "01-evidence");
 fs.mkdirSync(path.join(ev, "focus"), { recursive: true });
 const log = [];
 const note = (m) => { log.push(m); console.error(m); };
+// later passes: wait for load, else fall back to DOMContentLoaded (slow third-party loads must not end the capture)
+async function goLoad(page, url, pass) {
+  try { await page.goto(url, { waitUntil: "load", timeout: 45000 }); }
+  catch (e) { note(`${pass}: load event not reached (${e.message.split(String.fromCharCode(10))[0].slice(0, 80)}); continuing after DOMContentLoaded`);
+    try { await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 }); } catch {} }
+}
 
 async function settle(page, { wheel = false } = {}) {
   try { await page.waitForLoadState("networkidle", { timeout: 15000 }); } catch { note("networkidle timeout; continuing after load"); }
@@ -207,7 +213,7 @@ for (const w of widths) {
 // ---- 3. fonts that actually rendered (CDP), at 1440 -----------------------------------------------
 {
   const { ctx, page } = await open(browser, 1440);
-  await page.goto(url, { waitUntil: "load" }); await settle(page);
+  await goLoad(page, url, "fonts pass"); await settle(page);
   await page.evaluate(EXTRACT);
   const cdp = await ctx.newCDPSession(page);
   await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
@@ -269,7 +275,7 @@ const VISIBLE_CHARS = () => {
 // ---- 5. focus walk at 1440 --------------------------------------------------------------------------
 {
   const { ctx, page } = await open(browser, 1440);
-  await page.goto(url, { waitUntil: "load" }); await settle(page);
+  await goLoad(page, url, "focus pass"); await settle(page);
   await page.evaluate(EXTRACT);
   const stops = [];
   for (let i = 0; i < 40; i++) {
@@ -348,12 +354,12 @@ const VISIBLE_CHARS = () => {
 // ---- 6. fake-send test: submit every form with the network blocked --------------------------------
 {
   const { ctx, page } = await open(browser, 1440);
-  await page.goto(url, { waitUntil: "load" }); await settle(page);
+  await goLoad(page, url, "fake-send pass"); await settle(page);
   const count = await page.evaluate(() => document.querySelectorAll("form").length);
   const results = [];
   for (let i = 0; i < count; i++) {
     const p2 = await ctx.newPage();
-    await p2.goto(url, { waitUntil: "load" }); await p2.waitForTimeout(300);
+    await goLoad(p2, url, "fake-send pass (form page)"); await p2.waitForTimeout(300);
     let attempted = 0;
     await p2.route("**/*", (route) => { attempted++; route.abort(); });
     const before = await p2.evaluate(() => document.body.innerText);
@@ -385,7 +391,7 @@ const VISIBLE_CHARS = () => {
 {
   const { ctx, page } = await open(browser, 1440);
   await page.addInitScript(() => { window.__lcp = 0; new PerformanceObserver(l => { for (const e of l.getEntries()) window.__lcp = e.startTime; }).observe({ type: "largest-contentful-paint", buffered: true }); });
-  await page.goto(url, { waitUntil: "load" }); await settle(page);
+  await goLoad(page, url, "performance pass"); await settle(page);
   const perf = await page.evaluate(() => ({ lcp: window.__lcp, resources: performance.getEntriesByType("resource").map(r => ({ name: r.name, type: r.initiatorType, bytes: r.encodedBodySize || r.transferSize || 0 })),
     images: [...document.images].map(i => ({ src: i.currentSrc || i.src, nw: i.naturalWidth, rw: Math.round(i.getBoundingClientRect().width), id: i.getAttribute("data-unslop-id") })) }));
   for (const r of perf.resources) if (!r.bytes && r.name.startsWith("file:")) { try { r.bytes = fs.statSync(fileURLToPath(r.name)).size; } catch {} }

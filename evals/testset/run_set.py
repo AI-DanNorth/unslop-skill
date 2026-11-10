@@ -24,8 +24,13 @@ for it in doc["items"]:
     env = dict(__import__("os").environ, UNSLOP_HOST_MAP=",".join(f"{h}={pathlib.Path(a.refs) / r}" for h, r in HOSTS.items()))
     t0 = time.time()
     extra = list(it.get("capture_flags") or []) + (["--withhold-target"] if it.get("withhold_target") else []) + (["--isolate", json.dumps(it["isolate"])] if it.get("isolate") else [])
-    c = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), target, str(run), "--widths", it.get("widths") or widths, *extra], capture_output=True, text=True, timeout=900, env=env)
-    if c.returncode: print(it["id"], "CAPTURE FAILED", c.stderr[-300:]); continue
+    try:
+        c = subprocess.run(["node", str(ROOT / "scripts/capture/capture.mjs"), target, str(run), "--widths", it.get("widths") or widths, *extra], capture_output=True, text=True, timeout=it.get("timeout", 900), env=env)
+    except subprocess.TimeoutExpired:
+        print(it["id"], f"CAPTURE TIMED OUT after {it.get('timeout', 900)}s", flush=True); continue
+    if c.returncode:
+        err = [l for l in c.stderr.splitlines() if l.strip() and not l.lstrip().startswith("at ")]
+        print(it["id"], "CAPTURE FAILED", " | ".join(err[-6:])[-500:], flush=True); continue
     subprocess.run([sys.executable, str(ROOT / "scripts/checks/sweep.py"), str(run), "--profile", a.profile, "--medium", medium, "--quiet"], capture_output=True, text=True)
     s = subprocess.run([sys.executable, str(ROOT / "scripts/report/synthesize.py"), str(run)], capture_output=True, text=True)
     m = json.loads((run / "02-mechanical.json").read_text())["summary"]

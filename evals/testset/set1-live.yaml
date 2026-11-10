@@ -47,7 +47,7 @@ items:
 - {id: L33, url: 'https://preview.pro.ant.design/dashboard/analysis', expect: good, medium: app, group: baseline, why: conventional enterprise dashboard}
 - {id: L34, url: 'https://ant.design/docs/spec/buttons', expect: good, medium: web, group: baseline, why: do/don't spec page}
 - {id: L35, url: 'https://vercel.com/design/guidelines', expect: good, medium: web, group: baseline, why: rule-built page}
-- {id: L36, url: 'https://carbondesignsystem.com', expect: good, medium: web, group: baseline, why: IBM Carbon}
+- {id: L36, url: 'https://carbondesignsystem.com', timeout: 1500, expect: good, medium: web, group: baseline, why: IBM Carbon}
 # --- other media
 - {id: L37, url: 'https://reallygoodemails.com/emails/see-you-next-week', expect: good, medium: web, group: exemplar, why: real email (gallery page wraps it)}
 - {id: L38, url: 'https://reallygoodemails.com/emails/welcome-to-apple-arcade', expect: borderline, medium: web, group: exemplar, why: polished, flagged for weak alt text}

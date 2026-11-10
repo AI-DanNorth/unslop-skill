@@ -133,7 +133,11 @@ async function routeGuard(ctx, page, url, log) {
     if (!guard.armed) return route.fallback();
     const req = route.request(), u = req.url();
     let o = ""; try { o = new URL(u).origin; } catch {}
-    if (req.isNavigationRequest() && req.frame() === page.mainFrame() && u.split("#")[0] !== page.url().split("#")[0]) { log.push(`navigation blocked: ${u.slice(0, 120)}`); return route.abort(); }
+    if (req.isNavigationRequest()) {
+      let fr = null; try { fr = req.frame(); } catch {}  // no frame yet: a popup or new tab the action opened
+      if (!fr) { log.push(`popup blocked: ${u.slice(0, 120)}`); return route.abort(); }
+      if (fr === page.mainFrame() && u.split("#")[0] !== page.url().split("#")[0]) { log.push(`navigation blocked: ${u.slice(0, 120)}`); return route.abort(); }
+    }
     if (o && o !== origin && !u.startsWith("data:")) { log.push(`cross-origin blocked: ${req.method()} ${u.slice(0, 120)}`); return route.abort(); }
     if (!["GET", "HEAD"].includes(req.method()) && !["fetch", "xhr"].includes(req.resourceType())) { log.push(`write blocked: ${req.method()} ${u.slice(0, 120)}`); return route.abort(); }
     return route.fallback();
