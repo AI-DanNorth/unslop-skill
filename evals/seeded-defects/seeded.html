@@ -66,7 +66,7 @@
 </style>
 </head>
 <body>
-<p class="autoplay"><span id="seed-autoplay" data-seed="motion_snap">Synced just now</span></p>
+<p class="autoplay"><span id="seed-autoplay" data-seed="motion_snap" style="display:inline-block; transition:none !important">Synced just now</span></p>
 <script>
   // passive motion seed: plays three times from load with no click, glides 40 -> 8 px, then snaps the last 8 px
   (() => { const el = document.getElementById("seed-autoplay"); if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
