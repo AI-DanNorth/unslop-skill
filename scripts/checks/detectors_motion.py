@@ -79,7 +79,7 @@ def end_state(run):
     return run.get("final") or []
 
 
-def reduced_movement(run):
+def reduced_movement(run, min_px=0):
     """Largest movement (px) and scale deviation of any changed element under reduced motion, against its end state."""
     final = end_state(run)
     if not final: return None
@@ -91,8 +91,10 @@ def reduced_movement(run):
             if k >= len(final): continue
             F = final[k]
             if F[2] <= 0 or F[3] <= 0 or b[2] <= 0 or b[3] <= 0: continue
+            if max(F[2], F[3]) < min_px: continue   # a chevron or spinner glyph turning is not large-area motion
             move = max(move, math.hypot(*(a - c for a, c in zip(_center(b), _center(F)))))
-            scale = max(scale, abs(b[2] / F[2] - 1), abs(b[3] / F[3] - 1))
+            # a zoom changes both axes; a box that only grows taller or wider is a reveal (an accordion opening), not motion
+            scale = max(scale, min(abs(b[2] / F[2] - 1), abs(b[3] / F[3] - 1)))
     return {"move_px": round(move, 1), "scale_dev": round(scale, 3)}
 
 
@@ -115,7 +117,7 @@ def trigger_summary(trig, cfg):
     r = trig["runs"].get("reduce") or {}
     out["reduce_status"] = r.get("status", "missing") + (f" ({r['reason']})" if r.get("reason") else "")
     if r.get("status") == "ok":
-        out["reduce"] = reduced_movement(r) or {"move_px": 0.0, "scale_dev": 0.0}
+        out["reduce"] = reduced_movement(r, cfg.get("reduced_min_px", 0)) or {"move_px": 0.0, "scale_dev": 0.0}
         out["reduce_timing"] = r.get("timing")
     return out
 
