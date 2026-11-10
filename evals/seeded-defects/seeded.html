@@ -64,6 +64,7 @@
   .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #9ca3af; border-top-color: transparent; border-radius: 50%; animation: seed-spin 1s linear infinite; }
   @keyframes seed-spin { to { transform: rotate(360deg) } }
 </style>
+<meta name="unslop-checks" content="motion_snap:passive_settle text_floor:scaled">
 </head>
 <body>
 <p class="autoplay"><span id="seed-autoplay" data-seed="motion_snap" style="display:inline-block; transition:none !important">Synced just now</span></p>
@@ -137,6 +138,7 @@
 <p data-seed="data_slots">[DATA NEEDED: price] [DATA NEEDED: launch date] [DATA NEEDED: customer quote]</p>
 <p class="pale" data-seed="contrast">This grey paragraph text does not have enough contrast against the white page.</p>
 <p class="tiny" data-seed="text_floor">This running paragraph is set far too small to read comfortably on any screen.</p>
+<div style="transform: scale(0.5); transform-origin: left top; height: 40px"><p style="font-size: 16px" data-seed="text_floor">This product shot is drawn at half size, so its 16px copy reads at eight pixels.</p></div>
 <button class="noring" data-seed="focus_ring">Focus me</button>
 <a href="#" class="icon-btn" aria-label="Close" data-seed="targets"></a><a href="#" class="icon-btn" aria-label="Minimise" data-seed="targets"></a>
 <button data-seed="control_names"><svg width="16" height="16"><rect width="16" height="16"/></svg></button>

@@ -1434,3 +1434,1192 @@ items:
       parent: '[class*="-pair"]'
       child: figure
       keep: 2
+# --- motion pairs (added 10 Nov 2026): captured with --passive 6000; the bad half is one motion fault
+- id: P58
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=press
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: press
+  half: bad
+  why: 'bad half: No response to the press'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P59
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=text-settle
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: text-settle
+  half: bad
+  why: 'bad half: A hidden label changes the baseline'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P60
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=exit
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: exit
+  half: good
+  why: 'good half: Fades out before it is removed'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P61
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-pin
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: detail-pin
+  half: good
+  why: 'good half: Label against the chevron, growing left'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P62
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=viewport-edge
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: viewport-edge
+  half: good
+  why: 'good half: Only the concealed edges are softened'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P63
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=interrupt
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: interrupt
+  half: bad
+  why: 'bad half: Restarts from Day'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P64
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=exit
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: exit
+  half: bad
+  why: 'bad half: Removed on the first frame'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P65
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=label
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: label
+  half: bad
+  why: 'bad half: Changes instantly'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P66
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=spinner-start
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: spinner-start
+  half: good
+  why: 'good half: Already spinning as it appears'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P67
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=handoff
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: handoff
+  half: good
+  why: 'good half: Lands on the measured avatar'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P68
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=drag-offset
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: drag-offset
+  half: bad
+  why: 'bad half: Snaps its center under the pointer'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P69
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=label
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: label
+  half: good
+  why: 'good half: Old label exits, new label enters'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P70
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=label-boundary
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: label-boundary
+  half: bad
+  why: 'bad half: Letters are sliced by the slot'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P71
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=horizontal-insert
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: horizontal-insert
+  half: bad
+  why: 'bad half: The label jumps sideways'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P72
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=press
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: press
+  half: good
+  why: 'good half: Responds before the result'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P73
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=adjacent-action
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: adjacent-action
+  half: good
+  why: 'good half: Settings travels with the changing width'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P74
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=label-boundary
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: label-boundary
+  half: good
+  why: 'good half: Letters soften as they reach the edge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P75
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=identity
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: identity
+  half: bad
+  why: 'bad half: Icon is replaced'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P76
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-reaction
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: detail-reaction
+  half: good
+  why: 'good half: The emoji in a pill on the corner, scaling in'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P77
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=reset
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: reset
+  half: good
+  why: 'good half: A Clear press explains the reset'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P78
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=spinner-start
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: spinner-start
+  half: bad
+  why: 'bad half: Appears, waits, then starts spinning'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P79
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=space
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: space
+  half: good
+  why: 'good half: New row carries the next line with it'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P80
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=identity
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: identity
+  half: good
+  why: 'good half: Same strokes rotate into the next shape'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P81
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=handoff
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: handoff
+  half: bad
+  why: 'bad half: Lands on the slot, then jumps inward'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P82
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-reaction
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: detail-reaction
+  half: bad
+  why: 'bad half: A drawn heart in a disc, over the words, in one frame'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P83
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=text-settle
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: text-settle
+  half: good
+  why: 'good half: Travel stays separate from layout'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P84
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=list-reflow
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: list-reflow
+  half: bad
+  why: 'bad half: Existing rows jump down and back'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P85
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=surface-resize
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: surface-resize
+  half: bad
+  why: 'bad half: The outline jumps ahead of the content'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P86
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-chart
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: detail-chart
+  half: bad
+  why: 'bad half: Line, area and dot fade in together'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P87
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=space
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: space
+  half: bad
+  why: 'bad half: New row makes the next line jump'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P88
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=horizontal-insert
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: horizontal-insert
+  half: good
+  why: 'good half: The label follows the opening space'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P89
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=drag-offset
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: drag-offset
+  half: good
+  why: 'good half: Keeps the point that was grabbed'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P90
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=dependent-starts
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: dependent-starts
+  half: bad
+  why: 'bad half: Every layer starts together'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - .cy-pair-label
+    pair:
+      parent: .cy-pair
+      child: .cy-pair-cell
+      keep: 1
+- id: P91
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=reset
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: reset
+  half: bad
+  why: 'bad half: Files clear without an action'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P92
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-throw
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: detail-throw
+  half: good
+  why: 'good half: Leaves at the finger’s speed, gap closes in one ease'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P93
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=dependent-starts
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: dependent-starts
+  half: good
+  why: 'good half: Dependent responses overlap'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - .cy-pair-label
+    pair:
+      parent: .cy-pair
+      child: .cy-pair-cell
+      keep: 2
+- id: P94
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-pin
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: detail-pin
+  half: bad
+  why: 'bad half: Label at the slot’s left, the gap to the chevron changing'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P95
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=adjacent-action
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: adjacent-action
+  half: bad
+  why: 'bad half: Settings jumps to the new edge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P96
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=surface-resize
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: surface-resize
+  half: good
+  why: 'good half: The surface follows the same live motion'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P97
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=viewport-edge
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: viewport-edge
+  half: bad
+  why: 'bad half: Rows meet an abrupt clipping edge'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P98
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-throw
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: borderline
+  group: pair-motion
+  pair: detail-throw
+  half: bad
+  why: 'bad half: Pauses at release, eases in from rest, gap snaps shut'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 1
+- id: P99
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=interrupt
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: interrupt
+  half: good
+  why: 'good half: Continues from its current position'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P100
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=detail-chart
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: detail-chart
+  half: good
+  why: 'good half: Line draws on, area follows, dot lands last'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2
+- id: P101
+  url: http://127.0.0.1:5199/?capture=contrasts&lesson=list-reflow
+  path: stageshow playground
+  repo: stageshow
+  commit: 299140fafd08df55a9c234e610c3f64af3f45531
+  medium: web
+  kind: page
+  expect: good
+  group: pair-motion
+  pair: list-reflow
+  half: good
+  why: 'good half: The list opens and closes around the row'
+  withhold_target: true
+  widths: 375,1440
+  capture_flags:
+  - --no-interact
+  - --passive
+  - '6000'
+  isolate:
+    remove:
+    - .tc-picker
+    - section > header
+    - figcaption
+    pair:
+      parent: '[class*="-pair"]'
+      child: figure
+      keep: 2

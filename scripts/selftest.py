@@ -62,6 +62,17 @@ def main():
         ok = bool(caught)
         print(f"{det:22s} {', '.join(pages_for):28s} {'caught' if ok else 'MISSED (' + st + ')'}")
         if not ok: failures.append(f"{det}: missed its seed ({st})")
+    # check-level seeds: <meta name="unslop-checks" content="detector:check ..."> needs a hit carrying that check, so a
+    # second path in one detector (motion_snap passive, text_floor scaled) cannot pass on the strength of the first
+    for name, page in pages.items():
+        if name == "control": continue
+        for m in re.finditer(r'<meta name="unslop-checks" content="([^"]+)"', page.read_text()):
+            for pair in m.group(1).split():
+                det, chk = pair.split(":")
+                hits = results[name]["detectors"].get(det, {}).get("hits", [])
+                ok = any(h.get("check") == chk for h in hits)
+                print(f"{det + ':' + chk:22s} {name:28s} {'caught' if ok else 'MISSED'}")
+                if not ok: failures.append(f"{det}: check '{chk}' missed its seed on {name}")
     print(f"\nevidence: {out}")
     if failures:
         print(f"\nSELF-TEST FAILED ({len(failures)}):"); [print(" -", f) for f in failures]; sys.exit(1)

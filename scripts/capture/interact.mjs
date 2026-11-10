@@ -347,7 +347,20 @@ export function startLive(ms) {
       if (!shown) continue;
       items.push([L.ids.get(el), Math.round(r.left * 10) / 10, Math.round(r.top * 10) / 10, Math.round(r.width * 10) / 10, Math.round(r.height * 10) / 10]);
     }
-    L.frames.push({ t, items });
+    // finite CSS/WAAPI animations running this frame (an opacity fade moves no box, so the boxes alone miss it);
+    // infinite ones (spinners, shimmer) are ambient and left out. Targets are recorded as live ids (-1: not tracked).
+    const anims = [];
+    for (const a of document.getAnimations ? document.getAnimations() : []) {
+      if (a.playState !== "running" || !a.effect || a.effect.getComputedTiming().iterations === Infinity) continue;
+      // only properties that move, size, reveal or fade: a button's colour transition after a click is not motion
+      const props = a.transitionProperty ? [a.transitionProperty] : (a.effect.getKeyframes ? a.effect.getKeyframes().flatMap((k) => Object.keys(k)) : []);
+      if (!props.some((q) => /^(opacity|transform|translate|scale|rotate|width|height|max-height|max-width|clip-path|clip|top|left|right|bottom|inset|margin|padding|all)/.test(q))) continue;
+      const tg = a.effect.target; if (!tg || !tg.getBoundingClientRect) continue;
+      const rb = tg.getBoundingClientRect();
+      anims.push([L.ids.has(tg) ? L.ids.get(tg) : -1, Math.round(rb.left), Math.round(rb.top), Math.round(rb.width), Math.round(rb.height)]);
+      if (anims.length >= 40) break;
+    }
+    L.frames.push({ t, items, anims });
     if (t < ms) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
@@ -404,10 +417,19 @@ export function analyseLive(cfg) {
         if (!kind) {
           for (const [o] of at[f]) {
             if (o === id || isAmbient(o)) continue;
-            const pb = step(f - 1, o, 2), pa = step(f + 1, o, 2), xb = step(f - 1, o, 1), xa = step(f + 1, o, 1);
             const glide = (u, v) => u !== null && v !== null && Math.abs(u) > 0.4 && Math.abs(v) > 0.4 && Math.abs(u) < cfg.jumpPx * 3 && Math.abs(v) < cfg.jumpPx * 3;
-            if (glide(pb, pa) || glide(xb, xa)) { kind = "shove"; break; }
+            // mid-glide on any axis: a row or chip that opens grows in height or width rather than moving (set 2 motion pairs)
+            if ([1, 2, 3, 4].some((q) => glide(step(f - 1, o, q), step(f + 1, o, q)))) { kind = "shove"; break; }
           }
+        }
+        if (!kind) {
+          // shove, animation case: a finite animation on another element (not this one or one of its ancestors) runs on
+          // both sides of the jump (set 2 list-reflow: the new row fades in while the rows below it jump)
+          const lineage = new Set(); for (let x = id, k2 = 0; x >= 0 && k2 < 40; x = L.meta[x].parent, k2++) lineage.add(x);
+          // and near it: the animating box comes within 200 px of the jumping one (an unrelated fade elsewhere on a page is not a cause)
+          const me = at[f].get(id), near = (a) => me && a[1] < me[1] + me[3] + 200 && a[1] + a[3] > me[1] - 200 && a[2] < me[2] + me[4] + 200 && a[2] + a[4] > me[2] - 200;
+          const other = (g) => (F[g].anims || []).some((a) => (a[0] === -1 || !lineage.has(a[0])) && near(a));
+          if (other(f - 1) && other(f + 1)) kind = "shove";
         }
         if (!kind) continue;
         const key = `${id}:${axis}`;

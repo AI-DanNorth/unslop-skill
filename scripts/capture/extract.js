@@ -77,6 +77,8 @@
       rect: { x: Math.round(r.left + scrollX), y: Math.round(r.top + scrollY), w: Math.round(r.width), h: Math.round(r.height) },
       style: st, opacity: vis ? effOpacity(el) : 0, parent: el.parentElement ? el.parentElement.getAttribute("data-unslop-id") : null,
       before: getComputedStyle(el, "::before").content, after: getComputedStyle(el, "::after").content };
+    // rendered / layout width: a transform: scale() on the element or an ancestor draws its text at fontSize x scale
+    if (text && el.offsetWidth > 0) { const k = r.width / el.offsetWidth; if (Math.abs(k - 1) > 0.03) rec.scale = Math.round(k * 1000) / 1000; }
     const interactive = el.matches("a[href],button,input,select,textarea,summary,[role=button],[role=link],[tabindex]:not([tabindex='-1'])");
     // tabindex: heading anchors like <a aria-hidden="true" tabindex="-1"> are out of the tab order (live round 1: L34 x6,
     // L33 disabled pager tabindex=-1). Recorded on every interactive element (null = no attribute) and wherever it is set.

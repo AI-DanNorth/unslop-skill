@@ -120,19 +120,21 @@ def text_floor(ev, cfg):
     out = []; labels = []
     floor = cfg["body_px"]
     for e in ev.texts(min_len=1):
-        s = px(e["style"]["fontSize"])
+        k = e.get("scale") or 1.0          # rendered / layout width: a transform: scale() on the text or an ancestor
+        s = px(e["style"]["fontSize"]) * k   # set 2: P25 scale(0.5) and P43 ~0.62 drew 10-14px type at 5-7px
+        scaled = f" (declared {px(e['style']['fontSize']):.0f}px, drawn at {k:.2f} scale)" if abs(k - 1) > 0.03 else ""
         if in_tag(ev, e, ("footer", "figcaption", "small", "caption", "sup", "sub", "code", "pre", "label", "th", "td", "nav", "button")): continue
         if e["textLen"] >= cfg["min_run_chars"] and s < floor - 0.1:
             hard = cfg.get("hard_px", cfg["dense_ui_px"])
             tier, pr = ("Floor", "P0") if s < hard - 0.1 else (("Reflex", "P1") if s < cfg["dense_ui_px"] - 0.1 else ("Finish", "P3"))
             why = incidental(ev, e, cfg) if tier == "Floor" else None      # live round 1: all 8 control Floors were mock text (L25 frame, L27 graphics)
             if why: tier, pr = "Reflex", "P2"
-            out.append(hit(cfg, where(e), f"{e['textLen']}-character run at {s:.0f}px (hard floor {hard}px, dense UI {cfg['dense_ui_px']}px, body {floor}px)"
-                           + (f"; {why}: incidental (WCAG 1.4.3 exemption)" if why else ""), value=s, tier=tier, priority=pr))
+            out.append(hit(cfg, where(e), f"{e['textLen']}-character run at {s:.0f}px{scaled} (hard floor {hard}px, dense UI {cfg['dense_ui_px']}px, body {floor}px)"
+                           + (f"; {why}: incidental (WCAG 1.4.3 exemption)" if why else ""), value=round(s, 1), tier=tier, priority=pr, **({"check": "scaled"} if scaled else {})))
         elif e["textLen"] < cfg["min_run_chars"] and s < cfg["label_px"] - 0.1:
             labels.append(e)
     if len(labels) > cfg["max_label_runs"]:
-        out += [hit(cfg, where(e), f"label at {px(e['style']['fontSize']):.0f}px (label floor {cfg['label_px']}px; {len(labels)} such)", tier="Reflex") for e in labels[:5]]
+        out += [hit(cfg, where(e), f"label at {px(e['style']['fontSize']) * (e.get('scale') or 1):.0f}px (label floor {cfg['label_px']}px; {len(labels)} such)", tier="Reflex") for e in labels[:5]]
     return sorted(out, key=lambda h: h["tier"] != "Floor")[:12]
 
 @detector("focus_ring", needs=("focus.json",))
