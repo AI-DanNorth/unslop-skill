@@ -72,7 +72,7 @@ detectors:
                      scaled_ratio: 0.85, mock_hint: '(?:^|[-_]|(?<=[a-z0-9])(?=[A-Z]))(?i:graphic|mock(?:up)?|illustration|screenshot|preview|demo|frame)s?(?![a-z])'}
                      # mock_hint / scaled_ratio: text in a product illustration (class token on a non-interactive ancestor) or CSS-scaled
                      # (glyph box < scaled_ratio x font size) is incidental under WCAG 1.4.3 and drops to Reflex (live round 1: L25 Linear frame, L27 Stripe graphics)
-  text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2,
+  text_floor:       {rule: A11-002, tier: Floor, hard_px: 12, body_px: 16, dense_ui_px: 14, label_px: 12, min_run_chars: 28, max_label_runs: 2, min_shrunk: 3,
                      scaled_ratio: 0.85, mock_hint: '(?:^|[-_]|(?<=[a-z0-9])(?=[A-Z]))(?i:graphic|mock(?:up)?|illustration|screenshot|preview|demo|frame)s?(?![a-z])'}   # Floor below hard_px; Reflex below dense_ui_px; Finish below body_px; mock text drops to Reflex
   focus_ring:       {rule: A11-003, tier: Floor, min_contrast: 3.0, fail_below: 2.95}
   targets:          {rule: A11-004, tier: Floor, floor_px: 24, touch_px: 44, touch_tier: Reflex, footer_tier: Reflex}   # footer links: Reflex (owner call, 9 Nov 2026)
