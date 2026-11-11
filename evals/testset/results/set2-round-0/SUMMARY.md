@@ -64,3 +64,20 @@ Seven blind reviewers ran `lens-typography`, `lens-color` and `lens-concept` (tw
 - What the lenses add over the sweep: the half-scale transforms (`transform: scale(0.5)` in P25, about 0.62 in P43). The sweep's `text_floor` reads declared sizes, so it missed them, and both typography reviewers flagged them (TYP-135). Candidate detector: measure text size after transforms.
 
 The motion pairs are not in this set yet. Capture now has a passive recording mode (`capture.mjs --passive <ms>`, `01-evidence/passive.json`, read by `motion_snap`) for motion that plays without a click.
+
+## Motion pairs, sweep only (10 Nov 2026)
+
+Stageshow's 22 motion pairs were added as P58 to P101 (44 halves). Each was captured on its own with `--no-interact --passive 6000`, which records every painted box from load with no click (`01-evidence/passive.json`). `motion_snap` reads the result. No lens ran on these halves: the passive recording keeps no stills, so a reviewer would see only the sweep's own numbers.
+
+| Round | Separates | Ties | Good halves hit |
+|---|---|---|---|
+| First passive capture | 2 of 22 (adjacent-action, surface-resize) | 20 | 0 |
+| After the animation-aware shove | **5 of 22** (adjacent-action, drag-offset, horizontal-insert, list-reflow, text-settle) | 17 | 1 (surface-resize) |
+
+- **Animation-aware shove (`interact.mjs`):** the recorder now logs each frame's finite move, size and fade animations (`getAnimations()`, with target boxes). A jump counts as a shove when a nearby element runs one of them on both sides of the jump, or glides on any axis, width and height included. The evidence was list-reflow: its rows jump 34 px while the new row only fades in, and opacity moves no box.
+- **New noise:** surface-resize's good half now has 5 hits (text jumps 19 px while the popup animates). Before the change it had none. Tier is Finish. Watch for this on the human controls at the next live recapture.
+- **What a box recorder cannot see:** 17 pairs still tie. Their faults are instant swaps (label, identity, exit, press), timing order (interrupt, dependent-starts, spinner-start), edges that slice or fade (label-boundary, viewport-edge), and demos (detail-chart, detail-throw, detail-reaction, detail-pin, reset). These need stills from the passive recording and a motion lens.
+
+### Transform-aware text size
+
+`extract.js` records each text element's rendered-to-layout scale. `text_floor` judges text at its drawn size. When three or more short runs are shrunk below the floor, it reports one `scaled` hit, which counts labels and table cells too. Both bad halves (P25 at `scale(0.5)`, P43 at about 0.62) now carry a `scaled` hit; their good halves (P20, P31) carry none. The hits are Reflex, because CSS-scaled mocks count as incidental (live round 1).
