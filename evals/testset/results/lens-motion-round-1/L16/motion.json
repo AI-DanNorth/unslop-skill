@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Every measured change was instant (the \"How this note was chosen\" disclosure, the \"7 days\" range button and \"Copy\"), and the declared transitions are colour changes of 150 to 200 ms on one named curve, cubic-bezier(0.2, 0.8, 0.2, 1), set through tokens such as --dur-fast and --ease-out, which suits a dense operations dashboard.",
+  "score": null,
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [],
+  "strengths": [
+    "The range, type and owner filters and the \"Copy\" button answer instantly, which suits an Operate screen used many times a day.",
+    "One curve, cubic-bezier(0.2, 0.8, 0.2, 1), covers 13 of 14 transitioning elements, with two durations (150 and 200 ms) taken from tokens (--dur-fast, --ease-out).",
+    "No load reveals, no loops and no keyframes; a prefers-reduced-motion rule is present."
+  ],
+  "not_investigated": [
+    "no motion to judge: every measured change was instant",
+    "1 iframe on the page: transitions inside it were not exercised",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page",
+    "score null: no motion to judge, every measured change was instant"
+  ]
+}

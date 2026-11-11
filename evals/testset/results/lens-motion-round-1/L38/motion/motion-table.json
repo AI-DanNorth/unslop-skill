@@ -1,0 +1,406 @@
+{
+ "run": "L38",
+ "interaction": {
+  "motion": {
+   "found": 4,
+   "tried": 4,
+   "measured": 3,
+   "skipped": 0,
+   "notVerified": [
+    "1 iframe(s) on the page: transitions inside frames are not exercised"
+   ],
+   "elapsedMs": 61285
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 1
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 8
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 2
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 4,
+  "tried": 4,
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "dialog",
+   "name": "Search",
+   "selector": "#navbar-search > button",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "realtime",
+   "opened": "opened-element",
+   "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+   "changed": [
+    "Search"
+   ],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1436,
+    "still_moving": true,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     165,
+     262,
+     344,
+     455,
+     564,
+     673
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 1,
+   "kind": "tab",
+   "name": "Code",
+   "selector": "(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "normal": "not-verified (the click navigated the page)",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     51,
+     113,
+     153,
+     253,
+     408,
+     609
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 2,
+   "kind": "disclosure",
+   "name": "Toggle legal and privacy information",
+   "selector": "body > div:nth-of-type(4) > div > button",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Really Good Emails is part of Beefree. I"
+   ],
+   "duration_ms": 280,
+   "largest_box": {
+    "w": 1440,
+    "h": 99.2,
+    "viewport_pct": 11.0,
+    "selector": "body > div:nth-of-type(4) > div > div"
+   },
+   "min_start_scale": 0.0,
+   "max_travel_px": null,
+   "max_overshoot": 1.0,
+   "entering": 1,
+   "leaving": 0,
+   "anim_end_ms": 300,
+   "animations": [
+    {
+     "props": "grid-template-rows",
+     "ms": 300,
+     "easing": "ease-in-out",
+     "count": 1
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [
+    "grid-template-rows"
+   ],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1018,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 3,
+   "kind": "disclosure",
+   "name": "Find inspiration",
+   "selector": ") > div > div:nth-of-type(1) > nav > div:nth-of-type(1) > details:nth-of-type(1) > summary",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Browse by type Popular right now Editabl",
+    "> details:nth-of-type(1) > summary > svg"
+   ],
+   "duration_ms": 170,
+   "largest_box": {
+    "w": 1100,
+    "h": 681.6,
+    "viewport_pct": 57.9,
+    "selector": "1) > nav > div:nth-of-type(1) > details:nth-of-type(1) > div"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 8.0,
+   "max_overshoot": 1.1,
+   "entering": 2,
+   "leaving": 0,
+   "anim_end_ms": 220,
+   "animations": [
+    {
+     "props": "transform",
+     "ms": 200,
+     "easing": "ease",
+     "count": 1,
+     "flags": [
+      "browser default ease"
+     ]
+    },
+    {
+     "props": "opacity,transform",
+     "ms": 220,
+     "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+     "count": 1,
+     "flags": [
+      "overshoots (y 1.56)"
+     ]
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1314,
+    "still_moving": false,
+    "frame_ms": 16.9,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [
+    "motion/easing: transition easing is ease (read from the running animations)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t3-normal-000.png",
+     "motion/t3-normal-050.png",
+     "motion/t3-normal-100.png",
+     "motion/t3-normal-150.png",
+     "motion/t3-normal-250.png",
+     "motion/t3-normal-400.png",
+     "motion/t3-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": []
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 157,
+  "transitions": [
+   {
+    "props": "all",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 6,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "color",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 4,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "transform",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 3,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "background-color",
+    "ms": "200",
+    "easing": "ease-in",
+    "elements": 3
+   }
+  ],
+  "transition_elements": 16,
+  "easings": [
+   {
+    "easing": "ease",
+    "elements": 13,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "easing": "ease-in",
+    "elements": 3
+   }
+  ],
+  "durations_ms": {
+   "200": 16
+  },
+  "running_animations": [],
+  "stylesheet": {
+   "readable_rules": 552,
+   "keyframes": 31,
+   "infinite": 12,
+   "prefers_reduced_motion": 4,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 1,
+   "transition_all": 4,
+   "will_change": 3
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "ease-in-out",
+    "animations": 1
+   },
+   {
+    "easing": "ease",
+    "animations": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+    "animations": 1,
+    "flags": [
+     "overshoots (y 1.56)"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "200": 1,
+   "220": 1,
+   "300": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 3,
+  "triggers_with_motion": 3,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L38\\03-lenses\\motion\\contact-sheet.png"
+}

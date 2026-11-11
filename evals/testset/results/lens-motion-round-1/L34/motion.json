@@ -1,0 +1,50 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Motion on this docs page is orientation and feedback from Ant Design's own motion tokens: the image preview grows out of its thumbnail in 300 ms, the contributors popover and its mask fade in about 200 ms, and the version select drops from its field in 200 ms on cubic-bezier(0.23, 1, 0.32, 1); the sweep's enter_scale hit (0.8 start) on that rarely used select is minor, while the 300 ms browser-default ease on 130 nav and link colour changes is the one place the timing drifts.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-PURPOSE, T-SPATIAL-MEANING and T-CHOREOGRAPHY pass (overlays come from their triggers, no load reveal, no loops), and T-MOTION-SYSTEM finds only the browser's default ease on the link and menu hover colour."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "left nav (span.ant-menu-title-content, li.ant-menu-item) and body links (a), 1440",
+      "evidence": "The declared table puts 274 of 289 transitioning elements on the browser's default `ease`, 281 of them at 300 ms: 72 links and 51 menu titles animate colour, and 45 menu items animate border and background colour. Only 13 elements use the system's cubic-bezier(0.645, 0.045, 0.355, 1). The sweep's motion/easing hit on the image-preview trigger reads the same default.",
+      "before": "color 0.3s ease and border-color, background-color 0.3s ease on the nav and links",
+      "after": "The system's short step (about 100 to 200 ms) on its own ease-in-out curve for every hover colour change",
+      "why": "Visitors move the pointer down a long left nav many times a session, and a 300 ms default fade on each item trails behind the pointer while the selected-item styling uses the tuned curve.",
+      "root": "Ant Design menu and link colour transition rules",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The image preview opens from its thumbnail: the contact sheet's t2 row grows the preview from the example image to the full overlay by 250 ms, so the visitor sees where it came from.",
+    "The version select opens in 200 ms on a decelerating curve, cubic-bezier(0.23, 1, 0.32, 1), with its transform origin on the field, and the live run ends at 207 ms.",
+    "The header icon buttons answer with no movement, and the page has no load reveal and no running animations."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so motion that plays without a click is not verified.",
+    "The \"中 En\" language button: its run is not verified (the click navigated away).",
+    "T-POSTER and T-DEMO-LOOP: the button examples are static components, not demo animations.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion (the capture does not scroll while recording), hover as it plays and route transitions were not captured.",
+    "Movement left under reduced motion on the contributors dialog (240 px) and the image preview (302 px) belongs to the sweep (A11-011), as do the transition-all hits (MOT-001) and text hidden with scripts off (ROB-001)."
+  ]
+}

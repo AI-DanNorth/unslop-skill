@@ -1,0 +1,79 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The work tabs (\"Club night\") wipe in the next example site with a clip-path over 520 to 820 ms, a showpiece where the picture is the content, so the sweep's 750 ms duration hit there is fitting, and the page uses named tokens (--ease-out-expo, --t-enter 0.9 s, --t-stagger 70 ms); but the hero stacks a word-by-word heading drop, a sunrise glow, a 16 s breathing loop and a pill rise, and 87 blocks are set to rise 28 px over 900 ms as they enter.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-PURPOSE and T-MOTION-SYSTEM pass for the tab showpiece and the token system, but T-CHOREOGRAPHY finds an entrance on every block and T-MOTION-BUDGET finds five hero entrances plus two loops."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-012",
+      "title": "The page arrives once and is never gated",
+      "tier": "Reflex",
+      "where": "every section block with [data-enter] (87 elements, for example the h2 \"Design sense, packaged as a skill\", \"Sponsored by\", \"How it works\"), 1440",
+      "evidence": "87 elements declare \"opacity, transform 900ms cubic-bezier(0.16, 1, 0.3, 1)\" and the stylesheet hides \"[data-enter]:not([data-entered])\" at opacity 0 with a 28 px translate (--rise: 28px, --t-enter: .9s, --t-stagger: 70ms) until they enter. ROB-001 already records 81% of text hidden if the observer never fires.",
+      "before": "Headings, paragraphs and lists all rise 28 px over 900 ms as they come into view.",
+      "after": "Let the page arrive once at the hero and show the sections without a per-block entrance.",
+      "why": "The same rise on every block slows reading on each scroll and is the generated reveal pattern.",
+      "test": "T-CHOREOGRAPHY",
+      "source": "motion",
+      "root": "[data-enter] reveal class"
+    },
+    {
+      "rule": "MOT-006",
+      "title": "Motion has a budget per page",
+      "tier": "Reflex",
+      "where": "hero, first screen, 1440",
+      "evidence": "At load the hero runs hero-word on 7 words (950 ms each, dropping from 112% with a 7 degree turn), hero-rise on 3 blocks (800 ms), hero-rise-pill (700 ms), hero-sunrise on the glow (1400 ms) and hero-work-arrive on the preview (1200 ms), then hero-breathe, a 16 s infinite alternating drift and scale on the glow, plus a 22 s ember loop.",
+      "before": "Five load entrances and two loops in the first screen.",
+      "after": "Keep one arrival (the heading or the work preview) and hold the glow still.",
+      "why": "Several entrances plus a breathing glow pull attention away from the install command and the example tabs.",
+      "test": "T-MOTION-BUDGET",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "hero glow (.hero-sun-core, 1734 x 670 px), 1440",
+      "evidence": "The glow runs \"hero-breathe 16s ease-in-out infinite alternate\" (opacity to 0.86, translate 2.5% -4%, scale 1.08) and its ::after runs \"hero-ember 22s infinite alternate\".",
+      "before": "The background glow drifts and pulses for as long as the page is open.",
+      "after": "Hold the glow still after the sunrise.",
+      "why": "The loop shows no state or data; it is slow, but it keeps a large area behind the headline moving.",
+      "test": "T-LOOPS",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The \"Club night\" tab swap is a clip-path wipe (520 ms on cubic-bezier(0.16, 1, 0.3, 1), with scale and translate at 820 ms) where the example site is the content, and under reduced motion it swaps instantly (move 0 px).",
+    "Named motion tokens (--ease-out-expo, --ease-in-out cubic-bezier(.65, 0, .35, 1), --t-enter, --t-stagger) and 15 prefers-reduced-motion rules, which drop the rise and keep a 0.3 s opacity change."
+  ],
+  "not_investigated": [
+    "capture prep: 12 scroll frames were applied before capture (manifest.prep), so reveal classes had fired in the screenshots; scroll-driven scenes ([data-scene]) were not recorded",
+    "capture context: manifest.network lists 1 blocked script chunk",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

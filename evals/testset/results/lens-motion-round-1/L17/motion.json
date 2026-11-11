@@ -1,0 +1,79 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "Two large blurred colour blobs float on a 6 s infinite loop behind the hero, style cards zoom their preview image over 500 ms and fade in an overlay on hover, and the controls run on a mix of browser ease (\"transition: all\" at 300 ms on 35 elements) and Tailwind defaults; the style filters (\"SaaS\", \"All\", \"Light\") change instantly, which is right.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-LOOPS finds a decorative float loop, T-HOVER-SIGNAL finds an image zoom plus overlay on every card, and T-MOTION-SYSTEM finds two default curve families with \"all\" transitions."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "hero background, two .animate-float blobs (384 x 384 and 320 x 320 px), 1440",
+      "evidence": "Running animations at 1440 include \"float 6s ease-in-out infinite\" on two blurred gradient blobs behind the heading; the theme ships it as a token (--animate-float). The live run of the theme toggle counted 2 ambient movers before the click.",
+      "before": "Two colour blobs float behind the hero on a 6 s loop.",
+      "after": "Hold the background still.",
+      "why": "The loop shows no state or data and keeps the area behind the headline moving.",
+      "test": "T-LOOPS",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-013",
+      "title": "Hover answers with one small signal",
+      "tier": "Reflex",
+      "where": "style cards in the \"Styles\" grid (trigger t2, card 429 x 241 px), 1440",
+      "evidence": "On contact-sheet row t2 the preview image zooms and a dark overlay with \"View Demo\" and \"Show Prompt\" fades in; the motion table measures opacity at 300 ms and scale at 500 ms on cubic-bezier(0.4, 0, 0.2, 1), and the stylesheet declares \".group-hover:scale-105\" and \".group-hover:scale-110\". The sweep records a MOT-002 duration hit of 370 ms.",
+      "before": "Each card zooms its image for 500 ms and fades in an overlay on hover.",
+      "after": "Keep the overlay with its two actions at about 150 ms and drop the image zoom.",
+      "why": "A slow image zoom on every card in a long grid is the stock hover; visitors scanning the grid trigger it on every card they pass.",
+      "test": "T-HOVER-SIGNAL",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "71 elements use Tailwind's cubic-bezier(0.4, 0, 0.2, 1) and 37 use the browser default ease, across durations of 150, 200, 300 and 500 ms. 35 elements declare \"transition: all 300ms ease\" and the sweep's MOT-001 hit records \"transition: all\" on 64 elements.",
+      "before": "Two default curve families and four durations, with \"all\" on dozens of elements.",
+      "after": "Name one curve and two or three duration steps as tokens and transition named properties.",
+      "why": "The page's feedback timing is inherited from defaults, and \"all\" animates layout changes by accident.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind utilities and an \"all 300ms ease\" component rule"
+    }
+  ],
+  "strengths": [
+    "The category and mode filters (\"SaaS\", \"All\", \"Light\") update the grid instantly, with no stagger on filtering."
+  ],
+  "not_investigated": [
+    "\"Toggle theme\": the sweep's 1435 ms live duration hit is not judged here; the frames show no visible change in the toggle, and the 2 ambient movers (the float blobs) may account for it",
+    "reduced-motion runs for \"All Modes\", \"Light\", \"SaaS\" and \"All\" were skipped (time budget)",
+    "\"Load More\": the live run counted 125 ambient movers (animated style previews in the grid); not separable from the button's own motion",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

@@ -1,0 +1,330 @@
+{
+ "run": "L24",
+ "interaction": {
+  "motion": {
+   "found": 2,
+   "tried": 2,
+   "measured": 2,
+   "skipped": 0,
+   "notVerified": [
+    "1 iframe(s) on the page: transitions inside frames are not exercised"
+   ],
+   "elapsedMs": 66882
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 0
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 8
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 1
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 0
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 2,
+  "tried": 2,
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "menu",
+   "name": "Industries",
+   "selector": "#w-dropdown-toggle-0",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "opened-element",
+   "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+   "changed": [
+    "Industries submenu"
+   ],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 1,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 284,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 1
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     54,
+     102,
+     164,
+     257,
+     413,
+     612
+    ],
+    "reduce": [
+     0,
+     67,
+     118,
+     164,
+     261,
+     415,
+     616
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "disclosure",
+   "name": "Technologies",
+   "selector": "#w-node-_6c2ca2c4-a3ec-ee7d-882d-8ca50a0772a6-0a0772a2 > div:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 1,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 272,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     67,
+     114,
+     150,
+     255,
+     411,
+     611
+    ],
+    "reduce": [
+     0,
+     52,
+     110,
+     153,
+     266,
+     404,
+     606
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 240,
+  "transitions": [
+   {
+    "props": "color",
+    "ms": "100",
+    "easing": "ease",
+    "elements": 6,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "transform, box-shadow",
+    "ms": "400/350",
+    "easing": "cubic-bezier(0.713, 0.5, 0.165, 1)",
+    "elements": 3
+   },
+   {
+    "props": "all",
+    "ms": "200",
+    "easing": "ease-in",
+    "elements": 2
+   },
+   {
+    "props": "color, background-color",
+    "ms": "400/400",
+    "easing": "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+    "elements": 2
+   },
+   {
+    "props": "color, background-color, box-shadow",
+    "ms": "150/150/150",
+    "easing": "ease",
+    "elements": 2,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "transform",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "color",
+    "ms": "150",
+    "easing": "ease-in",
+    "elements": 1
+   }
+  ],
+  "transition_elements": 17,
+  "easings": [
+   {
+    "easing": "ease",
+    "elements": 9,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "easing": "ease-in",
+    "elements": 6
+   },
+   {
+    "easing": "cubic-bezier(0.713, 0.5, 0.165, 1)",
+    "elements": 3
+   },
+   {
+    "easing": "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+    "elements": 2
+   },
+   {
+    "easing": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+    "elements": 2,
+    "flags": [
+     "anticipates (y -0.28)"
+    ]
+   },
+   {
+    "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    "elements": 2
+   }
+  ],
+  "durations_ms": {
+   "100": 6,
+   "150": 3,
+   "200": 5,
+   "350": 3,
+   "400": 5
+  },
+  "running_animations": [],
+  "stylesheet": {
+   "readable_rules": 5737,
+   "keyframes": 1,
+   "infinite": 1,
+   "prefers_reduced_motion": 0,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 1
+  }
+ },
+ "measured_system": {
+  "easings": [],
+  "durations_ms": {}
+ },
+ "evidence": {
+  "triggers_measured": 2,
+  "triggers_with_motion": 2,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L24\\03-lenses\\motion\\contact-sheet.png"
+}

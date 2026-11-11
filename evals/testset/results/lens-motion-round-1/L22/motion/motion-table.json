@@ -1,0 +1,211 @@
+{
+ "run": "L22",
+ "interaction": {
+  "motion": {
+   "found": 1,
+   "tried": 1,
+   "measured": 1,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 27622
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 3
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 1
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 1
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 1,
+  "tried": 1,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "button",
+   "name": "↻ REPLAY",
+   "selector": "#replay",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "AI · GENERATED DeepSeek V4 FUTURE OF AI ",
+    "th-of-type(2) > div:nth-of-type(1) > img",
+    "th-of-type(1) > div:nth-of-type(1) > img",
+    "th-of-type(3) > div:nth-of-type(1) > img",
+    "3 基于 PM after-party 受众，推荐 3 个差异化方向Pentag",
+    "1 触发 trigger，读 SKILL.md检查点 1：先答四问"
+   ],
+   "duration_ms": 660,
+   "largest_box": {
+    "w": 706.7,
+    "h": 300.7,
+    "viewport_pct": 16.4,
+    "selector": "#slop"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 4.0,
+   "max_overshoot": 1.0,
+   "entering": 0,
+   "leaving": 6,
+   "anim_end_ms": 800,
+   "animations": [
+    {
+     "props": "opacity",
+     "ms": 800,
+     "easing": "ease",
+     "count": 4,
+     "flags": [
+      "browser default ease"
+     ]
+    },
+    {
+     "props": "opacity",
+     "ms": 350,
+     "easing": "ease",
+     "count": 2,
+     "flags": [
+      "browser default ease"
+     ]
+    },
+    {
+     "props": "transform",
+     "ms": 350,
+     "easing": "ease",
+     "count": 2,
+     "flags": [
+      "browser default ease"
+     ]
+    }
+   ],
+   "paint_only": 14,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1315,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 4.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "opacity 350 ms",
+     "opacity 800 ms",
+     "transform 350 ms"
+    ],
+    "changed": 6
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 660 ms (measured from frames; limit for a button 300 ms)",
+    "motion/easing: transition easing is ease (read from the running animations)",
+    "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 4 px / scales 0% (frames seeked)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "note": "dom-1440.json missing: declared motion not verified"
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "ease",
+    "animations": 8,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "350": 4,
+   "800": 4
+  }
+ },
+ "evidence": {
+  "triggers_measured": 1,
+  "triggers_with_motion": 1,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L22\\03-lenses\\motion\\contact-sheet.png"
+}

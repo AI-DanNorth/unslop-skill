@@ -1,0 +1,50 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page has one load reveal, the hero's seven .rise blocks arriving over 700 ms on cubic-bezier(0.16, 1, 0.3, 1) and switched off under reduced motion; the diagram lightboxes, the theme toggle and the copy button all answer instantly; and the only sweep hit (an easing hit on a 200 ms opacity label fade) is a small paint change.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-CHOREOGRAPHY pass (one hero reveal, instant feedback on the repeated controls), and T-MOTION-SYSTEM finds only the browser's default ease on 67 hover colour transitions."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared hover transitions on links, buttons and diagram cards (border-color, color, background), 1440",
+      "evidence": "The declared table shows 67 of 74 transitioning elements on the browser's default `ease` at 200 ms, beside one tuned curve, cubic-bezier(0.16, 1, 0.3, 1) at 700 ms, used only for the hero reveal. The sweep's motion/easing hit on the \"View the first-pass diagram full size\" label (opacity 200 ms ease) comes from the same default.",
+      "before": "transition: border-color 200ms ease (browser default), on 67 elements",
+      "after": "A short hover token, such as 150 ms on the page's own decelerating curve or a plain ease-out, routed through one variable",
+      "why": "The hero reveal shows a chosen curve, but every hover answer falls back to the browser default, so the page runs two unrelated timings for small state changes.",
+      "root": "the site-wide 200ms ease hover transition rule",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The hero arrives once: seven .rise blocks fade and rise over 700 ms on cubic-bezier(0.16, 1, 0.3, 1), and the stylesheet's prefers-reduced-motion rule sets them to opacity 1 and no transform.",
+    "The diagram lightboxes (\"View the redrawn diagram full size\", \"View the Exploded axonometric diagram full size\") open with no measured movement, so repeated viewing costs no time.",
+    "The \"Copy the npx skills install command\" button answers within 26 ms with a \"COPIED\" label, and the dark and light toggle switches the theme instantly."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so motion that plays without a click is not verified.",
+    "The FIG. 00 demo video (\"17S · NO SOUND\"): the capture blocked demo-light.mp4 and demo-dark.mp4, so T-POSTER and T-DEMO-LOOP were not judged.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built.",
+    "Gestures and drags; scroll-driven and scroll-revealed motion beyond the load (the capture does not scroll while recording); hover as it plays (only its declaration is read); route or page transitions.",
+    "Content left hidden when the IntersectionObserver never fires (545 characters) belongs to the sweep's hidden_content (ROB-001)."
+  ]
+}

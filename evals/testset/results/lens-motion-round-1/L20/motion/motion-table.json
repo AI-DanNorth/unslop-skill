@@ -1,0 +1,363 @@
+{
+ "run": "L20",
+ "interaction": {
+  "motion": {
+   "found": 1,
+   "tried": 1,
+   "measured": 1,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 20195
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 1
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 0
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 1,
+  "tried": 1,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "tab",
+   "name": "Club night",
+   "selector": "#work-tab-1",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "#work-stage > div:nth-of-type(2) > img",
+    "#work-stage > div:nth-of-type(1)",
+    "#work-stage > div:nth-of-type(2)",
+    "pe(2) > div:nth-of-type(1) > span > span"
+   ],
+   "duration_ms": 750,
+   "largest_box": {
+    "w": 1095.7,
+    "h": 620.4,
+    "viewport_pct": 52.5,
+    "selector": "#work-stage > div:nth-of-type(2) > img"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 4,
+   "leaving": 0,
+   "anim_end_ms": 1100,
+   "animations": [
+    {
+     "props": "clip-path",
+     "ms": 520,
+     "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+     "count": 1
+    },
+    {
+     "props": "clip-path,scale,translate",
+     "ms": 820,
+     "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+     "count": 1
+    },
+    {
+     "props": "opacity",
+     "ms": 820,
+     "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+     "count": 1
+    },
+    {
+     "props": "clip-path",
+     "ms": 820,
+     "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+     "count": 1
+    },
+    {
+     "props": "scale,translate",
+     "ms": 1100,
+     "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+     "count": 1
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 41.3,
+    "ambient": 1,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 1
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 750 ms (measured from frames; limit for a tab 300 ms)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     723,
+     882,
+     1031,
+     1252,
+     1976,
+     2355
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 1150,
+  "transitions": [
+   {
+    "props": "opacity, transform",
+    "ms": "900/900",
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 87
+   },
+   {
+    "props": "background-color, color, box-shadow",
+    "ms": "200/200/300",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 23
+   },
+   {
+    "props": "transform, box-shadow",
+    "ms": "300/300",
+    "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+    "elements": 12
+   },
+   {
+    "props": "color",
+    "ms": "200",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 12
+   },
+   {
+    "props": "opacity, transform, background-color",
+    "ms": "900/900/200",
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 10
+   },
+   {
+    "props": "background-color, color, box-shadow",
+    "ms": "200/200/200",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 7
+   },
+   {
+    "props": "background-size",
+    "ms": "200",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 6
+   },
+   {
+    "props": "transform",
+    "ms": "1100",
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 6
+   },
+   {
+    "props": "color, background-color, filter",
+    "ms": "300/300/300",
+    "easing": "ease",
+    "elements": 5,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "background-color",
+    "ms": "200",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 5
+   }
+  ],
+  "transition_elements": 212,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 108
+   },
+   {
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "elements": 76
+   },
+   {
+    "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+    "elements": 38
+   },
+   {
+    "easing": "ease",
+    "elements": 27,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "90": 7,
+   "150": 3,
+   "180": 1,
+   "200": 76,
+   "240": 6,
+   "300": 49,
+   "320": 3,
+   "360": 1,
+   "420": 3,
+   "480": 3,
+   "520": 1,
+   "900": 97,
+   "1100": 6
+  },
+  "running_animations": [
+   {
+    "name": "hero-word",
+    "ms": "950",
+    "elements": 7
+   },
+   {
+    "name": "hero-rise",
+    "ms": "800",
+    "elements": 3
+   },
+   {
+    "name": "hero-sunrise",
+    "ms": "1400",
+    "elements": 1
+   },
+   {
+    "name": "hero-breathe",
+    "ms": "16000",
+    "elements": 1
+   },
+   {
+    "name": "hero-rise-pill",
+    "ms": "700",
+    "elements": 1
+   },
+   {
+    "name": "hero-work-arrive",
+    "ms": "1200",
+    "elements": 1
+   },
+   {
+    "name": "tab-swap",
+    "ms": "340",
+    "elements": 1
+   },
+   {
+    "name": "tcw-turn",
+    "ms": "900",
+    "elements": 1
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 1012,
+   "keyframes": 19,
+   "infinite": 5,
+   "prefers_reduced_motion": 15,
+   "scroll_timeline": 1,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 0,
+   "will_change": 15
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+    "animations": 3
+   },
+   {
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "animations": 2
+   }
+  ],
+  "durations_ms": {
+   "520": 1,
+   "820": 3,
+   "1100": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 1,
+  "triggers_with_motion": 1,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L20\\03-lenses\\motion\\contact-sheet.png"
+}

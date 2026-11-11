@@ -1,0 +1,60 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The search dialog opens with no measured animation and the legal footer grows in 300 ms on ease-in-out, but the \"Find inspiration\" mega-menu, a nav control used on every visit, arrives on an overshooting spring, cubic-bezier(0.34, 1.56, 0.64, 1), and the search field carries a painted caret on an infinite blink; the sweep's easing hit on the menu's 200 ms ease is minor.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE and T-CHOREOGRAPHY pass (no load reveal, short footer and search feedback), while T-MOTION-SYSTEM finds overshoot on a nav menu and T-LOOPS finds a decorative caret loop."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-008",
+      "title": "The curve fits the direction and the scope",
+      "tier": "Finish",
+      "where": "disclosure \"Find inspiration\" (nav > details:nth-of-type(1) > summary), mega-menu panel 1100 x 682 px, 1440",
+      "evidence": "The motion table measures the panel's opacity and transform over 220 ms on cubic-bezier(0.34, 1.56, 0.64, 1), flagged as overshooting (y 1.56), with a maximum overshoot of 1.1 and 8 px of travel, over 57.9% of the viewport. On the contact sheet the panel is still half transparent over the Apple Arcade email at 50 ms, and the live run ends at 1314 ms.",
+      "before": "opacity, transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "after": "The same 200 ms on a non-overshoot ease-out such as cubic-bezier(0.16, 1, 0.3, 1), or an instant open with a 120 ms fade",
+      "why": "Visitors open this menu to move between email categories on almost every visit, and a half-screen panel that springs past its place each time reads as a toy.",
+      "test": "T-MOTION-SYSTEM"
+    },
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "header search field (#navbar-search), the \"|\" span after the placeholder, 1440",
+      "evidence": "dom-1440.json shows a separate span holding \"|\" with the caretBlink animation (1 s, and the stylesheet declares it `step-end infinite`), drawn beside the placeholder while the field has no focus.",
+      "before": "A painted caret blinking forever in an unfocused field",
+      "after": "No drawn caret; let the browser's own caret show when the field has focus",
+      "why": "A blinking caret tells the visitor the field already has focus, so the loop pulls the eye to the header and suggests that typing will land in it when it will not.",
+      "test": "T-LOOPS"
+    }
+  ],
+  "strengths": [
+    "The \"Legal and Privacy info\" footer grows with grid-template-rows over 300 ms on ease-in-out and moves no other content.",
+    "The search dialog opens with no CSS animation, and the email preview arrives with the page, with no load reveal."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so whether the search placeholder cycles its text is not verified.",
+    "The search dialog's live run was still moving at 1436 ms, but the seven stills show no change in the dialog, so the source of that movement was not judged.",
+    "The \"Code\" tab run is not verified (the click navigated the page), and the email preview iframe's transitions were not exercised.",
+    "T-POSTER and T-DEMO-LOOP: no demo animation on the page.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion (the capture does not scroll while recording), hover as it plays and route transitions were not captured.",
+    "Text hidden after load (50%) and with scripts off belongs to hidden_content (ROB-001); the transition-all and layout-property hits belong to the sweep (MOT-001)."
+  ]
+}

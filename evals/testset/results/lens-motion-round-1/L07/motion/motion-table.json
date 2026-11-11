@@ -1,0 +1,807 @@
+{
+ "run": "L07",
+ "interaction": {
+  "motion": {
+   "found": 6,
+   "tried": 6,
+   "measured": 6,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 56769
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 9
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 7
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 2
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "hits": 1
+  }
+ },
+ "capture": {
+  "found": 6,
+  "tried": 6,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "button",
+   "name": "Previous slide",
+   "selector": "#root > div:nth-of-type(2) > section:nth-of-type(1) > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "tion:nth-of-type(1) > div:nth-of-type(1)",
+    "tion:nth-of-type(1) > div:nth-of-type(2)",
+    "FEATURED MODELin 2K AI VIDEO & CHARACTER",
+    "Show MiniMax H3",
+    "Show Cineyx Character ID Identity"
+   ],
+   "duration_ms": 1000,
+   "largest_box": {
+    "w": 1440,
+    "h": 900,
+    "viewport_pct": 100.0,
+    "selector": "nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1)"
+   },
+   "min_start_scale": 0.25,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 3,
+   "leaving": 2,
+   "anim_end_ms": 1100,
+   "animations": [
+    {
+     "props": "background-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "width",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "opacity",
+     "ms": 1100,
+     "easing": "ease-in-out",
+     "count": 2
+    },
+    {
+     "props": "opacity",
+     "ms": 600,
+     "easing": "ease-out",
+     "count": 1
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [
+    "width"
+   ],
+   "infinite": [],
+   "layout_moved": {
+    "count": 6,
+    "top": "\"Show Seedance 2.5\" 24 px off its start and end at 150 ms"
+   },
+   "live": {
+    "coverage": "inconclusive",
+    "reason": "22 of 47 frames came late (page busy)",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 32.7,
+    "ambient": 0,
+    "snaps": [
+     "shove -16.7 px on width at 412 ms: \"Show Kling 3.0\"",
+     "shove -16.7 px on x at 412 ms: \"Show Cineyx Character ID Ident\"",
+     "shove +16.7 px on width at 412 ms: \"Show Cineyx Character ID Ident\""
+    ]
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 12.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "background-color 150 ms",
+     "opacity 1100 ms",
+     "opacity 600 ms",
+     "width 150 ms"
+    ],
+    "changed": 5
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+    "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates ",
+    "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "Next slide",
+   "selector": "#root > div:nth-of-type(2) > section:nth-of-type(1) > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "tion:nth-of-type(1) > div:nth-of-type(1)",
+    "tion:nth-of-type(1) > div:nth-of-type(2)",
+    "FEATURED MODEL AI VIDEO & CHARACTER STUD",
+    "Show Cineyx Character ID Identity",
+    "Show MiniMax H3"
+   ],
+   "duration_ms": 1000,
+   "largest_box": {
+    "w": 1440,
+    "h": 900,
+    "viewport_pct": 100.0,
+    "selector": "nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1)"
+   },
+   "min_start_scale": 0.25,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 3,
+   "leaving": 2,
+   "anim_end_ms": 1100,
+   "animations": [
+    {
+     "props": "background-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "width",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "opacity",
+     "ms": 1100,
+     "easing": "ease-in-out",
+     "count": 2
+    },
+    {
+     "props": "opacity",
+     "ms": 600,
+     "easing": "ease-out",
+     "count": 1
+    }
+   ],
+   "paint_only": 2,
+   "layout_props": [
+    "width"
+   ],
+   "infinite": [],
+   "layout_moved": {
+    "count": 6,
+    "top": "\"Show Seedance 2.5\" 24 px off its start and end at 150 ms"
+   },
+   "live": {
+    "coverage": "inconclusive",
+    "reason": "19 of 45 frames came late (page busy)",
+    "motion_end_ms": 32,
+    "still_moving": false,
+    "frame_ms": 21.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 12.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "background-color 150 ms",
+     "opacity 1100 ms",
+     "opacity 600 ms",
+     "width 150 ms"
+    ],
+    "changed": 5
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+    "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates ",
+    "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "EN",
+   "selector": "#root > div:nth-of-type(2) > nav > div > div:nth-of-type(2) > div > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 2,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 20.3,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t2-reduce-000.png",
+     "motion/t2-reduce-050.png",
+     "motion/t2-reduce-100.png",
+     "motion/t2-reduce-150.png",
+     "motion/t2-reduce-250.png",
+     "motion/t2-reduce-400.png",
+     "motion/t2-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     51,
+     111,
+     165,
+     265,
+     404,
+     605
+    ],
+    "reduce": [
+     0,
+     62,
+     115,
+     160,
+     253,
+     408,
+     608
+    ]
+   }
+  },
+  {
+   "t": 3,
+   "kind": "button",
+   "name": "FR",
+   "selector": "#root > div:nth-of-type(2) > nav > div > div:nth-of-type(2) > div > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 7,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 20,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t3-normal-000.png",
+     "motion/t3-normal-050.png",
+     "motion/t3-normal-100.png",
+     "motion/t3-normal-150.png",
+     "motion/t3-normal-250.png",
+     "motion/t3-normal-400.png",
+     "motion/t3-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t3-reduce-000.png",
+     "motion/t3-reduce-050.png",
+     "motion/t3-reduce-100.png",
+     "motion/t3-reduce-150.png",
+     "motion/t3-reduce-250.png",
+     "motion/t3-reduce-400.png",
+     "motion/t3-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     57,
+     124,
+     161,
+     255,
+     410,
+     614
+    ],
+    "reduce": [
+     0,
+     96,
+     148,
+     255,
+     312,
+     420,
+     602
+    ]
+   }
+  },
+  {
+   "t": 4,
+   "kind": "button",
+   "name": "Show MiniMax H3",
+   "selector": "> section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "tion:nth-of-type(1) > div:nth-of-type(1)",
+    "tion:nth-of-type(1) > div:nth-of-type(2)",
+    "MODÈLE VEDETTE STUDIO VIDÉO & PERSONNAGE",
+    "Show Grok Imagine 1.5",
+    "Show MiniMax H3"
+   ],
+   "duration_ms": 1000,
+   "largest_box": {
+    "w": 1440,
+    "h": 900,
+    "viewport_pct": 100.0,
+    "selector": "nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1)"
+   },
+   "min_start_scale": 0.25,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 3,
+   "leaving": 2,
+   "anim_end_ms": 1100,
+   "animations": [
+    {
+     "props": "background-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "width",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "opacity",
+     "ms": 1100,
+     "easing": "ease-in-out",
+     "count": 2
+    },
+    {
+     "props": "opacity",
+     "ms": 600,
+     "easing": "ease-out",
+     "count": 1
+    }
+   ],
+   "paint_only": 2,
+   "layout_props": [
+    "width"
+   ],
+   "infinite": [],
+   "layout_moved": {
+    "count": 2,
+    "top": "\"Show Seedance 2.5\" 24 px off its start and end at 150 ms"
+   },
+   "live": {
+    "coverage": "inconclusive",
+    "reason": "trigger not found",
+    "motion_end_ms": null,
+    "still_moving": null,
+    "frame_ms": null,
+    "ambient": null,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 12.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "background-color 150 ms",
+     "opacity 1100 ms",
+     "opacity 600 ms",
+     "width 150 ms"
+    ],
+    "changed": 5
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+    "motion/layout: 2 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates ",
+    "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t4-normal-000.png",
+     "motion/t4-normal-050.png",
+     "motion/t4-normal-100.png",
+     "motion/t4-normal-150.png",
+     "motion/t4-normal-250.png",
+     "motion/t4-normal-400.png",
+     "motion/t4-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t4-reduce-000.png",
+     "motion/t4-reduce-050.png",
+     "motion/t4-reduce-100.png",
+     "motion/t4-reduce-150.png",
+     "motion/t4-reduce-250.png",
+     "motion/t4-reduce-400.png",
+     "motion/t4-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  },
+  {
+   "t": 5,
+   "kind": "button",
+   "name": "Show Seedance 2.5",
+   "selector": "> section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 2,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 46.2,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t5-normal-000.png",
+     "motion/t5-normal-050.png",
+     "motion/t5-normal-100.png",
+     "motion/t5-normal-150.png",
+     "motion/t5-normal-250.png",
+     "motion/t5-normal-400.png",
+     "motion/t5-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t5-reduce-000.png",
+     "motion/t5-reduce-050.png",
+     "motion/t5-reduce-100.png",
+     "motion/t5-reduce-150.png",
+     "motion/t5-reduce-250.png",
+     "motion/t5-reduce-400.png",
+     "motion/t5-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     115,
+     220,
+     287,
+     319,
+     404,
+     605
+    ],
+    "reduce": [
+     0,
+     89,
+     119,
+     153,
+     266,
+     403,
+     605
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 458,
+  "transitions": [
+   {
+    "props": "all",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 41,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 36,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 11,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "500",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 1,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   }
+  ],
+  "transition_elements": 89,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 89,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "150": 88,
+   "500": 1
+  },
+  "running_animations": [
+   {
+    "name": "marquee",
+    "ms": "28000",
+    "elements": 1
+   },
+   {
+    "name": "marquee-reverse",
+    "ms": "32000",
+    "elements": 1
+   },
+   {
+    "name": "marquee",
+    "ms": "26000",
+    "elements": 1
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 1956,
+   "keyframes": 21,
+   "infinite": 11,
+   "prefers_reduced_motion": 1,
+   "scroll_timeline": 6,
+   "view_transitions": 12,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 3
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "animations": 12,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "ease-in-out",
+    "animations": 6
+   },
+   {
+    "easing": "ease-out",
+    "animations": 3
+   }
+  ],
+  "durations_ms": {
+   "150": 12,
+   "600": 3,
+   "1100": 6
+  }
+ },
+ "evidence": {
+  "triggers_measured": 6,
+  "triggers_with_motion": 3,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L07\\03-lenses\\motion\\contact-sheet.png"
+}

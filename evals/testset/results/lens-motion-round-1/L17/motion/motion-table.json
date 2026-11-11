@@ -1,0 +1,585 @@
+{
+ "run": "L17",
+ "interaction": {
+  "motion": {
+   "found": 6,
+   "tried": 6,
+   "measured": 6,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 61270
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 2
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 2
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 6,
+  "tried": 6,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "button",
+   "name": "Toggle theme",
+   "selector": "body > div:nth-of-type(2) > nav > div > div > div:nth-of-type(2) > button",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1435,
+    "still_moving": false,
+    "frame_ms": 19.2,
+    "ambient": 2,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [
+    "motion/duration_live: transition runs about 1435 ms (JavaScript-driven, measured in real time at ~19.2 ms a frame; limit for a button 300 ms)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     59,
+     121,
+     173,
+     256,
+     410,
+     613
+    ],
+    "reduce": [
+     0,
+     64,
+     106,
+     158,
+     252,
+     406,
+     602
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "Load More",
+   "selector": "#styles > div > div:nth-of-type(4) > button",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 125,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "opacity 0 ms"
+    ],
+    "changed": 1
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     159,
+     385,
+     565,
+     738,
+     902,
+     1080
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "All Modes",
+   "selector": "styles > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "th-of-type(1) > div:nth-of-type(1) > img",
+    " div:nth-of-type(1) > div:nth-of-type(1)",
+    "View Demo Show Prompt"
+   ],
+   "duration_ms": 370,
+   "largest_box": {
+    "w": 429.1,
+    "h": 241.4,
+    "viewport_pct": 8.0,
+    "selector": "h-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > img"
+   },
+   "min_start_scale": 0.952,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 3,
+   "leaving": 0,
+   "anim_end_ms": 500,
+   "animations": [
+    {
+     "props": "opacity",
+     "ms": 300,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 2,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "scale",
+     "ms": 500,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    }
+   ],
+   "paint_only": 5,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 370 ms (measured from frames; limit for a button 300 ms)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 3,
+   "kind": "button",
+   "name": "Light",
+   "selector": "styles > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 6,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t3-normal-000.png",
+     "motion/t3-normal-050.png",
+     "motion/t3-normal-100.png",
+     "motion/t3-normal-150.png",
+     "motion/t3-normal-250.png",
+     "motion/t3-normal-400.png",
+     "motion/t3-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     55,
+     151,
+     189,
+     335,
+     441,
+     612
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 4,
+   "kind": "button",
+   "name": "SaaS",
+   "selector": "styles > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 6,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 80,
+    "snaps": []
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t4-normal-000.png",
+     "motion/t4-normal-050.png",
+     "motion/t4-normal-100.png",
+     "motion/t4-normal-150.png",
+     "motion/t4-normal-250.png",
+     "motion/t4-normal-400.png",
+     "motion/t4-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     105,
+     192,
+     248,
+     325,
+     407,
+     606
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 5,
+   "kind": "button",
+   "name": "All",
+   "selector": "styles > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "skipped (time budget 60000 ms used up)",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t5-normal-000.png",
+     "motion/t5-normal-050.png",
+     "motion/t5-normal-100.png",
+     "motion/t5-normal-150.png",
+     "motion/t5-normal-250.png",
+     "motion/t5-normal-400.png",
+     "motion/t5-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     56,
+     100,
+     157,
+     251,
+     407,
+     605
+    ],
+    "reduce": []
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 734,
+  "transitions": [
+   {
+    "props": "all",
+    "ms": "300",
+    "easing": "ease",
+    "elements": 35,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "200",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 25,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "color, background-color, border-color",
+    "ms": "200",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 16,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 14,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "200",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 8,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "500",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 6,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 2,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 2,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "transition_elements": 108,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 71,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "ease",
+    "elements": 37,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "150": 16,
+   "200": 51,
+   "300": 35,
+   "500": 6
+  },
+  "running_animations": [
+   {
+    "name": "float",
+    "ms": "6000",
+    "elements": 2
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 115,
+   "keyframes": 8,
+   "infinite": 6,
+   "prefers_reduced_motion": 1,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 1,
+   "transition_all": 1,
+   "will_change": 0
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "animations": 3,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "300": 2,
+   "500": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 6,
+  "triggers_with_motion": 2,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L17\\03-lenses\\motion\\contact-sheet.png"
+}

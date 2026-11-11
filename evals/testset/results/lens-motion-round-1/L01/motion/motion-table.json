@@ -1,0 +1,416 @@
+{
+ "run": "L01",
+ "interaction": {
+  "motion": {
+   "found": 3,
+   "tried": 3,
+   "measured": 3,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 31969
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 0
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 6
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 0
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 3,
+  "tried": 3,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "button",
+   "name": "USD",
+   "selector": "body > div > header > div > div > div > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     63,
+     108,
+     166,
+     261,
+     404,
+     605
+    ],
+    "reduce": [
+     0,
+     64,
+     106,
+     159,
+     267,
+     404,
+     613
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "INR",
+   "selector": "body > div > header > div > div > div > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 5,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     58,
+     104,
+     152,
+     260,
+     412,
+     606
+    ],
+    "reduce": [
+     0,
+     61,
+     111,
+     155,
+     254,
+     415,
+     617
+    ]
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "Dismiss",
+   "selector": "#lovable-badge-close",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Edit with Lovable"
+   ],
+   "duration_ms": 110,
+   "largest_box": {
+    "w": 144.8,
+    "h": 24,
+    "viewport_pct": 0.3,
+    "selector": "#lovable-badge"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 0,
+   "leaving": 1,
+   "anim_end_ms": 200,
+   "animations": [
+    {
+     "props": "opacity",
+     "ms": 200,
+     "easing": "cubic-bezier(0.16, 1, 0.32, 1)",
+     "count": 1
+    }
+   ],
+   "paint_only": 3,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t2-reduce-000.png",
+     "motion/t2-reduce-050.png",
+     "motion/t2-reduce-100.png",
+     "motion/t2-reduce-150.png",
+     "motion/t2-reduce-250.png",
+     "motion/t2-reduce-400.png",
+     "motion/t2-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     170,
+     304,
+     471,
+     544,
+     660,
+     833
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 238,
+  "transitions": [
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 16,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 16,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "opacity",
+    "ms": "200",
+    "easing": "cubic-bezier(0.16, 1, 0.32, 1)",
+    "elements": 1
+   },
+   {
+    "props": "background-color, color, transform",
+    "ms": "200/200/100",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "background-color, transform",
+    "ms": "200/100",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "fill",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "transition_elements": 36,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 32,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "ease",
+    "elements": 3,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "easing": "cubic-bezier(0.16, 1, 0.32, 1)",
+    "elements": 1
+   }
+  ],
+  "durations_ms": {
+   "100": 2,
+   "150": 32,
+   "200": 4
+  },
+  "running_animations": [
+   {
+    "name": "floaty",
+    "ms": "7000",
+    "elements": 3
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 120,
+   "keyframes": 7,
+   "infinite": 3,
+   "prefers_reduced_motion": 2,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 1
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.16, 1, 0.32, 1)",
+    "animations": 1
+   }
+  ],
+  "durations_ms": {
+   "200": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 3,
+  "triggers_with_motion": 1,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L01\\03-lenses\\motion\\contact-sheet.png"
+}

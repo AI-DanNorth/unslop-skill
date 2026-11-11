@@ -1,0 +1,56 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Motion is sparse and each motion has a job: the \"About\" menu fades and scales in over 150 ms (the sweep's easing hit on ease is a small drift on a quick menu), \"How it works\" scrolls to its section in about 390 ms, the theme toggle is instant, and the page arrives with a single 350 ms fade-up.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-CHOREOGRAPHY pass (one page arrival, short menu feedback), and T-MOTION-SYSTEM finds a mix of Tailwind defaults, linear and ease."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions and the \"About\" menu, 1440",
+      "evidence": "13 elements use Tailwind's cubic-bezier(0.4, 0, 0.2, 1) at 150 to 300 ms, 8 use linear at 100 ms for colour, 2 use cubic-bezier(0, 0, 0.2, 1), and the \"About\" menu opens on the browser default ease (sweep MOT-002 easing hit).",
+      "before": "Four curves for small colour and opacity changes, with no tokens.",
+      "after": "Use one exit curve, such as the cubic-bezier(0, 0, 0.2, 1) already in use, for the menu and the colour changes.",
+      "why": "The drift is small, but one curve family would make the menu and buttons feel related.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The \"About\" menu opens in 150 ms with an opacity and scale change measured to end at 148 ms, quick feedback that suits a nav menu.",
+    "The page arrives once (a single fade-up of 350 ms on the main column) with no per-section reveals at load.",
+    "The dark-mode toggle changes instantly."
+  ],
+  "not_investigated": [
+    "\"Start Now\" navigated away from the page and is not verified",
+    "\"How it works\" reduce run: trigger not found (not verified under reduced motion)",
+    "capture context: manifest.network lists 4 blocked script chunks (react, motion, query, supabase); the hero chart may animate with those scripts and was not judged; cookie banner dismissed with \"Essential only\"",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

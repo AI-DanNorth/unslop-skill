@@ -1,0 +1,526 @@
+{
+ "run": "L18",
+ "interaction": {
+  "motion": {
+   "found": 3,
+   "tried": 3,
+   "measured": 3,
+   "skipped": 0,
+   "notVerified": [
+    "1 iframe(s) on the page: transitions inside frames are not exercised"
+   ],
+   "elapsedMs": 35087
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 3
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 1
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 3,
+  "tried": 3,
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "tab",
+   "name": "Codex",
+   "selector": "#ag-t-codex",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "pe(2) > div > ul > li:nth-of-type(1) > a",
+    "pe(2) > div > ul > li:nth-of-type(2) > a",
+    "e(2) > div > ul > li:nth-of-type(17) > a",
+    "pe(2) > div > ul > li:nth-of-type(3) > a",
+    "e(2) > div > ul > li:nth-of-type(16) > a",
+    "e(2) > div > ul > li:nth-of-type(15) > a"
+   ],
+   "duration_ms": 0,
+   "largest_box": {
+    "w": 546.8,
+    "h": 337.9,
+    "viewport_pct": 14.3,
+    "selector": "ples > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > a"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 6,
+   "leaving": 0,
+   "anim_end_ms": 300,
+   "animations": [
+    {
+     "props": "filter",
+     "ms": 300,
+     "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+     "count": 6
+    }
+   ],
+   "paint_only": 5,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 301,
+    "still_moving": false,
+    "frame_ms": 22.6,
+    "ambient": 104,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 1
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     67,
+     159,
+     261,
+     354,
+     451,
+     601
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "Deal again",
+   "selector": "#top > div:nth-of-type(3) > button",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Atelier",
+    "Ribbon",
+    "Furrow",
+    "Studio",
+    "Cobalt",
+    "Dose"
+   ],
+   "duration_ms": 790,
+   "largest_box": {
+    "w": 396.4,
+    "h": 267.1,
+    "viewport_pct": 8.2,
+    "selector": "#top > div:nth-of-type(3) > div > a:nth-of-type(1)"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 1095.1,
+   "max_overshoot": 1.041,
+   "entering": 6,
+   "leaving": 0,
+   "anim_end_ms": 840,
+   "animations": [
+    {
+     "props": "transform",
+     "ms": 720,
+     "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+     "count": 6,
+     "flags": [
+      "overshoots (y 1.35)"
+     ]
+    }
+   ],
+   "paint_only": 3,
+   "layout_props": [],
+   "infinite": [],
+   "stagger": {
+    "items": 6,
+    "distinct_delays": 4,
+    "step_ms": 30,
+    "spread_ms": 120
+   },
+   "layout_moved": {
+    "count": 6,
+    "top": "\"Refract\" 901.7 px off its start and end at 450 ms"
+   },
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 1479,
+    "still_moving": true,
+    "frame_ms": 16.7,
+    "ambient": 4,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [
+    "motion/duration: transition runs 790 ms (measured from frames; limit for a button 300 ms)",
+    "motion/travel: moves 1095 px during the transition (limit 16 px for in-place UI)",
+    "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Refract\" 902 px off its start and end at 450 ms): the transition animates layout"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     53,
+     102,
+     150,
+     260,
+     409,
+     605
+    ]
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "Copy the install command",
+   "selector": "#top > div:nth-of-type(2) > div > button",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "e(2) > div > button > svg:nth-of-type(1)",
+    "e(2) > div > button > svg:nth-of-type(2)"
+   ],
+   "duration_ms": 120,
+   "largest_box": {
+    "w": 16,
+    "h": 16,
+    "viewport_pct": 0.0,
+    "selector": "top > div:nth-of-type(2) > div > button > svg:nth-of-type(2)"
+   },
+   "min_start_scale": 0.4,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.067,
+   "entering": 1,
+   "leaving": 1,
+   "anim_end_ms": 320,
+   "animations": [
+    {
+     "props": "opacity",
+     "ms": 160,
+     "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+     "count": 2
+    },
+    {
+     "props": "transform",
+     "ms": 320,
+     "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+     "count": 2,
+     "flags": [
+      "overshoots (y 1.35)"
+     ]
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 176,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 4,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t2-reduce-000.png",
+     "motion/t2-reduce-050.png",
+     "motion/t2-reduce-100.png",
+     "motion/t2-reduce-150.png",
+     "motion/t2-reduce-250.png",
+     "motion/t2-reduce-400.png",
+     "motion/t2-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     52,
+     101,
+     151,
+     261,
+     409,
+     608
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 415,
+  "transitions": [
+   {
+    "props": "filter",
+    "ms": "300",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 17
+   },
+   {
+    "props": "background-color, color, box-shadow",
+    "ms": "160/160/160",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 14
+   },
+   {
+    "props": "transform, box-shadow",
+    "ms": "320/320",
+    "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+    "elements": 14,
+    "flags": [
+     "overshoots (y 1.35)"
+    ]
+   },
+   {
+    "props": "transform, box-shadow",
+    "ms": "720/320",
+    "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+    "elements": 9,
+    "flags": [
+     "overshoots (y 1.35)"
+    ]
+   },
+   {
+    "props": "background-color, color",
+    "ms": "160/160",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 8
+   },
+   {
+    "props": "transform, background-color",
+    "ms": "650/650",
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 8
+   },
+   {
+    "props": "opacity, transform",
+    "ms": "700/700",
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 7
+   },
+   {
+    "props": "background-color, transform",
+    "ms": "160/320",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 7
+   },
+   {
+    "props": "opacity, transform",
+    "ms": "160/320",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 6
+   },
+   {
+    "props": "opacity, transform",
+    "ms": "320/320",
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 4
+   }
+  ],
+  "transition_elements": 116,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "elements": 93
+   },
+   {
+    "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+    "elements": 44,
+    "flags": [
+     "overshoots (y 1.35)"
+    ]
+   },
+   {
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "elements": 19
+   }
+  ],
+  "durations_ms": {
+   "160": 41,
+   "200": 2,
+   "300": 17,
+   "320": 49,
+   "500": 1,
+   "650": 8,
+   "700": 10,
+   "720": 9,
+   "1100": 2,
+   "1200": 2
+  },
+  "running_animations": [
+   {
+    "name": "rise",
+    "ms": "760",
+    "elements": 3
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 333,
+   "keyframes": 7,
+   "infinite": 1,
+   "prefers_reduced_motion": 1,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 1,
+   "transition_all": 0,
+   "will_change": 3
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "animations": 8
+   },
+   {
+    "easing": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+    "animations": 8,
+    "flags": [
+     "overshoots (y 1.35)"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "160": 2,
+   "300": 6,
+   "320": 2,
+   "720": 6
+  }
+ },
+ "evidence": {
+  "triggers_measured": 3,
+  "triggers_with_motion": 3,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L18\\03-lenses\\motion\\contact-sheet.png"
+}

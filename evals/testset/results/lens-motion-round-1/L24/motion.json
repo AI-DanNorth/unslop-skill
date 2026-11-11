@@ -1,0 +1,61 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The article page has almost no motion of its own: the Industries and Technologies nav menus open and close in about 280 ms with a fade and a chevron turn, and the story cards declare a hover lift; the sweep raised no timing hits, but the declarations mix six unrelated curves, including ease-in on the nav toggles and an anticipating back-in curve on the button hover.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-CHOREOGRAPHY pass (short menu feedback, no load reveal, no loops), while T-MOTION-SYSTEM finds six easings across 17 transitioning elements and ease-in or back-in curves on arrivals."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-008",
+      "title": "The curve fits the direction and the scope",
+      "tier": "Finish",
+      "where": "nav toggles #w-dropdown-toggle-0 and #w-dropdown-toggle-1 (Industries, Technologies), the .button family (\"Reach out\", \"Contact\", \"Discover GenAI Track\") and the .story-card shadows, 1440",
+      "evidence": "dom-1440.json declares `transition: all 0.2s ease-in` on both nav toggles and `box-shadow 0.35s ease-in` on the three story cards, so their hover states arrive on an accelerating curve. The .button rule animates padding and background-position with cubic-bezier(0.6, -0.28, 0.735, 0.045), which the declared table flags as an anticipating curve (y -0.28).",
+      "before": "ease-in on hover arrivals; a back-in curve on button padding",
+      "after": "An ease-out (for example cubic-bezier(0.16, 1, 0.3, 1)) for every hover arrival, and no anticipation or padding change on buttons",
+      "why": "An arrival that starts slowly makes the nav and buttons answer late, and the back-in curve makes the button pull back before it changes.",
+      "root": ".button and .nav-link transition rules",
+      "test": "T-MOTION-SYSTEM"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions across the nav, buttons, story cards and links, 1440",
+      "evidence": "The declared table lists six easings on 17 elements: the browser's ease (9), ease-in (6), cubic-bezier(0.713, 0.5, 0.165, 1) on the story-card lift (3), cubic-bezier(0.445, 0.05, 0.55, 0.95) on \"Get in touch\" and \"Back to overview\" (2), cubic-bezier(0.6, -0.28, 0.735, 0.045) (2) and cubic-bezier(0.25, 0.46, 0.45, 0.94) (2). Durations run 100, 150, 200, 350, 400 and 500 ms; the mega-menu links fade their background over 500 ms while the nav itself uses 200 ms.",
+      "before": "Six curves and six durations for hover colour, lift and menu changes",
+      "after": "One decelerating curve and a three-step scale (about 120, 200 and 320 ms) routed through tokens",
+      "why": "Each component carries the timing of the Webflow interaction it came from, so the same hover answer feels different on the nav, the buttons and the cards.",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The article arrives with no load reveal and nothing moves on its own: no running animations, and the only infinite keyframe (spin, 0.8 s linear) is not running on the page.",
+    "The Industries and Technologies menus answer within about 280 ms (live run), close to the menu step, and the chevron turn shows which menu is open."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so motion that plays without a click is not verified.",
+    "Hover as it plays: the story-card lift, the .card-large scale(0.99) and the button background-position change are judged from declarations only.",
+    "The page's iframe: the capture did not exercise transitions inside it.",
+    "T-POSTER and T-DEMO-LOOP: no demo animation on the page.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven and scroll-revealed motion (the capture does not scroll while recording) and route transitions were not captured.",
+    "The missing prefers-reduced-motion rule (A11-011) and the transition-all and layout-property hits (MOT-001) belong to the sweep."
+  ]
+}

@@ -1,0 +1,338 @@
+{
+ "run": "L05",
+ "interaction": {
+  "motion": {
+   "found": 2,
+   "tried": 2,
+   "measured": 2,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 23838
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 0
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 6
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 1
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 2,
+  "tried": 2,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "button",
+   "name": "Close badge",
+   "selector": "#badge-close",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     55,
+     102,
+     163,
+     256,
+     408,
+     609
+    ],
+    "reduce": [
+     0,
+     61,
+     108,
+     155,
+     264,
+     402,
+     615
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "Compare",
+   "selector": "ction:nth-of-type(5) > div:nth-of-type(2) > a:nth-of-type(1) > div:nth-of-type(2) > button",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Cl 1 of 3 selected Compare"
+   ],
+   "duration_ms": 260,
+   "largest_box": {
+    "w": 1440,
+    "h": 52,
+    "viewport_pct": 5.8,
+    "selector": "#root > div:nth-of-type(1) > div"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": null,
+   "max_overshoot": 1.0,
+   "entering": 1,
+   "leaving": 0,
+   "anim_end_ms": 300,
+   "animations": [
+    {
+     "props": "opacity",
+     "ms": 300,
+     "easing": "cubic-bezier(0.25, 0.1, 0.35, 1)",
+     "count": 1
+    }
+   ],
+   "paint_only": 6,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 314,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "opacity 300 ms"
+    ],
+    "changed": 1
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 424,
+  "transitions": [
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 21,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "300",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 20,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 13,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 11,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "box-shadow",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   },
+   {
+    "props": "background-color",
+    "ms": "200",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "transition_elements": 67,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 65,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "ease",
+    "elements": 2,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "150": 45,
+   "200": 2,
+   "300": 20
+  },
+  "running_animations": [],
+  "stylesheet": {
+   "readable_rules": 881,
+   "keyframes": 6,
+   "infinite": 2,
+   "prefers_reduced_motion": 0,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 0
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.25, 0.1, 0.35, 1)",
+    "animations": 1
+   }
+  ],
+  "durations_ms": {
+   "300": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 2,
+  "triggers_with_motion": 1,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L05\\03-lenses\\motion\\contact-sheet.png"
+}

@@ -1,0 +1,28 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page chose stillness: none of the 164 visible elements declares a transition or animation, the stylesheet has no @keyframes, and the one measured trigger (the \"Search Design System\" input) changed state with no movement, which suits a documentation site visitors read and return to.",
+  "score": null,
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "No motion at all: the declared table lists 0 transitioning elements, 0 running animations and 0 @keyframes, so the hero, \"What's new\" and nav arrive with the page and nothing waits on an animation.",
+    "The search input answers its click instantly (no animation, no live movement), the right timing for a control used on every visit."
+  ],
+  "not_investigated": [
+    "No motion to judge: every measured change was instant and no element declares a transition or animation.",
+    "Passive motion: no passive recording, though the stylesheet holds no keyframes that could play.",
+    "T-ENTER-EXIT, T-SPATIAL-MEANING, T-CONTINUITY, T-POSTER and T-DEMO-LOOP: no element opens with motion and there is no demo.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion (the capture does not scroll while recording), hover as it plays and route transitions were not captured."
+  ]
+}

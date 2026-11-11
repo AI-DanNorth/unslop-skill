@@ -1,0 +1,68 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The FAQ accordion opens in 200 ms with a turning chevron, a proper feedback motion (its height shove is the sweep's MOT-003), and the install tabs change instantly, but every transition is Tailwind's default curve and the screenshot gallery empties its large preview for at least 350 ms when a thumbnail is clicked.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-PURPOSE and T-FREQUENCY pass for the accordion and tabs, T-ENTER-EXIT finds a blank preview after a thumbnail click, and T-MOTION-SYSTEM finds framework defaults on all 75 elements."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-009",
+      "title": "Exits are quicker than entrances and leave no gap",
+      "tier": "Finish",
+      "where": "screenshot gallery, thumbnail button t3 (preview box 1214 x 683 px, 64% of the viewport), 1440",
+      "evidence": "On contact-sheet row t3 the old screenshot fades out by about 150 ms and the preview stays an empty dark panel at 250, 400 and 600 ms; the reduced-motion row shows the same gap. The measured transition ends at 270 ms, so the new image has not appeared when the motion ends.",
+      "before": "The big preview goes blank for at least 350 ms after a thumbnail click.",
+      "after": "Keep the old screenshot until the new one has loaded, then cross-fade in about 150 ms, or preload the gallery images.",
+      "why": "Visitors stepping through screenshots see an empty frame on each click, which reads as broken.",
+      "test": "T-ENTER-EXIT",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "All 75 transitioning elements use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1), 70 of them at 150 ms; the accordion's height uses ease-out at 200 ms. The sweep's MOT-001 hits record \"transition: all\" on 15 elements and transitions on width, height and margin.",
+      "before": "Framework default timing everywhere.",
+      "after": "Set one exit curve and two duration steps as tokens, and open the accordion with a grid-rows or transform technique instead of height.",
+      "why": "The timing is the framework's, and height animation is what causes the shove the sweep recorded.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind transition utilities and the accordion keyframes"
+    }
+  ],
+  "strengths": [
+    "The FAQ accordion \"Can my phone or iPad install KinAI directly?\" opens in 200 ms with a 200 ms chevron turn, measured to end at 219 ms, which is quick feedback.",
+    "The \"Mac Client\" install tab switches instantly, which suits a control visitors flip between.",
+    "The page runs no load animations and no loops (no running animations at 1440)."
+  ],
+  "not_investigated": [
+    "the gallery gap may partly come from live image loading; manifest.network records no blocked images",
+    "scroll reveals: ROB-001 records 60% of text hidden if IntersectionObserver never fires; not recorded as motion",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

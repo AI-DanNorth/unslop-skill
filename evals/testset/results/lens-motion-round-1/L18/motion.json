@@ -1,0 +1,60 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "\"Deal again\" is a showpiece the visitor starts on purpose: it deals the site cards in on a 720 ms spring with a 30 ms stagger, so the sweep's duration, travel and layout hits on it are fitting; the page declares its own motion tokens (--ease, --ease-out, --ease-spring, --dur 320 ms, --dur-fast 160 ms), the hero copy rises once at load, and the copy button confirms with a check.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-MOTION-SYSTEM pass on a token-based system with a chosen showpiece; T-MOTION-SYSTEM also finds the spring curve on 14 hover elements and the copy check, one drift."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-008",
+      "title": "The curve fits the direction and the scope",
+      "tier": "Finish",
+      "where": "elements on \"transform, box-shadow 320ms var(--ease-spring)\", 1440",
+      "evidence": "The declared transitions put cubic-bezier(0.3, 1.35, 0.5, 1), which overshoots to y 1.35, on 14 elements at 320 ms for transform and shadow, and on the copy-button check (scale from 0.4, measured overshoot 1.067). The sweep's MOT-001 hit records the overshoot curve.",
+      "before": "The spring curve meant for the card deal also drives hover and copy feedback.",
+      "after": "Keep --ease-spring for the \"Deal again\" showpiece and use --ease-out at --dur-fast (160 ms) for hover and the copy confirmation.",
+      "why": "Overshoot on small, repeated UI feedback reads as wobble; the spring earns its place only on the showpiece.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "--ease-spring token used outside the deal"
+    }
+  ],
+  "strengths": [
+    "\"Deal again\" is a visitor-started showpiece: six cards arrive on a 720 ms spring with a 30 ms step (120 ms spread), and under reduced motion the deal does not move at all (move 0 px).",
+    "A declared motion system: three named curves and two durations as tokens, with --ease (cubic-bezier(0.2, 0.7, 0.2, 1)) on 93 elements.",
+    "The hero copy rises once at load (rise, 760 ms, 12 px, delayed 0, 70 and 140 ms on three blocks), one page arrival.",
+    "The agent tabs (\"Codex\") change their command list with a 300 ms filter fade and no travel."
+  ],
+  "not_investigated": [
+    "T-POSTER: the reduced-motion and still screenshots show the dealt cards in place, so the deal has a held result; passes",
+    "1 iframe on the page: transitions inside it were not exercised",
+    ".reveal class on scroll: ROB-001 records 73% of text hidden if IntersectionObserver never fires; scroll reveals were not recorded",
+    "the \"Deal again\" live run was still moving at 1479 ms with 4 ambient movers; the deal's own end time is not separable from them",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-DEMO-LOOP: no looping demo on the page"
+  ]
+}

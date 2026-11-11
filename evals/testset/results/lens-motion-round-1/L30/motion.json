@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "The brand site treats motion as a showpiece of its own guidelines: the Dropbox mark draws itself once (drawIn, 1.25 s), and each nav tile (Framework, Motion, Color) animates its own diagram on one shared token, --tile-transition: 0.35s cubic-bezier(.4,0,.2,1); the one measured click (\"Navigation menu\") changed nothing on screen, so almost no timing was measured and the judgment rests on declarations.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-PURPOSE and T-MOTION-SYSTEM pass (a deliberate intro and one tile token), but T-CHOREOGRAPHY finds an intro whose declared delays hold the nav titles back about 2.5 s, and nothing was measured beyond one click."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-012",
+      "title": "The page arrives once and is never gated",
+      "tier": "Reflex",
+      "where": "declared rules .nav-container.animating-in (.home-logo-container, .nav-wrapper-gridlines, .nav-button-title-container), 1440",
+      "evidence": "The stylesheet delays the intro in steps: the gridlines fade over 1.5 s after a 0.75 s delay, the logo container resizes over 1.5 s after a 1 s delay, and the nav button titles fade in over 1.25 s after a 1.25 s delay, so the titles finish about 2.5 s after the class is set. The capture holds no frames of this sequence (no passive recording), so the timing is read from declarations, not measured.",
+      "before": "opacity 1.25s ease-in-out 1.25s on .nav-button-title-container",
+      "after": "Keep the logo draw as the one intro moment and show the nav titles at once, or within about 300 ms of it",
+      "why": "Designers return to brand guidelines many times to find a logo file or a colour value, and a staged intro that holds the section names back for over two seconds costs them that time on each return.",
+      "test": "T-CHOREOGRAPHY"
+    }
+  ],
+  "strengths": [
+    "The tile animations run on one declared token, --tile-transition: 0.35s cubic-bezier(.4,0,.2,1), across 36 elements, so the guidelines' own motion reads as one system.",
+    "Each tile's motion shows its subject: the Motion tile draws a bezier curve with its handles and the Framework tile moves its connected points, so the movement is content, not decoration.",
+    "The Dropbox mark draws once with stroke-dashoffset (drawIn, 1.25 s) and does not loop; the live run found no snaps."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so the load intro (drawIn and the animating-in sequence) was read from declarations, not measured.",
+    "The \"Navigation menu\" click changed nothing on screen, so T-ENTER-EXIT and T-SPATIAL-MEANING had no element that opens.",
+    "Tile hover animations as they play: hover is not captured as frames; only the declared transitions were read.",
+    "T-POSTER and T-DEMO-LOOP: the tiles are illustrations that hold their final drawing in the screenshot, and nothing loops.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion beyond the load (the capture does not scroll while recording) and route transitions into each tile's page were not captured.",
+    "The sweep's reduced_motion check is not verified (one stylesheet could not be read), and the motion_css hits (MOT-001) belong to the sweep."
+  ]
+}

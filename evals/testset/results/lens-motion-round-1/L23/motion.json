@@ -1,0 +1,60 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The full-screen menu fades in over 150 ms, the desktop Research menu opens with no animation, and the \"Related articles\" popover grows over 250 ms; the sweep's 1140 ms duration and 20 px travel hits on \"Pause video\" land on the one-time reveal of the \"Claude Fable 5.2 and Mythos 5.2\" lockup (6 pieces, 100 ms steps), which is fitting, while the mobile menu's Research disclosure animates height for 400 ms and shoves 42 items, and that hit stands.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-PURPOSE, T-CHOREOGRAPHY and T-LOOPS pass (one staggered announcement reveal, instant desktop menus), but T-FREQUENCY finds a 400 ms height disclosure in the menu and T-MOTION-SYSTEM finds four unrelated curves on the same hover colour change."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-005",
+      "title": "Duration follows how often the motion is seen",
+      "tier": "Reflex",
+      "where": "disclosure \"Research\" inside the full-screen menu (#base-ui-_R_l6q6btbH2_), 1440",
+      "evidence": "The motion table measures height and opacity over 400 ms on cubic-bezier(0.4, 0, 0.2, 1) (flagged as Tailwind's default curve), a live end at 507 ms, and 42 other elements moving while it runs (\"Policy\" travels 208 px). On the contact sheet's normal row the sub-links are still faint at 250 ms. The sweep's motion/layout hit is on this trigger.",
+      "before": "height 400ms cubic-bezier(0.4, 0, 0.2, 1), pushing the Policy, Commitments and Company rows down",
+      "after": "About 200 ms on an ease-out for the height, or open the list instantly and fade the links in 150 ms",
+      "why": "Visitors open and close these menu sections several times while they look for a page, and each open makes the rows below slide 208 px over almost half a second.",
+      "test": "T-FREQUENCY"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared colour transitions on nav pills, links and buttons, 1440",
+      "evidence": "The declared table shows the same colour change on four timings: color 200 ms ease-out (14 elements), color 100 ms ease-out (11), color 200 ms ease (7) and color 150 ms ease (5), plus background-color 200 ms ease (7). The page uses 5 easings across 85 elements, including the browser's default ease on 31, and the sweep's motion/easing hits on \"Open menu\" and the \"Related articles\" popover read that default.",
+      "before": "ease, ease-out and ease-in-out at 100, 150, 200 and 300 ms for colour changes",
+      "after": "One hover token (for example 150 ms ease-out) for every colour change, and the default ease removed from the menu and popover",
+      "why": "The page's tuned curves (cubic-bezier(0.33, 1, 0.68, 1) on the reveal, ease-out on the pills) sit next to browser defaults for the same kind of change, so hover answers differ from one control to the next.",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The desktop Research and Search menus open with no animation (live end 185 ms or none), so the most-used navigation costs no waiting time.",
+    "The full-screen menu arrives in 150 ms with a fade and no travel, and the reduced-motion run keeps the same state change.",
+    "The announcement lockup reveal staggers 6 pieces at 100 ms steps over a 400 ms spread on cubic-bezier(0.33, 1, 0.68, 1), within the stagger limits, and plays once; the stylesheet carries 103 prefers-reduced-motion rules and the reduced run shows no movement."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so the hero video and any motion that plays without a click are not verified; the capture also blocked the hero .webm.",
+    "Scroll-revealed motion beyond the first reveal: the capture does not scroll while recording. Text left hidden when the IntersectionObserver never fires (27% of text) belongs to the sweep's hidden_content (ROB-001).",
+    "T-POSTER and T-DEMO-LOOP: no product demo animation on the page.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures and drags, hover as it plays (only declarations read) and route or page transitions were not captured.",
+    "The sweep's motion_css hits (transition: all, height transitions) belong to MOT-001 and are not repeated."
+  ]
+}

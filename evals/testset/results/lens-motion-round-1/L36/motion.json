@@ -1,0 +1,50 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Motion is short feedback on Carbon's productive scale: the side-nav sections (\"Getting started\") open their lists instantly while only the chevron turns in 110 ms, the site switcher answers with no movement, and the declared hovers run 70 ms on cubic-bezier(0.2, 0, 0.38, 0.9); the sweep's two easing hits are on that 110 ms chevron and are minor.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-CHOREOGRAPHY pass (instant disclosures, no load reveal, no loops), and T-MOTION-SYSTEM finds the browser's default ease on 23 of 36 transitioning elements beside the system's own curve."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "side-nav chevrons (#side-nav-menu-_r_6_ > button > div > svg) and the header and nav background transitions, 1440",
+      "evidence": "The declared table shows 23 of 36 transitioning elements on the browser's default `ease` (background-color 160 ms on 8, color and outline 110 ms on 5, transform 110 ms on the 4 chevrons, background-color 600 ms on 3 parallax stages), while 11 use the system curve cubic-bezier(0.2, 0, 0.38, 0.9) at 70 ms. The sweep's motion/easing hits on both \"Getting started\" triggers read the chevron's ease.",
+      "before": "transform 110ms ease on the side-nav chevrons; background-color 160ms ease on nav items",
+      "after": "The productive curve cubic-bezier(0.2, 0, 0.38, 0.9) at the 70 or 110 ms step on every nav and hover change",
+      "why": "Visitors open side-nav sections many times a visit, and their chevrons and hover fills run on a different curve from the buttons that already use the system's own timing.",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The side-nav disclosures show their links in the first frame: the contact sheet's t1 and t2 rows show \"About Carbon\" present at 50 ms, with only the 16 px chevron turning, so a navigation control used dozens of times costs no waiting time.",
+    "Hover feedback on the system's components runs at 70 ms on cubic-bezier(0.2, 0, 0.38, 0.9), a short productive step.",
+    "The page has no running animations and no load reveal on the hero (\"Let's make together\")."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording.",
+    "The parallax section blocks (.cxp--parallax-section-block__stage, background-color 600 ms) and the hero particles (opacity 600 ms) are scroll-driven; the capture does not scroll while recording, so conflict C17 was not judged.",
+    "The \"Search\" button run is not verified (the click navigated away), and the \"Cookie Preferences\" trigger opened nothing.",
+    "T-POSTER and T-DEMO-LOOP: no demo animation was captured.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, hover as it plays and route transitions were not captured.",
+    "The sweep's reduced_motion check is not verified (14 stylesheets could not be read); text hidden after load and with scripts off belongs to hidden_content (ROB-001)."
+  ]
+}

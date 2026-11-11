@@ -1,0 +1,67 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The only self-moving thing is a 7 s infinite float on the three hero mock-up cards, which shows nothing new on each cycle; every other control is either instant (the USD and INR toggle) or sits on Tailwind's default 150 ms curve, and the one measured fade belongs to the Lovable badge, not the page.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-LOOPS finds a decorative float loop on the hero cards and T-MOTION-SYSTEM finds framework defaults with no system; T-PURPOSE and T-FREQUENCY pass for the instant currency toggle."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "hero illustration, the three .floaty cards (\"Your goal\", \"Recommended stack\", \"Workflow\"), 1440",
+      "evidence": "The stylesheet runs \"animation: 7s ease-in-out infinite floaty\" on 3 cards; the keyframes move each card 14 px up and back (translateY 0 to -14px) for as long as the page is open. The cards hold static sample text, so each cycle shows the same content.",
+      "before": "Three hero cards bob 14 px on a 7 s infinite loop.",
+      "after": "Hold the cards still, or animate the goal-to-stack flow once at load so the motion shows the product answer.",
+      "why": "A loop that shows no change of state pulls the eye beside the headline on every visit and tells the visitor nothing about the product.",
+      "test": "T-LOOPS",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "page-wide declared transitions, 1440",
+      "evidence": "32 of 36 transitioning elements use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1) at 150 ms, 3 use the browser default ease at 100 to 200 ms, and the sweep's MOT-001 hits record \"transition: all\" on 16 elements. No duration or easing tokens appear in the stylesheet.",
+      "before": "Framework and browser default timing on every control.",
+      "after": "Pick one exit curve such as cubic-bezier(0.2, 0.8, 0.2, 1) with two duration steps (120 ms for colour, 200 ms for movement) and name the properties instead of \"all\".",
+      "why": "Default timing on everything reads as untouched scaffolding, and \"all\" lets layout changes animate by accident.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind transition utilities with no motion tokens"
+    }
+  ],
+  "strengths": [
+    "The USD and INR currency toggle switches instantly (no animation and no live movement measured), which suits a control a visitor may flip several times.",
+    "A prefers-reduced-motion rule turns the floaty loop off (\"animation: none\"), so reduced-motion visitors get still cards."
+  ],
+  "not_investigated": [
+    "capture context: manifest.network lists 10 blocked script requests and 1 blocked font; the page still rendered, but script-driven motion may be missing",
+    "the only measured fade (t2 \"Dismiss\", 200 ms opacity) is the Lovable platform badge, not the page's own design, and was not judged",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

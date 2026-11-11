@@ -1,0 +1,65 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The page barely moves: four of five measured controls changed instantly, and the one movement is a 2 px lift with a shadow on a tool card over 150 ms on Tailwind's default curve, which is a stock hover signal rather than a designed system.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE and T-FREQUENCY pass because controls answer instantly, but T-MOTION-SYSTEM finds only Tailwind default timing and T-HOVER-SIGNAL finds the stock card lift."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-013",
+      "title": "Hover answers with one small signal",
+      "tier": "Reflex",
+      "where": "tool cards on the \"Browse all tools\" view (trigger t1, card 395 x 263 px), 1440",
+      "evidence": "The motion table measured translate and box-shadow over 150 ms on cubic-bezier(0.4, 0, 0.2, 1) with 2 px travel; the stylesheet declares \".hover:-translate-y-0.5:hover\", so every card lifts the same way. The lift still moves 2 px under reduced motion.",
+      "before": "Every tool card lifts 2 px and gains a shadow on hover.",
+      "after": "Keep one signal for the card, such as a border or title colour change, and drop the lift.",
+      "why": "The same lift and shadow on every card is the stock card-kit hover and adds nothing a colour change would not.",
+      "test": "T-HOVER-SIGNAL",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "All 3 transitioning elements at 1440 (the buttons \"Get started\", \"Find my AI stack\" and \"Browse all tools\") use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1) at 150 ms, and the sweep's MOT-001 hit records \".transition-all\". No motion tokens are declared.",
+      "before": "Framework default timing with no system behind it.",
+      "after": "Name one easing and one or two duration steps as tokens and transition named properties only.",
+      "why": "With so little motion this costs little, but the timing is the framework's rather than a decision.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The nav buttons and \"Find my AI stack\" change state instantly, which suits a tool a visitor operates.",
+    "The page runs no load animations and no loops (0 keyframes, no running animations)."
+  ],
+  "not_investigated": [
+    "capture context: manifest.network lists 1 blocked script chunk",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

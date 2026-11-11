@@ -1,0 +1,105 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The hero runs a word-by-word heading reveal, a 5.5 s shimmer on the accent words, three floating colour orbs (18 to 26 s), an 11 s sheen sweep, four rising sparks and a pinging \"Live\" dot all at once, and cards add a lift plus a sheen on hover; the product-preview tab (180 ms ease-out, 12 px) is the one motion with a clear job.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-LOOPS and T-MOTION-BUDGET find six decorative loops in the first screen, T-HOVER-SIGNAL finds shine and lift on cards, and T-MOTION-SYSTEM finds Tailwind defaults on 165 elements."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "hero background (.hero-motion-orb, .hero-motion-sheen, .hero-motion-spark-1 to -4), 1440",
+      "evidence": "Running animations at 1440 include hero-motion-float-a, -b and -c (18 s, 22 s and 26 s, on orbs 578, 466 and 332 px wide), hero-motion-sheen-sweep (11 s infinite, a band 934 x 1685 px), and hero-motion-spark-rise on four 6 px dots (9 to 13.5 s infinite). The stylesheet counts 30 infinite animations.",
+      "before": "Orbs, a sheen band and sparks loop forever behind the hero.",
+      "after": "Cut the orbs, the sheen and the sparks; keep a still background.",
+      "why": "None of these loops shows a state or data, and they compete with the headline and the product preview on every visit.",
+      "test": "T-LOOPS",
+      "source": "motion",
+      "root": ".hero-motion-* decorative layer"
+    },
+    {
+      "rule": "MOT-006",
+      "title": "Motion has a budget per page",
+      "tier": "Reflex",
+      "where": "first screen, 1440",
+      "evidence": "In one screen the page runs a load reveal (hero-word-in 620 ms on 8 words plus hero-rise 620 ms on 3 blocks), a shimmer loop on the accent words (hero-word-shimmer 5.5 s infinite, starting at 1.4 s), 3 floating orbs, a sheen sweep, 4 sparks and a \"ping\" on the \"Live\" dot (1 s infinite). That is at least six primitives and more than two self-moving things at once.",
+      "before": "Six or more motion primitives in the first screen.",
+      "after": "Keep one load moment (the heading reveal or the preview arriving) and the \"Live\" ping, and cut the rest.",
+      "why": "When everything moves, nothing is marked as important, and the product preview loses the visitor's attention.",
+      "test": "T-MOTION-BUDGET",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-012",
+      "title": "The page arrives once and is never gated",
+      "tier": "Reflex",
+      "where": "hero h1 \"Everything your team runs on, in one workspace\", 1440",
+      "evidence": "Each word of the h1 animates hero-word-in (opacity 0 to 1, translateY 0.5em, 620 ms on cubic-bezier(0.2, 0.7, 0.2, 1)), and the accent words then start a 5.5 s gradient shimmer that never stops.",
+      "before": "The headline rises word by word and then shimmers forever.",
+      "after": "Show the headline at once; if one entrance stays, fade the whole block once and drop the shimmer.",
+      "why": "A word-by-word heading rise and a gradient shimmer are the stock generated hero, and the shimmer keeps moving under the text while people read it.",
+      "test": "T-CHOREOGRAPHY",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-013",
+      "title": "Hover answers with one small signal",
+      "tier": "Reflex",
+      "where": ".landing-card hover, 1440",
+      "evidence": "The stylesheet declares \".landing-card:hover { transform: translateY(-6px) }\" with a larger coloured shadow, and \".landing-card:hover::before\" runs landing-sheen (0.9 s, a light band sliding across the card). Hovering the hero stage also brightens the orbs and sparks.",
+      "before": "Cards lift 6 px, glow and run a sheen on hover.",
+      "after": "Use one signal, such as a border colour change at about 150 ms; drop the lift, glow and sheen.",
+      "why": "Lift plus glow plus shine on every card is the decorative hover kit and says nothing about which card the visitor is about to open.",
+      "test": "T-HOVER-SIGNAL",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "165 of 173 transitioning elements use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1) at 150 or 200 ms, 7 use the browser default ease (400 and 600 ms), and the hero and cards add cubic-bezier(0.2, 0.7, 0.2, 1) and cubic-bezier(0.22, 1, 0.36, 1). The cookie dialog opens on ease (sweep MOT-002 easing hit).",
+      "before": "Framework defaults next to two hand-picked curves, with no shared tokens.",
+      "after": "Choose one exit curve and one duration scale and apply it to the buttons, the cookie dialog and the cards.",
+      "why": "Unrelated curves for the same kind of change make the controls feel inconsistent next to a hand-tuned hero.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind transition utilities"
+    }
+  ],
+  "strengths": [
+    "The product-preview tabs (\"Tasks\") swap their panel in 180 ms on ease-out with 12 px travel, a short feedback motion that fits a control visitors click several times.",
+    "The stylesheet has 11 prefers-reduced-motion rules that switch off the bounce and hero letter animations."
+  ],
+  "not_investigated": [
+    "t1 disclosure and t4 \"PRODUCT\": the live recorder kept seeing movement to about 1.48 s with 7 ambient movers, which is the hero loops rather than the controls; their own timing was not separable",
+    "\"Play Consile demo video\" changed nothing within 600 ms; the video player was not judged",
+    "capture context: favicon images from gstatic were blocked; cookie banner dismissed with \"Reject All\" (manifest.prep)",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

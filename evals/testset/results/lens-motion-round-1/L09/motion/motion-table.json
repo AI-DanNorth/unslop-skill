@@ -1,0 +1,591 @@
+{
+ "run": "L09",
+ "interaction": {
+  "motion": {
+   "found": 4,
+   "tried": 4,
+   "measured": 4,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 40129
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 2
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 6
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 6
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 1
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 2
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 4,
+  "tried": 4,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "tab",
+   "name": "Mac Client",
+   "selector": "#radix-«r2»-trigger-mac-client",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "opened-element",
+   "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+   "changed": [
+    "1 Download the DMG, drag to Applications"
+   ],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 6,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.5,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 1
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     56,
+     103,
+     152,
+     258,
+     411,
+     613
+    ],
+    "reduce": [
+     0,
+     57,
+     103,
+     160,
+     257,
+     408,
+     610
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "disclosure",
+   "name": "Can my phone or iPad install KinAI directly?",
+   "selector": "#radix-«r7»",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "Not yet — there is no native iOS or Andr",
+    "#radix-«r7» > svg"
+   ],
+   "duration_ms": 190,
+   "largest_box": {
+    "w": 670,
+    "h": 124,
+    "viewport_pct": 6.4,
+    "selector": "#radix-«r8»"
+   },
+   "min_start_scale": 0.0,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 2,
+   "leaving": 0,
+   "anim_end_ms": 200,
+   "animations": [
+    {
+     "props": "rotate",
+     "ms": 200,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "height",
+     "ms": 200,
+     "easing": "ease-out",
+     "count": 1
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [
+    "height"
+   ],
+   "infinite": [],
+   "layout_moved": {
+    "count": 20,
+    "top": "\"Does the LLM have to run on th\" 60.8 px off its start and end at 70 ms"
+   },
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 219,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": [
+     "shove +7.7 px on height at 166 ms: \"KinAI v0.2.148 Star on GitHub \"",
+     "shove +7.8 px on height at 166 ms: \"Can my phone or iPad install K\"",
+     "shove +7.7 px on y at 166 ms: \"Does the LLM have to run on th\"",
+     "shove +7.7 px on y at 166 ms: \"Does the LLM have to run on th\"",
+     "shove +7.7 px on y at 166 ms: \"Can Windows be the host?\""
+    ]
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 56.9,
+    "scale_dev": 0.0,
+    "animations": [
+     "height 200 ms",
+     "rotate 200 ms"
+    ],
+    "changed": 2
+   },
+   "sweep_hits": [
+    "motion/layout: 20 other element(s) move while the transition runs (e.g. \"Does the LLM have to run on th\" 61 px off its start and end at 70 ms): the transit",
+    "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 57 px / scales 0% (frames seeked)",
+    "motion_snap/shove: \"KinAI v0.2.148 Star on GitHub \" jumps +8 px in one frame on height at 166 ms while another element is still animating: layout and animation",
+    "motion_snap/shove: \"Can my phone or iPad install K\" jumps +8 px in one frame on height at 166 ms while another element is still animating: layout and animation",
+    "motion_snap/shove: \"Does the LLM have to run on th\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disa",
+    "motion_snap/shove: \"Does the LLM have to run on th\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disa"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t1-reduce-000.png",
+     "motion/t1-reduce-050.png",
+     "motion/t1-reduce-100.png",
+     "motion/t1-reduce-150.png",
+     "motion/t1-reduce-250.png",
+     "motion/t1-reduce-400.png",
+     "motion/t1-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "",
+   "selector": "type(1) > main > section:nth-of-type(2) > div > div:nth-of-type(2) > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.5,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t2-reduce-000.png",
+     "motion/t2-reduce-050.png",
+     "motion/t2-reduce-100.png",
+     "motion/t2-reduce-150.png",
+     "motion/t2-reduce-250.png",
+     "motion/t2-reduce-400.png",
+     "motion/t2-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     55,
+     111,
+     172,
+     261,
+     415,
+     616
+    ],
+    "reduce": [
+     0,
+     52,
+     109,
+     167,
+     255,
+     409,
+     611
+    ]
+   }
+  },
+  {
+   "t": 3,
+   "kind": "button",
+   "name": "",
+   "selector": "type(1) > main > section:nth-of-type(2) > div > div:nth-of-type(2) > button:nth-of-type(2)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "type(2) > div > div:nth-of-type(1) > img",
+    "v:nth-of-type(2) > button:nth-of-type(1)"
+   ],
+   "duration_ms": 270,
+   "largest_box": {
+    "w": 1214,
+    "h": 682.9,
+    "viewport_pct": 64.0,
+    "selector": "in > section:nth-of-type(2) > div > div:nth-of-type(1) > img"
+   },
+   "min_start_scale": 1.0,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 1,
+   "leaving": 1,
+   "anim_end_ms": 300,
+   "animations": [
+    {
+     "props": "outline-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "outline-width",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "border-bottom-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "border-left-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "border-right-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    },
+    {
+     "props": "border-top-color",
+     "ms": 150,
+     "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "count": 1,
+     "flags": [
+      "Tailwind default curve"
+     ]
+    }
+   ],
+   "paint_only": 5,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.7,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "seeked",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [
+     "border-bottom-color 150 ms",
+     "border-left-color 150 ms",
+     "border-right-color 150 ms",
+     "border-top-color 150 ms"
+    ],
+    "changed": 2
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t3-normal-000.png",
+     "motion/t3-normal-050.png",
+     "motion/t3-normal-100.png",
+     "motion/t3-normal-150.png",
+     "motion/t3-normal-250.png",
+     "motion/t3-normal-400.png",
+     "motion/t3-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t3-reduce-000.png",
+     "motion/t3-reduce-050.png",
+     "motion/t3-reduce-100.png",
+     "motion/t3-reduce-150.png",
+     "motion/t3-reduce-250.png",
+     "motion/t3-reduce-400.png",
+     "motion/t3-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 536,
+  "transitions": [
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 47,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "all",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 15,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "opacity",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 7,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "200",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 4,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 1,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "500",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 1,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   }
+  ],
+  "transition_elements": 75,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 75,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "150": 70,
+   "200": 4,
+   "500": 1
+  },
+  "running_animations": [],
+  "stylesheet": {
+   "readable_rules": 102,
+   "keyframes": 7,
+   "infinite": 3,
+   "prefers_reduced_motion": 0,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 0
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "animations": 7,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "ease-out",
+    "animations": 1
+   }
+  ],
+  "durations_ms": {
+   "150": 6,
+   "200": 2
+  }
+ },
+ "evidence": {
+  "triggers_measured": 4,
+  "triggers_with_motion": 2,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L09\\03-lenses\\motion\\contact-sheet.png"
+}

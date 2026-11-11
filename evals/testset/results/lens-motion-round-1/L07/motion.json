@@ -1,0 +1,81 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The hero is an autoplaying model carousel whose slide change runs about 1000 ms and fades the old headline over the new picture, and its arrows and dots are controls a visitor presses several times; three thumbnail marquees show real example output and pass, and every other control sits on Tailwind's default 150 ms curve.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-FREQUENCY finds a 1000 ms change on repeated carousel controls, T-CONTINUITY finds the old headline ghosting over the new slide, and T-MOTION-SYSTEM finds framework defaults on all 89 transitioning elements."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-005",
+      "title": "Duration follows how often the motion is seen",
+      "tier": "Reflex",
+      "where": "hero carousel controls \"Previous slide\", \"Next slide\" and the dot \"Show MiniMax H3\", 1440",
+      "evidence": "Each click starts a change the frames measure at 1000 ms over a box covering 100% of the viewport, built from a 600 ms ease-out and a 1100 ms ease-in-out animation (measured_system). The sweep records MOT-002 duration hits on all three triggers (\"transition runs 1000 ms; limit for a button 300 ms\").",
+      "before": "A 1000 ms full-screen cross-fade answers each arrow or dot click.",
+      "after": "Cut the slide change to about 300 ms for a click and keep the long dissolve, if wanted, for the autoplay only.",
+      "why": "Visitors who page through models with the arrows wait a second per click, and the hero is the first thing they use.",
+      "test": "T-FREQUENCY",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-016",
+      "title": "Solid surfaces arrive whole and hold their anchor",
+      "tier": "Finish",
+      "where": "hero carousel, contact sheet rows t0 and t1 (normal), 1440",
+      "evidence": "At 150 to 250 ms the outgoing headline (for example \"Cineyx Character ID Identity\") is still visible at partial opacity over the incoming slide's picture, so two slides' text and images overlap before the new headline appears.",
+      "before": "The old slide's text ghosts over the new slide's picture.",
+      "after": "Fade the old text out first (about 120 ms), then bring in the new slide, or cross-fade only the picture and swap the text in one step.",
+      "why": "Overlapping headlines are unreadable mid-change and make the slide change look unfinished.",
+      "test": "T-CONTINUITY",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "All 89 transitioning elements use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1), 88 of them at 150 ms; the carousel adds ease-out (600 ms) and ease-in-out (1100 ms). The sweep's MOT-001 hits record \"transition: all\" on 42 elements.",
+      "before": "Framework defaults on every control and keyword curves on the carousel.",
+      "after": "Set one curve family and a duration scale as tokens and use them for the carousel too.",
+      "why": "The timing is the framework's, not a choice, and the carousel uses a different set again.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind transition utilities"
+    }
+  ],
+  "strengths": [
+    "The three thumbnail marquees (28, 32 and 26 s) show real example covers the product made, so the loop shows content rather than decoration.",
+    "The EN, FR and RU language buttons change instantly."
+  ],
+  "not_investigated": [
+    "capture context: manifest.network lists blocked promo .mp4 media, so the carousel's video backgrounds did not play; the dark frames at 400 to 600 ms may come from missing video and were not judged as a gap (T-ENTER-EXIT)",
+    "carousel autoplay timing: no passive recording; the reduce rows start on a different slide than the normal rows, which suggests autoplay",
+    "motion_snap live runs were inconclusive for the carousel triggers (detector partial)",
+    "cookie banner dismissed with \"Reject non-essential\" (manifest.prep)",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}

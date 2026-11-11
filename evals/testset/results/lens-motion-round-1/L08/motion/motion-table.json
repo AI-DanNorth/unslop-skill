@@ -1,0 +1,441 @@
+{
+ "run": "L08",
+ "interaction": {
+  "motion": {
+   "found": 4,
+   "tried": 4,
+   "measured": 3,
+   "skipped": 0,
+   "notVerified": [],
+   "elapsedMs": 29960
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "hits": 2
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 3
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "capture": {
+  "found": 4,
+  "tried": 4,
+  "not_verified": [],
+  "not_tried": []
+ },
+ "triggers": [
+  {
+   "t": 0,
+   "kind": "menu",
+   "name": "About",
+   "selector": "#radix-_r_0_",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "seeked",
+   "opened": "animation-targets",
+   "changed": [
+    "About Compare Careers Help / Contact"
+   ],
+   "duration_ms": 130,
+   "largest_box": {
+    "w": 224,
+    "h": 130,
+    "viewport_pct": 2.2,
+    "selector": "#radix-_r_1_"
+   },
+   "min_start_scale": 0.95,
+   "max_travel_px": 0.0,
+   "max_overshoot": 1.0,
+   "entering": 1,
+   "leaving": 0,
+   "anim_end_ms": 150,
+   "animations": [
+    {
+     "props": "opacity,transform",
+     "ms": 150,
+     "easing": "ease",
+     "count": 1,
+     "flags": [
+      "browser default ease"
+     ]
+    }
+   ],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 148,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 1
+   },
+   "sweep_hits": [
+    "motion/easing: transition easing is ease (read from the running animations)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t0-normal-000.png",
+     "motion/t0-normal-050.png",
+     "motion/t0-normal-100.png",
+     "motion/t0-normal-150.png",
+     "motion/t0-normal-250.png",
+     "motion/t0-normal-400.png",
+     "motion/t0-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t0-reduce-000.png",
+     "motion/t0-reduce-050.png",
+     "motion/t0-reduce-100.png",
+     "motion/t0-reduce-150.png",
+     "motion/t0-reduce-250.png",
+     "motion/t0-reduce-400.png",
+     "motion/t0-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     58,
+     103,
+     169,
+     258,
+     406,
+     608
+    ]
+   }
+  },
+  {
+   "t": 1,
+   "kind": "button",
+   "name": "How it works",
+   "selector": "#react-aria6941926599-_r_e_",
+   "normal": "ok",
+   "reduce": "not-verified (trigger not found)",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 1,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": 390,
+    "still_moving": false,
+    "frame_ms": 16.8,
+    "ambient": 0,
+    "snaps": []
+   },
+   "sweep_hits": [
+    "motion/duration_live: transition runs about 390 ms (JavaScript-driven, measured in real time at ~16.8 ms a frame; limit for a button 300 ms)"
+   ],
+   "frames": {
+    "normal": [
+     "motion/t1-normal-000.png",
+     "motion/t1-normal-050.png",
+     "motion/t1-normal-100.png",
+     "motion/t1-normal-150.png",
+     "motion/t1-normal-250.png",
+     "motion/t1-normal-400.png",
+     "motion/t1-normal-600.png"
+    ],
+    "reduce": []
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     57,
+     124,
+     170,
+     257,
+     414,
+     611
+    ],
+    "reduce": []
+   }
+  },
+  {
+   "t": 2,
+   "kind": "button",
+   "name": "Start Now",
+   "selector": "#root > div > div > header > nav > div:nth-of-type(3) > button:nth-of-type(2)",
+   "normal": "not-verified (the click navigated the page)",
+   "reduce": "not-verified (the click navigated the page)",
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t2-normal-000.png",
+     "motion/t2-normal-050.png",
+     "motion/t2-normal-100.png",
+     "motion/t2-normal-150.png",
+     "motion/t2-normal-250.png",
+     "motion/t2-normal-400.png",
+     "motion/t2-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t2-reduce-000.png",
+     "motion/t2-reduce-050.png",
+     "motion/t2-reduce-100.png",
+     "motion/t2-reduce-150.png",
+     "motion/t2-reduce-250.png",
+     "motion/t2-reduce-400.png",
+     "motion/t2-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     50,
+     100,
+     150,
+     250,
+     400,
+     600
+    ],
+    "reduce": [
+     0,
+     64,
+     177,
+     231,
+     294,
+     406,
+     608
+    ]
+   }
+  },
+  {
+   "t": 3,
+   "kind": "button",
+   "name": "Dark mode",
+   "selector": "#root > div > div > header > nav > div:nth-of-type(3) > button:nth-of-type(1)",
+   "normal": "ok",
+   "reduce": "ok",
+   "timing": "realtime",
+   "opened": "none",
+   "note": "no animation started and nothing opened: instant change or none",
+   "changed": [],
+   "anim_end_ms": 0,
+   "animations": [],
+   "paint_only": 0,
+   "layout_props": [],
+   "infinite": [],
+   "live": {
+    "coverage": "ok",
+    "motion_end_ms": null,
+    "still_moving": false,
+    "frame_ms": 16.6,
+    "ambient": 0,
+    "snaps": []
+   },
+   "reduce_motion": {
+    "timing": "realtime",
+    "move_px": 0.0,
+    "scale_dev": 0.0,
+    "animations": [],
+    "changed": 0
+   },
+   "sweep_hits": [],
+   "frames": {
+    "normal": [
+     "motion/t3-normal-000.png",
+     "motion/t3-normal-050.png",
+     "motion/t3-normal-100.png",
+     "motion/t3-normal-150.png",
+     "motion/t3-normal-250.png",
+     "motion/t3-normal-400.png",
+     "motion/t3-normal-600.png"
+    ],
+    "reduce": [
+     "motion/t3-reduce-000.png",
+     "motion/t3-reduce-050.png",
+     "motion/t3-reduce-100.png",
+     "motion/t3-reduce-150.png",
+     "motion/t3-reduce-250.png",
+     "motion/t3-reduce-400.png",
+     "motion/t3-reduce-600.png"
+    ]
+   },
+   "frame_ms": {
+    "normal": [
+     0,
+     54,
+     116,
+     159,
+     262,
+     402,
+     603
+    ],
+    "reduce": [
+     0,
+     57,
+     131,
+     197,
+     266,
+     408,
+     609
+    ]
+   }
+  }
+ ],
+ "passive": {
+  "note": "no passive recording (capture.mjs --passive <ms> not run): motion that plays without a click is not verified"
+ },
+ "declared": {
+  "visible_elements": 157,
+  "transitions": [
+   {
+    "props": "color, background-color, border-color",
+    "ms": "150",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 12,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "color, background-color, border-color",
+    "ms": "100",
+    "easing": "linear",
+    "elements": 8,
+    "flags": [
+     "linear"
+    ]
+   },
+   {
+    "props": "transform, translate, scale",
+    "ms": "300",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 1,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "props": "color, background-color, border-color",
+    "ms": "200",
+    "easing": "cubic-bezier(0, 0, 0.2, 1)",
+    "elements": 1
+   },
+   {
+    "props": "all",
+    "ms": "200",
+    "easing": "cubic-bezier(0, 0, 0.2, 1)",
+    "elements": 1
+   }
+  ],
+  "transition_elements": 23,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "elements": 13,
+    "flags": [
+     "Tailwind default curve"
+    ]
+   },
+   {
+    "easing": "linear",
+    "elements": 8,
+    "flags": [
+     "linear"
+    ]
+   },
+   {
+    "easing": "cubic-bezier(0, 0, 0.2, 1)",
+    "elements": 2
+   }
+  ],
+  "durations_ms": {
+   "100": 8,
+   "150": 12,
+   "200": 2,
+   "300": 1
+  },
+  "running_animations": [
+   {
+    "name": "fade-up",
+    "ms": "350",
+    "elements": 1
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 193,
+   "keyframes": 19,
+   "infinite": 10,
+   "prefers_reduced_motion": 6,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 1,
+   "will_change": 7
+  }
+ },
+ "measured_system": {
+  "easings": [
+   {
+    "easing": "ease",
+    "animations": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "150": 1
+  }
+ },
+ "evidence": {
+  "triggers_measured": 3,
+  "triggers_with_motion": 2,
+  "passive_ok": false,
+  "has_motion_evidence": true,
+  "missing": [
+   "no passive recording"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L08\\03-lenses\\motion\\contact-sheet.png"
+}

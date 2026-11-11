@@ -1,0 +1,61 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The site's controls answer quickly (the search dialog opens with no measured movement and the legal footer grows in 300 ms on ease-in-out), but the \"Find inspiration\" mega-menu, a nav control used on every visit, arrives on an overshooting spring, cubic-bezier(0.34, 1.56, 0.64, 1), and a fake text caret blinks forever in the unfocused search field; the sweep's easing hit on the same menu's 200 ms ease is minor.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE and T-CHOREOGRAPHY pass (no load reveal, short feedback on search and the footer), while T-MOTION-SYSTEM finds overshoot on a nav menu and T-LOOPS finds a decorative caret loop."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-008",
+      "title": "The curve fits the direction and the scope",
+      "tier": "Finish",
+      "where": "disclosure \"Find inspiration\" (nav > details:nth-of-type(1) > summary), mega-menu panel 1100 x 682 px, 1440",
+      "evidence": "The motion table measures the panel's opacity and transform over 220 ms on cubic-bezier(0.34, 1.56, 0.64, 1), flagged as overshooting (y 1.56), with a maximum overshoot of 1.1 and 8 px of travel. The panel covers 57.9% of the viewport, and on the contact sheet it is still half transparent over the Apple email at 50 ms.",
+      "before": "opacity, transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "after": "The same 200 ms on a non-overshoot ease-out such as cubic-bezier(0.16, 1, 0.3, 1), or an instant open with a 120 ms fade",
+      "why": "Visitors open this menu to move between categories on almost every visit, and a panel that covers half the screen and springs past its place each time reads as a toy.",
+      "test": "T-MOTION-SYSTEM"
+    },
+    {
+      "rule": "MOT-014",
+      "title": "Loops show a state or real data",
+      "tier": "Reflex",
+      "where": "header search field (#navbar-search), the \"|\" span after \"Search by brand\", 1440",
+      "evidence": "dom-1440.json shows a separate span holding \"|\" with `animation: 1s step-end infinite caretBlink`, and the declared table lists caretBlink as the page's one running animation. The fold shows the drawn caret beside the placeholder while the field has no focus.",
+      "before": "A painted caret blinking forever in an unfocused field",
+      "after": "No drawn caret; let the browser's own caret show when the field has focus",
+      "why": "A blinking caret tells the visitor the field already has focus, so the loop pulls the eye to the header and suggests that typing will land in it when it will not.",
+      "test": "T-LOOPS"
+    }
+  ],
+  "strengths": [
+    "The search dialog opens with no measured movement, and the Ctrl K shortcut makes it a fast, repeated control.",
+    "The \"Legal and Privacy info\" footer grows with grid-template-rows over 300 ms on ease-in-out and moves no other content.",
+    "The page has no load reveal: the email preview arrives with the page."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so whether the search placeholder cycles its text is not verified.",
+    "The \"Code\" tab run is not verified (the click navigated the page), and the email preview iframe's transitions were not exercised.",
+    "The mega-menu's live run ends at 964 ms although its animations end at 220 ms; the frames after 250 ms show no movement in the panel, so the late change was not judged.",
+    "T-POSTER and T-DEMO-LOOP: no demo animation on the page.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion (the capture does not scroll while recording), hover as it plays and route transitions were not captured.",
+    "Text hidden after load (49%) and with scripts off belongs to hidden_content (ROB-001); the transition-all and layout-property hits belong to the sweep (MOT-001)."
+  ]
+}

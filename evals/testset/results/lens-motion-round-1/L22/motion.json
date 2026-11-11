@@ -1,0 +1,60 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The slide's only motion is a showpiece the presenter starts from \"↻ REPLAY\" (it rebuilds the A and B flows, the #slop output and the three school cards, ending at 1315 ms live), so the sweep's 660 ms duration hit is fitting; but the replay first fades the whole slide out over 800 ms on the browser's default ease, which is longer than the 350 ms step entrances and leaves the slide nearly black by 600 ms.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE, T-FREQUENCY and T-POSTER pass for the replayed build, while T-ENTER-EXIT finds an exit longer than the entrances with a near-blank slide, and T-MOTION-SYSTEM finds the browser default ease on every animation."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-009",
+      "title": "Exits are quicker than entrances and leave no gap",
+      "tier": "Finish",
+      "where": "button \"↻ REPLAY\" (#replay): #slop output, the three school-card images, #flow-a and #flow-b steps, 1920",
+      "evidence": "motion.json shows the replay fading #slop and the card images out over 800 ms ease, while the flow steps run 350 ms opacity and transform. On the contact sheet's normal row the slide is close to black at 400 ms and 600 ms, and the live run keeps moving until 1315 ms.",
+      "before": "Reset: opacity 800 ms ease on the output and cards; steps arrive in 350 ms",
+      "after": "Reset in about 200 ms (or cut instantly) on an ease-in, then start the build at once, so the exit is shorter than the 350 ms step entrance",
+      "why": "The presenter presses Replay to show the build, and for most of a second the audience watches the slide empty out before anything is built.",
+      "test": "T-ENTER-EXIT"
+    },
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "all replay animations (#flow-a, #flow-b, #slop, card images), 1920",
+      "evidence": "measured_system lists one easing, the browser's default `ease`, on all 8 measured animation groups, at 350, 400 and 800 ms. The sweep's motion/easing hit on #replay reads the same value.",
+      "before": "transition: opacity 350ms ease / 800ms ease (browser default)",
+      "after": "A decelerating curve such as cubic-bezier(0.16, 1, 0.3, 1) for the step arrivals and a short ease-in for the reset",
+      "why": "A build sequence that a presenter replays on stage is the one place on this slide where the curve shows, and the default ease gives each step a slow start.",
+      "test": "T-MOTION-SYSTEM"
+    }
+  ],
+  "strengths": [
+    "The motion is a showpiece the presenter chooses: the steps build only on \"↻ REPLAY\", and the static screenshot holds the finished comparison (the A output and the three B school cards), so the slide reads with no motion at all (T-POSTER passes).",
+    "The build moves only 4 px of travel with no scale or overshoot, so it shows order without pulling the eye across the slide."
+  ],
+  "not_investigated": [
+    "Passive motion: no passive recording, so any build that plays at slide load without a click is not verified.",
+    "Declared transitions and hover signals: dom-1440.json is missing (the slide was captured at 1920), so T-HOVER-SIGNAL was not run.",
+    "The build after 600 ms: the contact sheet stops at 600 ms and the live run ends at 1315 ms, so the arrival order of the B steps was read from motion.json, not from frames.",
+    "T-DEMO-LOOP: the build does not loop.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion, hover as it plays and route transitions were not captured.",
+    "Motion left under reduced motion (4 px) and content hidden with scripts off belong to the sweep (A11-011, ROB-001)."
+  ]
+}

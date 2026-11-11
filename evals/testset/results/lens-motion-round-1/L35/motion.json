@@ -1,0 +1,30 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The guidelines page chose stillness: only 3 of 752 visible elements declare a transition (150 to 200 ms opacity and hover changes), nothing runs on its own, and the one measured trigger (\"Copy to clipboard\") changed with no movement, which suits a long reading page.",
+  "score": null,
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "The page arrives with no load reveal and no running animations, so the guideline list reads at once.",
+    "The three declared transitions share one 150 to 200 ms scale, and the stylesheet carries prefers-reduced-motion rules for the shared components that do animate."
+  ],
+  "not_investigated": [
+    "No motion to judge: every measured change was instant and only 3 elements declare short transitions. The stylesheet holds 38 @keyframes and 7 infinite animations from shared components, but none run on this page.",
+    "Passive motion: no passive recording.",
+    "The \"Copy to clipboard\" button shows no visible change in the 600 ms of frames; whether it confirms the copy is a feedback question for the sweep and lens-a11y, not a motion finding.",
+    "T-ENTER-EXIT, T-SPATIAL-MEANING, T-CONTINUITY, T-POSTER and T-DEMO-LOOP: no element opens with motion and there is no demo.",
+    "Interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built. Gestures, scroll-driven motion (the capture does not scroll while recording), hover as it plays and route or view transitions were not captured.",
+    "The transition-all and layout-property hits (MOT-001) belong to the sweep."
+  ]
+}

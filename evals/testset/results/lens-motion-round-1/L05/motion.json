@@ -1,0 +1,65 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-10T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The one measured motion is the compare tray, which fades in at the bottom over 300 ms on its own curve when \"Compare\" is pressed and does a feedback job; the rest of the page declares Tailwind default timing, including \"transition: all\" at 300 ms on 20 elements and card lifts on hover.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-PURPOSE passes for the compare tray, but T-MOTION-SYSTEM finds default curves and \"all\" transitions and T-HOVER-SIGNAL finds stock card lifts."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-007",
+      "title": "One curve family and one duration scale",
+      "tier": "Finish",
+      "where": "declared transitions, 1440",
+      "evidence": "65 of 67 transitioning elements use Tailwind's default cubic-bezier(0.4, 0, 0.2, 1) at 150 or 300 ms, 2 use the browser default ease at 200 ms, and the compare tray uses a third curve, cubic-bezier(0.25, 0.1, 0.35, 1). The sweep's MOT-001 hits record 33 elements on \"transition: all\" at 0.3 s.",
+      "before": "Three unrelated curves and framework defaults, with \"all\" on 33 elements.",
+      "after": "Use one exit curve with two duration steps (about 150 ms for colour, 220 ms for movement) and list the animated properties.",
+      "why": "Default and mixed curves make the page's feedback feel unplanned, and \"all\" animates layout changes by accident.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion",
+      "root": "Tailwind transition utilities with no motion tokens"
+    },
+    {
+      "rule": "MOT-013",
+      "title": "Hover answers with one small signal",
+      "tier": "Reflex",
+      "where": "goal cards and tool cards, 1440",
+      "evidence": "The stylesheet declares \".hover:-translate-y-0.5:hover\", \".hover:-translate-y-px:hover\" and \".group:hover .group-hover:-translate-y-0.5\", and 20 elements carry \"transition: all 300ms\" on the Tailwind curve, so cards lift on hover.",
+      "before": "Cards lift on hover on a 300 ms \"all\" transition.",
+      "after": "Keep one signal per card, such as a border colour change at 150 ms, and drop the lift.",
+      "why": "The same lift on every card is the stock hover and adds movement without new information.",
+      "test": "T-HOVER-SIGNAL",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The compare tray answers the \"Compare\" click with a short opacity fade (measured end 314 ms) and no travel, so the selection is confirmed without moving the page."
+  ],
+  "not_investigated": [
+    "the \"Close badge\" trigger is the Base44 platform badge and changed instantly; not judged",
+    "no 00-contract.md in the run: visitor mode inferred from the screenshots",
+    "no passive recording (capture.mjs --passive not run): load motion and loops judged from declared animations only, not from frames",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "gestures and drags: not captured",
+    "scroll-driven and scroll-revealed motion beyond the load: the capture does not scroll while recording",
+    "hover as it plays: only the declared transitions are read",
+    "route and page transitions: not captured",
+    "T-POSTER and T-DEMO-LOOP: no demo animation or looping demo on the page"
+  ]
+}
