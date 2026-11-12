@@ -249,6 +249,54 @@
    run: "Read the claims table's case-study rows and dead links: every link that stands behind a claim ('Read the case study', 'See all reviews', 'View the report').",
    pass: "Each goes to a real page or an on-page section that holds the evidence; no bare '#', empty href or 'Coming soon' stands in for evidence.",
    sources: ["hallmark §120", "taste-skill §23 §39"]}
+- {id: T-STATE-MATRIX, name: State matrix, lens: [components], kind: H,
+   run: "For each control family in the components table (skills/lens-components/components_table.py writes 03-lenses/components/components-table.json: button variants, fields, choices, tabs, menu items), list default, hover, focus-visible, active, disabled, loading, error and success, and mark each as seen in the capture (focus clips, motion stills, async screenshots), declared in the CSS (declared_states) or absent.",
+   pass: "Every state the control can reach is designed and differs visibly from rest; a state the page never reaches is not required. Absent hover, active or disabled rules on controls that clearly reach them fail.",
+   sources: ["hallmark §91 §311 §142", "ux-ui-agent-skills §232 §238 §324"]}
+- {id: T-PRIMARY-COUNT, name: Primary count, lens: [components], kind: H,
+   run: "On each screen tile and in each dialog, count the filled buttons outside the nav and footer (the table's filled_by_screen and button variants), and name the action most visitors take first.",
+   pass: "One filled primary per view, the visitor's first action; the rest are quieter and go elsewhere; a destructive action is not the primary unless it is the view's one job.",
+   sources: ["hallmark §90 §154", "taste-skill §63", "kami §149 §267"]}
+- {id: T-ONE-FAMILY, name: One family, lens: [components], kind: H,
+   run: "Lay the button variants, field heights and link styles side by side: heights, radii, borders, hover steps and padding.",
+   pass: "One height per control size, one radius per size, constant borders across states, one link look; a field and the button beside it match.",
+   sources: ["hallmark §92 §315-316", "stageshow §13 §16 §21"]}
+- {id: T-FIELD-READ, name: Field read, lens: [components], kind: H,
+   run: "For every field row (visible_label, label_at, placeholder, placeholder_only, required_mark, help_below, asks_for, autocomplete_missing, type_mismatch) read the field on its tile, as a visitor filling it.",
+   pass: "Each field has a persistent visible label, a format-only placeholder, required or optional in words, the type and autocomplete of what it asks for, and the form asks only what its next step uses.",
+   sources: ["hallmark §92 §314", "ux-ui-agent-skills §68-78 §238", "taste-skill §67 §137"]}
+- {id: T-ERROR-PATH, name: Error path, lens: [components], kind: H,
+   run: "Follow every failure the capture recorded (async fail runs, fake-send results, hidden error templates and error classes in state_text) in the order a user meets it, and read where each message appears, when, and what the user can do next.",
+   pass: "Each failure shows at the place it happened, keeps what the user typed, and offers a retry or a fix; reversible actions use Undo rather than a confirm; no feedback is a toast far from the change.",
+   sources: ["hallmark §92 §314 §320 §323 §328", "ux-ui-agent-skills §69 §97 §238", "conflicts C06 C27"]}
+- {id: T-WHERE-AM-I, name: Where am I, lens: [components], kind: H,
+   run: "For each navigation region, tab row and stepper, read its current mark (the table's `current`, with how it was inferred) and its dead links; then look at the header tile and ask which section this page belongs to.",
+   pass: "Past the home page the current section is marked; tabs and steps mark the current one; deep pages carry breadcrumbs; no nav item is a dead link.",
+   sources: ["hallmark §40", "ux-ui-agent-skills §3 §6 §239", "taste-skill §95"]}
+- {id: T-PHONE-NAV, name: Phone navigation, lens: [components], kind: H,
+   run: "Read phone_nav (the toggle, the links still visible at 375, any bottom bar) against the 1440 header, then look at fold-375.png and shot-375.png.",
+   pass: "Every top-level destination is reachable on the phone through a named menu button or a 3 to 5 item bar; labels do not wrap; tab rows scroll on one line. What the menu holds is 'not verified' unless the capture opened it.",
+   sources: ["hallmark §40", "awesome-design-patterns §209", "ux-ui-agent-skills §130 §239"]}
+- {id: T-OVERLAY-CHECK, name: Overlay check, lens: [components], kind: H,
+   run: "For each dialog, menu, disclosure and tab the capture opened (overlays.triggers: what opened, covers_viewport, closed_after_escape, still_open), look at the open still and ask whether inline content could have done the job.",
+   pass: "Dialogs are the last answer; an open dialog dims the page, shows a close control and closed after Escape; a menu fits within the viewport. Focus return and scroll lock are 'not verified' unless the capture shows them.",
+   sources: ["hallmark §144 §318 §319", "ux-ui-agent-skills §131 §239 §321"]}
+- {id: T-INTERRUPT, name: Interruptions, lens: [components], kind: J,
+   run: "List everything that appears over the content without the visitor asking: on load (fold-1440.png, fold-375.png, the network prep notes), on scroll (tiles) and fixed to the viewport (status_regions with `fixed`).",
+   pass: "Nothing but a required, plain consent banner covers content uninvited; no permission is requested at load.",
+   sources: ["taste-skill §22", "awesome-design-patterns §37 §43"]}
+- {id: T-EMPTY-FIRST, name: Empty first, lens: [components], kind: J,
+   run: "For each data region (tables, lists, feeds, dashboards, search), imagine a new account with no data, a slow connection and a failed request; then read state_text and state_classes for templates the page already holds.",
+   pass: "Each region has a designed loading, empty and error state in its own frame, each with one next action; a product picture of a full dashboard is judged as a picture, not a product.",
+   sources: ["hallmark §94 §95 §321", "ux-ui-agent-skills §96 §110 §240"]}
+- {id: T-FIRST-RUN, name: First run, lens: [components], kind: J,
+   run: "Read the onboarding rows in state_text (welcome, step N of M, tour, checklist) and the first screen as a new user: what stands between them and the work?",
+   pass: "At most one welcome, few coachmarks off their targets, a checklist that links to the work, a 'Blank' start, and a Skip on every tour step.",
+   sources: ["awesome-design-patterns §30 §37 §47-54", "ux-ui-agent-skills §108"]}
+- {id: T-TABLE-READ, name: Table read, lens: [components], kind: H,
+   run: "For each table row (rows, header_cells, numeric_align, head_wraps, at_375) and each card grid of comparable items, read the tile at 1440 and at 375.",
+   pass: "Comparable data is a table; numbers align right in tabular figures; heads stay on one line; on a phone the naming column stays in view.",
+   sources: ["hallmark §96 §183 §261", "kami §92 §95 §97", "ux-ui-agent-skills §322"]}
 - {id: T-DIAGRAM-EARNS, name: Diagram earns its place, lens: [dataviz], kind: J,
    run: "Would a paragraph or table teach as much? Can any node, arrow or label be removed?", pass: "No and no.", sources: ["diagram-design §4 §5", "kami §338"]}
 - {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,

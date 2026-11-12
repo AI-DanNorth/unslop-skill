@@ -989,6 +989,104 @@
    why: "With no feedback people click again and send twice; a spinner that never stops reads as a crash.",
    fix: "Keep the label and add an inline spinner and aria-busy=\"true\" after ~150 ms; clear both when the answer arrives, success or failure.",
    sources: ["CMP-108 (HM §311, UX §328)", "MOT-200 (hallmark §311)", "A11-160 (uupm §95 §328)"]}
+# lens-components: judgment and hybrid cards, no detector. Promoted from the mined drafts in rules/D08-CMP.yaml; each
+# source cites the draft id and its original sections. Component findings are Reflex or Finish: focus visibility,
+# target size, names, labels, keyboard operation and pause controls stay Floor with the sweep and lens-a11y (A11-003,
+# A11-004, A11-006, A11-010), and false success after an action is INT-008. A kit component used as it ships is not
+# a finding; a state, label or exit it lacks is.
+- {id: CMP-002, title: Every state a control can reach is designed, domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-STATE-MATRIX],
+   rule: "Each control family (buttons, links, fields, choices, tabs, menu items) shows default, hover (inside @media (hover: hover), one signal: a colour step, a 1px lift or a border step), focus-visible, active and, where it can happen, disabled, loading, error and success. Disabled uses more than opacity (cursor, the native disabled or aria-disabled attribute, and 3:1 kept), and a disabled control near the user's attention says why. A stylesheet that declares no hover, active or disabled rule for controls that clearly reach those states, or a capture that shows a press, a disabled button or a busy control looking exactly like its rest state, is a finding. The focus ring itself is A11-003's.",
+   why: "A control that looks the same pressed, disabled and at rest leaves people unsure whether it heard them or why it will not work.",
+   fix: "Design the missing states for the whole family at once: one hover signal, a pressed step, a disabled look with its reason, and a busy look that keeps the label.",
+   sources: ["CMP-101 (HM §91 §311 §142)", "CMP-103 (HM §85 §311, KM §148, UX §232)", "CMP-105 (HM §311 §325, UX §34 §241)", "CMP-106 (HM §92 §311, UX §238 §327)", "CMP-107 (HM §321)", "CMP-113 (UX §242, KM §157)"]}
+- {id: CMP-003, title: "Waiting, failure and success belong to the action", domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-STATE-MATRIX, T-ERROR-PATH],
+   rule: "While an action runs it shows progress in place: the label stays readable, the button keeps its width (the slot fits the longest label), a spinner or 'Sending' appears after 150 to 300 ms and stays at least 300 ms, text joins it past 2 s, and the control refuses a second submit only while the request is in flight. When the request fails the user sees what failed and a way to retry, beside the action, with what they typed kept. Success shows the result itself ('The date goes to ana@studio.com'), not only a word. Whether the action responds at all is CMP-001's measurement and a false success is INT-008's: this card judges how the waiting, failing and succeeding states are designed.",
+   values: {spinner_after_ms: [150, 300], min_shown_ms: 300, text_after_s: 2},
+   why: "The moments after a click are when people decide whether to click again, wait or give up; an undesigned wait or a silent failure loses the task.",
+   fix: "Design the pending, failed and done states of each primary action on the same button and in the same place, with a retry on failure and the real result on success.",
+   sources: ["CMP-108 (HM §311, UX §328)", "CMP-124 (HM §92 §314, UX §36 §232)", "CMP-208 (HM §95 §321, UX §113 §133 §233)", "CMP-211 (UX §238 §233)", "CMP-269 (stageshow §49)", "CMP-143 (HM §251, TS §67)"]}
+- {id: CMP-004, title: One primary action per view, domain: D08, tier: Reflex, check: H, remedy: fix-layout, tests: [T-PRIMARY-COUNT],
+   rule: "Each screen and each dialog has one filled primary: the action most visitors take first. Secondaries are outlined or typographic and never louder than the primary; a pair is a filled primary and a quieter action that goes elsewhere. Two filled buttons side by side, three hero actions, a third button style, or a destructive action styled as the primary (unless deleting is the view's one job) is a finding. A nav call to action repeating the hero's primary is the same action, not a second one.",
+   values: {max_filled_per_view: 1, max_hero_actions: 2},
+   why: "When two actions shout, the visitor has to decide which one the page wants; most take neither.",
+   fix: "Keep one filled primary per view, turn the rest into outlined or text actions, and move destructive actions away from it in a danger style.",
+   sources: ["CMP-114 (HM §90 §154, TS §63, UX §234)", "CMP-115 (HM §90, TS §63, KM §149)", "CMP-116 (HM §51, KM §149 §267)", "CMP-117 (KM §149 §267, TS §63)", "CMP-122 (HM §90, UX §238)"]}
+- {id: CMP-005, title: Controls belong to one family, domain: D08, tier: Finish, check: H, remedy: fix-polish, tests: [T-ONE-FAMILY],
+   rule: "Buttons, fields and links share one system: an input matches the height of the button beside it, border width stays constant across states (the focus ring is an outline, not a thicker border), one radius per control size, one link look site-wide, and a filled button keeps its own colour under the pointer (one step of it, never a grey swap). A control hugs its content with an inset on every side; it is never stretched with its label pinned to one end, and its text never touches its edge.",
+   why: "Controls that differ by a few pixels and a shade read as assembled from parts, and a border that thickens on focus shifts the layout.",
+   fix: "Set control heights, radii, borders and hover steps once as tokens and apply them to every control.",
+   sources: ["CMP-138 (HM §92 §315-316)", "CMP-140 (HM §92 §316)", "CMP-127 (KM §152, TS §53)", "CMP-265 (stageshow §13)", "CMP-266 (stageshow §16)", "CMP-267 (stageshow §21)"]}
+- {id: CMP-006, title: Every field shows its label and what it needs, domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-FIELD-READ],
+   rule: "Every field has a visible label outside the box, above it (or beside it in a dense app row), that stays while typing. The placeholder shows a format ('01 Jan 2026'), never an instruction or the label. Required or optional is marked in words or an asterisk explained once, never by colour alone. Complex inputs keep a helper line under the field, and related fields are grouped under a legend. A programmatic label missing altogether is A11-010's (Floor); a floating or placeholder-only label is this card's.",
+   why: "A label that vanishes on typing, or a field that hides whether it is required, makes people guess and correct after the fact.",
+   fix: "Put a persistent label above each field, move instructions into a helper line, mark required or optional in words, and group related fields.",
+   sources: ["CMP-129 (HM §314 §326, UX §68 §238)", "CMP-130 (HM §314)", "CMP-136 (HM §314, UX §73)", "CMP-145 (UX §238)"]}
+- {id: CMP-007, title: Fields ask for the right input, domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-FIELD-READ],
+   rule: "Each field carries the type, inputmode, autocomplete and name of what it asks for (email, tel, url, a postal code as text with inputmode numeric, a one-time code with autocomplete one-time-code), input text is 16px or more on phones, native controls are used unless a custom one keeps their keyboard and screen-reader behaviour, paste is never blocked and password managers work. A name, address or contact field with no autocomplete, an email typed as text, or a custom select that drops the keyboard is a finding. Email and tel fields without autocomplete are already the sweep's (A11-010, Reflex): cite them.",
+   why: "The right type and autocomplete give the phone the right keyboard and let the browser fill the form; a wrong one makes every visitor type by hand.",
+   fix: "Set type, inputmode and autocomplete from the field's purpose, keep native controls, and remove any paste block.",
+   sources: ["CMP-131 (HM §92, UX §71-72 §77 §238, TS §67)", "CMP-141 (HM §317, UX §234)", "CMP-137 (HM §92, UX §74 §152 §231)"]}
+- {id: CMP-008, title: "Errors appear at the field, at the right time", domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-ERROR-PATH],
+   rule: "Validate on blur once a field has been touched, then on every input, with a full check on submit; never on the first keystroke (conflict C06). The error appears under its field, replaces the helper in the same reserved line so nothing jumps, uses the error colour on the border plus text and an icon, and is tied to the field (aria-describedby, aria-invalid). After a failed submit, focus moves to the first invalid field or a linked summary, and everything typed is kept. What the error says is CPY-018's; where and when it appears is this card's.",
+   why: "An error far from its field, one that appears while the user is still typing, or a submit that clears the form makes people redo work.",
+   fix: "Show each error under its field on blur and on submit, in a reserved line, linked to the field, and keep the user's input after a failed submit.",
+   sources: ["CMP-109 (HM §92 §314, UX §69 §238)", "CMP-132 (HM §314 §327, UX §70 §136)", "CMP-133 (HM §314, UX §69 §238)", "CMP-134 (HM §92 §316 §327)", "CMP-135 (HM §92, UX §238, TS §67)"]}
+- {id: CMP-009, title: Forms ask only what the task needs, domain: D08, tier: Reflex, check: J, remedy: fix-distill, tests: [T-FIELD-READ],
+   rule: "Ask only for fields the next step uses (a booking or contact form in about 6 fields), never the same information twice in one process, and reveal rare options progressively. A multi-step flow shows 'Step N of M', allows Back, and fits each step on a screen; a long form keeps a draft with a visible trace. No modal confirmation stands between a filled form and its submit.",
+   values: {short_form_max_fields: 6},
+   why: "Every extra field costs completions, and a long form with no sense of progress or saved state is abandoned halfway.",
+   fix: "Cut fields to what the next step uses, split long forms into numbered steps with Back, and save drafts.",
+   sources: ["CMP-144 (TS §137, UX §78 §201)", "CMP-221 (UX §98 §238, ADP §21 §23)", "CMP-147 (UX §238, ADP §8)", "CMP-149 (TS §22 §137)"]}
+- {id: CMP-010, title: Navigation shows where you are, domain: D08, tier: Reflex, check: H, remedy: fix-layout, tests: [T-WHERE-AM-I],
+   rule: "On every page past the home page the navigation marks the current section (colour, a soft background or an underline, plus aria-current), tabs mark the selected tab, and a stepper marks the current step. Hierarchies three or more levels deep add breadcrumbs (never on the top page, never as the only navigation). Filters, tabs, pagination and views that change what is shown live in the URL so Back and a shared link return to the same place. Text links keep one weight across states; the current item is never shown as a primary fill.",
+   values: {breadcrumbs_from_levels: 3},
+   why: "Without a current mark people lose their place, and a view that Back cannot restore makes them rebuild it.",
+   fix: "Mark the current item in each nav, tab row and stepper, add breadcrumbs for deep pages, and keep view state in the URL.",
+   sources: ["CMP-153 (HM §40, UX §3 §239)", "CMP-164 (ADP §66-67, HM §332)", "CMP-161 (UX §6 §239, ADP §68)", "CMP-163 (HM §145, UX §5 §239)", "CMP-162 (UX §4 §129 §132 §239)"]}
+- {id: CMP-011, title: The phone gets the whole navigation, domain: D08, tier: Reflex, check: H, remedy: fix-layout, tests: [T-PHONE-NAV],
+   rule: "Under about 60rem, links that no longer fit go behind a real menu button (a button with aria-expanded and a name such as 'Menu'), a tab row scrolls sideways rather than wrapping, and nav labels and button labels never wrap. A bottom tab bar holds 3 to 5 top-level items with icon and label; a sidebar earned by more than about 7 destinations collapses to a menu. A phone width that shows only the logo with no way to reach the other destinations, or a menu holding fewer destinations than the desktop nav without saying where the rest went, is a finding.",
+   values: {menu_below_rem: 60, bottom_bar_items: [3, 5], sidebar_min_destinations: 7},
+   why: "Most visitors arrive on a phone; a navigation that only works at desktop width hides most of the site from them.",
+   fix: "Put the overflow behind a named menu button, keep tab rows on one scrolling line, and carry every top-level destination into the phone menu.",
+   sources: ["CMP-154 (HM §40, ADP §209)", "CMP-159 (UX §130 §239)", "CMP-160 (HM §144, UX §239)", "CMP-119 (HM §40 §107, KM §145)"]}
+- {id: CMP-012, title: Every navigation item and action goes somewhere, domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-WHERE-AM-I],
+   rule: "Every nav word, button and footer link lands on a real page, anchor or action: never a bare '#', an empty href or a page that does not exist. The logo links home with a name; an explicit Home link exists where users land deep. Dangerous items (delete account, log out) sit apart from ordinary ones, and an unavailable destination says why rather than vanishing. Links behind a claim are INT-016's.",
+   why: "A dead link in the navigation tells the visitor the site is unfinished and strands them.",
+   fix: "Point every item at its real target or remove it; separate destructive items; explain what is unavailable.",
+   sources: ["CMP-157 (TS §95, KM §275)", "CMP-155 (HM §40, ADP §73)", "CMP-167 (UX §239)"]}
+- {id: CMP-013, title: Overlays are the last answer and behave as overlays, domain: D08, tier: Reflex, check: H, remedy: fix-harden, tests: [T-OVERLAY-CHECK],
+   rule: "Use a dialog only after inline editing and disclosure have been ruled out, never for a primary flow, an error, a success or a warning, and rarely on phones. An open dialog dims the page behind it, holds focus and returns it to its trigger, locks the page scroll, closes on Escape, on a visible close control and (when nothing would be lost) on the backdrop, stays pinned within the viewport (max-height about 80dvh) and puts Cancel before Confirm, with a destructive confirm stating the consequence. A menu or popover flips near the edge and is never clipped by an overflow-hidden parent. Keyboard traps are lens-a11y's (Floor).",
+   why: "A dialog takes the whole screen from the user; one that opens for little reason, or that does not close the way overlays close, feels like being trapped.",
+   fix: "Replace the dialog with inline content where it can be, and give the remaining ones a scrim, a close control, Escape, scroll lock and focus return.",
+   sources: ["CMP-173 (HM §144, ADP §70, UX §239)", "CMP-174 (HM §318, UX §131)", "CMP-175 (HM §318)", "CMP-176 (UX §321)", "CMP-178 (HM §319 §330)"]}
+- {id: CMP-014, title: Nothing interrupts the visitor uninvited, domain: D08, tier: Reflex, check: J, remedy: fix-quieter, tests: [T-INTERRUPT],
+   rule: "On a page the visitor came to read or buy from, nothing opens or floats over the content before they ask: no newsletter modal, entry gate, preloader, chat bubble, help pill, back-to-top square or award strip that covers content, and no system permission (notifications, location, camera) requested at launch: ask when the visitor reaches the feature, and never disguise a page element as a system dialog. A cookie banner the law requires is not a finding when it is plain and its decline is equal (INT-020 judges the decline).",
+   why: "An uninvited overlay stands between the visitor and the reason they came, and a permission asked too early is refused for good.",
+   fix: "Remove the interruption or move it into the page flow; request permissions at the feature that needs them.",
+   sources: ["CMP-183 (TS §22)", "CMP-220 (ADP §43)", "CMP-217 (ADP §37)"]}
+- {id: CMP-015, title: "Feedback sits where the change happened; undo beats confirm", domain: D08, tier: Reflex, check: J, remedy: fix-harden, tests: [T-ERROR-PATH],
+   rule: "Show the result of an action where it happened (the row updates, the button says 'Copied' for about 2.5 s); no toast when the effect is already visible, and never a celebratory one. Toasts are for failures and invisible effects: from one corner, aria-live polite, never stealing focus, pausing on hover; an error toast carries one retry and does not leave on its own. Reversible actions run at once with Undo for 5 to 10 s; only irreversible ones confirm, and those name what is destroyed (conflict C27). A changed count or status is announced as a complete phrase without moving focus.",
+   values: {undo_s: [5, 10], copied_label_s: 2.5},
+   why: "A toast far from the change makes people look in two places, an 'Are you sure?' on every action trains them to click through, and a vanishing error is never read.",
+   fix: "Show the change in place, keep toasts for failures with a retry, and replace routine confirmations with Undo.",
+   sources: ["CMP-177 (HM §320 §145, UX §238)", "CMP-180 (HM §88 §323 §328)", "CMP-181 (HM §328, UX §99 §238)", "CMP-213 (UX §231, HM §337)", "CMP-128 (HM §311)"]}
+- {id: CMP-016, title: "Every data region draws its empty, loading and error states", domain: D08, tier: Reflex, check: J, remedy: fix-harden, tests: [T-EMPTY-FIRST],
+   rule: "A list, table, feed, inbox, search or dashboard panel is designed in four states: loading (a skeleton in the content's shape, space reserved so nothing shifts), empty (one line naming what is empty, one on why it matters, one action), error (what failed and a retry) and full. A search with no results suggests what to try. A product shown only full, a blank panel or a bare 'No results', or a spinner standing in for every state is a finding. What the empty and error text say is CPY-019's and CPY-018's; whether the states exist and hold their place is this card's.",
+   why: "New users meet the empty state first and everyone meets the error state eventually; drawing only the full state designs a quarter of the screen.",
+   fix: "Draw each data region's loading, empty and error states with the same frame as its full state, each with its one next action.",
+   sources: ["CMP-191 (HM §94, UX §240)", "CMP-205 (HM §95 §321, UX §96, ADP §52)", "CMP-206 (UX §110)", "CMP-207 (HM §95, UX §97 §238)", "CMP-209 (UX §21 §233)"]}
+- {id: CMP-017, title: "Onboarding is short, optional and leads to the work", domain: D08, tier: Reflex, check: J, remedy: fix-distill, tests: [T-FIRST-RUN],
+   rule: "Let people see the product before asking for an account where the risk allows; show a welcome only when the next step is not obvious, and not at every login. Coachmarks are few (1 to 2 per screen), placed off their target and never mid-task; a checklist links each task to where it is done and ticks itself; a template gallery keeps a 'Blank' option; the suggested next step is one clear action, never an upgrade or invite before any value. A tour with no Skip, or a gate before any value, is INT-021's: cite it.",
+   values: {max_hotspots_per_screen: 2},
+   why: "Onboarding that stands between a new user and the work teaches less than the work would, and most people skip it anyway.",
+   fix: "Cut the tour to the one step that is not obvious, link checklist tasks to the work, and let people start blank.",
+   sources: ["CMP-215 (ADP §30 §34-35)", "CMP-218 (ADP §47-48)", "CMP-219 (ADP §50)", "CMP-222 (ADP §53-54)", "CMP-214 (UX §108 §230)", "CMP-216 (ADP §33)"]}
+- {id: CMP-018, title: Tables read as tables, domain: D08, tier: Reflex, check: H, remedy: fix-layout, tests: [T-TABLE-READ],
+   rule: "Dense, comparable data is a table, not a grid of cards (a list past about five comparable items becomes one). Text aligns left, numbers right in tabular figures, actions right; heads are sentence case and never wrap; horizontal rules only. On a phone the naming and action columns stay in view: rows restack as labelled blocks or the first column is pinned; a table opening with two or more columns off-screen is a finding. Sorting is offered only past about 10 rows and exposes aria-sort.",
+   values: {cards_to_table_after: 5, sort_min_rows: 10},
+   why: "Numbers that do not line up cannot be compared, and a phone table that hides its first column shows values with no names.",
+   fix: "Right-align numbers in tabular figures, keep heads on one line, and restack or pin the naming column on phones.",
+   sources: ["CMP-184 (HM §96, KM §95 §97)", "CMP-185 (UX §322, HM §183, KM §92)", "CMP-187 (HM §96 §145)", "CMP-188 (HM §96 §261 §435, TS §143)", "CMP-190 (ADP §94 §92, UX §111 §240)"]}
 
 # ---------------- process ----------------
 - {id: PRC-001, title: Capture must be trustworthy, domain: D17, tier: Floor, detector: near_blank, remedy: none, waivable_by: never, tests: [T-VERIFY-VERIFIER],
