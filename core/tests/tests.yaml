@@ -297,6 +297,58 @@
    run: "For each table row (rows, header_cells, numeric_align, head_wraps, at_375) and each card grid of comparable items, read the tile at 1440 and at 375.",
    pass: "Comparable data is a table; numbers align right in tabular figures; heads stay on one line; on a phone the naming column stays in view.",
    sources: ["hallmark §96 §183 §261", "kami §92 §95 §97", "ux-ui-agent-skills §322"]}
+- {id: T-MATERIAL-SOURCE, name: Material source, lens: [imagery], kind: H,
+   run: "For each content picture in the imagery table (skills/lens-imagery/imagery_table.py writes 03-lenses/imagery/imagery-table.json and contact sheets), name what it shows and where it comes from: the client's own photograph or work, a capture of the real product, a product illustration, a library photo, a generated still, an illustration pack, a placeholder. Use host_kind, file, name_hints and alt as pointers and the contact-sheet crop as the evidence.",
+   pass: "The lead and identity slots (hero, people, product, place) hold the client's own material; library photos fill at most one picture in three, in detail slots; a generated still appears only where the brief asks; a missing asset is marked, not filled with a near miss.",
+   sources: ["hallmark §114 §264", "taste-skill §549 §554", "kami §228 §639", "huashu §81"]}
+- {id: T-AI-LOOK, name: AI look, lens: [imagery], kind: J,
+   run: "Look at each contact-sheet crop and the large decoration rows at full size on their tiles for the generated-page kit: illustration packs, 3D blobs, isometric scenes, gradient spheres, orbs and aurora fields, robot faces, circuit boards, glossy plastic people, and in photographs the generator's marks (fused fingers, melted lettering, doubled objects, the same face twice).",
+   pass: "No picture belongs to the kit, and any generated still the brief asked for shows one subject in one light with none of the generator's marks.",
+   sources: ["hallmark §122 §277", "huashu §60 §83", "taste-skill §36"]}
+- {id: T-EMPTY-FRAME, name: Empty frame, lens: [imagery], kind: H,
+   run: "Read the empty_frames, placeholder_text, broken and not_loaded rows, then scan every tile at 1440 and 375 for grey or tinted boxes, empty washes and half-loaded frames where a picture should be.",
+   pass: "At ship no frame is empty and no placeholder label shows; in a labelled draft each slot says what it needs. Blocked or not-loaded images are 'not verified', never a finding.",
+   sources: ["hallmark §117 §119 §268", "taste-skill §39 §563"]}
+- {id: T-STAND-IN, name: Stand-in, lens: [imagery], kind: H,
+   run: "For each svg_illustrations row, each mock_hint row and each picture of a product, person, object or place, ask whether it is drawn (SVG, CSS, styled divs, drawn browser or OS chrome) or captured, and whether the real thing exists and could have been captured.",
+   pass: "SVG and CSS draw only icons, the logo, real-data charts and plain geometry; real things are captured or photographed; a deliberate product illustration is judged with T-ILLUSTRATION-READ.",
+   sources: ["hallmark §117 §118 §270 §277", "huashu §35 §60", "stageshow §31"]}
+- {id: T-CAPTURE-READ, name: Capture read, lens: [imagery], kind: J,
+   run: "For each product capture, read its crop on the contact sheet and its tile at the size shown: what state it shows, whether its text can be read, whether the crop keeps the controls and numbers, and whether anything private or broken is in it.",
+   pass: "The capture shows the real product at work in a telling state, its text reads at the size shown, nothing is cut through, nothing private shows, and a redraw is labelled.",
+   sources: ["hallmark §115 §269 §270", "kami §136 §229 §646"]}
+- {id: T-ILLUSTRATION-READ, name: Illustration read, lens: [imagery], kind: H,
+   run: "Product illustrations and faux UI only. Count the real strings, the surfaces and the chrome; compare its accent, greys, radii, type and icons with the product's own; check text sizes at the size shown.",
+   pass: "None of the five failures (too much, too little, generic, wrong look, wrong chrome): three to seven real strings where the eye lands, one active surface, the product's own look and icons, UI text 11 to 15px.",
+   sources: ["stageshow §2 §6-11 §13 §23-25 §30-33"]}
+- {id: T-ONE-REGISTER, name: One register, lens: [imagery], kind: H,
+   run: "Lay each picture_sets row and the contact sheet side by side: light, grade, colour or black-and-white, radius, border, shadow and frame; read the repeats rows.",
+   pass: "Each set shares one light and grade, one radius and one frame; no photograph carries both a border and a wide shadow; no frame is used twice on the page.",
+   sources: ["taste-skill §550 §557 §565", "hallmark §276", "huashu §38"]}
+- {id: T-IMAGE-SIZE, name: Image size, lens: [imagery], kind: M,
+   run: "Read each content picture's rendered size, share_of_viewport, density (natural over shown width), upscaled and broken flags, and imagery_share_of_page.",
+   pass: "Photographs are at least 6 of 12 columns and about 440px tall or full-bleed (sets of four or more may be smaller), the hero carries 2x its shown width, nothing is upscaled or broken, and photographs below the hero stay near a third of the page.",
+   sources: ["hallmark §116 §122 §267 §272 §273", "taste-skill §558"]}
+- {id: T-CROP-375, name: Crop at 375, lens: [imagery], kind: H,
+   run: "For each content picture, read crop, object_fit and the phone row (at_375, ratio_change_vs_1440, art_directed), then compare its crop on contact-1440.png and contact-375.png.",
+   pass: "Nothing is stretched, captures are not cut through their controls, and every picture still shows its subject at 375; a full-bleed photograph with words has its own phone crop with the subject in the middle.",
+   sources: ["hallmark §267 §470", "kami §137", "taste-skill §558 §560"]}
+- {id: T-TEXT-ON-IMAGE, name: Text on image, lens: [imagery], kind: H,
+   run: "For each row with text_over (and text_over_375), read the words on the tile at both widths against the pixels under them: the calmest part, a scrim or plate, a text shadow, or nothing.",
+   pass: "Every word over a picture sits on a calm area, a scrim or a plate and reads at a glance; no words are baked into the image file; no pills or labels sit on photographs.",
+   sources: ["hallmark §268 §274 §277", "taste-skill §35 §560"]}
+- {id: T-TREATMENT, name: Treatment, lens: [imagery], kind: H,
+   run: "Read each picture's filter and opacity, the decoration rows (blur, gradient, animated) and the texture rows, and look for grain, duotone, halftone or grid patterns on the tiles; check the brand authority in the contract for a named treatment.",
+   pass: "Filters and texture appear only where the brand names them, in one family, at their opacity budget, never animated and never over body text.",
+   sources: ["hallmark §276 §281-283 §289 §471", "taste-skill §25 §561 §564"]}
+- {id: T-ICON-SYSTEM, name: Icon system, lens: [imagery], kind: H,
+   run: "Read the icons summary (sets, sizes, paint, stroke widths, glyphs, off_grid_sizes) and the icon rows by section, then look at the icons on the tiles.",
+   pass: "One set, one stroke width and one style per surface; sizes on the 16, 20, 24 or 32px grid; icons only where they help find or name something.",
+   sources: ["hallmark §123 §278", "ui-ux-pro-max §234 §261", "taste-skill §361 §366", "stageshow §24 §25"]}
+- {id: T-LOGO-ROW, name: Logo row, lens: [imagery], kind: H,
+   run: "For each logo_rows row and each named tool's or partner's mark, read heights, widths, width_ratio and filters, then look at the row on its tile.",
+   pass: "Each mark is its owner's own, in its colours or its official one-colour version; the row has even visual weight (wordmarks about 0.7 of the row height, none wider than 4.5 times its height).",
+   sources: ["taste-skill §360 §365-367", "stageshow §28"]}
 - {id: T-DIAGRAM-EARNS, name: Diagram earns its place, lens: [dataviz], kind: J,
    run: "Would a paragraph or table teach as much? Can any node, arrow or label be removed?", pass: "No and no.", sources: ["diagram-design §4 §5", "kami §338"]}
 - {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,
