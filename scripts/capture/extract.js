@@ -79,6 +79,15 @@
       before: getComputedStyle(el, "::before").content, after: getComputedStyle(el, "::after").content };
     // rendered / layout width: a transform: scale() on the element or an ancestor draws its text at fontSize x scale
     if (text && el.offsetWidth > 0) { const k = r.width / el.offsetWidth; if (Math.abs(k - 1) > 0.03) rec.scale = Math.round(k * 1000) / 1000; }
+    // state attributes as authored (lens-components round 1 had to infer the current-page mark and control states)
+    const aria = {};
+    for (const [k, a] of [["current", "aria-current"], ["expanded", "aria-expanded"], ["selected", "aria-selected"], ["pressed", "aria-pressed"],
+                          ["checked", "aria-checked"], ["invalid", "aria-invalid"], ["disabled", "aria-disabled"], ["required", "aria-required"], ["busy", "aria-busy"],
+                          ["haspopup", "aria-haspopup"], ["controls", "aria-controls"], ["live", "aria-live"]]) { const v = el.getAttribute(a); if (v !== null) aria[k] = v.slice(0, 40); }
+    if (el.disabled) aria.disabledProp = true;
+    if (el.required) aria.requiredProp = true;
+    if (el.matches("input,select,textarea") && el.validity && !el.validity.valid) aria.invalidNow = true;
+    if (Object.keys(aria).length) rec.aria = aria;
     const interactive = el.matches("a[href],button,input,select,textarea,summary,[role=button],[role=link],[tabindex]:not([tabindex='-1'])");
     // tabindex: heading anchors like <a aria-hidden="true" tabindex="-1"> are out of the tab order (live round 1: L34 x6,
     // L33 disabled pager tabindex=-1). Recorded on every interactive element (null = no attribute) and wherever it is set.

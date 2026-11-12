@@ -378,6 +378,9 @@ def item_sig(page, x):
 def current_marks(page, items):
     """How the region marks where the visitor is: a class, a link to this page, or one item styled unlike the rest."""
     found = []
+    for x in items:   # authored state first (dom records carry `aria` from 12 Nov 2026), then the inferences below
+        a = x.get("aria") or {}
+        if a.get("current") not in (None, "false") or a.get("selected") == "true": found.append((label_of(x), "aria-current" if a.get("current") not in (None, "false") else "aria-selected"))
     for x in items:
         cls = last_classes(x["sel"]) + " " + " ".join(last_classes(a["sel"]) for a in page.ancestors(x)[:2])
         if CURRENT_CLS.search(cls): found.append((label_of(x), "class"))
