@@ -29,7 +29,7 @@ RUN=$(python3 $U/scripts/unslop.py new "<url-or-file>" --profile balanced --work
 1. **Phase 0 Intake**: invoke the `intake` skill. Gate: `$RUN/00-contract.md`.
 2. **Phase 1 Capture**: invoke `capture` (or `python3 $U/scripts/unslop.py capture $RUN`). Gate: `01-evidence/manifest.json` with `control.ok: true`. If the control failed, stop: the verdict is `recapture`.
 3. **Phase 2 Sweep**: invoke `sweep` (or `python3 $U/scripts/unslop.py sweep $RUN`). Gate: `02-mechanical.json`.
-4. **Phase 3 Lenses**: for each lens the contract selects, invoke it. This build ships `lens-slop`, `lens-a11y`, `lens-concept`, `lens-structure`, `lens-typography`, `lens-color`, `lens-copy` and `lens-motion`; list the other lenses under "Not investigated: lens not built yet". Lenses run independently: never pass one lens's findings to another. Gate: `03-lenses/<lens>.json` per lens.
+4. **Phase 3 Lenses**: for each lens the contract selects, invoke it. This build ships `lens-slop`, `lens-a11y`, `lens-concept`, `lens-structure`, `lens-typography`, `lens-color`, `lens-copy`, `lens-motion` and `lens-integrity`; list the other lenses under "Not investigated: lens not built yet". Lenses run independently: never pass one lens's findings to another. Gate: `03-lenses/<lens>.json` per lens.
 5. **Phase 4 Synthesize**: invoke `synthesize`. Gate: `04-report.md` with a verdict word.
 
 After each phase run `python3 $U/scripts/unslop.py gates $RUN` and do not start a phase whose predecessor shows NOT DONE. A phase may be skipped only when the user says so; record it in `run.json` under `skips` with the reason.

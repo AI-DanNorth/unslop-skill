@@ -80,8 +80,13 @@ def main(run):
     notes = {d: "from sweep" for d, v in dims.items() if v is not None}
     lens_dims = {}
     for d, vals in lens_scores.items():
-        if d not in dims or dims[d] is not None: continue
+        if d not in dims: continue
         v, lens, reason = min(vals)
+        if dims[d] is not None:            # Accessibility, Integrity: computed from findings; a lower lens score still stands
+            if v < dims[d]:
+                notes[d] = f"lens-{lens} {v} below the findings-based {dims[d]}: {reason[:160]}"; dims[d] = v
+            lens_dims[d] = [{"lens": l, "value": x} for x, l, _ in vals]
+            continue
         dims[d] = v; lens_dims[d] = [{"lens": l, "value": x} for x, l, _ in vals]
         notes[d] = f"lens-{lens}" + (f" (lowest of {', '.join(f'{l} {x}' for x, l, _ in sorted(vals, key=lambda t: t[1]))})" if len(vals) > 1 else "") + f": {reason[:160]}"
     scored = [v for v in dims.values() if v is not None]

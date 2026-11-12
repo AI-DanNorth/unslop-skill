@@ -209,6 +209,46 @@
    run: "Remove an element; ask what problem it solves and whether its data is real.", pass: "Worse without it; solves a real problem; real data.", sources: ["huashu §71 §101"]}
 - {id: T-FAKE-SEND, name: Fake-send, lens: [integrity], kind: M, detector: fake_send,
    run: "Submit every form with the network blocked.", pass: "No success copy appears; an honest failure message shows.", sources: ["hallmark §364 §510"]}
+- {id: T-PROOF-SOURCE, name: Proof source, lens: [integrity], kind: J,
+   run: "For each proof row in the claims table (skills/lens-integrity/claims_table.py writes 03-lenses/integrity/claims-table.json: testimonials, logo walls, ratings, review counts, awards and badges, 'trusted by' lines, case studies, user counts), name who says it, about whom, and where a visitor could check it.",
+   pass: "Each is the brand's own fact about itself, attributable (a named person with role and company, a named platform, a customer whose case study exists), supplied in the brief, or plainly labelled as an example in an exhibit. Proof that cannot be checked from the artifact is 'not verified', not a finding, unless the artifact itself shows it was invented.",
+   sources: ["hallmark §121 §238 §362", "taste-skill §40 §43 §615", "adp §181 §187", "kami §226"]}
+- {id: T-PROOF-SWAP, name: Proof swap, lens: [integrity], kind: J,
+   run: "Move each testimonial, logo row, origin story and headline figure onto a rival's page in the same category.",
+   pass: "It no longer fits: it names this product's features, customers, places or numbers. Quotes, logos and stories that fit any rival unchanged, with first names or invented companies, are invented proof.",
+   sources: ["taste-skill §43 §49", "hallmark §101 §102"]}
+- {id: T-FIGURE-AUDIT, name: Figure audit, lens: [integrity], kind: H,
+   run: "Read the claims table's figures with their flags (round, open-ended, decimal percent, comparison, source nearby, qualified, repeats), section and sweep hits; read the dates block against the capture date.",
+   pass: "Every claimed figure has a unit and a source or is the brand's own measurement, every comparison names its baseline and window, precision matches the source, no figure repeats as both sample data and a result, and the copyright year is current.",
+   sources: ["kami §225 §227 §233 §299", "hallmark §362", "taste-skill §40 §46"]}
+- {id: T-STAGED-UI, name: Staged product picture, lens: [integrity], kind: J,
+   run: "For every figure, chart and status inside a product shot, dashboard or mock (the claims table's mock_hint, and the tiles), ask whether a visitor would read it as what the product does for them.",
+   pass: "Numbers inside product pictures read as sample data (plausible, uneven, not repeated as results), 'live' panels are live, and the shot shows the real product or a plainly simplified illustration (conflicts C22, C48).",
+   sources: ["huashu §60", "hallmark §110 §115", "kami §229 §453"]}
+- {id: T-LEAKAGE, name: Leakage read, lens: [integrity], kind: H,
+   run: "Read every leakage row in the claims table in its context (text, alt text, accessible names, the title and meta description), then read the alt texts and captions on the tiles.",
+   pass: "No chatbot voice, prompt or image-brief text, pasted conversation, raw markdown, template token, self-labelled sample or fake contact detail reaches the visitor. Code samples and docs that show markup on purpose pass.",
+   sources: ["taste-skill §24 §34 §39 §619", "kami §304 §654", "hallmark §357 §494"]}
+- {id: T-URGENCY-REAL, name: Urgency is real, lens: [integrity], kind: H,
+   run: "Read the claims table's urgency and clock rows, with the same element's text at the other captured widths (captured seconds or minutes apart), and any stock, viewer or waitlist count.",
+   pass: "Every deadline is stated as a date and time in text, a timer counts down consistently across captures, and counts carry a source and date. An evergreen 'limited time' or a timer that resets fails (conflict C37).",
+   sources: ["adp §64 §142 §143", "uupm §204-area"]}
+- {id: T-DEFAULT-STATE, name: Default state, lens: [integrity], kind: H,
+   run: "For every checkbox, radio and switch in the claims table's consent block, read its default state on the screenshot (the capture does not record it) and its label.",
+   pass: "No consent, marketing, data-sharing, cost-bearing or access-widening option is preselected. A box whose state cannot be seen is 'not verified'.",
+   sources: ["adp §20 §21-area §119"]}
+- {id: T-PRICE-WHOLE, name: Whole price, lens: [integrity], kind: H,
+   run: "Read the claims table's prices, price terms, struck prices, fine print and trial terms beside the pricing tiles.",
+   pass: "The price a visitor pays, its recurring term, what a trial becomes and known fees sit beside the action; every asterisk resolves on the page; a struck 'was' price is a real past price; 'Most popular' appears once.",
+   sources: ["adp §61 §62 §123 §131 §137 §164 §170 §173", "taste-skill §613-614"]}
+- {id: T-DECLINE-READ, name: Decline read, lens: [integrity], kind: J,
+   run: "Read every decline, close, skip, cancel and unsubscribe option the capture shows (confirmshaming rows, dialogs, banners, onboarding, pricing), with its label and visual weight beside the accept option.",
+   pass: "The way out is worded plainly and neutrally, can be found at an ordinary weight, and leads out in one step.",
+   sources: ["adp §43 §65 §124 §127 §159 §163 §165", "uupm §108"]}
+- {id: T-PROMISE-LINK, name: Promise link, lens: [integrity], kind: H,
+   run: "Read the claims table's case-study rows and dead links: every link that stands behind a claim ('Read the case study', 'See all reviews', 'View the report').",
+   pass: "Each goes to a real page or an on-page section that holds the evidence; no bare '#', empty href or 'Coming soon' stands in for evidence.",
+   sources: ["hallmark §120", "taste-skill §23 §39"]}
 - {id: T-DIAGRAM-EARNS, name: Diagram earns its place, lens: [dataviz], kind: J,
    run: "Would a paragraph or table teach as much? Can any node, arrow or label be removed?", pass: "No and no.", sources: ["diagram-design §4 §5", "kami §338"]}
 - {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,

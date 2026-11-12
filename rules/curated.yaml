@@ -737,6 +737,90 @@
    rule: "No more than 2 [DATA NEEDED] slots per page.", why: "More means the page was built before its content existed.", fix: "Get the content, or cut the sections that need it.",
    sources: ["hallmark §110"]}
 
+# ---------------- D18 integrity (lens-integrity; judgment and hybrid cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D18-INT.yaml; each source cites the draft id and its original sections.
+# The lens judges what a detector cannot: whether proof is real and sourced for this brand, whether a product picture
+# stages its numbers, leakage the lexicons do not list, and deceptive patterns. Invented-metric patterns (INT-001), default
+# names (INT-002), fake-people services (INT-003), the fake-send test (INT-004), residue (INT-005), slots (INT-006),
+# stat bands (INT-007) and false success after an action (INT-008, async_state) stay with the sweep. Floor here only where
+# the drafts and core/severity.md treat the failure as a false statement to the visitor ("truth"): invented proof,
+# leakage, fake urgency, preselected consent and hidden prices. A real brand's own claims, customers and numbers are
+# strengths, not findings; regions a page shows on purpose as examples follow data/thresholds.yaml `exhibits`.
+- {id: INT-009, title: Testimonials and reviews are real and attributable, domain: D18, tier: Floor, check: J, remedy: fix-copy, waivable_by: never, tests: [T-PROOF-SOURCE, T-PROOF-SWAP],
+   rule: "Show a testimonial, review, rating, review count, award or press line only when it is real: quoted word for word from a named person with a role and a company or town, or from a named platform the visitor can check. Polished quotes that would fit any product, attributed to first names, invented companies, generated faces or stock portraits, are invented proof. Showing none is fine.",
+   why: "A made-up endorsement is a false statement made in the client's name; visitors who spot one stop believing the rest of the page.",
+   fix: "Use supplied quotes with their attribution, link the review platform, or remove the block.",
+   sources: ["INT-102 (hallmark §121 §238 §362, taste §40 §43 §615, huashu §9 §60, adp §187)", "INT-178 (adp §181 §182 §191)", "INT-104 (taste §43)", "INT-124 (hallmark §467 §121, taste §35-36)", "INT-125 (taste §35-36, hallmark §1711-area)"]}
+- {id: INT-010, title: Logos and customer names are real customers, domain: D18, tier: Floor, check: J, remedy: fix-copy, waivable_by: never, tests: [T-PROOF-SOURCE, T-PROOF-SWAP],
+   rule: "Show a logo wall, a customer list or a 'Trusted by' line only for real, named customers or partners. Invented company names (the startup cliches the default-names lexicon lists, such as Acme and Nexus, and two-word compounds of a tech noun and Labs, Systems or Corp), redrawn or approximated marks, and a 'Trusted by' line with no names behind it are invented proof. A real company's own customers, partners and press are strengths, not findings.",
+   why: "A logo is a claim that a named business chose this product; inventing one borrows a reputation the client does not have.",
+   fix: "Use the official marks of real customers with permission, or remove the wall and the 'Trusted by' line together.",
+   sources: ["INT-103 (hallmark §121 §238, taste §615, huashu §60)", "INT-119 (hallmark §121 §134, huashu §36, uupm §241)", "INT-137 (hallmark §354-355, taste §44)"]}
+- {id: INT-011, title: "Figures carry their unit, baseline and precision", domain: D18, tier: Reflex, check: H, remedy: fix-copy, tests: [T-FIGURE-AUDIT],
+   rule: "Give every claimed figure its unit and its source, or make plain that it is the brand's own measurement. Name the baseline and the window of any comparison ('3x faster than X on Y'). Match the precision of the source: no uncited decimals, no round '10,000+' standing in for a count, no derived figure presented alone as a headline. A bare big number leads only when the page is built around it. Invented figures are INT-001's and unsourced stat bands INT-007's: cite those sweep hits, do not repeat them.",
+   why: "A number with no unit, baseline or source cannot be checked, so careful readers discount it and the rest of the page with it.",
+   fix: "Add the unit, the baseline and the source in the sentence the figure proves, or cut the figure.",
+   sources: ["INT-107 (hallmark §362)", "INT-108 (kami §225 §233 §299)", "INT-109 (kami §299)", "INT-110 (kami §227 §299)", "INT-106 (taste §40, hallmark §362, huashu §60)"]}
+- {id: INT-012, title: No invented specifics or origin stories, domain: D18, tier: Reflex, check: J, remedy: fix-copy, tests: [T-FILLER, T-PROOF-SWAP],
+   rule: "Do not dress copy in invented detail to look authentic: an exact time and room, a batch number, an uneven percentage with no source, or the origin template ('In [year], [two names] found [an old shop]'). Tell a founding story only when the client supplied it; otherwise drop the story section.",
+   why: "Invented specifics imitate the texture of a true story; a reader who checks one finds nothing and stops trusting the page.",
+   fix: "Use the client's own story and facts, or cut the section.",
+   sources: ["INT-105 (taste §43 §49)", "INT-117 (kami §225, huashu §9)"]}
+- {id: INT-013, title: Product pictures show the product and sample data reads as sample, domain: D18, tier: Reflex, kind: context, check: J, remedy: fix-copy, tests: [T-STAGED-UI],
+   rule: "A product shot, dashboard or interface fragment shows the real product, or a plainly simplified illustration of it (conflict C48). Numbers inside it read as sample data: plausible, uneven, and never repeated elsewhere on the page as results. A staged dashboard of round growth figures, a 'live' panel whose counters are scripted, or a redrawn screenshot passed off as real presents invented results as the product's (conflict C22). Future capability is drawn at a lower weight than shipped capability.",
+   why: "Visitors read a product picture as what they will get; staged numbers inside it are a claim the client cannot back.",
+   fix: "Capture the real product with real or obviously sample data, or draw a simplified illustration with no result figures.",
+   sources: ["INT-113 (huashu §60, hallmark §110, taste §27)", "INT-123 (kami §1642-area, hallmark §115)", "INT-122 (kami §229)", "INT-114 (kami §453)"]}
+- {id: INT-014, title: "No prompt, model or template leakage", domain: D18, tier: Floor, check: H, remedy: fix-copy, waivable_by: never, tests: [T-LEAKAGE],
+   rule: "No text the model or the template left behind reaches the visitor: chatbot voice ('As an AI', 'Here is a revised version:'), a pasted conversation, image-brief or prompt text in copy, captions or alt text ('21:9 ultra-wide screenshot with a quiet background'), raw markdown, template tokens and bracket slots. Residue the sweep matches (lorem ipsum, TODO, '[insert') is INT-005's; this card covers what the lexicons cannot match. Code samples and documentation that show markup on purpose are not leakage.",
+   why: "Leaked instructions show the visitor that nobody read the page before it shipped, and can expose the brief.",
+   fix: "Replace the leaked text with the content it was meant to produce, or a visible [DATA NEEDED] slot.",
+   sources: ["INT-132 (taste §39)", "INT-133 (kami §304)", "INT-131 (taste §39, kami §654)", "INT-130 (taste §39, hallmark §357, huashu §71, kami §654, uupm §104)", "INT-138 (hallmark §494, kami §654 §3659-area)"]}
+- {id: INT-015, title: Samples are not self-labelled and contact details are real, domain: D18, tier: Reflex, check: H, remedy: fix-copy, tests: [T-LEAKAGE],
+   rule: "Do not label content as a stand-in in visible copy ('(sample)', 'sample data', 'illustrative', 'names and figures are examples', 'your screenshot here'): either it is real, or it is a plain [DATA NEEDED] slot in a draft (conflicts C21, C22). Print a phone, email, address, domain or social handle only when it is the client's: no example.com addresses shown as real, no 555-01xx, repeated-digit or 1234567 numbers, no invented streets or register numbers.",
+   why: "A self-labelled sample admits the page is not finished; a fake phone number or address sends a real visitor nowhere.",
+   fix: "Replace samples with real content or a slot, and print only contact details the client supplied.",
+   sources: ["INT-134 (taste §24 §34 §39, hallmark §1729-area)", "INT-135 (taste §2 §39 §613 §617 §619)", "INT-150 (taste §619)"]}
+- {id: INT-016, title: Promised evidence exists, domain: D18, tier: Reflex, check: H, remedy: fix-harden, tests: [T-PROMISE-LINK],
+   rule: "Every 'Read the case study', 'See all reviews', 'View the report' and every link that stands behind a claim goes somewhere real. A bare '#', an empty href or a 'Coming soon' frame in place of a claim's evidence is a finding. 'Coming soon' is allowed only for what the client states is coming, with what and when.",
+   why: "A link that promises proof and goes nowhere tells the visitor the proof does not exist.",
+   fix: "Link the real page, point the link at the on-page section that holds the evidence, or remove the claim and its link.",
+   sources: ["INT-146 (hallmark §120, taste §23 §39, kami §1705-area)", "INT-142 (taste §23 §39)", "INT-145 (hallmark §120)"]}
+- {id: INT-017, title: Urgency and scarcity are real, domain: D18, tier: Floor, check: H, remedy: fix-harden, waivable_by: never, tests: [T-URGENCY-REAL],
+   rule: "Show a countdown, deadline, stock count, 'X people viewing', 'only N left' or waitlist count only when it is true: a real deadline stated as a date and time in text, a count from live data with its date. A timer that resets on reload or reads differently between captures of the same moment, an evergreen 'limited time', invented viewers and 'last chance' pressure with no deadline are deceptive (conflict C37: integrity wins over conversion advice). A clock showing the current time is not urgency.",
+   why: "Fake urgency pushes a visitor into a choice they would not make with the truth in front of them.",
+   fix: "State the real deadline or stock as text with its source, or remove the pressure element.",
+   sources: ["INT-164 (adp §142, uupm §204-area)", "INT-165 (adp §64 §143, uupm landing)", "INT-162 (adp Part 7 preamble §119-197)", "INT-169 (adp §63)"]}
+- {id: INT-018, title: No preselected consent or business-favouring defaults, domain: D18, tier: Floor, check: H, remedy: fix-harden, waivable_by: never, tests: [T-DEFAULT-STATE],
+   rule: "Never preselect consent, newsletter, marketing, data-sharing, cost-bearing or access-widening options. A default is what a well-informed visitor would choose for themselves. Ask for a permission when the visitor reaches for the feature, with the narrowest scope.",
+   why: "A pre-ticked box takes a decision the visitor did not make; in many jurisdictions it is not valid consent.",
+   fix: "Leave every consent and cost option unticked and explain what each one does next to it.",
+   sources: ["INT-163 (adp §20 §21-area §119)", "INT-180 (adp §40 §43 §34-area)", "INT-184 (adp §175 §177 §189)"]}
+- {id: INT-019, title: No hidden or fake prices, domain: D18, tier: Floor, check: H, remedy: fix-copy, waivable_by: never, tests: [T-PRICE-WHOLE],
+   rule: "State the price a visitor will pay where they decide: the recurring term, what a trial turns into (amount and date), and fees known in advance. No cost revealed only at a later step, no 'was' price that was never charged, no decoy plan, no asterisk whose terms appear nowhere on the page. With no price supplied, write 'Price on request' rather than invent one.",
+   why: "A price that grows after the decision, or a discount from a price nobody paid, is a false statement about cost.",
+   fix: "Show the full price and its terms beside the action, and remove anchors and footnotes that cannot be resolved on the page.",
+   sources: ["INT-170 (adp §62 §131 §137 §173)", "INT-171 (adp §123 §169)", "INT-179 (adp §164 §170 §171)", "INT-168 (adp §61 §64)", "INT-149 (taste §613-614)"]}
+- {id: INT-020, title: Declining is plain and equal, domain: D18, tier: Reflex, check: J, remedy: fix-copy, tests: [T-DECLINE-READ],
+   rule: "Offer the decline, close, skip or cancel option in plain words at a weight the visitor can find. No confirmshaming ('No thanks, I prefer paying full price'), no guilt or fear framing, no decline option greyed out or hidden to steer the choice, and no screen disguised as a system dialog.",
+   why: "Shaming or hiding the way out pressures visitors into a choice and makes the brand feel hostile.",
+   fix: "Word the decline neutrally ('No thanks') and give it a visible, ordinary control.",
+   sources: ["INT-172 (adp §43 §165)", "INT-175 (adp §127 §159 §180)"]}
+- {id: INT-021, title: Leaving is as easy as joining, domain: D18, tier: Reflex, kind: context, check: H, remedy: fix-harden, tests: [T-DECLINE-READ],
+   rule: "Cancellation, unsubscribe and exits sit where users look and are named plainly: one optional reason, offers beside the exit button and never in front of it, data export offered, no threat of loss. Onboarding tours and gates show Skip and Back on every step, and the first experience of value is not gated. Judge only what the capture shows.",
+   why: "A hard exit (a roach motel) traps people who already decided to leave and turns them into complainers.",
+   fix: "Put cancel and unsubscribe one step from the account page, with plain labels and export.",
+   sources: ["INT-166 (adp §65 §124)", "INT-167 (adp §124 §126)", "INT-182 (uupm §108, adp §163)", "INT-181 (adp §35 §61)"]}
+- {id: INT-022, title: Labels of standing are earned, domain: D18, tier: Reflex, check: H, remedy: fix-copy, tests: [T-PROOF-SOURCE],
+   rule: "Use 'Most popular', 'Best value', '#1', 'industry-leading', 'award-winning', certification and compliance badges (SOC 2, ISO 27001, HIPAA, GDPR) and green or ethical claims only when true and backed: one 'Most popular' on the plan that is, a ranking or award with its name and year, a certification the company holds and can show. Use 'latest' and version claims only with an as-of date.",
+   why: "Unearned badges read as decoration at best and as false claims at worst, and they cheapen the real ones.",
+   fix: "Keep the badges the client can show and name their source; cut the rest.",
+   sources: ["INT-186 (adp §187, taste §43, hallmark §97)", "INT-115 (kami §226 §302)", "INT-185 (adp §197)"]}
+- {id: INT-023, title: Dates are current and true, domain: D18, tier: Finish, check: H, remedy: fix-copy, tests: [T-FIGURE-AUDIT],
+   rule: "A copyright year more than a year behind the capture date, or a 'Since' or 'Est.' year that is not the business's real founding year (or repeats as a motif), is a finding.",
+   why: "A stale year tells the visitor the page is unattended; an invented founding year is invented history.",
+   fix: "Update the year, or remove the 'Since' line unless the client supplied it.",
+   sources: ["INT-141 (taste §40 §43 §46)"]}
 # ---------------- D10 accessibility ----------------
 - {id: INT-008, title: Feedback never outruns the truth, domain: D18, tier: Floor, check: M, remedy: fix-harden, waivable_by: never,
    rule: "An action shows success only after the request it made has succeeded: never while it is still pending, never after it failed, and never when no request was made and nothing else changed. Measured by the async_state detector.",
