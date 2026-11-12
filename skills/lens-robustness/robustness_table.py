@@ -269,7 +269,9 @@ def text_risk(pages, rules, by_sel):
             st = e["style"]; tb = text_box(e); r = e["rect"]
             if not tb: continue
             cls = classes(e["sel"])
-            has_ell = matches(cls, ell) or None
+            # computed text-overflow is recorded from 12 Nov 2026; before that, infer from class rules
+            rec_to = st.get("textOverflow")
+            has_ell = (rec_to == "ellipsis") if rec_to is not None else (matches(cls, ell) or None)
             # single-line text that runs past a clipping box
             if e.get("inDialog"): continue
             if st.get("whiteSpace") in ("nowrap", "pre") and e["textLen"] >= 6:
@@ -284,7 +286,8 @@ def text_risk(pages, rules, by_sel):
                         continue
                     row = {**pg.place(e), "text": e["text"][:80], "chars": e["textLen"], "clipped_px": round(cut),
                            "clipped_by": "self" if c is e else (c["sel"][-60:] if c else None),
-                           "ellipsis": "rule matches a recorded class" if has_ell else "no ellipsis rule matches the recorded classes",
+                           "ellipsis": (("text-overflow: ellipsis (computed)" if has_ell else f"text-overflow: {rec_to} (computed)") if rec_to is not None
+                                        else ("rule matches a recorded class" if has_ell else "no ellipsis rule matches the recorded classes")),
                            **({"sweep": by_sel[e["sel"]][:3]} if by_sel.get(e["sel"]) else {})}
                     nowrap_seen[key_] = row; nowrap_rows.append(row)
             # text drawn outside its own box (block-like boxes only)

@@ -400,9 +400,9 @@ const VISIBLE_CHARS = () => {
 // ---- 7. performance (lab) at 1440 ----------------------------------------------------------------
 {
   const { ctx, page } = await open(browser, 1440);
-  await page.addInitScript(() => { window.__lcp = 0; new PerformanceObserver(l => { for (const e of l.getEntries()) window.__lcp = e.startTime; }).observe({ type: "largest-contentful-paint", buffered: true }); });
+  await page.addInitScript(() => { window.__lcp = 0; new PerformanceObserver(l => { for (const e of l.getEntries()) window.__lcp = e.startTime; }).observe({ type: "largest-contentful-paint", buffered: true }); window.__cls = 0; window.__shifts = 0; try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) { window.__cls += e.value; window.__shifts++; } }).observe({ type: "layout-shift", buffered: true }); } catch {} });
   await goLoad(page, url, "performance pass"); await settle(page);
-  const perf = await page.evaluate(() => ({ lcp: window.__lcp, resources: performance.getEntriesByType("resource").map(r => ({ name: r.name, type: r.initiatorType, bytes: r.encodedBodySize || r.transferSize || 0 })),
+  const perf = await page.evaluate(() => ({ lcp: window.__lcp, cls: Math.round((window.__cls || 0) * 1000) / 1000, layoutShifts: window.__shifts || 0, resources: performance.getEntriesByType("resource").map(r => ({ name: r.name, type: r.initiatorType, bytes: r.encodedBodySize || r.transferSize || 0 })),
     images: [...document.images].map(i => ({ src: i.currentSrc || i.src, nw: i.naturalWidth, rw: Math.round(i.getBoundingClientRect().width), id: i.getAttribute("data-unslop-id") })) }));
   for (const r of perf.resources) if (!r.bytes && r.name.startsWith("file:")) { try { r.bytes = fs.statSync(fileURLToPath(r.name)).size; } catch {} }
   for (const im of perf.images) if (im.src && im.src.startsWith("file:")) { try { im.bytes = fs.statSync(fileURLToPath(im.src)).size; } catch {} }

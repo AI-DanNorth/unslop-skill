@@ -6,7 +6,9 @@
     "borderLeftWidth","borderTopColor","borderLeftColor","borderRightColor","borderBottomColor","borderTopLeftRadius","boxShadow",
     "marginTop","marginBottom","paddingTop","paddingBottom","paddingLeft","paddingRight","gap","rowGap","columnGap","textAlign",
     "outlineStyle","outlineWidth","outlineColor","outlineOffset","transitionProperty","transitionDuration","transitionTimingFunction",
-    "animationName","animationDuration","overflowX","whiteSpace","textShadow","filter","backdropFilter","zIndex","gridTemplateColumns","width","height"];
+    "animationName","animationDuration","overflowX","whiteSpace","textShadow","filter","backdropFilter","zIndex","gridTemplateColumns","width","height",
+    // robustness and imagery (12 Nov 2026): truncation, wrapping and sizing rules, and how a picture fills its frame
+    "textOverflow","overflowWrap","wordBreak","minWidth","maxWidth","flexWrap","overflowY","objectFit","objectPosition"];
   const SKIP = new Set(["SCRIPT","STYLE","NOSCRIPT","TEMPLATE","META","LINK","HEAD","TITLE","BR"]);
   const docH = Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0);
   const vw = window.innerWidth, vh = window.innerHeight;
