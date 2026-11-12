@@ -356,6 +356,16 @@ const VISIBLE_CHARS = () => {
   const { ctx, page } = await open(browser, 1440);
   await goLoad(page, url, "fake-send pass"); await settle(page);
   const count = await page.evaluate(() => document.querySelectorAll("form").length);
+  // the default state of every checkbox and radio, before anything is filled: a preselected consent or add-on box is a
+  // deceptive default (INT-018), and the fake-send fill below ticks every box, so forms.json cannot show it
+  const choices = await page.evaluate(() => [...document.querySelectorAll("input[type=checkbox],input[type=radio],[role=checkbox],[role=switch]")].slice(0, 200).map((el) => {
+    const r = el.getBoundingClientRect(), lab = (el.id && document.querySelector(`label[for="${CSS.escape(el.id)}"]`)) || el.closest("label");
+    const text = ((lab && lab.innerText) || el.getAttribute("aria-label") || (el.parentElement && el.parentElement.innerText) || "").replace(/\s+/g, " ").trim().slice(0, 160);
+    const checked = el.matches("input") ? el.checked : el.getAttribute("aria-checked") === "true";
+    return { type: el.getAttribute("type") || el.getAttribute("role"), name: el.getAttribute("name"), checked, required: !!el.required, inForm: !!el.closest("form"),
+      visible: r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== "hidden", label: text, id: el.getAttribute("data-unslop-id") };
+  })).catch(() => []);
+  fs.writeFileSync(path.join(ev, "choices.json"), JSON.stringify(choices, null, 1));
   const results = [];
   for (let i = 0; i < count; i++) {
     const p2 = await ctx.newPage();

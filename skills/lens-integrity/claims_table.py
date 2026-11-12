@@ -302,14 +302,30 @@ def testimonials(page, default_hits):
     return sorted(out, key=lambda r: r["y"])
 
 
-def consent(page, dom):
+def consent(page, dom, ev=None):
+    # default states recorded before the fake-send fill (capture.mjs writes choices.json; older captures lack it)
+    rec = {}
+    cj = ev / "choices.json" if ev else None
+    if cj and cj.exists():
+        for c in json.loads(cj.read_text(encoding="utf-8")):
+            # the fake-send pass loads a fresh page (no extractor ids): match by field name, then by label text
+            for k in (c.get("name") and f"name:{c['name']}", c.get("label") and f"label:{c['label'][:80]}"):
+                if k and k not in rec: rec[k] = c
+    def find(e):
+        f = e.get("field") or {}
+        for k in (f.get("name") and f"name:{f['name']}", e.get("name") and f"label:{e['name'].strip()[:80]}"):
+            if k and k in rec: return rec[k]
+        return None
     boxes = []
     for e in page.els:
         f = e.get("field") or {}
         if f.get("type") not in ("checkbox", "radio") and e.get("role") not in ("checkbox", "switch"): continue
         name = (e.get("name") or "").strip()
         r = page.row(e, "choice", name or "(no accessible name)", type=f.get("type") or e.get("role"), visible=bool(e.get("vis")),
-                     consent_words=bool(CONSENT.search(name)), default_state="not verified: the capture does not record a checkbox's default state; read the screenshot")
+                     consent_words=bool(CONSENT.search(name) or CONSENT.search((find(e) or {}).get("label", ""))),
+                     default_state=(("checked" if find(e)["checked"] else "unchecked") if find(e)
+                                    else "not verified: " + ("no choices.json in this capture (recorded from 11 Nov 2026)" if not rec else "not matched to a recorded default") + "; read the screenshot"),
+                     label=(find(e) or {}).get("label"))
         boxes.append(r)
     return {"forms": dom.get("forms") or [], "choices": boxes}
 
@@ -461,7 +477,7 @@ def table(run, out):
         "testimonials": testimonials(page, default_hits)[:16], "ratings": scan(page, RATING, "rating")[:20],
         "awards_badges": scan(page, AWARD, "award or badge")[:20], "social_proof": scan(page, SOCIAL, "social proof")[:20],
         "case_studies": scan(page, CASE, "case study")[:12], "urgency": scan(page, URGENCY, "urgency")[:20] + scan(page, CLOCK, "clock")[:10],
-        "confirmshaming": scan(page, SHAME, "confirmshaming")[:10], "consent": consent(page, dom), "pricing": pricing(page),
+        "confirmshaming": scan(page, SHAME, "confirmshaming")[:10], "consent": consent(page, dom, ev), "pricing": pricing(page),
         "trial_terms": scan(page, TRIAL, "trial or cancel term")[:15], "leakage": leakage(page, dom), "contact_data": contacts(page),
         "dead_links": dead_links(page), "dates": dates(page, year),
     }
