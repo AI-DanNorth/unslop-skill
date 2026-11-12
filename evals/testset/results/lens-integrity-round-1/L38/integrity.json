@@ -1,0 +1,39 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Read (a Really Good Emails gallery page showing Apple's 'Welcome to Apple Arcade' email, inferred from the page; no contract). The email's claims are Apple's own ('Featuring Sayonara Wild Hearts … Look for 100+ games rolling out this fall'). The sweep's INT-001 Floor hit is on the line 'Ad: Still overpaying? Omnisend moves everything in 5 days — flows, lists, templates. You pay up to 35% less.', which I judge to be a third-party advertiser's claim about its own pricing, labelled 'Ad:', not a figure the gallery or the email invented; it still names no baseline, and the sweep's finding stands for adjudication.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass for the email; T-FIGURE-AUDIT leaves one figure without a baseline, the ad's 'up to 35% less', which the sweep holds as INT-001 and which I read as the advertiser's labelled claim rather than an invented one."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "The email names its featured games ('Sayonara Wild Hearts', 'Jenny LeClue - Detectivu') instead of generic praise, and its claims are the sender's own.",
+    "The gallery marks the advertising as advertising: the side panel carries the Omnisend logo and the text line starts with 'Ad:'.",
+    "The gallery states its owner and history ('Really Good Emails is part of Beefree. It started as a volunteer project in 2014.')."
+  ],
+  "not_investigated": [
+    "what 'up to 35% less' is measured against: the ad names no baseline, and only Omnisend's own material could say",
+    "the email's send date: the Info tab was not opened, so '100+ games rolling out this fall' cannot be dated from the gallery view",
+    "capture prep clicked 'Allow all cookies' at every width, so the consent banner's decline and defaults were not seen",
+    "T-DEFAULT-STATE, T-PRICE-WHOLE: no choices or prices on the page; the search form is a GET search and fake_send recorded no success text",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

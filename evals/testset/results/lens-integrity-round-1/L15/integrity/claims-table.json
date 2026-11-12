@@ -1,0 +1,440 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L15",
+ "target": "https://skill-fixture-before.theroost.dev",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "figures": [
+  {
+   "kind": "figure",
+   "text": "$42.6k",
+   "where": "html > body > section:nth-of-type(1) > div.stat:nth-of-type(3) > div.stat-value:nth-of-type(1)",
+   "y": 188,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 20.0,
+   "section": "Northline weekly ops",
+   "context": "$42.6k",
+   "flags": [
+    "round"
+   ],
+   "big": false,
+   "repeats": 1
+  },
+  {
+   "kind": "figure",
+   "text": "12%",
+   "where": "section:nth-of-type(3) > table.table-styled > tbody > tr.tier-gold.highlight:nth-of-type(1) > td.negative:nth-of-type(3)",
+   "y": 466,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 16.0,
+   "section": "Northline weekly ops",
+   "context": "12%",
+   "flags": [],
+   "big": false,
+   "repeats": 2
+  },
+  {
+   "kind": "figure",
+   "text": "12%",
+   "where": "table.table-styled > tbody > tr.tier-gold.highlight:nth-of-type(1) > td.negative:nth-of-type(3) > span.trend-down",
+   "y": 472,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 16.0,
+   "section": "Northline weekly ops",
+   "context": "12%",
+   "flags": [],
+   "big": false,
+   "repeats": 2
+  },
+  {
+   "kind": "figure",
+   "text": "4%",
+   "where": "table.table-styled > tbody > tr.tier-silver:nth-of-type(2) > td.positive:nth-of-type(3) > span.trend-up",
+   "y": 508,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 16.0,
+   "section": "Northline weekly ops",
+   "context": "4%",
+   "flags": [
+    "round"
+   ],
+   "big": false,
+   "repeats": 1
+  },
+  {
+   "kind": "figure",
+   "text": "1%",
+   "where": "table.table-styled > tbody > tr.tier-bronze:nth-of-type(3) > td:nth-of-type(3) > span.trend-up",
+   "y": 543,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 16.0,
+   "section": "Northline weekly ops",
+   "context": "1%",
+   "flags": [
+    "round"
+   ],
+   "big": false,
+   "repeats": 1
+  },
+  {
+   "kind": "figure",
+   "text": "1/5",
+   "where": "button.vr-hitl-chip > span.vr-hitl-meta:nth-of-type(2)",
+   "y": 855,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 11.0,
+   "section": "Northline weekly ops",
+   "context": "1/5",
+   "flags": [],
+   "big": false,
+   "repeats": 1
+  }
+ ],
+ "stat_bands": [],
+ "logo_walls": [
+  {
+   "kind": "logo wall",
+   "text": "Campaign tracker",
+   "where": "section:nth-of-type(7) > table > thead > tr",
+   "y": 1176,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "font_px": 16.0,
+   "section": "Campaign tracker",
+   "items": 5,
+   "unique": 5,
+   "kinds": {
+    "wordmark": 5
+   },
+   "labels": [
+    "Repo",
+    "Skill",
+    "Before",
+    "After",
+    "Fork"
+   ],
+   "linked": 0,
+   "intro": "Campaign tracker",
+   "offscreen": 0
+  }
+ ],
+ "testimonials": [],
+ "ratings": [
+  {
+   "kind": "rating",
+   "text": "1/5",
+   "where": "button.vr-hitl-chip > span.vr-hitl-meta:nth-of-type(2)",
+   "y": 855,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 11.0,
+   "section": "Northline weekly ops",
+   "context": "1/5"
+  }
+ ],
+ "awards_badges": [],
+ "social_proof": [],
+ "case_studies": [],
+ "urgency": [],
+ "confirmshaming": [],
+ "consent": {
+  "forms": [],
+  "choices": [
+   {
+    "kind": "choice",
+    "text": "ApproveApprove — agent continues with this output.",
+    "where": "#vr-hitl-opt-0",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 13.3333,
+    "section": null,
+    "in_dialog": true,
+    "type": "radio",
+    "visible": false,
+    "consent_words": false,
+    "default_state": "not verified: the capture does not record a checkbox's default state; read the screenshot"
+   },
+   {
+    "kind": "choice",
+    "text": "Request changesRequest changes — agent regenerates, then you review again.",
+    "where": "#vr-hitl-opt-1",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 13.3333,
+    "section": null,
+    "in_dialog": true,
+    "type": "radio",
+    "visible": false,
+    "consent_words": false,
+    "default_state": "not verified: the capture does not record a checkbox's default state; read the screenshot"
+   },
+   {
+    "kind": "choice",
+    "text": "RejectReject — stop the agent.",
+    "where": "#vr-hitl-opt-2",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 13.3333,
+    "section": null,
+    "in_dialog": true,
+    "type": "radio",
+    "visible": false,
+    "consent_words": false,
+    "default_state": "not verified: the capture does not record a checkbox's default state; read the screenshot"
+   }
+  ]
+ },
+ "pricing": {
+  "prices": [
+   {
+    "kind": "price",
+    "text": "$42.6",
+    "where": "html > body > section:nth-of-type(1) > div.stat:nth-of-type(3) > div.stat-value:nth-of-type(1)",
+    "y": 188,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 20.0,
+    "section": "Northline weekly ops",
+    "context": "$42.6k"
+   },
+   {
+    "kind": "price",
+    "text": "$18,400",
+    "where": "section:nth-of-type(3) > table.table-styled > tbody > tr.tier-gold.highlight:nth-of-type(1) > td.negative:nth-of-type(5)",
+    "y": 466,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 16.0,
+    "section": "Northline weekly ops",
+    "context": "$18,400"
+   },
+   {
+    "kind": "price",
+    "text": "$6,200",
+    "where": "section:nth-of-type(3) > table.table-styled > tbody > tr.tier-silver:nth-of-type(2) > td.positive:nth-of-type(5)",
+    "y": 501,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 16.0,
+    "section": "Northline weekly ops",
+    "context": "$6,200"
+   },
+   {
+    "kind": "price",
+    "text": "$1,050",
+    "where": "section:nth-of-type(3) > table.table-styled > tbody > tr.tier-bronze:nth-of-type(3) > td:nth-of-type(5)",
+    "y": 537,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "font_px": 16.0,
+    "section": "Northline weekly ops",
+    "context": "$1,050"
+   }
+  ],
+  "terms": [],
+  "struck": [],
+  "fine_print": [],
+  "most_popular_count": 0
+ },
+ "trial_terms": [],
+ "leakage": [],
+ "contact_data": [
+  {
+   "kind": "phone",
+   "text": "+16175550198",
+   "where": "html > body > section:nth-of-type(6) > p:nth-of-type(1) > a:nth-of-type(2)",
+   "y": 972,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "font_px": 16.0,
+   "section": "Reach them",
+   "fake_pattern": false
+  }
+ ],
+ "dead_links": {
+  "count": 0,
+  "examples": []
+ },
+ "dates": {
+  "captured_year": 2026,
+  "copyright": [],
+  "since": []
+ },
+ "phone_375": {
+  "figures": 5,
+  "figures_only_at_375": [],
+  "figures_only_at_1440": [],
+  "urgency_only_at_375": [],
+  "logo_walls": 1,
+  "testimonials": 0
+ },
+ "fake_send": [],
+ "async": {
+  "actions": [
+   {
+    "name": "Send follow-up",
+    "kind": "action-button",
+    "selector": "body > section:nth-of-type(6) > p:nth-of-type(2) > button:nth-of-type(1)",
+    "slow": {
+     "status": "ok",
+     "requests": 0,
+     "same_origin": 0,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": []
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)",
+     "requests": 0,
+     "same_origin": null,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": []
+    }
+   },
+   {
+    "name": "Remove",
+    "kind": "action-button",
+    "selector": "body > section:nth-of-type(2) > div > p:nth-of-type(2) > span > button",
+    "slow": {
+     "status": "ok",
+     "requests": 0,
+     "same_origin": 0,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": []
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)",
+     "requests": 0,
+     "same_origin": null,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": []
+    }
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 3,
+  "blocked_images": 0,
+  "fonts_missing": [],
+  "examples": [
+   "fetch https://id.theroost.dev/session",
+   "document https://id.theroost.dev/login?orgId=475ee4f17d8cd32a&return=https%3A%2F%2Fskill-fixture-before.theroo",
+   "document https://skill-fixture-before.theroost.dev/"
+  ],
+  "prep": null
+ },
+ "sweep": {
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0,
+   "hits": []
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0,
+   "hits": []
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "n": 0,
+   "hits": []
+  },
+  "fake_people": {
+   "status": "ran",
+   "rule": "INT-003",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "n": 0,
+   "hits": []
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0,
+   "hits": []
+  },
+  "exhibits": []
+ },
+ "counts": {
+  "figures": 6,
+  "stat_bands": 0,
+  "logo_walls": 1,
+  "testimonials": 0,
+  "ratings": 1,
+  "awards_badges": 0,
+  "social_proof": 0,
+  "case_studies": 0,
+  "urgency": 0,
+  "confirmshaming": 0,
+  "trial_terms": 0,
+  "leakage": 0,
+  "contact_data": 1,
+  "fake_send": 0,
+  "prices": 4,
+  "choices": 3,
+  "in_exhibit": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Operate: the page labels itself 'Skill fixture, before' and every figure on it (128 open threads, $42.6k pipeline, $18,400 for Harbor and Co) is the fixture's seed data, not a claim, so nothing on it is offered to the visitor as proof.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-FIGURE-AUDIT find no claims to test: the seed figures sit in a labelled fixture (C21), the phone link uses the reserved 555-0198 range, and the campaign tracker gives dated, checkable repo and PR states; it earns 9 because it carries no proof at all, not because proof was checked."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND",
+    "T-DEFAULT-STATE"
+  ],
+  "findings": [],
+  "strengths": [
+    "The page names what it is in its first line ('Skill fixture, before') and states its purpose, so the seed people and amounts read as slots, not as customers.",
+    "The 'Text the plant' link uses +1 617 555 0198, the reserved fictional range, instead of a number that could belong to someone.",
+    "The campaign tracker gives each upstream PR a plain state, including the failures ('closed, not merged (Sat 10/17)', 'issue #300 closed, not planned'), and a dated 'Updated Sun Oct 25, 2026'."
+  ],
+  "not_investigated": [
+    "T-URGENCY-REAL skipped: 'Urgent' is a table heading over seed rows, and the page shows no countdown, stock or viewer count.",
+    "T-PRICE-WHOLE skipped: the dollar amounts are seed pipeline values, not prices offered to the visitor.",
+    "T-DEFAULT-STATE: the three radios in the 'Review required 1/5' dialog (Approve, Request changes and a third) are hidden in the capture, so their default state is not verified.",
+    "T-FAKE-SEND: 'Send follow-up' and 'Remove' made no request, so the failure run was skipped; no form was captured.",
+    "Capture context: 3 requests to id.theroost.dev (session and login) were blocked; the page rendered without them.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

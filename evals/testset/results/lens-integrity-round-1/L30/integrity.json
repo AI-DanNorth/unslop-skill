@@ -1,0 +1,34 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode is Read (Dropbox's brand guidelines hub, inferred from the page; no contract). The only proof row is a quote credited to a named designer, '“The details are not the details. They make the design.” — Charles Eames', and the page credits its studio ('Daybreak Studio'); the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE passes for the one quote (named, and not a customer testimonial) and T-FIGURE-AUDIT finds no figures. Nothing was cut because the page makes no product claims."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "The epigraph names its author ('— Charles Eames') instead of passing the line off as Dropbox's own.",
+    "The page credits the agency that built it ('Daybreak Studio') and links to partner and legal resources ('Brand Partner Toolkit', 'Legal Branding Resources')."
+  ],
+  "not_investigated": [
+    "whether the Eames attribution is accurate: only an outside source could settle it",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, choices, prices or forms on the page",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

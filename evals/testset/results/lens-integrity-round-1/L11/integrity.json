@@ -1,0 +1,53 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The visitor mode is Experience/Operate (a browser-game catalogue); the page makes almost no proof claims and its counts are shown as they are ('Like 0', '1 subscribers'), but the title and meta promise 'Free Browser Games' and the game text calls Xonotic 'free and open-source' while the action beside PLAY is 'ADD TO CART — $0.49'.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass (no testimonials, ratings or invented counts); T-PRICE-WHOLE finds one fact, the price of Xonotic, stated two ways (draft INT-151, Reflex), which costs the most."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-PRICE-WHOLE",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "tier": "Reflex",
+      "where": "featured game panel, the PLAY and ADD TO CART buttons, first screen, 1440; tiles/1440-00.png and async/a0-slow-final.png",
+      "evidence": "The page title is 'Gameghost - Free Browser Games Online' and the meta description says 'Discover and play free browser games'. The Xonotic panel says 'Xonotic is a fast-paced, free and open-source arena first-person shooter.' The button beside PLAY reads 'ADD TO CART — $0.49' (claims table price row, first_screen). The async run shows the click result 'XONOTIC added to cart. Open your cart to checkout.' The page never says what the $0.49 buys or whether PLAY is free without it. I set this at Reflex, not Floor, because PLAY sits beside the cart and the capture did not show whether play needs payment.",
+      "before": "\"free and open-source\" and \"Free Browser Games\" beside \"ADD TO CART — $0.49\"",
+      "after": "Say what the $0.49 is for next to the button ('Optional: $0.49 supports the site; Xonotic is free to play'), or remove the cart for free games.",
+      "why": "A visitor told the game is free may pay $0.49 for something the page also says costs nothing.",
+      "test": "T-PRICE-WHOLE",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The engagement counts are shown as they are ('Like 0', 'Team Xonotic, 1 subscribers'), not inflated.",
+    "The game panel credits the real studio and facts ('Studio: Team Xonotic', 'Released: 2011', ESRB 'Teen, Violence').",
+    "Unreleased titles are marked 'COMING SOON' or 'DEMO' on their tiles, apart from playable ones."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "whether the site holds the rights to the commercial titles in its catalogue (for example the 'Simpsons Hit & Run' cover) could not be checked",
+    "the cart and checkout were not opened, so the full cost was not seen",
+    "85 requests were blocked in the capture, including the site's web fonts and theme audio; those are not verified",
+    "the capture prep clicked 'Use essential only' on the consent banner, so its other options and defaults were not seen",
+    "T-DEFAULT-STATE: no checkbox was captured on the page itself",
+    "T-DECLINE-READ: the feedback and Discord dialogs were opened only by the async run; their decline wording was not judged"
+  ]
+}

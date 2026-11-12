@@ -1,0 +1,51 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Operate (the public demo of the Ant Design Pro admin template, inferred from the preview URL, the 'ProUser' account and the sidebar; no contract), so its figures are a demo seed, not claims. Most of the seed reads as seed ('搜索关键词-0', 'Stores 0', seven stores at an identical '323,234'); I judge the sweep's stat_band hit (INT-007) on '8,846, 6,560, 78%' to fall on these demo KPI cards rather than on claims by the brand, and the hit stands for adjudication. The seed contradicts itself and changes between renders.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-STAGED-UI passes in the main (a demo seed in a template demo, not results), but T-FIGURE-AUDIT finds the seed contradicting itself across the KPI card, the store ranking and the search table (INT-151, Reflex), beside the sweep's INT-007 Reflex."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DEFAULT-STATE",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "title": "Give each fact one value and one wording everywhere it appears",
+      "tier": "Reflex",
+      "where": "KPI card '总销售额' and ranking '门店销售额排名' (tiles/1440-00.png); search table tbody.ant-table-tbody td:nth-of-type(4) (tiles/1440-01.png), 1440 and 375",
+      "evidence": "The first KPI card gives total sales as '¥ 126,560', but the store ranking beside the chart lists seven stores at '323,234' each, so one store alone exceeds the total; the monthly bar chart under the same tab tops out near 1,100. The search table's weekly change also differs between captures of the same page: the DOM read gives '94%' and '14%' in rows 1 and 2, the 1440 screenshot shows '21%' and '84%', and the 375 capture has seven percentages ('23%', '30%', '38%' and others) that appear at no other width (claims table phone_375).",
+      "before": "总销售额 ¥ 126,560 beside seven stores at 323,234; search table values that change on every render",
+      "after": "Seed the demo from one fixed, internally consistent data set (store sales that sum to the total, chart bars on the same scale), so the numbers do not change between loads.",
+      "why": "Teams adopt this template as the starting point for real dashboards. A seed whose total is smaller than its parts teaches nothing about how real data will read, and it can survive into a shipped screen.",
+      "test": "T-FIGURE-AUDIT",
+      "root": "template mock data generator (random values per render)",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "Most seed labels say plainly that they are placeholders ('搜索关键词-0' to '-4', 'Stores 0' to 'Stores 9', '工专路 0 号店'), so a visitor does not read them as a real business's results.",
+    "The footer states the template's build ('ver 6.0.1', commit '2db826c', 'Umi 4.6.51') and links to GitHub."
+  ],
+  "not_investigated": [
+    "the '全部渠道 / 线上 / 门店' segmented control is a view filter, not consent; the screenshot shows '全部渠道' selected, which is not a finding",
+    "the 7 dead links (logo and pagination anchors with no href) are app navigation handled in script, not links behind a claim, so T-PROMISE-LINK has nothing to fail",
+    "4 images and 35 requests (mostly analytics) were blocked; no claim rows depend on them",
+    "T-URGENCY-REAL, T-PRICE-WHOLE, T-FAKE-SEND: the '¥' figures are seed sales totals, not prices; no urgency or forms",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

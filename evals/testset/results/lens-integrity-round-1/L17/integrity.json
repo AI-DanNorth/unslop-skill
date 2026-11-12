@@ -1,0 +1,72 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Persuade (a product landing page for a design skill): the catalogue counts in the hero (57 styles, 95 palettes, 56 font pairings) are the product's own database figures and the footer repeats them exactly, so I judge the sweep's stat_band hit (INT-007) to be the brand's own counts, but the same page gives Landing Patterns two values and pads the community section with an unsourced '500+'.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-FIGURE-AUDIT fails twice (INT-151 on 29 against 14 landing patterns, INT-011 on '500+ micro-SaaS founders') and T-PROOF-SOURCE fails once on the bare 'Production Ready' tick (INT-022); no Floor."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "tier": "Reflex",
+      "where": "hero stat tile 'Landing Patterns' and the Landing Patterns feature card, 1440 (tiles/1440-00.png, tiles/1440-01.png)",
+      "evidence": "The hero stat band shows '29 / Landing Patterns'. Two screens lower, the Landing Patterns card says '14 conversion-optimized page structures with CTA placement strategies'. The other five counts agree between the band and the footer (57, 95, 56, 24, 8); this one has two values.",
+      "before": "\"29 Landing Patterns\" and \"14 conversion-optimized page structures\"",
+      "after": "One count, taken from the shipped database, in both places",
+      "why": "A visitor who reads both numbers cannot tell which one the product ships, and doubts the other counts too.",
+      "test": "T-FIGURE-AUDIT"
+    },
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "'Build with Us' section, 1440 (tiles/1440-08.png)",
+      "evidence": "The intro reads 'the Next Level Builders community of 500+ micro-SaaS founders' and a card title repeats '500+ Solo Builders Network'. The claims table flags both as open-ended and round, with no source or footnote nearby, and neither links to a member list or a dated count.",
+      "before": "\"community of 500+ micro-SaaS founders\"",
+      "after": "Link the directory with a dated member count, or drop the number",
+      "why": "The figure carries the section's trust pitch ('human-verified', 'High-Trust Verification'), yet the visitor has no way to check it.",
+      "test": "T-FIGURE-AUDIT"
+    },
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "closing CTA tick row, 1440 (tiles/1440-09.png)",
+      "evidence": "The row under 'Get on GitHub' reads '✓ Open Source  ✓ Claude Code Compatible  ✓ Production Ready'. The first two are facts a visitor can check; 'Production Ready' has no version, release date, test or adoption figure behind it anywhere on the page.",
+      "before": "\"✓ Production Ready\"",
+      "after": "Replace it with the checkable fact (current version and release date), or remove it",
+      "why": "A tick mark gives an opinion the look of a verified property.",
+      "test": "T-PROOF-SOURCE"
+    }
+  ],
+  "strengths": [
+    "The GitHub star count in the nav carries the GitHub mark and links to the repository, so its platform is named.",
+    "Five of the six hero counts are repeated identically in the footer 'Database' column (57 UI Styles, 95 Color Palettes, 56 Font Pairings, 24 Chart Types, 8 Tech Stacks), and the eight stacks are each listed.",
+    "The demo gallery adds up: '39 demos available • 20 categories • 26 light • 13 dark', and each card is labelled as a demo with 'Show Prompt'.",
+    "'How It Works' shows its example prompt verbatim ('Build a landing page for a pet grooming service'), so the pipeline reads as an illustration, not a result."
+  ],
+  "not_investigated": [
+    "T-PRICE-WHOLE skipped: the page links 'Premium' and a Refund Policy but shows no price, so the paid offer is not on the captured page.",
+    "T-URGENCY-REAL: the claims table matched 'early-bird publishing tools' in the NextLevelBuilder banner; it states no deadline or count, so it is not urgency.",
+    "T-DEFAULT-STATE skipped: no checkbox, radio or switch.",
+    "T-FAKE-SEND: 'Load More' made no request; no form exists.",
+    "The star count reads 147.0k in the screenshot and 147.3k in the DOM: a live count, not judged.",
+    "Capture context: 23 analytics requests were blocked.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

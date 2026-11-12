@@ -1,0 +1,53 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Persuade (slide 02B of 09 in a talk selling the huashu-design skill): the slide calls itself 'A real task from yesterday' and shows the skill's three covers as image files, but the default agent's 'actual output' beside them is redrawn in page HTML, so the comparison's baseline is a reconstruction.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-STAGED-UI fails on the default-output panel (INT-013), which carries the slide's whole argument, and the 'yesterday' date cannot be placed (INT-023); no Floor."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE"
+  ],
+  "findings": [
+    {
+      "rule": "INT-013",
+      "tier": "Reflex",
+      "where": "left panel 'A 通用 AI / Agent', div.slop.show, 1920 (tiles/1920-00.png)",
+      "evidence": "The panel is captioned '实际产出 · THE OUTPUT' with an 'AI · GENERATED' corner tag, and shows 'DeepSeek V4 / FUTURE OF AI / ⚡ 🧠 🚀 ✨'. That cover is page text in a div.slop element, not an image. The three skill outputs on the right are PNG files (cover-pentagram.png, cover-takram.png, cover-build.png). The slide's kicker says 'A real task from yesterday'.",
+      "before": "\"实际产出 · THE OUTPUT\" over an HTML redraw",
+      "after": "Show the default agent's actual image as a captured file, or label the panel 'reconstruction'",
+      "why": "The audience reads both sides as real outputs, but only one side is, so the gap between them is partly staged.",
+      "test": "T-STAGED-UI"
+    },
+    {
+      "rule": "INT-023",
+      "tier": "Finish",
+      "where": "kicker line, 1920 (tiles/1920-00.png)",
+      "evidence": "The kicker reads 'A real task from yesterday · 一个昨晚刚发生的真实场景。' The slide gives no date, so 'yesterday' is wrong on every day after the first showing.",
+      "before": "\"A real task from yesterday\"",
+      "after": "State the date of the task",
+      "why": "A relative date in a reusable deck turns false once the deck is shown again.",
+      "test": "T-FIGURE-AUDIT"
+    }
+  ],
+  "strengths": [
+    "The skill's side uses real image files for all three covers, so its claimed output can be seen.",
+    "Pentagram, Takram and Build appear as style directions ('3 SCHOOLS'), not as clients or endorsers."
+  ],
+  "not_investigated": [
+    "Only this one slide (02B of 09) was captured, at 1920; the rest of the deck is not judged.",
+    "The timings '5 SEC · 1 OUTPUT' and '5 MIN · 3 OUTPUTS' could not be checked from the slide.",
+    "The sweep treats the left panel as an exhibit (#slop); I judge it here because its label calls it the actual output.",
+    "Slides run only T-PROOF-SOURCE, T-PROOF-SWAP, T-FIGURE-AUDIT and T-LEAKAGE plus T-STAGED-UI for the pictured outputs; urgency, price, default state, decline and fake-send do not apply.",
+    "Capture context: the page prep waited 8000 ms before capture.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows"
+  ]
+}

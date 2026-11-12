@@ -1,0 +1,50 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Persuade/Read (an open-source desktop app's download page); the page shows its real app screens, its version (v0.2.148), its MIT licence and its platform limits in plain words ('Cannot host models directly yet'), and the one problem is that the hero's 'No cloud, no accounts, 100% private' is contradicted by the Telegram bot and web-search features listed lower down.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass (no invented proof, a GitHub link and a public roadmap); T-FIGURE-AUDIT finds '100% private' and 'No cloud, no accounts' contradicted by the page's own feature list (INT-011, Reflex)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "hero sub-line (first screen) and 'Everything you need' feature grid, 1440; tiles/1440-00.png and tiles/1440-02.png to tiles/1440-04.png",
+      "evidence": "The hero says 'No cloud, no accounts, 100% private.' (claims table figure '100%', flag 'round', first_screen), and the screenshot under it repeats 'no cloud, no accounts, no one listening in.' The feature grid then lists 'Telegram Family Bot: Every phone gets KinAI: text it, send photos, even ask by voice message', 'How it works' step 3 says phones 'connect via the family's Telegram bot', and 'Web Search with Sources' and 'Image Search' use DuckDuckGo, Exa or Wikimedia. Each of those sends messages or queries through an outside service, and the bot needs a Telegram account. Draft INT-176 (framing must not distort the fact) names this.",
+      "before": "\"No cloud, no accounts, 100% private.\"",
+      "after": "Qualify the claim where it is made: 'Your chats and models stay on your own computers. Optional Telegram and web-search features use outside services.'",
+      "why": "Privacy is the page's main promise; a visitor who turns on the Telegram bot sends family messages through Telegram's servers, which the hero says never happens.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The screenshot gallery shows the real app's screens (welcome, connect wizard, host view, calendar), each captioned with what it is.",
+    "The page states its limits plainly: 'The Mac that owns your family invites is macOS-only for now', 'Connects to a Mac host. Cannot host models directly yet.'",
+    "The roadmap is drawn as future work with version numbers (v0.3 to v1.0), apart from the shipped features.",
+    "The current version (v0.2.148), the MIT licence and a 'Star on GitHub' link let a visitor check the project."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the claim that each member's chats are 'invisible to everyone else, including whoever runs this computer' depends on how the host stores them; the page says 'Per-peer isolation in the host's database' and gives no encryption detail, so it could not be checked",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: the page has no urgency, counts or choices",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page labels itself as a specimen in its title ('(Impeccable example)') and its footer ('Fictional product · Impeccable design-pattern example'), and it makes no proof claims: its only figure is a '75%' progress bar inside a drawn app window, and it shows no testimonials, logos, ratings, badges or prices; the 'Fictional' self-label is an honest statement about the page, like a builder mark, not a finding.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE, T-PROOF-SWAP, T-FIGURE-AUDIT and T-STAGED-UI pass because the page makes no proof claims and labels itself as fictional. What was cut to earn it: no stat band, no logo row, no quotes; it is not 10 because 'NO CREDIT CARD' promises terms the page never states."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "The page says what it is in the title and the footer: 'Fictional product · Impeccable design-pattern example'.",
+    "The hero app window ('Make it happen.', a checklist and 'BIG THINGS LOADING 75%') is a plainly drawn illustration with no result figures and nothing repeated as a claim.",
+    "The page shows no testimonials, logo walls, ratings, user counts or badges."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "'NO CREDIT CARD.' implies a signup offer whose terms the page never states; no pricing or signup was captured (T-PRICE-WHOLE)",
+    "the capture prep blocked the site's antipattern-detector script; that is capture context",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: no urgency, counts or choices",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

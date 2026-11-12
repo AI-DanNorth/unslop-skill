@@ -1,0 +1,92 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The page shows no label that it is a specimen (only its URL path, 'antipattern-examples', suggests one), so I judge it as a ship landing page in Persuade mode; the decisive claim is 'Backed by top-tier investors' above six unlinked default-cast wordmarks (Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity), which the sweep's INT-002 hits confirm, together with a waitlist product that claims 'thousands of teams already shipping'.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 3,
+    "reason": "T-PROOF-SOURCE fails on the investor row (INT-010, Floor) and the SOC 2 claim (INT-022), T-FIGURE-AUDIT on 'thousands of teams' for a waitlist product (INT-011), and T-PROMISE-LINK on a dead 'Customers' link (INT-016)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-010",
+      "tier": "Floor",
+      "where": "hero 'Backed by' line and the logo row under it (section.logos), 1440 and 1280; tiles/1440-00.png and tiles/1440-01.png",
+      "evidence": "The first screen ends with 'Backed by top-tier investors', and the row under it lists six unlinked wordmarks: 'Northwind', 'Halcyon', 'Meridian', 'Fieldnote', 'Atlas & Co.', 'Verity' (claims table logo wall, linked 0). The sweep's default_names check fails Northwind, Halcyon and Fieldnote (INT-002). No investor is named in full or linked, and no funding round is stated.",
+      "before": "\"Backed by top-tier investors\" over Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity",
+      "after": "Remove the line and the row, or name the real investors and the round with a link to the announcement: [DATA NEEDED: real investors and round].",
+      "why": "Investor backing is a claim a careful visitor checks; default-cast names presented as investors are invented proof.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "closing CTA, 1440; tiles/1440-02.png",
+      "evidence": "The hero's primary action is 'Join the waitlist →' and the closing action is 'Get early access →', so the product is not yet open. The closing line says 'Join thousands of teams already shipping faster with Lumina.' The page gives no count, source or date for the teams. Draft INT-151 names one fact stated two ways.",
+      "before": "\"Join thousands of teams already shipping faster with Lumina.\"",
+      "after": "Drop the line, or state the real waitlist count with its date.",
+      "why": "A product behind a waitlist cannot have thousands of teams already shipping with it; the line contradicts the page's own CTA.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "'Enterprise Secure' feature card, 1440; tiles/1440-01.png",
+      "evidence": "The card says 'SOC 2 compliant infrastructure with end-to-end encryption. Your data is safe, always.' Nothing on the page backs it: no report, no auditor, no trust page, and the 'Docs' link is '#'.",
+      "before": "\"SOC 2 compliant infrastructure ... Your data is safe, always.\"",
+      "after": "State SOC 2 only if the client holds a report, and link it; otherwise describe the actual security measures.",
+      "why": "A compliance claim with nothing behind it is a label of standing the visitor cannot check.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-016",
+      "tier": "Reflex",
+      "where": "top navigation, first screen, 1440; tiles/1440-00.png",
+      "evidence": "The claims table counts 10 dead links (href '#'), among them the nav items 'Product', 'Solutions', 'Pricing', 'Customers' and 'Docs'. 'Customers' is the link that should hold the evidence for the investor row and 'thousands of teams'.",
+      "before": "\"Customers\" nav link to '#'",
+      "after": "Link a real customers page, or remove the 'Customers' link with the claims it supports.",
+      "why": "The link promises proof and goes nowhere, which tells the visitor the proof does not exist.",
+      "test": "T-PROMISE-LINK",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-023",
+      "tier": "Finish",
+      "where": "footer, 1440; tiles/1440-02.png",
+      "evidence": "The footer reads '© 2022 Lumina, Inc. Powered by AI in San Francisco.' The claims table flags the year as stale against the 2026 capture.",
+      "before": "\"© 2022 Lumina, Inc.\"",
+      "after": "Set the year from the build date.",
+      "why": "A footer four years old tells a visitor the page is abandoned.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The page states no price, so it hides none, and the primary action is an honest 'Join the waitlist'."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the page carries no visible label that it is an example; if the brief says it is a specimen, these findings describe the specimen, not a shipped claim",
+    "the capture prep blocked the site's antipattern-detector script (/js/detect-antipatterns-browser.js); that is capture context",
+    "T-DEFAULT-STATE and T-PRICE-WHOLE: no choices and no prices on the page",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

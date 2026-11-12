@@ -1,0 +1,37 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Operate/Read (a tool directory and stack picker); every claim on the page is either a count of the product's own content ('17 curated tools', '5 budget tiers', '3 questions') or a third-party list price, and the hero card is a plainly drawn example of the picker's output; the claims table's one 'logo wall' is the comparison table's header row, not a logo wall, and the 'Edit with Lovable' badge is an honest builder mark (INT-129).",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE, T-PROOF-SWAP and T-FIGURE-AUDIT pass: the page shows no testimonials, logos, ratings or result figures, so there is no proof to invent; it loses a point only because the third-party prices carry no as-of date. What was cut to earn it: no stat band, no 'trusted by' line, no quotes."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "The hero card ('Your goal: Start a YouTube channel, Under $25' with a three-tool stack) reads as an example of the picker's output and carries no result figures.",
+    "The hero figures '17 curated tools', '5 budget tiers' and '3 questions' are counts of the product's own content, not customer or growth claims.",
+    "Every tool card states its starting price and a 'Free plan' tag beside the action, so no cost is hidden on this page."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the third-party list prices ($20/mo Claude, $20/mo Perplexity, $15/mo Canva, $5/mo ElevenLabs, $9.99/mo CapCut, $25/mo Lovable) could not be checked and carry no as-of date",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: the page has no urgency, counts or choices",
+    "T-DECLINE-READ: no dialog, banner or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

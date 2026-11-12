@@ -1,0 +1,40 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode inferred as Persuade: the page labels its paid placements ('Sponsored by', 'Want your logo here? Become a sponsor', 'Open source supporters' with Kimi's 10% credit terms), names all 23 community sponsors it counts, and keeps its dashboard figures (+6.2%, €8.1k) inside the 'App screens' sample card.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE, T-FIGURE-AUDIT and T-STAGED-UI pass: sponsorship is disclosed, the sponsor count matches the 23 names listed, and build cost is stated plainly ('Roughly 30 to 45 minutes and a few hundred thousand tokens'); 9 rather than 10 because '247 curated sites' cannot be checked from the page."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "Sponsors are labelled as sponsors, with an open call to become one, so the logos do not pose as customers.",
+    "'Thank you to the 23 people keeping it open' is followed by 23 named GitHub handles.",
+    "The FAQ states the real cost of a build, the runtime needs (Node 22, Chrome, Edge or Chromium) and the picture licences (CC0, public domain, CC BY, CC BY-SA).",
+    "The footer adds disclaimers a visitor would want: 'Taste Skill has no token or coin' and 'Photographs in the example pages come from open collections, credited in the repo.'"
+  ],
+  "not_investigated": [
+    "'247 curated sites' is stated twice with no list on the page; not verified.",
+    "The 'Before and after' NoteFlow panel is an exhibit of slop shown on purpose (sweep exhibits), so its copy is not judged.",
+    "T-URGENCY-REAL, T-PRICE-WHOLE and T-DEFAULT-STATE skipped: no urgency, no price offered and no choice control.",
+    "T-FAKE-SEND: only the copy button was captured; it made no request.",
+    "Capture context: 12 scroll frames were applied per width (page prep).",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

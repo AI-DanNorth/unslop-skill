@@ -1,0 +1,61 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Operate/Read (an AI tool directory and stack picker); its claims are counts of its own directory and third-party prices, with no testimonials, logos or result figures, and the two problems are small: the tool count is stated two ways and the three footer social icons link to '#'; the 'Made in Bolt' badge is an honest builder mark (INT-129).",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass because the page shows no proof to invent; T-FIGURE-AUDIT finds the count given as both '20+' and '20' (INT-011, Reflex) and T-PROMISE-LINK finds three dead social links (INT-016, Reflex)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "hero trust row (first screen) and 'Featured tools' intro, 1440; tiles/1440-00.png and tiles/1440-02.png",
+      "evidence": "The hero row says '20+ curated tools' (claims table figure, flags 'open-ended (+)' and 'round', first_screen). The 'Featured tools' intro two screens later says 'A few of the 20 tools in our directory.' One count appears with two values. Draft INT-151 (one fact, one value) names this.",
+      "before": "\"20+ curated tools\" in the hero and \"A few of the 20 tools in our directory\" below",
+      "after": "State the exact count in both places ('20 curated tools'), or drop the number from the hero row.",
+      "why": "The '+' makes the hero claim larger than the directory's own count; a visitor who reads both lines learns the hero number is padding.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-016",
+      "tier": "Reflex",
+      "where": "footer, 'Connect' column (div.flex.gap-3 > a.w-9.h-9), 1440; tiles/1440-03.png",
+      "evidence": "The claims table's dead_links block lists the Twitter, GitHub and LinkedIn icon links in the footer 'Connect' column, each with href '#'. On the tile they render as three icon buttons under 'Connect' with nothing to show they are placeholders. Draft INT-146 says a link with no known URL must not point at '#'.",
+      "before": "Three 'Connect' icons (Twitter, GitHub, LinkedIn) linking to '#'",
+      "after": "Link the real profiles, or remove the 'Connect' column.",
+      "why": "The icons claim a public presence that a visitor can check; clicking them goes nowhere, which suggests the accounts do not exist.",
+      "test": "T-PROMISE-LINK",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "Each featured tool card states its plan and price beside the action ('Free / ₹1,650 mo Plus', 'Free / ₹415 mo Starter'), so no cost is hidden on this page.",
+    "The page shows no testimonials, logo walls, ratings or user counts, so it makes no proof claims it would need to back.",
+    "The 'Add to compare' buttons made no request and claimed no success they did not show."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the third-party prices could not be checked; 'Canva ₹4,000 mo Pro' in particular may be an annual price shown as monthly, but only the web could settle it",
+    "'Updated for 2026' in the hero row carries no date of the last update and could not be checked",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: the page has no urgency, counts or choices",
+    "T-DECLINE-READ: no dialog or decline option was captured"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode is Read (the GOV.UK Design System home, inferred from the page; no contract). Its only dated claim, '15 October 2026: We’ve released GOV.UK Frontend v6.6.0', links to release notes on GitHub, and the page names its maintainer ('a team at the Government Digital Service'); the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-FIGURE-AUDIT passes (the release date is current and linked to its notes), T-PROOF-SOURCE finds no unsourced proof, and T-PROMISE-LINK finds no dead links. Nothing was cut: the page has no stat band, logo wall or testimonial to begin with."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "'15 October 2026: We’ve released GOV.UK Frontend v6.6.0' carries a date, a version and a link to the release notes on GitHub.",
+    "'In June 2025, GOV.UK started to refresh the brand' dates its own change instead of calling it 'new'.",
+    "The footer states the licence ('Open Government Licence v3.0') and the owner ('© Crown copyright'), and the page names who maintains it."
+  ],
+  "not_investigated": [
+    "the 'Sign up with your email' link target: the page has no form, so the sign-up flow was not captured",
+    "capture prep clicked 'Reject analytics cookies' and 'Hide cookie message' at every width, so the cookie banner's decline weight (T-DECLINE-READ) was not judged from a screenshot",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, choices, prices or forms",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

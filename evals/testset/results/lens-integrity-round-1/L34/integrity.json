@@ -1,0 +1,35 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode is Read (Ant Design's button specification, inferred from the page; no contract). The 10 'testimonial' rows and the 'recommended' price term in the claims table are Do and Don't captions and guidance text inside preview-image boxes (mock_hint), not proof; the page makes no claims beyond its own guidance, and the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-LEAKAGE pass after reading each row in context, and T-FIGURE-AUDIT finds no figures. Nothing was cut: the page holds no proof, stat or offer."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "The page shows its version ('6.7.0'), an 'Edit this page' link and a named contributor ('Hazel-Lin'), so a reader can check who wrote the guidance.",
+    "The footer credits its makers plainly ('Made with ❤ by Ant Group and Ant Design Community')."
+  ],
+  "not_investigated": [
+    "the Chinese text inside the example images (tiles/1440-01.png, 'Emphasis') was read only as illustration, not as claims",
+    "45 requests and 6 images were blocked; the example images that rendered carry the Do and Don't content",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, choices, prices or forms",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

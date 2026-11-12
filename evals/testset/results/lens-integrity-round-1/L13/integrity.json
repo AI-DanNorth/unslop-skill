@@ -1,0 +1,72 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The page shows no label that it is a specimen (only its URL path suggests one), so I judge it as a ship landing page in Persuade mode; the decisive claim is 'Trusted by 10,000+ forward-thinking teams worldwide' over six unlinked default-cast wordmarks (Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity); the sweep's INT-001 and INT-002 hits on them stand.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 3,
+    "reason": "T-PROOF-SOURCE fails on the 'Trusted by 10,000+' row (INT-010, Floor, with the sweep's INT-001 and INT-002 hits) and on the SOC 2 claim (INT-022), and T-PROMISE-LINK finds dead 'Customers' and 'Pricing' links (INT-016)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-010",
+      "tier": "Floor",
+      "where": "hero 'Trusted by' line and the logo row under it (section.logos), first screen, 1440 and 375; tiles/1440-00.png and tiles/1440-01.png",
+      "evidence": "The first screen ends with 'Trusted by 10,000+ forward-thinking teams worldwide', which the sweep fails (invented_metrics, INT-001, social-proof-counts). The row under it lists six unlinked wordmarks: 'Northwind', 'Halcyon', 'Meridian', 'Fieldnote', 'Atlas & Co.', 'Verity' (claims table logo wall, linked 0), and the sweep's default_names check fails Northwind, Halcyon and Fieldnote (INT-002). No case study, quote or link stands behind any name, and the closing line repeats the claim as 'Join thousands of teams'.",
+      "before": "\"Trusted by 10,000+ forward-thinking teams worldwide\" over Northwind, Halcyon, Meridian, Fieldnote, Atlas & Co., Verity",
+      "after": "Remove the line and the row together, or use real customers' marks with permission and a dated, sourced count: [DATA NEEDED: real customers and count].",
+      "why": "The row is the page's only proof, and every name in it comes from the default cast; a visitor who searches one finds nothing.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "'Enterprise Secure' feature card, 1440; tiles/1440-01.png",
+      "evidence": "The card says 'SOC 2 compliant infrastructure with end-to-end encryption. Your data is safe, always.' Nothing on the page backs it: no report, no auditor, no trust page, and the 'Docs' link is '#'.",
+      "before": "\"SOC 2 compliant infrastructure ... Your data is safe, always.\"",
+      "after": "State SOC 2 only if the client holds a report, and link it; otherwise describe the actual security measures.",
+      "why": "A compliance claim with nothing behind it is a label of standing the visitor cannot check.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-016",
+      "tier": "Reflex",
+      "where": "top navigation, first screen, 1440; tiles/1440-00.png",
+      "evidence": "The claims table counts 10 dead links (href '#'), among them 'Product', 'Solutions', 'Pricing', 'Customers' and 'Docs'. 'Customers' should hold the evidence for '10,000+ teams', and 'Pricing' should hold the terms of the 'Start free trial' offer.",
+      "before": "\"Customers\" and \"Pricing\" nav links to '#'",
+      "after": "Link real customers and pricing pages, or remove the links with the claims they support.",
+      "why": "The links promise proof and terms and go nowhere, so the visitor cannot check the trial or the customers.",
+      "test": "T-PROMISE-LINK",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The page shows no fake countdowns, stock counts or pre-ticked boxes."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the page carries no visible label that it is an example; if the brief says it is a specimen, these findings describe the specimen, not a shipped claim",
+    "'Start free trial' appears twice with no trial length, charge or plan, and the 'Pricing' link is dead, so the trial terms could not be checked (T-PRICE-WHOLE)",
+    "the footer year '© 2025' is a year behind the November 2026 capture; the claims table does not flag it as stale, so it is left out",
+    "the capture prep blocked the site's antipattern-detector script; that is capture context",
+    "T-DEFAULT-STATE: no choices on the page",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

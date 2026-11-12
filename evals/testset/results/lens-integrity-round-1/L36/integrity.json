@@ -1,0 +1,35 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode is Read (the Carbon Design System home, inferred from the page; no contract). The three award or badge rows are the product phrase 'Carbon-compliant experiences', not a compliance badge, and every claim is IBM's description of its own system; the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE passes (no badge, rating or customer proof), T-FIGURE-AUDIT finds no figures and a current '© 2026', and T-PROMISE-LINK finds only a cookie-preferences button. Nothing was cut: the page makes no outside claims."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "'The next evolution of Carbon' sets future work apart as 'ideas, experiments, and early decisions shaping Carbon v12' with a 'Follow v12 progress' link, instead of presenting it as shipped.",
+    "The contact line gives an address on the owner's domain ('carbon@us.ibm.com'), and the copyright reads 'Copyright © 2026 IBM'."
+  ],
+  "not_investigated": [
+    "capture prep clicked 'Accept All' on the cookie banner at every width, so the banner's decline weight (T-DECLINE-READ) and its default toggles (T-DEFAULT-STATE) were not seen",
+    "the one dead link is the 'Cookie Preferences' button, which opens a dialog in script; it was not opened",
+    "T-URGENCY-REAL, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, prices or forms",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

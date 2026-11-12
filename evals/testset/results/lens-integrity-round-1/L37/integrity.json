@@ -1,0 +1,39 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Read (a Really Good Emails gallery page showing an Apple WWDC24 invitation email, inferred from the page; no contract). The email's claims are Apple's own and agree with each other ('WWDC24 June 10–14', 'Monday, June 10, at 10:00 a.m. PT', calendar block 'June 10, 2024'), the gallery labels its view count ('1.1K views'), and the side panel is a branded Omnisend ad; the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-FIGURE-AUDIT pass: the email's dates are consistent and its own footer reads '© 2024 Apple Inc.', which fits a 2024 send. Nothing was cut: the gallery adds no stat band or testimonial."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "Inside the email, the event dates agree everywhere they appear: 'June 10–14', 'Monday, June 10, at 10:00 a.m. PT' and the 'June 10, 2024, 10:00 a.m. PT' calendar block (tiles/1440-01.png).",
+    "The email keeps its unsubscribe line ('If you prefer not to receive commercial email from Apple … please click here') in the footer.",
+    "The gallery states who runs it and since when ('Really Good Emails is part of Beefree. It started as a volunteer project in 2014.')."
+  ],
+  "not_investigated": [
+    "the email's send date: the Info tab was not opened, and the gallery view shows no date beside the email",
+    "the Omnisend ad image's claim ('Omnisend's migration takes five days.') is the advertiser's own and could not be checked from the page",
+    "capture prep clicked 'Allow all cookies' at every width, so the consent banner's decline and defaults were not seen",
+    "T-DEFAULT-STATE, T-PRICE-WHOLE: no choices or prices on the page; the search form is a GET search and fake_send recorded no success text",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

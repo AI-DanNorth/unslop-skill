@@ -1,0 +1,51 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Persuade: the sweep's INT-001 Floor hits ('35% less' for Deel, '50% more demo efficiency' for Storyblok, '99.99% uptime SLA') are named customers' case-study figures beside 'Read the story' links and a contractual enterprise term, and the stat_band hit on 4.5, 4.8 and 4.5 is three ratings that each name their platform (Trustpilot, Product Hunt, G2), so I judge them to be the brand's own real claims; only the Deel ARR line overstates what it shows.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass on named, linked testimonials and case studies; T-FIGURE-AUDIT fails once on the Deel ARR figure (INT-011). I dispute the sweep's three INT-001 Floors, so the score is not capped here."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "Deel case card figcaption (shot-1440.png, y 7761) and enterprise case list h3 (shot-1440.png, y 11790), 1440",
+      "evidence": "The Deel case shows 'From $500M to $1.5B+' as its headline figure, and the enterprise section repeats 'Deel / From $500M to $1.5B+ ARR' beside 'Retell AI / 10M+ calls handled per month'. The figure is Deel's own revenue growth: the page gives no years and does not say what Cal.com contributed to it, while the same case's scheduling result ('35% less time', '6,000+ hours saved per week') is what Cal.com measured.",
+      "before": "\"From $500M to $1.5B+ ARR\"",
+      "after": "Lead with the scheduling result Cal.com affected, or give the years and label the ARR as Deel's growth over that period",
+      "why": "A visitor reads a customer's revenue growth as a result of the product, which the page does not claim outright and cannot show.",
+      "test": "T-FIGURE-AUDIT"
+    }
+  ],
+  "strengths": [
+    "Every testimonial card names the person and the platform it came from ('on Trustpilot', 'on Product Hunt', '@kentcdodds on X'), and the Trustpilot cards link to the review URLs.",
+    "The logo wall (Vercel, PlanetScale, Framer, Raycast, Ramp, Rho, Udemy) sits on 'Case study' links, and the case cards for Deel and Retell AI end in 'Read the story'.",
+    "The free tier's terms appear on the first screen and again at the end: 'No credit card required.' and 'Free for individuals, no credit card, no usage limits.'",
+    "The footer shows live status ('All systems operational') and real contact addresses (support@, security@, privacy@ and press@cal.com)."
+  ],
+  "not_investigated": [
+    "T-PRICE-WHOLE: the home page states only the free tier; the paid plans are on /pricing, not captured.",
+    "T-FAKE-SEND: the one form made 11 requests and showed no new text; the sweep's fake_send found no hit.",
+    "The booking demo profile ('Get Rickrolled | Rick Astley, cal.com/rick') and the inbox demo (Clara Voss, Felix Moreau) are product illustrations, not judged as claims.",
+    "Sections below y 10800 are outside the tiles; I read them on shot-1440.png and in the DOM.",
+    "T-URGENCY-REAL and T-DEFAULT-STATE skipped: no urgency and no choice control.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

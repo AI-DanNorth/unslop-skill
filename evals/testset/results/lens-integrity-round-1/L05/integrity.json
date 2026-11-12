@@ -1,0 +1,51 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Operate/Read (an AI stack picker and directory); the page shows no testimonials, logos or result figures, it states its own limits in the footer ('Independent and not affiliated with the tools listed', 'Prices are approximate monthly amounts in INR and may change'), and the one problem is that the 'three different stacks' example shows two identical tool lists; the 'Edit with Base44' badge is an honest builder mark (INT-129).",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE, T-PROOF-SWAP and T-PRICE-WHOLE pass, with an explicit price disclaimer; T-STAGED-UI finds the persona example contradicting its own heading (INT-013, Reflex). What was cut to earn it: no stat band, no quotes, no 'trusted by' line."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-013",
+      "tier": "Reflex",
+      "where": "'Same goal, different people' section, the first two stack cards, 1440; tiles/1440-02.png",
+      "evidence": "The heading says 'Three people want a website. They get three different stacks.' The student card ('The Zero-Cost No-Code Website Stack', Monthly ₹0, Tools 5) and the freelancer card ('The Smart Starter Website Stack', Monthly ₹1,749, Tools 5) list the same five tools in the same order: ChatGPT, Framer, Canva, Grammarly, Perplexity. Only the monthly figure differs, and neither card says which paid plans make up the ₹1,749. Draft INT-176 (framing must not distort the fact) names this.",
+      "before": "\"Three people want a website. They get three different stacks.\" above two identical five-tool lists",
+      "after": "Show the plan each tool uses on each card (for example 'ChatGPT Free' against 'ChatGPT Plus'), or make the freelancer example a real different stack.",
+      "why": "This section is the page's demonstration of what the product does; a visitor who compares the cards sees the promised personalisation reduced to a price label.",
+      "test": "T-STAGED-UI",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The footer states 'Independent and not affiliated with the tools listed.' and 'Prices are approximate monthly amounts in INR and may change.', which makes the price claims honest about their precision.",
+    "Each directory card states 'Free plan' and a starting price ('Free · from ₹1,800/mo') beside the action.",
+    "The page shows no testimonials, logo walls, ratings or user counts.",
+    "The vendor of each tool is named on its card ('AI Assistant · Anthropic', 'Research · Google'), so a visitor can check every listing."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the third-party prices and the stack totals (₹1,749 and ₹7,949) could not be checked",
+    "'23 hand-picked tools' could not be checked: the homepage shows six of them",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: the page has no urgency, counts or choices",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

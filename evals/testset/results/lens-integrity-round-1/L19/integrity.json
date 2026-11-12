@@ -1,0 +1,40 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode inferred as Persuade: every testimonial card links to its X status (65 x.com status links for the looping wall), and the sweep's default_names hits (Mara Okafor, Priya Nair) and the claims table's markdown rows ('## Users') sit inside the 'Try it on this sample interface' Fieldnote demo and its depicted PRODUCT.MD file, which I judge to be labelled sample content (C22), not claims or leakage.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass because each quote links to a real post under a named handle; T-LEAKAGE passes because the markdown is shown as a file's contents; it stops at 9 because the agent session in 'Impeccable in action' is staged."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "Each testimonial names a person and handle and links to the original post (for example https://x.com/adrien_ninet/status/2041825321721458961), including blunt and profane ones the brand did not polish.",
+    "The demo invites the visitor to 'Try it on this sample interface', so its seat counts, emails at fieldnote.app and '61 of 100' score read as a sample.",
+    "The detector claim links its count: '62 checks ↗'."
+  ],
+  "not_investigated": [
+    "'Impeccable in action' shows a staged agent session (a tool named 'Claudex Cocursor', '4 tells found', '0 detector findings'); it reads as an illustration (C48), and whether it reflects a real run is not verified.",
+    "The star count reads 106k in the screenshot and 107k in the DOM: a live count, not judged.",
+    "T-PRICE-WHOLE skipped: the $420 to $680 prices sit in a demo hotel page, not an offer to the visitor.",
+    "T-URGENCY-REAL: '3/5 seats' and 'Two seats left' sit inside the sample interface, not on an offer.",
+    "T-DEFAULT-STATE skipped: no checkbox, radio or switch outside the demo.",
+    "T-FAKE-SEND: the four captured actions navigated the page, so the async check is not verified.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

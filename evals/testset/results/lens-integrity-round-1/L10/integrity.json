@@ -1,0 +1,121 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The visitor mode is Persuade (a developer-platform landing page, 'Optimus'); the decisive claims are a first-screen strip that credits Stripe, Linear, Notion and Netflix with round results, a 'Trusted by' wall of invented compounds (Meridian Labs, Flux Systems, Quantum Corp, Vertex Labs), a testimonial from a VP at one of those invented companies, and a 'Live' metrics panel whose counter reads 2,847,392 in every capture; the sweep's INT-001, INT-007 and INT-002 hits all stand and none is the brand's own measured claim.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 2,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP fail on the hero strip, the logo wall and the testimonial (three INT-009 and INT-010 Floors), T-STAGED-UI fails on the fixed 'Live' counter (INT-013), and T-PROMISE-LINK finds 17 dead links; the proof is fabricated throughout."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-DEFAULT-STATE",
+    "T-PRICE-WHOLE",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-010",
+      "tier": "Floor",
+      "where": "hero stat strip (section.relative.min-h-screen > div.absolute.bottom-12), first screen, 1440 and 375; tiles/1440-00.png",
+      "evidence": "The first screen shows '98% faster deployment, STRIPE', '300% throughput increase, LINEAR', '6x faster to ship, NOTION' and '20 days saved on builds, NETFLIX', repeated in a scrolling strip. The sweep fails this band (stat_band, INT-007: 'stat band of 6 unsourced figures') and the '98% faster' line (invented_metrics, INT-001). No figure has a baseline, a date, a case study or a link, and the same brands reappear later only as 'integrations', not customers.",
+      "before": "\"98% faster deployment STRIPE · 300% throughput increase LINEAR · 6x faster to ship NOTION · 20 days saved on builds NETFLIX\"",
+      "after": "Remove the strip, or replace it with results from named customers who agreed to be quoted, each linked to its case study: [DATA NEEDED: real customer results with permission].",
+      "why": "Naming real companies beside invented results borrows their reputation; a visitor reads the strip as proof that Stripe and Netflix use the product.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity",
+      "root": "hero stat-strip component"
+    },
+    {
+      "rule": "INT-010",
+      "tier": "Floor",
+      "where": "'Trusted by forward-thinking teams' logo row, 1440 and 375; tiles/1440-09.png",
+      "evidence": "The claims table lists a logo wall of eight unlinked wordmarks (linked 0): 'Meridian Labs', 'Flux Systems', 'Beacon AI', 'Prism Analytics', 'Nova Tech', 'Quantum Corp', 'Atlas Digital', 'Vertex Labs'. Each is a tech-noun compound with Labs, Systems, Corp, Tech or Digital, the pattern INT-010 names, and the sweep's default_names check fails 'Vertex Labs' (INT-002). No case study or link stands behind any of them.",
+      "before": "\"TRUSTED BY FORWARD-THINKING TEAMS: Meridian Labs, Flux Systems, Beacon AI, Prism Analytics, Nova Tech, Quantum Corp, Atlas Digital, Vertex Labs\"",
+      "after": "Remove the row and its 'Trusted by' heading, or use the official marks of real customers with permission.",
+      "why": "A logo is a claim that a named business chose the product; invented names fill the row and pass for customers.",
+      "test": "T-PROOF-SWAP",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-009",
+      "tier": "Floor",
+      "where": "'What people say' testimonial carousel (03 / 04), 1440; tiles/1440-08.png",
+      "evidence": "The claims table lists the quote 'Finally, infrastructure that scales with our ambition. Zero downtime since we switched.' from 'Elena Rodriguez, VP Engineering, Beacon AI', with a letter-initial avatar 'E' and a 'KEY RESULT 99.99% uptime' tag that the sweep fails (invented_metrics, INT-001). Beacon AI is one of the invented compounds on the logo row. The quote would fit any infrastructure product unchanged, and the carousel counter shows four such cards.",
+      "before": "\"Finally, infrastructure that scales with our ambition. Zero downtime since we switched.\" — Elena Rodriguez, VP Engineering, Beacon AI",
+      "after": "Remove the carousel, or use supplied quotes with full attribution and a link to the customer: [DATA NEEDED: real customer quotes with permission].",
+      "why": "The quote credits a person at a company the page itself invented, so the testimonial is a false statement made in the client's name.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity",
+      "root": "testimonial carousel"
+    },
+    {
+      "rule": "INT-013",
+      "tier": "Reflex",
+      "where": "'Live metrics: Performance you can measure.' panel, 1440, 1280 and 375; tiles/1440-05.png",
+      "evidence": "The panel shows a green 'Live' dot, a ticking clock and '2,847,392 API requests today', '99.99% Uptime this quarter', '23ms Average response time' and '184 Countries served'. The clock reads 3:49:59 PM at 375, 3:50:17 PM at 1280 and 3:50:37 PM at 1440 (claims table other_widths), and the tile rendered later shows 1:08:57 AM, yet the request counter reads 2,847,392 in every capture. A 'today' count that never moves is a fixed number dressed as live data.",
+      "before": "\"Live | 3:50:37 PM · 2,847,392 API requests today\"",
+      "after": "Remove the 'Live' label and the clock, or feed the panel from the real status API with its timestamp.",
+      "why": "The clock makes the visitor believe the figures are measured now; they are fixed, so the panel presents invented usage as the product's.",
+      "test": "T-STAGED-UI",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "'Trust is non-negotiable' security section, 1440; tiles/1440-07.png",
+      "evidence": "The section shows badge chips 'SOC 2', 'ISO 27001', 'HIPAA', 'GDPR' and 'CCPA' and the cards 'SOC 2 Type II: Independently audited security controls' and 'GDPR & HIPAA: Full compliance'. None links to a report, an auditor or a trust page, and the footer 'Security' link points at '#' (claims table dead_links).",
+      "before": "\"SOC 2 · ISO 27001 · HIPAA · GDPR · CCPA\"",
+      "after": "Show only certifications the client holds, each linked to its report or trust-centre entry, or remove the chips.",
+      "why": "Compliance badges are what security buyers check first; badges with nothing behind them fail that check.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-016",
+      "tier": "Reflex",
+      "where": "developer section and footer, 1440; tiles/1440-08.png and tiles/1440-12.png",
+      "evidence": "The claims table counts 17 dead links (href '#'), among them 'Read the docs' and 'View on GitHub' under the SDK install block, 'Compare all features' under the pricing table, and 'API Reference', 'Status' and 'About' in the footer. The page promises 'exceptional documentation' and 'All systems operational'.",
+      "before": "\"Read the docs | View on GitHub\" linking to '#'",
+      "after": "Link the real docs, repository and status page, or remove the links and the claims they support.",
+      "why": "Each link stands behind a claim (documentation, open code, uptime); going nowhere tells the visitor the evidence does not exist.",
+      "test": "T-PROMISE-LINK",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-023",
+      "tier": "Finish",
+      "where": "footer, 1440; tiles/1440-12.png",
+      "evidence": "The footer reads '2025 Optimus. All rights reserved.' The capture date is 9 November 2026.",
+      "before": "\"2025 Optimus. All rights reserved.\"",
+      "after": "Set the year from the build date: '© 2026 Optimus'.",
+      "why": "A last-year footer tells a visitor the page is not maintained.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The pricing table states its prices in full ('$0 /month', '$24 /month', 'Custom'), and 'Most Popular' appears on one plan only."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the 'Annual / Save 17%' toggle was not switched, so the annual prices behind 'Save 17%' were not seen",
+    "'Start free trial' and 'No credit card required' carry no trial length or charge; the trial flow was not captured",
+    "'17 data centers across 6 continents' and '184 countries served' could not be checked",
+    "T-DEFAULT-STATE: no checkbox or consent choice was captured",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

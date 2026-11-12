@@ -1,0 +1,63 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Experience (an awards showcase entry, inferred from the page; no contract). The award proof is named and checkable ('Information is Beautiful Awards 2024', category tags, a link to pudding.cool, 'Presented by the Data Visualization Society'), but the h1 byline drops its first name and disagrees with the Credits row, and a 2024 vote panel still asks visitors to vote; the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-PROOF-SOURCE passes for the award itself but fails once on the byline (INT-151, Reflex), and T-FIGURE-AUDIT on dates finds the stale vote call (INT-023, Finish)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "title": "Give each fact one value and one wording everywhere it appears",
+      "tier": "Reflex",
+      "where": "div.page-content:nth-of-type(2) > h1 > span, 1440 (tiles/1440-00.png, y 760); Credits row div.page-details li:nth-of-type(1) > div.value",
+      "evidence": "The h1 byline reads 'by , Jan Diehm, Amber Thomas (The Pudding)': the first author slot is empty, leaving a bare comma. Two lines below, the Credits row lists only 'Alvin Chang, Journalist-Engineer, The Pudding'. The page gives two different author lists for one project, and the person in Credits is missing from the byline.",
+      "before": "by , Jan Diehm, Amber Thomas (The Pudding)",
+      "after": "One author list in both places, taken from the entry record, e.g. 'by Alvin Chang, Jan Diehm, Amber Thomas (The Pudding)', with the Credits row listing the same people.",
+      "why": "An awards page exists to credit people. A visitor or juror reading the byline cannot tell who made the work, and the empty slot shows the template printed a missing field.",
+      "test": "T-PROOF-SOURCE",
+      "root": "showcase entry template: the byline is built from the entry's credit fields",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-023",
+      "title": "Dates are current and true",
+      "tier": "Finish",
+      "where": "div.page-sidebar-panel:nth-of-type(1) (\"YOU BE THE JUDGE\"), VOTE link /votes?project_id=7177, 1440 (tiles/1440-00.png, right column)",
+      "evidence": "The sidebar asks 'If you think this project should win the People, Language & Identity category for the Information is Beautiful Awards 2024, cast your vote below:' above a VOTE button. The same page already tags the entry 'Gold' and 'Winners', and the footer reads '© Information is Beautiful, 2026'.",
+      "before": "YOU BE THE JUDGE … cast your vote below: VOTE",
+      "after": "Hide the vote panel once a year's judging closes, or replace it with the result ('Gold, People, Language & Identity, 2024').",
+      "why": "The panel invites a vote in a contest the page itself reports as decided, so a visitor may think the result is still open.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The award line names the year and organiser ('Information is Beautiful Awards 2024', 'Presented by the Data Visualization Society') and links the work to its publisher ('pudding.cool'), so the claim can be checked.",
+    "Related projects credit named publishers ('Reuters', 'Bloomberg Graphics', 'Aaron Williams').",
+    "The contact address 'iibawards-info@datavisualizationsociety.org' is on the organiser's own domain."
+  ],
+  "not_investigated": [
+    "what the VOTE link does after a click: the lens did not follow it, and async capture found no primary action",
+    "whether the 2024 category tags (Longlist, Shortlist, Gold, Winners, Outstanding Studio) match the official results",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE: no urgency, choices or prices; the search form is a GET search and fake_send recorded no success text",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

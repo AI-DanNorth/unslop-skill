@@ -1,0 +1,39 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Operate: the page is labelled 'After, ui-ux-pro-max' and 'Same Northline ops page', and the sweep's stat_band hit (INT-007) on 128, 14 and $42.6k falls on the fixture's seed dashboard tiles, which I judge to be sample data in a labelled demo (C21, C22), not claims.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE, T-FIGURE-AUDIT and T-STAGED-UI find no claim offered as proof; the only sweep hit is INT-007 on seed tiles, which I dispute, and the page credits its source skill with a link."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND",
+    "T-DEFAULT-STATE"
+  ],
+  "findings": [],
+  "strengths": [
+    "The header names the skill and its repository ('After, ui-ux-pro-max from nextlevelbuilder/ui-ux-pro-max-skill') and the footer links the source skill and the shared before page.",
+    "The seed rows read as an ops tool's own data (accounts, owners, amounts), with no growth or results figures dressed as outcomes."
+  ],
+  "not_investigated": [
+    "At 1440 the 'Empty' and 'Reach them' sections (with 'Send follow-up' and 'Snooze') are in the DOM but render as blank space in tiles/1440-01.png, so what a visitor sees there is not verified.",
+    "T-URGENCY-REAL skipped: no countdown, stock or viewer count; 'Urgent 3 threads' is a seed heading.",
+    "T-PRICE-WHOLE skipped: the amounts are seed pipeline values, not prices.",
+    "T-DEFAULT-STATE skipped: the page has no checkbox, radio or switch.",
+    "T-FAKE-SEND: only 'Remove filter Owner: Ada' was captured and it made no request; no form exists.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

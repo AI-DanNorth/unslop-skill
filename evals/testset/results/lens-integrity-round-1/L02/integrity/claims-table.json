@@ -1,0 +1,216 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L02",
+ "target": "https://ai-stack-gold.vercel.app/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "figures": [
+  {
+   "kind": "figure",
+   "text": "12,000+",
+   "where": "section.relative.overflow-hidden:nth-of-type(1) > div.mx-auto.grid > div:nth-of-type(1) > div.mt-12.flex:nth-of-type(3) > span",
+   "y": 634,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 14.0,
+   "section": "Stop searching. Start building.",
+   "context": "Trusted by 12,000+ curious builders",
+   "flags": [
+    "open-ended (+)"
+   ],
+   "big": false,
+   "repeats": 1,
+   "sweep": [
+    "invented_metrics (INT-001, Floor): \"Trusted by 12,000+\" (invented-metrics/social-proof-counts, fail)"
+   ]
+  }
+ ],
+ "stat_bands": [],
+ "logo_walls": [],
+ "testimonials": [],
+ "ratings": [],
+ "awards_badges": [],
+ "social_proof": [
+  {
+   "kind": "social proof",
+   "text": "Trusted by",
+   "where": "section.relative.overflow-hidden:nth-of-type(1) > div.mx-auto.grid > div:nth-of-type(1) > div.mt-12.flex:nth-of-type(3) > span",
+   "y": 634,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "font_px": 14.0,
+   "section": "Stop searching. Start building.",
+   "context": "Trusted by 12,000+ curious builders",
+   "sweep": [
+    "invented_metrics (INT-001, Floor): \"Trusted by 12,000+\" (invented-metrics/social-proof-counts, fail)"
+   ]
+  }
+ ],
+ "case_studies": [],
+ "urgency": [],
+ "confirmshaming": [],
+ "consent": {
+  "forms": [],
+  "choices": []
+ },
+ "pricing": {
+  "prices": [],
+  "terms": [],
+  "struck": [],
+  "fine_print": [],
+  "most_popular_count": 0
+ },
+ "trial_terms": [],
+ "leakage": [],
+ "contact_data": [],
+ "dead_links": {
+  "count": 0,
+  "examples": []
+ },
+ "dates": {
+  "captured_year": 2026,
+  "copyright": [],
+  "since": []
+ },
+ "phone_375": {
+  "figures": 1,
+  "figures_only_at_375": [],
+  "figures_only_at_1440": [],
+  "urgency_only_at_375": [],
+  "logo_walls": 0,
+  "testimonials": 0
+ },
+ "fake_send": [],
+ "async": {
+  "actions": [
+   {
+    "name": "Get started",
+    "kind": "action-button",
+    "selector": "> div:nth-of-type(2) > header > div > div:nth-of-type(2) > button:nth-of-type(2)",
+    "slow": {
+     "status": "ok",
+     "requests": 0,
+     "same_origin": 0,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": [
+      "Back",
+      "STEP",
+      "OF 3",
+      "What are you trying to accomplish?"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)",
+     "requests": 0,
+     "same_origin": null,
+     "first_answer_ms": null,
+     "first_success": null,
+     "final_success": [],
+     "final_new_text": []
+    }
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "blocked_images": 0,
+  "fonts_missing": [],
+  "examples": [
+   "script https://ai-stack-gold.vercel.app/_next/static/immutable/chunks/04ohrrsckm_pd.js"
+  ],
+  "prep": null
+ },
+ "sweep": {
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "section.relative.overflow-hidden:nth-of-type(1) > div.mx-auto.grid > div:nth-of-type(1) > div.mt-12.flex:nth-of-type(3) > span  \"Trusted by 12,000+ curious builders\"",
+     "evidence": "\"Trusted by 12,000+\" (invented-metrics/social-proof-counts, fail)",
+     "tier": "Floor",
+     "rule": "INT-001"
+    }
+   ]
+  },
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0,
+   "hits": []
+  },
+  "default_names": {
+   "status": "ran",
+   "rule": "INT-002",
+   "n": 0,
+   "hits": []
+  },
+  "fake_people": {
+   "status": "ran",
+   "rule": "INT-003",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "lexicon_copy": {
+   "status": "ran",
+   "rule": "CPY-005",
+   "n": 0,
+   "hits": []
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0,
+   "hits": []
+  },
+  "exhibits": []
+ },
+ "counts": {
+  "figures": 1,
+  "stat_bands": 0,
+  "logo_walls": 0,
+  "testimonials": 0,
+  "ratings": 0,
+  "awards_badges": 0,
+  "social_proof": 1,
+  "case_studies": 0,
+  "urgency": 0,
+  "confirmshaming": 0,
+  "trial_terms": 0,
+  "leakage": 0,
+  "contact_data": 0,
+  "fake_send": 0,
+  "prices": 0,
+  "choices": 0,
+  "in_exhibit": 0
+ }
+}

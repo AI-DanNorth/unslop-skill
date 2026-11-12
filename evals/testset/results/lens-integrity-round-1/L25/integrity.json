@@ -1,0 +1,39 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode inferred as Persuade: the seven customer logos are all linked, the two quotes give full name, role and company (Gabriel Peal at OpenAI, Nik Koblov at Ramp) at companies on that logo wall, and the product pictures carry plainly fictional seed issues (DRV-8852, ENG-2498), not results.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass because the quotes and logos are named and linked, and T-STAGED-UI passes because the demo shows tasks, not growth figures; 9 rather than 10 because 'over 50,000 product teams' cannot be checked from the page."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "All seven logos in the wall are links, and 'Customer stories' links from the quote section.",
+    "Both testimonials give the person's full name and job title at a named company.",
+    "The changelog entries are dated (Nov 4, Oct 22, Oct 8, Sep 24, 2026).",
+    "The product mock shows work in progress (issues, a draft PR, 'Working…'), not invented metrics."
+  ],
+  "not_investigated": [
+    "'Linear powers over 50,000 product teams' is the brand's own count with no source on the page; not verified.",
+    "T-FAKE-SEND and async: the four demo actions made no request; the 'Pushed and opened a draft PR' text is part of the scripted demo, so no false success is judged.",
+    "Capture context: 298 requests were blocked (mostly scripts), so the async capture is not verified.",
+    "T-URGENCY-REAL, T-PRICE-WHOLE and T-DEFAULT-STATE skipped: no urgency, no price on this page and no choice control.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

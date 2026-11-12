@@ -1,0 +1,35 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode is Read (Vercel's Web Interface Guidelines, inferred from the page; no contract). The claims table's leakage row ('ultra-wide', brief or prompt text) is the guideline 'Verify on mobile, laptop, & ultra-wide', the phone number '+1 (123) 456-7890' is introduced as an example placeholder pattern, and the one 'testimonial' is a sample error message; the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-LEAKAGE and T-PROOF-SOURCE pass once each row is read in context, and T-FIGURE-AUDIT finds only guideline values with units ('~300–500 ms', '<500ms'). Nothing was cut: the page holds no proof or offer."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "Numbers carry units and hedges that match their precision ('~150–300 ms', '≥ 24px', '44px').",
+    "The placeholder phone number is introduced as an example ('Set placeholder to an example value or pattern e.g., +1 (123) 456-7890'), so it is not passed off as contact data.",
+    "The intro calls the list 'living, non-exhaustive' and credits its reviewers by name ('Thanks to Adam, Jimmy, Jonnie, Lochie, Paco, Joe, & Austin for feedback')."
+  ],
+  "not_investigated": [
+    "the 'Download AGENTS.md' file and the install command target were not opened",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, choices, prices or forms",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

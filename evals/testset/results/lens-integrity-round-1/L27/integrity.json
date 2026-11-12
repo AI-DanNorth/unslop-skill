@@ -1,0 +1,52 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode inferred as Persuade: Stripe's figures are its own and mostly carry a window ('US$1.9tn in payments volume processed in 2025', '99.999% historical uptime'), its case studies and quotes name the customer and person, and the sweep's default_names hit on 'Zenith' sits in a product graphic beside example.com addresses, which I judge to be sample data (C22); only the hero GDP ticker claims more precision than any estimate can have.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass on named case studies and quotes; T-FIGURE-AUDIT and T-STAGED-UI fail once on the scripted eight-decimal GDP counter (INT-011)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "hero eyebrow span.hero-section__eyebrow-label, first screen, 1440 (tiles/1440-00.png)",
+      "evidence": "The first line on the page reads 'Global GDP running on Stripe: 1.74684173%'. The value changes between captures of the same page: 1.74648327% in the 1440 screenshot, 1.74684131% in the 375 DOM and 1.74684283% during the form test. The page shows no method, date or source for it.",
+      "before": "\"Global GDP running on Stripe: 1.74684173%\"",
+      "after": "State the estimate at the precision its data supports, with its method and as-of date (for example 'about 1.7% of global GDP, 2025'), linked to the method",
+      "why": "Eight decimal places and a ticking value make an estimate look like a live measurement.",
+      "test": "T-FIGURE-AUDIT"
+    }
+  ],
+  "strengths": [
+    "The stat band gives each figure its window or scope: '135+ currencies and payment methods supported', 'US$1.9tn in payments volume processed in 2025', '99.999% historical uptime', '200m+ active subscriptions managed on Stripe Billing'.",
+    "The case studies name the customer and end in 'Read the story' (Hertz, URBN, Instacart, Le Monde).",
+    "The quotes give a full name and role (Kurtis Moyer, Lead Product Manager of Payments, Mindbody; Peter Fitzpatrick, Vice President of Commerce, Thinkific; Dax Dasilva, Founder and CEO, Lightspeed).",
+    "The product graphics use example.com addresses and invented shops (Zenith Zen, Daybreak Yoga), the honest convention for sample data."
+  ],
+  "not_investigated": [
+    "'50% of Fortune 100 companies' and '88% of the Forbes AI 50' cannot be checked from the page.",
+    "The 14-logo wall is unlinked; these are the brand's own customers, not verified externally.",
+    "Capture context: 43 requests were blocked, 18 of them images, so those images are not verified.",
+    "Async: the 'Continue' action was not found after reload, so the async check is not verified; the form test made 13 requests and showed only the ticker's new value.",
+    "T-PRICE-WHOLE: the prices on the page sit inside product graphics (checkout and billing demos), not an offer to the visitor; the pricing page was not captured.",
+    "T-URGENCY-REAL and T-DEFAULT-STATE skipped: no urgency and no choice control on the page itself.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

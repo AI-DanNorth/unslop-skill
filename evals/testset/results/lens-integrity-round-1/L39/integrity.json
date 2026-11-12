@@ -1,0 +1,62 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Read (Reid Hoffman's annotated LinkedIn Series B pitch deck, inferred from the page; no contract). The figures are the author's own history, named and dated ('Greylock invested in LinkedIn at roughly $0.60 per share', 'the HBS Award in 2010'), and the page discloses its own edits to the slides; it gives the Series A amount two ways and leaves 'this past May' and 'current' undated. The sweep's two lexicon_copy hits ('view of') belong to the copy lens, not to integrity.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass (the deck and its story belong to this author); T-FIGURE-AUDIT finds one fact with two values (INT-151, Reflex) and relative dates with no as-of date (INT-023, Finish)."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "title": "Give each fact one value and one wording everywhere it appears",
+      "tier": "Reflex",
+      "where": "div.wpb_text_column p:nth-of-type(81) (y 20738), p:nth-of-type(165) (y 44466), p:nth-of-type(173) (y 47453), 1440",
+      "evidence": "One paragraph says 'we show what we accomplished after spending the majority of our Series A $4.7MM financing'. Two later paragraphs say 'we spent the $4 million from our Series A' and 'LinkedIn had spent its $4 milli[on]'. The page gives the same round as $4.7 million once and $4 million twice, and says 'the majority of' it was spent once and all of it twice.",
+      "before": "'our Series A $4.7MM financing' … 'we spent the $4 million from our Series A'",
+      "after": "One figure for the Series A everywhere, stated once with its date, and the later mentions worded to match ('most of the Series A').",
+      "why": "The essay asks readers to trust its numbers as a case study. Two amounts for one round make a reader doubt the other figures in the deck.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-023",
+      "title": "Dates are current and true",
+      "tier": "Finish",
+      "where": "intro paragraphs (tiles/1440-00.png) and div.wpb_text_column p:nth-of-type(59) (y 14061), 1440",
+      "evidence": "The intro says 'This past May was the 10th anniversary of LinkedIn', and the page shows no publication date. Later it says 'When you compare that to our current public market prices' and 'Today in 2013 …', while the footer reads 'Reid Hoffman © 2026'. A reader in 2026 meets 'this past May' and 'current' with no year until the 2013 aside.",
+      "before": "This past May was the 10th anniversary of LinkedIn … our current public market prices",
+      "after": "Put the publication date under the title (for example 'Published June 2013'), or write the year into the relative phrases ('In May 2013, LinkedIn turned ten').",
+      "why": "The '© 2026' footer makes the essay look current, so 'current public market prices' can read as a claim about today rather than about 2013.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The page discloses its own edits to the evidence: 'We changed some of the text to be less hyperbolically ambitious on slides 9, 12-14, 18, 19, 31, and 36.'",
+    "The intro admits the deck's faults ('It has many stylistic errors — and a few substantive ones, too') instead of presenting it as a model.",
+    "Proof is named and dated: the investor ('David Sze and Greylock'), the price ('roughly $0.60 per share'), the award ('the HBS Award in 2010 for Entrepreneurial Company of the Year') and the helpers ('Ian Alas and Ben Casnocha')."
+  ],
+  "not_investigated": [
+    "the slides after screen 12: the tiles stop at 1440-11 of about 54 screens, and the capture recorded 36 blocked or failed slide images, so slide content past tile 11 is not verified",
+    "'BESbswywb_incandescent' at the end of the body text is an off-screen font-test span (sr7-fonttest-wrap at x -1500, opacity 0), not visible leakage",
+    "the figures from the author's experience ('around 5,000 pitches', '600 to 800', 'between 0 and 2 deals') are hedged as estimates and could not be checked from the page",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: no urgency, choices, offers or forms; the dollar rows are historical financing figures, not prices",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Visitor mode inferred as Read and Persuade (a company home page of announcements): the sweep's invented_metrics hits on '40% less to run than Opus 5 on typical workloads' and '30% less for most work' are the brand's own figures about its own models, each naming its baseline (the previous model) and linking 'Read announcement' and 'System Card'.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-FIGURE-AUDIT passes because each comparison names its baseline and links its source, and T-PROOF-SOURCE has no third-party proof to test; 9 rather than 10 because 'typical workloads' is defined only behind the link."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [],
+  "strengths": [
+    "Every model card carries a date, a named baseline for its figures and links to the announcement, the model details and the system card.",
+    "The page makes no customer, rating or award claims it would need to back."
+  ],
+  "not_investigated": [
+    "What 'typical workloads' and 'most work' mean is in the linked announcements, not on this page.",
+    "The announcement carousel rotates: the DOM holds the Fable 5.2 card while the screenshot shows Haiku 5.5, so one capture does not show every card.",
+    "Capture context: 7 requests were blocked, 5 of them images, so those images are not verified.",
+    "T-URGENCY-REAL, T-PRICE-WHOLE and T-DEFAULT-STATE skipped: no urgency, no price and no choice control.",
+    "T-FAKE-SEND: no form and no primary action were captured.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

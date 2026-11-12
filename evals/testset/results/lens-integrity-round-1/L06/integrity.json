@@ -1,0 +1,54 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Persuade (a SaaS landing page for team operations); most claims are checkable and honestly worded (linked G2, Capterra, Crunchbase and AlternativeTo listings, '99.9% monthly uptime target', a named SSO and SCIM feature list), but the hero product picture is labelled both 'LIVE IN APP · Synced just now' and 'PRODUCT PREVIEW · SAMPLE DATA'; the sweep's INT-002 'Acme' hits sit inside that labelled mock and are sample data, not proof (C22); the 'Made with Lovable' tile is an honest builder mark (INT-129).",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-PROOF-SOURCE passes for the linked directory listings and T-FIGURE-AUDIT passes for the uptime target, but T-STAGED-UI finds the hero mock claiming to be live while labelled as sample data (INT-013, Reflex), and the sweep's two INT-002 Reflex hits on 'Acme Studio' stand."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER"
+  ],
+  "findings": [
+    {
+      "rule": "INT-013",
+      "tier": "Reflex",
+      "where": "hero product picture (div.landing-workspace-preview), sidebar foot and bottom caption, 1440 and 375; tiles/1440-00.png",
+      "evidence": "The hero mock shows the workspace 'Acme Studio', 'Good morning, Otto', 'Attendance 92%, 32 of 35 present' and '18 tasks due across 6 projects'. Its sidebar foot reads 'LIVE IN APP' with a green dot and 'Synced just now'. The same mock's bottom caption reads 'PRODUCT PREVIEW · SAMPLE DATA' (claims table leakage rows, pattern self-label, mock_hint). The sweep's default_names check fails 'Acme Studio' twice (INT-002). The panel tells the visitor both that it is live and that it is sample data. C22 allows sample data inside a mock but not a self-label; draft INT-134 names the label.",
+      "before": "\"LIVE IN APP · Synced just now\" and \"PRODUCT PREVIEW · SAMPLE DATA\" on the same picture",
+      "after": "Remove 'LIVE IN APP · Synced just now' from the mock and replace 'Acme Studio' with a neutral sample workspace name, so the picture reads as an illustration without needing a caption.",
+      "why": "The 'live' label asks the visitor to read the 92% attendance and task counts as a working product's state; the caption then admits they are invented, which weakens trust in the real claims further down.",
+      "test": "T-STAGED-UI",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The 'Featured on' row links each listing (G2 'Peer reviews', Capterra, Crunchbase, AlternativeTo, Software Advice), so a visitor can check every one.",
+    "The uptime figure is worded as a target ('99.9% MONTHLY UPTIME TARGET'), not as a measured result, and a 'Live Status Page' link sits in the security grid.",
+    "The security claims name their mechanisms (SAML 2.0 SSO, SCIM 2.0, TLS 1.2+ in transit, AES-256 at rest, a public sub-processor registry) instead of a bare badge.",
+    "The free plan is stated plainly and the same way each time: 'Free for up to 5 people', 'Free Starter plan for up to 5 people'.",
+    "The capture shows no countdowns, stock counts or pre-ticked boxes."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the page's meta description says 'Start free for 14 days — no credit card', while the page itself offers a free Starter plan for up to 5 people; the pricing page was not captured, so the trial terms could not be checked",
+    "'27 BUILT-IN MODULES' and 'View all 24 features' may count different things; the features page was not captured",
+    "the launch-directory badges in the hidden 'Featured on' dialog (for example 'SaasHunt Top 1 Daily Winner') were offscreen and not seen on a tile",
+    "six badge favicons from gstatic were blocked in the capture: those images are not verified",
+    "T-DEFAULT-STATE: no checkbox or consent choice was captured on the page",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "T-FAKE-SEND: no forms and no primary actions were captured (async: none found)"
+  ]
+}

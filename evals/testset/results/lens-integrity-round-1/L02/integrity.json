@@ -1,0 +1,50 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Persuade (a tool-picker landing page); the decisive claim is 'Trusted by 12,000+ curious builders' beside a stack of four letter-initial avatars (A, S, M, J) with no names, platform or source, and the sweep's INT-001 hit on that line stands; the hero stack card and its '₹1,200 / month' estimate read as an illustration of the product's output.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 4,
+    "reason": "T-PROOF-SOURCE fails on the first-screen 'Trusted by 12,000+' line and its initials-only avatar stack (INT-010, Floor, with the sweep's INT-001 hit), which caps the value at 4; T-STAGED-UI and T-PRICE-WHOLE pass."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-PRICE-WHOLE",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-010",
+      "tier": "Floor",
+      "where": "hero, under the CTAs (section.relative.overflow-hidden > div.mt-12.flex > span), 1440 and 375; tiles/1440-00.png",
+      "evidence": "The claims table lists 'Trusted by 12,000+ curious builders' as a first-screen social_proof row and a figure flagged 'open-ended (+)', and the sweep's invented_metrics check fails it (INT-001, social-proof-counts). On the tile, the line sits beside four coloured circles holding only the letters A, S, M and J. No name, platform, count source or link stands behind either the avatars or the number, and the page shows no testimonials or customers anywhere else.",
+      "before": "\"Trusted by 12,000+ curious builders\" with four initials-only avatars",
+      "after": "Remove the avatar stack and the 'Trusted by' line together, or replace them with a count from the product's own analytics, dated and sourced: [DATA NEEDED: real user count and its date].",
+      "why": "The initials imply real people and the round open-ended count implies a measured user base; a visitor deciding whether to trust a new tool reads them as proof, and nothing on the page backs them.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The hero card is labelled 'Your personalized stack' and shows an example stack (ChatGPT, Canva, CapCut, ElevenLabs) with an 'Estimated cost', which reads as an example of the output, not as a result claim.",
+    "The 'How it works' steps describe the product's flow and make no figure claims.",
+    "The 'Get started' action opened a visible three-step picker ('STEP 1 OF 3') with a Back button, and claimed no success it did not show."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the '₹1,200 / month' estimate for ChatGPT, Canva, CapCut and ElevenLabs could not be checked against current prices",
+    "T-URGENCY-REAL and T-DEFAULT-STATE: the page has no urgency, counts beyond the 'Trusted by' line, or choices",
+    "T-DECLINE-READ: no dialog or decline option was captured",
+    "the 12,000+ figure itself could not be checked from the page: it may be real, but the page gives no source"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Read (a dated studio article): the article names its designer and its sources by organisation, but its two survey figures (Meltwater's 54%, the Human Flourishing Lab's 77%) carry no link, year or study title; the sweep's lexicon_copy hit on 'illustrative' is the phrase 'Figma moved toward illustrative play', a description of Figma's style, not a self-label.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-FIGURE-AUDIT fails once for the article's unlinked survey figures (INT-011); the other figures carry a year and an attribution, and no proof is invented."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "article body, p elements in div.blog-post, 1440 (tiles/1440-03.png, tiles/1440-04.png)",
+      "evidence": "The article says 'Consumer sentiment research from Meltwater shows 54% negative response to recognizable AI-generated imagery' and 'The Human Flourishing Lab found that 77% of Americans use nostalgic memories as a source of comfort'. Neither gives a year, a study title or a link; the only link in the article body points to Energie.be.",
+      "before": "\"Meltwater shows 54% negative response\"",
+      "after": "Link each study and give its year and sample",
+      "why": "A reader of an opinion piece relies on these figures as the evidence for its argument, and cannot check them.",
+      "root": "The article cites sources by name only, never by link",
+      "test": "T-FIGURE-AUDIT"
+    }
+  ],
+  "strengths": [
+    "The article is dated (Jun 2, 2026) and names the designer it describes ('our designer, Ruben').",
+    "The Allianz figure carries its year and the company's own stated reason ('grew 20% to $28.2 billion in 2025 ... a \"flight to trust\" dynamic').",
+    "The Merriam-Webster claim gives the year and quotes the definition."
+  ],
+  "not_investigated": [
+    "Capture context: 68 requests were blocked, 4 of them images, so those images are not verified.",
+    "Statements about other brands' campaigns (OpenAI's 35mm film, Granola and Ragged Edge) are not checkable from the page.",
+    "The newsletter block ('Send us \"snippets\"') was not captured as a form, so T-DEFAULT-STATE and T-FAKE-SEND have nothing to read.",
+    "T-URGENCY-REAL and T-PRICE-WHOLE skipped: no urgency and no price offered.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

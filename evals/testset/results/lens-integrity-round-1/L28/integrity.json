@@ -1,0 +1,37 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode is Experience (a Formula 1 driver's personal site, inferred from the page; no contract). The proof is the driver's own: two partner rows of image logos whose file names name Ralph Lauren, Hilton, Uber, Tumi, Google, Android and Monster, a helmet archive dated by season, and photo captions with place and year ('Qatar, 2024', 'Monaco, 2023'); the sweep has no integrity hits.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 9,
+    "reason": "T-PROOF-SOURCE and T-PROOF-SWAP pass: the partner rows and helmet archive belong to this driver and fit no rival's page; T-FIGURE-AUDIT finds no figures and the copyright reads 2026. Nothing was cut because the page carries no stat band, testimonial or rating to cut."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER"
+  ],
+  "findings": [],
+  "strengths": [
+    "The 'PARTNERS & CAMPAIGNS' row (screen 13, past the last tile) shows sponsor marks whose file names match the sponsor logos printed on the helmets in tiles/1440-09.png (Monster Energy, Google Pixel and others), so the proof is visible on the product itself.",
+    "Every photo caption gives a place and a year ('Miami GP, 2024', 'Britain, 2025'), and every helmet card gives a name and season, so the archive can be checked.",
+    "'business@landonorris.com' is on the brand's own domain, and the copyright reads '© 2026', the capture year."
+  ],
+  "not_investigated": [
+    "async and false-success states: async.json was not captured (--no-async), so INT-008 is not verified",
+    "the partner logos are images without alt text; past tile 1440-11 (the tiles stop at screen 12 of 16) the lens read their file names, not the marks",
+    "T-URGENCY-REAL, T-DEFAULT-STATE, T-PRICE-WHOLE, T-FAKE-SEND: the page has no urgency, no choice controls, no prices and no forms",
+    "capture prep scrolled 12 frames per width; 19 requests were blocked (2 images), none of them on the claim rows read",
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "a countdown's behaviour on reload (the capture does not reload to compare)"
+  ]
+}

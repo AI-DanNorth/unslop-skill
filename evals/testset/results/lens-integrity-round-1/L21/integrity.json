@@ -1,0 +1,62 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T21:30:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Visitor mode inferred as Persuade (a landing page for a diagram skill): the proof is the author's own (the quote is from Cathryn Lavery, who signs the page) and '6 AGENTS' is matched by six install cards, but the gallery heading gives the type count a second value and the '#1 on GitHub Trending' stamp has nothing behind it.",
+  "score": {
+    "dimension": "Integrity",
+    "value": 8,
+    "reason": "T-FIGURE-AUDIT fails once (INT-151, 'Forty-four' against 45) and T-PROOF-SOURCE fails once (INT-022, an undated trending claim); everything else is the author's own and checkable from the page."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-DECLINE-READ",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-151",
+      "tier": "Reflex",
+      "where": "h2.rise in section 6, 1440 (tiles/1440-04.png)",
+      "evidence": "The gallery heading reads 'Forty-four diagrams, one system'. The hero says '45 diagram types' and '45 TYPES', SKILL.md 'picks 1 of 45 types', and the gallery below the heading numbers its cards '01 / 45' to '45 / 45'.",
+      "before": "\"Forty-four diagrams, one system\"",
+      "after": "\"Forty-five diagrams, one system\", matching the count everywhere else",
+      "why": "The type count is the page's main figure, and one heading contradicts it.",
+      "test": "T-FIGURE-AUDIT"
+    },
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "hero proof row, span.stamp, 1440 (tiles/1440-00.png)",
+      "evidence": "The stamp reads 'Hit #1 on GitHub Trending' beside '66k stars' and 'Open source · MIT'. It is a plain span with no link, no date and no scope (daily or weekly, all languages or one).",
+      "before": "\"Hit #1 on GitHub Trending\"",
+      "after": "Add the date and a link to an archived trending page, or remove the stamp",
+      "why": "A ranking claim without a date or a link cannot be checked, and it borrows the credibility of the star count beside it.",
+      "test": "T-PROOF-SOURCE"
+    }
+  ],
+  "strengths": [
+    "The 66k star badge links to GitHub.",
+    "The before and after figures are labelled 'FIRST PASS · NO SKILL' and 'REDRAWN WITH THE SKILL', so the comparison says what each side is.",
+    "The quote is attributed to the page's own author, who signs the footer ('Made by Cathryn Lavery'), not to an invented customer.",
+    "The install section backs '6 AGENTS' with six install cards (Claude Code, Codex, Pi, GitHub Copilot, Factory Droid, Qoder)."
+  ],
+  "not_investigated": [
+    "Only 1440 was captured; there is no 375 DOM, so figures and proof at phone width are not verified.",
+    "The FIG. 00 demo videos (demo-light.mp4, demo-dark.mp4) were blocked, so what they show is not verified.",
+    "The claims table's 'view of' rows are alt text for an exploded-view diagram ('Exploded view of a three-layer app stack'): a drawing term, not a self-label.",
+    "'MIT © 2025 Cathryn Lavery' is a licence year, not judged stale.",
+    "T-URGENCY-REAL, T-PRICE-WHOLE and T-DEFAULT-STATE skipped: no urgency, no price and no choice control.",
+    "T-FAKE-SEND: no form and no primary action were captured.",
+    "authenticity against outside sources: the lens does not browse, so star counts, customer names and quoted studies are not verified beyond what the page shows",
+    "checkout, sign-up and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare"
+  ]
+}

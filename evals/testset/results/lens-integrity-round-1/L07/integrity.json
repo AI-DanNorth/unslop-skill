@@ -1,0 +1,64 @@
+{
+  "lens": "integrity",
+  "ran_at": "2026-11-11T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The visitor mode is Persuade (an AI video studio landing page); the provider list is honest and footnoted ('All trademarks belong to their respective owners'), and the sweep's five INT-002 'Vertex' hits are on 'Google Cloud Vertex AI', a real Google product the footer names as a provider, so I judge them the brand's own true statement; what pads the page is two unbacked labels of standing: 'The world's first full-cycle studio' and 'The world's top 5 LLMs' (which names three).",
+  "score": {
+    "dimension": "Integrity",
+    "value": 7,
+    "reason": "T-PROOF-SOURCE fails on 'The world's first full-cycle studio' (INT-022, Reflex) and T-FIGURE-AUDIT on 'The world's top 5 LLMs' with no ranking (INT-011, Reflex); T-PROOF-SWAP passes because the page shows no testimonials or customer logos."
+  },
+  "tests_run": [
+    "T-PROOF-SOURCE",
+    "T-PROOF-SWAP",
+    "T-FIGURE-AUDIT",
+    "T-STAGED-UI",
+    "T-LEAKAGE",
+    "T-PROMISE-LINK",
+    "T-URGENCY-REAL",
+    "T-FILLER",
+    "T-FAKE-SEND"
+  ],
+  "findings": [
+    {
+      "rule": "INT-022",
+      "tier": "Reflex",
+      "where": "closing CTA block above 'Thumbnails', 1440; tiles/1440-06.png",
+      "evidence": "The closing block says 'The world's first full-cycle studio. From idea and brainstorm to final render with Google Veo and Advanced ID System.' Nothing on the page backs 'world's first': no date, no comparison and no source. The same claim style appears on the first screen as an orange 'TOP' pill beside 'FEATURED MODEL' on the carousel (tiles/1440-00.png). Draft INT-115 asks for ranking data behind leadership claims.",
+      "before": "\"The world's first full-cycle studio.\"",
+      "after": "Cut 'world's first' and say what the studio does: 'A full-cycle studio: brainstorm, script, characters and final render in one project.'",
+      "why": "A 'first' claim is checkable by any visitor who knows the field, and several all-in-one AI video studios exist; the unbacked superlative costs the real feature list its credibility.",
+      "test": "T-PROOF-SOURCE",
+      "source": "integrity"
+    },
+    {
+      "rule": "INT-011",
+      "tier": "Reflex",
+      "where": "'Ecosystem of studios', Brainstorm Room card, 1440; tiles/1440-04.png",
+      "evidence": "The card says 'The world's top 5 LLMs — Claude Sonnet, DeepSeek, Gemini — in one room for writing your scripts.' The claims table lists it under awards_badges and social_proof. The line names three models for a 'top 5', and it cites no ranking, benchmark or date. Draft INT-115 asks for an as-of date and ranking data.",
+      "before": "\"The world's top 5 LLMs — Claude Sonnet, DeepSeek, Gemini\"",
+      "after": "Name all the models the room offers, without a ranking: 'Claude Sonnet, DeepSeek, Gemini and two more models in one room.'",
+      "why": "The ranking is a claim about other companies' products; it carries no source and lists fewer models than it counts.",
+      "test": "T-FIGURE-AUDIT",
+      "source": "integrity"
+    }
+  ],
+  "strengths": [
+    "The footer names every provider and disclaims ownership: 'Cineyx AI uses the power of Google Vertex AI, Anthropic, OpenAI, xAI, Vidu, Wan, Seedance, ElevenLabs, and other providers ... All trademarks belong to their respective owners.'",
+    "The signup offer is stated in full on the first screen ('Sign up today: 50 AI Energy + 1 Free Character') with no countdown or stock count.",
+    "The page shows no testimonials, ratings, user counts or customer logos."
+  ],
+  "not_investigated": [
+    "authenticity against outside sources: the lens does not browse, so any claim only the web could settle is not verified",
+    "checkout, signup and cancellation flows beyond the captured page",
+    "countdown or counter behaviour on reload: the capture does not reload to compare",
+    "the before and after examples under 'What you can actually create' ('Here's what people make with Cineyx') could not be checked as real outputs of the product",
+    "the model names ('MiniMax H3', 'Seedance 2.5', 'Gemini 3 Pro', 'CineCore Fast') could not be checked",
+    "the meta description says 'Join the waitlist' while the page offers 'Start for free'; the signup flow was not captured",
+    "six promo videos were blocked in the capture, so the hero carousel media is not verified",
+    "the 'Send feedback' action showed a progress state after its request finished; that is the sweep's CMP-001 stuck_spinner hit, not an integrity call",
+    "T-DEFAULT-STATE and T-PRICE-WHOLE: no checkbox and no price was captured",
+    "T-DECLINE-READ: the feedback dialog was captured only by the async run; no decline wording was judged"
+  ]
+}
