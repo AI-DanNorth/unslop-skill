@@ -1,0 +1,62 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The header pills mark the current page and a skip link comes first, but a deck walkthrough of about 54 screens has no slide index or contents, and at 375 the four pills stack into half the first screen.",
+ "score": {
+  "dimension": "Usability",
+  "value": 6,
+  "reason": "T-WHERE-AM-I passes on the page level but fails inside the long article (CMP-010), and T-PHONE-NAV fails on the stacked pill row (CMP-164)."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-INTERRUPT"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-010",
+   "tier": "Reflex",
+   "where": "main article (div.wpb_text_column), 1440px, tiles/1440-03.png and tiles/1440-07.png",
+   "evidence": "dom-1440.json gives a page 48,201 px tall (about 54 screens) with 39 slide images and 76 h2 heads. The heads alternate 'Context' and 'Advice' (the sweep's repeated_label check counts 'Context' 37 times). The components table finds no in-page navigation, breadcrumb or tabs. Nothing gives the slide number except the small page number inside each slide image.",
+   "before": "A walkthrough of about 37 slides has no slide index, and every section head reads 'Context' or 'Advice'.",
+   "after": "Add a slide index (1 to N, linking to anchors) that stays in view on wide screens, and head each section 'Slide 5: pitching by analogy' rather than 'Context'.",
+   "why": "Readers looking for one slide's advice must scroll through up to 54 screens of identical heads.",
+   "test": "T-WHERE-AM-I",
+   "source": "components",
+   "title": "Navigation shows where you are"
+  },
+  {
+   "rule": "CMP-164",
+   "tier": "Reflex",
+   "where": "header pill nav (#SR7_2_1-3-*): Pitch Advice for Entrepreneurs, Books, Podcasts, Writing, 375px, tiles/375-00.png",
+   "evidence": "At 375 the four pills stack as full-width rows (the first filled, the other three outlined) under the avatar. The header card takes the top 425 px of the 812 px screen, and the article title starts at y 520.",
+   "before": "The four page links stack into half of the phone's first screen.",
+   "after": "Keep the pills on one row that scrolls sideways, or put Books, Podcasts and Writing behind a 'Menu' button at 375.",
+   "why": "On a phone the reader scrolls past the navigation before reaching the article they opened.",
+   "test": "T-PHONE-NAV",
+   "source": "components",
+   "title": "Tabs for 2-9 sections with short names, single line, never stacked rows"
+  }
+ ],
+ "strengths": [
+  "The current page is the one filled pill ('Pitch Advice for Entrepreneurs') among outlined pills, at both widths (tiles/1440-00.png, tiles/375-00.png).",
+  "A 'Skip to content' link is the first focus stop.",
+  "All of the article text shows with scripts off: nothing waits for a reveal."
+ ],
+ "not_investigated": [
+  "only 12 of about 54 screens are tiled, and the manifest records 36 blocked images. The slides past tile 11 are not seen",
+  "the back arrow beside the avatar has no accessible name (control_names, A11-006) and the pills have no focus look (focus_ring): these are the sweep's",
+  "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-EMPTY-FIRST, T-TABLE-READ, T-FIRST-RUN: no fields, actions, overlays, data regions or tables",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

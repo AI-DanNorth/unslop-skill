@@ -1,0 +1,76 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The range and type segmented controls mark their selection, the table has a sort mark and right-aligned amounts, and the empty state offers a way out, but the 'Owner: Ada' remove button changes nothing and the draft reply looks like a field it is not.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WHERE-AM-I and T-TABLE-READ pass at 1440, but T-ERROR-PATH fails on the filter's remove button and T-STATE-MATRIX finds no pressed or disabled styles (CMP-003, CMP-002)."
+  },
+  "visitor_mode": "Operate (inferred: a weekly operations dashboard; the page calls itself the 'After' version of a shared fixture, styled by one design skill)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-ERROR-PATH", "T-TABLE-READ"],
+  "findings": [
+    {
+      "rule": "CMP-003",
+      "title": "Waiting, failure and success belong to the action",
+      "tier": "Reflex",
+      "where": "button 'Remove filter Owner: Ada' (the x on the owner chip), 1440, async/a0-slow-0.5s.png and a0-slow-2s.png",
+      "evidence": "The async run clicked the chip's remove button and recorded 'responded: false' at 0.5 s and at 2 s, no request and no new text. a0-slow-2s.png shows the x in its red hover look with the 'Owner: Ada' chip still in place.",
+      "before": "Clicking the x leaves the filter applied and the table unchanged.",
+      "after": "The chip leaves, the table and the three totals update, and an 'Owner filter removed. Undo' note sits where the chip was.",
+      "why": "A remove control that does nothing makes the operator doubt every other filter on the page.",
+      "test": "T-ERROR-PATH"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "segmented controls and buttons site-wide, 1440",
+      "evidence": "The readable stylesheet (97 rules, 1 sheet unreadable) declares 12 hover rules and 1 focus-visible rule, but 0 :active, 0 disabled and 0 busy rules. The sweep's focus_ring hit records the focus look on the link 'Text the plant' at 2.30:1 against rest (A11-003, Reflex).",
+      "before": "Controls have a hover look and a single focus rule, with no pressed, disabled or loading look.",
+      "after": "A pressed step on the segments and buttons, a busy label for 'Send follow-up', and the focus ring declared for every control family.",
+      "why": "Without a pressed or busy look the operator gets no sign that a click landed before the data changes.",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "li.type-draft > div.body > div.draft ('Thanks for the update. Can you send the revised PO by Thursday?'), 1440, tiles/1440-00.png y 842-885",
+      "evidence": "The draft reply sits in a bordered, rounded box with a white fill that matches a text field, under the label 'Unsent reply to Harbor'. The components table finds no field on the page: the box is a div, so it cannot be edited or sent from here.",
+      "before": "The unsent draft is drawn as an input box that does not accept input and has no Send or Edit action.",
+      "after": "Either a real textarea with 'Send reply' beside it, or the draft shown as quoted text with an 'Edit draft' link.",
+      "why": "A box that looks editable invites a click that does nothing.",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-018",
+      "title": "Tables read as tables",
+      "tier": "Reflex",
+      "where": "section.reveal:nth-of-type(3) > div.table-wrap > table ('Urgent'), 375",
+      "evidence": "The table is 576 px wide inside a 375 px viewport (at_375.wider_than_screen). The sweep's phone_parity hit (ROB-002) records 124 words shown at 1440 and hidden at 375 under #h-urgent, and tiles/375-00.png and 375-01.png show the filters and then blank page down to the footer.",
+      "before": "At 375 the urgent-threads table is wider than the screen and did not render in the capture.",
+      "after": "At 375 each thread as a stacked row: account name first, then status, change and amount, with the table kept for wider screens.",
+      "why": "On a phone the operator loses the one table the dashboard exists to show.",
+      "test": "T-TABLE-READ"
+    }
+  ],
+  "strengths": [
+    "The 'Range' and 'Type' segmented controls mark the selected segment ('7 days', 'All') with a white fill and blue text, so the operator sees which view the table shows.",
+    "The 'Account' head carries a sort mark and the Change and Amount columns are right-aligned (3 numeric cells aligned right), so the table reads as a table at 1440.",
+    "The empty state exists in the DOM with a recovery line: 'No matching threads in this filter. Try 30 days or clear the owner filter.'",
+    "A skip link is the first focus stop, and 'How this note was chosen' uses a disclosure instead of a dialog.",
+    "The DOM gives 'Send follow-up' the button.btn-accent class and 'Snooze' button.btn-secondary, one primary and one secondary (their rendered look is not verified: the section stayed hidden in the capture)."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "The 'Empty', 'Reach them' and 'Send follow-up' sections (section.reveal) stayed at opacity 0 in the 1440 capture and the pending feed and urgent table stayed at opacity 0 at 375; they appear with reduced motion and with scripts off (hidden.json). Whether they reveal on a real scroll is not verified; this is robustness (ROB-001, ROB-002), and the async run did not reach 'Send follow-up'.",
+    "Failure states: no action made a request, so no failure run was possible.",
+    "Inline validation: the page has no form.",
+    "Phone navigation: the page has no navigation region.",
+    "Focus moving into an overlay and back, scroll lock, backdrop click and keyboard operation of the segmented controls (lens-a11y).",
+    "States reached only with real data or later steps."
+  ]
+}

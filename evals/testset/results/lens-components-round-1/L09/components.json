@@ -1,0 +1,65 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The installation guide's tabs mark the selected platform, the FAQ disclosures open in place and the download cards separate a recommended installer from the alternatives, but the three recommended download buttons are too narrow for their labels and clip their download icons, and the phone header drops the Download action.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WHERE-AM-I passes on the guide tabs and T-OVERLAY-CHECK on the FAQ, with gaps in T-ONE-FAMILY (clipped installer buttons, CMP-265; the selected tab drawn as a primary button, CMP-005) and T-PHONE-NAV (no Download in the 375 header, CMP-011)."
+  },
+  "visitor_mode": "Persuade into a download: the landing page of a desktop app, with platform-specific installers and an install guide. No 00-contract.md; inferred from 'Get KinAI for Free', the header 'Download' and the per-platform installer cards.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN"],
+  "findings": [
+    {
+      "rule": "CMP-265",
+      "title": "Fit the text before the box: a control's border-box holds content, padding and border",
+      "tier": "Reflex",
+      "where": "Get KinAI download cards, recommended buttons, 1440, tiles/1440-06.png",
+      "evidence": "The filled teal buttons 'Apple Silicon (M1/M2/M3/M4)', 'MSI Installer (Recommended)' and 'AppImage (Recommended)' run their label to the right edge, and the download icon at the end of each is cut off by the button's border; the outlined alternatives below ('Intel Mac', 'EXE Installer (Alternative)') keep their icon inside.",
+      "before": "The label and icon overflow the 254px button, so the download icon is clipped.",
+      "after": "A shorter label ('Download for Apple silicon') or a button that grows to its content, with the icon inside the padding.",
+      "why": "The main download on each platform card is the one control that looks broken.",
+      "root": "download button variant",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-005",
+      "title": "Controls belong to one family",
+      "tier": "Finish",
+      "where": "Installation Guide tabs, 1440, tiles/1440-06.png",
+      "evidence": "The selected tab 'Mac Host' uses the same teal fill (rgb(0, 209, 195)) as the 'Download' and 'Get KinAI for Free' buttons; the buttons table lists it as a filled variant, and the screen above it already carries three teal download buttons.",
+      "before": "The selected tab looks like a fourth primary button on the screen.",
+      "after": "The selected tab as a raised neutral segment or an underline, keeping teal for download actions.",
+      "why": "A visitor reading the screen sees four teal buttons and cannot tell which one downloads.",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav lists only the 'v0.2.148' link and a GitHub icon at 375; the header's teal 'Download' button is gone and there is no menu button. The targets sweep flags the GitHub icon at 20x20.",
+      "before": "The phone header offers a version badge and a 20px GitHub icon, not the download.",
+      "after": "'Download' kept in the 375 header, or a bar with it once the hero button scrolls off (CMP-168).",
+      "why": "A phone visitor past the hero has no way to the download until the installer section.",
+      "test": "T-PHONE-NAV"
+    }
+  ],
+  "strengths": [
+    "The Installation Guide tabs (Mac Host, Mac Client, Windows, Linux) mark the selected one and swap the panel in place (motion/t0-normal-600.png).",
+    "Each platform card pairs one recommended filled installer with outlined alternatives that each carry a download icon, so the default choice is clear.",
+    "The FAQ uses disclosure rows that open in place ('Can my phone or iPad install KinAI directly?' opens 'Not yet — there is no native iOS or Android…').",
+    "One filled primary in the hero ('Get KinAI for Free') beside an outlined 'View Setup Guide'; the stylesheet declares hover in a hover media query (5), focus-visible (20), disabled (15) and current or selected (21) rules."
+  ],
+  "not_investigated": [
+    "The download itself and any failure: the installers are links to releases; the async capture found no primary action to hold or fail.",
+    "What a phone visitor sees beyond the header menu: there is no menu button, and triggers are opened at 1440 only.",
+    "Two icon-only buttons the capture clicked (triggers t2, t3) have no name in the components table; naming is the sweep's (control_names found none missing).",
+    "Inline validation and error placement: no fields.",
+    "Keyboard operation of the tabs and disclosures: lens-a11y.",
+    "Disclosure motion (motion_snap hits on the FAQ): lens-motion.",
+    "T-FIELD-READ, T-ERROR-PATH and T-TABLE-READ: no field, no failure run and no table."
+  ]
+}

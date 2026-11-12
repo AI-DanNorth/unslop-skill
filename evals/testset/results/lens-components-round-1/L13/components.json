@@ -1,0 +1,74 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:50:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "All seven header items ('Product' to 'Get started') point to '#', the 375 header keeps the desktop link row with no menu so the links run off the screen, and the stylesheet declares one hover rule and no pressed, focus-visible or disabled state for any control.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-WHERE-AM-I fails on seven dead nav links (CMP-012), T-PHONE-NAV fails on a desktop nav row at 375 (CMP-011), T-STATE-MATRIX finds one declared hover and nothing else (CMP-002), and T-PRIMARY-COUNT finds three labels for one trial (CMP-121)."
+  },
+  "visitor_mode": "Persuade: a SaaS landing page whose goal is a free-trial sign-up. No 00-contract.md; inferred from 'Start free trial' in the hero and 'Start your free trial' in the closing band.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "header nav, 1440 and 375, fold-1440.png",
+      "evidence": "The components table records 7 dead links in the header: 'Product', 'Solutions', 'Pricing', 'Customers', 'Docs', 'Sign in' and 'Get started' all point to '#'; the first stop after the skip link is 'Product' with href '#'.",
+      "before": "Seven header items that go nowhere.",
+      "after": "Each item linked to its page or section, and items with no page removed; [DATA NEEDED: the pricing, docs and sign-in URLs].",
+      "why": "A visitor who clicks Pricing, Docs or Sign in stays where they are with no explanation.",
+      "root": "header nav component",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "header, 375, fold-375.png",
+      "evidence": "phone_nav lists all seven header items in the 375 header and no menu button; fold-375.png shows 'Product', 'Solutions' and a cut-off 'Pricing' with the rest past the right edge, and the logo's dot sits on its own line above 'Lumina'. The overflow sweep reports the page 698px wide at 375.",
+      "before": "The desktop link row is kept at 375 and runs off the screen.",
+      "after": "Under about 60rem the links go behind a 'Menu' button (aria-expanded), leaving the logo, 'Start free trial' and the menu (CMP-154).",
+      "why": "Phone visitors cannot see or reach Customers, Docs, Sign in or the header's sign-up button.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "all buttons and links, stylesheet",
+      "evidence": "declared_states reads 51 readable rules with 1 hover rule and 0 focus-visible, 0 focus, 0 active and 0 disabled rules. The header 'Get started' renders underlined inside its filled black pill (fold-1440.png), so the one hover style is a text underline borrowed from links.",
+      "before": "Buttons have a resting look and an underline on hover only.",
+      "after": "A focus-visible ring, a pressed state one step lighter or 1px lower, and a hover step of the button's own fill (CMP-267), on each variant.",
+      "why": "A press or a keyboard focus gives no designed feedback, and an underlined button reads as a link.",
+      "root": "pill button variants",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header, hero and closing band, 1440, fold-1440.png and tiles/1440-02.png",
+      "evidence": "The filled pill reads 'Get started' in the header and 'Start free trial →' in the hero; the closing band 'Ready to transform how your team builds?' uses a light pill 'Start your free trial →'.",
+      "before": "Three labels and two fills for one trial sign-up.",
+      "after": "'Start free trial' on every sign-up button, in the same fill (inverted only on the dark band).",
+      "why": "Different labels make the visitor wonder whether 'Get started' is the trial or something else.",
+      "test": "T-PRIMARY-COUNT"
+    }
+  ],
+  "strengths": [
+    "A skip link is the first focus stop.",
+    "The hero pairs one filled primary with an outlined secondary ('Watch demo'), and the closing band carries a single action."
+  ],
+  "not_investigated": [
+    "The trial sign-up flow: every action links to '#', so there is no flow to capture; the async capture found no primary action.",
+    "Inline validation and error placement: no fields.",
+    "Focus visibility itself: the focus_ring sweep reported no hit; with no focus-visible rule the browser default is in use.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "Capture prep blocked the host's '/js/detect-antipatterns-browser.js' script; the page is served under an 'antipattern-examples' path but its own text does not label it as an example, so it is judged as a landing page.",
+    "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-TABLE-READ and T-FIRST-RUN: no field, no failure run, no overlay, no table and no onboarding."
+  ]
+}

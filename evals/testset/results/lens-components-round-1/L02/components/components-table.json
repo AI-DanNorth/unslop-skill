@@ -1,0 +1,626 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L02",
+ "target": "https://ai-stack-gold.vercel.app/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 0,
+  "header": 1
+ },
+ "buttons": {
+  "count": 8,
+  "variants": [
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(48.0876 -2.03595 -16.5814)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     20
+    ],
+    "labels": [
+     "AI tools",
+     "Compare",
+     "About"
+    ],
+    "first_screen": 3,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0 > div.mx-auto.flex > nav.hidden.items-center > button:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(29, 78, 216)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "600",
+    "heights_px": [
+     36,
+     46
+    ],
+    "labels": [
+     "Get started",
+     "Find my AI stack"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0 > div.mx-auto.flex > div.flex.items-center:nth-of-type(2) > button.rounded-lg.bg-\\[\\#1d4ed8\\]:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 129x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(26.9569 -1.47016 -15.6993)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     20
+    ],
+    "labels": [
+     "Find my stack"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0 > div.mx-auto.flex > nav.hidden.items-center > button.font-medium.text-slate-700:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(35.5623 -1.74978 -15.4316)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     20
+    ],
+    "labels": [
+     "Sign in"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0 > div.mx-auto.flex > div.flex.items-center:nth-of-type(2) > button.hidden.text-sm:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "lab(26.9569 -1.47016 -15.6993)",
+    "border": "lab(84.7652 -1.94535 -7.93337)",
+    "radius_px": 10,
+    "weight": "600",
+    "heights_px": [
+     46
+    ],
+    "labels": [
+     "Browse all tools"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.relative.overflow-hidden:nth-of-type(1) > div.mx-auto.grid > div:nth-of-type(1) > div.mt-9.flex:nth-of-type(2) > button.rounded-lg.border:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 5,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 88,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 33,
+   "hover_media": 3,
+   "focus_visible": 12,
+   "focus": 1,
+   "focus_within": 0,
+   "active": 1,
+   "disabled": 4,
+   "invalid": 8,
+   "checked": 0,
+   "current_selected": 1,
+   "expanded_open": 6,
+   "busy": 0,
+   "placeholder": 3,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html > body.antialiased > div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    0,
+    0,
+    1440,
+    65
+   ],
+   "items": 6,
+   "labels": [
+    "Get started",
+    "Find my stack",
+    "AI tools",
+    "Compare",
+    "About",
+    "Sign in"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 129x36px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "(icon, no text)",
+    "where": "y.top-0 > div.mx-auto.flex > div.flex.items-center:nth-of-type(2) > button.md\\:hidden:nth-of-type(3)",
+    "box": [
+     20,
+     20
+    ]
+   }
+  ],
+  "top_links_visible_375": [],
+  "header_items_1440": 6,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "sticky",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 5,
+  "tried": 5,
+  "by_kind": {
+   "button": 5
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Find my AI stack",
+    "selector": "ain > section:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Browse all tools",
+    "selector": "ain > section:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [
+     "div: ✳ Compare ChatGPT AI assistant Your vers"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     394.7,
+     263
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Get started",
+    "selector": "body > div:nth-of-type(2) > header > div > div:nth-of-type(2) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "Find my stack",
+    "selector": "body > div:nth-of-type(2) > header > div > nav > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "AI tools",
+    "selector": "body > div:nth-of-type(2) > header > div > nav > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.min-h-screen.bg-\\[\\#f8fafc\\]:nth-of-type(2) > main > section.mx-auto.max-w-7xl:nth-of-type(2) > div.mt-10.grid:nth-of-type(2) > div.rounded-xl.border:nth-of-type(1)",
+   "y": 974,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    392,
+    174
+   ],
+   "section": "Less browsing. More doing.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Get started",
+    "kind": "action-button",
+    "selector": "body > div:nth-of-type(2) > header > div > div:nth-of-type(2) > button:nth-of-type(2)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: Back | STEP | OF 3"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "new text: Back | STEP | OF 3"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Back",
+      "STEP",
+      "OF 3",
+      "What are you trying to accomplish?"
+     ],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 8,
+  "first": "button \"Find my stack\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 697,
+   "totalChars": 697
+  },
+  "reduced_motion": {
+   "visibleChars": 697,
+   "totalChars": 697
+  },
+  "observer_never_fires": {
+   "visibleChars": 697,
+   "totalChars": 697
+  },
+  "scripts_off": {
+   "visibleChars": 697,
+   "totalChars": 697
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 8,
+   "hits": [
+    {
+     "where": "button \"Find my stack\"",
+     "evidence": "focus indicator visible but faint: 1.52:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"AI tools\"",
+     "evidence": "focus indicator visible but faint: 1.52:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Compare\"",
+     "evidence": "focus indicator visible but faint: 1.52:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"About\"",
+     "evidence": "focus indicator visible but faint: 1.52:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Sign in\"",
+     "evidence": "focus indicator visible but faint: 1.52:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Get started\"",
+     "evidence": "focus indicator visible but faint: 1.57:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Find my AI stack\"",
+     "evidence": "focus indicator visible but faint: 1.57:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Browse all tools\"",
+     "evidence": "focus indicator visible but faint: 1.54:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 2,
+   "hits": [
+    {
+     "where": "der.sticky.top-0 > div.mx-auto.flex > div.flex.items-center:nth-of-type(2) > button.rounded-lg.bg-\\[\\#1d4ed8\\]:nth-of-type(2)  \"Get started\"",
+     "evidence": "touch target 129x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "\\#f8fafc\\]:nth-of-type(2) > header.sticky.top-0 > div.mx-auto.flex > div.flex.items-center:nth-of-type(2) > button.md\\:hidden:nth-of-type(3)",
+     "evidence": "touch target 20x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "first focusable element is button \"Find my stack\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 1,
+   "hits": [
+    {
+     "where": "ative.rounded-2xl:nth-of-type(2) > div.rounded-xl.bg-\\[\\#f8fafc\\] > div.space-y-3.py-5:nth-of-type(2) > div.flex.items-center:nth-of-type(1)",
+     "evidence": "card inside a card (div.relative.rounded-2xl:nth-of-type(2))",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 8,
+  "button_variants": 5,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 5,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 1
+ }
+}

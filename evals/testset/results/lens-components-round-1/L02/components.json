@@ -1,0 +1,97 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:10:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The 'Get started' action opens a designed three-step builder with a progress bar, 'Step 1 of 3', Back and a held Continue, but the whole navigation is built from buttons with no links (the logo goes nowhere), no item marks the builder view as current, and the home page ends after three step cards with no footer.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-STATE-MATRIX and T-FIRST-RUN pass on the builder's first step, but T-WHERE-AM-I fails (CMP-010, CMP-012: no links, no current mark, a logo that is not a link) and T-PRIMARY-COUNT finds three labels for one action (CMP-121)."
+  },
+  "visitor_mode": "Persuade into Operate: a landing page whose one action starts a three-question tool picker. No 00-contract.md; inferred from the hero 'Stop searching. Start building.' and the builder that 'Get started' opens.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN"],
+  "findings": [
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "header, 1440 and 375, tiles/1440-00.png; dom-1440.json",
+      "evidence": "dom-1440.json holds no a element at all: 'Find my stack', 'AI tools', 'Compare', 'About', 'Sign in' and 'Get started' are all buttons with no href, and the 'AI Stack' logo is not a link. The first focus stop is the 'Find my stack' button, not the logo.",
+      "before": "Navigation items are buttons that swap views in script; the logo goes nowhere.",
+      "after": "Each destination as a real link with its own URL, and the logo as a link to home with an accessible label (CMP-155, CMP-157, CMP-163).",
+      "why": "Visitors cannot open a section in a new tab, share it, bookmark it or click the logo to get back to the start.",
+      "root": "header nav component",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-010",
+      "title": "Navigation shows where you are",
+      "tier": "Reflex",
+      "where": "header nav in the builder view, 1440, async/a0-slow-final.png",
+      "evidence": "After 'Get started' the page shows 'STEP 1 OF 3 What are you trying to accomplish?', but the header items keep the same grey weight and 'Find my stack' carries no current mark. The components table records nav_with_current_mark 0.",
+      "before": "The header looks identical on the home view and in the builder.",
+      "after": "'Find my stack' marked as the current item (weight or underline plus aria-current) while the builder is open.",
+      "why": "A visitor inside the builder gets no sign in the header of which section they are in.",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header 'Get started', nav 'Find my stack', hero 'Find my AI stack', 1440, tiles/1440-00.png",
+      "evidence": "The filled blue variant (rgb(29, 78, 216), strong fill) carries 'Get started' in the header and 'Find my AI stack' in the hero, and the nav has a third label 'Find my stack'. The async run shows 'Get started' opens the same builder step the hero names.",
+      "before": "Three labels for one builder.",
+      "after": "One verb-and-object label, for example 'Find my stack', in the header button and the hero button; the nav item dropped or kept as the same words.",
+      "why": "Different labels make the visitor wonder whether 'Get started' means signing up and 'Find my AI stack' means something else.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-107",
+      "title": "A disabled control near the user's attention says why it is disabled",
+      "tier": "Reflex",
+      "where": "builder 'Continue' button, 1440, async/a0-slow-final.png",
+      "evidence": "The 'Continue' button under the ten goal tiles renders as pale blue with white text and no line saying a goal must be picked first.",
+      "before": "A faded Continue with no reason.",
+      "after": "A short line next to Continue, 'Pick a goal to continue', or Continue enabled and the hint shown when pressed with no choice.",
+      "why": "The faded colour alone reads as a broken or low-contrast button, not as a step waiting for input.",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-169",
+      "title": "End on what the visitor came to do",
+      "tier": "Reflex",
+      "where": "end of the home page, 1440, tiles/1440-01.png",
+      "evidence": "The page stops after the three 'How it works' cards ('Tell us what you want to do', 'Get your personalized stack', 'Make something great'); the landmarks list no footer and no closing action follows.",
+      "before": "The page ends on step cards with nothing to press and no footer.",
+      "after": "A closing line with the same builder button, and a footer with the site's own links and contact.",
+      "why": "A visitor who reads to the end has to scroll back to the top to act or to find who runs the site.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header menu button, 375, fold-375.png",
+      "evidence": "phone_nav records the toggle as '(icon, no text)' with a 20x20 box, and no top link visible at 375; the targets sweep flags it at 20x20. 'Sign in' and the four sections sit behind it.",
+      "before": "A bare three-line icon, 20px square, is the only way to the sections and Sign in.",
+      "after": "A 'Menu' button with a visible word and a 44px box beside 'Get started'.",
+      "why": "Every phone destination depends on a small unlabelled icon.",
+      "test": "T-PHONE-NAV"
+    }
+  ],
+  "strengths": [
+    "The builder's first step shows a three-part progress bar, 'STEP 1 OF 3', a Back link and ten goal tiles of one style (async/a0-slow-final.png): the multi-step flow states where the visitor is and lets them go back (CMP-221).",
+    "The hero has one filled primary beside an outlined secondary that goes elsewhere ('Browse all tools'), a legitimate pair (CMP-116).",
+    "The stylesheet declares hover (33 rules), focus-visible (12), disabled (4) and invalid (8) states."
+  ],
+  "not_investigated": [
+    "Steps 2 and 3 of the builder, its result and its failure path: the slow run made no same-origin request, so the fail run was skipped.",
+    "Whether Back restores the selected goal and whether the browser Back button leaves the builder: the capture does not press Back.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement: no fields on the captured views.",
+    "Focus moving into an overlay and back, scroll lock and backdrop click: nothing opened as a dialog.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "T-FIELD-READ, T-ERROR-PATH and T-TABLE-READ: no field, no failure run and no table."
+  ]
+}

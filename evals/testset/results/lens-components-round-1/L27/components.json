@@ -1,0 +1,55 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T12:05:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The hero pairs one filled 'Get started' with an outlined 'Sign up with Google', the product cards open detail sheets with a scrim and a close button, and the newsletter form has a label above the field and a designed error and thank-you state; the gaps are one sheet that stayed open after Escape and a 'Chat now' pill over the content.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-PRIMARY-COUNT, T-PHONE-NAV and T-FIELD-READ pass; T-OVERLAY-CHECK records the 'Create a card issuing programme' sheet still open after Escape and T-INTERRUPT finds a sales chat pill over the page (CMP-013, CMP-014)."
+  },
+  "visitor_mode": "Persuade (inferred: the home page of a payments company, with 'Get started' and 'Contact sales' as the actions and product cards that expand into detail sheets)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-ERROR-PATH", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-013",
+      "title": "Overlays are the last answer and behave as overlays",
+      "tier": "Reflex",
+      "where": "product card expand button 'Create a card issuing programme' and its dialog, 1440, motion/t3-normal-600.png",
+      "evidence": "The capture opened six product-card dialogs. Five closed after Escape, but the 'Create a card issuing programme' dialog (overlays.triggers t3, covers_viewport: true) records closed_after_escape: false. Its open still shows a full-width sheet over a dimmed page with a close button at top right.",
+      "before": "One of the six product sheets ignores Escape, though it uses the same component as the five that close.",
+      "after": "Every product sheet closes on Escape and returns focus to its card's expand button, as the other five do.",
+      "why": "A keyboard visitor who opens this sheet must find the close button to get back to the page, unlike on the other five cards.",
+      "root": "the product-card dialog component, with one instance behaving differently",
+      "test": "T-OVERLAY-CHECK"
+    },
+    {
+      "rule": "CMP-014",
+      "title": "Nothing interrupts the visitor uninvited",
+      "tier": "Reflex",
+      "where": "button.UniversalChatCtaCard__cta 'Chat now with sales', 1440, bottom right (x 1312, y 844, 112 by 40 px), motion/t3-normal-600.png",
+      "evidence": "The components table lists 'Chat now with sales' as a filled button on the first screen, at x 1312 and y 844 in dom-1440.json. The open still for the card dialog shows the 'Chat now' pill sitting in the bottom-right corner over the content.",
+      "before": "A sales chat pill sits in the bottom-right corner of the viewport over the page's content.",
+      "after": "'Contact sales' stays in the header, where it already is, and chat opens from the contact page or a footer link.",
+      "why": "A pinned pill covers part of every screen and competes with the page's own primary action.",
+      "test": "T-INTERRUPT"
+    }
+  ],
+  "strengths": [
+    "The hero has one filled primary, 'Get started', with 'Sign up with Google' outlined beside it; at 375 the pair stacks full-width under the headline (tiles/375-00.png).",
+    "The product card sheets dim the page, carry a close button and two actions ('Explore Issuing', 'See pricing details'), and say 'Not available in your country.' where a product does not apply.",
+    "The newsletter field has its label above it ('Get industry insights and updates from Stripe'), asks for an email, and the DOM holds a field error (#newsletter-field-error) and a thank-you state ('Thanks for subscribing. Look out for Stripe updates in your inbox').",
+    "At 375 the header links move behind a named 'Toggle navigation menu' button.",
+    "Buttons share one 4 px radius across all 13 variants."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "Declared states are not verified: 9 stylesheets could not be read, so the components table found 1 readable rule. The sweep's focus_ring Floor hits on the product-card buttons are the sweep's and lens-a11y's.",
+    "T-ERROR-PATH on the newsletter form: the async run could not find the 'Continue' button after reload and the fake-send run hit a script error, so the error and success states exist in the DOM but were not seen.",
+    "The cookie banner was dismissed by capture prep ('Reject all'), so T-INTERRUPT does not judge it. 18 images were blocked (manifest.network), which is why one sheet shows alt text in place of the card chip.",
+    "The checkout, terminal, billing and issuing panels are product pictures (conflict C48), not judged as controls.",
+    "What the phone menu holds: the capture opens triggers at 1440 only.",
+    "T-TABLE-READ skipped: the only tables sit inside product pictures."
+  ]
+}

@@ -1,0 +1,453 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L39",
+ "target": "https://www.reidhoffman.org/linkedin-pitch-to-greylock/",
+ "width": 1440,
+ "captured": "2026-11-10",
+ "landmarks": {
+  "main": 1,
+  "nav": 0,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 5,
+  "variants": [
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(13, 91, 186)",
+    "border": "rgb(13, 91, 186)",
+    "radius_px": 25,
+    "weight": "500",
+    "heights_px": [
+     30
+    ],
+    "labels": [
+     "Writing",
+     "Podcasts",
+     "Books"
+    ],
+    "first_screen": 3,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#SR7_2_1-3-0",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(241, 241, 241)",
+    "strong_fill": false,
+    "text_color": "rgb(33, 117, 155)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "700",
+    "heights_px": [
+     30
+    ],
+    "labels": [
+     "Skip to content"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.closed-mobile-header:nth-of-type(2) > a.skip-link.screen-reader-text:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(13, 91, 186)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 25,
+    "weight": "500",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Pitch Advice for Entrepreneurs"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#SR7_2_1-3-2",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 3,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 7661,
+  "unreadable_sheets": 2,
+  "rules_with": {
+   "hover": 2531,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 409,
+   "focus_within": 0,
+   "active": 293,
+   "disabled": 225,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 408,
+   "expanded_open": 0,
+   "busy": 54,
+   "placeholder": 5,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Skip to content",
+   "Pitch Advice for Entrepreneurs",
+   "arrow_back"
+  ],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 0,
+  "tried": 0,
+  "by_kind": {},
+  "triggers": [],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 1
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.wpb_wrapper > div.wpb_text_column.wpb_content_element > div.wpb_wrapper > p:nth-of-type(57) > strong",
+    "y": 13820,
+    "screen": 16,
+    "tile": "tiles/1440-15.png",
+    "first_screen": false,
+    "text": "In order to achieve real success, you need to be contrarian .",
+    "match": "success"
+   },
+   {
+    "where": "div.wpb_wrapper > div.wpb_text_column.wpb_content_element > div.wpb_wrapper > p:nth-of-type(72) > strong",
+    "y": 17830,
+    "screen": 20,
+    "tile": "tiles/1440-19.png",
+    "first_screen": false,
+    "text": "Explicitly identify the risks that could thwart your success and how you will mitigate them.",
+    "match": "success"
+   },
+   {
+    "where": "div.wpb_wrapper > div.wpb_text_column.wpb_content_element > div.wpb_wrapper > p:nth-of-type(132) > strong",
+    "y": 34281,
+    "screen": 39,
+    "tile": "tiles/1440-38.png",
+    "first_screen": false,
+    "text": "Identify the right metrics for success.",
+    "match": "success"
+   },
+   {
+    "where": "div.vc_column-inner > div.wpb_wrapper > div.wpb_text_column.wpb_content_element > div.wpb_wrapper > p:nth-of-type(178)",
+    "y": 48077,
+    "screen": 54,
+    "tile": "tiles/1440-53.png",
+    "first_screen": false,
+    "text": "Thanks to",
+    "match": "Thanks"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 4,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [
+   {
+    "class": "spinner",
+    "elements": 12,
+    "example": "-removed:nth-of-type(1) > div.load-wrap > svg > rect.the7-spinner-animate-1:nth-of-type(1)"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 18,
+  "first": "a \"Skip to content\" href=#content",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 17,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 47663,
+   "totalChars": 47670
+  },
+  "reduced_motion": {
+   "visibleChars": 47663,
+   "totalChars": 47670
+  },
+  "observer_never_fires": {
+   "visibleChars": 47663,
+   "totalChars": 47738
+  },
+  "scripts_off": {
+   "visibleChars": 47663,
+   "totalChars": 47738
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 50,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "a \"\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Pitch Advice for Entrepreneurs\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(255, 255, 255))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Writing\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Podcasts\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Books\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"arrow_back\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Greylock\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"read David Sze’s post\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Sarah\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Allen\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(13, 91, 186))",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 1,
+   "hits": [
+    {
+     "where": "#SR7_2_1-3-11",
+     "evidence": "touch target 19x19px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "#SR7_2_1-3-1",
+     "evidence": "a has no accessible name",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 2,
+   "hits": [
+    {
+     "where": "div.wpb_column.vc_column_container > div.vc_column-inner > div.wpb_wrapper > div.wpb_text_column.wpb_content_element > div.wpb_wrapper",
+     "evidence": "\"Context\" repeated 37 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.wpb-content-wrapper > div.vc_row.wpb_row > div.wpb_column.vc_column_container > div.vc_column-inner > div.wpb_wrapper",
+     "evidence": "\"Context\" repeated 36 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (keyframes anim-effect-boris, clockwise, donut-rotate) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "skipped: no transition triggers on the page",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 5,
+  "button_variants": 3,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 0,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

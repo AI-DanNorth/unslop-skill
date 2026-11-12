@@ -1,0 +1,528 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L28",
+ "target": "https://landonorris.com",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 0,
+  "footer": 0,
+  "header": 0
+ },
+ "buttons": {
+  "count": 7,
+  "variants": [
+   {
+    "count": 6,
+    "fill": "rgb(210, 255, 0)",
+    "strong_fill": true,
+    "text_color": "rgb(40, 44, 32)",
+    "border": "rgb(210, 255, 0)",
+    "radius_px": 7,
+    "weight": "400",
+    "heights_px": [
+     40,
+     50,
+     60
+    ],
+    "labels": [
+     "Store STORE",
+     "On Track page",
+     "Off Track Page",
+     "view on track VIEW ON TRACK",
+     "Visit the store VISIT THE STORE",
+     "business enquiries BUSINESS ENQUIRIES"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "body > div.nav:nth-of-type(2) > div.nav-inner:nth-of-type(1) > div.btn-layout.is-nav:nth-of-type(1) > a.btn-w.is-nav",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 34x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 34x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 115x31px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 117x31px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(17, 17, 18)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "400",
+    "heights_px": [
+     60
+    ],
+    "labels": [
+     "Open navigation menu"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "body > div.nav:nth-of-type(2) > div.nav-inner:nth-of-type(1) > div.btn-layout.is-nav:nth-of-type(1) > button.nav-ham",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 2,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {
+   "8": [
+    "On Track page",
+    "Off Track Page"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 1480,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 46,
+   "hover_media": 0,
+   "focus_visible": 3,
+   "focus": 15,
+   "focus_within": 2,
+   "active": 3,
+   "disabled": 10,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 2,
+   "expanded_open": 1,
+   "busy": 2,
+   "placeholder": 2,
+   "read_only": 4
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html.w-mod-js.lenis > body > div.nav:nth-of-type(2) > div.nav-inner:nth-of-type(1)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    83
+   ],
+   "items": 4,
+   "labels": [
+    "Lando Home",
+    "Store STORE",
+    "Open navigation menu",
+    "Go to home"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 26x26px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open navigation menu",
+    "where": "th-of-type(2) > div.nav-inner:nth-of-type(1) > div.btn-layout.is-nav:nth-of-type(1) > button.nav-ham",
+    "box": [
+     49,
+     49
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Store STORE",
+   "Go to home"
+  ],
+  "header_items_1440": 4,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 3,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "note": "motion.json missing (skipped: --no-motion): overlays, menus and disclosures not opened",
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  }
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "div.nav-menu-inner.c:nth-of-type(1) > div.nav-menu-grid > div.nav-menu-links-w:nth-of-type(2) > div.nav-menu-social-w:nth-of-type(3) > div.callout-socials-links-layout",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "callout-socials-links-layout",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.horizontal-pin-spacer > div.horizontal-pin-sticky > div.horizontal-track > div.horizontal-grid-col.large-img:nth-of-type(3) > div.horizontal-item-w.is-text-callout:nth-of-type(1)",
+   "y": 2905,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "cls": "horizontal-item-w is-text-callout",
+   "text": "It doesn’t matter where you start, it’s how you progress from there. It doesn’t matter where you start, it’s how you pro",
+   "fixed": false
+  },
+  {
+   "where": "div.horizontal-pin-spacer > div.horizontal-pin-sticky > div.horizontal-track > div.horizontal-grid-col:nth-of-type(10) > div.horizontal-item-w.is-text-callout:nth-of-type(2)",
+   "y": 3572,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "cls": "horizontal-item-w is-text-callout",
+   "text": "Since I was 7 years old and had my first experience with kart racing, I’ve worked tirelessly to make that dream come tru",
+   "fixed": false
+  },
+  {
+   "where": "main.main-w > div.taxi-w > div.s-group.bg-black:nth-of-type(4) > section.s:nth-of-type(2) > div.c.is-callout",
+   "y": 9467,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "cls": "c is-callout",
+   "text": "See more helmets and highlights from Lando on the track See more helmets and highlights from Lando on the track view on ",
+   "fixed": false
+  },
+  {
+   "where": "body > div.page-w:nth-of-type(5) > main.main-w > div.taxi-w > section.s.is-callout-socials:nth-of-type(5)",
+   "y": 11645,
+   "screen": 13,
+   "tile": "tiles/1440-12.png",
+   "first_screen": false,
+   "cls": "s is-callout-socials",
+   "text": "WHAT’S UPON SOCIALS WHAT’S UP ON SOCIALS Follow Lando on social media Follow Lando on social media tiktok TIKTOK instagr",
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": "async.json not captured: loading, failure and success after a primary action are not verified",
+ "focus": {
+  "stops": 26,
+  "first": "a \"\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 1,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1523,
+   "totalChars": 1740
+  },
+  "reduced_motion": {
+   "visibleChars": 1523,
+   "totalChars": 1740
+  },
+  "observer_never_fires": {
+   "visibleChars": 1533,
+   "totalChars": 1740
+  },
+  "scripts_off": {
+   "visibleChars": 1533,
+   "totalChars": 1740
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 19,
+  "prep": {
+   "host": "landonorris.com",
+   "config": {
+    "scrollFrames": 12
+   },
+   "applied": [
+    "w375: 12 scroll frames",
+    "w1280: 12 scroll frames",
+    "w1440: 12 scroll frames"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "not-verified: async capture skipped (--no-async)",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 7,
+   "hits": [
+    {
+     "where": "button \"Open navigation menu\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(17, 17, 18))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"PRIVACY POLICY\"",
+     "evidence": "no visible focus indicator (outline is set but nothing visible changes, so it is clipped or the colour of the ground: solid 2px rgb(210, 255, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"TERMS\"",
+     "evidence": "no visible focus indicator (outline is set but nothing visible changes, so it is clipped or the colour of the ground: solid 2px rgb(210, 255, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focus indicator visible but faint: 1.13:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Store\nSTORE\"",
+     "evidence": "focus indicator visible but faint: 1.18:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Go to home\"",
+     "evidence": "focus indicator visible but faint: 1.13:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Las Vegas\nLAS VEGAS\ngp\nGP\"",
+     "evidence": "focus indicator visible but faint: 1.77:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "body > div.nav:nth-of-type(2) > div.nav-inner:nth-of-type(1) > div.page-ln4-pos:nth-of-type(2) > a.nav-middle.w-inline-block",
+     "evidence": "touch target 26x26px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "type(1) > section.s.home-hero:nth-of-type(1) > div.c.home-hero > div.home-hero-touch-controls-w:nth-of-type(4) > button.btn-w.is-touch-swipe",
+     "evidence": "touch target 42x42px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ner:nth-of-type(1) > div.otot-home-layout > div.otot-home-text-col.is-1:nth-of-type(1) > div.btn-auto-top:nth-of-type(3) > a.btn-w.icon-only",
+     "evidence": "touch target 34x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".otot-home-inner:nth-of-type(1) > div.otot-home-layout > div.otot-home-text-col.is-2:nth-of-type(2) > div:nth-of-type(3) > a.btn-w.icon-only",
+     "evidence": "touch target 34x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.s-group.bg-black:nth-of-type(4) > section.s:nth-of-type(2) > div.c.is-callout > div.callout-layout > a.btn-w.w-inline-block",
+     "evidence": "touch target 115x31px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.exe-text-w:nth-of-type(1) > div.g-title-layout:nth-of-type(1) > a.btn-w.w-inline-block",
+     "evidence": "touch target 117x31px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(2) > div.callout-socials-layout > div.callout-socials-links-layout:nth-of-type(4) > a.text-link-w.w-inline-block:nth-of-type(1)",
+     "evidence": "touch target 32x10px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(2) > div.callout-socials-layout > div.callout-socials-links-layout:nth-of-type(4) > a.text-link-w.w-inline-block:nth-of-type(2)",
+     "evidence": "touch target 53x10px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(2) > div.callout-socials-layout > div.callout-socials-links-layout:nth-of-type(4) > a.text-link-w.w-inline-block:nth-of-type(3)",
+     "evidence": "touch target 41x10px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(2) > div.callout-socials-layout > div.callout-socials-links-layout:nth-of-type(4) > a.text-link-w.w-inline-block:nth-of-type(4)",
+     "evidence": "touch target 35x10px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (keyframes translateXLeft, translateXRight) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (--no-motion)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (--no-motion)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 7,
+  "button_variants": 2,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 5,
+  "async_actions": null
+ }
+}

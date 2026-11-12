@@ -1,0 +1,85 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:40:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "Every header link ('Product' to 'Sign in') points to '#', the 375 header keeps all seven links in one row that pushes the page sideways, the one sign-up action has three labels, and the stylesheet declares only two hover rules and no pressed, focus-visible or disabled state.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-WHERE-AM-I fails on seven dead nav links (CMP-012), T-PHONE-NAV fails on a header that does not fit at 375 (CMP-011), T-STATE-MATRIX finds no declared states beyond two hovers (CMP-002), and T-PRIMARY-COUNT finds three labels for one action (CMP-121)."
+  },
+  "visitor_mode": "Persuade: a SaaS landing page for a waitlist or early-access sign-up. No 00-contract.md; inferred from 'Join the waitlist', 'Get started' and 'Get early access'.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "header nav, 1440 and 375, fold-1440.png",
+      "evidence": "The components table records 7 dead links in the header: 'Product', 'Solutions', 'Pricing', 'Customers', 'Docs', 'Sign in' and 'Get started →' all point to '#'. The first focus stop after the skip link is 'Product' with href '#'.",
+      "before": "Seven header items that go nowhere.",
+      "after": "Each item linked to its page or section, and items with no page removed; [DATA NEEDED: the pricing, docs and sign-in URLs].",
+      "why": "A visitor who clicks Pricing, Docs or Sign in stays on the same screen with no explanation.",
+      "root": "header nav component",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "header, 375, fold-375.png",
+      "evidence": "phone_nav lists all seven header items still in one row at 375 with no menu button; fold-375.png shows 'Product', 'Solutions', 'Pricing' running off the right edge, and the overflow sweep reports the page 694px wide at 375 with the nav links as the culprit. The logo 'Lumina' wraps its sparkle onto a second line.",
+      "before": "The desktop nav row squeezed into 375 and pushing the page sideways.",
+      "after": "Under about 60rem the links go behind a 'Menu' button (aria-expanded), leaving the logo, the sign-up button and the menu (CMP-154).",
+      "why": "Phone visitors see half the nav, can scroll the page sideways, and cannot reach Sign in or the sign-up button in the header.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "all buttons and links, stylesheet",
+      "evidence": "declared_states reads 47 readable rules with 2 hover rules and 0 focus-visible, 0 focus, 0 active and 0 disabled rules. The three gradient buttons ('Get started →', 'Join the waitlist →', 'Get early access →') have no pressed or focused look of their own.",
+      "before": "Buttons have a resting look and a hover glow only.",
+      "after": "A focus-visible ring, a pressed state one step darker and a busy state for the sign-up button, on each variant.",
+      "why": "Keyboard users rely on the browser's default ring on a dark gradient, and a press gives no feedback.",
+      "root": "gradient button variant",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header, hero and closing band, 1440, fold-1440.png and tiles/1440-02.png",
+      "evidence": "The same purple-to-pink gradient button reads 'Get started →' in the header, 'Join the waitlist →' in the hero and 'Get early access →' in the closing band 'Ready to transform how your team builds?'.",
+      "before": "Three labels for one sign-up.",
+      "after": "One label, for example 'Join the waitlist', on all three buttons.",
+      "why": "'Get started' promises the product now, 'Join the waitlist' promises a queue; the visitor cannot tell which is true.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-119",
+      "title": "Button labels and primary nav links never wrap at any width 320-1920",
+      "tier": "Reflex",
+      "where": "hero buttons, 375, fold-375.png",
+      "evidence": "At 375 the hero's 'Join the waitlist →' wraps to two lines ('Join the / waitlist →') and 'Watch demo' wraps to 'Watch / demo' inside side-by-side buttons.",
+      "before": "Two hero buttons squeezed side by side with wrapped labels.",
+      "after": "The primary at full width on its own line with the label on one line, and 'Watch demo' as a text link under it.",
+      "why": "Wrapped labels make the main action harder to read on the width most visitors use.",
+      "test": "T-PHONE-NAV"
+    }
+  ],
+  "strengths": [
+    "A skip link is the first focus stop.",
+    "The hero pairs one filled primary with a quieter dark secondary ('Watch demo'), and the closing band carries a single action."
+  ],
+  "not_investigated": [
+    "The waitlist or sign-up flow: every action links to '#', so there is no flow to capture; the async capture found no primary action.",
+    "Inline validation and error placement: no fields.",
+    "Focus visibility itself: the focus_ring sweep reported no hit; with no focus-visible rule the browser default is in use.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "Capture prep blocked the host's '/js/detect-antipatterns-browser.js' script; the page is served under an 'antipattern-examples' path but its own text does not label it as an example, so it is judged as a landing page.",
+    "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-TABLE-READ and T-FIRST-RUN: no field, no failure run, no overlay, no table and no onboarding."
+  ]
+}

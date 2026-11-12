@@ -1,0 +1,44 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:05:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The diagram lightbox opens over a dimmed page with a close button and the line 'Esc or click outside to close', and it closed after Escape; the install cards' copy buttons switch to 'COPIED' with an accent border; the one gap is install commands cut off at the card edge.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-OVERLAY-CHECK, T-STATE-MATRIX on the copy buttons and T-PRIMARY-COUNT pass; T-STATE-MATRIX also finds the install commands clipped at the card edge, and T-PHONE-NAV could not run because there is no 375 capture (CMP-232)."
+  },
+  "visitor_mode": "Persuade (inferred: a landing page for a diagram-drawing agent skill, with one primary action 'Install the skill' and a gallery of 45 diagrams; the capture's medium is 'diagram', but the artifact is a web page)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-232",
+      "title": "Essential text (headings, actions, errors, distinguishing names) is never clamped",
+      "tier": "Reflex",
+      "where": "Install section cards 'Claude Code', 'Codex', 'Pi', 'GitHub Copilot' and 'Factory Droid', 1440, motion/t4-normal-600.png y 460-735",
+      "evidence": "The command lines stop at the card's right edge with no wrap, fade or scroll: '/plugin marketplace add cathrynlavery/diagram-de', 'codex plugin marketplace add cathrynlavery/diagr', 'pi install https://github.com/cathrynlavery/diag' and 'droid plugin install diagram-design@diagram-desi'.",
+      "before": "Five of the seven install commands are cut mid-word inside their cards.",
+      "after": "Each command wraps at a path separator or scrolls inside its code line, so the full command can be read before it is copied.",
+      "why": "A visitor who reads before pasting, or copies by hand, cannot see what the command will run.",
+      "root": "the install card's code line (white-space: nowrap with overflow hidden)",
+      "test": "T-STATE-MATRIX"
+    }
+  ],
+  "strengths": [
+    "The full-size diagram view is a real overlay used for its proper job: it dims the page, has a close button at top right, says 'Esc or click outside to close', and the capture found it closed after Escape (motion/t0-normal-600.png).",
+    "Each install card's 'COPY' button changes to 'COPIED' and the card takes an accent border after the click (motion/t4-normal-600.png).",
+    "One filled primary on the first screen, 'INSTALL THE SKILL', with 'VIEW ON GITHUB' as the outlined secondary.",
+    "The Dark and Light switch shows the selected theme as the filled half.",
+    "The focus walk starts on a link to the top of the page, and the gallery's 45 diagrams each carry a named 'View ... full size' button."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "T-PHONE-NAV: there is no 375 capture (dom-375.json missing), so the phone header and menu are not verified.",
+    "The header's section links (WHAT, INSTALL, USE, GALLERY) are in-page anchors on a one-page site; whether they mark the current section while scrolling is not verified.",
+    "T-ERROR-PATH: no action sends a request, so no failure run was possible; a refused clipboard is not verified.",
+    "T-FIELD-READ and T-TABLE-READ skipped: no fields and no data table.",
+    "The stylesheet declares 1 focus-visible rule and 0 active rules; how focus looks on every control is the sweep's and lens-a11y's (one focus_ring hit: a gallery button partly hidden under the sticky header).",
+    "The first-pass and redrawn diagrams inside the figures are exhibits (conflict C48)."
+  ]
+}

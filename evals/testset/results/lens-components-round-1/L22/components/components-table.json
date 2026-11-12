@@ -1,0 +1,373 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L22",
+ "target": "https://skill-huasheng.vercel.app/slides/slide-03b-deepseek-cover.html",
+ "width": 1920,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 0,
+  "footer": 0,
+  "header": 0
+ },
+ "buttons": {
+  "count": 1,
+  "variants": [
+   {
+    "count": 1,
+    "fill": "rgba(212, 165, 116, 0.1)",
+    "strong_fill": false,
+    "text_color": "rgb(212, 165, 116)",
+    "border": "rgba(212, 165, 116, 0.3)",
+    "radius_px": 1,
+    "weight": "500",
+    "heights_px": [
+     27
+    ],
+    "labels": [
+     "↻ REPLAY"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#replay",
+    "tile": "tiles/1920-00.png"
+   }
+  ],
+  "variant_count": 1,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 68,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 1,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 0,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": "dom-375.json not captured: the phone navigation is not verified",
+ "overlays": {
+  "found": 1,
+  "tried": 1,
+  "by_kind": {
+   "button": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "↻ REPLAY",
+    "selector": "#replay",
+    "status": "ok",
+    "opened": [
+     "div: AI · GENERATED DeepSeek V4 FUTURE OF AI ",
+     "img: ",
+     "img: ",
+     "img: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     706.7,
+     300.7
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 660 ms (measured from frames; limit for a button 300 ms)",
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 4 px / scales 0% (frames seeked)"
+    ]
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.compare:nth-of-type(4) > div.panel:nth-of-type(3) > div.output:nth-of-type(3) > div.triplet:nth-of-type(2) > div.ccard:nth-of-type(1)",
+   "y": 577,
+   "screen": 1,
+   "tile": "tiles/1920-00.png",
+   "first_screen": true,
+   "count": 3,
+   "size": [
+    322,
+    180
+   ],
+   "section": null,
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 1,
+  "first": "button \"↻ REPLAY\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 640,
+   "totalChars": 640
+  },
+  "reduced_motion": {
+   "visibleChars": 640,
+   "totalChars": 640
+  },
+  "observer_never_fires": {
+   "visibleChars": 597,
+   "totalChars": 640
+  },
+  "scripts_off": {
+   "visibleChars": 332,
+   "totalChars": 640
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "prep": {
+   "host": "skill-huasheng.vercel.app",
+   "config": {
+    "wait": 8000
+   },
+   "applied": [
+    "w1920: waited 8000ms"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 0,
+   "hits": []
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 3,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is button \"↻ REPLAY\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "skipped: needs captures at 1440 and 375",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "308 characters (48% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (transform transitions) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 3,
+   "hits": [
+    {
+     "where": "button trigger \"↻ REPLAY\" (#replay)",
+     "evidence": "transition runs 660 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "button trigger \"↻ REPLAY\" (#replay)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "button trigger \"↻ REPLAY\" (#replay)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 4 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 1,
+  "button_variants": 1,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 0,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 1,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

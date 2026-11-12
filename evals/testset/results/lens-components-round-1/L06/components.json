@@ -1,0 +1,77 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:40:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The cookie dialog, the FAQ accordion and the labelled product preview are finished components, but on a phone an 'Install Consile' sheet covers the hero's Start free button on load, and the hero offers three ways in (Start free, Explore the live demo, Book a demo).",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-OVERLAY-CHECK passes on the cookie dialog (scrim, close button, closed after Escape) and T-STATE-MATRIX finds a full declared state set, but T-INTERRUPT fails at 375 (CMP-014) and T-PRIMARY-COUNT finds three hero actions (CMP-004)."
+  },
+  "visitor_mode": "Persuade: a SaaS landing page for a team workspace whose goal is a free sign-up or a demo booking. No 00-contract.md; inferred from 'Start free' and 'Book a demo' in the header and hero.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN"],
+  "findings": [
+    {
+      "rule": "CMP-014",
+      "title": "Nothing interrupts the visitor uninvited",
+      "tier": "Reflex",
+      "where": "'Install Consile' sheet, bottom of the first screen, 375, fold-375.png",
+      "evidence": "At 375 a white sheet 'Install Consile — Open your browser menu, then tap Add to Home Screen or Install app to keep Consile one tap away' with 'Maybe later' and a close button covers the bottom 150px of the first screen on load, cutting through the orange 'Start free' button and hiding 'Explore the live demo' below it.",
+      "before": "An install prompt opens on a first visit to the marketing page, over the main action.",
+      "after": "No install prompt on the landing page; offer 'Install app' inside the product after sign-in, when the visitor reaches a feature that needs it (CMP-220).",
+      "why": "A first-time phone visitor is asked to install an app they have not tried, and the prompt hides the button that would let them try it.",
+      "test": "T-INTERRUPT"
+    },
+    {
+      "rule": "CMP-004",
+      "title": "One primary action per view",
+      "tier": "Reflex",
+      "where": "hero actions, 1440, fold-1440.png",
+      "evidence": "The hero carries a filled orange 'Start free', a grey filled 'Explore the live demo' (rgba(29, 33, 43, 0.06)) and a text line 'Book a demo with our team instead, or see how it works'; the header repeats 'Login', an outlined 'Book a demo' and a filled 'Start free'. The first screen offers five actions in two rows.",
+      "before": "Three hero actions and a second set in the header.",
+      "after": "Start free as the one filled primary, one quieter secondary (the live demo), and Book a demo left to the header.",
+      "why": "Five ways in on the first screen spread the visitor's choice; the second grey button weighs nearly as much as the primary.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav records the 375 header as the logo plus one 'Open navigation menu' button 32x32 drawn as a bare three-line icon; Login, Book a demo and Start free all move behind it. The targets sweep flags the 32x32 button.",
+      "before": "Every destination and both header actions sit behind a small unlabelled icon.",
+      "after": "'Start free' kept in the 375 header beside a 'Menu' button with a visible word and a 44px box.",
+      "why": "On a phone the sign-up action leaves the header, and the only route to Pricing is a 32px icon.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "footer column heads 'PRODUCT', 'WHO IT'S FOR', 'LEGAL', 'COMPANY', 'FREE TOOLS', 1440, motion/t3-normal-600.png",
+      "evidence": "The buttons table lists the five footer column heads as buttons (21px tall, no fill); the capture clicked 'PRODUCT' at 1440 (trigger t4) and nothing opened.",
+      "before": "Column heads are buttons that do nothing at desktop width.",
+      "after": "Plain headings at desktop widths, and a disclosure button only where the columns collapse on a phone.",
+      "why": "Keyboard and screen-reader users meet five buttons in the footer that do nothing when pressed.",
+      "root": "footer column component",
+      "test": "T-WHERE-AM-I"
+    }
+  ],
+  "strengths": [
+    "The cookie preferences dialog opens over a scrim with a close button, four labelled switches with 'Always on' on the required one, and closed after Escape (motion/t3-normal-600.png).",
+    "The FAQ uses one accordion row per question with a chevron, a single style for all six rows (tiles/1440-07.png).",
+    "The hero's product picture is labelled 'PRODUCT PREVIEW · SAMPLE DATA', so its tabs and status chips read as an illustration, not as controls (C48).",
+    "The stylesheet declares hover (169 rules), focus-visible (28), active (7), disabled (21), current or selected (32) and busy (3) states."
+  ],
+  "not_investigated": [
+    "Sign-up, demo booking and login flows: the async capture found no primary action on the page to hold or fail.",
+    "Whether the header marks the current page past the home page: only the home page was captured; 'Home' has no current mark here.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "The FAQ disclosure: the capture clicked the first question but the still shows the top of the page, so its open state was not seen.",
+    "Inline validation and error placement: no fields.",
+    "Focus moving into the cookie dialog and back to its trigger, scroll lock and backdrop click; keyboard operation of custom widgets: lens-a11y.",
+    "Capture prep clicked 'Reject All' on the cookie banner at every width; the banner's first view is capture context, not judged here.",
+    "T-FIELD-READ, T-ERROR-PATH and T-TABLE-READ: no field, no failure run and no table outside the product picture."
+  ]
+}

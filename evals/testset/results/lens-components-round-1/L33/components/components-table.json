@@ -1,0 +1,908 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L33",
+ "target": "https://preview.pro.ant.design/dashboard/analysis",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 0,
+  "footer": 0,
+  "header": 2
+ },
+ "buttons": {
+  "count": 9,
+  "variants": [
+   {
+    "count": 7,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgba(0, 0, 0, 0.88)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 6,
+    "weight": "400",
+    "heights_px": [
+     24,
+     32,
+     36
+    ],
+    "labels": [
+     "使用文档",
+     "历史版本",
+     "语言切换",
+     "今日",
+     "本周",
+     "本月"
+    ],
+    "first_screen": 6,
+    "in_footer": 0,
+    "icon_only": 7,
+    "example": "div > div > div.ant-pro-global-header-header-actions.css-tql0nm > div.ant-pro-global-header-header-actions-item.css-tql0nm:nth-of-type(1) > button.ant-btn.css-tql0nm",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(24, 144, 255)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 6,
+    "weight": "700",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "本年"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.ant-tabs-nav:nth-of-type(1) > div.ant-tabs-extra-content:nth-of-type(3) > div.acss-6b2xdh > div.acss-obd77i:nth-of-type(1) > button.ant-btn.css-tql0nm:nth-of-type(4)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgba(0, 0, 0, 0.25)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 6,
+    "weight": "400",
+    "heights_px": [
+     24
+    ],
+    "labels": [
+     "left"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.ant-spin.css-tql0nm > div.ant-spin-container > ul.ant-pagination.ant-pagination-small > li.ant-pagination-prev.ant-pagination-disabled:nth-of-type(1) > button.ant-pagination-item-link",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 24x24px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 3,
+  "row_buttons": {
+   "count": 1,
+   "labels": [
+    "ellipsis"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 2343,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 194,
+   "hover_media": 0,
+   "focus_visible": 54,
+   "focus": 35,
+   "focus_within": 11,
+   "active": 54,
+   "disabled": 69,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 3,
+   "expanded_open": 2,
+   "busy": 191,
+   "placeholder": 7,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "div.ant-tabs-extra-content:nth-of-type(3) > div.acss-6b2xdh > div.ant-picker.ant-picker-range:nth-of-type(2) > div.ant-picker-input.ant-picker-input-start:nth-of-type(1) > input",
+   "y": 366,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": "Start date",
+   "autocomplete": "off",
+   "labelled": false,
+   "visible_label": "本年",
+   "label_at": "left",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 22,
+   "form": null,
+   "search_like": false,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label (placeholder \"Start date\" is not a label)"
+   ]
+  },
+  {
+   "where": "div.ant-tabs-extra-content:nth-of-type(3) > div.acss-6b2xdh > div.ant-picker.ant-picker-range:nth-of-type(2) > div.ant-picker-input.ant-picker-input-end:nth-of-type(3) > input",
+   "y": 366,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": "End date",
+   "autocomplete": "off",
+   "labelled": false,
+   "visible_label": "本年",
+   "label_at": "left",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 22,
+   "form": null,
+   "search_like": false,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label (placeholder \"End date\" is not a label)"
+   ]
+  }
+ ],
+ "choices": {
+  "choices": [
+   {
+    "where": "div.acss-o3ihhy > div.ant-segmented.acss-10xkqb5 > div.ant-segmented-group > label.ant-segmented-item.ant-segmented-item-selected:nth-of-type(1) > input.ant-segmented-item-input",
+    "y": 798,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "全部渠道",
+    "group": "_r_2f_",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   },
+   {
+    "where": "div.acss-o3ihhy > div.ant-segmented.acss-10xkqb5 > div.ant-segmented-group > label.ant-segmented-item:nth-of-type(2) > input.ant-segmented-item-input",
+    "y": 798,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "线上",
+    "group": "_r_2f_",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   },
+   {
+    "where": "div.acss-o3ihhy > div.ant-segmented.acss-10xkqb5 > div.ant-segmented-group > label.ant-segmented-item:nth-of-type(3) > input.ant-segmented-item-input",
+    "y": 798,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "门店",
+    "group": "_r_2f_",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   }
+  ],
+  "radio_groups": {
+   "_r_2f_": 3
+  },
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 2
+ },
+ "navigation": [
+  {
+   "where": "div.css-tql0nm.ant-app > div.css-tql0nm.ant-design-pro > div.ant-layout.ant-layout-has-sider:nth-of-type(2) > div.ant-pro-layout-container.css-tql0nm:nth-of-type(2) > header.ant-layout-header.css-tql0nm:nth-of-type(2)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    56
+   ],
+   "items": 3,
+   "labels": [
+    "使用文档",
+    "历史版本",
+    "语言切换"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "div.ant-layout.ant-layout-has-sider:nth-of-type(2) > aside.ant-layout-sider.ant-layout-sider-dark > div.ant-layout-sider-children > div:nth-of-type(1) > ul.ant-menu.ant-menu-root",
+   "y": 56,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "kind": "sidebar",
+   "position": "fixed",
+   "box": [
+    8,
+    56,
+    240,
+    844
+   ],
+   "items": 5,
+   "labels": [
+    "Welcome",
+    "Analysis",
+    "Monitor",
+    "Workplace",
+    "AI Assistant"
+   ],
+   "current": [
+    {
+     "item": "Analysis",
+     "by": [
+      "class",
+      "links to this page"
+     ]
+    }
+   ],
+   "dead_links": 0
+  },
+  {
+   "where": "div.ant-card.css-tql0nm:nth-of-type(2) > div.ant-card-body > div.ant-tabs.ant-tabs-top > div.ant-tabs-nav:nth-of-type(1) > div.ant-tabs-extra-content:nth-of-type(3)",
+   "y": 350,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    856,
+    350,
+    544,
+    55
+   ],
+   "items": 4,
+   "labels": [
+    "今日",
+    "本周",
+    "本月",
+    "本年"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "div.ant-card-body:nth-of-type(2) > div.css-var-_r_1l_.ant-table-css-var:nth-of-type(2) > div.ant-spin.css-tql0nm > div.ant-spin-container > ul.ant-pagination.ant-pagination-small",
+   "y": 1238,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "kind": "pagination",
+   "position": "static",
+   "box": [
+    320,
+    1238,
+    492,
+    24
+   ],
+   "items": 2,
+   "labels": [
+    "left",
+    "right"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 24x24px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "div.ant-pro-grid-content-children.css-tql0nm > div.ant-card.acss-n6tnww:nth-of-type(4) > div.ant-card-body > div.ant-tabs.ant-tabs-top > div.ant-tabs-nav:nth-of-type(1)",
+   "y": 1342,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    320,
+    1342,
+    1056,
+    136
+   ],
+   "items": 2,
+   "labels": [
+    "ellipsis",
+    "Stores 0 转化率 90%"
+   ],
+   "current": [
+    {
+     "item": "Stores 0 转化率 90%",
+     "by": [
+      "class"
+     ]
+    }
+   ],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [],
+  "header_items_1440": 3,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 3,
+    "position": "fixed",
+    "current": []
+   },
+   {
+    "kind": "pagination",
+    "items": 2,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "tabs",
+    "items": 2,
+    "position": "static",
+    "current": [
+     {
+      "item": "Stores 0 转化率 40%",
+      "by": [
+       "class"
+      ]
+     }
+    ]
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 8,
+  "tried": 6,
+  "by_kind": {
+   "menu": 2,
+   "tab": 1,
+   "button": 3
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "menu",
+    "name": "Admin",
+    "selector": "t > div > div > div:nth-of-type(2) > aside > div > div:nth-of-type(1) > ul > li:nth-of-type(2) > div",
+    "status": "ok",
+    "opened": [
+     "i: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     10,
+     0
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "menu",
+    "name": "",
+    "selector": "#rc-tabs-1-more",
+    "status": "ok",
+    "opened": [
+     "listbox: expanded dropdown"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": false,
+    "largest_box": [
+     162,
+     200
+    ],
+    "closed_after_escape": false,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "tab",
+    "name": "访问量",
+    "selector": "#rc-tabs-0-tab-views",
+    "status": "ok",
+    "opened": [
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     48,
+     2
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "今日",
+    "selector": "v > div > div:nth-of-type(1) > div:nth-of-type(3) > div > div:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "本年",
+    "selector": "v > div > div:nth-of-type(1) > div:nth-of-type(3) > div > div:nth-of-type(1) > button:nth-of-type(4)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "使用文档",
+    "selector": ") > header:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div:nth-of-type(1) > button",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "not-verified"
+   }
+  ],
+  "not_tried": [
+   "历史版本: over the cap of 6 triggers",
+   "#root > div > div > div:nth-of-type(2) > div:nth-of-type(2) > main > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > ul > li:nth-of-type(9) > button: over the cap of 6 triggers"
+  ],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [
+  {
+   "where": "div.ant-spin-container > div.ant-table.ant-table-small > div.ant-table-container > div.ant-table-content > table",
+   "y": 988,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "rows": 6,
+   "header_cells": [
+    "周涨幅",
+    "用户数",
+    "搜索关键词",
+    "排名"
+   ],
+   "numeric_cells": 15,
+   "numeric_align": {
+    "start": 15
+   },
+   "width_px": 492,
+   "section": "门店销售额排名",
+   "head_wraps": 0,
+   "at_375": {
+    "width_px": 292,
+    "wider_than_screen": false,
+    "visible": true
+   }
+  }
+ ],
+ "status_regions": [
+  {
+   "where": "div.ant-card-body:nth-of-type(2) > div.acss-79elbk > div.acss-grxbm:nth-of-type(2) > div.acss-16mkun2 > div.ant-progress.ant-progress-status-active",
+   "y": 257,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "ant-progress ant-progress-status-active",
+   "text": "78%",
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [
+   {
+    "where": "li.ant-menu-item.ant-menu-item-only-child:nth-of-type(1) > span.ant-menu-title-content > a > div.ant-pro-base-menu-inline-item-title.css-tql0nm > span.ant-pro-base-menu-inline-item-text.css-tql0nm:nth-of-type(2)",
+    "y": 60,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "text": "Welcome",
+    "match": "Welcome"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 1
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "ul \"WelcomeAdminDashboardAnalysisMonitorWork\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 5,
+  "covered": 1,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 536,
+   "totalChars": 598
+  },
+  "reduced_motion": {
+   "visibleChars": 538,
+   "totalChars": 600
+  },
+  "observer_never_fires": {
+   "visibleChars": 535,
+   "totalChars": 574
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 35,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "ul \"Welcome\nAdmin\nDashboard\nAnalysis\nMonitor\nWorkplace\nForm\nList\"",
+     "evidence": "no visible focus indicator (outline is set but nothing visible changes, so it is clipped or the colour of the ground: solid 3px rgb(145, 213, 255))",
+     "tier": "Floor"
+    },
+    {
+     "where": "input \"on\"",
+     "evidence": "focused element is entirely hidden by a fixed or sticky element (WCAG 2.4.11)",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Welcome\"",
+     "evidence": "focus indicator visible but faint: 1.55:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Analysis\"",
+     "evidence": "focus indicator visible but faint: 1.36:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Monitor\"",
+     "evidence": "focus indicator visible but faint: 1.46:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Workplace\"",
+     "evidence": "focus indicator visible but faint: 1.46:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"AI Assistant\"",
+     "evidence": "focus indicator visible but faint: 1.46:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ul \"\"",
+     "evidence": "focus indicator visible but faint: 1.60:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"使用文档\"",
+     "evidence": "focus indicator visible but faint: 1.60:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"历史版本\"",
+     "evidence": "focus indicator visible but faint: 1.60:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "lobal-header-header-actions.css-tql0nm > div.ant-pro-global-header-header-actions-item.css-tql0nm:nth-of-type(1) > button.ant-btn.css-tql0nm",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "lobal-header-header-actions.css-tql0nm > div.ant-pro-global-header-header-actions-item.css-tql0nm:nth-of-type(2) > button.ant-btn.css-tql0nm",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "lobal-header-header-actions.css-tql0nm > div.ant-pro-global-header-header-actions-item.css-tql0nm:nth-of-type(3) > button.ant-btn.css-tql0nm",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#rc-tabs-0-tab-sales  \"销售额\"",
+     "evidence": "touch target 48x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.ant-table-content > table > thead.ant-table-thead > tr > th.ant-table-cell.ant-table-column-has-sorters:nth-of-type(3)",
+     "evidence": "touch target 74x39px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.ant-table-content > table > thead.ant-table-thead > tr > th.ant-table-cell.ant-table-column-has-sorters:nth-of-type(4)",
+     "evidence": "touch target 74x39px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "r > ul.ant-pagination.ant-pagination-small > li.ant-pagination-prev.ant-pagination-disabled:nth-of-type(1) > button.ant-pagination-item-link",
+     "evidence": "touch target 24x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "n.css-tql0nm > div.ant-spin-container > ul.ant-pagination.ant-pagination-small > li.ant-pagination-item.ant-pagination-item-1:nth-of-type(2)",
+     "evidence": "touch target 24x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "n.css-tql0nm > div.ant-spin-container > ul.ant-pagination.ant-pagination-small > li.ant-pagination-item.ant-pagination-item-2:nth-of-type(3)",
+     "evidence": "touch target 24x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "n.css-tql0nm > div.ant-spin-container > ul.ant-pagination.ant-pagination-small > li.ant-pagination-item.ant-pagination-item-3:nth-of-type(4)",
+     "evidence": "touch target 24x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 2,
+   "hits": [
+    {
+     "where": "e(3) > div.acss-6b2xdh > div.ant-picker.ant-picker-range:nth-of-type(2) > div.ant-picker-input.ant-picker-input-start:nth-of-type(1) > input",
+     "evidence": "input[type=text] has no label (placeholder \"Start date\" is not a label)",
+     "tier": "Floor"
+    },
+    {
+     "where": "ype(3) > div.acss-6b2xdh > div.ant-picker.ant-picker-range:nth-of-type(2) > div.ant-picker-input.ant-picker-input-end:nth-of-type(3) > input",
+     "evidence": "input[type=text] has no label (placeholder \"End date\" is not a label)",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "e.ant-tabs-tabpane-active > div.ant-row.css-tql0nm > div.ant-col.ant-col-xs-24:nth-of-type(2) > div.acss-16j1xqq > h4.acss-98erv7  \"门店销售额排名\"",
+     "evidence": "heading jumps from h1 to h4",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is ul \"WelcomeAdminDashboardAnalysisM\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 1,
+   "hits": [
+    {
+     "where": "rid-content-children.css-tql0nm > div.ant-row.css-tql0nm:nth-of-type(1) > div.ant-col.ant-col-xs-24:nth-of-type(1) > div.ant-card.css-tql0nm",
+     "evidence": "8 containers share radius 8px and shadow \"rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.02) 0px\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.ant-tabs-tabpane.ant-tabs-tabpane-active > div.ant-row.css-tql0nm > div.ant-col.ant-col-xs-24:nth-of-type(2) > div.acss-16j1xqq",
+     "evidence": "\"323,234\" repeated 7 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "536 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (2)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (2)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 9,
+  "button_variants": 3,
+  "fields_visible": 2,
+  "fields_placeholder_only": 0,
+  "choices": 3,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 5,
+  "nav_with_current_mark": 2,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 0,
+  "tables": 1,
+  "status_regions": 1,
+  "async_actions": 0
+ }
+}

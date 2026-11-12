@@ -1,0 +1,399 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L14",
+ "target": "https://impeccable.style/antipattern-examples/new-slop-2026.html",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 3,
+  "variants": [
+   {
+    "count": 2,
+    "fill": "rgb(255, 223, 56)",
+    "strong_fill": true,
+    "text_color": "rgb(23, 23, 23)",
+    "border": "rgb(23, 23, 23)",
+    "radius_px": 0,
+    "weight": "700",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "LET’S GO ↗",
+     "START MAKING MOVES ↗"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body > nav > a.button:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(23, 23, 23)",
+    "border": "rgb(23, 23, 23)",
+    "radius_px": 0,
+    "weight": "700",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "SHOW ME HOW"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.actions:nth-of-type(2) > a.button.secondary:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 2,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 65,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 1,
+   "hover_media": 0,
+   "focus_visible": 1,
+   "focus": 0,
+   "focus_within": 0,
+   "active": 1,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html > body > nav",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "static",
+   "box": [
+    0,
+    0,
+    1440,
+    87
+   ],
+   "items": 4,
+   "labels": [
+    "LET’S GO ↗",
+    "L lumina.",
+    "The good stuff",
+    "How it works"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 127x35px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "L lumina.",
+   "LET’S GO ↗"
+  ],
+  "header_items_1440": 4,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 0,
+  "tried": 0,
+  "by_kind": {},
+  "triggers": [],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1)",
+   "y": 946,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    441,
+    227
+   ],
+   "section": "All the tools. None of the blah.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [
+   {
+    "where": "div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.progress:nth-of-type(5) > div.progress-label:nth-of-type(1) > span:nth-of-type(1)",
+    "y": 523,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "mock_hint": "dashboard",
+    "text": "BIG THINGS LOADING",
+    "match": "LOADING"
+   }
+  ],
+  "success": [
+   {
+    "where": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > span:nth-of-type(2)",
+    "y": 358,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "mock_hint": "dashboard",
+    "text": "DONE",
+    "match": "DONE"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 1,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 6,
+  "first": "a \"Llumina.\" href=#top",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 730,
+   "totalChars": 730
+  },
+  "reduced_motion": {
+   "visibleChars": 730,
+   "totalChars": 730
+  },
+  "observer_never_fires": {
+   "visibleChars": 730,
+   "totalChars": 730
+  },
+  "scripts_off": {
+   "visibleChars": 730,
+   "totalChars": 730
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": {
+   "host": "impeccable.style",
+   "config": {
+    "block": [
+     "/js/detect-antipatterns-browser.js"
+    ]
+   },
+   "applied": [
+    "blocked /js/detect-antipatterns-browser.js"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 1,
+   "hits": [
+    {
+     "where": "html > body > nav > a.logo:nth-of-type(1)  \"lumina.\"",
+     "evidence": "touch target 127x35px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.dashboard-wrap:nth-of-type(2) > div.sticker:nth-of-type(2)",
+     "evidence": "page is 384px wide at a 375px viewport (sideways scroll); widest culprit 120px",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "skipped: no transition triggers on the page",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 3,
+  "button_variants": 2,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

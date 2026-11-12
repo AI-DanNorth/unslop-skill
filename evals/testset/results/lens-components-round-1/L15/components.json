@@ -1,0 +1,97 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The page labels itself 'Skill fixture, before' and uses browser-default buttons and spans: the selected range and the selected type filter look exactly like their neighbours, and 'Remove' and 'Send follow-up' change nothing on screen.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-STATE-MATRIX and T-WHERE-AM-I fail on the range and type filters, T-ERROR-PATH fails on the two actions that do nothing visible, and T-TABLE-READ fails on left-aligned money and a phone tracker table that scrolls sideways (CMP-002, CMP-003, CMP-010, CMP-018)."
+  },
+  "visitor_mode": "Operate (inferred: a weekly operations dashboard with filters, a thread table, a pending feed and follow-up actions; the page calls itself a 'Skill fixture, before', so it is judged as the interface it shows, with its plainness acknowledged as intended)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-ERROR-PATH", "T-TABLE-READ"],
+  "findings": [
+    {
+      "rule": "CMP-010",
+      "title": "Navigation shows where you are",
+      "tier": "Reflex",
+      "where": "section:nth-of-type(2) > div.filter-bar (range pills and type filter buttons), 1440 and 375, tiles/1440-00.png y 260-330",
+      "evidence": "The range picker is three spans ('7 days', '30 days', 'Quarter'). The DOM marks '7 days' as span.pill.active, but it renders in the same weight 400, the same colour rgb(34,34,34) and the same transparent background as the other two. The type filter 'All' is button.filter.active and renders the same rgb(240,240,240) fill and black border as 'People' and 'Money'. The readable stylesheet (66 rules) declares no current or selected rule and no :active rule.",
+      "before": "The selected range and the selected type carry an .active class that changes nothing on screen.",
+      "after": "A segmented control for the range and for the type, with the selected segment filled or underlined and marked aria-pressed or aria-current.",
+      "why": "An operator cannot tell which period or which type the table and totals show, so the numbers above the table cannot be read with confidence.",
+      "root": "the .active class on .pill and .filter has no style",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "span.pill ('7 days', '30 days', 'Quarter'), 1440, tiles/1440-00.png y 269",
+      "evidence": "The three range options are plain spans with no border, fill or underline. They are not buttons and not in the focus order (the focus walk starts on button 'All'). The stylesheet declares 3 hover rules, 3 focus-visible rules and 0 active rules across the whole page.",
+      "before": "Range options read as a line of text, with no rest, hover, pressed or selected look.",
+      "after": "Real buttons (or a radio group) with a hover step, a pressed step, the focus ring the page already declares and a selected look.",
+      "why": "Operators do not see that the period can be changed, and keyboard users cannot reach it.",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-003",
+      "title": "Waiting, failure and success belong to the action",
+      "tier": "Reflex",
+      "where": "button 'Send follow-up' (section:nth-of-type(6) > p:nth-of-type(2) > button:nth-of-type(1)) and button 'Remove' (filter bar), 1440, async/a0-slow-*.png and async/a1-slow-*.png",
+      "evidence": "The async run clicked both buttons and recorded no request, no new text and no success text. a0-slow-2s.png shows 'Send follow-up' in its pressed grey with nothing else changed. a1-slow-final.png still shows the 'Owner: Ada' filter next to its 'Remove' button. No failure run was possible because neither click sent a request.",
+      "before": "Clicking 'Send follow-up' or 'Remove' produces no visible result.",
+      "after": "'Remove' takes the 'Owner: Ada' filter away and the table updates; 'Send follow-up' shows 'Sending' on the button, then 'Sent to Harbor and Co' with Undo in the feed, and an inline error with Retry if the request fails.",
+      "why": "An action with no visible answer makes the operator click again or assume it worked when it did not.",
+      "test": "T-ERROR-PATH"
+    },
+    {
+      "rule": "CMP-018",
+      "title": "Tables read as tables",
+      "tier": "Reflex",
+      "where": "table.table-styled ('Urgent': Amount and Change columns), 1440, tiles/1440-00.png y 430-571; section:nth-of-type(7) > table ('Campaign tracker'), 375",
+      "evidence": "The components table finds 4 numeric cells in the 'Urgent' table, all left-aligned ('$18,400', '$6,200', '$1,050' and the percentages). At 375 the 6-column campaign tracker is 749 px wide and the sweep's overflow hit (ROB-003) records the page at 773 px wide, so the whole page scrolls sideways rather than the table inside a scroll container.",
+      "before": "Money and percentages sit flush left, and the phone page scrolls sideways under the tracker table.",
+      "after": "Right-aligned tabular figures in Amount and Change; at 375 the tracker inside its own horizontal scroll region with the Repo column sticky, or stacked rows that keep the repo name first.",
+      "why": "Left-aligned amounts cannot be compared down the column, and a page that scrolls sideways loses the header and the reading position on a phone.",
+      "test": "T-TABLE-READ"
+    },
+    {
+      "rule": "CMP-016",
+      "title": "Every data region draws its empty, loading and error states",
+      "tier": "Reflex",
+      "where": "'Empty' section ('No matching threads in this filter.'), 1440, tiles/1440-00.png y 845-891",
+      "evidence": "The empty state is a bare sentence under an 'Empty' heading, shown permanently below the feed rather than in place of the table. state_text finds no loading or error text and the stylesheet has no busy rule.",
+      "before": "A permanent line 'No matching threads in this filter.' with no action, and no loading or error state for the table.",
+      "after": "The empty message drawn in the table's place when the filter matches nothing, with one action ('Clear owner filter') and a skeleton row and an error row with Retry for the table.",
+      "why": "An empty result without a way out leaves the operator to guess which filter emptied the table.",
+      "test": "T-EMPTY-FIRST"
+    },
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "th.sortable > a 'Account', 1440, tiles/1440-00.png y 448",
+      "evidence": "The 'Account' head is a blue underlined link in a th.sortable cell, but no other head is a link and the head shows no sort direction mark. The stylesheet has no sorted-state rule.",
+      "before": "One column head looks like a hyperlink and gives no sign of the current sort order.",
+      "after": "Sortable heads as buttons with an up or down mark on the sorted column and aria-sort on the th.",
+      "why": "A link-styled head reads as navigation away from the table, and the operator cannot see how the rows are ordered.",
+      "test": "T-TABLE-READ"
+    }
+  ],
+  "strengths": [
+    "The 'How this note was chosen' explanation uses a native details disclosure instead of a dialog.",
+    "Buttons are native button elements at one height (34 px) and one style, so the page has one control family even if it is the browser default.",
+    "The 'Copy' action sits next to the email text it copies."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "Overlays: all four triggers ('Review required 1/5', the details summary, 'Copy', 'All') were not verified: the capture's page navigated away (the host's session check redirected to a login page, recorded in manifest.network.blocked), so T-OVERLAY-CHECK has no open stills.",
+    "The 'Review required 1/5' pill and its hidden radio dialog appear to be the hosting review widget, not the fixture's interface; not judged as the page's own component.",
+    "Inline validation and error placement after invalid input: the page has no form.",
+    "Phone navigation: the page has no navigation region at either width, so T-PHONE-NAV found nothing to judge.",
+    "Focus moving into an overlay and back, scroll lock, backdrop click and keyboard operation of custom widgets (lens-a11y).",
+    "States reached only with real data or later steps (sending a follow-up, snoozing)."
+  ]
+}

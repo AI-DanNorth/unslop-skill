@@ -1,0 +1,817 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L36",
+ "target": "https://carbondesignsystem.com",
+ "width": 1440,
+ "captured": "2026-11-10",
+ "landmarks": {
+  "main": 1,
+  "nav": 3,
+  "footer": 1,
+  "header": 3
+ },
+ "buttons": {
+  "count": 8,
+  "variants": [
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(82, 82, 82)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "600",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Getting started",
+     "Building blocks",
+     "Building experiences",
+     "Support"
+    ],
+    "first_screen": 4,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "li.cds--side-nav__item:nth-of-type(1) > button.cds--side-nav__submenu",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(15, 98, 254)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Search",
+     "Employee login"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "header.cds--header > div.cds--header__global > span.cds--popover-container.cds--popover--caret > div.cds--tooltip-trigger__wrapper > button.cxp--header__search-btn.cds--header__action",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(22, 22, 22)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 0,
+    "weight": "600",
+    "heights_px": [
+     47
+    ],
+    "labels": [
+     "Carbon Design System"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.cds--g10.cds--layer-one:nth-of-type(2) > div > div.cds--white.cds--layer-one:nth-of-type(1) > header.cds--header > a.cds--header__name",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(82, 82, 82)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Switch sites"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div > div.cds--white.cds--layer-one:nth-of-type(1) > header.cds--header > div.cds--header__global > button.cxp--ecosystem-switcher__trigger:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 4,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 104,
+  "unreadable_sheets": 14,
+  "rules_with": {
+   "hover": 7,
+   "hover_media": 0,
+   "focus_visible": 5,
+   "focus": 5,
+   "focus_within": 0,
+   "active": 3,
+   "disabled": 2,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 6,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "#search-input-_r_5_",
+   "y": 64,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "search",
+   "name": null,
+   "accessible_name": "Search navigation items",
+   "placeholder": "Find",
+   "autocomplete": "off",
+   "labelled": true,
+   "visible_label": "Carbon Design System",
+   "label_at": "above",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": "Getting started",
+   "font_px": 14.0,
+   "height_px": 32,
+   "form": null,
+   "search_like": true
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 1
+ },
+ "navigation": [
+  {
+   "where": "body > div.cds--g10.cds--layer-one:nth-of-type(2) > div > div.cds--white.cds--layer-one:nth-of-type(1) > header.cds--header",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    48
+   ],
+   "items": 4,
+   "labels": [
+    "Carbon Design System",
+    "Search",
+    "Employee login",
+    "Switch sites"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "div.cds--white.cds--layer-one:nth-of-type(1) > div.cxp--side-nav-wrapper.cxp--side-nav-wrapper--expanded:nth-of-type(2) > nav.cds--side-nav__navigation.cds--side-nav > ul.cds--side-nav__items > div.cxp--side-nav__scroll",
+   "y": 104,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "sidebar",
+   "position": "fixed",
+   "box": [
+    0,
+    104,
+    256,
+    796
+   ],
+   "items": 5,
+   "labels": [
+    "Getting started",
+    "Building blocks",
+    "Building experiences",
+    "Support",
+    "Feedback"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 241x40px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "div.cds--g10.cds--layer-one:nth-of-type(2) > div > div.cxp--footer__wrapper.cds--g100:nth-of-type(2) > footer.cxp--footer > nav",
+   "y": 10869,
+   "screen": 13,
+   "tile": "tiles/1440-12.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    294,
+    10869,
+    1146,
+    280
+   ],
+   "items": 9,
+   "labels": [
+    "Contact us",
+    "Medium",
+    "Privacy",
+    "𝕏",
+    "carbon@us.ibm.com",
+    "Terms of use",
+    "Accessibility",
+    "IBM.com",
+    "Cookie Preferences, opens a dedicated popup modal window"
+   ],
+   "current": [],
+   "dead_links": 1,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 69x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 46x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): target 82x20px at 375px in the footer, closer than 24px to another target (WCAG 2.5.8)",
+    "targets (A11-004, Reflex): target 81x20px at 375px in the footer, closer than 24px to another target (WCAG 2.5.8)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open menu",
+    "where": "layer-one:nth-of-type(1) > header.cds--header > button.cds--header__action.cds--header__menu-trigger",
+    "box": [
+     48,
+     48
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Carbon Design System"
+  ],
+  "header_items_1440": 4,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 5,
+    "position": "fixed",
+    "current": []
+   },
+   {
+    "kind": "header",
+    "items": 5,
+    "position": "fixed",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 9,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 5,
+  "tried": 5,
+  "by_kind": {
+   "dialog": 1,
+   "disclosure": 3,
+   "button": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "dialog",
+    "name": "Cookie Preferences, opens a dedicated popup modal window",
+    "selector": "#icon-id08897666735772178",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 1,
+    "kind": "disclosure",
+    "name": "Getting started",
+    "selector": "#side-nav-menu-_r_6_",
+    "status": "ok",
+    "opened": [
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     16,
+     16
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "disclosure",
+    "name": "Getting started",
+    "selector": "#side-nav-menu-_r_6_ > button",
+    "status": "ok",
+    "opened": [
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     16,
+     16
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 3,
+    "kind": "disclosure",
+    "name": "Switch sites",
+    "selector": "body > div:nth-of-type(2) > div > div:nth-of-type(1) > header > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "Search",
+    "selector": "body > div:nth-of-type(2) > div > div:nth-of-type(1) > header > div > span > div > button",
+    "status": "not-verified (error: page.evaluate: Execution context was destroyed, most likely because of a navigation.)",
+    "reduce_status": "not-verified"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 3
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.cxp--homepage > section.cxp--homepage-split-stack:nth-of-type(2) > div.cxp--homepage-split-stack__stage > div.cxp--homepage-split-stack__cards:nth-of-type(2) > a.cxp--homepage-split-stack__card:nth-of-type(1)",
+   "y": 3600,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    288,
+    304
+   ],
+   "section": "Let’s make together Let’s make together",
+   "controls_inside": 0,
+   "whole_card_link": 4,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "#trustarc-banner-overlay",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "trustarc-banner-overlay",
+   "text": null,
+   "fixed": true
+  },
+  {
+   "where": "div.truste-messageColumn > span.truste-banner-headline:nth-of-type(1)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "truste-banner-headline",
+   "text": "About cookies on this site",
+   "fixed": false
+  },
+  {
+   "where": "div.truste-messageColumn > span.truste-banner-description:nth-of-type(2)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "truste-banner-description",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [
+   {
+    "where": "li.cds--side-nav__item:nth-of-type(2) > ul.cds--side-nav__menu > li.cds--side-nav__menu-item:nth-of-type(15) > a.cds--side-nav__link > span.cds--side-nav__link-text",
+    "y": 686,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "Inline loading",
+    "match": "loading"
+   },
+   {
+    "where": "li.cds--side-nav__item:nth-of-type(2) > ul.cds--side-nav__menu > li.cds--side-nav__menu-item:nth-of-type(18) > a.cds--side-nav__link > span.cds--side-nav__link-text",
+    "y": 782,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "Loading",
+    "match": "Loading"
+   },
+   {
+    "where": "div.truste-messageColumn > span.truste-banner-description:nth-of-type(2) > span:nth-of-type(2) > span",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "options. By visiting our website, you agree to our processing of information as described in IBM’s",
+    "match": "processing"
+   }
+  ],
+  "success": [],
+  "onboarding": [
+   {
+    "where": "li.cds--side-nav__item:nth-of-type(1) > button.cds--side-nav__submenu > span.cds--side-nav__submenu-title",
+    "y": 111,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Getting started",
+    "match": "Getting started"
+   },
+   {
+    "where": "li.cds--side-nav__item:nth-of-type(4) > ul.cds--side-nav__menu > li.cds--side-nav__menu-item:nth-of-type(3) > a.cds--side-nav__link > span.cds--side-nav__link-text",
+    "y": 334,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "Onboarding and setup",
+    "match": "Onboarding"
+   },
+   {
+    "where": "li.cds--side-nav__item:nth-of-type(5) > ul.cds--side-nav__menu > li.cds--side-nav__menu-item:nth-of-type(3) > a.cds--side-nav__link > span.cds--side-nav__link-text",
+    "y": 366,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "Component checklist",
+    "match": "checklist"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 3,
+   "success": 0,
+   "onboarding": 3
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 3,
+   "success": 0,
+   "onboarding": 2
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 29,
+  "first": "button \"\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 10,
+  "covered": 1,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 728,
+   "totalChars": 3998
+  },
+  "reduced_motion": {
+   "visibleChars": 1403,
+   "totalChars": 3998
+  },
+  "observer_never_fires": {
+   "visibleChars": 711,
+   "totalChars": 2912
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 2912
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 10,
+  "prep": {
+   "host": "carbondesignsystem.com",
+   "config": {
+    "scrollFrames": 12,
+    "click": [
+     "Accept All"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"accept all\"",
+    "w375: 12 scroll frames",
+    "w1280: clicked \"accept all\"",
+    "w1280: 12 scroll frames",
+    "w1440: clicked \"accept all\"",
+    "w1440: 12 scroll frames"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 2,
+   "hits": [
+    {
+     "where": "button \"Back to top\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Cookie Preferences\"",
+     "evidence": "focus indicator visible but faint: 2.71:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "li.cds--side-nav__item:nth-of-type(1) > button.cds--side-nav__submenu",
+     "evidence": "touch target 241x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "li.cds--side-nav__item:nth-of-type(2) > button.cds--side-nav__submenu",
+     "evidence": "touch target 241x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "li.cds--side-nav__item:nth-of-type(3) > button.cds--side-nav__submenu",
+     "evidence": "touch target 241x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "li.cds--side-nav__item:nth-of-type(4) > button.cds--side-nav__submenu",
+     "evidence": "touch target 241x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "> ul.cds--side-nav__items > div.cxp--side-nav__scroll > li.cds--side-nav__item:nth-of-type(5) > a.cds--side-nav__link.cxp--side-nav-feedback",
+     "evidence": "touch target 241x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "iv > div.cxp--homepage-statement-block__cta-theme.cds--g100 > a.cds--link.cxp--homepage-statement-block__cta  \"Learn how you can contribute\"",
+     "evidence": "touch target 239x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-span-4.cds--md\\:col-span-2:nth-of-type(1) > div.cxp--footer__nav > ul > li.cxp--footer__nav-item:nth-of-type(1) > a.cds--link  \"Contact us\"",
+     "evidence": "touch target 69x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "col-span-4.cds--md\\:col-span-2:nth-of-type(1) > div.cxp--footer__nav > ul > li.cxp--footer__nav-item:nth-of-type(2) > a.cds--link  \"Privacy\"",
+     "evidence": "touch target 46x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "pan-4.cds--md\\:col-span-2:nth-of-type(1) > div.cxp--footer__nav > ul > li.cxp--footer__nav-item:nth-of-type(3) > a.cds--link  \"Terms of use\"",
+     "evidence": "target 82x20px at 375px in the footer, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "an-4.cds--md\\:col-span-2:nth-of-type(1) > div.cxp--footer__nav > ul > li.cxp--footer__nav-item:nth-of-type(4) > a.cds--link  \"Accessibility\"",
+     "evidence": "target 81x20px at 375px in the footer, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "first focusable element is button \"\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page after load",
+     "evidence": "82% of text is hidden after load and scrolling (max 30%; menus and dialogs excluded)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "728 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "not-verified: 14 stylesheet(s) could not be read; a prefers-reduced-motion rule may be in them",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 2,
+   "hits": [
+    {
+     "where": "disclosure trigger \"Getting started\" (#side-nav-menu-_r_6_)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "disclosure trigger \"Getting started\" (#side-nav-menu-_r_6_ > button)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 8,
+  "button_variants": 4,
+  "fields_visible": 1,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 3,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 5,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 3,
+  "async_actions": 0
+ }
+}

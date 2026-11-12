@@ -1,0 +1,92 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The docs mark the current place at three levels and keep Ant's full state set, but at 375 the in-page anchor rail keeps its column and squeezes the article until labels break one letter per line, and the version select stayed open after Escape.",
+ "score": {
+  "dimension": "Usability",
+  "value": 6,
+  "reason": "T-WHERE-AM-I passes at 1440. T-PHONE-NAV fails on the anchor rail at 375 (CMP-011), and T-OVERLAY-CHECK fails on the version select and the contributors dialog (CMP-013)."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT",
+  "T-TABLE-READ"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-011",
+   "tier": "Reflex",
+   "where": "div.ant-anchor (in-page anchor rail) beside article, 375px, tiles/375-00.png and tiles/375-03.png",
+   "evidence": "At 375 the anchor list ('Design Principal', 'Types', 'Common Butto...', 'Do & Don't', ...) keeps a column of about 150 px on the right. The article column shrinks to about 170 px: 'Edit this page' and 'LLMs.md' wrap one letter per line (tiles/375-00.png), and the Do and Don't figures are cut off at the left edge (tiles/375-03.png). The sweep's targets check lists the anchor links at 112x19 px.",
+   "before": "The desktop anchor rail stays beside the article on a phone.",
+   "after": "Under 60rem, fold the anchor list into an 'On this page' disclosure above the article and give the article the full width.",
+   "why": "On a phone the reader gets a 170 px text column, broken labels and clipped examples on a page whose job is to be read.",
+   "test": "T-PHONE-NAV",
+   "source": "components",
+   "title": "The phone gets the whole navigation",
+   "root": "the docs layout's anchor rail"
+  },
+  {
+   "rule": "CMP-013",
+   "tier": "Reflex",
+   "where": "version select #_R_7bbqfsua_ ('6.7.0') in the header, 1440px, motion/t1-normal-600.png",
+   "evidence": "The overlay row for t1 records an 88x264 list (6.7.0, 5.x, 4.x, 3.x, 2.x, 1.x, 0.12.x, 0.11.x) and closed_after_escape: false after Escape and a pointer move away.",
+   "before": "The version list stays open after Escape.",
+   "after": "Close the version select on Escape and return focus to it.",
+   "why": "A select that ignores Escape behaves unlike every other select the reader knows.",
+   "test": "T-OVERLAY-CHECK",
+   "source": "components",
+   "title": "Overlays are the last answer and behave as overlays"
+  },
+  {
+   "rule": "CMP-013",
+   "tier": "Reflex",
+   "where": "button 'contributors (10)' at the end of the article, 1440px, motion/t0-normal-600.png",
+   "evidence": "The click opens a centred modal with a full-viewport scrim (covers_viewport: true, 1440x900) to show ten contributor names and avatars. It has a close control and closed after Escape.",
+   "before": "A modal dialog with a scrim shows a list of ten names.",
+   "after": "Show the names in a popover anchored to the avatar row, or expand the row in place.",
+   "why": "A modal blocks the page and moves focus for a short read-only list that a popover or disclosure handles without taking the page away.",
+   "test": "T-OVERLAY-CHECK",
+   "source": "components",
+   "title": "Overlays are the last answer and behave as overlays"
+  },
+  {
+   "rule": "CMP-006",
+   "tier": "Reflex",
+   "where": "div.dumi-default-search-bar > input ('Type keywords...'), 1440px, tiles/1440-00.png",
+   "evidence": "The fields row has placeholder_only: true and placeholder_instruction: true. The sweep's form_labels check reports 'placeholder \"Type keywords...\" is not a label' (A11-010).",
+   "before": "The docs search carries its only label as an instruction placeholder.",
+   "after": "Use the placeholder 'Search docs' to name the scope, with a label and the keyboard shortcut shown in the box.",
+   "why": "'Type keywords...' tells the reader how to type, not what the box searches.",
+   "test": "T-FIELD-READ",
+   "source": "components",
+   "title": "Every field shows its label and what it needs"
+  }
+ ],
+ "strengths": [
+  "The current place is marked at three levels: 'Design' is underlined in the header, 'Button' is selected in the sidebar (class and link to this page), and the anchor rail moves a blue bar to 'Label' (motion/t0-normal-600.png).",
+  "The image preview opens with a scrim, a close button, a zoom and rotate toolbar, and closes on Escape (motion/t2-normal-600.png).",
+  "Ant's state set is declared: hover 563, focus-visible 153, active 95, disabled 212 rules.",
+  "At 375 the header folds to the logo and a menu icon (tiles/375-00.png)."
+ ],
+ "not_investigated": [
+  "the specimens in the article (Default, Primary and Text buttons, the Do and Don't figures) are exhibits and are not judged as interface",
+  "'中 En' navigated away when clicked: not verified",
+  "the header icons (RTL switch, theme) changed nothing in their 80x72 stills, but these switch page-wide modes that may take more than 600 ms, so they are not judged",
+  "the clipped figures at 375 may also be a robustness finding (sideways overflow): the sweep's overflow check reported 0",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

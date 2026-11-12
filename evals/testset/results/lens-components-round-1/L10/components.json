@@ -1,0 +1,74 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:20:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The header and hero use a tidy black pill kit with declared states, but 18 links on the page point to '#' (the logo, 'Sign in', 'Read the docs' and every company and legal link in the footer), and one sign-up action carries five different labels.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-WHERE-AM-I fails on dead navigation (CMP-012: 'Sign in', the logo and the footer go nowhere), T-PRIMARY-COUNT finds five labels for one action (CMP-121), and T-INTERRUPT finds an auto-advancing testimonial carousel with unnamed 8px dots (CMP-241)."
+  },
+  "visitor_mode": "Persuade: a SaaS developer-platform landing page whose goal is a trial sign-up. No 00-contract.md; inferred from 'Start free trial', 'Start creating' and the pricing section.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "header logo and 'Sign in', 'Read the docs', 'View on GitHub', 'Compare all features', footer links, 1440, dom-1440.json",
+      "evidence": "dom-1440.json holds 18 links with href '#': the 'Optimus TM' logo, 'Sign in', 'Read the docs', 'View on GitHub', 'Compare all features', 'API Reference', 'Status', 'About', 'Blog', 'Careers', 'Contact', 'Privacy', 'Terms', 'Twitter', 'GitHub' and 'LinkedIn'. The components table records 2 dead links in the header alone.",
+      "before": "The logo, Sign in and the whole footer jump to the top of the page.",
+      "after": "Each link pointed at its real page, and items with no page yet removed; [DATA NEEDED: the URLs for sign-in, docs, status, privacy and terms].",
+      "why": "A returning customer cannot sign in, and a buyer cannot read the privacy policy or terms before starting a trial.",
+      "root": "header and footer link lists",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header, hero, pricing and closing section, 1440, fold-1440.png",
+      "evidence": "The buttons table lists the same black filled variant (lab(1.55 0.64 1.00)) as 'Start creating' in the header, 'Start free trial' in the hero and 'Start building free' further down, plus unfilled 'Start free' and filled 'Start trial' in the pricing cards: five labels for one sign-up.",
+      "before": "Five different labels for one trial sign-up.",
+      "after": "One verb-and-object label, 'Start free trial', on every sign-up button.",
+      "why": "Visitors cannot tell whether 'Start creating' and 'Start free trial' lead to the same place or to different plans.",
+      "root": "filled pill button variant",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-241",
+      "title": "Any carousel/auto-rotation has prev/next, pause, keyboard access, stops on hover/focus",
+      "tier": "Reflex",
+      "where": "testimonial carousel, 1440, tiles/1440-09.png",
+      "evidence": "The testimonial block ('We connected our entire stack in a single afternoon.' James Liu) shows four bar indicators, the buttons table lists them as icon-only buttons 8px tall with no label, and the control_names sweep reports them as buttons with no accessible name. No previous, next or pause control appears.",
+      "before": "A rotating quote with 8px unnamed dots and no pause.",
+      "after": "Static quotes in a short list, or a carousel with Previous, Next and Pause buttons of at least 24px with names.",
+      "why": "The quote can change while the visitor reads it, and the dots are too small to press and unnamed for screen readers.",
+      "test": "T-INTERRUPT"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav lists the logo and a 'Toggle menu' button (40x40) drawn as a bare three-line icon; 'Start creating' and 'Sign in' leave the 375 header.",
+      "before": "At 375 the header holds the logo and an unlabelled menu icon only.",
+      "after": "'Start free trial' kept in the 375 header beside a 'Menu' button with a visible word and a 44px box.",
+      "why": "Once the hero scrolls away, the phone visitor has no sign-up action in view.",
+      "test": "T-PHONE-NAV"
+    }
+  ],
+  "strengths": [
+    "The hero pairs one filled black primary with an outlined secondary ('Start free trial', 'Watch demo'), and the outlined style is used for every secondary.",
+    "A skip link is the first focus stop; the stylesheet declares hover in a hover media query (7), focus-visible (33), disabled (16) and invalid (21) rules."
+  ],
+  "not_investigated": [
+    "The 'Three steps' row buttons ('I Connect your tools', 'II Build your workflow') swapped content in place; the motion capture was skipped for four triggers, so their open and close behaviour was not seen.",
+    "Sign-up, demo and pricing flows: 'Start free trial', 'Watch demo' and 'Start creating' opened nothing the capture could record, and the async capture found no primary action to hold or fail.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement: no fields.",
+    "Keyboard operation of the carousel and the step buttons: lens-a11y.",
+    "T-FIELD-READ, T-ERROR-PATH, T-TABLE-READ and T-FIRST-RUN: no field, no failure run, no table and no onboarding."
+  ]
+}

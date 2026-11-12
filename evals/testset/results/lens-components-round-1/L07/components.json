@@ -1,0 +1,87 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:50:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The 1440 header, the language switch with its selected 'EN' and the slide controls are a finished kit, but at 375 the header drops Studios, Memory and Technology with no menu button and wraps 'Sign In' and 'Start for free' onto two lines, and the beta feedback panel asks for a title and a description through placeholders only.",
+  "score": {
+    "dimension": "Usability",
+    "value": 5,
+    "reason": "T-PHONE-NAV fails (no route to three of the five destinations at 375, CMP-011, and wrapped header labels, CMP-119), T-FIELD-READ fails on the feedback panel (CMP-006), and T-STATE-MATRIX passes on the declared state set and the selected language."
+  },
+  "visitor_mode": "Persuade: the landing page of an AI video and character studio whose goal is a free sign-up. No 00-contract.md; inferred from 'Start for free' in the header and on every hero slide, and 'Sign up today: 50 AI Energy + 1 Free Character'.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-ERROR-PATH", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav records no menu toggle at 375; the only links still visible are 'Sign In' and 'Start for free', next to the EN, FR, RU switch. 'Studios', 'Memory' and 'Technology' from the 1440 header (tiles/1440-00.png) do not appear anywhere in the 375 header.",
+      "before": "Three of the five header destinations vanish on a phone with no menu to reach them.",
+      "after": "A 'Menu' button at 375 that holds Studios, Memory, Technology, the language choice and Sign In, with 'Start for free' kept beside it.",
+      "why": "A phone visitor cannot reach the Studios, Memory or Technology pages from the header at all.",
+      "root": "header nav component",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-119",
+      "title": "Button labels and primary nav links never wrap at any width 320-1920",
+      "tier": "Reflex",
+      "where": "header 'Sign In' and 'Start for free', 375, fold-375.png",
+      "evidence": "At 375 the header fits the logo, EN, FR, RU, 'Sign In' and the filled 'Start for free' into one row, and both 'Sign In' and 'Start for free' break onto two lines ('Sign / In', 'Start for / free'); the targets sweep flags the language buttons at 31 to 33 by 24px.",
+      "before": "Six items squeezed into the 375 header, two of them wrapping.",
+      "after": "The language switch moved into the menu at 375, leaving the logo, 'Start for free' on one line and a 'Menu' button.",
+      "why": "Wrapped labels read as two separate words and make the main action look broken on the width most visitors use.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-006",
+      "title": "Every field shows its label and what it needs",
+      "tier": "Reflex",
+      "where": "Beta Feedback panel, 1440, async/a0-slow-0.5s.png",
+      "evidence": "The panel that 'Send feedback' opens holds two fields whose only labels are placeholders, 'Title...' and 'Describe the issue or suggestion...', plus a 'Rating:' row of five unlabelled stars and five category chips with 'General Feedback' preselected.",
+      "before": "Placeholder-only fields that lose their label once the visitor types.",
+      "after": "A visible label above each field ('Title', 'What happened?') with the placeholder kept for an example.",
+      "why": "Once the visitor starts typing, nothing says which box was the title and which the description.",
+      "test": "T-FIELD-READ"
+    },
+    {
+      "rule": "CMP-013",
+      "title": "Overlays are the last answer and behave as overlays",
+      "tier": "Reflex",
+      "where": "Beta Feedback panel and its scrim, 1440, async/a0-slow-0.5s.png",
+      "evidence": "Opening the 466px-wide feedback panel blurs and dims the whole page behind it, including the header; the async_state sweep also reports the button's progress state still showing 1s after its request completed (3251 ms).",
+      "before": "A small corner panel blurs the entire page as if it were a modal dialog.",
+      "after": "A non-modal popover anchored to the feedback button, with the page left sharp, or a real dialog with focus moved into it if the blur stays.",
+      "why": "The blur tells the visitor the page is blocked while the panel behaves like a side popover, so it is unclear whether the page can still be used.",
+      "test": "T-OVERLAY-CHECK"
+    },
+    {
+      "rule": "CMP-241",
+      "title": "Any carousel/auto-rotation has prev/next, pause, keyboard access",
+      "tier": "Reflex",
+      "where": "hero carousel, 1440, fold-1440.png",
+      "evidence": "The hero is an eight-slide carousel with Previous and Next buttons and eight dots 6px tall (the buttons table lists the 'Show …' dots at height 6). At load the second dot is current ('Seedance 2.5'), and later stills show 'MiniMax H3'. No pause control appears on any slide.",
+      "before": "A rotating hero whose main headline changes with no pause control and dots too small to hit.",
+      "after": "One fixed hero for the product with a 'Start for free' action, or a carousel that does not rotate on its own, with a pause button and 24px dot targets.",
+      "why": "The headline the visitor is reading can change under them, and the slide dots are hard to press.",
+      "test": "T-INTERRUPT"
+    }
+  ],
+  "strengths": [
+    "The language switch marks the selected language with a filled 'EN' pill (fold-1440.png).",
+    "One filled primary per hero slide: 'Start for free' beside an outlined 'Learn more Seedance 2.5' (CMP-116).",
+    "The feedback button answers within 0.5s with a spinner and opens its panel; the panel has a close button (async/a0-slow-0.5s.png).",
+    "The stylesheet declares hover (182 rules), focus-visible (23), active (9), disabled (23) and current or selected (44) states."
+  ],
+  "not_investigated": [
+    "Submitting the feedback form and its error and success states: the capture opened the panel but did not submit it; no fake-send run (no form element).",
+    "Sign-up and Sign In flows: beyond the captured page.",
+    "Whether the hero rotates on its own: inferred from the slide change between stills, not measured; motion timing is lens-motion's.",
+    "Inline validation and error placement: the capture never types invalid input.",
+    "Focus moving into the feedback panel and back, scroll lock and backdrop click; keyboard operation of the carousel: lens-a11y.",
+    "Capture prep clicked 'Reject non-essential' on the cookie banner at every width; the banner is capture context.",
+    "T-TABLE-READ and T-FIRST-RUN: no table and no onboarding on the page."
+  ]
+}

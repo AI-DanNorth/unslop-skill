@@ -1,0 +1,445 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L13",
+ "target": "https://impeccable.style/antipattern-examples/new-slop-2025.html",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 1,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 4,
+  "variants": [
+   {
+    "count": 2,
+    "fill": "rgb(31, 26, 21)",
+    "strong_fill": true,
+    "text_color": "rgb(250, 246, 239)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     40,
+     53
+    ],
+    "labels": [
+     "Get started",
+     "Start free trial →"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(31, 26, 21)",
+    "border": "rgb(31, 26, 21)",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     53
+    ],
+    "labels": [
+     "Watch demo"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-ghost:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(250, 246, 239)",
+    "strong_fill": false,
+    "text_color": "rgb(31, 26, 21)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     51
+    ],
+    "labels": [
+     "Start your free trial →"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body > section.cta-section:nth-of-type(4) > a.btn.btn-primary",
+    "tile": "tiles/1440-02.png"
+   }
+  ],
+  "variant_count": 3,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 51,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 1,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 0,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html > body > nav.nav > div.nav-inner",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    130,
+    0,
+    1180,
+    76
+   ],
+   "items": 7,
+   "labels": [
+    "Get started",
+    "Product",
+    "Solutions",
+    "Pricing",
+    "Customers",
+    "Docs",
+    "Sign in"
+   ],
+   "current": [],
+   "dead_links": 7,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 52x22px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 61x22px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 46x22px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 72x22px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Product",
+   "Solutions",
+   "Pricing",
+   "Customers",
+   "Docs",
+   "Sign in",
+   "Get started"
+  ],
+  "header_items_1440": 7,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 7,
+    "position": "sticky",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 0,
+  "tried": 0,
+  "by_kind": {},
+  "triggers": [],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+   "y": 1488,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    351,
+    301
+   ],
+   "section": "Everything you need to ship great products",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 10,
+  "first": "a \"Product\" href=#",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 907,
+   "totalChars": 907
+  },
+  "reduced_motion": {
+   "visibleChars": 907,
+   "totalChars": 907
+  },
+  "observer_never_fires": {
+   "visibleChars": 907,
+   "totalChars": 907
+  },
+  "scripts_off": {
+   "visibleChars": 907,
+   "totalChars": 907
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": {
+   "host": "impeccable.style",
+   "config": {
+    "block": [
+     "/js/detect-antipatterns-browser.js"
+    ]
+   },
+   "applied": [
+    "blocked /js/detect-antipatterns-browser.js"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 6,
+   "hits": [
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)  \"Product\"",
+     "evidence": "touch target 52x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(2)  \"Solutions\"",
+     "evidence": "touch target 61x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(3)  \"Pricing\"",
+     "evidence": "touch target 46x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(4)  \"Customers\"",
+     "evidence": "touch target 72x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(5)  \"Docs\"",
+     "evidence": "touch target 34x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a:nth-of-type(1)  \"Sign in\"",
+     "evidence": "touch target 29x43px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "html > body > section.logos:nth-of-type(2) > div.logos-inner",
+     "evidence": "page is 698px wide at a 375px viewport (sideways scroll); widest culprit 724px",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "skipped: no transition triggers on the page",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 4,
+  "button_variants": 3,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

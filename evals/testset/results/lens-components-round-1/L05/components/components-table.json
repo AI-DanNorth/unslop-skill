@@ -1,0 +1,606 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L05",
+ "target": "https://ai-stack-techaffiliate.base44.app/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 9,
+  "variants": [
+   {
+    "count": 6,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(23, 20, 18)",
+    "border": "rgb(226, 222, 217)",
+    "radius_px": 9999,
+    "weight": "500",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Compare"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.container-page.mt-28:nth-of-type(5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(1) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center",
+    "tile": "tiles/1440-03.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 97x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 97x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 97x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 97x32px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(23, 20, 18)",
+    "strong_fill": true,
+    "text_color": "rgb(249, 248, 245)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Build my stack"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.flex.min-h-screen:nth-of-type(1) > header.sticky.top-0 > div.container-page.flex > div.flex.items-center > a.hidden.items-center",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     18
+    ],
+    "labels": [
+     "Close badge"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "#badge-close",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 18x18px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(249, 248, 245)",
+    "strong_fill": false,
+    "text_color": "rgb(23, 20, 18)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Find my stack"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(6) > div.relative.overflow-hidden > a.mt-8.inline-flex",
+    "tile": "tiles/1440-03.png"
+   }
+  ],
+  "variant_count": 4,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 881,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 55,
+   "hover_media": 0,
+   "focus_visible": 8,
+   "focus": 17,
+   "focus_within": 3,
+   "active": 2,
+   "disabled": 19,
+   "invalid": 0,
+   "checked": 3,
+   "current_selected": 27,
+   "expanded_open": 26,
+   "busy": 2,
+   "placeholder": 3,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div:nth-of-type(1) > div.flex.min-h-screen:nth-of-type(1) > header.sticky.top-0",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    0,
+    0,
+    1440,
+    65
+   ],
+   "items": 7,
+   "labels": [
+    "AI Stack home",
+    "Find My Stack",
+    "AI Tools",
+    "Compare",
+    "About",
+    "Contact",
+    "Build my stack"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 106x32px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open menu",
+    "where": "f-type(1) > header.sticky.top-0 > div.container-page.flex > div.flex.items-center > button.flex.h-10",
+    "box": [
+     40,
+     40
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "AI Stack home"
+  ],
+  "header_items_1440": 7,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "sticky",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 2,
+  "tried": 2,
+  "by_kind": {
+   "button": 2
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Close badge",
+    "selector": "#badge-close",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Compare",
+    "selector": " main > section:nth-of-type(5) > div:nth-of-type(2) > a:nth-of-type(1) > div:nth-of-type(2) > button",
+    "status": "ok",
+    "opened": [
+     "div: Cl 1 of 3 selected Compare"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     1440,
+     52
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(3) > div.mt-10.grid > div.bg-card.p-7:nth-of-type(1)",
+   "y": 1335,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    361,
+    216
+   ],
+   "section": "A workflow, not a list. Built around you.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(4) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(1)",
+   "y": 1809,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    352,
+    475
+   ],
+   "section": "Three people want a website. They get three different stacks.",
+   "controls_inside": 0,
+   "whole_card_link": 3,
+   "with_heading": 3
+  },
+  {
+   "where": "div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(1)",
+   "y": 2500,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    352,
+    287
+   ],
+   "section": "23 hand-picked tools. No filler.",
+   "controls_inside": 1,
+   "whole_card_link": 6,
+   "with_heading": 6
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"AI Stack\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 4,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 2766,
+   "totalChars": 2766
+  },
+  "reduced_motion": {
+   "visibleChars": 2766,
+   "totalChars": 2766
+  },
+  "observer_never_fires": {
+   "visibleChars": 2766,
+   "totalChars": 2766
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 4,
+   "hits": [
+    {
+     "where": "a \"Build a SaaS product\nValidate, build and ship software\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Browse all tools\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Ga\nGamma\n\nPresentations · Gamma\n\nBeautiful presentations and\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Compare\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 11,
+   "hits": [
+    {
+     "where": "div:nth-of-type(1) > div.flex.min-h-screen:nth-of-type(1) > header.sticky.top-0 > div.container-page.flex > a.group.flex",
+     "evidence": "touch target 106x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.flex.min-h-screen:nth-of-type(1) > header.sticky.top-0 > div.container-page.flex > div.flex.items-center > button.flex.h-10",
+     "evidence": "touch target 40x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ain.flex-1 > section.container-page.mt-28:nth-of-type(5) > div.flex.flex-col:nth-of-type(1) > a.inline-flex.items-center  \"Browse all tools\"",
+     "evidence": "touch target 335x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(1) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(2) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(3) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(4) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(5) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "5) > div.mt-10.grid:nth-of-type(2) > a.group.flex:nth-of-type(6) > div.mt-5.flex:nth-of-type(2) > button.inline-flex.items-center  \"Compare\"",
+     "evidence": "touch target 97x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ex.min-h-screen:nth-of-type(1) > footer.mt-24.border-t > div.container-page.grid:nth-of-type(1) > div.max-w-xs:nth-of-type(1) > a.group.flex",
+     "evidence": "touch target 320x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"AI Stack\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 1,
+   "hits": [
+    {
+     "where": ".grid:nth-of-type(2) > a.group.flex:nth-of-type(1) > div.mt-5.flex:nth-of-type(2) > div.min-w-0 > span.inline-flex.items-center  \"Free plan\"",
+     "evidence": "6 containers share radius 9999px and shadow \"rgb(255, 255, 255) 0px 0px 0px 0px inset, rgb(167, 243, 208)\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 2,
+   "hits": [
+    {
+     "where": "div:nth-of-type(1) > div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(4)",
+     "evidence": "\"See full stack\" repeated 3 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "f-type(1) > div.flex.min-h-screen:nth-of-type(1) > main.flex-1 > section.container-page.mt-28:nth-of-type(5) > div.mt-10.grid:nth-of-type(2)",
+     "evidence": "\"Compare\" repeated 6 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "iv.mt-8.grid:nth-of-type(2) > div:nth-of-type(1) > a.group.flex > span.mt-1.hidden:nth-of-type(3)  \"Research, notes and revision that stick\"",
+     "evidence": "50 words shown at 1440px are hidden at 375px (10 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "2766 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (keyframes enter, exit) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 9,
+  "button_variants": 4,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 2,
+  "card_groups": 3,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

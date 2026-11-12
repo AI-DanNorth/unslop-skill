@@ -1,0 +1,812 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L23",
+ "target": "https://www.anthropic.com",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 8
+ },
+ "buttons": {
+  "count": 26,
+  "variants": [
+   {
+    "count": 9,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(135, 134, 127)",
+    "border": "rgb(61, 61, 58)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     "Research",
+     "Policy",
+     "Commitments",
+     "Company",
+     "Products",
+     "Models"
+    ],
+    "first_screen": 0,
+    "in_footer": 9,
+    "icon_only": 0,
+    "example": "#base-ui-_R_l6q6btbH2_",
+    "tile": "tiles/1440-02.png"
+   },
+   {
+    "count": 6,
+    "fill": "rgb(245, 244, 237)",
+    "strong_fill": false,
+    "text_color": "rgb(61, 61, 58)",
+    "border": "rgb(232, 230, 220)",
+    "radius_px": 999999,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "News",
+     "Research",
+     "Policy",
+     "Commitments",
+     "Company",
+     "Try Claude"
+    ],
+    "first_screen": 6,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.UTJ3Tq_bar > div.UTJ3Tq_start:nth-of-type(1) > div > div._7u0keW_root > a.f9ZZrG_button.f9ZZrG_corner-full",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 117x28px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 5,
+    "fill": "rgb(232, 230, 220)",
+    "strong_fill": false,
+    "text_color": "rgb(48, 48, 46)",
+    "border": "rgb(222, 220, 209)",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     18
+    ],
+    "labels": [
+     "Related to Introducing Claude Opus 5.5",
+     "Related to Introducing Claude Sonnet 5.5",
+     "Related to The Anthropic Institute",
+     "Related to Claude's Constitution",
+     "Related to Responsible Scaling Policy"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 5,
+    "example": "#base-ui-_R_7kpkqnpfkq6btb_",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 36x18px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 3,
+    "fill": "rgb(232, 230, 220)",
+    "strong_fill": false,
+    "text_color": "rgb(48, 48, 46)",
+    "border": "rgb(222, 220, 209)",
+    "radius_px": 10,
+    "weight": "400",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Read announcement"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.ZSMdoa_root.ZSMdoa_flushTop:nth-of-type(3) > div.Bo9kyq_container > div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(1) > a.f9ZZrG_button.f9ZZrG_corner-small",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 232x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgb(245, 244, 237)",
+    "strong_fill": false,
+    "text_color": "rgb(61, 61, 58)",
+    "border": "rgb(232, 230, 220)",
+    "radius_px": 8,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Search",
+     "Open menu"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "nav.UTJ3Tq_bar > div.UTJ3Tq_end:nth-of-type(3) > div.vk8Wka_root > div.vk8Wka_utilities:nth-of-type(2) > a.f9ZZrG_button.f9ZZrG_corner-small",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 28x28px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 28x28px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(38, 38, 36)",
+    "strong_fill": true,
+    "text_color": "rgb(250, 249, 245)",
+    "border": "rgb(61, 61, 58)",
+    "radius_px": 10,
+    "weight": "400",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Pause video"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "section.ZSMdoa_root.ZSMdoa_flushTop:nth-of-type(2) > div._1cyytq_root > div._1cyytq_frame > div.theme-slate._1cyytq_card > button.f9ZZrG_button.f9ZZrG_corner-small",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 6,
+  "row_buttons": {
+   "count": 2,
+   "labels": [
+    "Related to Introducing Claude Fable 5.2 ",
+    "Related to Core views on AI safety: When"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 6080,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 263,
+   "hover_media": 48,
+   "focus_visible": 109,
+   "focus": 7,
+   "focus_within": 3,
+   "active": 2,
+   "disabled": 27,
+   "invalid": 6,
+   "checked": 4,
+   "current_selected": 20,
+   "expanded_open": 4,
+   "busy": 8,
+   "placeholder": 7,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "#base-ui-_R_57aq6btb_",
+   "y": 27,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": "q",
+   "accessible_name": "Search",
+   "placeholder": "Enter search...",
+   "autocomplete": "off",
+   "labelled": true,
+   "visible_label": "Company",
+   "label_at": "inside",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 13.0,
+   "height_px": 30,
+   "form": null,
+   "search_like": true,
+   "placeholder_instruction": true
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [
+  {
+   "where": "#base-ui-_R_57aq6btb_",
+   "y": 27,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "custom combobox",
+   "name": "Search",
+   "labelled": true
+  }
+ ],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 1
+ },
+ "navigation": [
+  {
+   "where": "html.tEBbKW_variable.uImRTq_variable > body > header.UTJ3Tq_root > nav.UTJ3Tq_bar",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    0,
+    0,
+    1425,
+    84
+   ],
+   "items": 9,
+   "labels": [
+    "News",
+    "Research",
+    "Policy",
+    "Commitments",
+    "Anthropic",
+    "Company",
+    "Try Claude",
+    "Search",
+    "Open menu"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 35x24px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 117x28px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 28x28px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 28x28px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "html.tEBbKW_variable.uImRTq_variable > body > footer.theme-slate.dU5k9q_footer > div.dU5k9q_footerLayout:nth-of-type(2) > div.dU5k9q_sidebar:nth-of-type(4)",
+   "y": 3094,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    80,
+    3094,
+    411,
+    57
+   ],
+   "items": 3,
+   "labels": [
+    "Link to Anthropic's youtube account",
+    "Link to Anthropic's x account",
+    "Link to Anthropic's linkedin account"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open menu",
+    "where": ") > div.vk8Wka_root > div.vk8Wka_utilities:nth-of-type(2) > button.f9ZZrG_button.f9ZZrG_corner-small",
+    "box": [
+     28,
+     28
+    ]
+   }
+  ],
+  "top_links_visible_375": [],
+  "header_items_1440": 9,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 4,
+    "position": "sticky",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 3,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 6,
+  "tried": 6,
+  "by_kind": {
+   "dialog": 2,
+   "menu": 2,
+   "disclosure": 1,
+   "button": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "dialog",
+    "name": "Open menu",
+    "selector": "body > header > nav > div:nth-of-type(3) > div > div:nth-of-type(2) > button",
+    "status": "ok",
+    "opened": [
+     "dialog: Menu Home News Research Policy Commitmen",
+     "presentation: Home News Research Policy Commitments Co"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1425,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "dialog",
+    "name": "Related to Introducing Claude Fable 5.2 and Claude Mythos 5.",
+    "selector": "#base-ui-_R_7klkqnpfkq6btb_",
+    "status": "ok",
+    "opened": [
+     "dialog: Related articles",
+     "svg: ",
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     320,
+     391.8
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "menu",
+    "name": "Search",
+    "selector": "#base-ui-_R_57aq6btb_",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "menu",
+    "name": "Research",
+    "selector": "#base-ui-_R_3ataq6btb_",
+    "status": "ok",
+    "opened": [
+     "menu: Overview Alignment Interpretability Engi"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": false,
+    "largest_box": [
+     384.5,
+     178.1
+    ],
+    "closed_after_escape": false,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "disclosure",
+    "name": "Research",
+    "selector": "#base-ui-_R_l6q6btbH2_",
+    "status": "ok",
+    "opened": [
+     "div: ",
+     "region: Research Alignment Interpretability Engi"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     838,
+     416
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/layout: 42 other element(s) move while the transition runs (e.g. \"Policy\" 208 px off its start and end at 140 ms): the"
+    ]
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Pause video",
+    "selector": "#main-content > article > section:nth-of-type(2) > div > div > div > button",
+    "status": "ok",
+    "opened": [
+     "span: ",
+     "div: Our most capable models for daunting tec",
+     "span:  Claude Fable 5.2",
+     "span: and Mythos 5.2"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1425,
+     801.6
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 1140 ms (measured from frames; limit for a button 300 ms)",
+     "motion/travel: moves 20 px during the transition (limit 16 px for in-place UI)"
+    ]
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "article > section.ZSMdoa_root.ZSMdoa_flushTop:nth-of-type(3) > div.Bo9kyq_container > div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(1)",
+   "y": 1183,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    411,
+    472
+   ],
+   "section": " Claude Fable 5.2 and Mythos 5.2",
+   "controls_inside": 6,
+   "whole_card_link": 0,
+   "with_heading": 3
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Skip to main content\" href=#main-content",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1518,
+   "totalChars": 1657
+  },
+  "reduced_motion": {
+   "visibleChars": 1652,
+   "totalChars": 1657
+  },
+  "observer_never_fires": {
+   "visibleChars": 1102,
+   "totalChars": 1657
+  },
+  "scripts_off": {
+   "visibleChars": 1068,
+   "totalChars": 1657
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 7,
+  "prep": {
+   "host": "anthropic.com",
+   "config": {
+    "click": [
+     "Reject all cookies",
+     "Reject"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"reject\"",
+    "w1280: clicked \"reject all cookies\"",
+    "w1440: clicked \"reject all cookies\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "body > header.UTJ3Tq_root > nav.UTJ3Tq_bar > div.UTJ3Tq_logo:nth-of-type(2) > a",
+     "evidence": "touch target 35x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#base-ui-_R_6snaq6btb_  \"Try Claude\"",
+     "evidence": "touch target 117x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nav.UTJ3Tq_bar > div.UTJ3Tq_end:nth-of-type(3) > div.vk8Wka_root > div.vk8Wka_utilities:nth-of-type(2) > a.f9ZZrG_button.f9ZZrG_corner-small",
+     "evidence": "touch target 28x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "TJ3Tq_bar > div.UTJ3Tq_end:nth-of-type(3) > div.vk8Wka_root > div.vk8Wka_utilities:nth-of-type(2) > button.f9ZZrG_button.f9ZZrG_corner-small",
+     "evidence": "touch target 28x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "doa_flushTop:nth-of-type(2) > div._1cyytq_root > div._1cyytq_frame > div.theme-slate._1cyytq_card > button.f9ZZrG_button.f9ZZrG_corner-small",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#base-ui-_R_7klkqnpfkq6btb_",
+     "evidence": "touch target 36x18px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "article.fUM8lW_card:nth-of-type(1) > dl.fUM8lW_details > div.fUM8lW_row:nth-of-type(2) > dd.fUM8lW_links > a.fUM8lW_link:nth-of-type(1)",
+     "evidence": "touch target 56x21px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "article.fUM8lW_card:nth-of-type(1) > dl.fUM8lW_details > div.fUM8lW_row:nth-of-type(2) > dd.fUM8lW_links > a.fUM8lW_link:nth-of-type(2)",
+     "evidence": "touch target 71x21px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "article.fUM8lW_card:nth-of-type(1) > dl.fUM8lW_details > div.fUM8lW_row:nth-of-type(3) > dd.fUM8lW_links > a.fUM8lW_link",
+     "evidence": "touch target 53x21px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "3) > div.Bo9kyq_container > div.fUM8lW_cards > article.fUM8lW_card:nth-of-type(1) > a.f9ZZrG_button.f9ZZrG_corner-small  \"Read announcement\"",
+     "evidence": "touch target 232x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "main > article > section.ZSMdoa_root.ZSMdoa_flushTop:nth-of-type(3) > div.Bo9kyq_container > div.fUM8lW_cards",
+     "evidence": "\"Read announcement\" repeated 3 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "416 characters (27% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "450 characters (30% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 5,
+   "hits": [
+    {
+     "where": "dialog trigger \"Open menu\" (nav > div:nth-of-type(3) > div > div:nth-of-type(2) > button)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "dialog trigger \"Related to Introducing Claude Fable 5.2 \" (#base-ui-_R_7klkqnpfkq6btb_)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "disclosure trigger \"Research\" (#base-ui-_R_l6q6btbH2_)",
+     "evidence": "42 other element(s) move while the transition runs (e.g. \"Policy\" 208 px off its start and end at 140 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    },
+    {
+     "where": "button trigger \"Pause video\" ( article > section:nth-of-type(2) > div > div > div > button)",
+     "evidence": "transition runs 1140 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "n trigger \"Pause video\" ( article > section:nth-of-type(2) > div > div > div > button) -> f-type(2) > div > div > div > button > span > span",
+     "evidence": "moves 20 px during the transition (limit 16 px for in-place UI)",
+     "tier": "Reflex",
+     "check": "travel"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 26,
+  "button_variants": 6,
+  "fields_visible": 1,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 1,
+  "forms": 0,
+  "nav_regions": 2,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

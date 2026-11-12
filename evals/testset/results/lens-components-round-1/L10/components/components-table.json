@@ -1,0 +1,892 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L10",
+ "target": "https://v0-optimus-delta.vercel.app",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 17,
+  "variants": [
+   {
+    "count": 3,
+    "fill": "lab(1.55178 0.640653 1.00339)",
+    "strong_fill": false,
+    "text_color": "lab(98.2705 -0.00652671 0.761843)",
+    "border": "none",
+    "radius_px": 33554400,
+    "weight": "500",
+    "heights_px": [
+     32,
+     56
+    ],
+    "labels": [
+     "Start creating",
+     "Start free trial",
+     "Start building free"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "header.fixed.z-50 > nav.mx-auto.transition-all > div.flex.items-center > div.hidden.md\\:flex:nth-of-type(2) > button.inline-flex.items-center",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(36.1551 3.53254 6.77581)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     48,
+     52
+    ],
+    "labels": [
+     "Initialize",
+     "Deploy",
+     "Copy code"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.grid.lg\\:grid-cols-2 > div.lg\\:sticky.lg\\:top-32:nth-of-type(2) > div.border.border-foreground\\/10:nth-of-type(1) > div.flex.items-center:nth-of-type(1) > button.px-6.py-4:nth-of-type(2)",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 3,
+    "fill": "oklab(0.12 0.00499854 0.00866262 / 0.2)",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     8
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 3,
+    "example": "div.max-w-7xl.mx-auto:nth-of-type(1) > div.grid.lg\\:grid-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(1)",
+    "tile": "tiles/1440-09.png",
+    "sweep": [
+     "targets (A11-004, Floor): target 8x8px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name",
+     "targets (A11-004, Floor): target 8x8px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "lab(98.2705 -0.00652671 0.761843)",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "oklab(0.12 0.00499854 0.00866262 / 0.2)",
+    "radius_px": 33554400,
+    "weight": "500",
+    "heights_px": [
+     56
+    ],
+    "labels": [
+     "Watch demo",
+     "Talk to sales"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.relative.min-h-screen:nth-of-type(1) > div.relative.z-10:nth-of-type(3) > div.grid.lg\\:grid-cols-2:nth-of-type(3) > div.flex.flex-col > button.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "oklab(0.12 0.00499854 0.00866262 / 0.2)",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     54
+    ],
+    "labels": [
+     "Start free",
+     "Contact sales"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(1) > button.w-full.py-4",
+    "tile": "tiles/1440-10.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     "Install"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.grid.lg\\:grid-cols-2 > div.lg\\:sticky.lg\\:top-32:nth-of-type(2) > div.border.border-foreground\\/10:nth-of-type(1) > div.flex.items-center:nth-of-type(1) > button.px-6.py-4:nth-of-type(1)",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 1,
+    "fill": "lab(1.55178 0.640653 1.00339)",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     8
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.max-w-7xl.mx-auto:nth-of-type(1) > div.grid.lg\\:grid-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(3)",
+    "tile": "tiles/1440-09.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 32x8px at 375px (min 44px)",
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "oklab(0.12 0.00499854 0.00866262 / 0.1)",
+    "strong_fill": false,
+    "text_color": "lab(1.55178 0.640653 1.00339)",
+    "border": "none",
+    "radius_px": 33554400,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(2) > button.relative.w-14",
+    "tile": "tiles/1440-10.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 56x28px at 375px (min 44px)",
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "lab(1.55178 0.640653 1.00339)",
+    "strong_fill": false,
+    "text_color": "lab(98.2705 -0.00652671 0.761843)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     "Start trial"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(2) > button.w-full.py-4",
+    "tile": "tiles/1440-10.png"
+   }
+  ],
+  "variant_count": 9,
+  "row_buttons": {
+   "count": 3,
+   "labels": [
+    "I Connect your tools Integrate with your",
+    "II Build your workflow Design powerful a",
+    "III Ship to production Deploy globally w"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 120,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 99,
+   "hover_media": 7,
+   "focus_visible": 33,
+   "focus": 38,
+   "focus_within": 1,
+   "active": 2,
+   "disabled": 16,
+   "invalid": 21,
+   "checked": 11,
+   "current_selected": 28,
+   "expanded_open": 30,
+   "busy": 2,
+   "placeholder": 4,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html > body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > header.fixed.z-50 > nav.mx-auto.transition-all",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    20,
+    0,
+    1400,
+    80
+   ],
+   "items": 7,
+   "labels": [
+    "Optimus TM",
+    "Start creating",
+    "Features",
+    "How it works",
+    "Developers",
+    "Pricing",
+    "Sign in"
+   ],
+   "current": [],
+   "dead_links": 2,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 114x32px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Toggle menu",
+    "where": "een > header.fixed.z-50 > nav.mx-auto.transition-all > div.flex.items-center > button.md\\:hidden.p-2",
+    "box": [
+     40,
+     40
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Optimus TM"
+  ],
+  "header_items_1440": 7,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 10,
+  "tried": 6,
+  "by_kind": {
+   "button": 6
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Start free trial",
+    "selector": "ain > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Watch demo",
+    "selector": "ain > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Start creating",
+    "selector": "body > main > header > nav > div > div:nth-of-type(2) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "I Connect your tools Integrate with your existing stack in m",
+    "selector": "#how-it-works > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "h3: Connect your tools"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     572.4,
+     36
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "II Build your workflow Design powerful automations with our ",
+    "selector": "#how-it-works > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [
+     "button: I Connect your tools Integrate with your",
+     "button: II Build your workflow Design powerful a",
+     "h3: Build your workflow",
+     "div: 1 o p t i m u s . w o r k f l o w ( ' p "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     604,
+     165
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Start free",
+    "selector": "#pricing > div > div:nth-of-type(3) > div:nth-of-type(1) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "skipped"
+   }
+  ],
+  "not_tried": [
+   "Start trial: over the cap of 6 triggers",
+   "#pricing > div > div:nth-of-type(2) > button: over the cap of 6 triggers",
+   "body > main > section:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1): over the cap of 6 triggers",
+   "body > main > section:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2): over the cap of 6 triggers"
+  ],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.jsx-d0fb98a0b853be6f.relative:nth-of-type(3) > div.jsx-d0fb98a0b853be6f.relative:nth-of-type(2) > div.jsx-d0fb98a0b853be6f.grid:nth-of-type(2) > div.jsx-d0fb98a0b853be6f.space-y-0:nth-of-type(1) > button.jsx-d0fb98a0b853be6f.w-full:nth-of-type(1)",
+   "y": 3103,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    604,
+    165
+   ],
+   "section": "Three steps. Infinite possibilities.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(2) > div.border.border-foreground\\/10 > div:nth-of-type(2) > div.px-6.py-5:nth-of-type(1)",
+   "y": 3899,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    602,
+    85
+   ],
+   "section": "Ship to production",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(1)",
+   "y": 4934,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    652,
+    236
+   ],
+   "section": "Performance you can measure.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(6) > div.w-full.mb-6:nth-of-type(2) > div.flex.gap-6 > div.flex.gap-6:nth-of-type(1) > div.shrink-0.px-8:nth-of-type(1)",
+   "y": 5983,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    166,
+    98
+   ],
+   "section": "Works with everything you already use.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(6) > div.w-full.mb-6:nth-of-type(2) > div.flex.gap-6 > div.flex.gap-6:nth-of-type(2) > div.shrink-0.px-8:nth-of-type(1)",
+   "y": 5983,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    166,
+    98
+   ],
+   "section": "Works with everything you already use.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(6) > div.w-full:nth-of-type(3) > div.flex.gap-6 > div.flex.gap-6:nth-of-type(1) > div.shrink-0.px-8:nth-of-type(2)",
+   "y": 6105,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    167,
+    98
+   ],
+   "section": "Works with everything you already use.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(6) > div.w-full:nth-of-type(3) > div.flex.gap-6 > div.flex.gap-6:nth-of-type(2) > div.shrink-0.px-8:nth-of-type(2)",
+   "y": 6105,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    167,
+    98
+   ],
+   "section": "Works with everything you already use.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(7) > div.max-w-\\[1400px\\].mx-auto > div.grid.lg\\:grid-cols-2 > div.grid.gap-6:nth-of-type(2) > div.p-6.border:nth-of-type(1)",
+   "y": 6459,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    604,
+    130
+   ],
+   "section": "Works with everything you already use.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 4
+  },
+  {
+   "where": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(1)",
+   "y": 9267,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    394,
+    695
+   ],
+   "section": "Simple, transparent pricing",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 3
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(1) > span.text-sm.text-muted-foreground:nth-of-type(2)",
+    "y": 812,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "saved on builds",
+    "match": "saved"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"OptimusTM\" href=#",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 4881,
+   "totalChars": 5009
+  },
+  "reduced_motion": {
+   "visibleChars": 4805,
+   "totalChars": 5009
+  },
+  "observer_never_fires": {
+   "visibleChars": 2861,
+   "totalChars": 4999
+  },
+  "scripts_off": {
+   "visibleChars": 2503,
+   "totalChars": 5001
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "main.relative.min-h-screen > header.fixed.z-50 > nav.mx-auto.transition-all > div.flex.items-center > a.flex.items-center",
+     "evidence": "touch target 114x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "main.relative.min-h-screen > header.fixed.z-50 > nav.mx-auto.transition-all > div.flex.items-center > button.md\\:hidden.p-2",
+     "evidence": "touch target 40x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.lg\\:sticky.lg\\:top-32:nth-of-type(2) > div.mt-6.flex:nth-of-type(2) > a.text-foreground.hover\\:underline:nth-of-type(1)  \"Read the docs\"",
+     "evidence": "touch target 90x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "y.lg\\:top-32:nth-of-type(2) > div.mt-6.flex:nth-of-type(2) > a.text-muted-foreground.hover\\:text-foreground:nth-of-type(2)  \"View on GitHub\"",
+     "evidence": "touch target 100x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(1)",
+     "evidence": "target 8x8px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(2)",
+     "evidence": "target 8x8px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(3)",
+     "evidence": "touch target 32x8px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(4)",
+     "evidence": "touch target 8x8px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(2) > button.relative.w-14",
+     "evidence": "touch target 56x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "z-10:nth-of-type(2) > div.py-16.lg\\:py-24:nth-of-type(1) > div.grid.grid-cols-2 > div.col-span-2:nth-of-type(1) > a.inline-flex.items-center",
+     "evidence": "touch target 118x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 5,
+   "hits": [
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(1)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(2)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(3)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "d-cols-12:nth-of-type(2) > div.lg\\:col-span-4.flex:nth-of-type(2) > div.flex.gap-2:nth-of-type(2) > button.h-2.transition-all:nth-of-type(4)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "section.relative.py-32:nth-of-type(10) > div.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(2) > button.relative.w-14",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "section.relative.py-24:nth-of-type(6) > div.w-full.mb-6:nth-of-type(2) > div.flex.gap-6",
+     "evidence": "\"Database\" repeated 4 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "2020 characters (41% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "2378 characters (49% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": ".block:nth-of-type(2) > span.relative.inline-block > span.inline-flex:nth-of-type(1) > span.inline-block.animate-char-in:nth-of-type(1)  \"c\"",
+     "evidence": "page moves (keyframes char-in, devLineReveal, enter) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (4)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (4)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 17,
+  "button_variants": 9,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 9,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

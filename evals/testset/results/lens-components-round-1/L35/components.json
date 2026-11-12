@@ -1,0 +1,63 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The guidelines are a single ten-screen reference with linked section heads, but there is no table of contents and no current-section mark, and the one copy button showed no 'Copied' change after its click.",
+ "score": {
+  "dimension": "Usability",
+  "value": 7,
+  "reason": "T-STATE-MATRIX passes on the declared states, but T-WHERE-AM-I fails on the long page with no table of contents (CMP-010), and the copy button shows no success state (CMP-128)."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT",
+  "T-ERROR-PATH"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-010",
+   "tier": "Reflex",
+   "where": "main (whole page), 1440px and 375px, tiles/1440-00.png to tiles/1440-09.png",
+   "evidence": "dom-1440.json gives a page 8,815 px tall with four h1 and eleven h2 sections (Interactions, then sections down to Copywriting and 'Integrate with Agents'). The components table finds no navigation region, no breadcrumb and no tabs. The section heads are anchor links (the link icon beside 'Keyboard works everywhere' on tiles/375-00.png), but nothing lists them.",
+   "before": "A ten-screen reference has no table of contents and no mark for the current section.",
+   "after": "Add an 'On this page' list of the sections, sticky beside the text at 1280 and wider, and a jump menu at the top on a phone, with the current section marked.",
+   "why": "Readers come back to look up one rule. Without a contents list they scroll through ten screens to find the forms or copy section.",
+   "test": "T-WHERE-AM-I",
+   "source": "components",
+   "title": "Navigation shows where you are"
+  },
+  {
+   "rule": "CMP-128",
+   "tier": "Finish",
+   "where": "button 'Copy to clipboard' in the 'Review Command' code block, 1440px, tiles/1440-09.png, motion/t0-normal-000.png and t0-normal-600.png",
+   "evidence": "The capture clicked the copy button. The 80x80 stills before and 600 ms after are identical: the copy icon stays and no 'Copied' label or check appears.",
+   "before": "The copy button shows no change after a click.",
+   "after": "Swap the icon for a check and the label to 'Copied' for about 2.5 s, in the same slot.",
+   "why": "Without a change the reader cannot tell whether the command reached the clipboard.",
+   "test": "T-STATE-MATRIX",
+   "source": "components",
+   "title": "Copy-to-clipboard swaps its label to \"Copied\" for ~2.5s"
+  }
+ ],
+ "strengths": [
+  "The stylesheet declares a full state set: hover 191, focus-visible 93, active 18, disabled 103, expanded 55 rules.",
+  "Every section head is a real anchor link, so a section can be shared by URL.",
+  "All 13,516 characters of text show with scripts off: nothing waits for a reveal."
+ ],
+ "not_investigated": [
+  "the copy button's silence may come from the headless browser refusing clipboard access. Whether a real click shows feedback is not verified, so the finding is Finish",
+  "T-FIELD-READ, T-EMPTY-FIRST, T-TABLE-READ, T-FIRST-RUN: no fields, data regions, tables or first-run path",
+  "the logo link to /home is the only navigation. Its focus look is the sweep's (focus_ring)",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

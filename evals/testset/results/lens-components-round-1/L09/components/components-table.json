@@ -1,0 +1,839 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L09",
+ "target": "https://kin-ai.replit.app",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 21,
+  "variants": [
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(248, 250, 252)",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Intel Mac",
+     "EXE Installer (Alternative)",
+     ".deb (Debian / Ubuntu)",
+     ".rpm (Fedora)"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.container.mx-auto:nth-of-type(6) > div.grid.grid-cols-1:nth-of-type(2) > div.rounded-xl.border:nth-of-type(1) > div.p-6.pt-0:nth-of-type(3) > a.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-06.png",
+    "sweep": [
+     "card_kit (SLP-005, Reflex): 4 containers share radius 10px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\""
+    ]
+   },
+   {
+    "count": 3,
+    "fill": "rgb(0, 209, 195)",
+    "strong_fill": true,
+    "text_color": "rgb(8, 12, 22)",
+    "border": "color(srgb 0 1 0.933333)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Apple Silicon (M1/M2/M3/M4)",
+     "MSI Installer (Recommended)",
+     "AppImage (Recommended)"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.container.mx-auto:nth-of-type(6) > div.grid.grid-cols-1:nth-of-type(2) > div.rounded-xl.border:nth-of-type(1) > div.p-6.pt-0:nth-of-type(3) > a.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-06.png"
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(148, 163, 184)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "500",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Mac Client",
+     "Windows",
+     "Linux"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#radix-«r2»-trigger-mac-client",
+    "tile": "tiles/1440-06.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 80x28px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 80x28px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 80x28px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(248, 250, 252)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     64
+    ],
+    "labels": [
+     "Can my phone or iPad install KinAI directly?",
+     "Can Windows be the host?",
+     "Can Linux be the host?"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#radix-«r7»",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 3,
+    "fill": "oklab(0.157279 -0.00171877 -0.0227119 / 0.5)",
+    "strong_fill": false,
+    "text_color": "rgb(148, 163, 184)",
+    "border": "oklab(0.288516 -0.00763309 -0.0327382 / 0.5)",
+    "radius_px": 33554400,
+    "weight": "400",
+    "heights_px": [
+     38
+    ],
+    "labels": [
+     "GitHub",
+     "X / Twitter",
+     "Security Policy"
+    ],
+    "first_screen": 0,
+    "in_footer": 3,
+    "icon_only": 3,
+    "example": "div.min-h-screen.bg-background:nth-of-type(1) > footer.border-t.border-border\\/40 > div.container.mx-auto > div.flex.items-center:nth-of-type(3) > a.text-muted-foreground.hover\\:text-foreground:nth-of-type(1)",
+    "tile": "tiles/1440-08.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 38x38px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 38x38px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 38x38px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgb(0, 209, 195)",
+    "strong_fill": true,
+    "text_color": "rgb(8, 12, 22)",
+    "border": "color(srgb 0 1 0.933333)",
+    "radius_px": 33554400,
+    "weight": "500",
+    "heights_px": [
+     32,
+     56
+    ],
+    "labels": [
+     "Download",
+     "Get KinAI for Free"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-background:nth-of-type(1) > nav.fixed.top-0 > div.container.mx-auto > div.flex.items-center:nth-of-type(2) > a.items-center.justify-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklab(0.157279 -0.00171877 -0.0227119 / 0.5)",
+    "strong_fill": false,
+    "text_color": "rgb(248, 250, 252)",
+    "border": "oklab(0.288516 -0.00763309 -0.0327382 / 0.5)",
+    "radius_px": 33554400,
+    "weight": "500",
+    "heights_px": [
+     56
+    ],
+    "labels": [
+     "View Setup Guide"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.bg-background:nth-of-type(1) > main.relative.z-10 > section.container.mx-auto:nth-of-type(1) > div.flex.flex-col:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(0, 209, 195)",
+    "strong_fill": true,
+    "text_color": "rgb(8, 12, 22)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "500",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Mac Host"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#radix-«r2»-trigger-mac-host",
+    "tile": "tiles/1440-06.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 80x28px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(248, 250, 252)",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "radius_px": 33554400,
+    "weight": "500",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Request a feature"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main.relative.z-10 > section.container.mx-auto:nth-of-type(8) > div.bg-gradient-to-br.from-card\\/80 > div.mt-8.pt-8:nth-of-type(3) > a.inline-flex.items-center",
+    "tile": "tiles/1440-08.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 151x32px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 9,
+  "row_buttons": {
+   "count": 8,
+   "labels": [
+    "Your family's AI. Nobody else's.",
+    "Connect your AI — the wizard finds the m",
+    "Host view — family's AI running on this ",
+    "Calendar — every reminder you asked KinA",
+    "A reminder that interrupts you, then get",
+    "Vision Routing"
+   ]
+  },
+  "filled_by_screen": {
+   "7": [
+    "Apple Silicon (M1/M2/M3/M4)",
+    "MSI Installer (Recommended)",
+    "AppImage (Recommended)",
+    "Mac Host"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 101,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 52,
+   "hover_media": 5,
+   "focus_visible": 20,
+   "focus": 20,
+   "focus_within": 1,
+   "active": 5,
+   "disabled": 15,
+   "invalid": 11,
+   "checked": 8,
+   "current_selected": 21,
+   "expanded_open": 29,
+   "busy": 2,
+   "placeholder": 4,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div > div.min-h-screen.bg-background:nth-of-type(1) > nav.fixed.top-0",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    65
+   ],
+   "items": 3,
+   "labels": [
+    "v0.2.148",
+    "Download",
+    "Star on GitHub"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 79x25px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 20x20px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [
+  {
+   "where": "#radix-«r2»-trigger-mac-host",
+   "y": 5842,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "tabs": 4,
+   "labels": [
+    "Mac Host",
+    "Mac Client",
+    "Windows",
+    "Linux"
+   ],
+   "selected": [],
+   "wraps": false,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 80x28px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "v0.2.148"
+  ],
+  "header_items_1440": 3,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 4,
+  "tried": 4,
+  "by_kind": {
+   "tab": 1,
+   "disclosure": 1,
+   "button": 2
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "tab",
+    "name": "Mac Client",
+    "selector": "#radix-«r2»-trigger-mac-client",
+    "status": "ok",
+    "opened": [
+     "tabpanel: 1 Download the DMG, drag to Applications"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": false,
+    "largest_box": [
+     702,
+     120
+    ],
+    "closed_after_escape": false,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "disclosure",
+    "name": "Can my phone or iPad install KinAI directly?",
+    "selector": "#radix-«r7»",
+    "status": "ok",
+    "opened": [
+     "region: Not yet — there is no native iOS or Andr",
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     670,
+     124
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/layout: 20 other element(s) move while the transition runs (e.g. \"Does the LLM have to run on th\" 61 px off its start ",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 57 px / scales 0% (frames seeked)",
+     "motion_snap/shove: \"KinAI v0.2.148 Star on GitHub \" jumps +8 px in one frame on height at 166 ms while another element is still a",
+     "motion_snap/shove: \"Can my phone or iPad install K\" jumps +8 px in one frame on height at 166 ms while another element is still a"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "",
+    "selector": "iv:nth-of-type(1) > main > section:nth-of-type(2) > div > div:nth-of-type(2) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "",
+    "selector": "iv:nth-of-type(1) > main > section:nth-of-type(2) > div > div:nth-of-type(2) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [
+     "img: ",
+     "button: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     128,
+     80
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.container.mx-auto:nth-of-type(6) > div.grid.grid-cols-1:nth-of-type(2) > div.rounded-xl.border:nth-of-type(1)",
+   "y": 5336,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    304,
+    382
+   ],
+   "section": "Get KinAI",
+   "controls_inside": 2,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.grid.grid-cols-1:nth-of-type(2) > div:nth-of-type(19) > div.rounded-xl.border > div.p-6.pt-0:nth-of-type(2) > div.text-muted-foreground.text-base",
+    "y": 4393,
+    "screen": 5,
+    "tile": "tiles/1440-04.png",
+    "first_screen": false,
+    "text": "Searches in a round run at the same time, so a question that needs eight of them takes about as long as the slowest one instead of all of th",
+    "match": "added"
+   }
+  ],
+  "onboarding": [
+   {
+    "where": "div.min-h-screen.bg-background:nth-of-type(1) > main.relative.z-10 > section.container.mx-auto:nth-of-type(1) > div.flex.flex-col:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(2)",
+    "y": 572,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "View Setup Guide",
+    "match": "Setup Guide"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 1
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 29,
+  "first": "a \"v0.2.148\" href=https://github.com/Gogo6969/kinai/releases",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 3,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 4556,
+   "totalChars": 4556
+  },
+  "reduced_motion": {
+   "visibleChars": 4556,
+   "totalChars": 4556
+  },
+  "observer_never_fires": {
+   "visibleChars": 1822,
+   "totalChars": 4556
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 4,
+   "hits": [
+    {
+     "where": "button \"\"",
+     "evidence": "focus indicator visible but faint: 1.87:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 11,
+   "hits": [
+    {
+     "where": "div.min-h-screen.bg-background:nth-of-type(1) > nav.fixed.top-0 > div.container.mx-auto > div.flex.items-center:nth-of-type(1) > a",
+     "evidence": "touch target 79x25px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.fixed.top-0 > div.container.mx-auto > div.flex.items-center:nth-of-type(2) > a.text-muted-foreground.hover\\:text-foreground:nth-of-type(1)",
+     "evidence": "touch target 20x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.scroll-mt-24:nth-of-type(3) > div.w-full.max-w-3xl > div.h-9.items-center:nth-of-type(1)",
+     "evidence": "touch target 327x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#radix-«r2»-trigger-mac-host  \"Mac Host\"",
+     "evidence": "touch target 80x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#radix-«r2»-trigger-mac-client  \"Mac Client\"",
+     "evidence": "touch target 80x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#radix-«r2»-trigger-win-client  \"Windows\"",
+     "evidence": "touch target 80x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#radix-«r2»-trigger-linux-client  \"Linux\"",
+     "evidence": "touch target 80x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "x-auto:nth-of-type(8) > div.bg-gradient-to-br.from-card\\/80 > div.mt-8.pt-8:nth-of-type(3) > a.inline-flex.items-center  \"Request a feature\"",
+     "evidence": "touch target 151x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "er-border\\/40 > div.container.mx-auto > div.flex.items-center:nth-of-type(3) > a.text-muted-foreground.hover\\:text-foreground:nth-of-type(1)",
+     "evidence": "touch target 38x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "er-border\\/40 > div.container.mx-auto > div.flex.items-center:nth-of-type(3) > a.text-muted-foreground.hover\\:text-foreground:nth-of-type(2)",
+     "evidence": "touch target 38x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"v0.2.148\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 2,
+   "hits": [
+    {
+     "where": ".relative.z-10 > section.container.mx-auto:nth-of-type(3) > div.grid.grid-cols-1:nth-of-type(2) > div:nth-of-type(1) > div.rounded-xl.border",
+     "evidence": "27 containers share radius 16px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".grid-cols-1:nth-of-type(2) > div.rounded-xl.border:nth-of-type(1) > div.p-6.pt-0:nth-of-type(3) > a.inline-flex.items-center:nth-of-type(2)",
+     "evidence": "4 containers share radius 10px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 1,
+   "hits": [
+    {
+     "where": ".mx-auto:nth-of-type(8) > div.bg-gradient-to-br.from-card\\/80 > div.space-y-4.relative:nth-of-type(2) > div.flex.items-center:nth-of-type(1)",
+     "evidence": "card inside a card (div.bg-gradient-to-br.from-card\\/80)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "2734 characters (60% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "4556 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (keyframes enter, exit) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 2,
+   "hits": [
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7»)",
+     "evidence": "20 other element(s) move while the transition runs (e.g. \"Does the LLM have to run on th\" 61 px off its start and end at 70 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7»)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 57 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 6,
+   "hits": [
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> #root > div:nth-of-type(1)",
+     "evidence": "\"KinAI v0.2.148 Star on GitHub \" jumps +8 px in one frame on height at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> ion:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1)",
+     "evidence": "\"Can my phone or iPad install K\" jumps +8 px in one frame on height at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> ion:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(2)",
+     "evidence": "\"Does the LLM have to run on th\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> #radix-«r9»",
+     "evidence": "\"Does the LLM have to run on th\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> ion:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(3)",
+     "evidence": "\"Can Windows be the host?\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    },
+    {
+     "where": "disclosure trigger \"Can my phone or iPad install KinAI direc\" (#radix-«r7») -> #radix-«rb»",
+     "evidence": "\"Can Windows be the host?\" jumps +8 px in one frame on y at 166 ms while another element is still animating: layout and animation disagree",
+     "tier": "Finish",
+     "check": "shove"
+    }
+   ]
+  }
+ },
+ "counts": {
+  "buttons": 21,
+  "button_variants": 9,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 1,
+  "overlay_triggers": 4,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

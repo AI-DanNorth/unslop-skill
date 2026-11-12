@@ -1,0 +1,859 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L18",
+ "target": "https://www.usehallmark.com/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 23,
+  "variants": [
+   {
+    "count": 6,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(107, 107, 102)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     34,
+     36
+    ],
+    "labels": [
+     "Bank reconciliation",
+     "Webhook API",
+     "Editorial 20",
+     "Modern minimal 12",
+     "Atmospheric 9",
+     "Playful 9"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(2)",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 113x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 169x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 137x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 97x34px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 5,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(142, 142, 136)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "400",
+    "heights_px": [
+     32,
+     38
+    ],
+    "labels": [
+     "Copy the install command",
+     "Copy lands in",
+     "Copy build",
+     "Copy redesign",
+     "Copy only this agent"
+    ],
+    "first_screen": 0,
+    "in_footer": 5,
+    "icon_only": 5,
+    "example": "footer.foot > div.wrap.foot__top:nth-of-type(1) > div.foot__install:nth-of-type(2) > div.install.install--ink:nth-of-type(1) > button.copy",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 4,
+    "fill": "rgb(250, 250, 249)",
+    "strong_fill": false,
+    "text_color": "rgb(15, 15, 14)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     34,
+     38,
+     40
+    ],
+    "labels": [
+     "Hallmark on GitHub, 51,700 stars",
+     "Deal again",
+     "All 50",
+     "Show all 50 themes"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 120x38px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 40x40px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 74x34px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgb(28, 28, 26)",
+    "strong_fill": true,
+    "text_color": "rgb(245, 245, 243)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Previous page",
+     "Next page"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "section.made:nth-of-type(7) > div.wrap.wheel__bar:nth-of-type(3) > button.btn.btn--icon:nth-of-type(1)",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(142, 142, 136)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Codex",
+     "OpenCode"
+    ],
+    "first_screen": 0,
+    "in_footer": 2,
+    "icon_only": 0,
+    "example": "#ag-t-codex",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(15, 15, 14)",
+    "strong_fill": true,
+    "text_color": "rgb(250, 250, 249)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "400",
+    "heights_px": [
+     41
+    ],
+    "labels": [
+     "Skip to the page"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html.js > body > a.skip",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(107, 107, 102)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "400",
+    "heights_px": [
+     38
+    ],
+    "labels": [
+     "Copy the install command"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > button.copy",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 38x38px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(15, 15, 14)",
+    "strong_fill": true,
+    "text_color": "rgb(250, 250, 249)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Farm records"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(1)",
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(245, 245, 243)",
+    "strong_fill": false,
+    "text_color": "rgb(15, 15, 14)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Claude Code"
+    ],
+    "first_screen": 0,
+    "in_footer": 1,
+    "icon_only": 0,
+    "example": "#ag-t-claude",
+    "tile": "tiles/1440-08.png"
+   }
+  ],
+  "variant_count": 9,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {
+   "9": [
+    "Previous page",
+    "Next page"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 332,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 20,
+   "hover_media": 0,
+   "focus_visible": 8,
+   "focus": 2,
+   "focus_within": 0,
+   "active": 5,
+   "disabled": 3,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 2,
+   "expanded_open": 5,
+   "busy": 2,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html.js > body > header.nav > div.wrap.nav__in",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    52,
+    0,
+    1336,
+    72
+   ],
+   "items": 2,
+   "labels": [
+    "Hallmark on GitHub, 51,700 stars",
+    "Hallmark, back to the top"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 120x38px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 113x24px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2)",
+   "y": 1224,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    100,
+    1224,
+    1240,
+    36
+   ],
+   "items": 3,
+   "labels": [
+    "Farm records",
+    "Bank reconciliation",
+    "Webhook API"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "footer.foot > div.wrap.foot__top:nth-of-type(1) > div.foot__install:nth-of-type(2) > div.ag-tabs:nth-of-type(2)",
+   "y": 7984,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    732,
+    7984,
+    608,
+    36
+   ],
+   "items": 3,
+   "labels": [
+    "Claude Code",
+    "Codex",
+    "OpenCode"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "footer.foot > div.wrap.foot__bottom:nth-of-type(2) > nav.foot__links",
+   "y": 8340,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    88,
+    8340,
+    138,
+    36
+   ],
+   "items": 2,
+   "labels": [
+    "GitHub",
+    "Licence"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [
+  {
+   "where": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(1)",
+   "y": 1224,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "tabs": 3,
+   "labels": [
+    "Farm records",
+    "Bank reconciliation",
+    "Webhook API"
+   ],
+   "selected": [],
+   "wraps": false
+  },
+  {
+   "where": "#ag-t-claude",
+   "y": 7984,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_footer": true,
+   "tabs": 3,
+   "labels": [
+    "Claude Code",
+    "Codex",
+    "OpenCode"
+   ],
+   "selected": [],
+   "wraps": false
+  }
+ ],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Skip to the page",
+   "Hallmark, back to the top",
+   "Hallmark on GitHub, 51,700 stars"
+  ],
+  "header_items_1440": 2,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "fixed",
+    "current": []
+   },
+   {
+    "kind": "tabs",
+    "items": 3,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "tabs",
+    "items": 3,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 2,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 3,
+  "tried": 3,
+  "by_kind": {
+   "tab": 1,
+   "button": 2
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "tab",
+    "name": "Codex",
+    "selector": "#ag-t-codex",
+    "status": "ok",
+    "opened": [
+     "a: ",
+     "a: ",
+     "a: ",
+     "a: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     540.1,
+     338.3
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Deal again",
+    "selector": "#top > div:nth-of-type(3) > button",
+    "status": "ok",
+    "opened": [
+     "a: Atelier",
+     "a: Ribbon",
+     "a: Furrow",
+     "a: Studio"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     408.3,
+     288.6
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 790 ms (measured from frames; limit for a button 300 ms)",
+     "motion/travel: moves 1095 px during the transition (limit 16 px for in-place UI)",
+     "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Refract\" 902 px off its start and end at 450 ms): the"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Copy the install command",
+    "selector": "#top > div:nth-of-type(2) > div > button",
+    "status": "ok",
+    "opened": [
+     "svg: ",
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     16,
+     16
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "in_dom": {
+   "dialog_elements": 1,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+   "y": 655,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 7,
+   "size": [
+    408,
+    289
+   ],
+   "section": "The design skill that ends AI slop.",
+   "controls_inside": 0,
+   "whole_card_link": 7,
+   "with_heading": 0,
+   "sweep": [
+    "card_kit (SLP-005, Reflex): 5 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.4\"",
+    "card_kit (SLP-005, Reflex): 4 containers share radius 13.608px and shadow \"rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.4\""
+   ]
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "footer.foot > div.wrap.foot__bottom:nth-of-type(2) > p.foot__by",
+    "y": 8348,
+    "screen": 10,
+    "tile": "tiles/1440-09.png",
+    "first_screen": false,
+    "in_footer": true,
+    "text": "Created by and",
+    "match": "Created"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Skip to the page\" href=#main",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 10,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1540,
+   "totalChars": 1862
+  },
+  "reduced_motion": {
+   "visibleChars": 1540,
+   "totalChars": 1862
+  },
+  "observer_never_fires": {
+   "visibleChars": 419,
+   "totalChars": 1862
+  },
+  "scripts_off": {
+   "visibleChars": 1569,
+   "totalChars": 1840
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "html.js > body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1)",
+     "evidence": "touch target 113x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "evidence": "touch target 120x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > button.copy",
+     "evidence": "touch target 38x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > button.fan__deal",
+     "evidence": "touch target 40x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(2) > div.wrap > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(1)  \"Farm records\"",
+     "evidence": "touch target 124x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(2) > div.wrap > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(2)  \"Bank reconciliation\"",
+     "evidence": "touch target 166x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(2) > div.wrap > div.cmp-tabs:nth-of-type(2) > button.pill:nth-of-type(3)  \"Webhook API\"",
+     "evidence": "touch target 126x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(4) > div.wrap.reveal > div.th-bar:nth-of-type(2) > div.seg > button.pill:nth-of-type(1)  \"All\"",
+     "evidence": "touch target 74x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(4) > div.wrap.reveal > div.th-bar:nth-of-type(2) > div.seg > button.pill:nth-of-type(2)  \"Editorial\"",
+     "evidence": "touch target 113x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section.sec:nth-of-type(4) > div.wrap.reveal > div.th-bar:nth-of-type(2) > div.seg > button.pill:nth-of-type(3)  \"Modern minimal\"",
+     "evidence": "touch target 169x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 6,
+   "hits": [
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "evidence": "5 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.4\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "evidence": "4 containers share radius 13.608px and shadow \"rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.4\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "#cmp-stage",
+     "evidence": "5 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.2\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.cmp > p.chip.chip--l:nth-of-type(1)  \"Without\"",
+     "evidence": "5 containers share radius 999px and shadow \"rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.wrap.reveal > ul.th-grid > li.th:nth-of-type(1) > a.th__link > span.th__shot:nth-of-type(1)",
+     "evidence": "10 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "evidence": "15 containers share radius 14px and shadow \"rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "1121 characters (73% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 3,
+   "hits": [
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button)",
+     "evidence": "transition runs 790 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button) -> #top > div:nth-of-type(3) > div > a:nth-of-type(5)",
+     "evidence": "moves 1095 px during the transition (limit 16 px for in-place UI)",
+     "tier": "Reflex",
+     "check": "travel"
+    },
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button)",
+     "evidence": "6 other element(s) move while the transition runs (e.g. \"Refract\" 902 px off its start and end at 450 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 23,
+  "button_variants": 9,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 4,
+  "nav_with_current_mark": 0,
+  "tabs": 2,
+  "overlay_triggers": 3,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

@@ -1,0 +1,32 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:35:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page's one action, the install command, sits in the hero with a copy button that swaps to a check mark when pressed, the comparison tabs and the agent tabs mark the selected tab with a filled pill, and nothing interrupts the visitor.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-PRIMARY-COUNT, T-STATE-MATRIX (copy success seen), T-WHERE-AM-I on both tab rows and T-INTERRUPT pass; the score stops at 8 because no failure path could be exercised and the tabs' selected state could not be confirmed in the DOM."
+  },
+  "visitor_mode": "Persuade (inferred: a landing page for an open-source design skill whose single action is copying an install command)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [],
+  "strengths": [
+    "The install command 'npx skills add nutlope/hallmark -g' is the hero's only control, and its copy button shows an orange check mark in the open still (motion/t2-normal-600.png): a designed success state.",
+    "The comparison tabs ('Farm records', 'Bank reconciliation', 'Webhook API') and the agent tabs ('Claude Code', 'Codex', 'OpenCode') mark the selected tab with a filled pill (tiles/1440-01.png y 341, tiles/1440-08.png y 801).",
+    "The stylesheet declares hover (20), focus-visible (8), active (5), disabled (3), selected (2), expanded (5) and busy (2) rules, and the focus walk starts on a 'Skip to the page' link.",
+    "Buttons share one shape: every variant uses a pill radius, and heights stay between 32 and 41 px.",
+    "The header has two destinations (home and GitHub) and keeps both at 375, so the phone needs no menu.",
+    "The site gallery carousel has named 'Previous page' and 'Next page' buttons, and each hero card is a whole-card link (7 of 7)."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "Failure states: the async capture found no primary action that sends a request, so T-ERROR-PATH had nothing to follow.",
+    "T-FIELD-READ skipped: the page has no field. T-TABLE-READ skipped: no table or comparable data grid. T-FIRST-RUN skipped: no first-run path.",
+    "The components table found no selected mark on the role=tab groups, while the screenshots show a filled pill on the selected tab; whether aria-selected is set is lens-a11y's.",
+    "The product pictures in the hero fan and the comparison frame (Fieldbook, Relay, Driftsong) are illustrations (conflict C48), not judged as controls.",
+    "Text left at opacity 0 when IntersectionObserver never fires (sweep hidden_content, ROB-001) and the 'Deal again' transition timing (MOT-002) belong to robustness and lens-motion.",
+    "Whether the site carousel rotates on its own, and keyboard operation of the comparison slider handle (lens-a11y)."
+  ]
+}

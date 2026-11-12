@@ -1,0 +1,75 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The header marks 'Home' as the current page, the About menu opens as a real menu and closed after Escape, a skip link comes first, and the page offers one action with an outlined secondary, with only small gaps: the header and hero name the same action differently, the About menu repeats a top-level item, and the phone header drops the main action.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-WHERE-AM-I, T-OVERLAY-CHECK and T-STATE-MATRIX pass, with small gaps in T-PRIMARY-COUNT (two labels for the roadmap action, CMP-121) and T-PHONE-NAV (no 'Start Now' in the 375 header, CMP-011)."
+  },
+  "visitor_mode": "Persuade into Operate: a landing page for a career-matching tool whose one action starts a four-answer roadmap. No 00-contract.md; inferred from 'Build my roadmap' and 'Four answers, one roadmap'.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN"],
+  "findings": [
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header 'Start Now' and hero and closing 'Build my roadmap', 1440, fold-1440.png and tiles/1440-02.png",
+      "evidence": "The header's filled button reads 'Start Now' with a gradient fill; the hero and the 'Ready when you are.' band use a flat green filled 'Build my roadmap' (rgb(16, 122, 105)). The buttons table counts two different filled styles for the one action.",
+      "before": "'Start Now' in the header, 'Build my roadmap' in the hero and close, in two fills.",
+      "after": "'Build my roadmap' in the header too, in the same flat green.",
+      "why": "A visitor cannot tell whether 'Start Now' begins the same roadmap or opens a sign-up.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav lists the 375 header as the logo, the dark-mode button and a 44x44 'Open menu' button; 'Sign In' and 'Start Now' are no longer in the header. The hero's 'Build my roadmap' is on the first screen, so the action stays reachable only while the hero is in view.",
+      "before": "The phone header has a theme toggle but not the main action.",
+      "after": "'Build my roadmap' kept in the 375 header in place of the dark-mode button, which moves into the menu.",
+      "why": "Once a phone visitor scrolls past the hero, the main action is gone until the closing band.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-150",
+      "title": "Decide and name the nav",
+      "tier": "Reflex",
+      "where": "About menu, 1440, motion/t0-normal-600.png",
+      "evidence": "The About menu holds 'About', 'Compare Careers' and 'Help / Contact', and 'Help / Contact' is also a top-level header item beside it. 'Compare Careers', a product feature, sits under About.",
+      "before": "A menu that repeats a top-level item and files a feature under About.",
+      "after": "About as a plain link, 'Compare careers' as its own header item, and Help / Contact once.",
+      "why": "Visitors looking for the comparison feature will not look under About, and the repeated item makes the menu look padded.",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-125",
+      "title": "Mobile hero button pair: one row from the text edge, label-width, never stretched to equal",
+      "tier": "Finish",
+      "where": "hero buttons, 375, fold-375.png",
+      "evidence": "At 375 'Build my roadmap' and 'How it works' each stretch to the full 343px column, stacked, so the outlined secondary is as wide as the primary.",
+      "before": "Two full-width stacked buttons.",
+      "after": "The primary at full width and 'How it works' as a text link under it, or both at label width.",
+      "why": "Equal width gives the secondary the same weight as the main action on a phone.",
+      "test": "T-ONE-FAMILY"
+    }
+  ],
+  "strengths": [
+    "The header marks the current page with a pale green 'Home' pill at 1440 (fold-1440.png).",
+    "The About disclosure opens a real menu with three items and closed after Escape (motion/t0-normal-600.png, closed_after_escape true).",
+    "One filled primary per view with an outlined secondary that goes elsewhere ('How it works'), and the same primary closes the page ('Ready when you are.').",
+    "A skip link is the first focus stop; the stylesheet declares hover inside a hover media query (6), focus-visible (34), disabled (36) and invalid (14) rules.",
+    "The example match card is labelled 'Example match' and the hero chart 'Example: a Computer Science graduate looking for work in Poland', so the pictures read as illustrations."
+  ],
+  "not_investigated": [
+    "The roadmap flow itself ('Build my roadmap', 'Start Now'): the click navigated away, so its fields, states and errors were not captured.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement: no fields on the captured page.",
+    "Focus moving into the menu and back to its trigger; keyboard operation of custom widgets: lens-a11y.",
+    "Capture prep clicked 'Essential only' on the cookie banner at every width; the banner is capture context.",
+    "T-FIELD-READ, T-ERROR-PATH and T-TABLE-READ: no field, no failure run and no table."
+  ]
+}

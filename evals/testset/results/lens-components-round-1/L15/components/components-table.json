@@ -1,0 +1,893 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L15",
+ "target": "https://skill-fixture-before.theroost.dev",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 0,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 8,
+  "variants": [
+   {
+    "count": 7,
+    "fill": "rgb(240, 240, 240)",
+    "strong_fill": true,
+    "text_color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     34
+    ],
+    "labels": [
+     "All",
+     "People",
+     "Money",
+     "Remove",
+     "Copy",
+     "Send follow-up"
+    ],
+    "first_screen": 5,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "body > section:nth-of-type(2) > div.filter-bar > p:nth-of-type(1) > button.filter.active:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 42x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 72x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 73x34px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 81x34px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": true,
+    "text_color": "rgb(15, 23, 42)",
+    "border": "rgba(15, 23, 42, 0.12)",
+    "radius_px": 999,
+    "weight": "700",
+    "heights_px": [
+     39
+    ],
+    "labels": [
+     "Review required 1/5"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#vr-hitl-chip",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 180x39px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 2,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {
+   "1": [
+    "All",
+    "People",
+    "Money",
+    "Remove",
+    "Copy",
+    "Review required 1/5"
+   ],
+   "2": [
+    "Send follow-up",
+    "Snooze"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 66,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 3,
+   "hover_media": 0,
+   "focus_visible": 3,
+   "focus": 1,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 1,
+   "invalid": 0,
+   "checked": 1,
+   "current_selected": 0,
+   "expanded_open": 1,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [
+   {
+    "where": "#vr-hitl-opt-0",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "ApproveApprove — agent continues with this output.",
+    "group": "vr-hitl-decision",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   },
+   {
+    "where": "#vr-hitl-opt-1",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "Request changesRequest changes — agent regenerates, then you review again.",
+    "group": "vr-hitl-decision",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   },
+   {
+    "where": "#vr-hitl-opt-2",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "hidden": true,
+    "type": "radio",
+    "label": "RejectReject — stop the agent.",
+    "group": "vr-hitl-decision",
+    "custom": false,
+    "default_state": "not verified: no choices.json in this capture (recorded from 11 Nov 2026); read the screenshot"
+   }
+  ],
+  "radio_groups": {
+   "vr-hitl-decision": 3
+  },
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 4,
+  "tried": 4,
+  "by_kind": {
+   "dialog": 1,
+   "disclosure": 1,
+   "button": 2
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "dialog",
+    "name": "Review required 1/5",
+    "selector": "#vr-hitl-chip",
+    "status": "not-verified (error: page.evaluate: Execution context was destroyed, most likely because of a navigation.)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 1,
+    "kind": "disclosure",
+    "name": "How this note was chosen",
+    "selector": "body > section:nth-of-type(4) > details > summary",
+    "status": "not-verified (error: page.goto: Navigation to \"https://skill-fixture-before.theroost.dev/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\")",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Copy",
+    "selector": "body > section:nth-of-type(4) > ul > li:nth-of-type(1) > span:nth-of-type(3) > button",
+    "status": "not-verified (error: page.goto: Navigation to \"https://skill-fixture-before.theroost.dev/\" is interrupted by another navigation to \"https://skill-fixture-before.theroost.dev/\")",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "All",
+    "selector": "body > section:nth-of-type(2) > div > p:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "not-verified (error: page.goto: Navigation to \"https://skill-fixture-before.theroost.dev/\" is interrupted by another navigation to \"https://skill-fixture-before.theroost.dev/\")",
+    "reduce_status": "not-verified"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 1
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
+   "y": 1327,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    103
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(4) > td:nth-of-type(1)",
+   "y": 1430,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    80
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(5) > td:nth-of-type(1)",
+   "y": 1510,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    103
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(9) > td:nth-of-type(1)",
+   "y": 1763,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    103
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(12) > td:nth-of-type(1)",
+   "y": 1981,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    103
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(14) > td:nth-of-type(1)",
+   "y": 2142,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    103
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(16) > td:nth-of-type(1)",
+   "y": 2302,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    147
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(22) > td:nth-of-type(1)",
+   "y": 2716,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    80
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(23) > td:nth-of-type(1)",
+   "y": 2796,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    80
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(24) > td:nth-of-type(1)",
+   "y": 2876,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    80
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(25) > td:nth-of-type(1)",
+   "y": 2956,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    80
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > table > tbody > tr:nth-of-type(26) > td:nth-of-type(1)",
+   "y": 3037,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    195,
+    125
+   ],
+   "section": "Campaign tracker",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [
+  {
+   "where": "html > body > section:nth-of-type(3) > table.table-styled",
+   "y": 430,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "rows": 4,
+   "header_cells": [
+    "Amount",
+    "Tag",
+    "Change",
+    "Status",
+    "Account"
+   ],
+   "numeric_cells": 4,
+   "numeric_align": {
+    "left": 4
+   },
+   "width_px": 880,
+   "section": "Northline weekly ops",
+   "head_wraps": 0,
+   "at_375": {
+    "width_px": 379,
+    "wider_than_screen": true,
+    "visible": true
+   }
+  },
+  {
+   "where": "section:nth-of-type(7) > table",
+   "y": 1176,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "rows": 28,
+   "header_cells": [
+    "PR",
+    "Fork",
+    "After",
+    "Before",
+    "Skill",
+    "Repo"
+   ],
+   "numeric_cells": 0,
+   "numeric_align": {},
+   "width_px": 880,
+   "section": "Campaign tracker",
+   "head_wraps": 0,
+   "at_375": {
+    "width_px": 749,
+    "wider_than_screen": true,
+    "visible": true
+   }
+  }
+ ],
+ "status_regions": [
+  {
+   "where": "table.table-styled > tbody > tr.tier-gold.highlight:nth-of-type(1) > td:nth-of-type(2) > span.status-error:nth-of-type(1)",
+   "y": 472,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status-error",
+   "text": "Blocked",
+   "fixed": false
+  },
+  {
+   "where": "table.table-styled > tbody > tr.tier-silver:nth-of-type(2) > td:nth-of-type(2) > span.status-pending:nth-of-type(1)",
+   "y": 508,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status-pending",
+   "text": "Waiting",
+   "fixed": false
+  },
+  {
+   "where": "table.table-styled > tbody > tr.tier-bronze:nth-of-type(3) > td:nth-of-type(2) > span.status-success:nth-of-type(1)",
+   "y": 543,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status-success",
+   "text": "Clear",
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "body > section:nth-of-type(4) > ul > li.type-draft:nth-of-type(2) > div",
+    "y": 694,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Thanks for the update. Can you send the revised PO by Thursday?",
+    "match": "Thanks"
+   },
+   {
+    "where": "html > body > section:nth-of-type(4) > ul > li.type-done:nth-of-type(3)",
+    "y": 723,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Intro sent to the Boston plant manager.",
+    "match": "sent"
+   },
+   {
+    "where": "body > section:nth-of-type(4) > ul > li.type-done:nth-of-type(3) > span.source:nth-of-type(1)",
+    "y": 723,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Done",
+    "match": "Done"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 3,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [
+   {
+    "class": "error",
+    "elements": 1,
+    "example": ".tier-gold.highlight:nth-of-type(1) > td:nth-of-type(2) > span.status-error:nth-of-type(1)"
+   },
+   {
+    "class": "success",
+    "elements": 1,
+    "example": "y > tr.tier-bronze:nth-of-type(3) > td:nth-of-type(2) > span.status-success:nth-of-type(1)"
+   },
+   {
+    "class": "empty",
+    "elements": 1,
+    "example": "html > body > section:nth-of-type(5) > p.empty-state"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Send follow-up",
+    "kind": "action-button",
+    "selector": "body > section:nth-of-type(6) > p:nth-of-type(2) > button:nth-of-type(1)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 1,
+    "name": "Remove",
+    "kind": "action-button",
+    "selector": "body > section:nth-of-type(2) > div > p:nth-of-type(2) > span > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a1-slow-before.png",
+      "async/a1-slow-0.5s.png",
+      "async/a1-slow-2s.png",
+      "async/a1-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "button \"All\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 4323,
+   "totalChars": 4323
+  },
+  "reduced_motion": {
+   "visibleChars": 4323,
+   "totalChars": 4323
+  },
+  "observer_never_fires": {
+   "visibleChars": 4323,
+   "totalChars": 4323
+  },
+  "scripts_off": {
+   "visibleChars": 4323,
+   "totalChars": 4323
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 3,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 10,
+   "hits": [
+    {
+     "where": "body > section:nth-of-type(2) > div.filter-bar > p:nth-of-type(1) > button.filter.active:nth-of-type(1)  \"All\"",
+     "evidence": "touch target 42x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > section:nth-of-type(2) > div.filter-bar > p:nth-of-type(1) > button.filter:nth-of-type(2)  \"People\"",
+     "evidence": "touch target 72x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "body > section:nth-of-type(2) > div.filter-bar > p:nth-of-type(1) > button.filter:nth-of-type(3)  \"Money\"",
+     "evidence": "touch target 73x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section:nth-of-type(2) > div.filter-bar > p.filter-chips:nth-of-type(2) > span.chip > button.chip-remove  \"Remove\"",
+     "evidence": "touch target 81x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "table.table-styled > thead > tr > th.sortable:nth-of-type(1) > a  \"Account\"",
+     "evidence": "touch target 62x21px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "section:nth-of-type(4) > ul > li.type-user:nth-of-type(1) > span.actions:nth-of-type(3) > button  \"Copy\"",
+     "evidence": "touch target 60x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "html > body > section:nth-of-type(4) > details > summary  \"How this note was chosen\"",
+     "evidence": "touch target 327x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "html > body > section:nth-of-type(6) > p.actions:nth-of-type(2) > button:nth-of-type(1)  \"Send follow-up\"",
+     "evidence": "touch target 132x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "html > body > section:nth-of-type(6) > p.actions:nth-of-type(2) > button:nth-of-type(2)  \"Snooze\"",
+     "evidence": "touch target 76x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#vr-hitl-chip  \"Review required\"",
+     "evidence": "touch target 180x39px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is button \"All\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 2,
+   "hits": [
+    {
+     "where": "section:nth-of-type(7) > table",
+     "evidence": "\"; VibeRooster fork safe to delete\" repeated 3 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section:nth-of-type(7) > table > tbody",
+     "evidence": "\"before\" repeated 27 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "section:nth-of-type(7) > table",
+     "evidence": "page is 773px wide at a 375px viewport (sideways scroll); widest culprit 749px",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: no trigger could be measured: 1 iframe(s) on the page: transitions inside frames are not exercised; dialog trigger \"Review required 1/5\" (#vr-hitl-chip) [normal]: not-verified (error: page.evaluate: Execution context was destroyed, most likely because of a navigation.); dialog trigger \"Review required 1/5\" (#vr-hitl-chip) [reduce]: not-verified (error: page.evaluate: Execution context was destroyed, most likely because of a navigation.); disclosure trigger \"How this note was chosen\" (body > section:nth-of-type(4) > details > summary) [normal]: not-verified (error: page.goto: Navigation to \"https://skill-fixture-before.theroost.dev/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\")",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: no live run could be judged: dialog trigger \"Review required 1/5\" (#vr-hitl-chip): no live run (capture predates the live recorder, or the normal run failed); disclosure trigger \"How this note was chosen\" (body > section:nth-of-type(4) > details > summary): no live run (capture predates the live recorder, or the normal run failed); button trigger \"Copy\" (e(4) > ul > li:nth-of-type(1) > span:nth-of-type(3) > button): no live run (capture predates the live recorder, or the normal run failed)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 8,
+  "button_variants": 2,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 3,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 0,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 4,
+  "card_groups": 12,
+  "tables": 2,
+  "status_regions": 3,
+  "async_actions": 2
+ }
+}

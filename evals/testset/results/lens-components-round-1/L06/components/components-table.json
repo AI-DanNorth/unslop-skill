@@ -1,0 +1,917 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L06",
+ "target": "https://consile.app",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 1,
+  "footer": 1,
+  "header": 3
+ },
+ "buttons": {
+  "count": 23,
+  "variants": [
+   {
+    "count": 5,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(29, 33, 43)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "500",
+    "heights_px": [
+     53
+    ],
+    "labels": [
+     "How long does it take to get started?",
+     "Can Consile replace the tools we already use?",
+     "Can tasks repeat automatically?",
+     "Can I export or delete my personal data?",
+     "Can I use Consile for a non-profit or school?"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#radix-\\:r2\\:",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 5,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(248, 248, 246)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     21
+    ],
+    "labels": [
+     "PRODUCT",
+     "WHO IT'S FOR",
+     "LEGAL",
+     "COMPANY",
+     "FREE TOOLS"
+    ],
+    "first_screen": 0,
+    "in_footer": 5,
+    "icon_only": 0,
+    "example": "footer.bg-\\[hsl\\(var\\(--foreground\\)\\)\\].text-\\[hsl\\(var\\(--background\\)\\)\\] > div.mx-auto.max-w-6xl > div.grid.grid-cols-1:nth-of-type(2) > div.border-b.border-border\\/30:nth-of-type(1) > button.flex.w-full",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(106, 113, 129)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Tasks",
+     "Attendance",
+     "People",
+     "Performance"
+    ],
+    "first_screen": 4,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#\\:r1\\:-tab-tasks",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 3,
+    "fill": "rgb(249, 112, 21)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     40,
+     44,
+     48
+    ],
+    "labels": [
+     "Start free"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-dvh.bg-background > header.fixed.inset-x-0 > div.mx-auto.max-w-6xl > div.hidden.lg\\:flex > a.inline-flex.items-center:nth-of-type(3)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(248, 248, 246)",
+    "strong_fill": false,
+    "text_color": "rgb(29, 33, 43)",
+    "border": "rgb(232, 230, 227)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     36,
+     44
+    ],
+    "labels": [
+     "View all 24 features",
+     "View pricing"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.scroll-mt-16:nth-of-type(4) > div.landing-section.mx-auto > div.text-center.mt-8:nth-of-type(3) > a.inline-flex.items-center",
+    "tile": "tiles/1440-04.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 189x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(248, 248, 246)",
+    "strong_fill": false,
+    "text_color": "rgb(249, 112, 21)",
+    "border": "rgba(249, 112, 21, 0.4)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Book a demo"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-dvh.bg-background > header.fixed.inset-x-0 > div.mx-auto.max-w-6xl > div.hidden.lg\\:flex > a.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(249, 112, 21, 0.1)",
+    "strong_fill": false,
+    "text_color": "rgb(249, 112, 21)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Dashboard"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#\\:r1\\:-tab-dashboard",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(29, 33, 43, 0.06)",
+    "strong_fill": false,
+    "text_color": "rgb(29, 33, 43)",
+    "border": "rgba(29, 33, 43, 0.22)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Explore the live demo"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.landing-hero-stage.landing-hero-bento > div.landing-bento-copy.relative:nth-of-type(2) > div.relative.flex > div.mt-6.flex > a.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgba(248, 248, 246, 0.7)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     21
+    ],
+    "labels": [
+     "Cookie Settings"
+    ],
+    "first_screen": 0,
+    "in_footer": 1,
+    "icon_only": 0,
+    "example": "div.mx-auto.max-w-6xl > div.grid.grid-cols-1:nth-of-type(2) > div.border-b.border-border\\/30:nth-of-type(3) > div.flex.flex-col > button.text-left.text-sm",
+    "tile": "tiles/1440-08.png"
+   }
+  ],
+  "variant_count": 9,
+  "row_buttons": {
+   "count": 5,
+   "labels": [
+    "Play Consile demo video",
+    "Is my company's data kept separate from ",
+    "What security and compliance do larger t",
+    "Where is my data stored, and can I choos",
+    "Can Consile sync with Google Calendar or"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 2297,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 169,
+   "hover_media": 0,
+   "focus_visible": 28,
+   "focus": 21,
+   "focus_within": 3,
+   "active": 7,
+   "disabled": 21,
+   "invalid": 1,
+   "checked": 3,
+   "current_selected": 32,
+   "expanded_open": 29,
+   "busy": 3,
+   "placeholder": 3,
+   "read_only": 2
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div:nth-of-type(1) > div.min-h-dvh.bg-background > header.fixed.inset-x-0",
+   "y": 12,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    12,
+    1440,
+    60
+   ],
+   "items": 8,
+   "labels": [
+    "Login",
+    "Book a demo",
+    "Start free",
+    "Consile Live",
+    "Home",
+    "Features",
+    "Pricing",
+    "About"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [
+  {
+   "where": "#\\:r1\\:-tab-dashboard",
+   "y": 213,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "mock_hint": ":r1:-tab-dashboard",
+   "tabs": 5,
+   "labels": [
+    "Dashboard",
+    "Tasks",
+    "Attendance",
+    "People",
+    "Performance"
+   ],
+   "selected": [],
+   "wraps": true
+  }
+ ],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open navigation menu",
+    "where": "nd:nth-of-type(2) > header.fixed.inset-x-0 > div.mx-auto.max-w-6xl > button.inline-flex.items-center",
+    "box": [
+     32,
+     32
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Consile"
+  ],
+  "header_items_1440": 8,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 5,
+  "tried": 5,
+  "by_kind": {
+   "tab": 1,
+   "disclosure": 1,
+   "button": 3
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "tab",
+    "name": "Tasks",
+    "selector": "#\\:r4\\:-tab-tasks",
+    "status": "ok",
+    "opened": [
+     "div: This week Kanban · List Weekly team upda"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     377,
+     378.9
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "disclosure",
+    "name": "How long does it take to get started?",
+    "selector": "#radix-\\:r5\\:",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Play Consile demo video",
+    "selector": "#root > div > section:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "Cookie Settings",
+    "selector": "#root > div > footer > div > div:nth-of-type(2) > div:nth-of-type(3) > div > button",
+    "status": "ok",
+    "opened": [
+     "div: ",
+     "dialog: Cookie preferences Choose which cookies "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 5% (frames seeked)"
+    ]
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "PRODUCT",
+    "selector": "#root > div > footer > div > div:nth-of-type(2) > div:nth-of-type(1) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.min-h-dvh.bg-background > section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > div.rounded-card.border:nth-of-type(1)",
+   "y": 2323,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    352,
+    177
+   ],
+   "section": "Why teams struggle without Consile",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "div.min-h-dvh.bg-background > section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(5) > div.rounded-card.border:nth-of-type(1)",
+   "y": 2700,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    352,
+    177
+   ],
+   "section": "How Consile solves it",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "section.scroll-mt-16.landing-section:nth-of-type(9) > div.mx-auto.max-w-6xl > div.grid.gap-4:nth-of-type(2) > div.rounded-card.border:nth-of-type(1)",
+   "y": 6201,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    352,
+    208
+   ],
+   "section": "Built with security & compliance at the core",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 6
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.grid.min-w-0 > section.min-w-0.overflow-hidden:nth-of-type(1) > ul.space-y-0\\.5 > li.flex.min-w-0:nth-of-type(3) > span.ml-auto.shrink-0:nth-of-type(2)",
+    "y": 586,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "mock_hint": "landing-workspace-preview relative",
+    "text": "Done",
+    "match": "Done"
+   },
+   {
+    "where": "section.scroll-mt-16.bg-muted\\/25:nth-of-type(3) > div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > div.rounded-card.border:nth-of-type(3) > p.text-sm.text-muted-foreground",
+    "y": 2411,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "text": "Attendance logs, EOD reports, leave tracking, and performance reviews are still done by hand — burning hours every week.",
+    "match": "done"
+   },
+   {
+    "where": "section.scroll-mt-16:nth-of-type(4) > div.landing-section.mx-auto > div.text-center.mb-10:nth-of-type(1) > h2.text-3xl.md\\:text-4xl",
+    "y": 2977,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "text": "Tasks, people ops, and performance — done in one workspace",
+    "match": "done"
+   }
+  ],
+  "onboarding": [
+   {
+    "where": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-type(2) > div.h-full.rounded-card > h3.text-sm.font-medium",
+    "y": 3240,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "text": "Guided Onboarding for New Hires",
+    "match": "Onboarding"
+   },
+   {
+    "where": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-type(2) > div.h-full.rounded-card > p.mt-1\\.5.text-sm",
+    "y": 3267,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "text": "Every new team member gets a structured welcome — who to meet, what to read, and what to complete.",
+    "match": "welcome"
+   },
+   {
+    "where": "div.landing-section.mx-auto > div.grid.gap-4:nth-of-type(2) > a.group:nth-of-type(2) > div.h-full.rounded-card > span.mt-2.inline-flex",
+    "y": 3343,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "hidden": true,
+    "text": "Explore Guided Onboarding for New Hires",
+    "match": "Onboarding"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 3,
+   "onboarding": 3
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 1
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"ConsileLive\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 6894,
+   "totalChars": 7272
+  },
+  "reduced_motion": {
+   "visibleChars": 6894,
+   "totalChars": 7272
+  },
+  "observer_never_fires": {
+   "visibleChars": 6894,
+   "totalChars": 7272
+  },
+  "scripts_off": {
+   "visibleChars": 5064,
+   "totalChars": 5142
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 7,
+  "prep": {
+   "host": "consile.app",
+   "config": {
+    "click": [
+     "Reject All"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"reject all\"",
+    "w1280: clicked \"reject all\"",
+    "w1440: clicked \"reject all\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "button \"Play Consile demo video\"",
+     "evidence": "no visible focus indicator (outline is set but nothing visible changes, so it is clipped or the colour of the ground: solid 2px rgb(249, 112, 21))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Consile\nLive\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Home\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Features\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Pricing\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"About\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Login\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Book a demo\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Start free\"",
+     "evidence": "focus indicator visible but faint: 2.68:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Start free\"",
+     "evidence": "focus indicator visible but faint: 2.72:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "d.border > div.flex.items-start > div.flex-1.min-w-0:nth-of-type(2) > div.flex.items-center > button.inline-flex.items-center  \"Maybe later\"",
+     "evidence": "touch target 92x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div:nth-of-type(1) > div.fixed.inset-x-3:nth-of-type(1) > div.rounded-card.border > div.flex.items-start > button.inline-flex.items-center",
+     "evidence": "touch target 28x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div:nth-of-type(1) > div.min-h-dvh.bg-background:nth-of-type(2) > header.fixed.inset-x-0 > div.mx-auto.max-w-6xl > a.flex.items-center",
+     "evidence": "touch target 90x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "h-of-type(1) > div.min-h-dvh.bg-background:nth-of-type(2) > header.fixed.inset-x-0 > div.mx-auto.max-w-6xl > button.inline-flex.items-center",
+     "evidence": "touch target 32x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "t-16:nth-of-type(4) > div.landing-section.mx-auto > div.text-center.mt-8:nth-of-type(3) > a.inline-flex.items-center  \"View all 24 features\"",
+     "evidence": "touch target 189x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mt-10.pt-6:nth-of-type(3) > div.flex.flex-col > ul.flex.flex-row > li.flex:nth-of-type(1) > a.inline-flex.h-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mt-10.pt-6:nth-of-type(3) > div.flex.flex-col > ul.flex.flex-row > li.flex:nth-of-type(2) > a.inline-flex.h-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mt-10.pt-6:nth-of-type(3) > div.flex.flex-col > ul.flex.flex-row > li.flex:nth-of-type(3) > a.inline-flex.h-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mt-10.pt-6:nth-of-type(3) > div.flex.flex-col > ul.flex.flex-row > li.flex:nth-of-type(4) > a.inline-flex.h-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mt-10.pt-6:nth-of-type(3) > div.flex.flex-col > ul.flex.flex-row > li.flex:nth-of-type(5) > a.inline-flex.h-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 3,
+   "hits": [
+    {
+     "where": "-of-type(3) > div.grid.min-w-0 > section.min-w-0.overflow-hidden:nth-of-type(1) > header.mb-2.flex > h3.text-\\[12px\\].font-semibold  \"Tasks\"",
+     "evidence": "heading jumps from h1 to h3",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"ConsileLive\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 2,
+   "hits": [
+    {
+     "where": "l-mt-16.py-14:nth-of-type(2) > div.mx-auto.max-w-6xl > div:nth-of-type(1) > div.mx-auto.max-w-4xl:nth-of-type(2) > div.relative.aspect-video",
+     "evidence": "83 containers share radius 14px and shadow \"rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.04) 0px\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div:nth-of-type(1) > div.min-h-dvh.bg-background > section.landing-section:nth-of-type(6) > div.mx-auto.max-w-6xl > div.rounded-2xl.border",
+     "evidence": "9 containers share radius 16px and shadow \"rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.04) 0px\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "iew.relative > div.flex.min-h-14:nth-of-type(1) > span.ml-0\\.5.inline-flex:nth-of-type(2) > span.hidden.shrink-0:nth-of-type(4)  \"Workspace\"",
+     "evidence": "143 words shown at 1440px are hidden at 375px (43 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "1830 characters (27% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 3,
+   "hits": [
+    {
+     "where": "tab trigger \"Tasks\" (#\\:r4\\:-tab-tasks)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    },
+    {
+     "where": "button trigger \"Cookie Settings\" (div > div:nth-of-type(2) > div:nth-of-type(3) > div > button)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "button trigger \"Cookie Settings\" (div > div:nth-of-type(2) > div:nth-of-type(3) > div > button)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 12 px / scales 5% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 23,
+  "button_variants": 9,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 1,
+  "overlay_triggers": 5,
+  "card_groups": 3,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

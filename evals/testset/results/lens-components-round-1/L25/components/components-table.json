@@ -1,0 +1,1462 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L25",
+ "target": "https://linear.app",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 2,
+  "footer": 1,
+  "header": 9
+ },
+ "buttons": {
+  "count": 70,
+  "variants": [
+   {
+    "count": 22,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     28,
+     29
+    ],
+    "labels": [
+     "Send message",
+     "Schedule for later",
+     "Linear Agent +",
+     "Customer Requests +",
+     "Triage +",
+     "Linear Asks +"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div.qM9FAa_slackBox.MwJdiW_fixedGlowBgRight:nth-of-type(1) > div.qM9FAa_chatInput:nth-of-type(3) > div.qM9FAa_toolbar.ImRUSq_root:nth-of-type(2) > div.qM9FAa_sendButtonGroup:nth-of-type(3) > button.qM9FAa_sendButton:nth-of-type(1)",
+    "tile": "tiles/1440-03.png"
+   },
+   {
+    "count": 10,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(208, 214, 224)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "510",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Pulse",
+     "Inbox",
+     "My issues",
+     "Reviews",
+     "Initiatives",
+     "Projects"
+    ],
+    "first_screen": 7,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div:nth-of-type(3) > div.Mmx1Wq_navItems:nth-of-type(1) > button.Mmx1Wq_navItem:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Floor): target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "targets (A11-004, Floor): target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "targets (A11-004, Floor): target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "targets (A11-004, Floor): target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+    ]
+   },
+   {
+    "count": 8,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(98, 102, 109)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     14
+    ],
+    "labels": [
+     "Add issue",
+     "Open menu"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 8,
+    "example": "div.qM9FAa_row.ImRUSq_root:nth-of-type(1) > div.qM9FAa_col:nth-of-type(1) > div.qM9FAa_colHeader:nth-of-type(1) > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(2) > button.qM9FAa_headerButton:nth-of-type(1)",
+    "tile": "tiles/1440-03.png"
+   },
+   {
+    "count": 6,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Hide formatting",
+     "Emoji",
+     "Mention someone",
+     "Record video clip",
+     "Record audio clip",
+     "Run shortcut"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 6,
+    "example": "div.qM9FAa_slackBoxContainer.Fzcv4W_edgeGlow:nth-of-type(2) > div.qM9FAa_slackBox.MwJdiW_fixedGlowBgRight:nth-of-type(1) > div.qM9FAa_chatInput:nth-of-type(3) > div.qM9FAa_toolbar.ImRUSq_root:nth-of-type(2) > button.qM9FAa_iconButton:nth-of-type(2)",
+    "tile": "tiles/1440-03.png"
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(98, 102, 109)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Search workspace",
+     "Remove from favorites",
+     "Issue options"
+    ],
+    "first_screen": 3,
+    "in_footer": 0,
+    "icon_only": 3,
+    "example": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > div.ImRUSq_root > button.Mmx1Wq_searchButton:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Floor): target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+    ]
+   },
+   {
+    "count": 3,
+    "fill": "rgba(255, 255, 255, 0.02)",
+    "strong_fill": false,
+    "text_color": "rgb(138, 143, 152)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Copy issue URL",
+     "Copy issue ID",
+     "Copy git branch name"
+    ],
+    "first_screen": 3,
+    "in_footer": 0,
+    "icon_only": 3,
+    "example": "div:nth-of-type(2) > div.KFZpfa_panel > div._1uFtza_viewBar:nth-of-type(1) > div.ImRUSq_root.ImRUSq_align-center > button._1uFtza_pillButton:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(138, 143, 152)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Product",
+     "Resources"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "ul.TZTsQG_list > li.TZTsQG_rightSideWrapper:nth-of-type(2) > ul.TZTsQG_navItems:nth-of-type(1) > li.hide-tablet.TZTsQG_item:nth-of-type(1) > button.TZTsQG_anchor.TZTsQG_trigger",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(229, 229, 230)",
+    "strong_fill": true,
+    "text_color": "rgb(8, 9, 10)",
+    "border": "rgb(229, 229, 230)",
+    "radius_px": 9999,
+    "weight": "510",
+    "heights_px": [
+     32,
+     44
+    ],
+    "labels": [
+     "Sign up",
+     "Get started"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "ul.TZTsQG_list > li.TZTsQG_rightSideWrapper:nth-of-type(2) > ul.TZTsQG_buttons:nth-of-type(2) > li.TZTsQG_buttonItem.TZTsQG_item:nth-of-type(4) > a.S36ykG_root.S36ykG_variant-invert",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 73x32px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Previous issue",
+     "Next issue"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div.KFZpfa_panel > header._1uFtza_header._1uFtza_locationBar > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(2) > div.ImRUSq_root > button._1uFtza_navButton:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(138, 143, 152)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Delegate to an agent",
+     "More delegation options"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div.KFZpfa_panel > div._1uFtza_viewBar:nth-of-type(1) > div.ImRUSq_root.ImRUSq_align-center > div._1uFtza_pillButton.KFZpfa_splitButton > button.KFZpfa_splitSegment:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(98, 102, 109)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "510",
+    "heights_px": [
+     24
+    ],
+    "labels": [
+     "Workspace",
+     "Favorites"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.WS84WW_frameWrapper:nth-of-type(4) > div.WS84WW_frame > nav.Mmx1Wq_sidebar > div:nth-of-type(3) > button.Mmx1Wq_navItem.Mmx1Wq_collapsible:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Floor): target 104x12px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(208, 214, 224)",
+    "border": "rgb(46, 46, 50)",
+    "radius_px": 16,
+    "weight": "400",
+    "heights_px": [
+     24
+    ],
+    "labels": [
+     "Performance",
+     "iOS"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.KFZpfa_viewBody:nth-of-type(2) > div.KFZpfa_propertiesColumn:nth-of-type(2) > div.KFZpfa_category:nth-of-type(3) > div.ImRUSq_root > button._1uFtza_labelButton:nth-of-type(1)",
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Linear"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#base-ui-_R_1lcla90qt9j6l5a_",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 49x14px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgba(255, 255, 255, 0.02)",
+    "strong_fill": false,
+    "text_color": "rgb(226, 228, 231)",
+    "border": "rgb(36, 40, 44)",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "New issue"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > div.ImRUSq_root > button.Mmx1Wq_newIssueButton:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Floor): target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+    ]
+   }
+  ],
+  "variant_count": 18,
+  "row_buttons": {
+   "count": 3,
+   "labels": [
+    "ENG-2498 Replace isFullySynced with a sy",
+    "ENG-2380 Show a stale data banner while ",
+    "ENG-2039 Pass sync status to the dashboa"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 5484,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 232,
+   "hover_media": 3,
+   "focus_visible": 70,
+   "focus": 10,
+   "focus_within": 6,
+   "active": 82,
+   "disabled": 199,
+   "invalid": 0,
+   "checked": 30,
+   "current_selected": 58,
+   "expanded_open": 7,
+   "busy": 10,
+   "placeholder": 12,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "div._8fVXdW_codeColumn:nth-of-type(2) > pre > code > span._8fVXdW_editableRegion > textarea._8fVXdW_editableTextarea",
+   "y": 6735,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "tag": "textarea",
+   "type": "textarea",
+   "name": null,
+   "accessible_name": "Edit code lines",
+   "placeholder": null,
+   "autocomplete": "off",
+   "labelled": true,
+   "visible_label": "Linear",
+   "label_at": "above",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": "Reliability",
+   "font_px": 14.0,
+   "height_px": 432,
+   "form": null,
+   "search_like": false
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [
+  {
+   "where": "#base-ui-_R_5afat9j6l5a_",
+   "y": 6656,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "mock_hint": "b-30Va_illustration",
+   "kind": "custom combobox",
+   "name": "Theme",
+   "labelled": true
+  }
+ ],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 1
+ },
+ "navigation": [
+  {
+   "where": "div > div._5l06ia_container.MwJdiW_root:nth-of-type(1) > div > header.TZTsQG_header > nav.TZTsQG_menuRoot",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    72
+   ],
+   "items": 9,
+   "labels": [
+    "Navigate to home",
+    "Product",
+    "Resources",
+    "Customers",
+    "Pricing",
+    "Now",
+    "Contact",
+    "Log in",
+    "Sign up"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 104x32px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 62x32px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 73x32px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "div.-B0yXq_root:nth-of-type(9) > div.WS84WW_wrapper > div.WS84WW_frameWrapper:nth-of-type(4) > div.WS84WW_frame > nav.Mmx1Wq_sidebar",
+   "y": 535,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "mock_hint": "WS84WW_frame",
+   "kind": "sidebar",
+   "position": "static",
+   "box": [
+    68,
+    535,
+    232,
+    704
+   ],
+   "items": 16,
+   "labels": [
+    "Linear",
+    "Search workspace",
+    "New issue",
+    "Pulse",
+    "Inbox",
+    "My issues",
+    "Reviews",
+    "Workspace",
+    "Initiatives",
+    "Projects",
+    "More",
+    "Favorites",
+    "Faster app launch",
+    "Agent tasks",
+    "Agent Insights",
+    "UI Refresh"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 49x14px at 375px (min 44px)",
+    "targets (A11-004, Floor): target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+    "targets (A11-004, Floor): target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+    "targets (A11-004, Floor): target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "(icon, no text)",
+    "where": "#base-ui-_R_tfpt9j6l5a_",
+    "box": [
+     64,
+     64
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Log in",
+   "Sign up"
+  ],
+  "header_items_1440": 9,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 4,
+    "position": "fixed",
+    "current": []
+   },
+   {
+    "kind": "sidebar",
+    "items": 16,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 16,
+  "tried": 6,
+  "by_kind": {
+   "menu": 2,
+   "disclosure": 1,
+   "button": 3
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "menu",
+    "name": "Linear",
+    "selector": "#base-ui-_R_1lcla90qt9j6l5a_",
+    "status": "ok",
+    "opened": [
+     "menu: Settings Log out"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     210,
+     74
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 1,
+    "kind": "menu",
+    "name": "Theme",
+    "selector": "#base-ui-_R_5afat9j6l5a_",
+    "status": "ok",
+    "opened": [
+     "listbox: Linear GitHub Dark Dracula Nord Tokyo Ni"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     160,
+     266
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 2,
+    "kind": "disclosure",
+    "name": "Product",
+    "selector": "> div > header > nav > div > ul > li:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > button",
+    "status": "ok",
+    "opened": [
+     "nav: Intake Bring requests and context in fro"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": false,
+    "largest_box": [
+     860,
+     281.5
+    ],
+    "closed_after_escape": false,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "Previous issue",
+    "selector": "th-of-type(2) > div:nth-of-type(2) > div > header > div:nth-of-type(2) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "Delegate to an agent",
+    "selector": "v:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Search workspace",
+    "selector": "of-type(9) > div > div:nth-of-type(4) > div > nav > div:nth-of-type(1) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [
+   "New issue: over the cap of 6 triggers",
+   "Issue options: over the cap of 6 triggers",
+   "Copy issue URL: over the cap of 6 triggers",
+   "ENG-2380 Show a stale data banner while syncing #55167 Relia: over the cap of 6 triggers",
+   "Linear Agent +: over the cap of 6 triggers",
+   "Attach file: over the cap of 6 triggers",
+   "Schedule for later: over the cap of 6 triggers",
+   "Hide formatting: over the cap of 6 triggers"
+  ],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 1
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.MwJdiW_panel.qM9FAa_panel:nth-of-type(1) > div.qM9FAa_row.ImRUSq_root:nth-of-type(1) > div.qM9FAa_col:nth-of-type(1) > div.ImRUSq_root.ImRUSq_column:nth-of-type(2) > div._5k-xcq_card.qM9FAa_issue:nth-of-type(1)",
+   "y": 3001,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "mock_hint": "b-30Va_illustration",
+   "count": 4,
+   "size": [
+    300,
+    96
+   ],
+   "section": "Intake and integrations",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0,
+   "sweep": [
+    "nested_cards (SLP-014, Reflex): card inside a card (div.MwJdiW_panel.qM9FAa_panel:nth-of-type(1))"
+   ]
+  },
+  {
+   "where": "div.MwJdiW_panel.qM9FAa_panel:nth-of-type(1) > div.qM9FAa_row.ImRUSq_root:nth-of-type(1) > div.qM9FAa_col:nth-of-type(4) > div.ImRUSq_root.ImRUSq_column:nth-of-type(2) > div._5k-xcq_card.qM9FAa_issue:nth-of-type(1)",
+   "y": 3001,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "mock_hint": "b-30Va_illustration",
+   "count": 5,
+   "size": [
+    300,
+    96
+   ],
+   "section": "Intake and integrations",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "div.GkoSzG_panel > div.GkoSzG_chatFrame > div.GkoSzG_chat:nth-of-type(1) > div.GkoSzG_content > div.q1lnWq_message:nth-of-type(1)",
+   "y": 765,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "mock_hint": "GkoSzG_chatFrame",
+   "cls": "q1lnWq_message",
+   "text": "Fix the dimmed ride rows that never reset and open a PR DRV-364 added to context",
+   "fixed": false
+  },
+  {
+   "where": "#timeline-tail-autonomy-status-clarity",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "timeline-tail-autonomy-status-clarity",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "#timeline-tail-autonomy-status-clarity-mask",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "timeline-tail-autonomy-status-clarity-mask",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.GkoSzG_chatFrame > div.GkoSzG_chat > div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_message:nth-of-type(1)",
+   "y": 5532,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "GkoSzG_chatFrame",
+   "cls": "q1lnWq_message",
+   "text": "what are the three most important customer requests around permissions? add them to the Access Controls project",
+   "fixed": false
+  },
+  {
+   "where": "div.kAD07W_group > div.uPPvIq_cardWrap > div.uPPvIq_card.kAD07W_card > div.kAD07W_row:nth-of-type(1) > span.kAD07W_status:nth-of-type(3)",
+   "y": 5709,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "kAD07W_status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.kAD07W_group > div.uPPvIq_cardWrap > div.uPPvIq_card.kAD07W_card > div.kAD07W_row:nth-of-type(2) > span.kAD07W_status:nth-of-type(3)",
+   "y": 5741,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "kAD07W_status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.kAD07W_group > div.uPPvIq_cardWrap > div.uPPvIq_card.kAD07W_card > div.kAD07W_row:nth-of-type(3) > span.kAD07W_status:nth-of-type(3)",
+   "y": 5772,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "kAD07W_status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.GkoSzG_chatFrame > div.GkoSzG_chat > div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_message",
+   "y": 5532,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "GkoSzG_chatFrame",
+   "cls": "q1lnWq_message",
+   "text": "add retry handling for failed image uploads described in this issue ENG-2844 added to context",
+   "fixed": false
+  },
+  {
+   "where": "div.GkoSzG_chatFrame > div.GkoSzG_chat > div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_message",
+   "y": 5532,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "GkoSzG_chatFrame",
+   "cls": "q1lnWq_message",
+   "text": "Review today’s mobile triage and group the issues by what should happen next Mobile Triage added to context",
+   "fixed": false
+  },
+  {
+   "where": "div.GkoSzG_chatFrame > div.GkoSzG_chat > div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_message:nth-of-type(1)",
+   "y": 5532,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "GkoSzG_chatFrame",
+   "cls": "q1lnWq_message",
+   "text": "review this issue, draft complete offline mode requirements, and break the work into sub-issues ENG-2521 added to contex",
+   "fixed": false
+  },
+  {
+   "where": "div.kAD07W_group > div.uPPvIq_cardWrap > div.uPPvIq_card.kAD07W_card > div.kAD07W_row > span.kAD07W_status:nth-of-type(3)",
+   "y": 5725,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "kAD07W_status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div._5l06ia_container.MwJdiW_root:nth-of-type(1) > footer.Jmh1Wq_footer > div.Jmh1Wq_wrapper > div.Jmh1Wq_inner > div.Jmh1Wq_section.Jmh1Wq_status:nth-of-type(8)",
+   "y": 9885,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "in_footer": true,
+   "hidden": true,
+   "cls": "Jmh1Wq_section Jmh1Wq_status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "#Alert",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "Alert",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [
+   {
+    "where": "div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_message > div.q1lnWq_promptBlock:nth-of-type(1) > p.q1lnWq_bubble",
+    "y": 5536,
+    "screen": 7,
+    "tile": "tiles/1440-06.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "mock_hint": "GkoSzG_chatFrame",
+    "text": "add retry handling for failed image uploads described in this issue",
+    "match": "failed"
+   }
+  ],
+  "loading": [
+   {
+    "where": "div.bVIB3G_panel:nth-of-type(3) > div.bVIB3G_list > div.bVIB3G_row:nth-of-type(5) > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > span.sc-KOGVz.gzCkMV:nth-of-type(3)",
+    "y": 6966,
+    "screen": 8,
+    "tile": "tiles/1440-07.png",
+    "first_screen": false,
+    "mock_hint": "b-30Va_illustration",
+    "text": "Optimize map tile loading on initial app open",
+    "match": "loading"
+   }
+  ],
+  "success": [
+   {
+    "where": "div.KFZpfa_body.KFZpfa_contentColumn:nth-of-type(1) > div.KFZpfa_activityList:nth-of-type(4) > div.KFZpfa_activityListRow:nth-of-type(1) > div.KFZpfa_activityText:nth-of-type(2) > span:nth-of-type(1)",
+    "y": 797,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "created the issue via on behalf of",
+    "match": "created"
+   },
+   {
+    "where": "div.KFZpfa_body.KFZpfa_contentColumn:nth-of-type(1) > div.KFZpfa_activityList:nth-of-type(4) > div.KFZpfa_activityListRow:nth-of-type(2) > div.KFZpfa_activityText:nth-of-type(2) > span:nth-of-type(1)",
+    "y": 829,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "added the labels and",
+    "match": "added"
+   },
+   {
+    "where": "div.GkoSzG_chat:nth-of-type(1) > div.GkoSzG_content > div.q1lnWq_message:nth-of-type(1) > div.q1lnWq_contextRow:nth-of-type(2) > span.q1lnWq_contextAdded:nth-of-type(3)",
+    "y": 838,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "mock_hint": "GkoSzG_chatFrame",
+    "text": "added to context",
+    "match": "added"
+   },
+   {
+    "where": "div.qM9FAa_row.ImRUSq_root:nth-of-type(1) > div.qM9FAa_col:nth-of-type(4) > div.qM9FAa_colHeader:nth-of-type(1) > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > span.sc-KOGVz.hsGhBc:nth-of-type(2)",
+    "y": 2959,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "mock_hint": "b-30Va_illustration",
+    "text": "Done",
+    "match": "Done"
+   },
+   {
+    "where": "div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_turn:nth-of-type(2) > div:nth-of-type(4) > p.GQt1AW_row",
+    "y": 5802,
+    "screen": 7,
+    "tile": "tiles/1440-06.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "mock_hint": "GkoSzG_chatFrame",
+    "text": "I’ve added them to",
+    "match": "added"
+   },
+   {
+    "where": "div.GkoSzG_content > div.aFfDra_conversation > div.q1lnWq_turn:nth-of-type(2) > div:nth-of-type(2) > p.q1lnWq_responseText",
+    "y": 5660,
+    "screen": 7,
+    "tile": "tiles/1440-06.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "mock_hint": "GkoSzG_chatFrame",
+    "text": "Updated the issue with requirements, open product decisions, and acceptance criteria.",
+    "match": "Updated"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 1,
+   "loading": 1,
+   "success": 6,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 2,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "ENG-2498 Replace isFullySynced with a sync status #54910 iOS",
+    "kind": "action-button",
+    "selector": "h-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > button:nth-of-type(1)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: Thinking… | Thinking… | Thinking…"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "new text: Worked for 10 sec | Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitin"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Worked for 10 sec",
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+      "Changed",
+      "files"
+     ],
+     "final_success": [
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly."
+     ],
+     "spinner_after_answer": true,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 1,
+    "name": "ENG-2039 Pass sync status to the dashboard #55209 Bug Reliab",
+    "kind": "action-button",
+    "selector": "h-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > button:nth-of-type(3)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: Thinking… | Thinking… | Thinking…"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "spinner",
+        "new text: Worked for 10 sec | Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitin"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Worked for 10 sec",
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+      "Changed",
+      "files"
+     ],
+     "final_success": [
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly."
+     ],
+     "spinner_after_answer": true,
+     "shots": [
+      "async/a1-slow-before.png",
+      "async/a1-slow-0.5s.png",
+      "async/a1-slow-2s.png",
+      "async/a1-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 2,
+    "name": "Send message",
+    "kind": "action-button",
+    "selector": "(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style disabled",
+        "new text: Thinking… | Thinking…"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style disabled",
+        "new text: Worked for 10 sec | Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitin"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Worked for 10 sec",
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+      "Changed",
+      "files"
+     ],
+     "final_success": [
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly."
+     ],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a2-slow-before.png",
+      "async/a2-slow-0.5s.png",
+      "async/a2-slow-2s.png",
+      "async/a2-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 3,
+    "name": "Add issue",
+    "kind": "action-button",
+    "selector": "(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: Thinking… | Thinking…"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "new text: Worked for 10 sec | Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitin"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Worked for 10 sec",
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+      "Changed",
+      "files"
+     ],
+     "final_success": [
+      "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly."
+     ],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a3-slow-before.png",
+      "async/a3-slow-0.5s.png",
+      "async/a3-slow-2s.png",
+      "async/a3-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [
+   "Add issue: over the cap of 4 actions",
+   "Add issue: over the cap of 4 actions",
+   "Add issue: over the cap of 4 actions"
+  ],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Skip to content →\" href=#skip-nav",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 6675,
+   "totalChars": 7440
+  },
+  "reduced_motion": {
+   "visibleChars": 6675,
+   "totalChars": 7440
+  },
+  "observer_never_fires": {
+   "visibleChars": 6402,
+   "totalChars": 7167
+  },
+  "scripts_off": {
+   "visibleChars": 5573,
+   "totalChars": 7149
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 298,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "not-verified: async capture skipped (3)",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 2,
+   "hits": [
+    {
+     "where": "button \"Send message\"",
+     "evidence": "focus indicator visible but faint: 2.80:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Schedule for later\"",
+     "evidence": "focus indicator visible but faint: 2.75:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "div.TZTsQG_innerWrapper > ul.TZTsQG_list > li.TZTsQG_logoItem.TZTsQG_item:nth-of-type(1) > div > a.TZTsQG_logoLink.I_mUeq_root",
+     "evidence": "touch target 104x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "span > a.TZTsQG_anchor.I_mUeq_root  \"Log in\"",
+     "evidence": "touch target 62x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ype(2) > ul.TZTsQG_buttons:nth-of-type(2) > li.TZTsQG_buttonItem.TZTsQG_item:nth-of-type(4) > a.S36ykG_root.S36ykG_variant-invert  \"Sign up\"",
+     "evidence": "touch target 73x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "zcv4W_inset:nth-of-type(5) > div.QI8oKG_descriptionContainer.ImRUSq_root:nth-of-type(3) > a.show-tablet.QI8oKG_newFeatureLink:nth-of-type(1)",
+     "evidence": "touch target 93x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#base-ui-_R_1lcla90qt9j6l5a_",
+     "evidence": "touch target 49x14px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "rame > nav.Mmx1Wq_sidebar > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > div.ImRUSq_root > button.Mmx1Wq_searchButton:nth-of-type(1)",
+     "evidence": "target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "me > nav.Mmx1Wq_sidebar > div.ImRUSq_root.ImRUSq_align-center:nth-of-type(1) > div.ImRUSq_root > button.Mmx1Wq_newIssueButton:nth-of-type(2)",
+     "evidence": "target 14x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div:nth-of-type(3) > div.Mmx1Wq_navItems:nth-of-type(1) > button.Mmx1Wq_navItem:nth-of-type(1)",
+     "evidence": "target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div:nth-of-type(3) > div.Mmx1Wq_navItems:nth-of-type(1) > button.Mmx1Wq_navItem:nth-of-type(2)",
+     "evidence": "target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "div.WS84WW_frame > nav.Mmx1Wq_sidebar > div:nth-of-type(3) > div.Mmx1Wq_navItems:nth-of-type(1) > button.Mmx1Wq_navItem:nth-of-type(3)",
+     "evidence": "target 104x14px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "of-type(2) > div.KFZpfa_body.KFZpfa_contentColumn:nth-of-type(1) > div.KFZpfa_title:nth-of-type(1) > h3.sc-KOGVz.bFMHeH  \"Faster app launch\"",
+     "evidence": "heading jumps from h1 to h3",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 3,
+   "hits": [
+    {
+     "where": "KFZpfa_viewBody:nth-of-type(2) > div.KFZpfa_body.KFZpfa_contentColumn:nth-of-type(1) > div.KFZpfa_chatBox:nth-of-type(11) > div.GkoSzG_panel",
+     "evidence": "5 containers share radius 12px and shadow \"rgba(0, 0, 0, 0.25) 0px 2px 32px 0px\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "1lnWq_message:nth-of-type(1) > div.q1lnWq_promptBlock:nth-of-type(1) > p.q1lnWq_bubble  \"Fix the dimmed ride rows that never reset and open\"",
+     "evidence": "6 containers share radius 8px and shadow \"rgba(0, 0, 0, 0.2) 0px 0px 0px 1px\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ows:nth-of-type(3) > div._rhIjq_row:nth-of-type(1) > div._rhIjq_blocks:nth-of-type(2) > div._rhIjq_solid._rhIjq_solidWithTail:nth-of-type(1)",
+     "evidence": "4 containers share radius 4px and shadow \"rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 2,
+   "hits": [
+    {
+     "where": "ation:nth-of-type(2) > div.hide-mobile:nth-of-type(1) > div.MwJdiW_container.qM9FAa_container > div.MwJdiW_panel.qM9FAa_panel:nth-of-type(1)",
+     "evidence": "card inside a card (div.MwJdiW_container.qM9FAa_container)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "nth-of-type(1) > div.qM9FAa_col:nth-of-type(1) > div.ImRUSq_root.ImRUSq_column:nth-of-type(2) > div._5k-xcq_card.qM9FAa_issue:nth-of-type(1)",
+     "evidence": "card inside a card (div.MwJdiW_panel.qM9FAa_panel:nth-of-type(1))",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 2,
+   "hits": [
+    {
+     "where": "JdiW_container._8fVXdW_listContainer:nth-of-type(1) > div.MwJdiW_panel._8fVXdW_listPanel > div.bVIB3G_panel:nth-of-type(3) > div.bVIB3G_list",
+     "evidence": "\"Oct 9\" repeated 4 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div._8fVXdW_codeSectionDesktop:nth-of-type(4) > div._8fVXdW_codeSection > div._8fVXdW_codeColumn:nth-of-type(1) > pre > code",
+     "evidence": "\"import\" repeated 4 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "nset:nth-of-type(5) > h1.sc-KOGVz.cVAQDa > span:nth-of-type(1) > span.hide-mobile.QI8oKG_titleLine:nth-of-type(8)  \"The product development\"",
+     "evidence": "935 words shown at 1440px are hidden at 375px (439 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "273 characters (4% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "1102 characters (17% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (10)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (10)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 70,
+  "button_variants": 18,
+  "fields_visible": 1,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 1,
+  "forms": 0,
+  "nav_regions": 2,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 2,
+  "tables": 0,
+  "status_regions": 13,
+  "async_actions": 4
+ }
+}

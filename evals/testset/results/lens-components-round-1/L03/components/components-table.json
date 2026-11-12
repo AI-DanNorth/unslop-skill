@@ -1,0 +1,706 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L03",
+ "target": "https://ai-stack-recommendat-7v45.bolt.host/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 16,
+  "variants": [
+   {
+    "count": 7,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(51, 65, 85)",
+    "border": "rgb(226, 232, 240)",
+    "radius_px": 8,
+    "weight": "600",
+    "heights_px": [
+     30,
+     50
+    ],
+    "labels": [
+     "Browse all tools",
+     "Details"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-8.flex:nth-of-type(2) > a.btn-secondary.px-6:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 66x30px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 66x30px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 66x30px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 6,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(71, 85, 105)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "600",
+    "heights_px": [
+     27
+    ],
+    "labels": [
+     "Add to compare"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 6,
+    "example": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(1) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2",
+    "tile": "tiles/1440-02.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 31x27px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 31x27px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 31x27px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgb(37, 99, 235)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "600",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Find my stack",
+     "Get started"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-8.flex:nth-of-type(2) > a.btn-primary.px-6:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(239, 246, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(29, 78, 216)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Home"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > div.hidden.md\\:flex > a.px-3\\.5.py-2:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 4,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 315,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 15,
+   "hover_media": 0,
+   "focus_visible": 1,
+   "focus": 1,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 5,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 1,
+   "busy": 0,
+   "placeholder": 3,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div:nth-of-type(1) > div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    144,
+    0,
+    1152,
+    64
+   ],
+   "items": 8,
+   "labels": [
+    "AI Stack",
+    "Home",
+    "Find My Stack",
+    "AI Tools",
+    "Compare",
+    "About",
+    "Contact"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 115x36px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Toggle menu",
+    "where": "-of-type(1) > div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > button.md\\:hidden.p-2",
+    "box": [
+     38,
+     38
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "AI Stack"
+  ],
+  "header_items_1440": 8,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "sticky",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 0,
+  "tried": 0,
+  "by_kind": {},
+  "triggers": [],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1)",
+   "y": 810,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 10,
+   "size": [
+    211,
+    141
+   ],
+   "section": "What are you trying to accomplish?",
+   "controls_inside": 0,
+   "whole_card_link": 10,
+   "with_heading": 10,
+   "sweep": [
+    "card_kit (SLP-005, Reflex): 19 containers share radius 14px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\""
+   ]
+  },
+  {
+   "where": "main.flex-1 > div > section.section.py-16:nth-of-type(4) > div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.card.card-hover:nth-of-type(1)",
+   "y": 1738,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    357,
+    253
+   ],
+   "section": "Featured tools",
+   "controls_inside": 3,
+   "whole_card_link": 0,
+   "with_heading": 6
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-12.flex:nth-of-type(3) > span.flex.items-center:nth-of-type(3)",
+    "y": 541,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Updated for 2026",
+    "match": "Updated"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Add to compare",
+    "kind": "action-button",
+    "selector": "h-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 1,
+    "name": "Add to compare",
+    "kind": "action-button",
+    "selector": "h-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a1-slow-before.png",
+      "async/a1-slow-0.5s.png",
+      "async/a1-slow-2s.png",
+      "async/a1-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 2,
+    "name": "Add to compare",
+    "kind": "action-button",
+    "selector": "h-of-type(4) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(3) > div > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a2-slow-before.png",
+      "async/a2-slow-0.5s.png",
+      "async/a2-slow-2s.png",
+      "async/a2-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 3,
+    "name": "Add to compare",
+    "kind": "action-button",
+    "selector": "h-of-type(4) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(3) > div > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style text+cls+bg"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a3-slow-before.png",
+      "async/a3-slow-0.5s.png",
+      "async/a3-slow-2s.png",
+      "async/a3-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [
+   "Add to compare: over the cap of 4 actions",
+   "Add to compare: over the cap of 4 actions"
+  ],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"AI Stack\" href=#/",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "reduced_motion": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "observer_never_fires": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "not-verified: async capture skipped (2)",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "a \"Find my stack\"",
+     "evidence": "focus indicator visible but faint: 2.59:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "div:nth-of-type(1) > div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > a.flex.items-center",
+     "evidence": "touch target 115x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div:nth-of-type(1) > div.min-h-screen.flex > header.sticky.top-0 > nav.section.flex > button.md\\:hidden.p-2",
+     "evidence": "touch target 38x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ard.card-hover:nth-of-type(1) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition",
+     "evidence": "touch target 155x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "2:nth-of-type(2) > div.card.card-hover:nth-of-type(1) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2",
+     "evidence": "touch target 31x27px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ype(2) > div.card.card-hover:nth-of-type(1) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "touch target 66x30px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ard.card-hover:nth-of-type(2) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition",
+     "evidence": "touch target 155x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "2:nth-of-type(2) > div.card.card-hover:nth-of-type(2) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2",
+     "evidence": "touch target 31x27px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ype(2) > div.card.card-hover:nth-of-type(2) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > a.btn-secondary.px-3  \"Details\"",
+     "evidence": "touch target 66x30px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ard.card-hover:nth-of-type(3) > div.flex.items-start:nth-of-type(1) > div.min-w-0.flex-1:nth-of-type(2) > a.hover\\:text-brand-700.transition",
+     "evidence": "touch target 155x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "2:nth-of-type(2) > div.card.card-hover:nth-of-type(3) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2",
+     "evidence": "touch target 31x27px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "er.bg-ink-900.text-ink-300 > div.section.py-12 > div.grid.gap-8:nth-of-type(1) > div:nth-of-type(2) > h4.text-white.font-semibold  \"Product\"",
+     "evidence": "heading jumps from h2 to h4",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 1,
+   "hits": [
+    {
+     "where": "main.flex-1 > div > section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1)",
+     "evidence": "19 containers share radius 14px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.min-h-screen.flex > main.flex-1 > div > section.section.py-16:nth-of-type(4) > div.grid.sm\\:grid-cols-2:nth-of-type(2)",
+     "evidence": "\"Freemium\" repeated 6 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "2145 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "n:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.inline-flex.items-center:nth-of-type(1)  \"Personalized AI tool recommendations\"",
+     "evidence": "page moves (keyframes fadeIn, scaleIn, slideDown) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "skipped: no transition triggers on the page",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 16,
+  "button_variants": 4,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 2,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 4
+ }
+}

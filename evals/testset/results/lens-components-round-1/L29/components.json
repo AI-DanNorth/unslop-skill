@@ -1,0 +1,48 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "low",
+ "overall_reason": "The game draws its interface in a WebGL canvas, and the only DOM controls are empty div hit areas with no declared states, so the capture can read almost nothing of the components.",
+ "score": {
+  "dimension": "Usability",
+  "value": 6,
+  "reason": "T-PRIMARY-COUNT passes on the 375 start screen (one yellow start control under the title), but T-STATE-MATRIX finds no declared state for the DOM controls (CMP-002), and every other test is not verified inside the canvas."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-PHONE-NAV",
+  "T-INTERRUPT",
+  "T-FIRST-RUN"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-002",
+   "tier": "Reflex",
+   "where": "#global-ui > div.side-button (4), div.dialog-button, div.emoji-bg (10 cells), div.continue-button, 1440px",
+   "evidence": "dom-1440.json holds 22 elements and no text: four 65x65 side-button divs at x 1345, a dialog-button, a 10-cell emoji grid, a checklist panel and a 174x58 continue-button, all plain divs. The focus record has 0 stops. declared_states counts 0 hover, 0 focus, 0 active and 0 disabled rules in 24 readable rules.",
+   "before": "The game's HUD buttons are bare divs with no role, no text and no styled hover, focus or pressed state.",
+   "after": "Make each HUD control a <button> with a name, and give it a focus-visible ring and a pressed step in CSS (or draw both in the canvas and mirror the focus in the DOM).",
+   "why": "A player who cannot use a pointer, or who needs to see which control is focused, has no control to reach.",
+   "test": "T-STATE-MATRIX",
+   "source": "components",
+   "root": "the HUD hit-area div used for every in-game control"
+  }
+ ],
+ "strengths": [
+  "At 375 the start screen shows the title and one yellow start control (tiles/375-00.png), with no other call to action competing with it."
+ ],
+ "not_investigated": [
+  "the canvas interface: hover, pressed, dialog and checklist states are drawn in WebGL, and the capture cannot read them",
+  "T-FIRST-RUN at 1440: tiles/1440-00.png shows only the planet with no title or start control, while the 375 capture shows both. The two shots were taken at different moments of the intro, so the 1440 first screen is not judged",
+  "the manifest records the App3D script as blocked, yet the scene renders. Which parts of the game loaded is not verified",
+  "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-TABLE-READ, T-EMPTY-FIRST, T-WHERE-AM-I: no fields, opened overlays, tables, data regions or DOM navigation",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

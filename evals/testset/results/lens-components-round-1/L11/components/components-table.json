@@ -1,0 +1,1178 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L11",
+ "target": "https://gameghost.manus.space",
+ "width": 1440,
+ "captured": "2026-11-10",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 18,
+  "variants": [
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.789 0.154 211.53)",
+    "border": "oklch(1 0 0 / 0.15)",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Install App",
+     "Forums",
+     "Send Feedback"
+    ],
+    "first_screen": 3,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "phone_parity (ROB-002, Reflex): 122 words shown at 1440px are hidden at 375px (48 elements)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+    "border": "oklch(1 0 0 / 0.15)",
+    "radius_px": 33554400,
+    "weight": "600",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Like Xonotic",
+     "Follow game"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.mb-5:nth-of-type(2) > div.gg-engagement.flex > div.flex.items-center:nth-of-type(1) > button.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklab(0 0 0 / 0.7)",
+    "strong_fill": false,
+    "text_color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+    "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+    "radius_px": 33554400,
+    "weight": "400",
+    "heights_px": [
+     30
+    ],
+    "labels": [
+     "Enter Fullscreen"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.absolute.top-4:nth-of-type(9) > button.flex.items-center",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "html.js-enabled.dark > body > div.fixed.top-0:nth-of-type(3) > div.flex.items-center:nth-of-type(1) > button.text-white\\/50.hover\\:text-white",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(88, 101, 242)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Join our Discord"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > div.relative > button.inline-flex.items-center",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "oklch(1 0 0 / 0.15)",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Sign In"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(5)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+    "border": "none",
+    "radius_px": 33554400,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Mute ambient music"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.flex.items-center:nth-of-type(4)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklch(0.865 0.127 207.078)",
+    "strong_fill": false,
+    "text_color": "rgb(4, 16, 23)",
+    "border": "none",
+    "radius_px": 33554400,
+    "weight": "600",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Subscribe to Team Xonotic"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.mb-5:nth-of-type(2) > div.gg-engagement.flex > div.flex.min-w-0:nth-of-type(2) > div.flex.shrink-0 > button.inline-flex.items-center",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(26, 26, 46, 0.8)",
+    "strong_fill": true,
+    "text_color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.8)",
+    "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+    "radius_px": 10,
+    "weight": "600",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     "WISHLIST"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.whitespace-nowrap.disabled\\:pointer-events-none:nth-of-type(3)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "oklch(1 0 0 / 0.15)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(4)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+    "border": "oklch(1 0 0 / 0.15)",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     ""
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(5)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "control_names (A11-006, Floor): button[type=submit] has no accessible name"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "700",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "PLAY"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(0, 0, 0)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "700",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "ADD TO CART — $0.49"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div:nth-of-type(1) > div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.justify-center.whitespace-nowrap:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 15,
+  "row_buttons": {
+   "count": 1,
+   "labels": [
+    "Open game catalog filters"
+   ]
+  },
+  "filled_by_screen": {
+   "1": [
+    "Join our Discord",
+    "PLAY",
+    "ADD TO CART — $0.49",
+    "WISHLIST",
+    "Friends Find friends"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 426,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 252,
+   "hover_media": 9,
+   "focus_visible": 41,
+   "focus": 42,
+   "focus_within": 1,
+   "active": 14,
+   "disabled": 27,
+   "invalid": 21,
+   "checked": 13,
+   "current_selected": 45,
+   "expanded_open": 28,
+   "busy": 3,
+   "placeholder": 13,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-search.flex-1:nth-of-type(2) > div.relative > input.file\\:text-foreground.placeholder\\:text-muted-foreground",
+   "y": 26,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": "Search games...",
+   "autocomplete": null,
+   "labelled": false,
+   "visible_label": null,
+   "label_at": null,
+   "placeholder_only": true,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 36,
+   "form": null,
+   "search_like": true,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label (placeholder \"Search games...\" is not a label)",
+    "card_kit (SLP-005, Reflex): 5 containers share radius 8.4px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\""
+   ]
+  },
+  {
+   "where": "div.hidden.md\\:flex:nth-of-type(2) > div.flex.flex-col > div.px-3.pt-3:nth-of-type(1) > div.relative > input.file\\:text-foreground.selection\\:bg-primary",
+   "y": 863,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": "Search all users…",
+   "autocomplete": null,
+   "labelled": false,
+   "visible_label": null,
+   "label_at": null,
+   "placeholder_only": true,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 32,
+   "form": null,
+   "search_like": true
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 1
+ },
+ "navigation": [],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "(icon, no text)",
+    "where": "h-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(1)",
+    "box": [
+     36,
+     36
+    ]
+   },
+   {
+    "label": "(icon, no text)",
+    "where": "h-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(2)",
+    "box": [
+     36,
+     36
+    ]
+   },
+   {
+    "label": "(icon, no text)",
+    "where": "h-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(3)",
+    "box": [
+     36,
+     32
+    ]
+   }
+  ],
+  "top_links_visible_375": [],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 13,
+  "tried": 6,
+  "by_kind": {
+   "disclosure": 1,
+   "button": 5
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "disclosure",
+    "name": "Open game catalog filters",
+    "selector": "#root > div:nth-of-type(1) > aside > button",
+    "status": "ok",
+    "opened": [
+     "section: BROWSE THE VAULT Find your next run Refi",
+     "svg: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     308,
+     680
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Friends Find friends",
+    "selector": "body > div:nth-of-type(3) > button",
+    "status": "not-verified (trigger not found)",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "PLAY",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(10) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "WISHLIST",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(10) > div:nth-of-type(3) > button:nth-of-type(3)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "Install App",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Like Xonotic",
+    "selector": "ype(1) > div:nth-of-type(10) > div:nth-of-type(2) > div > div:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [
+   "Enter Fullscreen: over the cap of 6 triggers",
+   "Forums: over the cap of 6 triggers",
+   "#root > div:nth-of-type(1) > div:nth-of-type(10) > div:nth-of-type(3) > button:nth-of-type(4): over the cap of 6 triggers",
+   "#root > div:nth-of-type(1) > div:nth-of-type(10) > div:nth-of-type(3) > button:nth-of-type(5): over the cap of 6 triggers",
+   "#root > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > div > button: over the cap of 6 triggers",
+   "Mute ambient music: over the cap of 6 triggers",
+   "body > div:nth-of-type(2) > div:nth-of-type(1) > button: over the cap of 6 triggers"
+  ],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > a > button.inline-flex.items-center > svg.lucide.lucide-message-circle",
+   "y": 36,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "lucide lucide-message-circle",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(3) > svg.lucide.lucide-message-square",
+   "y": 36,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "lucide lucide-message-square",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.h-\\[100dvh\\].bg-black:nth-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(4) > svg.lucide.lucide-message-square",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "lucide lucide-message-square",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "section.catalog-filter-panel > div.catalog-filter-panel__body > section.catalog-filter-section:nth-of-type(1) > div.catalog-filter-status-grid:nth-of-type(2)",
+   "y": 495,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "catalog-filter-status-grid",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [
+   {
+    "where": "body > div.fixed.top-0:nth-of-type(3) > div.flex-1.overflow-y-auto:nth-of-type(2) > div.flex.flex-col > p.text-sm.tracking-wider:nth-of-type(1)",
+    "y": 487,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "YOUR CART IS EMPTY",
+    "match": "IS EMPTY"
+   }
+  ],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 1,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "ADD TO CART — $0.49",
+    "kind": "action-button",
+    "selector": "ot > div:nth-of-type(1) > div:nth-of-type(10) > div:nth-of-type(3) > button:nth-of-type(2)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style text",
+        "new text: XONOTIC added to cart | Open your cart to checkout. | View Cart"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style text",
+        "new text: XONOTIC added to cart | Open your cart to checkout. | View Cart"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "XONOTIC added to cart",
+      "Open your cart to checkout.",
+      "View Cart",
+      "2.1"
+     ],
+     "final_success": [
+      "XONOTIC added to cart"
+     ],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 1,
+    "name": "Join our Discord",
+    "kind": "action-button",
+    "selector": "oot > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > button:nth-of-type(2)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": false,
+       "how": [],
+       "pending": false
+      },
+      "2s": {
+       "responded": false,
+       "how": [],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a1-slow-before.png",
+      "async/a1-slow-0.5s.png",
+      "async/a1-slow-2s.png",
+      "async/a1-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 2,
+    "name": "Send Feedback",
+    "kind": "action-button",
+    "selector": "oot > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > button:nth-of-type(3)",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "new text: We Value Your Feedback | Help us build the ultimate gaming experience. | What do you like?"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "new text: We Value Your Feedback | Help us build the ultimate gaming experience. | What do you like?"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "2.2",
+      "We Value Your Feedback",
+      "Help us build the ultimate gaming experience.",
+      "What do you like?"
+     ],
+     "final_success": [
+      "Which genres would you like to see added?"
+     ],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a2-slow-before.png",
+      "async/a2-slow-0.5s.png",
+      "async/a2-slow-2s.png",
+      "async/a2-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 3,
+    "name": "Subscribe to Team Xonotic",
+    "kind": "action-button",
+    "selector": "pe(1) > div:nth-of-type(10) > div:nth-of-type(2) > div > div:nth-of-type(2) > div > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: Sign In to Game Portal | Choose your preferred sign-in method to save your progress and preferences "
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "new text: Sign In to Game Portal | Choose your preferred sign-in method to save your progress and preferences "
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "Sign In to Game Portal",
+      "Choose your preferred sign-in method to save your progress and preferences",
+      "Continue with Google",
+      "Continue with Discord"
+     ],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a3-slow-before.png",
+      "async/a3-slow-0.5s.png",
+      "async/a3-slow-2s.png",
+      "async/a3-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "input \"\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 758,
+   "totalChars": 2016
+  },
+  "reduced_motion": {
+   "visibleChars": 758,
+   "totalChars": 2016
+  },
+  "observer_never_fires": {
+   "visibleChars": 758,
+   "totalChars": 2016
+  },
+  "scripts_off": {
+   "visibleChars": 824,
+   "totalChars": 824
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 85,
+  "prep": {
+   "host": "gameghost.manus.space",
+   "config": {
+    "clickText": "click anywhere to enter fullscreen",
+    "click": [
+     "Use essential only"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"use essential only\"",
+    "w375: clicked text \"click anywhere to enter fullscreen\"",
+    "w1280: clicked \"use essential only\"",
+    "w1280: clicked text \"click anywhere to enter fullscreen\"",
+    "w1440: clicked \"use essential only\"",
+    "w1440: clicked text \"click anywhere to enter fullscreen\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "button \"\"",
+     "evidence": "no visible focus indicator (outline: none 2px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"\"",
+     "evidence": "no visible focus indicator (outline: none 2px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"All games\nEntire catalog\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Playable now\nLaunch instantly\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Demos\nTry before release\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Coming soon\nOn the horizon\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"All genres\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Action RPG\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Action Racing\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Arena FPS\"",
+     "evidence": "no visible focus indicator (outline: auto 1px oklab(0.488 -0.0238138 -0.24183 / 0.5))",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(1)",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(2)",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(3)",
+     "evidence": "touch target 36x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(4)",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-of-type(1) > div.md\\:hidden.absolute:nth-of-type(5) > div.flex.items-center:nth-of-type(2) > button.inline-flex.items-center:nth-of-type(5)",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "pb-1:nth-of-type(3) > div.gg-engagement.flex > div.flex.items-center:nth-of-type(1) > button.inline-flex.items-center:nth-of-type(1)  \"Like\"",
+     "evidence": "touch target 98x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "h-of-type(3) > div.gg-engagement.flex > div.flex.items-center:nth-of-type(1) > button.inline-flex.items-center:nth-of-type(2)  \"Follow game\"",
+     "evidence": "touch target 120x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":hidden.fixed:nth-of-type(11) > div.shrink-0.pb-1:nth-of-type(3) > div.gg-engagement.flex > div.flex.min-w-0:nth-of-type(2) > a.flex.min-w-0",
+     "evidence": "touch target 104x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nth-of-type(3) > div.gg-engagement.flex > div.flex.min-w-0:nth-of-type(2) > div.flex.shrink-0 > button.inline-flex.items-center  \"Subscribe\"",
+     "evidence": "touch target 102x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "f-type(1) > div.md\\:hidden.fixed:nth-of-type(11) > div.shrink-0.pt-1:nth-of-type(4) > button.inline-flex.items-center:nth-of-type(1)  \"PLAY\"",
+     "evidence": "touch target 104x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 1,
+   "hits": [
+    {
+     "where": "nth-of-type(4) > div.gg-discord-search.flex-1:nth-of-type(2) > div.relative > input.file\\:text-foreground.placeholder\\:text-muted-foreground",
+     "evidence": "input[type=text] has no label (placeholder \"Search games...\" is not a label)",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 4,
+   "hits": [
+    {
+     "where": " > div.gg-desktop-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > div.relative > button.inline-flex.items-center",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "g-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(4)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "g-desktop-info.gg-discord-info:nth-of-type(10) > div.gg-desktop-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(5)",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "tml.js-enabled.dark > body > div.fixed.top-0:nth-of-type(3) > div.flex.items-center:nth-of-type(1) > button.text-white\\/50.hover\\:text-white",
+     "evidence": "button[type=submit] has no accessible name",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is input \"\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 2,
+   "hits": [
+    {
+     "where": "nth-of-type(4) > div.gg-discord-search.flex-1:nth-of-type(2) > div.relative > input.file\\:text-foreground.placeholder\\:text-muted-foreground",
+     "evidence": "5 containers share radius 8.4px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "of-type(1) > div.flex.items-center:nth-of-type(2) > div.relative.cursor-pointer:nth-of-type(2) > div.relative.overflow-hidden:nth-of-type(2)",
+     "evidence": "17 containers share radius 10.4px and shadow \"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "esktop-carousel.hidden:nth-of-type(12) > div.will-change-transform > div.flex.flex-col:nth-of-type(1) > div.flex.items-center:nth-of-type(2)",
+     "evidence": "\"New Game\" repeated 5 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "op-topbar.hidden:nth-of-type(4) > div.gg-discord-actions.flex:nth-of-type(3) > button.inline-flex.items-center:nth-of-type(1)  \"Install App\"",
+     "evidence": "122 words shown at 1440px are hidden at 375px (48 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "page after load",
+     "evidence": "62% of text is hidden after load and scrolling (max 30%; menus and dialogs excluded)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (7)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (7)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 18,
+  "button_variants": 15,
+  "fields_visible": 1,
+  "fields_placeholder_only": 1,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 0,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 4,
+  "async_actions": 4
+ }
+}

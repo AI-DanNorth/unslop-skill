@@ -1,0 +1,76 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:30:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The compare control is finished (the button turns into a filled 'Comparing' with a check and a bottom tray reads '1 of 3 selected' with Compare and a close), and question 1 of 3 starts in the page, but the fixed tray and the 'Edit with Base44' pill cover content and focused controls, and the stack cards clip each tool's job with an ellipsis.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-STATE-MATRIX and T-OVERLAY-CHECK pass on the compare toggle and tray, with gaps in T-INTERRUPT (the platform pill, CMP-183; the tray covers four focus stops, CMP-156) and T-TABLE-READ (clipped tool roles, CMP-232)."
+  },
+  "visitor_mode": "Persuade with an Operate layer: a landing page that starts the three-question stack picker in place and lets visitors shortlist tools to compare. No 00-contract.md; inferred from 'QUESTION 1 OF 3' on the first screen and the per-card Compare toggles.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN", "T-TABLE-READ"],
+  "findings": [
+    {
+      "rule": "CMP-156",
+      "title": "Fixed/sticky nav never obscures content or the focused control",
+      "tier": "Reflex",
+      "where": "fixed compare tray, bottom centre, 1440, motion/t1-normal-600.png",
+      "evidence": "After 'Compare' the capture shows a fixed dark tray '1 of 3 selected / Compare / ×' over the bottom of the directory grid, and the focus_ring sweep reports four stops partly hidden by a fixed or sticky element ('Build a SaaS product', 'Browse all tools', the Gamma card, the 'Compare' button).",
+      "before": "The tray floats over the last row of cards with no space kept for it.",
+      "after": "Bottom padding on the page equal to the tray's height while the tray is shown, and focused controls scrolled clear of it (scroll-padding-bottom).",
+      "why": "Once a tool is picked, the tray hides the card buttons and links the visitor is tabbing or tapping to.",
+      "root": "compare tray component",
+      "test": "T-OVERLAY-CHECK"
+    },
+    {
+      "rule": "CMP-183",
+      "title": "No popups, newsletter modals, chat bubbles, help pills",
+      "tier": "Reflex",
+      "where": "fixed 'Edit with Base44' pill, bottom right, 1440 and 375, fold-1440.png and fold-375.png",
+      "evidence": "A fixed black pill 'Edit with Base44' with a close button sits over the bottom right at both widths; at 375 it covers the second goal card, and at 1440 it sits beside the compare tray (motion/t1-normal-600.png), so two fixed bars share the bottom edge.",
+      "before": "The builder platform's badge floats over content.",
+      "after": "Remove the platform badge from the published site.",
+      "why": "It covers the goal cards on a phone and competes with the tray the visitor needs.",
+      "test": "T-INTERRUPT"
+    },
+    {
+      "rule": "CMP-232",
+      "title": "Essential text is never clamped to make a layout fit",
+      "tier": "Reflex",
+      "where": "website stack cards, Perplexity row, 1440, tiles/1440-02.png",
+      "evidence": "In 'The Zero-Cost No-Code Website Stack' and 'The Smart Starter Website Stack' cards the Perplexity line ends 'Research SEO and compet…' with an ellipsis; the phone_parity sweep also reports 50 words shown at 1440 hidden at 375 in these cards.",
+      "before": "Each tool's job is cut to one line with an ellipsis.",
+      "after": "The role wraps to a second line under the tool name.",
+      "why": "The role is what tells a visitor why the tool is in the stack; the clipped part is the part that explains it.",
+      "test": "T-TABLE-READ"
+    },
+    {
+      "rule": "CMP-121",
+      "title": "The main action reads word for word the same in nav, hero, close and phone action bar",
+      "tier": "Reflex",
+      "where": "header, 1440, fold-1440.png",
+      "evidence": "The header's filled near-black button reads 'Build my stack' (rgb(23, 20, 18), strong fill) and the nav link beside it reads 'Find My Stack'; the button variants also list an outlined 'Find my stack' lower on the page.",
+      "before": "'Build my stack' and 'Find My Stack' for the same picker.",
+      "after": "One label, for example 'Build my stack', on the header button, and the nav item removed or given the same words.",
+      "why": "Two names for one action make the visitor wonder whether they lead to different tools.",
+      "test": "T-PRIMARY-COUNT"
+    }
+  ],
+  "strengths": [
+    "The Compare toggle has a designed selected state: an outlined '+ Compare' becomes a filled 'Comparing' with a check, and the tray counts '1 of 3 selected' with a Compare button and a close (motion/t1-normal-600.png).",
+    "The picker starts in the page with 'QUESTION 1 OF 3' and five goal cards, so the first step needs no separate screen (CMP-215, CMP-221).",
+    "One filled primary on the first screen ('Build my stack'); goal cards are whole-card links with one arrow each.",
+    "The 375 header keeps a named 'Open menu' button (40x40); the stylesheet declares hover (55), focus-visible (8), disabled (19) and current or selected (27) rules."
+  ],
+  "not_investigated": [
+    "Questions 2 and 3, the result page and the compare page: the async capture found no primary action to hold or fail.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Whether the compare tray limits picks at 3 and what it says on a fourth: not reached.",
+    "Inline validation and error placement: no fields.",
+    "Focus moving into an overlay and back, scroll lock and backdrop click: the tray is not a dialog.",
+    "Keyboard operation of custom widgets, including a Compare button nested inside a whole-card link: lens-a11y.",
+    "T-FIELD-READ and T-ERROR-PATH: no fields and no failure run."
+  ]
+}

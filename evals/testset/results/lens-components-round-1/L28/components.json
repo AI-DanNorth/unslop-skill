@@ -1,0 +1,64 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "The fixed header keeps a filled STORE button and a named menu button at both widths and the stylesheet declares hover, focus-visible, active and disabled looks, but every other destination sits behind the menu even at 1440 and the capture could not open it.",
+ "score": {
+  "dimension": "Usability",
+  "value": 7,
+  "reason": "T-PRIMARY-COUNT and T-STATE-MATRIX pass on the declared states; T-WHERE-AM-I fails on the menu-only header at 1440 (CMP-154), and T-OVERLAY-CHECK and T-ERROR-PATH could not run because this capture has no interaction record."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-INTERRUPT",
+  "T-TABLE-READ"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-154",
+   "tier": "Reflex",
+   "where": "div.nav > div.nav-inner (fixed header), 1440px, tiles/1440-00.png",
+   "evidence": "The components table lists four header items at 1440: 'Lando Home', 'Store STORE', 'Open navigation menu' and 'Go to home'. The tile shows the logo, the LN mark, the lime STORE button and an icon-only menu square, with about 1,000 px of empty header between them. No nav region carries a current mark.",
+   "before": "At 1440 every destination except the store sits behind the icon-only menu button.",
+   "after": "Show the top destinations (On Track, Off Track, Helmets, Store) as text links in the header from about 960 px, with the current one marked by aria-current; keep the menu button under 60rem.",
+   "why": "A visitor on a desktop cannot see where the site goes or where they are without opening the menu first.",
+   "test": "T-WHERE-AM-I",
+   "source": "components",
+   "title": "Under ~60rem links that no longer fit go behind a menu"
+  },
+  {
+   "rule": "CMP-005",
+   "tier": "Finish",
+   "where": "header: a.STORE and button.nav-ham, 1440px, tiles/1440-00.png",
+   "evidence": "The table's button variants give the lime STORE family a 7 px radius at heights 40, 50 and 60 px, and the menu button a 10 px radius at 60 px. The two sit side by side in the header with visibly different corners.",
+   "before": "The STORE button and the menu button are 60 px tall with radii of 7 px and 10 px.",
+   "after": "Use one corner radius for every header control.",
+   "why": "Two neighbouring controls with different corners read as two kits.",
+   "test": "T-ONE-FAMILY",
+   "source": "components",
+   "title": "Controls belong to one family"
+  }
+ ],
+ "strengths": [
+  "The fixed header keeps STORE and a named 'Open navigation menu' button at 375 and at 1440 (phone_nav toggle 49x49, tiles/375-00.png).",
+  "The stylesheet declares the control states: hover 46, focus-visible 3, active 3, disabled 10 rules in 1,480 readable rules.",
+  "On Track and Off Track get one equal lime button each under their own heading (tiles/1440-07.png): two parallel paths, not two competing primaries."
+ ],
+ "not_investigated": [
+  "overlays, the menu and async states: this capture ran with no interaction record (no motion/ or async/ folder; async.json not captured), so T-OVERLAY-CHECK, T-ERROR-PATH and the menu contents are not verified",
+  "the 1440 hero is blank on tiles/1440-00.png, while the 375 hero shows a 'tap to lock' control. The capture likely did not render the WebGL scene (19 blocked requests, 2 blocked images), so this is not judged",
+  "T-FIELD-READ, T-EMPTY-FIRST, T-FIRST-RUN: no fields, data regions or first-run path on the page",
+  "T-TABLE-READ: the helmet grid (tiles/1440-09.png) is a gallery of names and years, not comparable data",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

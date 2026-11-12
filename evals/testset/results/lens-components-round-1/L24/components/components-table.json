@@ -1,0 +1,649 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L24",
+ "target": "https://www.nimblestudio.com/story/creating-an-anti-ai-brand-in-times-of-artificial-everything",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 6,
+  "footer": 1,
+  "header": 2
+ },
+ "buttons": {
+  "count": 7,
+  "variants": [
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(0, 0, 0)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     38
+    ],
+    "labels": [
+     "Industries",
+     "Technologies"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#w-dropdown-toggle-0",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(19, 19, 20)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 80,
+    "weight": "400",
+    "heights_px": [
+     46
+    ],
+    "labels": [
+     "Get in touch"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.navbar2_button-wrapper > a.nav-link.nav-link--button",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(245, 245, 245)",
+    "strong_fill": false,
+    "text_color": "rgb(2, 2, 2)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     46
+    ],
+    "labels": [
+     "← Back to overview"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.story-hero > div.container > div.story-header.flex-vh:nth-of-type(1) > div.story-wrapper > a.nav-link.nav-link--button",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "rgb(255, 255, 255)",
+    "radius_px": 100,
+    "weight": "400",
+    "heights_px": [
+     58
+    ],
+    "labels": [
+     "Contact"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.container-medium > div.w-layout-grid.vbr-cta_grid > div.vbr-cta_right:nth-of-type(2) > div.button-wrapper:nth-of-type(2) > a.button.is-secondary:nth-of-type(2)",
+    "tile": "tiles/1440-10.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(15, 15, 15)",
+    "border": "none",
+    "radius_px": 100,
+    "weight": "400",
+    "heights_px": [
+     53
+    ],
+    "labels": [
+     "Discover GenAI Track"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.container-medium > div.w-layout-grid.vbr-cta_grid > div.vbr-cta_right:nth-of-type(2) > div.button-wrapper:nth-of-type(2) > a.button.is-white:nth-of-type(1)",
+    "tile": "tiles/1440-10.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(2, 2, 2)",
+    "strong_fill": true,
+    "text_color": "rgb(238, 238, 238)",
+    "border": "none",
+    "radius_px": 48,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Send me the snippet"
+    ],
+    "first_screen": 0,
+    "in_footer": 1,
+    "icon_only": 0,
+    "example": "div.cta-whatsapp_container.w-variant-ec8ba40b-90ad-c753-7f3f-8f9192e66743:nth-of-type(1) > div.w-layout-hflex.cta-whatsapp_top > a.cta-whatsapp_link.w-inline-block",
+    "tile": "tiles/1440-12.png"
+   }
+  ],
+  "variant_count": 6,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 5736,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 170,
+   "hover_media": 0,
+   "focus_visible": 14,
+   "focus": 21,
+   "focus_within": 0,
+   "active": 13,
+   "disabled": 10,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 15,
+   "expanded_open": 7,
+   "busy": 2,
+   "placeholder": 5,
+   "read_only": 4
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "nav.nav.navigation > div.navbar_component.w-nav > div.navbar_container:nth-of-type(1)",
+   "y": 63,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "static",
+   "box": [
+    80,
+    63,
+    1280,
+    48
+   ],
+   "items": 6,
+   "labels": [
+    "Work",
+    "Services",
+    "Insights",
+    "Careers",
+    "Get in touch",
+    "Nimble home"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 96x18px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "body > footer.footer_component.clear-bottom > section._2026_footer > div.footer-content:nth-of-type(7) > nav.footer-content_links:nth-of-type(1)",
+   "y": 11478,
+   "screen": 13,
+   "tile": "tiles/1440-12.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    528,
+    11478,
+    384,
+    147
+   ],
+   "items": 3,
+   "labels": [
+    "Chat with the Nimble Agent.",
+    "Too long? Ask Claude?",
+    "Interrogate GPT about us!"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 343x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 343x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 343x20px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "body > footer.footer_component.clear-bottom > section._2026_footer > div.footer-content:nth-of-type(7) > nav.footer-content_links:nth-of-type(2)",
+   "y": 11478,
+   "screen": 13,
+   "tile": "tiles/1440-12.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    976,
+    11478,
+    384,
+    147
+   ],
+   "items": 8,
+   "labels": [
+    "Home",
+    "Insights",
+    "Work",
+    "Events",
+    "Services",
+    "Careers",
+    "Manifesto",
+    "Contact"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 164x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 164x20px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open navigation menu",
+    "where": "div.navbar2_button-wrapper > div.navbar2_menu-button.w-nav-button",
+    "box": [
+     40,
+     48
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Discovery our cutting-edge AI offering →",
+   "Get In Touch",
+   "← Back To Overview"
+  ],
+  "header_items_1440": 6,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 3,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 3,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 8,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 2,
+  "tried": 2,
+  "by_kind": {
+   "menu": 1,
+   "disclosure": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "menu",
+    "name": "Industries",
+    "selector": "#w-dropdown-toggle-0",
+    "status": "ok",
+    "opened": [
+     "nav: Industries submenu"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": false,
+    "largest_box": [
+     0,
+     0
+    ],
+    "closed_after_escape": false,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "disclosure",
+    "name": "Technologies",
+    "selector": "#w-node-_6c2ca2c4-a3ec-ee7d-882d-8ca50a0772a6-0a0772a2 > div:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 4
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "nav.nav.navigation > section.banner_component",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "banner_component",
+   "text": "Discovery our cutting-edge AI offering →",
+   "fixed": false
+  },
+  {
+   "where": "section.banner_component > div.padding-global > div.container-large.m-flex-hr > div.banners_wrapper > div.banner_content",
+   "y": 8,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "banner_content",
+   "text": "Discovery our cutting-edge AI offering →",
+   "fixed": false
+  },
+  {
+   "where": "nav.navbar_menu.is-page-height-tablet > a.navbar_link.notification:nth-of-type(4)",
+   "y": 68,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "navbar_link notification",
+   "text": "Careers",
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 38,
+  "first": "a \"skip to main content\" href=#main",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 10477,
+   "totalChars": 11621
+  },
+  "reduced_motion": {
+   "visibleChars": 10477,
+   "totalChars": 11621
+  },
+  "observer_never_fires": {
+   "visibleChars": 10288,
+   "totalChars": 11621
+  },
+  "scripts_off": {
+   "visibleChars": 10477,
+   "totalChars": 11621
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 68,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "a \"Discovery our cutting-edge AI offering →\"",
+     "evidence": "focus indicator visible but faint: 2.21:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "large.m-flex-hr > div.banners_wrapper > div.banner_content > a.banner-link.mobile:nth-of-type(2)  \"Discovery our cutting-edge AI offering →\"",
+     "evidence": "touch target 254x17px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nav.nav.navigation > div.navbar_component.w-nav > div.navbar_container:nth-of-type(1) > a.navbar_logo-link.w-nav-brand",
+     "evidence": "touch target 96x18px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.navbar2_button-wrapper > div.navbar2_menu-button.w-nav-button",
+     "evidence": "touch target 40x48px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "y-li.w-dyn-item:nth-of-type(1) > div.story-card > div.story-card__content:nth-of-type(2) > a.story-card__link:nth-of-type(2)  \"Read story →\"",
+     "evidence": "touch target 279x16px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "y-li.w-dyn-item:nth-of-type(2) > div.story-card > div.story-card__content:nth-of-type(2) > a.story-card__link:nth-of-type(2)  \"Read story →\"",
+     "evidence": "touch target 279x16px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "y-li.w-dyn-item:nth-of-type(3) > div.story-card > div.story-card__content:nth-of-type(2) > a.story-card__link:nth-of-type(2)  \"Read story →\"",
+     "evidence": "touch target 279x16px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.footer-content_info:nth-of-type(1) > div.footer-email_container > a.footer-email  \"hello@nimblestudio.com\"",
+     "evidence": "touch target 225x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "#w-node-_8eed4910-05db-59d1-953b-a878bf9c405a-8f409f60  \"Chat with the Nimble Agent.\"",
+     "evidence": "touch target 343x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "r > div.footer-content:nth-of-type(7) > nav.footer-content_links:nth-of-type(1) > a.footer-link_2026:nth-of-type(2)  \"Too long? Ask Claude?\"",
+     "evidence": "touch target 343x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.footer-content:nth-of-type(7) > nav.footer-content_links:nth-of-type(1) > a.footer-link_2026:nth-of-type(3)  \"Interrogate GPT about us!\"",
+     "evidence": "touch target 343x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "page moves (transform transitions) but has no prefers-reduced-motion rule",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 7,
+  "button_variants": 6,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 3,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 2,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 3,
+  "async_actions": 0
+ }
+}

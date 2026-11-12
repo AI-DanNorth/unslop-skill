@@ -1,0 +1,64 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The eight-tile navigation grid reaches every section at both widths, but the visitor scrolls past two screens of intro before any destination appears, and the tiles declare a hover look with no focus or pressed look.",
+ "score": {
+  "dimension": "Usability",
+  "value": 7,
+  "reason": "T-PHONE-NAV passes on the two-column tile grid at 375, while T-FIRST-RUN (CMP-017) and T-STATE-MATRIX (CMP-002) each find one gap."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT",
+  "T-FIRST-RUN"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-017",
+   "tier": "Reflex",
+   "where": "intro panel (#nav-button) and statement panel, 1440px and 375px, tiles/1440-00.png, tiles/1440-01.png, tiles/375-00.png",
+   "evidence": "The first screen at both widths holds only the sentence 'At Dropbox, our Brand Guidelines help us infuse everything we make with identity.' and the logo on a blank ground. The second screen holds a second statement in a blue square. The navigation grid (Framework, Voice & Tone, Logo, Typography, Color, Imagery, Motion, Iconography) first appears on the third screen (tiles/1440-02.png, tiles/375-02.png).",
+   "before": "Two screens of statement stand between the visitor and the eight guideline sections.",
+   "after": "Put the eight section tiles on the first screen, under one line of intro.",
+   "why": "People open a brand guidelines site to reach a section. Every visit starts with two screens of scrolling before any section can be chosen.",
+   "test": "T-FIRST-RUN",
+   "source": "components",
+   "title": "Onboarding is short, optional and leads to the work"
+  },
+  {
+   "rule": "CMP-002",
+   "tier": "Reflex",
+   "where": "nav.nav-wrapper tile links (Framework to Iconography), 1440px, tiles/1440-02.png",
+   "evidence": "declared_states counts 27 hover rules but 0 focus-visible, 1 focus and 0 active rules in 166 readable rules (2 sheets unreadable). The sweep's focus_ring check supports it: 'no visible focus indicator' on the 'Motion' tile (A11-003, the sweep's Floor).",
+   "before": "The section tiles change on hover, with no designed focus or pressed look.",
+   "after": "Give the tiles a focus-visible outline outside the coloured block and a one-step pressed change.",
+   "why": "Keyboard visitors and touch visitors get no sign of which tile they are on or that a tap registered.",
+   "test": "T-STATE-MATRIX",
+   "source": "components",
+   "root": "the nav-wrapper tile link component"
+  }
+ ],
+ "strengths": [
+  "At 375 the tile grid reflows to two columns with all eight sections and keeps each tile's label and picture (tiles/375-02.png).",
+  "The page has no competing buttons: the tiles are the only way forward, and each one names its section."
+ ],
+ "not_investigated": [
+  "#nav-button: the 846x846 intro panel is a button named 'Navigation menu'. Clicking it changed only the scroll chevron within 600 ms (motion/t0-normal-000.png against t0-normal-600.png). What it does after that is not verified",
+  "fixed navigation covering focused tiles is the sweep's (focus_ring, 3 hits) and lens-a11y's",
+  "T-WHERE-AM-I: this is the home page, so no current mark is expected",
+  "T-FIELD-READ, T-ERROR-PATH, T-EMPTY-FIRST, T-TABLE-READ: no fields, actions, data regions or tables",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

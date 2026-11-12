@@ -1,0 +1,74 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The page's two sign-up buttons, 'LET'S GO ↗' and 'START MAKING MOVES ↗', both jump to the in-page '#workspace' section that 'How it works' also targets, so the main action leads to no sign-up, and the hero's yellow primary on a yellow ground reads quieter than its white secondary.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-WHERE-AM-I fails because the main action and its arrow promise a destination the page does not have (CMP-012, CMP-127), T-PRIMARY-COUNT fails on a secondary louder than the primary (CMP-115), and T-STATE-MATRIX finds one hover, one active and one focus-visible rule (CMP-002)."
+  },
+  "visitor_mode": "Persuade: a one-screen-deep landing page for a team workspace whose goal is a sign-up ('NO CREDIT CARD'). No 00-contract.md; inferred from 'START MAKING MOVES' and 'NO CREDIT CARD. NO BS. JUST BETTER WORK.'",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-012",
+      "title": "Every navigation item and action goes somewhere",
+      "tier": "Reflex",
+      "where": "header 'LET'S GO ↗' and hero 'START MAKING MOVES ↗', 1440 and 375, dom-1440.json",
+      "evidence": "dom-1440.json gives both buttons href '#workspace', the same in-page anchor as the nav link 'How it works'. No link on the page leads to a sign-up, trial or contact, although the hero says 'NO CREDIT CARD'.",
+      "before": "The sign-up buttons scroll to the product picture.",
+      "after": "Both buttons linked to the sign-up page with one label; [DATA NEEDED: the sign-up URL].",
+      "why": "A visitor ready to start is scrolled down the same page and never reaches a sign-up.",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-127",
+      "title": "One link behaviour site-wide",
+      "tier": "Reflex",
+      "where": "'LET'S GO ↗' and 'START MAKING MOVES ↗', 1440, fold-1440.png",
+      "evidence": "Both buttons end in a north-east arrow, the usual mark for a link that leaves the site, but both are in-page anchors ('#workspace'); 'SHOW ME HOW', also an in-page anchor ('#features'), has no arrow.",
+      "before": "An external-link arrow on buttons that scroll the same page.",
+      "after": "No arrow on in-page links, or a down arrow if a scroll target is kept; the arrow kept only for links that leave the site.",
+      "why": "The arrow tells the visitor to expect a new page, and the jump down the same page then reads as a mistake.",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-115",
+      "title": "Secondaries outlined or typographic, never louder than the primary",
+      "tier": "Reflex",
+      "where": "hero buttons, 1440 and 375, fold-1440.png and fold-375.png",
+      "evidence": "The primary 'START MAKING MOVES ↗' is filled rgb(255, 223, 56) yellow on the hero's yellow ground, so it reads as a black outline; the secondary 'SHOW ME HOW' is white (rgb(255, 255, 255)) with the same black border and offset shadow, so it stands out more against the yellow.",
+      "before": "The white secondary is the brightest button in the hero.",
+      "after": "The primary in black with yellow or white text, and the secondary as a plain text link or a yellow outline.",
+      "why": "The eye goes to 'SHOW ME HOW', not to the sign-up.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "all buttons and links, stylesheet",
+      "evidence": "declared_states reads 65 readable rules with 1 hover, 1 active and 1 focus-visible rule, 0 hover media queries and 0 disabled rules for three button styles and three nav links.",
+      "before": "One shared hover and press rule for every control.",
+      "after": "Each variant with its own hover (one step of its own fill), pressed and focus-visible look, hover inside @media (hover: hover).",
+      "why": "The hard offset shadows invite a pressed look that only one rule supplies.",
+      "test": "T-STATE-MATRIX"
+    }
+  ],
+  "strengths": [
+    "A skip link is the first focus stop, and the logo links to '#top'.",
+    "The 375 header keeps the logo and the main action on one line ('LET'S GO ↗'), and the hero buttons stay at label width (fold-375.png).",
+    "The hero's checklist window reads as an illustration (C48): it has no controls the capture could click."
+  ],
+  "not_investigated": [
+    "Any sign-up flow: none exists on the page; the async capture found no primary action.",
+    "The in-page links 'The good stuff' and 'How it works' are not in the 375 header; the page is short, so I did not count it as a T-PHONE-NAV failure.",
+    "The footer labels the page 'Fictional product · Impeccable design-pattern example'. The whole page is the exhibit, so its components are judged as the page's own interface.",
+    "Inline validation and error placement: no fields.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "Capture prep blocked the host's '/js/detect-antipatterns-browser.js' script.",
+    "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-TABLE-READ and T-FIRST-RUN: no field, no failure run, no overlay, no table and no onboarding."
+  ]
+}

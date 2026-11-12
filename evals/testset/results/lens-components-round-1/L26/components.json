@@ -1,0 +1,43 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:55:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The hero pairs one filled 'Sign up with Google' with an outlined 'Sign up with Microsoft' and an email line, the feature lists mark the selected row, and the phone header keeps 'Get started' beside a named menu button; the one weak component is the FAQ's 'Ask anything else' field, labelled only by its placeholder.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-PRIMARY-COUNT, T-PHONE-NAV, T-INTERRUPT and T-STATE-MATRIX (every state family declared, selected rows seen) pass; T-FIELD-READ fails on the placeholder-only FAQ field, which also showed no answer after the capture's send (CMP-006)."
+  },
+  "visitor_mode": "Persuade (inferred: the home page of a scheduling product whose action is signing up; the calendar, booking and agent panels are product pictures)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-ERROR-PATH", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-006",
+      "title": "Every field shows its label and what it needs",
+      "tier": "Reflex",
+      "where": "#faq-ask in the FAQ form (form.flex.items-center), 1440, shot-1440.png y 12918",
+      "evidence": "The components table records the field with no visible label and the placeholder 'Ask anything else' (placeholder_only: true); the form has 0 visible labels, 0 help lines and one icon button named 'Ask'. The fake-send run filled and sent the form, recorded 11 attempted requests and no new text on the page, so the capture saw no answer, no waiting state and no error.",
+      "before": "A grey pill whose only label is the placeholder 'Ask anything else' disappears once the visitor types, and sending shows nothing.",
+      "after": "A visible label above the field ('Ask a question about Cal.com'), the placeholder kept for an example question, and a waiting line and an inline error with Retry under the field when the answer fails.",
+      "why": "A visitor who starts typing loses the only hint of what the field does, and a silent send leaves them unsure whether the question went anywhere.",
+      "test": "T-FIELD-READ"
+    }
+  ],
+  "strengths": [
+    "The hero has one filled primary, 'Sign up with Google', with 'Sign up with Microsoft' outlined beside it and 'Sign up with email. No credit card required.' under both; the pair stacks full-width at 375.",
+    "The feature lists mark the selected row: 'Send one link with your free hours' is white with its description open while the other rows are grey and closed (async/a0-slow-2s.png).",
+    "At 375 the header keeps 'Get started' and moves the rest behind a named 'Open menu' button.",
+    "The stylesheet declares hover (329), focus-visible (234), active (80), disabled (260), invalid (128), selected (47) and busy (13) rules, and the language menu closed after Escape.",
+    "The agent section's 'Prompt', 'MCP' and 'Grok Bot' tabs mark the selected tab with a grey fill and carry a copy button for the snippet."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "The booking, calendar and Claude chat panels (for example 'Book Maria for a 30 minute intro', 'Reply to Claude...') are product pictures, judged as illustrations (conflict C48).",
+    "Whether the FAQ field is meant to open an external assistant: the form submits by GET with no action, so the capture could not tell where an answer would appear. False success and fake-send (INT-004) are the sweep's and lens-integrity's; the sweep reported no fake_send hit.",
+    "The header's 'Products' panel is a disclosure; it stayed open after Escape, which is normal for a disclosure.",
+    "What the phone menu holds: the capture opens triggers at 1440 only.",
+    "The header shows no current mark, which is expected on the home page.",
+    "T-TABLE-READ skipped: no data table. Two fonts were blocked in the capture (manifest.network)."
+  ]
+}

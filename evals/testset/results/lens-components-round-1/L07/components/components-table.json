@@ -1,0 +1,1018 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L07",
+ "target": "https://cineyx.ai",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 1,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 17,
+  "variants": [
+   {
+    "count": 7,
+    "fill": "rgba(231, 235, 239, 0.3)",
+    "strong_fill": false,
+    "text_color": "rgb(231, 235, 239)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     6
+    ],
+    "labels": [
+     "Show MiniMax H3",
+     "Show Seedance 2.0",
+     "Show Grok Imagine 1.5",
+     "Show Veo 3.1",
+     "Show HappyHorse 1.0",
+     "Show Kling 3.0"
+    ],
+    "first_screen": 7,
+    "in_footer": 0,
+    "icon_only": 7,
+    "example": "div.min-h-screen.text-foreground:nth-of-type(2) > section.relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 8x6px at 375px (min 44px)",
+     "targets (A11-004, Floor): target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "targets (A11-004, Floor): target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "targets (A11-004, Floor): target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(169, 181, 198)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     24
+    ],
+    "labels": [
+     "FR",
+     "RU"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 31x24px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 33x24px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgba(11, 13, 19, 0.6)",
+    "strong_fill": false,
+    "text_color": "rgb(231, 235, 239)",
+    "border": "rgb(35, 38, 47)",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Previous slide",
+     "Next slide"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div > div.min-h-screen.text-foreground:nth-of-type(2) > section.relative.z-10:nth-of-type(1) > button.hidden.md\\:flex:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(18, 192, 226)",
+    "strong_fill": true,
+    "text_color": "rgb(11, 13, 19)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "700",
+    "heights_px": [
+     56
+    ],
+    "labels": [
+     "Start for free"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.relative.z-10:nth-of-type(7) > div.max-w-3xl.mx-auto > a.inline-flex.items-center",
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(18, 192, 226)",
+    "strong_fill": true,
+    "text_color": "rgb(11, 13, 19)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Start for free"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-screen.text-foreground:nth-of-type(2) > nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > a.px-4.py-2:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(18, 192, 226)",
+    "strong_fill": true,
+    "text_color": "rgb(11, 13, 19)",
+    "border": "none",
+    "radius_px": 10,
+    "weight": "500",
+    "heights_px": [
+     24
+    ],
+    "labels": [
+     "EN"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 32x24px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(18, 192, 226)",
+    "strong_fill": true,
+    "text_color": "rgb(231, 235, 239)",
+    "border": "none",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     6
+    ],
+    "labels": [
+     "Show Seedance 2.5"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.min-h-screen.text-foreground:nth-of-type(2) > section.relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 32x6px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgba(11, 13, 19, 0.7)",
+    "strong_fill": false,
+    "text_color": "rgb(18, 192, 226)",
+    "border": "rgba(18, 192, 226, 0.3)",
+    "radius_px": 9999,
+    "weight": "400",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Send feedback"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div > button.fixed.bottom-6",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 8,
+  "row_buttons": {
+   "count": 7,
+   "labels": [
+    "Video Studio Type an idea, pick a style,",
+    "Characters Build your own AI characters ",
+    "Ideas & Script Stuck on what to make? Ch",
+    "Design & Art Generate images, thumbnails",
+    "Voice & Dubbing Pick a voice, clone your",
+    "Thumbnails Make click-worthy covers for "
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 1956,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 182,
+   "hover_media": 0,
+   "focus_visible": 23,
+   "focus": 39,
+   "focus_within": 3,
+   "active": 9,
+   "disabled": 23,
+   "invalid": 0,
+   "checked": 5,
+   "current_selected": 44,
+   "expanded_open": 26,
+   "busy": 3,
+   "placeholder": 4,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div > div.min-h-screen.text-foreground:nth-of-type(2) > nav.fixed.top-0",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    65
+   ],
+   "items": 9,
+   "labels": [
+    "Cineyx AI Studio",
+    "EN",
+    "FR",
+    "RU",
+    "Start for free",
+    "Studios",
+    "Memory",
+    "Technology",
+    "Sign In"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 39x40px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 32x24px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 31x24px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 33x24px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Sign In",
+   "Start for free"
+  ],
+  "header_items_1440": 9,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 6,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 6,
+  "tried": 6,
+  "by_kind": {
+   "button": 6
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Previous slide",
+    "selector": "#root > div:nth-of-type(2) > section:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "div: ",
+     "div: ",
+     "div: FEATURED MODELin 2K AI VIDEO & CHARACTER",
+     "button: Show MiniMax H3"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Next slide",
+    "selector": "#root > div:nth-of-type(2) > section:nth-of-type(1) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [
+     "div: ",
+     "div: ",
+     "div: FEATURED MODEL AI VIDEO & CHARACTER STUD",
+     "button: Show Cineyx Character ID Identity"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "motion/layout: 6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "EN",
+    "selector": "#root > div:nth-of-type(2) > nav > div > div:nth-of-type(2) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "FR",
+    "selector": "#root > div:nth-of-type(2) > nav > div > div:nth-of-type(2) > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "Show MiniMax H3",
+    "selector": "f-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "div: ",
+     "div: ",
+     "div: MODÈLE VEDETTE STUDIO VIDÉO & PERSONNAGE",
+     "button: Show Grok Imagine 1.5"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration: transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "motion/layout: 2 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)"
+    ]
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Show Seedance 2.5",
+    "selector": "f-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.relative.z-10:nth-of-type(2) > div.max-w-6xl.mx-auto > div.grid.sm\\:grid-cols-2:nth-of-type(2) > div.glass-card.group:nth-of-type(1)",
+   "y": 1179,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    368,
+    396
+   ],
+   "section": "What you can actually create",
+   "controls_inside": 3,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "section.relative.z-10:nth-of-type(2) > div.max-w-6xl.mx-auto > div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(1)",
+   "y": 1599,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    368,
+    424
+   ],
+   "section": "Restore and enhance old photos",
+   "controls_inside": 0,
+   "whole_card_link": 6,
+   "with_heading": 6
+  },
+  {
+   "where": "section.relative.z-10:nth-of-type(3) > div.max-w-5xl.mx-auto > div.grid.sm\\:grid-cols-3:nth-of-type(2) > div.glass-card.p-6:nth-of-type(1)",
+   "y": 3168,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    328,
+    181
+   ],
+   "section": "AI that remembers your universe",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "section.relative.z-10:nth-of-type(4) > div.max-w-5xl.mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.glass-card.p-7:nth-of-type(1)",
+   "y": 3689,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    1024,
+    114
+   ],
+   "section": "Ecosystem of studios",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 4
+  },
+  {
+   "where": "div.min-h-screen.text-foreground:nth-of-type(2) > section.py-24.px-6:nth-of-type(9) > div.max-w-5xl.mx-auto > div.grid.grid-cols-1:nth-of-type(2) > button.glass-card.p-6:nth-of-type(1)",
+   "y": 6060,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 7,
+   "size": [
+    328,
+    201
+   ],
+   "section": "What's inside Cineyx AI?",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 7
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.max-w-6xl.mx-auto > div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(3) > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground",
+    "y": 1866,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "text": "Birthdays, holidays, ads, social posts — polished visuals done in seconds, not hours.",
+    "match": "done"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Send feedback",
+    "kind": "action-button",
+    "selector": "#root > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "spinner",
+        "new text: Beta Feedback | Everything's great! 🚀 | Character Drift"
+       ],
+       "pending": true
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "spinner",
+        "new text: Beta Feedback | Everything's great! 🚀 | Character Drift"
+       ],
+       "pending": true
+      }
+     },
+     "requests": 1,
+     "first_answer_ms": 3251,
+     "final_new_text": [
+      "Beta Feedback",
+      "Everything's great! 🚀",
+      "Character Drift",
+      "Identity Issue"
+     ],
+     "final_success": [],
+     "spinner_after_answer": true,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "spinner",
+        "new text: Beta Feedback | Everything's great! 🚀 | Character Drift"
+       ],
+       "pending": true
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "label/style bg",
+        "spinner",
+        "new text: Beta Feedback | Everything's great! 🚀 | Character Drift"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 1,
+     "first_answer_ms": 1753,
+     "final_new_text": [
+      "Beta Feedback",
+      "Everything's great! 🚀",
+      "Character Drift",
+      "Identity Issue"
+     ],
+     "final_success": [],
+     "spinner_after_answer": true,
+     "shots": [
+      "async/a0-fail-before.png",
+      "async/a0-fail-0.5s.png",
+      "async/a0-fail-2s.png",
+      "async/a0-fail-final.png"
+     ]
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "button \"\" href=None",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 1,
+  "covered": 13,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 3950,
+   "totalChars": 3950
+  },
+  "reduced_motion": {
+   "visibleChars": 3950,
+   "totalChars": 3950
+  },
+  "observer_never_fires": {
+   "visibleChars": 632,
+   "totalChars": 3950
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 6,
+  "prep": {
+   "host": "cineyx.ai",
+   "config": {
+    "click": [
+     "Reject non-essential"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"reject non-essential\"",
+    "w1280: clicked \"reject non-essential\"",
+    "w1440: clicked \"reject non-essential\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "action-button \"Send feedback\" (#root > button)",
+     "evidence": "progress state still showing 1 s after the request completed (3251 ms): 8) > div > a > div:nth-of-type(1) > div:nth-of-type(1) > div",
+     "tier": "Reflex",
+     "check": "stuck_spinner"
+    }
+   ]
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "button \"Send feedback\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"EN\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"FR\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"RU\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show Seedance 2.5\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show Seedance 2.0\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show Grok Imagine 1.5\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show Veo 3.1\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show HappyHorse 1.0\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button \"Show Kling 3.0\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "div > div.min-h-screen.text-foreground:nth-of-type(2) > nav.fixed.top-0 > div.max-w-6xl.mx-auto > a.flex.items-center",
+     "evidence": "touch target 39x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(1)  \"EN\"",
+     "evidence": "touch target 32x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(2)  \"FR\"",
+     "evidence": "touch target 31x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(3)  \"RU\"",
+     "evidence": "touch target 33x24px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "> nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > a.text-sm.text-muted-foreground:nth-of-type(1)  \"Sign In\"",
+     "evidence": "touch target 43x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(1)",
+     "evidence": "touch target 8x6px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(2)",
+     "evidence": "touch target 32x6px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(3)",
+     "evidence": "target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": ".relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(4)",
+     "evidence": "target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": ".relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.mt-12.flex:nth-of-type(2) > button.h-1\\.5.rounded-full:nth-of-type(5)",
+     "evidence": "target 8x6px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 3,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is button \"\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "3318 characters (84% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "3950 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 9,
+   "hits": [
+    {
+     "where": "button trigger \"Previous slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(1))",
+     "evidence": "transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "button trigger \"Previous slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(1))",
+     "evidence": "6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    },
+    {
+     "where": "button trigger \"Previous slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(1))",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    },
+    {
+     "where": "button trigger \"Next slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(2))",
+     "evidence": "transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "button trigger \"Next slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(2))",
+     "evidence": "6 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    },
+    {
+     "where": "button trigger \"Next slide\" (-of-type(2) > section:nth-of-type(1) > button:nth-of-type(2))",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    },
+    {
+     "where": "button trigger \"Show MiniMax H3\" (:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1))",
+     "evidence": "transition runs 1000 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    },
+    {
+     "where": "button trigger \"Show MiniMax H3\" (:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1))",
+     "evidence": "2 other element(s) move while the transition runs (e.g. \"Show Seedance 2.5\" 24 px off its start and end at 150 ms): the transition animates layout",
+     "tier": "Reflex",
+     "check": "layout"
+    },
+    {
+     "where": "button trigger \"Show MiniMax H3\" (:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1))",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 12 px / scales 0% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 17,
+  "button_variants": 8,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 5,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 1
+ }
+}

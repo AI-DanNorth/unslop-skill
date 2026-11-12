@@ -1,0 +1,44 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:55:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The header collapses to an 'Open menu' button at 375, the 'Coffee shop' to 'Contracts' tabs mark the selected tab with a white pill, and the hero pairs the install command with one secondary 'Read the docs'; the gap is that the hero copy button showed no change in 2 s after it was pressed.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-PRIMARY-COUNT, T-PHONE-NAV and T-WHERE-AM-I on the tab rows pass, but T-STATE-MATRIX finds no copied or failed state on the hero's copy button and no disabled or busy styles in the stylesheet (CMP-128, CMP-002)."
+  },
+  "visitor_mode": "Persuade (inferred: a landing page for an agent design skill whose action is copying an install command; the before-and-after demos such as 'NoteFlow' are labelled exhibits)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-128",
+      "title": "Copy-to-clipboard swaps its label to \"Copied\" for ~2.5s",
+      "tier": "Reflex",
+      "where": "button 'Copy: npx skills add Leonxlnx/taste-skill' (hero command box), 1440, async/a0-slow-0.5s.png and a0-slow-2s.png",
+      "evidence": "The async run pressed the hero copy button and recorded 'responded: false' at 0.5 s and at 2 s, with no new text. a0-slow-2s.png shows the same two-squares copy icon as before the click. The stylesheet declares 0 busy and 0 disabled rules. The same command appears with copy buttons in two more places on the page.",
+      "before": "Pressing copy leaves the icon and the label unchanged, so the visitor cannot tell whether the command was copied.",
+      "after": "The icon swaps to a check and the accessible name to 'Copied' for about 2.5 s, and to 'Copy failed, select the text' when the clipboard call is refused.",
+      "why": "Copying the install line is the page's main action, and a silent copy makes the visitor paste without knowing what the clipboard holds.",
+      "root": "the copy-command component used in the hero, the install section and the closing section",
+      "test": "T-STATE-MATRIX"
+    }
+  ],
+  "strengths": [
+    "At 375 the header links move behind a named 'Open menu' button, and the GitHub link stays visible (tiles/375-00.png).",
+    "The example tabs ('Coffee shop', 'Club night', 'Architects', 'Contracts') mark the selected tab with a white pill, and the row stays on one line at 375.",
+    "The hero has one action pair: the install command as the dark primary and 'Read the docs' as the light secondary.",
+    "The animated TasteCode demo has a 'Pause the TasteCode demo' button.",
+    "The stylesheet declares hover (52), focus-visible (27), active (15) and selected (6) rules."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "Whether the copy button fails only because the headless browser refused the clipboard is not verified; either way no copied or failed state was drawn.",
+    "The 'From default to designed' step list: in tiles/1440-08.png 'One palette' is styled as the active step while the exhibit badge reads 'Step 1 of 4'. The list is scroll-driven and the tile is a stitched full-page shot, so whether the two disagree in real scrolling is not verified.",
+    "The NoteFlow, Bohne & Söhne and other demo pages are exhibits (conflict C48), not judged as controls.",
+    "What the phone menu holds: the capture opens triggers at 1440 only.",
+    "T-FIELD-READ, T-ERROR-PATH (no request-making action) and T-TABLE-READ skipped: no fields, no failure run, no table.",
+    "Text left invisible when IntersectionObserver never fires (sweep hidden_content, ROB-001) is robustness's; the 750 ms tab transition (MOT-002) is lens-motion's."
+  ]
+}

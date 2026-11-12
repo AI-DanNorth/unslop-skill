@@ -1,0 +1,588 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L31",
+ "target": "https://www.informationisbeautifulawards.com/showcase/7177-this-is-a-teenager",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 0,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 2,
+  "variants": [
+   {
+    "count": 1,
+    "fill": "rgb(53, 54, 53)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 3,
+    "weight": "600",
+    "heights_px": [
+     43
+    ],
+    "labels": [
+     "VOTE"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.page-row:nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel.no-background:nth-of-type(1) > div.content > a.full.button",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 355x43px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(53, 54, 53)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "600",
+    "heights_px": [
+     43
+    ],
+    "labels": [
+     "VIEW ALL PROJECTS →"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.page-row:nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel:nth-of-type(2) > div.content > a.left.flat-top",
+    "tile": "tiles/1440-01.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 355x43px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 2,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 1039,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 129,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 29,
+   "focus_within": 0,
+   "active": 33,
+   "disabled": 22,
+   "invalid": 6,
+   "checked": 0,
+   "current_selected": 33,
+   "expanded_open": 0,
+   "busy": 8,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "#search_q",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "search",
+   "name": "q",
+   "accessible_name": null,
+   "placeholder": null,
+   "autocomplete": null,
+   "labelled": false,
+   "visible_label": "Sign In",
+   "label_at": "left",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 13.0,
+   "height_px": 40,
+   "form": "div.toolbar-row > div.toolbar-container > ul.toolbar:nth-of-type(2) > li.search:nth-of-type(2) > form",
+   "search_like": true,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=search] has no label"
+   ]
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [
+   {
+    "form": "div.toolbar-row > div.toolbar-container > ul.toolbar:nth-of-type(2) > li.search:nth-of-type(2) > form",
+    "method": "get",
+    "action": "/search/index",
+    "fields": 1,
+    "text_fields": 1,
+    "visible_labels": 1,
+    "placeholder_only": 0,
+    "required_marks": 0,
+    "help_lines": 0,
+    "buttons": [],
+    "y": 0,
+    "tile": "tiles/1440-00.png",
+    "hidden": false,
+    "fake_send": {
+     "button": null,
+     "requests_attempted": 1,
+     "new_text": []
+    }
+   }
+  ],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div.header-container:nth-of-type(1) > header > div.header-row > div.nav-container:nth-of-type(2) > nav.primary",
+   "y": 106,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "in-page",
+   "position": "static",
+   "box": [
+    683,
+    106,
+    587,
+    20
+   ],
+   "items": 7,
+   "labels": [
+    "About",
+    "News",
+    "Awards",
+    "FAQs",
+    "Entry Showcase",
+    "Nominations",
+    "Sponsor"
+   ],
+   "current": [
+    {
+     "item": "Entry Showcase",
+     "by": [
+      "class",
+      "styled unlike the others"
+     ]
+    }
+   ],
+   "dead_links": 0
+  },
+  {
+   "where": "div:nth-of-type(3) > div.page-row:nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel:nth-of-type(2)",
+   "y": 422,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "in-page",
+   "position": "static",
+   "box": [
+    1010,
+    422,
+    260,
+    872
+   ],
+   "items": 8,
+   "labels": [
+    "RELATED PROJECTS",
+    "Medium",
+    "Gender and language",
+    "On Upward Mobility",
+    "Bloomberg Billionaires Index",
+    "VIEW ALL PROJECTS →"
+   ],
+   "current": [
+    {
+     "item": "RELATED PROJECTS",
+     "by": [
+      "styled unlike the others"
+     ]
+    }
+   ],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 138x16px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 130x18px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 143x18px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 109x18px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "MENU ↓",
+    "where": "header > div.header-row > div.nav-container:nth-of-type(2) > nav.primary > button.toggle",
+    "box": [
+     40,
+     40
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Information is Beautiful Awards"
+  ],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "sidebar",
+    "items": 8,
+    "position": "static",
+    "current": [
+     {
+      "item": "RELATED PROJECTS",
+      "by": [
+       "styled unlike the others"
+      ]
+     }
+    ]
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 0,
+  "tried": 0,
+  "by_kind": {},
+  "triggers": [],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [
+   {
+    "class": "loading",
+    "elements": 4,
+    "example": "html.js.flexbox > body.ready > div.fr-loading:nth-of-type(4)"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Information is Beautiful Awards\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 3,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1008,
+   "totalChars": 1119
+  },
+  "reduced_motion": {
+   "visibleChars": 974,
+   "totalChars": 1085
+  },
+  "observer_never_fires": {
+   "visibleChars": 974,
+   "totalChars": 1085
+  },
+  "scripts_off": {
+   "visibleChars": 974,
+   "totalChars": 1085
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 16,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "ran",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 8,
+   "hits": [
+    {
+     "where": "input \"\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgba(53, 54, 53, 0.8))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"VOTE\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(255, 255, 255))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(16, 16, 16))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(16, 16, 16))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(16, 16, 16))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"VIEW ALL PROJECTS\n→\"",
+     "evidence": "no visible focus indicator (outline: none 0px rgb(255, 255, 255))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Twitter\"",
+     "evidence": "focus indicator visible but faint: 2.65:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Facebook\"",
+     "evidence": "focus indicator visible but faint: 2.65:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 11,
+   "hits": [
+    {
+     "where": "div.header-container:nth-of-type(1) > header > div.header-row > div.logo-container:nth-of-type(1) > a  \"Information is Beautiful Awards\"",
+     "evidence": "touch target 355x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "header > div.header-row > div.nav-container:nth-of-type(2) > nav.primary > button.toggle",
+     "evidence": "touch target 40x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.page-details:nth-of-type(2) > ul > li:nth-of-type(2) > div.value:nth-of-type(2) > a  \"Information is Beautiful Awards 2024\"",
+     "evidence": "touch target 190x37px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.page-details:nth-of-type(2) > ul > li:nth-of-type(4) > div.value:nth-of-type(2) > a  \"pudding.cool\"",
+     "evidence": "touch target 80x17px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel.no-background:nth-of-type(1) > div.content > a.full.button  \"Vote\"",
+     "evidence": "touch target 355x43px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.page-row:nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel:nth-of-type(2) > h5 > a  \"Related Projects\"",
+     "evidence": "touch target 138x16px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ul.page-sidebar-list > li:nth-of-type(1) > div.content:nth-of-type(2) > div.title:nth-of-type(1) > a  \"On Upward Mobility\"",
+     "evidence": "touch target 130x18px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ul.page-sidebar-list > li:nth-of-type(2) > div.content:nth-of-type(2) > div.title:nth-of-type(1) > a  \"Gender and language\"",
+     "evidence": "touch target 143x18px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ul.page-sidebar-list > li:nth-of-type(3) > div.content:nth-of-type(2) > div.title:nth-of-type(1) > a  \"Migration Waves\"",
+     "evidence": "touch target 109x18px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "th-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel:nth-of-type(2) > div.content > a.left.flat-top  \"View All Projects\"",
+     "evidence": "touch target 355x43px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 1,
+   "hits": [
+    {
+     "where": "#search_q",
+     "evidence": "input[type=search] has no label",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 3,
+   "hits": [
+    {
+     "where": "div.page-row:nth-of-type(3) > div.page-sidebar:nth-of-type(2) > div.page-sidebar-panel.no-background:nth-of-type(1) > h5  \"You be the judge\"",
+     "evidence": "heading jumps from h1 to h5",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"Information is Beautiful Award\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "skipped: no transition triggers on the page",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 2,
+  "button_variants": 2,
+  "fields_visible": 1,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 1,
+  "nav_regions": 2,
+  "nav_with_current_mark": 2,
+  "tabs": 0,
+  "overlay_triggers": 0,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

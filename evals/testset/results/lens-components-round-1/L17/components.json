@@ -1,0 +1,87 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:20:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The demo gallery's filter chips mark the selected category and 'Load More' answers with 'Showing 6 of 39 demos', but at 375 the header drops Features, Stacks and Styles with no menu button, and each demo card hides its 'View Demo' and 'Show Prompt' actions until hover.",
+  "score": {
+    "dimension": "Usability",
+    "value": 5,
+    "reason": "T-PHONE-NAV fails (no menu at 375), T-STATE-MATRIX fails on hover-only card actions that a touch visitor cannot reach, and T-PRIMARY-COUNT finds 'Premium' twice in the header and a hero primary that is not the install step (CMP-011, CMP-002, CMP-004)."
+  },
+  "visitor_mode": "Persuade (inferred: a product landing page for a design-skill tool with an install command, demo gallery and a 'Premium' upsell)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-ERROR-PATH"],
+  "findings": [
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "nav.fixed.top-4 (header), 375, fold-375.png and tiles/375-00.png y 20-75",
+      "evidence": "At 1440 the header holds 8 items, including the links 'Features', 'Stacks' and 'Styles'. At 375 those three links have a 0 by 0 box and opacity 0 in dom-375.json, and phone_nav lists only '147.3k' and 'Premium' as visible links. The only 375 toggle is 'Toggle theme' (36 by 36 px), which switches light and dark, not a menu.",
+      "before": "A phone visitor sees the logo, a theme switch, the star count and 'Premium', and cannot reach Features, Stacks or Styles from the header.",
+      "after": "A 'Menu' button (button aria-expanded) at 375 that opens the three section links and 'Premium'; the theme switch moves inside it (CMP-154).",
+      "why": "The phone header loses three of its four destinations, so the visitor has to scroll the whole page to find the stacks or styles.",
+      "root": "the header nav component hides its link group below the sm breakpoint without a replacement",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "demo gallery cards, div.absolute.inset-0 > a 'View Demo' and button 'Show Prompt', 1440 and 375, tiles/1440-06.png",
+      "evidence": "Each of the demo cards carries 'View Demo' and 'Show Prompt' inside an overlay that is opacity 0 at rest at both 1440 and 375 (dom-1440.json and dom-375.json, y 5189 and y 6971). The cards have no whole-card link (cards row: whole_card_link 0), and tiles/1440-06.png shows the cards with no visible action. The sweep's focus_ring Floor hits name these same 'View Demo' and 'Show Prompt' controls.",
+      "before": "The two card actions appear only on hover, so a touch visitor never sees them.",
+      "after": "'View demo' as a visible text link under each card title, with 'Show prompt' beside it; any hover overlay kept inside @media (hover: hover) as an extra, not the only path (CMP-103).",
+      "why": "On a phone the gallery shows 39 demos the visitor cannot open, which is the gallery's whole purpose.",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-004",
+      "title": "One primary action per view",
+      "tier": "Reflex",
+      "where": "header and hero, 1440, tiles/1440-00.png",
+      "evidence": "The header carries '★ Premium' as a blue text link and 'Premium' again as a filled blue button (rgb 37,99,235). The hero's filled gradient button is 'How it Works', with 'View Demos' as the secondary, while the install step ('$ uipro init --ai copilot') sits above them as a terminal line with no copy button. Further down, 'Get on GitHub' uses the same filled gradient style as 'How it Works'.",
+      "before": "The page's strongest button sends visitors to an explainer, the header repeats 'Premium' twice, and the install command has no button.",
+      "after": "One hero primary that does the first real step (copy the install command, or 'Get on GitHub'), one 'Premium' entry in the header, and the explainer as a text link.",
+      "why": "The visitor's first action is to install the tool, and the page's loudest controls point elsewhere.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-005",
+      "title": "Controls belong to one family",
+      "tier": "Finish",
+      "where": "buttons site-wide, 1440",
+      "evidence": "The components table finds 9 button variants: radii of 8, 12 and 16 px and a pill (33554400 px); heights of 32, 34, 36, 48, 52, 60 and 62 px; fills of solid blue, a gradient, a near-black rgb(11,11,16) and a 5 % white wash. The hero pair alone differs: 'How it Works' is 60 px with a 12 px radius and 'View Demos' is 62 px with a 16 px radius.",
+      "before": "Side-by-side buttons in the hero differ by 2 px in height and 4 px in radius, and the page uses four fills.",
+      "after": "One radius for buttons (12 px), two heights (40 for chips and small actions, 56 for hero actions), and one primary fill.",
+      "why": "Near-miss sizes read as unfinished and blur which button is the primary.",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-128",
+      "title": "Copy-to-clipboard swaps its label to \"Copied\" for ~2.5s",
+      "tier": "Reflex",
+      "where": "hero terminal line '$ uipro init --ai copilot', 1440 and 375, tiles/375-00.png y 377-411",
+      "evidence": "The install line cycles through agent names as a typing animation ('uipro init --ai kiro' with a block cursor at 375, '--ai cursor' and '--ai windsurf' in the async frames). The components table records no button inside it and no copy control near it.",
+      "before": "The install command changes while the visitor reads it and offers no way to copy it.",
+      "after": "The command for the agent picked in the chip row above, held still, with a 'Copy' button that reads 'Copied' for about 2.5 s.",
+      "why": "A visitor who wants to install cannot copy a command that keeps retyping itself.",
+      "test": "T-STATE-MATRIX"
+    }
+  ],
+  "strengths": [
+    "The demo gallery's Category and Mode chip rows mark the selected chip ('All', 'All Modes') with a blue fill, so the filter state is visible.",
+    "'Load More' sits under the grid with the count 'Showing 6 of 39 demos', and the async run shows new cards arriving after the click.",
+    "The stylesheet declares hover (170 rules), focus (20), focus-visible (4) and disabled (8) states, so the kit's states are largely kept."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "What a phone menu would hold: the capture opens triggers at 1440 only, and no menu toggle exists at 375.",
+    "Failure states: 'Load More' made no same-origin request, so no failure run was possible.",
+    "Inline validation and error placement: the page has no form, so T-FIELD-READ was skipped.",
+    "T-TABLE-READ skipped: the page has no data table; the demo gallery is a grid of image cards, not comparable data.",
+    "T-FIRST-RUN skipped: no first-run path on a landing page.",
+    "Focus moving into an overlay and back, scroll lock and keyboard operation of the chip rows (lens-a11y).",
+    "Theme toggle transition timing (1435 ms in the motion sweep) is lens-motion's."
+  ]
+}

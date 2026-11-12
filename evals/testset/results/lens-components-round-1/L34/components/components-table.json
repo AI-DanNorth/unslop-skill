@@ -1,0 +1,859 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L34",
+ "target": "https://ant.design/docs/spec/buttons",
+ "width": 1440,
+ "captured": "2026-11-10",
+ "landmarks": {
+  "main": 1,
+  "nav": 0,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 7,
+  "variants": [
+   {
+    "count": 5,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgba(0, 0, 0, 0.88)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 6,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "中 En",
+     "RTL Switch Button",
+     "Theme icon",
+     "github",
+     "contributors (10)"
+    ],
+    "first_screen": 4,
+    "in_footer": 0,
+    "icon_only": 3,
+    "example": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgba(0, 0, 0, 0.88)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     55
+    ],
+    "labels": [
+     "Do",
+     "Don't"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(25) > div.preview-image-box:nth-of-type(1) > div.preview-image-wrapper.good:nth-of-type(1) > div.ant-image.css-i19pbt",
+    "tile": "tiles/1440-08.png"
+   }
+  ],
+  "variant_count": 2,
+  "row_buttons": {
+   "count": 20,
+   "labels": [
+    "",
+    "Do",
+    "Don't"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 1092,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 563,
+   "hover_media": 15,
+   "focus_visible": 153,
+   "focus": 121,
+   "focus_within": 56,
+   "active": 95,
+   "disabled": 212,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 17,
+   "expanded_open": 1,
+   "busy": 226,
+   "placeholder": 23,
+   "read_only": 1
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1) > input.dumi-default-search-bar-input",
+   "y": 16,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": "Type keywords...",
+   "autocomplete": null,
+   "labelled": false,
+   "visible_label": null,
+   "label_at": null,
+   "placeholder_only": true,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 32,
+   "form": null,
+   "search_like": false,
+   "placeholder_instruction": true,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label (placeholder \"Type keywords...\" is not a label)"
+   ]
+  },
+  {
+   "where": "#_R_7bbqfsua_",
+   "y": 21,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tag": "input",
+   "type": "text",
+   "name": null,
+   "accessible_name": null,
+   "placeholder": null,
+   "autocomplete": "new-password",
+   "labelled": false,
+   "visible_label": "Resources",
+   "label_at": "left",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 14.0,
+   "height_px": 22,
+   "form": null,
+   "search_like": false,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label"
+   ]
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [
+  {
+   "where": "#_R_7bbqfsua_",
+   "y": 21,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "custom combobox",
+   "name": null,
+   "labelled": false,
+   "sweep": [
+    "form_labels (A11-010, Floor): input[type=text] has no label"
+   ]
+  }
+ ],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 2
+ },
+ "navigation": [
+  {
+   "where": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    0,
+    0,
+    1440,
+    64
+   ],
+   "items": 15,
+   "labels": [
+    "Ant Design",
+    "YouMind",
+    "TRACTIAN",
+    "LobeHub",
+    "CodeRabbit",
+    "中 En",
+    "RTL Switch Button",
+    "Theme icon",
+    "github",
+    "Design",
+    "Development",
+    "Components",
+    "Blog",
+    "Resources"
+   ],
+   "current": [
+    {
+     "item": "Design",
+     "by": [
+      "class",
+      "styled unlike the others"
+     ]
+    }
+   ],
+   "dead_links": 0
+  },
+  {
+   "where": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root",
+   "y": 96,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "kind": "sidebar",
+   "position": "sticky",
+   "box": [
+    0,
+    96,
+    290,
+    2318
+   ],
+   "items": 42,
+   "labels": [
+    "Introduction",
+    "Design Values",
+    "Cases",
+    "Colors",
+    "Layout",
+    "Font",
+    "Icons",
+    "Dark Mode",
+    "Shadow",
+    "Overview",
+    "Feedback",
+    "Navigation",
+    "Data Entry",
+    "Data Display",
+    "Copywriting",
+    "Data format"
+   ],
+   "current": [
+    {
+     "item": "Button",
+     "by": [
+      "class",
+      "links to this page",
+      "styled unlike the others"
+     ]
+    }
+   ],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Ant Design",
+   "Design Principal",
+   "Types",
+   "Common Button Types",
+   "Emphasis",
+   "Do & Don't",
+   "Special Button Types",
+   "Edit this page",
+   "LLMs.md"
+  ],
+  "header_items_1440": 15,
+  "bottom_bar": [],
+  "regions_375": [],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 6,
+  "tried": 6,
+  "by_kind": {
+   "dialog": 1,
+   "menu": 1,
+   "button": 4
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "dialog",
+    "name": "contributors (10)",
+    "selector": "#root > div > main > div:nth-of-type(2) > article > div:nth-of-type(5) > div > button",
+    "status": "ok",
+    "opened": [
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 240 px / scales 80% (frames seeked)"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "menu",
+    "name": "",
+    "selector": "#_R_7bbqfsua_",
+    "status": "ok",
+    "opened": [
+     "div: 6.7.0 5.x 4.x 3.x 2.x 1.x 0.12.x 0.11.x "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     88,
+     264
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/enter_scale: enters from 0.80 scale (minimum 0.9): the element pops in from far instead of settling"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "",
+    "selector": ":nth-of-type(2) > article > div:nth-of-type(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div",
+    "status": "ok",
+    "opened": [
+     "dialog: ",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 302 px / scales 98% (frames seeked)"
+    ]
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "中 En",
+    "selector": "#root > div > header > div > div:nth-of-type(2) > div > button:nth-of-type(1)",
+    "status": "not-verified (error: page.evaluate: Execution context was destroyed, most likely because of a navigation)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "",
+    "selector": "#root > div > header > div > div:nth-of-type(2) > div > button:nth-of-type(3)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 302 px / scales 98% (frames seeked)"
+    ]
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "",
+    "selector": "#root > div > header > div > div:nth-of-type(2) > div > a > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "skipped",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)",
+     "motion/reduced_motion: with prefers-reduced-motion: reduce the transition still moves 302 px / scales 98% (frames seeked)"
+    ]
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [
+  {
+   "where": "div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div.ant-descriptions.ant-descriptions-small:nth-of-type(2) > div.ant-descriptions-view > table",
+   "y": 167,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "rows": 1,
+   "header_cells": [],
+   "numeric_cells": 0,
+   "numeric_align": {},
+   "width_px": 928,
+   "section": "Button",
+   "head_wraps": 0
+  }
+ ],
+ "status_regions": [
+  {
+   "where": "div.rc-footer-column:nth-of-type(3) > div.rc-footer-item:nth-of-type(7) > a > span.rc-footer-item-icon > span.anticon.anticon-message",
+   "y": 9965,
+   "screen": 12,
+   "tile": "tiles/1440-11.png",
+   "first_screen": false,
+   "in_footer": true,
+   "cls": "anticon anticon-message",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [
+   {
+    "where": "article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(22) > ul > li:nth-of-type(1)",
+    "y": 6741,
+    "screen": 8,
+    "tile": "tiles/1440-07.png",
+    "first_screen": false,
+    "text": "Body section has collapsed or hidden content, such as it could not show the entire content in one screen;",
+    "match": "could not"
+   }
+  ],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 1,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Ant Design\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 2,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 4535,
+   "totalChars": 4540
+  },
+  "reduced_motion": {
+   "visibleChars": 4535,
+   "totalChars": 4540
+  },
+  "observer_never_fires": {
+   "visibleChars": 4535,
+   "totalChars": 4540
+  },
+  "scripts_off": {
+   "visibleChars": 29,
+   "totalChars": 29
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 45,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "input \"\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgba(0, 0, 0, 0.88))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Ant Design\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ul \"DesignDevelopmentComponentsBlogResources\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Design\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Development\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Components\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Blog\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"Resources\"",
+     "evidence": "focus indicator visible but faint: 1.74:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focus indicator visible but faint: 2.67:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focus indicator visible but faint: 2.28:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "eyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title  \"Design Principal\"",
+     "evidence": "touch target 112x19px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ion.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > a.ant-anchor-link-title  \"Types\"",
+     "evidence": "touch target 112x19px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > div.ant-anchor-link:nth-of-type(2) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > div.ant-anchor-link:nth-of-type(3) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > div.ant-anchor-link:nth-of-type(4) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(3) > a.ant-anchor-link-title  \"Placement\"",
+     "evidence": "touch target 112x19px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(3) > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": "19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(3) > div.ant-anchor-link:nth-of-type(2) > a.ant-anchor-link-title",
+     "evidence": "target 96x19px at 375px, closer than 24px to another target (WCAG 2.5.8)",
+     "tier": "Floor",
+     "width": 375
+    },
+    {
+     "where": ".acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(4) > a.ant-anchor-link-title  \"Ordering\"",
+     "evidence": "touch target 112x19px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 2,
+   "hits": [
+    {
+     "where": "div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1) > input.dumi-default-search-bar-input",
+     "evidence": "input[type=text] has no label (placeholder \"Type keywords...\" is not a label)",
+     "tier": "Floor"
+    },
+    {
+     "where": "#_R_7bbqfsua_",
+     "evidence": "input[type=text] has no label",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 10,
+   "hits": [
+    {
+     "where": "iv.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "iv.clearfix.preview-image-boxes:nth-of-type(7) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "iv.clearfix.preview-image-boxes:nth-of-type(9) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(13) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(15) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(17) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(19) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(21) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(23) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    },
+    {
+     "where": "v.clearfix.preview-image-boxes:nth-of-type(27) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1) > div.ant-image.css-i19pbt",
+     "evidence": "div has no accessible name",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "2 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"Ant Design\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div:nth-of-type(4)",
+     "evidence": "\"Do\" repeated 7 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "4506 characters (99% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 4,
+   "hits": [
+    {
+     "where": "dialog trigger \"contributors (10)\" (nth-of-type(2) > article > div:nth-of-type(5) > div > button)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 240 px / scales 80% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    },
+    {
+     "where": "menu trigger \"\" (#_R_7bbqfsua_) -> iv > div:nth-of-type(2) > div > div:nth-of-type(5)",
+     "evidence": "enters from 0.80 scale (minimum 0.9): the element pops in from far instead of settling",
+     "tier": "Reflex",
+     "check": "enter_scale"
+    },
+    {
+     "where": "button trigger \"\" (ype(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "button trigger \"\" (ype(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 302 px / scales 98% (frames seeked)",
+     "tier": "Floor",
+     "check": "reduced_motion"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 7,
+  "button_variants": 2,
+  "fields_visible": 2,
+  "fields_placeholder_only": 1,
+  "choices": 0,
+  "selects": 1,
+  "forms": 0,
+  "nav_regions": 2,
+  "nav_with_current_mark": 2,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 0,
+  "tables": 1,
+  "status_regions": 1,
+  "async_actions": 0
+ }
+}

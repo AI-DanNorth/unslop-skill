@@ -1,0 +1,27 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:10:00",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "The slide carries no call to action and only one control, a small '↻ REPLAY' button at top right that replays the build-in, and its drawn chips ('DEFAULT', 'SKILL · ON', '5 MIN · 3 OUTPUTS · 3 SCHOOLS') are labels of one consistent style rather than controls.",
+  "score": {
+    "dimension": "Usability",
+    "value": null,
+    "reason": "The artifact is a single presentation slide whose only interactive element is a replay button for its animation; T-PRIMARY-COUNT and T-ONE-FAMILY pass on the drawn chips and there is no interface to score."
+  },
+  "visitor_mode": "Read (inferred: one presentation slide, '02B · In practice', comparing a default AI cover image with three skill-made covers for a WeChat article)",
+  "tests_run": ["T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-OVERLAY-CHECK"],
+  "findings": [],
+  "strengths": [
+    "The slide asks for no action: no button competes with the comparison, which suits a slide.",
+    "The drawn tags ('DEFAULT', 'SKILL · ON', '5 SEC · 1 OUTPUT', '5 MIN · 3 OUTPUTS · 3 SCHOOLS') share one outlined, letter-spaced style, so they read as one family of labels.",
+    "The '↻ REPLAY' control sits at the slide's edge, away from the content, and the capture found the slide back at rest after Escape."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the slide; there is no 00-contract.md.",
+    "Medium is slides: the drawn cover thumbnails (Pentagram, Takram, Build) and the generated cover are pictures, judged as illustrations (conflict C48), not as controls.",
+    "T-STATE-MATRIX, T-FIELD-READ, T-WHERE-AM-I, T-PHONE-NAV, T-ERROR-PATH, T-EMPTY-FIRST and T-FIRST-RUN do not apply to a single slide; T-TABLE-READ skipped: no drawn table.",
+    "The replay animation's timing and its reduced-motion behaviour (sweep motion and reduced_motion hits) are lens-motion's and lens-a11y's.",
+    "There is no 375 capture; the slide is fixed at 1920 wide."
+  ]
+}

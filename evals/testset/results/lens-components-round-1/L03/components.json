@@ -1,0 +1,87 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:20:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The header marks 'Home' as the current page and 'Add to compare' answers at once (the plus turns to a check and the header Compare button gains a count badge), but the header shows 'Compare' twice, the compare control is a bare plus icon, and the stylesheet declares no pressed state.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WHERE-AM-I passes and the async run shows designed feedback on 'Add to compare', with gaps in T-ONE-FAMILY and T-WHERE-AM-I (a duplicated 'Compare' destination, CMP-150), T-STATE-MATRIX (no :active rule, CMP-002) and T-INTERRUPT (the 'Made in Bolt' pill, CMP-183)."
+  },
+  "visitor_mode": "Persuade with a light Operate layer (a tool picker plus a compare tray). No 00-contract.md; inferred from the hero 'Tell us the goal. We'll build the stack.' and the per-card compare controls.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-INTERRUPT", "T-EMPTY-FIRST", "T-TABLE-READ"],
+  "findings": [
+    {
+      "rule": "CMP-150",
+      "title": "Decide and name the nav",
+      "tier": "Reflex",
+      "where": "header, 1440, fold-1440.png",
+      "evidence": "The header lists 'Compare' as a nav link and again as a bordered button with a swap icon at the right end ('Compare', which gains the badge '1' in async/a0-slow-final.png). Two controls with the same word sit 200px apart.",
+      "before": "Two 'Compare' items in one header: a nav link and a tray button.",
+      "after": "One item: the tray button labelled 'Compare (1)' that opens the comparison, and the nav link removed, or the nav link kept and the tray named 'Your shortlist'.",
+      "why": "A visitor cannot tell whether the two Compare items go to the same place or whether the link shows the tools they picked.",
+      "test": "T-WHERE-AM-I"
+    },
+    {
+      "rule": "CMP-002",
+      "title": "Every state a control can reach is designed",
+      "tier": "Reflex",
+      "where": "site-wide buttons, stylesheet",
+      "evidence": "declared_states reads 315 readable rules with 0 :active rules, 1 :focus-visible rule and 0 hover media queries; the 15 hover rules apply on touch screens too. The buttons table lists four variants on one 8px radius.",
+      "before": "Buttons have a hover look but no pressed look, and hover is not limited to pointers that hover.",
+      "after": "A pressed state one step darker or 1px lower on each variant, and hover rules inside @media (hover: hover) (CMP-103, CMP-105).",
+      "why": "A press gives no feedback until the result arrives, and phone taps leave a sticky hover look.",
+      "root": "button variants (one 8px-radius family)",
+      "test": "T-STATE-MATRIX"
+    },
+    {
+      "rule": "CMP-126",
+      "title": "Icon-only buttons expose an accessible name",
+      "tier": "Reflex",
+      "where": "'Add to compare' plus icon on each tool card, 1440, tiles/1440-02.png",
+      "evidence": "The buttons table lists 6 icon-only 'Add to compare' buttons, 27px tall, drawn as a bare '+' beside the outlined 'Details' button. The control_names sweep finds them named, so the name exists only for assistive tech; sighted visitors see a plus with no word.",
+      "before": "A bare plus next to 'Details', with no visible word.",
+      "after": "A text button 'Compare' with the plus, or a checkbox labelled 'Compare' that shows its checked state.",
+      "why": "A plus on a tool card reads as 'add to cart' or 'add to my stack'; nothing on the card says it builds a comparison.",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-183",
+      "title": "No popups, newsletter modals, chat bubbles, help pills",
+      "tier": "Reflex",
+      "where": "fixed 'Made in Bolt' pill, bottom right, 1440 and 375, fold-1440.png and fold-375.png",
+      "evidence": "A fixed white pill 'Made in Bolt' with a close button sits over the bottom-right corner; at 375 it covers the head of the next section ('What are you trying to...').",
+      "before": "The builder platform's badge floats over content on every screen.",
+      "after": "Remove the platform badge from the published site.",
+      "why": "It covers page content without being asked for.",
+      "test": "T-INTERRUPT"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav records one 'Toggle menu' button (38x38) and only the logo visible at 375; the header Compare button with its count badge is gone at this width, so the only sign that a tool was added is the plus turning into a check.",
+      "before": "At 375 the compare count is hidden behind an icon-only menu button.",
+      "after": "The compare count kept in the 375 header beside a 'Menu' button with a visible word and a 44px box.",
+      "why": "A phone visitor who adds tools to compare cannot see how many they have or reach the comparison without opening the menu.",
+      "test": "T-PHONE-NAV"
+    }
+  ],
+  "strengths": [
+    "The header marks the current page with a filled pale-blue 'Home' pill (fold-1440.png).",
+    "'Add to compare' answers within 0.5s: the plus becomes a check on a blue tint and the header Compare button gains a '1' badge (async/a0-slow-0.5s.png, a0-slow-final.png).",
+    "One filled primary per screen: the hero 'Find my stack' beside an outlined 'Browse all tools', and one 'Get started' in the closing band (tiles/1440-02.png).",
+    "A skip link is the first focus stop."
+  ],
+  "not_investigated": [
+    "The stack-builder flow and the compare page: the captured actions made no same-origin request, so no fail run was possible.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement: no fields on the page.",
+    "Focus moving into an overlay and back, scroll lock and backdrop click: nothing opened as an overlay.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "The table reads nav_with_current_mark 0, but the screenshot shows the 'Home' pill; I judged from the screenshot.",
+    "T-FIELD-READ, T-ERROR-PATH, T-OVERLAY-CHECK, T-FIRST-RUN: no fields, no failure run, no overlay and no onboarding on the page."
+  ]
+}

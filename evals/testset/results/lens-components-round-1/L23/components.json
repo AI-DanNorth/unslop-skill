@@ -1,0 +1,54 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:20:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The header's dropdowns open designed menus, the full-screen menu marks 'Home' as the current page and closed after Escape, the hero carousel has a pause button and the stylesheet declares every state family; the gap is the 'Research' dropdown, which stayed open after Escape.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-WHERE-AM-I, T-PHONE-NAV, T-STATE-MATRIX (declared) and T-INTERRUPT pass; T-OVERLAY-CHECK fails on the 'Research' dropdown that did not close after Escape (CMP-013)."
+  },
+  "visitor_mode": "Read (inferred: a company home page that routes visitors to news, research, policy and products, with announcement cards and a 'Try Claude' menu)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-013",
+      "title": "Overlays are the last answer and behave as overlays",
+      "tier": "Reflex",
+      "where": "header menu trigger 'Research' (and its 'Overview ... Societal Impacts' menu), 1440, motion/t3-normal-600.png",
+      "evidence": "The capture opened the 'Research' dropdown (overlays.triggers t3, kind menu), which shows nine links in a popover under the pill. After the run the capture pressed Escape and moved the pointer away, and the row records closed_after_escape: false.",
+      "before": "The Research menu stays open after Escape and after the pointer leaves.",
+      "after": "The menu closes on Escape with focus back on the 'Research' pill, and closes on pointer leave after a 200 to 300 ms delay (CMP-158).",
+      "why": "A menu that ignores Escape covers the headline and traps keyboard visitors who opened it by mistake.",
+      "root": "the header dropdown component used for Research, Policy, Commitments, Company and Try Claude",
+      "test": "T-OVERLAY-CHECK"
+    },
+    {
+      "rule": "CMP-013",
+      "title": "Overlays are the last answer and behave as overlays",
+      "tier": "Reflex",
+      "where": "button '···' ('Related to Introducing Claude Opus 5.5' and four more) on the announcement cards, 1440, tiles/1440-01.png y 325, motion/t1-normal-600.png",
+      "evidence": "Each announcement card starts with an 18 px tall '···' pill whose accessible name is 'Related to ...'. The capture's click opened a role=dialog named 'Related articles' that holds a short list of links (overlays.triggers t1).",
+      "before": "A list of related links opens as a dialog from an unlabelled '···' pill.",
+      "after": "A 'Related' text button that opens a popover or menu, or the related links listed under the card's own links.",
+      "why": "A dialog for a few links is heavier than the job, and '···' gives no hint of what it opens.",
+      "test": "T-OVERLAY-CHECK"
+    }
+  ],
+  "strengths": [
+    "The full-screen menu (button 'Open menu') dims the page, has a close button, marks 'Home' as the current page in white against grey items, and the capture found it closed after Escape (motion/t0-normal-600.png).",
+    "At 375 the header keeps 'Try Claude', search and a named 'Open menu' button, so every destination stays reachable.",
+    "The hero carousel has a 'Pause video' button (tiles/1440-01.png, right edge).",
+    "The stylesheet declares hover (263, 48 inside a hover media query), focus-visible (109), disabled (27), invalid (6), selected (20) and busy (8) rules, and the focus walk starts on 'Skip to main content'.",
+    "The announcement cards use one layout: two labelled link rows ('Model Details', 'System Card') and one 'Read announcement' button each."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "Five images were blocked in the capture (manifest.network), so the menu still shows alt text in place of thumbnails; that is capture context, not a design choice. The cookie banner was dismissed by capture prep ('Reject all cookies'), so T-INTERRUPT does not judge it.",
+    "Search: the header search is a labelled custom combobox with the placeholder 'Enter search...'; its results, its no-results state and its error state were not reached by the capture.",
+    "What the phone menu holds at 375: the capture opens triggers at 1440 only (the 1440 full-screen menu is the same component).",
+    "T-ERROR-PATH: no action on the page sends a request, so no failure run was possible. T-TABLE-READ skipped: no table.",
+    "Transition timing of the dropdowns and the pause button (MOT-002) is lens-motion's; target sizes in the phone header are the sweep's (A11-004)."
+  ]
+}

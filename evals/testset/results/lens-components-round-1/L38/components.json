@@ -1,0 +1,106 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The gallery page marks the current email and its search dialog behaves, but at 375 the navbar pushes its menu button off the screen, the view tabs wrap, and a fixed legal pill covers the email.",
+ "score": {
+  "dimension": "Usability",
+  "value": 5,
+  "reason": "T-PHONE-NAV fails twice (CMP-011 menu off-screen, CMP-164 wrapped tabs), and T-INTERRUPT (CMP-014) and T-OVERLAY-CHECK (CMP-013) each find a gap, against a passing T-WHERE-AM-I."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-011",
+   "tier": "Reflex",
+   "where": "div.navbar_container: logo, search box and div.navbar10_menu-button, 375px, fold-375.png and tiles/375-00.png",
+   "evidence": "At 375 the header shows the logo and a 233 px search box ('Search by c...'). The 40x48 menu button sits past the right edge: the sweep's overflow check reports 'page is 383px wide at a 375px viewport', with the menu icon as the culprit. No menu control shows on the phone's first screen.",
+   "before": "The phone header pushes its menu button off the screen.",
+   "after": "Keep a named 'Menu' button inside the 375 header: shrink the search to an icon that opens the search dialog, and make the menu button a <button>.",
+   "why": "Pricing, Find inspiration, Log In and Sign Up cannot be reached from the phone header without scrolling sideways.",
+   "test": "T-PHONE-NAV",
+   "source": "components",
+   "title": "The phone gets the whole navigation",
+   "root": "the site's Webflow navbar"
+  },
+  {
+   "rule": "CMP-164",
+   "tier": "Reflex",
+   "where": "view tabs: Desktop, Code, Text, Info, Editable templates NEW!, 375px, tiles/375-00.png",
+   "evidence": "At 375 the five view tabs wrap to two rows: 'Editable templates' and its NEW! badge drop under 'Desktop', 'Code', 'Text' and 'Info'.",
+   "before": "The view tab row breaks onto two lines on a phone.",
+   "after": "Let the tab row scroll sideways with the selected tab in view, or shorten 'Editable templates' to 'Templates'.",
+   "why": "A wrapped tab row reads as two groups and pushes the email further down.",
+   "test": "T-PHONE-NAV",
+   "source": "components",
+   "title": "Tabs for 2-9 sections with short names, single line, never stacked rows"
+  },
+  {
+   "rule": "CMP-014",
+   "tier": "Reflex",
+   "where": "fixed 'Legal and Privacy info' pill (div.hdAwi > button), 1440px and 375px, tiles/1440-00.png and tiles/375-00.png",
+   "evidence": "A fixed white pill reading 'Legal and Privacy info' stays at the bottom right on every screen. At 375 it covers the email's bottom lines (tiles/375-00.png y 775 to 812).",
+   "before": "A legal pill floats over the email being shown.",
+   "after": "Put the legal and privacy links in the page footer and remove the fixed pill.",
+   "why": "The pill hides part of the email the visitor came to see, on every screen of the page.",
+   "test": "T-INTERRUPT",
+   "source": "components",
+   "title": "Nothing interrupts the visitor uninvited"
+  },
+  {
+   "rule": "CMP-013",
+   "tier": "Reflex",
+   "where": "nav details > summary 'Find inspiration' mega-menu, 1440px, motion/t3-normal-600.png",
+   "evidence": "The overlay row for t3 records a 1100x682 panel ('Browse by type', 'Popular right now', ...) and closed_after_escape: false after Escape and a pointer move away.",
+   "before": "The 'Find inspiration' menu stays open after Escape.",
+   "after": "Close the menu on Escape and when the pointer leaves, and return focus to 'Find inspiration'.",
+   "why": "A 1100 px menu that ignores Escape covers most of the page until the visitor clicks elsewhere.",
+   "test": "T-OVERLAY-CHECK",
+   "source": "components",
+   "title": "Overlays are the last answer and behave as overlays"
+  },
+  {
+   "rule": "CMP-005",
+   "tier": "Finish",
+   "where": "email exhibit: buttons 'Play Now' and 'Set Up Your Family', 1440px, tiles/1440-01.png and tiles/1440-04.png",
+   "evidence": "The email's two red filled buttons differ: 'Play Now' is about 136 px wide with smaller type, and 'Set Up Your Family' is about 211 px wide with larger type, both about 42 px tall.",
+   "before": "The email's two calls to action use two type sizes.",
+   "after": "Set both buttons in one type size and one padding.",
+   "why": "Two sizes of the same button make the first call to action look less important than the second.",
+   "test": "T-ONE-FAMILY",
+   "source": "components",
+   "title": "Controls belong to one family"
+  }
+ ],
+ "strengths": [
+  "The breadcrumb 'Home / Welcome to Apple Arcade' marks the current email (a link to this page), and the 'Desktop' view tab carries a filled selected look (tiles/1440-00.png).",
+  "The search opens a dialog that closes on Escape (overlay t0, closed_after_escape: true).",
+  "The sidebar has one filled action, 'Sign up to Really Good Emails for free', under the line 'Save this email to start commenting'.",
+  "The stylesheet declares hover 198, focus-visible 25, active 10, disabled 171, invalid 4 and current 23 rules.",
+  "The email gives each section one filled action ('Play Now', then 'Set Up Your Family' further down), so no screen has two competing primaries."
+ ],
+ "not_investigated": [
+  "the email itself is the exhibit this page shows. Its links and buttons are judged only as an email (T-PRIMARY-COUNT, T-ONE-FAMILY), not as page controls",
+  "the 'Code' tab navigated the page when clicked: not verified",
+  "the sidebar advertisement is lens-integrity's",
+  "the 'Toggle legal and privacy information' disclosure stays open after Escape, which is normal for a disclosure",
+  "the sweep's phone_parity hit ('Ctrl K' and 40 words hidden at 375) is the keyboard hint and menu text, which the phone rightly hides",
+  "T-TABLE-READ, T-EMPTY-FIRST, T-FIRST-RUN: no tables, data regions or first-run path",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

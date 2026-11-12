@@ -1,0 +1,639 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L16",
+ "target": "https://ui-ux-pro-max-after.theroost.dev",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 0,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 10,
+  "variants": [
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(30, 41, 59)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 4,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "30 days",
+     "Quarter",
+     "People",
+     "Money"
+    ],
+    "first_screen": 4,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(37, 99, 235)",
+    "border": "rgb(226, 232, 240)",
+    "radius_px": 4,
+    "weight": "600",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "7 days",
+     "All"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(37, 99, 235)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Skip to content"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body > a.skip-link:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(71, 85, 105)",
+    "border": "rgba(0, 0, 0, 0)",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Remove filter Owner: Ada"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "main > section.toolbar.reveal:nth-of-type(2) > div.chip-list:nth-of-type(3) > span.chip > button",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(30, 41, 59)",
+    "border": "rgb(226, 232, 240)",
+    "radius_px": 4,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Copy"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.reveal:nth-of-type(4) > ul.feed > li.type-user:nth-of-type(1) > span.actions:nth-of-type(2) > button.btn-secondary",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(255, 255, 255, 0.92)",
+    "strong_fill": false,
+    "text_color": "rgb(100, 116, 139)",
+    "border": "rgba(15, 23, 42, 0.08)",
+    "radius_px": 6,
+    "weight": "400",
+    "heights_px": [
+     28
+    ],
+    "labels": [
+     "Powered by Vibe Rooster"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body > a.vr-badge:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 141x28px at 375px (min 44px)"
+    ]
+   }
+  ],
+  "variant_count": 6,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 97,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 12,
+   "hover_media": 0,
+   "focus_visible": 1,
+   "focus": 1,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Skip to content",
+   "ui-ux-pro-max"
+  ],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 3,
+  "tried": 3,
+  "by_kind": {
+   "disclosure": 1,
+   "button": 2
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "disclosure",
+    "name": "How this note was chosen",
+    "selector": "#main > section:nth-of-type(4) > details > summary",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "7 days",
+    "selector": "#main > section:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Copy",
+    "selector": "#main > section:nth-of-type(4) > ul > li:nth-of-type(1) > span:nth-of-type(2) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [
+   "1 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+   "y": 215,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 3,
+   "size": [
+    365,
+    89
+   ],
+   "section": "Northline weekly ops",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [
+  {
+   "where": "main > section.reveal:nth-of-type(3) > div.table-wrap > table",
+   "y": 437,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "rows": 4,
+   "header_cells": [
+    "Amount",
+    "Tag",
+    "Change",
+    "Status",
+    "Account"
+   ],
+   "numeric_cells": 3,
+   "numeric_align": {
+    "right": 3
+   },
+   "width_px": 1118,
+   "section": "Urgent 3 threads",
+   "head_wraps": 5,
+   "at_375": {
+    "width_px": 576,
+    "wider_than_screen": true,
+    "visible": false
+   }
+  }
+ ],
+ "status_regions": [
+  {
+   "where": "#i-alert",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "i-alert",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.status.status-error:nth-of-type(1)",
+   "y": 495,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status status-error",
+   "text": "Blocked",
+   "fixed": false
+  },
+  {
+   "where": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(2) > span.status.status-pending:nth-of-type(1)",
+   "y": 556,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status status-pending",
+   "text": "Waiting",
+   "fixed": false
+  },
+  {
+   "where": "table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > span.status.status-success:nth-of-type(1)",
+   "y": 618,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "cls": "status status-success",
+   "text": "Clear",
+   "fixed": false
+  },
+  {
+   "where": "#copy-status",
+   "y": 1133,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "cls": "copy-status",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "section.reveal:nth-of-type(4) > ul.feed > li.type-draft:nth-of-type(2) > div.body > div.draft",
+    "y": 842,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "Thanks for the update. Can you send the revised PO by Thursday?",
+    "match": "Thanks"
+   },
+   {
+    "where": "main > section.reveal:nth-of-type(4) > ul.feed > li.type-done:nth-of-type(3) > span.source:nth-of-type(1)",
+    "y": 934,
+    "screen": 2,
+    "tile": "tiles/1440-01.png",
+    "first_screen": false,
+    "text": "Done",
+    "match": "Done"
+   },
+   {
+    "where": "main > section.reveal:nth-of-type(4) > ul.feed > li.type-done:nth-of-type(3) > div.body",
+    "y": 920,
+    "screen": 2,
+    "tile": "tiles/1440-01.png",
+    "first_screen": false,
+    "text": "Intro sent to the Boston plant manager.",
+    "match": "sent"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 3,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [
+   {
+    "class": "empty",
+    "elements": 2,
+    "example": "#h-empty"
+   },
+   {
+    "class": "error",
+    "elements": 1,
+    "example": "> tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.status.status-error:nth-of-type(1)"
+   },
+   {
+    "class": "success",
+    "elements": 1,
+    "example": " tbody > tr:nth-of-type(3) > td:nth-of-type(2) > span.status.status-success:nth-of-type(1)"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Remove filter Owner: Ada",
+    "kind": "action-button",
+    "selector": "#main > section:nth-of-type(2) > div:nth-of-type(3) > span > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": false,
+       "how": [],
+       "pending": false
+      },
+      "2s": {
+       "responded": false,
+       "how": [],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 20,
+  "first": "a \"Skip to content\" href=#main",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1047,
+   "totalChars": 1161
+  },
+  "reduced_motion": {
+   "visibleChars": 1161,
+   "totalChars": 1161
+  },
+  "observer_never_fires": {
+   "visibleChars": 1047,
+   "totalChars": 1161
+  },
+  "scripts_off": {
+   "visibleChars": 1161,
+   "totalChars": 1161
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "a \"Text the plant\"",
+     "evidence": "focus indicator visible but faint: 2.30:1 against the unfocused state (target 3.0:1, WCAG 2.4.13)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 1,
+   "hits": [
+    {
+     "where": "html > body > a.vr-badge:nth-of-type(2)  \"Powered by Vibe Rooster\"",
+     "evidence": "touch target 141x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "#h-urgent  \"Urgent\"",
+     "evidence": "124 words shown at 1440px are hidden at 375px (44 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 10,
+  "button_variants": 6,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 0,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 3,
+  "card_groups": 1,
+  "tables": 1,
+  "status_regions": 5,
+  "async_actions": 1
+ }
+}

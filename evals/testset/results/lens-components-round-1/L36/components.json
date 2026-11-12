@@ -1,0 +1,54 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Carbon's UI shell ships intact: a fixed header with search and a named 'Open menu' button at 375, a side nav whose disclosures open and close on Escape, and text-and-arrow tiles as the only actions; the one doubtful component is a fixed back-to-top button.",
+ "score": {
+  "dimension": "Usability",
+  "value": 8,
+  "reason": "T-PHONE-NAV, T-OVERLAY-CHECK and T-PRIMARY-COUNT pass on the Carbon shell. T-INTERRUPT finds one fixed back-to-top button (CMP-183), and the search and site switcher could not be checked."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-183",
+   "tier": "Reflex",
+   "where": "fixed 'Back to top' button, bottom right, 1440px, tiles/1440-04.png and tiles/1440-05.png",
+   "evidence": "A 48 px dark round 'Back to top' button stays fixed at the bottom right once the page scrolls. It overlaps the content area on every later tile. The sweep's focus_ring check reports 'Back to top' as partly hidden by a fixed element.",
+   "before": "A floating back-to-top button rides over the content on every screen after the first.",
+   "after": "Drop the floating button: the fixed header and side nav already give a way back. Or place a 'Back to top' link at the end of the page.",
+   "why": "A fixed control over the content hides what sits under it.",
+   "test": "T-INTERRUPT",
+   "source": "components",
+   "title": "No popups, newsletter modals, chat bubbles, help pills, back-to-top squares"
+  }
+ ],
+ "strengths": [
+  "The side nav groups 'Getting started', 'Building blocks', 'Building experiences' and 'Support' as disclosures that open and close on Escape (overlays t1 and t2, closed_after_escape: true).",
+  "At 375 the side nav folds behind a named 'Open menu' button (48x48), and the header keeps search, Login and the site switcher (tiles/375-00.png).",
+  "The home page has no filled buttons: the actions are text tiles with an arrow ('Start designing', 'Start developing'), one family throughout (tiles/1440-00.png)."
+ ],
+ "not_investigated": [
+  "'Switch sites' (the grid icon) and 'Cookie Preferences' opened nothing when clicked, and the footer counts one dead link. The capture blocked IBM and Carbon scripts (a webpack chunk, ibm-common.js, bluemix-analytics), so these are capture context",
+  "the header search navigated away when clicked: not verified",
+  "declared_states reads only 104 rules because 14 sheets are cross-origin and unreadable, so the state matrix is not verified from CSS",
+  "82% of text is hidden after load and scroll (sweep hidden_content): the reveal motion is lens-motion's",
+  "T-WHERE-AM-I: this is the home page, so the side nav rightly marks no current item",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

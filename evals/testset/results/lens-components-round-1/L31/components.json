@@ -1,0 +1,66 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The header marks 'Entry Showcase' as the current section and the phone footer lists every destination, but the header search is an unlabelled grey box and the two sidebar buttons do not share a corner radius.",
+ "score": {
+  "dimension": "Usability",
+  "value": 7,
+  "reason": "T-WHERE-AM-I and T-PHONE-NAV pass. T-FIELD-READ fails on the header search (CMP-006) and T-ONE-FAMILY on the sidebar buttons (CMP-005)."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-INTERRUPT",
+  "T-EMPTY-FIRST"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-006",
+   "tier": "Reflex",
+   "where": "ul.toolbar > li.search > form (#search_q), 1440px, tiles/1440-00.png top right",
+   "evidence": "The search field is a grey 197x40 box with only a magnifier icon. It has no visible label and no placeholder (fields row: placeholder null). The sweep's form_labels check reports 'input[type=search] has no label' (A11-010).",
+   "before": "An empty grey box with a magnifier stands for site search.",
+   "after": "Put a placeholder that names the scope, 'Search projects', in the box and give the field a label (visually hidden is enough next to the icon).",
+   "why": "Visitors cannot tell whether the box searches projects, people or the site before they type.",
+   "test": "T-FIELD-READ",
+   "source": "components",
+   "title": "Every field shows its label and what it needs"
+  },
+  {
+   "rule": "CMP-005",
+   "tier": "Finish",
+   "where": "div.page-sidebar: a.full.button 'VOTE' and a.left.flat-top 'VIEW ALL PROJECTS', 1440px, tiles/1440-00.png and tiles/1440-01.png",
+   "evidence": "The table's button variants give both dark filled buttons a 43 px height and weight 600, but 'VOTE' has a 3 px radius and 'VIEW ALL PROJECTS' a 0 px radius.",
+   "before": "The two sidebar buttons share fill and height but not corners.",
+   "after": "Use one radius for both sidebar buttons.",
+   "why": "Two near-identical buttons with different corners look like two kits.",
+   "test": "T-ONE-FAMILY",
+   "source": "components",
+   "title": "Controls belong to one family"
+  }
+ ],
+ "strengths": [
+  "The header marks 'Entry Showcase' as current, in purple with an underline (class and look, tiles/1440-00.png).",
+  "The sidebar has one filled action per panel: 'VOTE' under 'You be the judge', with the vote rule written above it.",
+  "At 375 a 'MENU' toggle sits in the header, and the footer lists every destination, including Register, Sign In and Search (tiles/375-03.png).",
+  "The stylesheet declares hover (129), active (33), disabled (22), invalid (6) and current (33) rules."
+ ],
+ "not_investigated": [
+  "the empty white card under the details card (tiles/1440-01.png y 225 to 305, tiles/375-00.png bottom) is probably the share or comment widget. The capture blocked its script (addthis_widget.js in manifest network), so it is capture context, not an empty state",
+  "what 'VOTE' does and whether it shows a result: it is a link and was not followed",
+  "T-OVERLAY-CHECK: the capture opened no overlay on this page",
+  "T-TABLE-READ: the credits block is a two-column definition list and reads correctly",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

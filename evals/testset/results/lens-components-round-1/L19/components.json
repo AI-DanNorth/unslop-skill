@@ -1,0 +1,44 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:45:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The header marks 'Home' as the current page with a dot and weight, the phone header swaps the six links for an 'Open navigation' button, the hero's /polish, /distill and /clarify tabs mark their selection, and the install steps are a numbered disclosure list with a copy button and a 'Next' link per step.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-WHERE-AM-I, T-PHONE-NAV, T-PRIMARY-COUNT and T-INTERRUPT pass, and the stylesheet declares every state family; T-ONE-FAMILY finds near-miss radii in the page's own controls, and T-OVERLAY-CHECK and T-ERROR-PATH could not run because the capture's clicks navigated the page (CMP-005)."
+  },
+  "visitor_mode": "Persuade (inferred: a landing page for an agent design skill with one primary action, 'Install Impeccable'; the page also holds labelled exhibits such as a before-and-after card, a hotel demo site and a command console)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-FIRST-RUN"],
+  "findings": [
+    {
+      "rule": "CMP-005",
+      "title": "Controls belong to one family",
+      "tier": "Finish",
+      "where": "page chrome buttons outside the exhibits, 1440, tiles/1440-00.png, 1440-03.png, 1440-07.png",
+      "evidence": "The components table lists 26 button variants. Among the page's own controls (not the hotel demo or the console exhibit), 'Install Impeccable' and 'Follow on X' use a 3 px radius at 44 px, the intent buttons ('Make text easier to read', 'Simplify a busy page') a 5 px radius at 40 px, the command keys ('init', 'polish') a 6 px radius at 44 px, and the 'TRY NEXT' chips ('layout', 'polish') a 4 px radius at 22 px.",
+      "before": "Four radii (3, 4, 5 and 6 px) and heights from 22 to 44 px on controls of the same flat style.",
+      "after": "One radius for rectangular controls (4 px) and two heights (32 px for chips and keys, 44 px for actions).",
+      "why": "Radii that differ by a pixel or two read as drift rather than as a choice.",
+      "test": "T-ONE-FAMILY"
+    }
+  ],
+  "strengths": [
+    "The header marks 'Home' as the current page with a teal dot and a heavier weight (tiles/1440-00.png y 38).",
+    "At 375 the six header links move behind a named 'Open navigation' button (36 by 36 px) in a sticky header.",
+    "One filled primary on the first screen, 'Install Impeccable', with 'How it works' as a text link; the label matches the install section's heading.",
+    "The install section is a numbered step list ('1 Install Impeccable', '2 Initialize & enable hooks') with install-method tabs (CLI selected), a copy button on the command and a 'Next: set up your project' link.",
+    "The stylesheet declares hover (172), focus-visible (49), active (11), disabled (9), selected (54), expanded (28) and busy (20) rules, and the focus walk starts on 'Skip to content'.",
+    "The DOM holds designed states for its demo components: an empty state ('No teammates yet'), an error with a recovery line ('We couldn't send that invite. Check the address and try again'), 'Step 1 of 3' and 'Sent'."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "T-OVERLAY-CHECK and T-ERROR-PATH: five of six overlay triggers and all four async actions were not verified because the click navigated the page; only the /distill tab opened (a tab staying selected after Escape is normal).",
+    "The hotel demo ('Welcome to Our Hotel', 'Reserve', 'Book Now'), the before-and-after card and the command console are labelled exhibits; their controls are judged as illustrations (conflict C48), not as the page's interface.",
+    "What the phone menu holds: the capture opens triggers at 1440 only.",
+    "T-FIELD-READ skipped: the only field is a hidden range input in the hero exhibit. T-TABLE-READ skipped: no table.",
+    "Hidden text when IntersectionObserver never fires or scripts are off (sweep hidden_content, ROB-001) is robustness's.",
+    "Keyboard operation of the console sliders and the before-and-after handle (lens-a11y)."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:30:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "Add to cart answers with a cart badge and a 'XONOTIC added to cart' notice with View Cart, and Subscribe opens a clear sign-in dialog, but at 1440 the game carousel is drawn over the PLAY and ADD TO CART buttons, the 'Enter Fullscreen' pill covers 'Install App', and the first screen carries five filled actions.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-PRIMARY-COUNT fails (five filled actions, two of them covered by the carousel, CMP-004), T-INTERRUPT and T-ONE-FAMILY fail on overlapping controls (CMP-156, CMP-014), and T-PHONE-NAV fails on an icon-only 375 header (CMP-011); T-ERROR-PATH could not run."
+  },
+  "visitor_mode": "Operate with an Experience layer: a game-portal page where a visitor plays, buys or follows one game and browses others. No 00-contract.md; inferred from 'PLAY', 'ADD TO CART — $0.49', the cart and the game carousel with keyboard hints.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [
+    {
+      "rule": "CMP-004",
+      "title": "One primary action per view",
+      "tier": "Reflex",
+      "where": "game hero, PLAY and ADD TO CART, 1440, tiles/1440-00.png",
+      "evidence": "filled_by_screen lists five strongly filled labels on the first screen: 'Join our Discord', 'PLAY', 'ADD TO CART — $0.49', 'WISHLIST' and 'Friends'. At 1440 the carousel of game covers sits on top of the purple PLAY button and the ADD TO CART button, so only the left edge of PLAY ('P') and a sliver of 'ADD TO CART — $0' show between the cards.",
+      "before": "Five filled actions compete, and the two that matter are hidden under the carousel.",
+      "after": "PLAY as the one filled primary, fully visible above the carousel, with ADD TO CART as an outlined secondary; Discord and Friends moved out of the hero's weight.",
+      "why": "A desktop visitor cannot see or click the main action on the game's own page.",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-156",
+      "title": "Fixed/sticky nav never obscures content or the focused control",
+      "tier": "Reflex",
+      "where": "top bar 'Enter Fullscreen' pill and 'Install App', hero 'FEATURED GAMES' label and 'Follow game', 1440, tiles/1440-00.png",
+      "evidence": "The dark 'Enter Fullscreen' pill sits over the top bar's 'Install App' button, so only 'Install App' with its top half cut shows. The 'FEATURED GAMES' section label overlaps the 'Follow game' button, and the 'NEW GAME' badges sit on top of the Like row.",
+      "before": "Controls drawn on top of other controls in the top bar and the hero.",
+      "after": "The fullscreen control inside the top bar's row (or in the game frame), and the carousel and its label placed below the action row with their own space.",
+      "why": "Overlapping layers make buttons unreadable and send clicks to the wrong control.",
+      "root": "absolutely positioned hero layers",
+      "test": "T-ONE-FAMILY"
+    },
+    {
+      "rule": "CMP-011",
+      "title": "The phone gets the whole navigation",
+      "tier": "Reflex",
+      "where": "phone header, 375, fold-375.png",
+      "evidence": "phone_nav records three toggles at 375 labelled '(icon, no text)' (36x36, 36x36, 36x32) and no text link; the header is a row of six icons (download, search, Discord, chat, filter) with no 'Sign In' and no cart. The targets sweep flags them at 36px.",
+      "before": "Six unlabelled icons and no sign-in or cart at 375.",
+      "after": "A 375 header with Search, Cart and a 'Menu' button with a visible word that holds Install App, Discord, Forums, Feedback and Sign In.",
+      "why": "A phone visitor has to guess what each icon does, and cannot reach the cart or sign in from the header.",
+      "test": "T-PHONE-NAV"
+    },
+    {
+      "rule": "CMP-006",
+      "title": "Every field shows its label and what it needs",
+      "tier": "Reflex",
+      "where": "top-bar search field, 1440, tiles/1440-00.png",
+      "evidence": "The fields row lists the 'Search games...' input with placeholder_only true and no visible label; the form_labels sweep reports it has no programmatic label either (A11-010).",
+      "before": "A search box named only by its placeholder.",
+      "after": "A search field with a visible magnifier button named 'Search' and a label 'Search games' tied to the input.",
+      "why": "Once the visitor types, nothing on screen names the box, and assistive tech gets no name at all.",
+      "test": "T-FIELD-READ"
+    },
+    {
+      "rule": "CMP-014",
+      "title": "Nothing interrupts the visitor uninvited",
+      "tier": "Reflex",
+      "where": "page entry, all widths, manifest.json prep",
+      "evidence": "Capture prep had to click the text 'click anywhere to enter fullscreen' at every width before the page could be read, plus a cookie choice; an 'Enter Fullscreen' pill and a 'Friends' panel stay fixed on screen afterwards, and an ambient music control ('Mute ambient music') sits in the top bar.",
+      "before": "The page asks for a fullscreen click before showing the game page, then keeps fixed panels over it.",
+      "after": "The game page shown at once, with fullscreen offered on the PLAY step and the Friends panel opened only on request.",
+      "why": "A visitor who came to read about or buy the game has to dismiss a gate first.",
+      "test": "T-INTERRUPT"
+    }
+  ],
+  "strengths": [
+    "ADD TO CART answers within 0.5s: the cart icon gains a '1' badge and a notice 'XONOTIC added to cart — Open your cart to checkout' offers View Cart (async/a0-slow-final.png).",
+    "Subscribe for a signed-out visitor opens one sign-in dialog with a close button, three provider buttons and the terms line (async/a3-slow-final.png).",
+    "The DOM holds an empty-cart state ('YOUR CART IS EMPTY'), and the carousel shows keyboard and gamepad hints (Select, Row, Launch).",
+    "The catalog filter disclosure opens in place and closed after Escape."
+  ],
+  "not_investigated": [
+    "Failure states for Add to cart, Send Feedback and Subscribe: the slow runs made no same-origin request, so the fail runs were skipped.",
+    "'Join our Discord' showed no change at 0.5s or 2s; it may open an external site, which the capture does not follow.",
+    "The cart, checkout and the PLAY launch: beyond the captured page.",
+    "Motion for seven triggers: the motion capture was skipped (not verified).",
+    "What the phone icons open: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement in the feedback form: the capture never types invalid input.",
+    "Focus moving into the sign-in dialog and back; keyboard operation of the carousel: lens-a11y.",
+    "85 requests were blocked during capture; missing images or fonts may change the layering seen here, and the tile set is a single screen per width."
+  ]
+}

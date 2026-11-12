@@ -1,0 +1,88 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T10:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The header, phone menu button and comparison table come from a finished kit with declared hover, focus-visible and disabled rules, but the first screen carries two differently filled buttons for one action and the tool directory gives every card its own full-width filled 'View details' button.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-PRIMARY-COUNT fails on the hero and the tool directory (CMP-004), T-TABLE-READ finds left-aligned prices, and T-STATE-MATRIX, T-WHERE-AM-I and T-PHONE-NAV pass as far as the capture reaches; the stack-builder flow was not captured."
+  },
+  "visitor_mode": "Persuade, with an Operate tail (a goal picker that starts a three-question stack builder). No 00-contract.md: inferred from the hero 'Tell us the goal. We'll build the stack.' and the goal-card grid.",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST", "T-TABLE-READ"],
+  "findings": [
+    {
+      "rule": "CMP-004",
+      "title": "One primary action per view",
+      "tier": "Reflex",
+      "where": "header 'Build my stack' and hero 'Find my stack →', 1440, tiles/1440-00.png",
+      "evidence": "The components table lists two filled variants on the first screen: 'Build my stack' in oklch(0.198 0.021 268) near-black and 'Find my stack →' in oklch(0.549 0.238 264.6) blue, both pill-shaped (radius 33554400). The nav also carries a 'Find My Stack' text link. Three labels point the visitor to the same builder.",
+      "before": "Two filled buttons in two colours, 'Build my stack' and 'Find my stack', plus a nav link 'Find My Stack', all for one action.",
+      "after": "One label for the builder, word for word, in the header and hero (CMP-121); the header copy as a quieter outlined or text button so the blue hero button is the one filled primary.",
+      "why": "A visitor sees two loud buttons with different names and cannot tell they are the same action.",
+      "root": "button variant used site-wide for the header CTA",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-114",
+      "title": "One filled primary per view (a dialog counts as its own page)",
+      "tier": "Reflex",
+      "where": "AI Tools Directory cards, 1440, tiles/1440-01.png and tiles/1440-02.png",
+      "evidence": "Six tool cards each end in a full-width near-black filled 'View details' button (the 8-count dark variant, heights 36px). On tile 1440-02 six filled buttons sit on one screen, each as heavy as the header CTA.",
+      "before": "Every directory card carries a full-width filled 'View details' button.",
+      "after": "The whole card as the link with the tool name as its heading, or a text link 'View details' per card, so the filled style stays for the builder.",
+      "why": "Six identical filled buttons on one screen erase the difference between the page's main action and a routine detail link.",
+      "root": "tool card component",
+      "test": "T-PRIMARY-COUNT"
+    },
+    {
+      "rule": "CMP-185",
+      "title": "Text left, numbers right with tabular figures, actions right",
+      "tier": "Reflex",
+      "where": "'Compare tools' table, PRICE column, 1440, tiles/1440-02.png",
+      "evidence": "The table row reads five columns (TOOL, CATEGORY, PRICE, LEVEL, BEST FOR) with prices '$20/mo', '$15/mo', '$5/mo' set left-aligned under a left-aligned head. The table's numeric alignment record is empty.",
+      "before": "Prices left-aligned in a proportional column.",
+      "after": "PRICE right-aligned with tabular figures, its head right-aligned to match.",
+      "why": "Visitors compare prices down the column; left-aligned figures of different widths do not line up.",
+      "test": "T-TABLE-READ"
+    },
+    {
+      "rule": "CMP-183",
+      "title": "No popups, newsletter modals, chat bubbles, help pills",
+      "tier": "Reflex",
+      "where": "fixed 'Edit with Lovable' pill, bottom right, 1440 and 375, fold-1440.png and fold-375.png",
+      "evidence": "A fixed dark pill 'Edit with Lovable' with a close button sits over the bottom-right corner at both widths; at 375 it covers the start of the next section. The capture clicked its 'Dismiss' button (overlay trigger t2) and recorded it as a complementary region 'Edit with Lovable'.",
+      "before": "A builder-platform badge floats over content on every screen.",
+      "after": "Remove the platform badge from the published site.",
+      "why": "The pill covers content the visitor did not ask to be covered and advertises the tool, not the product.",
+      "test": "T-INTERRUPT"
+    },
+    {
+      "rule": "CMP-188",
+      "title": "On a phone keep the naming and action columns in view",
+      "tier": "Reflex",
+      "where": "'Compare tools' table, 375",
+      "evidence": "The table row records width_px 560 and wider_than_screen true at 375 inside an overflow-x-auto wrapper, so the BEST FOR column sits off-screen behind a horizontal scroll.",
+      "before": "A 560px table scrolls sideways inside a 375 screen.",
+      "after": "Each tool as a labelled block at 375 (name, then price, level and best-for as label and value lines).",
+      "why": "A phone visitor has to scroll sideways to read the column that says what each tool is for.",
+      "test": "T-TABLE-READ"
+    }
+  ],
+  "strengths": [
+    "The stylesheet declares hover (41 rules), focus-visible (11), disabled (14) and expanded or open (23) states, and the focus_ring sweep found no invisible focus stops, only one stop covered by the sticky header.",
+    "The 375 header keeps the logo, the USD/INR switch and a named 'Open menu' button (36x36), so the top destinations stay one tap away.",
+    "The USD/INR switch marks the selected currency with a filled pill (tiles/1440-00.png), a clear selected state.",
+    "The ten goal cards are each one whole-card link with a category label, a head and one line, with no extra button inside."
+  ],
+  "not_investigated": [
+    "The stack-builder flow ('Find my stack') beyond the home page: the async capture found no primary action, so its loading, failure and step states were not seen.",
+    "What the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only.",
+    "Inline validation and error placement: the page has no fields.",
+    "Focus moving into an overlay and back, scroll lock and backdrop click: nothing that opened was a dialog.",
+    "Keyboard operation of custom widgets: lens-a11y.",
+    "T-FIELD-READ, T-ERROR-PATH and T-FIRST-RUN: no fields, no failure run and no onboarding on the captured page.",
+    "1 cross-origin stylesheet could not be read; declared-state counts cover the 119 readable rules only."
+  ]
+}

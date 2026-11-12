@@ -1,0 +1,994 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L17",
+ "target": "https://uupm.cc",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 2,
+  "nav": 1,
+  "footer": 1,
+  "header": 0
+ },
+ "buttons": {
+  "count": 33,
+  "variants": [
+   {
+    "count": 22,
+    "fill": "rgb(11, 11, 16)",
+    "strong_fill": true,
+    "text_color": "rgb(148, 163, 184)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "SaaS",
+     "Education",
+     "Pet Services",
+     "AI/Chatbot",
+     "E-commerce",
+     "Fintech/Crypto"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(2)",
+    "tile": "tiles/1440-05.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 55x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 89x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 104x32px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 95x32px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgba(255, 255, 255, 0.05)",
+    "strong_fill": false,
+    "text_color": "rgb(248, 250, 252)",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "radius_px": 16,
+    "weight": "500",
+    "heights_px": [
+     62
+    ],
+    "labels": [
+     "View Demos",
+     "Learn More"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main > section.relative.min-h-screen:nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.flex.flex-row:nth-of-type(3) > a.btn-secondary.text-sm:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 123x42px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "500",
+    "heights_px": [
+     60
+    ],
+    "labels": [
+     "How it Works",
+     "Get on GitHub"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "main > section.relative.min-h-screen:nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.flex.flex-row:nth-of-type(3) > a.btn-primary.text-sm:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 126x40px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "rgb(37, 99, 235)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "All",
+     "All Modes"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(1)",
+    "tile": "tiles/1440-05.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 40x32px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(15, 23, 42)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "400",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Toggle theme"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > button.h-9.w-9",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "oklab(0.277998 -0.00751148 -0.0321264 / 0.8)",
+    "strong_fill": false,
+    "text_color": "rgb(15, 23, 42)",
+    "border": "lab(27.1134 -0.956401 -12.3224)",
+    "radius_px": 33554400,
+    "weight": "400",
+    "heights_px": [
+     34
+    ],
+    "labels": [
+     "147.3k"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 107x34px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Premium"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 83x32px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 1,
+    "fill": "rgb(37, 99, 235)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Load More"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.section-padding.bg-light-card:nth-of-type(5) > div.max-w-7xl.mx-auto > div.mt-10.text-center:nth-of-type(4) > button.inline-flex.items-center",
+    "tile": "tiles/1440-06.png"
+   },
+   {
+    "count": 1,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     52
+    ],
+    "labels": [
+     "Explore Build with Us"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.section-padding.relative:nth-of-type(7) > div.relative.max-w-7xl:nth-of-type(3) > div.glass-card.rounded-2xl:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > a.btn-primary.text-sm",
+    "tile": "tiles/1440-08.png"
+   }
+  ],
+  "variant_count": 9,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {
+   "6": [
+    "All",
+    "SaaS",
+    "Education",
+    "Pet Services",
+    "AI/Chatbot",
+    "E-commerce"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 115,
+  "unreadable_sheets": 0,
+  "rules_with": {
+   "hover": 170,
+   "hover_media": 3,
+   "focus_visible": 4,
+   "focus": 20,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 8,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 2,
+   "busy": 0,
+   "placeholder": 16,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html.dark > body.dm_sans_fb5c29f7-module__Edek3G__variable.space_grotesk_15ec9c7f-module__6g4iua__variable > div.flex.min-h-screen:nth-of-type(2) > nav.fixed.top-4",
+   "y": 16,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    144,
+    16,
+    1152,
+    66
+   ],
+   "items": 8,
+   "labels": [
+    "UI UX Pro Max",
+    "Toggle theme",
+    "147.3k",
+    "Premium",
+    "Features",
+    "Stacks",
+    "Styles"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 28x28px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 107x34px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 83x32px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Toggle theme",
+    "where": " > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > button.h-9.w-9",
+    "box": [
+     36,
+     36
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "147.3k",
+   "Premium"
+  ],
+  "header_items_1440": 8,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 4,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 6,
+  "tried": 6,
+  "by_kind": {
+   "button": 6
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Toggle theme",
+    "selector": "body > div:nth-of-type(2) > nav > div > div > div:nth-of-type(2) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/duration_live: transition runs about 1435 ms (JavaScript-driven, measured in real time at ~19.2 ms a frame; limit for a butto"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "Load More",
+    "selector": "#styles > div > div:nth-of-type(4) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "All Modes",
+    "selector": "#styles > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "img: ",
+     "div: ",
+     "div: View Demo Show Prompt"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     429.1,
+     241.4
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "skipped",
+    "sweep": [
+     "motion/duration: transition runs 370 ms (measured from frames; limit for a button 300 ms)"
+    ]
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "Light",
+    "selector": "#styles > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "SaaS",
+    "selector": "#styles > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "All",
+    "selector": "#styles > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "skipped"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "main.flex-1 > div.min-h-screen.bg-light-bg > main > section.relative.min-h-screen:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 3,
+   "size": [
+    1440,
+    900
+   ],
+   "section": null,
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "main > section.relative.min-h-screen:nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.grid.grid-cols-3:nth-of-type(4) > div.glass-card-hover.p-2:nth-of-type(1)",
+   "y": 677,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 6,
+   "size": [
+    165,
+    138
+   ],
+   "section": "UI UX Pro Max Design Intelligence",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section.section-padding.bg-light-bg:nth-of-type(2) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-2:nth-of-type(2) > div.glass-card-hover.p-6:nth-of-type(1)",
+   "y": 1180,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    411,
+    298
+   ],
+   "section": "Everything You Need for Beautiful UI",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 6
+  },
+  {
+   "where": "section.section-padding.bg-light-card:nth-of-type(3) > div.max-w-7xl.mx-auto > div.grid.grid-cols-2:nth-of-type(2) > div.glass-card-hover.p-6:nth-of-type(1)",
+   "y": 2150,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "count": 8,
+   "size": [
+    302,
+    162
+   ],
+   "section": "8 Tech Stacks Supported",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 8
+  },
+  {
+   "where": "section.section-padding.bg-light-bg:nth-of-type(4) > div.max-w-3xl.mx-auto > div.space-y-4:nth-of-type(2) > div.glass-card.p-5:nth-of-type(1)",
+   "y": 2822,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    768,
+    146
+   ],
+   "section": "How It Works",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 6,
+   "sweep": [
+    "repeated_label (CPY-006, Reflex): \"class\" repeated 3 times in one container"
+   ]
+  },
+  {
+   "where": "section.section-padding.bg-light-card:nth-of-type(5) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-2:nth-of-type(3) > div.glass-card-hover.overflow-hidden:nth-of-type(1)",
+   "y": 5093,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    411,
+    384
+   ],
+   "section": "39 Website Demos Gallery",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 6
+  },
+  {
+   "where": "main > section.section-padding.bg-light-surface:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1:nth-of-type(2) > a.group.glass-card:nth-of-type(1)",
+   "y": 6489,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    411,
+    210
+   ],
+   "section": "Other Products",
+   "controls_inside": 0,
+   "whole_card_link": 6,
+   "with_heading": 6
+  },
+  {
+   "where": "main > section.section-padding.relative:nth-of-type(7) > div.relative.max-w-7xl:nth-of-type(3) > div.grid.grid-cols-1:nth-of-type(2) > div.glass-card.glass-card-hover:nth-of-type(1)",
+   "y": 7395,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    389,
+    295
+   ],
+   "section": "Build with Us",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "main.flex-1 > div.min-h-screen.bg-light-bg > main > section.section-padding.bg-light-card:nth-of-type(8) > div.absolute.inset-0:nth-of-type(1)",
+   "y": 8034,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    1440,
+    574
+   ],
+   "section": "Ready to showcase your product to real builders?",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [
+   {
+    "where": "section.section-padding.bg-light-bg:nth-of-type(2) > div.max-w-7xl.mx-auto > div.grid.md\\:grid-cols-2:nth-of-type(2) > div.glass-card-hover.p-6:nth-of-type(6) > p.text-light-muted.dark\\:text-dark-muted",
+    "y": 1623,
+    "screen": 2,
+    "tile": "tiles/1440-01.png",
+    "first_screen": false,
+    "text": "Best practices and anti-patterns for animation, accessibility, z-index, loading states, and more.",
+    "match": "loading"
+   },
+   {
+    "where": "div.space-y-4:nth-of-type(2) > div.glass-card.p-5:nth-of-type(5) > div.grid.grid-cols-2:nth-of-type(2) > div.bg-light-bg.dark\\:bg-dark-bg:nth-of-type(5) > div.text-xs.font-medium:nth-of-type(2)",
+    "y": 3417,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "text": "Use animations for loading only",
+    "match": "loading"
+   }
+  ],
+  "success": [],
+  "onboarding": [
+   {
+    "where": "div.max-w-3xl.mx-auto > div.space-y-4:nth-of-type(2) > div.glass-card.p-5:nth-of-type(9) > div.flex.items-center:nth-of-type(1) > h3.font-heading.text-base",
+    "y": 3868,
+    "screen": 5,
+    "tile": "tiles/1440-04.png",
+    "first_screen": false,
+    "text": "Quality Checklist",
+    "match": "Checklist"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 2,
+   "success": 0,
+   "onboarding": 1
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Load More",
+    "kind": "action-button",
+    "selector": "#styles > div > div:nth-of-type(4) > button",
+    "form": null,
+    "slow": {
+     "status": "ok",
+     "feedback": {
+      "0.5s": {
+       "responded": true,
+       "how": [
+        "new text: uipro init --ai curso | ▋ | Health & Wellness App"
+       ],
+       "pending": false
+      },
+      "2s": {
+       "responded": true,
+       "how": [
+        "new text: uipro init --ai cursor | Health & Wellness App | Neumorphism + Soft UI Evolution"
+       ],
+       "pending": false
+      }
+     },
+     "requests": 0,
+     "first_answer_ms": null,
+     "final_new_text": [
+      "uipro init --ai winds",
+      "Health & Wellness App",
+      "Neumorphism + Soft UI Evolution",
+      "Creative Agency Portfolio"
+     ],
+     "final_success": [],
+     "spinner_after_answer": false,
+     "shots": [
+      "async/a0-slow-before.png",
+      "async/a0-slow-0.5s.png",
+      "async/a0-slow-2s.png",
+      "async/a0-slow-final.png"
+     ]
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"UI UX Pro Max\" href=/",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 5027,
+   "totalChars": 5298
+  },
+  "reduced_motion": {
+   "visibleChars": 5016,
+   "totalChars": 5288
+  },
+  "observer_never_fires": {
+   "visibleChars": 5015,
+   "totalChars": 5287
+  },
+  "scripts_off": {
+   "visibleChars": 4211,
+   "totalChars": 4374
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 23,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 5,
+   "hits": [
+    {
+     "where": "a \"View Demo\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(241, 241, 241))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Show Prompt\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(202, 203, 206))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"View Demo\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(243, 243, 243))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Show Prompt\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(170, 173, 178))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"View Demo\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(243, 243, 243))",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "div.flex.min-h-screen:nth-of-type(2) > nav.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > a.flex.items-center",
+     "evidence": "touch target 28x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nav.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > button.h-9.w-9",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.fixed.top-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(1)",
+     "evidence": "touch target 107x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "-4 > div.px-4.sm\\:px-6 > div.flex.items-center > div.flex.items-center:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(2)  \"Premium\"",
+     "evidence": "touch target 83x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.flex.flex-row:nth-of-type(3) > a.btn-primary.text-sm:nth-of-type(1)  \"How it Works\"",
+     "evidence": "touch target 126x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.flex.flex-row:nth-of-type(3) > a.btn-secondary.text-sm:nth-of-type(2)  \"View Demos\"",
+     "evidence": "touch target 123x42px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(1)  \"All\"",
+     "evidence": "touch target 40x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(2)  \"SaaS\"",
+     "evidence": "touch target 55x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(3)  \"Education\"",
+     "evidence": "touch target 89x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.mb-10:nth-of-type(2) > div.flex.flex-col > div:nth-of-type(1) > div.flex.flex-wrap > button.px-3.py-1\\.5:nth-of-type(4)  \"Pet Services\"",
+     "evidence": "touch target 104x32px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "dark\\:bg-dark-bg > div.max-w-7xl.mx-auto > div.grid.grid-cols-2:nth-of-type(1) > div:nth-of-type(2) > h4.font-heading.font-bold  \"Resources\"",
+     "evidence": "heading jumps from h2 to h4",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"UI UX Pro Max\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 1,
+   "hits": [
+    {
+     "where": "creen:nth-of-type(1) > div.relative.z-10:nth-of-type(4) > div.flex.items-center:nth-of-type(1) > div.inline-flex.items-center:nth-of-type(1)",
+     "evidence": "14 containers share radius 16px and shadow \"rgba(0, 0, 0, 0.4) 0px 4px 6px -1px, rgba(0, 0, 0, 0.3) 0px \"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "ection.section-padding.bg-light-bg:nth-of-type(4) > div.max-w-3xl.mx-auto > div.space-y-4:nth-of-type(2) > div.glass-card.p-5:nth-of-type(7)",
+     "evidence": "\"class\" repeated 3 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "816 characters (16% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 2,
+   "hits": [
+    {
+     "where": "button trigger \"Toggle theme\" (h-of-type(2) > nav > div > div > div:nth-of-type(2) > button)",
+     "evidence": "transition runs about 1435 ms (JavaScript-driven, measured in real time at ~19.2 ms a frame; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration_live"
+    },
+    {
+     "where": "button trigger \"All Modes\" ((2) > div > div:nth-of-type(2) > div > button:nth-of-type(1))",
+     "evidence": "transition runs 370 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 33,
+  "button_variants": 9,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 9,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 1
+ }
+}

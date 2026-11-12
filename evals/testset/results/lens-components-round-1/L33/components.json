@@ -1,0 +1,93 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "Ant Design Pro's layout, menu and tabs ship with their states and the sidebar marks 'Analysis' as current, but the search table left-aligns its numbers, the tab overflow menu stayed open after Escape and the period buttons showed no change when clicked.",
+ "score": {
+  "dimension": "Usability",
+  "value": 7,
+  "reason": "T-WHERE-AM-I and T-PHONE-NAV pass. T-TABLE-READ (CMP-018), T-OVERLAY-CHECK (CMP-013), T-STATE-MATRIX (CMP-002) and T-INTERRUPT (CMP-014) each find one gap in an otherwise intact kit."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-ERROR-PATH",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT",
+  "T-EMPTY-FIRST",
+  "T-TABLE-READ"
+ ],
+ "findings": [
+  {
+   "rule": "CMP-018",
+   "tier": "Reflex",
+   "where": "card '线上热门搜索' > div.ant-table.ant-table-small > table, 1440px, tiles/1440-01.png",
+   "evidence": "The tables row reports 15 numeric cells, all aligned start, under the heads 用户数 (users) and 周涨幅 (weekly change). On the tile the counts 577, 177, 612, 492 and 543 sit left in their column, so their digits do not line up.",
+   "before": "Numbers in the search ranking table are left-aligned.",
+   "after": "Right-align the 用户数 and 周涨幅 columns and their heads, with tabular figures.",
+   "why": "Operators compare these rows by magnitude, and left-aligned digits of different lengths cannot be compared at a glance.",
+   "test": "T-TABLE-READ",
+   "source": "components",
+   "title": "Tables read as tables"
+  },
+  {
+   "rule": "CMP-013",
+   "tier": "Reflex",
+   "where": "#rc-tabs-1-more (the '...' after 'Stores 5'), 1440px, motion/t1-normal-600.png",
+   "evidence": "The overlay row for t1 records a 162x200 dropdown listing 'Stores 6' and 'Stores 7' and closed_after_escape: false after Escape and a pointer move away.",
+   "before": "The tab overflow dropdown stays open after Escape.",
+   "after": "Close the overflow menu on Escape and on pointer leave (Ant's dropdown does this when its close delay and keyboard handling are kept).",
+   "why": "An overflow menu that ignores Escape stays over the line chart, and the visitor has to click elsewhere to clear it.",
+   "test": "T-OVERLAY-CHECK",
+   "source": "components",
+   "title": "Overlays are the last answer and behave as overlays"
+  },
+  {
+   "rule": "CMP-002",
+   "tier": "Reflex",
+   "where": "card '销售额' tab bar: button '今日' among 今日 / 本周 / 本月 / 本年, 1440px, motion/t3-normal-000.png and t3-normal-600.png",
+   "evidence": "The capture clicked '今日' (today). The 108x80 stills before the click and 600 ms after are identical, and '本年' (this year) keeps the blue selected look on tiles/1440-00.png.",
+   "before": "Clicking a period button leaves it looking unselected.",
+   "after": "Move the selected look (blue text, weight 700) to the clicked period at once, and update the date range beside it.",
+   "why": "A filter that does not show it took the click makes the operator click again or doubt the chart.",
+   "test": "T-STATE-MATRIX",
+   "source": "components"
+  },
+  {
+   "rule": "CMP-014",
+   "tier": "Reflex",
+   "where": "fixed settings tab (gear icon) at the right edge, 1440px and 375px, tiles/1440-00.png x 1392 y 240, tiles/375-00.png y 240",
+   "evidence": "A fixed blue 48x48 gear tab sits on the right edge of the viewport at both widths. At 375 it covers the right edge of the '总销售额' card.",
+   "before": "The template's theme-settings trigger floats over the dashboard content.",
+   "after": "Move the settings trigger into the header actions beside the language switch, or remove it from the shipped product.",
+   "why": "A fixed tab over the cards hides card content on a phone, and the visitor did not ask for it.",
+   "test": "T-INTERRUPT",
+   "source": "components",
+   "title": "Nothing interrupts the visitor uninvited"
+  }
+ ],
+ "strengths": [
+  "The sidebar marks 'Analysis' as current (class and a link to this page), with its parent 'Dashboard' open (tiles/1440-00.png).",
+  "The chart card's tabs underline '销售额', the period buttons show '本年' in blue, and the store tabs underline 'Stores 0': the current choice is marked on every tab bar.",
+  "Ant's state set is kept: focus-visible 54, active 54, disabled 69, busy 191 (ant-spin) rules, and pagination greys out its disabled 'previous' arrow (tiles/1440-01.png).",
+  "At 375 the layout collapses the sidebar behind a menu toggle at the top left and stacks the KPI cards (tiles/375-00.png).",
+  "The search table fits the 375 screen (292 px wide, not wider than the screen)."
+ ],
+ "not_investigated": [
+  "empty, loading and error states of the charts and tables: the page holds demo data only, the DOM has no empty or error text, and the capture cannot empty a data source. Ant's Table and Spin supply these states, but whether this screen keeps them is not verified",
+  "the date range picker: its 'Start date' and 'End date' inputs show values, and their missing labels are the sweep's (form_labels, A11-010)",
+  "the ranking list repeats '323,234' seven times and the keywords read '搜索关键词-0' to '-4': demo data, lens-integrity's and lens-copy's",
+  "'使用文档' navigated away when clicked, and '历史版本' was over the six-trigger cap: neither is verified",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

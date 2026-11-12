@@ -1,0 +1,1438 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L19",
+ "target": "https://impeccable.style",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 3,
+  "footer": 68,
+  "header": 11
+ },
+ "buttons": {
+  "count": 56,
+  "variants": [
+   {
+    "count": 13,
+    "fill": "oklch(0.995 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.46 0 0)",
+    "border": "none",
+    "radius_px": 6,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "init",
+     "extract",
+     "impeccable",
+     "critique",
+     "polish",
+     "optimize"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.command-console > div.cc-deck:nth-of-type(4) > div.cc-g:nth-of-type(6) > div.cc-g-b.cc-g-b--keys > button.cc-key:nth-of-type(1)",
+    "tile": "tiles/1440-03.png"
+   },
+   {
+    "count": 4,
+    "fill": "oklch(0.995 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.22 0 0)",
+    "border": "none",
+    "radius_px": 5,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Make text easier to read",
+     "Simplify a busy page",
+     "Find what feels off",
+     "Compare design variants"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.command-console > div.cc-guide:nth-of-type(2) > div.cc-intents > a:nth-of-type(1)",
+    "tile": "tiles/1440-02.png",
+    "sweep": [
+     "card_kit (SLP-005, Reflex): 4 containers share radius 5px and shadow \"oklch(1 0 0 / 0.9) 0px 1px 0px 0px inset, oklch(0.13 0 0 / 0\""
+    ]
+   },
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.68 0 0)",
+    "border": "none",
+    "radius_px": 3,
+    "weight": "400",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Copy /impeccable typeset command",
+     "Copy install command",
+     "Copy setup command",
+     "Copy enable hooks command"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 2,
+    "example": "div.cc-top:nth-of-type(3) > div.cc-readout:nth-of-type(2) > div.cc-title:nth-of-type(1) > div.site-code-block.code-block-wrap:nth-of-type(1) > button.site-code-copy.downloads-copy",
+    "tile": "tiles/1440-02.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 36x36px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.68 0 0)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     26
+    ],
+    "labels": [
+     "Insert new element",
+     "Detect anti-patterns",
+     "Toggle DESIGN.md panel"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.live-demo-frame-col > div.live-demo-frame > div.live-demo-gbar:nth-of-type(3) > div.live-demo-gbar-inner > button.live-demo-gbar-btn:nth-of-type(2)",
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "count": 3,
+    "fill": "oklch(0.31 0.025 55)",
+    "strong_fill": false,
+    "text_color": "oklch(0.965 0.012 84)",
+    "border": "none",
+    "radius_px": 8,
+    "weight": "500",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Reserve"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.hotel-suites-row > article.hotel-card:nth-of-type(1) > div.hotel-card-body:nth-of-type(2) > div.hotel-card-foot > button.hotel-card-btn",
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "count": 3,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.46 0 0)",
+    "border": "none",
+    "radius_px": 3,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Codex",
+     "Claude plugin",
+     "skills.sh"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#install-tab-codex",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 2,
+    "fill": "oklch(0.13 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.995 0 0)",
+    "border": "oklch(0.13 0 0)",
+    "radius_px": 3,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Install Impeccable",
+     "Subscribe on Substack"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.hero > div.hero-container > div.hero-left:nth-of-type(1) > div.hero-actions:nth-of-type(1) > a.ks-button.ks-button-primary:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.46 0 0)",
+    "border": "none",
+    "radius_px": 999,
+    "weight": "400",
+    "heights_px": [
+     38
+    ],
+    "labels": [
+     "/distill Find the hierarchy",
+     "/clarify Make the task obvious"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#hero-proof-tab-distill",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.13 0 0)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "500",
+    "heights_px": [
+     22
+    ],
+    "labels": [
+     "layout",
+     "polish"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.cc-top:nth-of-type(3) > div.cc-readout:nth-of-type(2) > div.cc-patch:nth-of-type(2) > span.cc-jacks:nth-of-type(2) > button.cc-jack:nth-of-type(1)",
+    "tile": "tiles/1440-03.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 77x22px at 375px (min 44px)",
+     "targets (A11-004, Reflex): touch target 77x22px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "oklch(0.995 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.13 0 0)",
+    "border": "oklch(0.13 0 0 / 0.45)",
+    "radius_px": 3,
+    "weight": "400",
+    "heights_px": [
+     34,
+     36
+    ],
+    "labels": [
+     "SHOW MORE",
+     "Other tools"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.worlds-table:nth-of-type(3) > div.worlds-hand-zone > div.worlds-zone-head > div.worlds-deck-controls > button.worlds-reroll",
+    "tile": "tiles/1440-05.png",
+    "sweep": [
+     "targets (A11-004, Reflex): touch target 120x34px at 375px (min 44px)"
+    ]
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklch(0.13 0 0)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Next: set up your project →",
+     "Next: stay in the loop →"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.downloads-top > div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(1) > div.downloads-flow-body > button.downloads-next",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 2,
+    "fill": "oklch(0.995 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.13 0 0)",
+    "border": "oklch(0.13 0 0 / 0.45)",
+    "radius_px": 3,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Follow on X",
+     "Star on GitHub"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "details.downloads-flow-step:nth-of-type(3) > div.downloads-flow-body > ul.downloads-follow > li:nth-of-type(2) > a.ks-button.ks-button-secondary",
+    "tile": "tiles/1440-08.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklch(0.7 0.12 188)",
+    "strong_fill": false,
+    "text_color": "oklch(0.14 0.018 95)",
+    "border": "oklch(0.7 0.12 188)",
+    "radius_px": 3,
+    "weight": "600",
+    "heights_px": [
+     60
+    ],
+    "labels": [
+     "Skip to content"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body.home-kinpaku.kinpaku-chrome > a.skip-link",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklch(0.995 0 0)",
+    "strong_fill": false,
+    "text_color": "oklch(0.13 0 0)",
+    "border": "oklch(0.13 0 0 / 0.08)",
+    "radius_px": 999,
+    "weight": "500",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Impeccable on GitHub, 107k stars"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.site-header-right > a.site-header-github",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 26,
+  "row_buttons": {
+   "count": 6,
+   "labels": [
+    "Expand Pickling Brine Calendar image",
+    "Expand Gravity Rain Garden image",
+    "Expand Oscilloscope Signal Bench image",
+    "Expand Algorave Source Floor image",
+    "Expand Riley Moire Gallery image",
+    "Expand Emigre Bitmap Specimen image"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 2295,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 172,
+   "hover_media": 3,
+   "focus_visible": 49,
+   "focus": 4,
+   "focus_within": 5,
+   "active": 11,
+   "disabled": 9,
+   "invalid": 0,
+   "checked": 4,
+   "current_selected": 54,
+   "expanded_open": 28,
+   "busy": 20,
+   "placeholder": 3,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [
+  {
+   "where": "div.hero-proof-panel.is-active:nth-of-type(1) > input.hero-proof-range",
+   "y": 193,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "tag": "input",
+   "type": "range",
+   "name": null,
+   "accessible_name": "Reveal the improved /polish example",
+   "placeholder": null,
+   "autocomplete": null,
+   "labelled": true,
+   "visible_label": null,
+   "label_at": null,
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 16.0,
+   "height_px": 353,
+   "form": null,
+   "search_like": false
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div.site-header-right > nav.site-header-nav",
+   "y": 18,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "in-page",
+   "position": "sticky",
+   "box": [
+    794,
+    18,
+    471,
+    40
+   ],
+   "items": 6,
+   "labels": [
+    "Home",
+    "Designing",
+    "Gallery",
+    "Docs",
+    "Slop",
+    "Live"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "section.hero > div.hero-container > div.hero-right:nth-of-type(2) > section.hero-proof > div.hero-proof-tabs.ks-instrument-strip:nth-of-type(2)",
+   "y": 564,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    209,
+    564,
+    363,
+    48
+   ],
+   "items": 3,
+   "labels": [
+    "/polish Remove the tells",
+    "/distill Find the hierarchy",
+    "/clarify Make the task obvious"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(1) > div.downloads-flow-body > div.downloads-step > div.downloads-tabs:nth-of-type(1)",
+   "y": 6786,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "kind": "tabs",
+   "position": "static",
+   "box": [
+    698,
+    6786,
+    678,
+    36
+   ],
+   "items": 4,
+   "labels": [
+    "CLI",
+    "Codex",
+    "Claude plugin",
+    "skills.sh"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "html > body.home-kinpaku.kinpaku-chrome > footer.site-footer > div.footer-row > nav.footer-links",
+   "y": 7710,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    189,
+    7710,
+    939,
+    22
+   ],
+   "items": 6,
+   "labels": [
+    "Gallery",
+    "Changelog",
+    "FAQ",
+    "Privacy",
+    "Trust Center",
+    "GitHub"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [
+  {
+   "where": "section.hero > div.hero-container > div.hero-right:nth-of-type(2) > section.hero-proof > div.hero-proof-tabs.ks-instrument-strip:nth-of-type(2)",
+   "text": "/polish /distill /clarify",
+   "by": "separator pattern"
+  }
+ ],
+ "tabs": [
+  {
+   "where": "#hero-proof-tab-polish",
+   "y": 569,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "tabs": 3,
+   "labels": [
+    "/polish Remove the tells",
+    "/distill Find the hierarchy",
+    "/clarify Make the task obvious"
+   ],
+   "selected": [],
+   "wraps": false
+  },
+  {
+   "where": "#install-tab-impeccable",
+   "y": 6786,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "tabs": 4,
+   "labels": [
+    "CLI",
+    "Codex",
+    "Claude plugin",
+    "skills.sh"
+   ],
+   "selected": [],
+   "wraps": false
+  }
+ ],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open navigation",
+    "where": "html > body.home-kinpaku.kinpaku-chrome > header.site-header > button.site-header-menu",
+    "box": [
+     36,
+     36
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "Skip to content",
+   "Impeccable home"
+  ],
+  "header_items_1440": null,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "sticky",
+    "current": []
+   },
+   {
+    "kind": "tabs",
+    "items": 3,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "tabs",
+    "items": 2,
+    "position": "static",
+    "current": [
+     {
+      "item": "Agent thread",
+      "by": [
+       "class"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "tabs",
+    "items": 4,
+    "position": "static",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 6,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 16,
+  "tried": 6,
+  "by_kind": {
+   "tab": 2,
+   "disclosure": 3,
+   "button": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "tab",
+    "name": "/distill Find the hierarchy",
+    "selector": "#hero-proof-tab-distill",
+    "status": "ok",
+    "opened": [
+     "span: ",
+     "span: Everything equal",
+     "span: Cards in cards"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     119.4,
+     38.4
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "tab",
+    "name": "Codex",
+    "selector": "#install-tab-codex",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 2,
+    "kind": "disclosure",
+    "name": "1 Install Impeccable",
+    "selector": "#downloads > div > div:nth-of-type(2) > details:nth-of-type(1) > summary",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 3,
+    "kind": "disclosure",
+    "name": "Tool support & updates",
+    "selector": "#downloads > div > div:nth-of-type(2) > details:nth-of-type(1) > div > details > summary",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 4,
+    "kind": "disclosure",
+    "name": "Try steering the page",
+    "selector": "#live-demo > div > div > div:nth-of-type(3) > div > div > button:nth-of-type(1)",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Detector on",
+    "selector": "#slop > header > div:nth-of-type(2) > button",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "skipped"
+   }
+  ],
+  "not_tried": [
+   "Choose an Impeccable command: over the cap of 6 triggers",
+   "Next: set up your project →: over the cap of 6 triggers",
+   "#downloads > div > div:nth-of-type(2) > details:nth-of-type(2) > div > div:nth-of-type(2) > button:nth-of-type(1): over the cap of 6 triggers",
+   "impeccable: over the cap of 6 triggers",
+   "layout: over the cap of 6 triggers",
+   "Pick element: over the cap of 6 triggers",
+   "Copy /impeccable typeset command: over the cap of 6 triggers",
+   "Copy install command: over the cap of 6 triggers"
+  ],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 2
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "div.t-marquee > div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(1) > a.t-card.t-card--plinth:nth-of-type(1)",
+   "y": 764,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 31,
+   "size": [
+    320,
+    168
+   ],
+   "section": "The missing design vocabulary for agents.",
+   "controls_inside": 0,
+   "whole_card_link": 31,
+   "with_heading": 0
+  },
+  {
+   "where": "div.t-marquee > div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(2) > a.t-card.t-card--plinth:nth-of-type(1)",
+   "y": 764,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "count": 31,
+   "size": [
+    320,
+    168
+   ],
+   "section": "The missing design vocabulary for agents.",
+   "controls_inside": 0,
+   "whole_card_link": 31,
+   "with_heading": 0
+  },
+  {
+   "where": "section.slop-teaser-section.slop-pattern-section:nth-of-type(2) > div.slop-pattern-board > a.slop-pattern-item.slop-pattern-item--serif:nth-of-type(1)",
+   "y": 1244,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 8,
+   "size": [
+    553,
+    533
+   ],
+   "section": "Detects and removes AI slop.",
+   "controls_inside": 0,
+   "whole_card_link": 8,
+   "with_heading": 0
+  },
+  {
+   "where": "div.live-demo-stage:nth-of-type(2) > div.hotel-site:nth-of-type(1) > div.hotel-suites:nth-of-type(2) > div.hotel-suites-row > article.hotel-card:nth-of-type(1)",
+   "y": 3898,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "live-demo-stage",
+   "count": 3,
+   "size": [
+    198,
+    226
+   ],
+   "section": "Welcome to Our Hotel",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 3
+  },
+  {
+   "where": "section.worlds-section:nth-of-type(4) > div.worlds-table:nth-of-type(3) > div.worlds-hand-zone > ul.worlds-hand > li.worlds-card.is-loaded:nth-of-type(1)",
+   "y": 4629,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "count": 6,
+   "size": [
+    308,
+    248
+   ],
+   "section": "Give your design a different starting point.",
+   "controls_inside": 1,
+   "whole_card_link": 0,
+   "with_heading": 0,
+   "sweep": [
+    "card_kit (SLP-005, Reflex): 7 containers share radius 8px and shadow \"oklch(0.13 0 0 / 0.05) 0px 1px 1px 0px, oklch(0.13 0 0 / 0.0\""
+   ]
+  },
+  {
+   "where": "article.ks-bento-tile.ks-bento-tile--span-4:nth-of-type(3) > div.why-visual.why-visual--designmd-v2 > div.why-dm-grid:nth-of-type(2) > div.why-dm-tile.why-dm-tile--color:nth-of-type(1)",
+   "y": 6202,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    161,
+    131
+   ],
+   "section": "Catch slop as your agent works.",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "div.slop-pattern-board > a.slop-pattern-item.slop-pattern-item--pulse:nth-of-type(5) > span.slop-pattern-specimen.slop-pattern-specimen--pulse > span.slop-target.slop-target--pulse > span.slop-pulse-status:nth-of-type(1)",
+   "y": 1601,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "cls": "slop-pulse-status",
+   "text": "AI is thinking",
+   "fixed": false
+  },
+  {
+   "where": "div.command-console > div.cc-top:nth-of-type(3) > div.cc-readout:nth-of-type(2) > div.cc-title:nth-of-type(1) > p.downloads-copy-status",
+   "y": 2475,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "section.worlds-section:nth-of-type(4) > div.worlds-table:nth-of-type(3) > div.worlds-hand-zone > p.worlds-hand-status",
+   "y": 5129,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "cls": "worlds-hand-status",
+   "text": "Showing 6 design directions.",
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-method-panel:nth-of-type(2) > p.downloads-copy-status:nth-of-type(2)",
+   "y": 6834,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-method-panel:nth-of-type(4) > p.downloads-copy-status:nth-of-type(2)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-method-panel:nth-of-type(5) > p.downloads-copy-status:nth-of-type(2)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-top > div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(2) > div.downloads-flow-body > p.downloads-flow-notice:nth-of-type(1)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "downloads-flow-notice",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(2) > div.downloads-flow-body > div.downloads-step:nth-of-type(3) > p.downloads-copy-status:nth-of-type(2)",
+   "y": 7539,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(2) > div.downloads-flow-body > div.downloads-step:nth-of-type(4) > p.downloads-copy-status:nth-of-type(1)",
+   "y": 7715,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "hidden": true,
+   "cls": "downloads-copy-status",
+   "text": null,
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [
+   {
+    "where": "div.cc-well:nth-of-type(1) > div.cc-stage > div.fn:nth-of-type(1) > div.fn-empty:nth-of-type(3) > b",
+    "y": 2877,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "No teammates yet",
+    "match": "No teammates yet"
+   },
+   {
+    "where": "article.ks-bento-tile.ks-bento-tile--span-4:nth-of-type(5) > div.why-visual.why-visual--hook > ol.why-hook > li.why-hook-step.is-ready:nth-of-type(4) > span.why-hook-label:nth-of-type(1)",
+    "y": 6394,
+    "screen": 8,
+    "tile": "tiles/1440-07.png",
+    "first_screen": false,
+    "text": "No issues detected",
+    "match": "No issues"
+   }
+  ],
+  "error": [
+   {
+    "where": "div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(1) > a.t-card.t-card--plinth:nth-of-type(3) > blockquote.t-card-quote",
+    "y": 783,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "This is a GAMECHANGER for designing with AI. I couldn't go back to the old way after using it and it's free.",
+    "match": "couldn't"
+   },
+   {
+    "where": "div.cc-well:nth-of-type(1) > div.cc-stage > div.fn:nth-of-type(1) > div.fn-form:nth-of-type(2) > span.fn-err:nth-of-type(6)",
+    "y": 2659,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "We couldn't send that invite. Check the address and try again.",
+    "match": "couldn't"
+   },
+   {
+    "where": "div.cc-top:nth-of-type(3) > div.cc-well:nth-of-type(1) > div.cc-stage > div.cc-ov.cc-ov--hardtag:nth-of-type(9) > span.ks-tag.is-quiet:nth-of-type(3)",
+    "y": 2555,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "network · failed",
+    "match": "failed"
+   }
+  ],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(1) > a.t-card.t-card--plinth:nth-of-type(15) > blockquote.t-card-quote",
+    "y": 783,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "TIL you are the guy behind Impeccable. I owe like 3 customer conversions to you. Thank you for such an amazing tool.",
+    "match": "Thank you"
+   },
+   {
+    "where": "div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(1) > a.t-card.t-card--plinth:nth-of-type(18) > blockquote.t-card-quote",
+    "y": 783,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "This is the best plugin ever created imo.",
+    "match": "created"
+   },
+   {
+    "where": "div.t-marquee-row > div.t-marquee-track > div.t-marquee-set:nth-of-type(1) > a.t-card.t-card--plinth:nth-of-type(31) > blockquote.t-card-quote",
+    "y": 783,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "text": "This is the only set of agent skills I ever found use in. Thanks for making this.",
+    "match": "Thanks"
+   },
+   {
+    "where": "div.fn:nth-of-type(1) > div.fn-form:nth-of-type(2) > span.fn-btn:nth-of-type(5) > span.fn-sw.is-grow:nth-of-type(2) > span.fn-a:nth-of-type(3)",
+    "y": 2637,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Sent",
+    "match": "Sent"
+   },
+   {
+    "where": "div.cc-top:nth-of-type(3) > div.cc-well:nth-of-type(1) > div.cc-stage > div.cc-ov.cc-ov--sheet:nth-of-type(6) > p:nth-of-type(1)",
+    "y": 2824,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "paper, gray-1, gray-3, accent (gradient, flagged), success",
+    "match": "success"
+   },
+   {
+    "where": "article.ks-bento-tile.ks-bento-tile--span-4:nth-of-type(4) > p.why-panel-body",
+    "y": 6056,
+    "screen": 7,
+    "tile": "tiles/1440-06.png",
+    "first_screen": false,
+    "text": "Help people decide on a landing page, or get things done in a dashboard. Impeccable designs for the task.",
+    "match": "done"
+   },
+   {
+    "where": "body.home-kinpaku.kinpaku-chrome > footer.site-footer > div.footer-row > div.footer-credit > span",
+    "y": 7710,
+    "screen": 9,
+    "tile": "tiles/1440-08.png",
+    "first_screen": false,
+    "in_footer": true,
+    "text": "Created by",
+    "match": "Created"
+   }
+  ],
+  "onboarding": [
+   {
+    "where": "div.hero-proof-layer.hero-proof-layer--after:nth-of-type(2) > div.hero-proof-canvas.hero-proof-canvas--clarify > article.proof-clarify.proof-clarify--after > header > small",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Step 1 of 3",
+    "match": "Step 1 of 3"
+   },
+   {
+    "where": "div.cc-top:nth-of-type(3) > div.cc-well:nth-of-type(1) > div.cc-stage > div.fn:nth-of-type(1) > div.fn-empty:nth-of-type(3)",
+    "y": 2854,
+    "screen": 4,
+    "tile": "tiles/1440-03.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Invite one and they show up here. Step 1 of 3.",
+    "match": "Step 1 of 3"
+   },
+   {
+    "where": "div.live-demo-target.hotel-hero-pick:nth-of-type(1) > div.live-demo-variant.is-active:nth-of-type(1) > div.hotel-hero.hotel-hero--slop > div.hotel-hero-inner > h2.hotel-hero-title",
+    "y": 3690,
+    "screen": 5,
+    "tile": "tiles/1440-04.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "mock_hint": "live-demo-variant is-active",
+    "text": "Welcome to Our Hotel",
+    "match": "Welcome"
+   },
+   {
+    "where": "div.downloads-method-panel:nth-of-type(3) > p.downloads-method-note:nth-of-type(2)",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Open its details and select the button to install. Then start a new chat in your project and continue to step 2.",
+    "match": "step 2"
+   },
+   {
+    "where": "div.downloads-top > div.downloads-install:nth-of-type(2) > details.downloads-flow-step:nth-of-type(1) > div.downloads-flow-body > button.downloads-next",
+    "y": 7037,
+    "screen": 8,
+    "tile": "tiles/1440-07.png",
+    "first_screen": false,
+    "text": "Next: set up your project",
+    "match": "set up your"
+   },
+   {
+    "where": "section.downloads:nth-of-type(6) > p.downloads-more > a:nth-of-type(1)",
+    "y": 7515,
+    "screen": 9,
+    "tile": "tiles/1440-08.png",
+    "first_screen": false,
+    "text": "Getting started",
+    "match": "Getting started"
+   }
+  ],
+  "counts": {
+   "empty": 2,
+   "error": 3,
+   "loading": 0,
+   "success": 7,
+   "onboarding": 6
+  },
+  "hidden_counts": {
+   "empty": 1,
+   "error": 2,
+   "loading": 0,
+   "success": 2,
+   "onboarding": 3
+  },
+  "state_classes": [
+   {
+    "class": "empty",
+    "elements": 1,
+    "example": "c-well:nth-of-type(1) > div.cc-stage > div.fn:nth-of-type(1) > div.fn-empty:nth-of-type(3)"
+   },
+   {
+    "class": "spinner",
+    "elements": 1,
+    "example": "w.live-demo-ctx-row--generating:nth-of-type(3) > span.live-demo-ctx-spinner:nth-of-type(1)"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Book Now",
+    "kind": "action-button",
+    "selector": "ype(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > div > button",
+    "form": null,
+    "slow": {
+     "status": "not-verified (the click navigated the page)"
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 1,
+    "name": "generate",
+    "kind": "action-button",
+    "selector": "#command-console > div:nth-of-type(4) > div:nth-of-type(6) > div > button:nth-of-type(5)",
+    "form": null,
+    "slow": {
+     "status": "not-verified (the click navigated the page)"
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 2,
+    "name": "Reserve",
+    "kind": "action-button",
+    "selector": "1) > div:nth-of-type(2) > div > article:nth-of-type(1) > div:nth-of-type(2) > div > button",
+    "form": null,
+    "slow": {
+     "status": "not-verified (the click navigated the page)"
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   },
+   {
+    "a": 3,
+    "name": "Reserve",
+    "kind": "action-button",
+    "selector": "1) > div:nth-of-type(2) > div > article:nth-of-type(2) > div:nth-of-type(2) > div > button",
+    "form": null,
+    "slow": {
+     "status": "not-verified (the click navigated the page)"
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [
+   "Reserve: over the cap of 4 actions",
+   "Copy update command: over the cap of 4 actions"
+  ],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Skip to content\" href=#main-content",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 7162,
+   "totalChars": 7492
+  },
+  "reduced_motion": {
+   "visibleChars": 7180,
+   "totalChars": 7510
+  },
+  "observer_never_fires": {
+   "visibleChars": 5421,
+   "totalChars": 7295
+  },
+  "scripts_off": {
+   "visibleChars": 5397,
+   "totalChars": 7271
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 25,
+  "prep": {
+   "host": "impeccable.style",
+   "config": {
+    "block": [
+     "/js/detect-antipatterns-browser.js"
+    ]
+   },
+   "applied": []
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "not-verified: async capture skipped (2)",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "html > body.home-kinpaku.kinpaku-chrome > header.site-header > a.site-header-brand",
+     "evidence": "touch target 121x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "html > body.home-kinpaku.kinpaku-chrome > header.site-header > button.site-header-menu",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "lop-pattern-section:nth-of-type(2) > header.slop-pattern-head > div.slop-pattern-actions:nth-of-type(2) > button.slop-scan-control.ks-switch",
+     "evidence": "touch target 331x30px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ") > div.cc-readout:nth-of-type(2) > div.cc-title:nth-of-type(1) > div.site-code-block.code-block-wrap:nth-of-type(1) > pre.site-code-content",
+     "evidence": "touch target 202x23px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "out:nth-of-type(2) > div.cc-title:nth-of-type(1) > div.site-code-block.code-block-wrap:nth-of-type(1) > button.site-code-copy.downloads-copy",
+     "evidence": "touch target 36x36px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.command-console > div.cc-top:nth-of-type(3) > div.cc-readout:nth-of-type(2) > a.cc-docs  \"How to use this command →\"",
+     "evidence": "touch target 291x21px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(3) > div.cc-readout:nth-of-type(2) > div.cc-patch:nth-of-type(2) > span.cc-jacks:nth-of-type(2) > button.cc-jack:nth-of-type(1)",
+     "evidence": "touch target 77x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ":nth-of-type(3) > div.cc-readout:nth-of-type(2) > div.cc-patch:nth-of-type(2) > span.cc-jacks:nth-of-type(2) > button.cc-jack:nth-of-type(2)",
+     "evidence": "touch target 77x22px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "ng-desktop > div.steering-mobile-tabs.ks-instrument-strip:nth-of-type(2) > button.ks-instrument-key.is-active:nth-of-type(1)  \"Agent thread\"",
+     "evidence": "touch target 148x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "v.steering-desktop > div.steering-mobile-tabs.ks-instrument-strip:nth-of-type(2) > button.ks-instrument-key:nth-of-type(2)  \"In-app browser\"",
+     "evidence": "touch target 148x38px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 2,
+   "hits": [
+    {
+     "where": "div.command-console > div.cc-guide:nth-of-type(2) > div.cc-intents > a:nth-of-type(1)  \"Make text easier to read\"",
+     "evidence": "4 containers share radius 5px and shadow \"oklch(1 0 0 / 0.9) 0px 1px 0px 0px inset, oklch(0.13 0 0 / 0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "s-section:nth-of-type(4) > div.worlds-table:nth-of-type(3) > div.worlds-hand-zone > ul.worlds-hand > li.worlds-card.is-loaded:nth-of-type(1)",
+     "evidence": "7 containers share radius 8px and shadow \"oklch(0.13 0 0 / 0.05) 0px 1px 1px 0px, oklch(0.13 0 0 / 0.0\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.command-console > div.cc-top:nth-of-type(3) > div.cc-well:nth-of-type(1) > div.cc-stage > div.fn:nth-of-type(1)",
+     "evidence": "card inside a card (#command-console)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 1,
+   "hits": [
+    {
+     "where": "ive-demo-frame > div.live-demo-stage:nth-of-type(2) > div.hotel-site:nth-of-type(1) > div.hotel-suites:nth-of-type(2) > div.hotel-suites-row",
+     "evidence": "\"Suite\" repeated 3 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "ticle.proof-polish.proof-polish--before > div.proof-polish-body > span.proof-annotation.proof-annotation--surface:nth-of-type(2)  \"AI beige\"",
+     "evidence": "60 words shown at 1440px are hidden at 375px (28 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "1741 characters (24% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "1765 characters (25% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (10)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (10)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 56,
+  "button_variants": 26,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 4,
+  "nav_with_current_mark": 0,
+  "tabs": 2,
+  "overlay_triggers": 6,
+  "card_groups": 6,
+  "tables": 0,
+  "status_regions": 9,
+  "async_actions": 4
+ }
+}

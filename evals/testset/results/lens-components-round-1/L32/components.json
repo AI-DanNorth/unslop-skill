@@ -1,0 +1,42 @@
+{
+ "lens": "components",
+ "ran_at": "2026-11-12T12:00:00",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The page uses GOV.UK Frontend components as they ship: one inverse 'Get started' button, a labelled search autocomplete, a header nav that becomes a named 'Menu' toggle at 375, and the full state set in the stylesheet.",
+ "score": {
+  "dimension": "Usability",
+  "value": 9,
+  "reason": "T-PRIMARY-COUNT, T-STATE-MATRIX, T-PHONE-NAV and T-INTERRUPT pass. To earn it the page cut everything but one button, opens no dialog and has no interruption once the cookie banner is answered. It is not a 10 because the menu contents and search results are not verified."
+ },
+ "tests_run": [
+  "T-STATE-MATRIX",
+  "T-PRIMARY-COUNT",
+  "T-ONE-FAMILY",
+  "T-FIELD-READ",
+  "T-WHERE-AM-I",
+  "T-PHONE-NAV",
+  "T-OVERLAY-CHECK",
+  "T-INTERRUPT"
+ ],
+ "findings": [],
+ "strengths": [
+  "The page has one button, the inverse 'Get started' (white on blue, 43 px), and every other action is a text link (tiles/1440-00.png).",
+  "The site search is the accessible-autocomplete combobox with a programmatic label ('Search Design system', selects row labelled: true) and a placeholder that names its scope.",
+  "At 375 the six header links fold behind a 'Menu' toggle with a chevron, directly under the search (tiles/375-00.png).",
+  "The stylesheet keeps the GOV.UK state set: hover 61, focus 94, active 42, disabled 13, expanded 12 rules.",
+  "The mobile navigation markup carries the section lists in the DOM, so the menu has content to show (state_text rows inside app-mobile-navigation-section)."
+ ],
+ "not_investigated": [
+  "search results and the no-results message: the capture typed nothing into the search (overlay t0 opened nothing)",
+  "the cookie banner was answered by capture prep ('Reject analytics cookies', 'Hide cookie message'). It is a non-modal banner above the header, so it is not judged as an interruption",
+  "T-WHERE-AM-I: this is the home page, so no current item is expected in the header nav",
+  "T-ERROR-PATH, T-EMPTY-FIRST, T-TABLE-READ, T-FIRST-RUN: no forms, data regions, tables or first-run path",
+  "inline validation and error placement after invalid input: the capture fills valid values and never types an invalid one",
+  "what the phone menu holds and how it opens and closes: the capture opens triggers at 1440 only",
+  "focus moving into an overlay and back to its trigger, scroll lock and backdrop click: not recorded by the capture",
+  "keyboard operation of custom widgets: lens-a11y",
+  "flows beyond the captured page and states reached only with real data"
+ ],
+ "disputes": []
+}

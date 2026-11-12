@@ -1,0 +1,584 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L21",
+ "target": "https://diagramdesign.dev/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 12,
+  "variants": [
+   {
+    "count": 8,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(79, 79, 79)",
+    "border": "rgba(0, 0, 0, 0.14)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     25,
+     31
+    ],
+    "labels": [
+     "GitHub stars",
+     "Copy the npx skills install command",
+     "Copy Claude Code install commands",
+     "Copy Codex install commands",
+     "Copy Pi install command",
+     "Copy GitHub Copilot install commands"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body.anim > header.bar > div.wrap.bar-in > a.stars:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(17, 17, 17)",
+    "border": "rgba(0, 0, 0, 0.14)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     39
+    ],
+    "labels": [
+     "GITHUB",
+     "VIEW ON GITHUB"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "html > body.anim > header.bar > div.wrap.bar-in > a.btn.ghost:nth-of-type(3)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(95, 95, 95)",
+    "border": "rgba(0, 0, 0, 0.14)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     27
+    ],
+    "labels": [
+     "Light mode"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#mode",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(191, 69, 32)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "rgb(191, 69, 32)",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     39
+    ],
+    "labels": [
+     "INSTALL THE SKILL"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.wrap > div.hero-grid:nth-of-type(2) > div > div.cta.rise:nth-of-type(2) > a.btn:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 4,
+  "row_buttons": {
+   "count": 56,
+   "labels": [
+    "View the first-pass diagram full size",
+    "View the redrawn diagram full size",
+    "View the Exploded axonometric diagram fu",
+    "View the Axonometric plan diagram full s",
+    "View the Architecture diagram full size",
+    "View the Architecture delta diagram full"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 190,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 15,
+   "hover_media": 0,
+   "focus_visible": 1,
+   "focus": 0,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 1,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html > body.anim > header.bar",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    0,
+    0,
+    1440,
+    64
+   ],
+   "items": 8,
+   "labels": [
+    "Diagram Design home",
+    "Light mode",
+    "GitHub stars",
+    "GITHUB",
+    "WHAT",
+    "INSTALL",
+    "USE",
+    "GALLERY"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": "dom-375.json not captured: the phone navigation is not verified",
+ "overlays": {
+  "found": 6,
+  "tried": 6,
+  "by_kind": {
+   "button": 6
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "View the redrawn diagram full size",
+    "selector": "#why > div > div:nth-of-type(2) > div:nth-of-type(3)",
+    "status": "ok",
+    "opened": [
+     "dialog: Redrawn with the skill, full size"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "View the first-pass diagram full size",
+    "selector": "#why > div > div:nth-of-type(2) > div:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "span: ENLARGE"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     474.8,
+     193.3
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Light mode",
+    "selector": "#mode",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "View the Exploded axonometric diagram full size",
+    "selector": "#axonometric > div > div:nth-of-type(2) > div:nth-of-type(1) > button",
+    "status": "ok",
+    "opened": [
+     "dialog: Exploded axonometric, full size"
+    ],
+    "opened_source": "opened-element",
+    "covers_viewport": true,
+    "largest_box": [
+     1440,
+     900
+    ],
+    "closed_after_escape": true,
+    "note": "change is not driven by CSS/WAAPI animations: frames are real-time screenshots, sweep not available",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 4,
+    "kind": "button",
+    "name": "Copy the npx skills install command",
+    "selector": "#install > div > div:nth-of-type(2) > div:nth-of-type(1) > pre",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "ok"
+   },
+   {
+    "t": 5,
+    "kind": "button",
+    "name": "Copy the npx skills install command",
+    "selector": "#install > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 4
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section:nth-of-type(4) > div.wrap > div.legend:nth-of-type(2) > div.spec.rise:nth-of-type(3)",
+   "y": 2990,
+   "screen": 4,
+   "tile": "tiles/1440-03.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    562,
+    131
+   ],
+   "section": "Brand-matched in ~60s",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 4
+  },
+  {
+   "where": "section:nth-of-type(6) > div.wrap > div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1)",
+   "y": 4314,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "count": 45,
+   "size": [
+    379,
+    320
+   ],
+   "section": "Forty-four diagrams, one system",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "section:nth-of-type(7) > div.wrap > div.sheets:nth-of-type(2) > div.sheet.lead:nth-of-type(1)",
+   "y": 9722,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "count": 7,
+   "size": [
+    377,
+    223
+   ],
+   "section": "Install",
+   "controls_inside": 2,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "section:nth-of-type(7) > div.wrap > p.install-note.rise",
+    "y": 10465,
+    "screen": 12,
+    "tile": "tiles/1440-11.png",
+    "first_screen": false,
+    "text": "Kiro and OpenCode take the folder directly, see the README. Editable install? the repo and symlink . Saved profiles in survive updates.",
+    "match": "Saved"
+   }
+  ],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 1,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"Diagram Designdiagramdesign.dev\" href=#top",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 1,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 7703,
+   "totalChars": 7929
+  },
+  "reduced_motion": {
+   "visibleChars": 7703,
+   "totalChars": 7929
+  },
+  "observer_never_fires": {
+   "visibleChars": 7158,
+   "totalChars": 7929
+  },
+  "scripts_off": {
+   "visibleChars": 7889,
+   "totalChars": 7931
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 2,
+  "prep": null
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "button \"AXONOMETRIC PLAN\nFIG. 04B\nENLARGE\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 0,
+   "hits": []
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 1,
+   "hits": [
+    {
+     "where": "footer > div.wrap > div.foot-grid:nth-of-type(1) > div:nth-of-type(2) > h4  \"Project\"",
+     "evidence": "heading jumps from h2 to h4",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 2,
+   "hits": [
+    {
+     "where": "section:nth-of-type(7) > div.wrap > div.sheets:nth-of-type(2)",
+     "evidence": "\"Copy\" repeated 7 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section:nth-of-type(8) > div.wrap > div.use-grid:nth-of-type(2) > div.rise > ul.asks",
+     "evidence": "\">_\" repeated 4 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "skipped: needs captures at 1440 and 375",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "545 characters (7% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "button trigger \"View the first-pass diagram full size\" (#why > div > div:nth-of-type(2) > div:nth-of-type(1))",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 12,
+  "button_variants": 4,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 3,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

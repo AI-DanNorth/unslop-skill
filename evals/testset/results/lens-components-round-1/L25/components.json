@@ -1,0 +1,32 @@
+{
+  "lens": "components",
+  "ran_at": "2026-11-12T11:40:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The header's 'Product' panel, the account menu and the theme listbox open as designed popovers that close after Escape, the live product demo answers every click with 'Thinking…' and then a result, and 'Sign up' is the one filled action at both widths.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-STATE-MATRIX (busy and done states seen in the demo, every state family declared), T-PRIMARY-COUNT, T-PHONE-NAV and T-OVERLAY-CHECK pass; the score stops at 8 because no real request could be failed and the phone menu's contents are not verified."
+  },
+  "visitor_mode": "Persuade (inferred: the home page of a product-development tool, with an interactive product demo in place of a hero image and 'Sign up' as the action)",
+  "tests_run": ["T-STATE-MATRIX", "T-PRIMARY-COUNT", "T-ONE-FAMILY", "T-FIELD-READ", "T-WHERE-AM-I", "T-PHONE-NAV", "T-OVERLAY-CHECK", "T-INTERRUPT", "T-EMPTY-FIRST"],
+  "findings": [],
+  "strengths": [
+    "'Sign up' is the only filled button in the header at 1440 and stays visible beside 'Log in' at 375, where the other links move behind a menu button (tiles/375-00.png).",
+    "The interactive demo shows its waiting state and its result: the async run saw 'Thinking…' at 0.5 s, then 'Worked for 10 sec' and 'Pushed and opened a draft PR' by 2 s, and 'Send message' takes a disabled look while it works.",
+    "The 'Product' panel (motion/t2-normal-600.png) groups its links under four headings with one-line descriptions and a 'New: Mobile Diffs' footer row; it is a disclosure, so staying open after Escape is normal.",
+    "The account menu ('Settings', 'Log out') and the theme listbox both closed after Escape (overlays.triggers t0 and t1).",
+    "The stylesheet declares hover (232), focus-visible (70), active (82), disabled (199), checked (30), selected (58) and busy (10) rules, and the focus walk starts on 'Skip to content'.",
+    "The demo sidebar marks the open item ('Faster app launch' under Favorites) with a filled row, and the issue header carries '1 / 84' with previous and next buttons."
+  ],
+  "not_investigated": [
+    "Visitor mode inferred from the page; there is no 00-contract.md.",
+    "The capture blocked 298 requests (manifest.network), mostly third-party; no images or fonts were reported missing.",
+    "The product demo carries a mock class (b-30Va_illustration on its theme listbox); its controls are judged as an illustration (conflict C48), though they respond to clicks.",
+    "The 375 menu toggle has no text label in the components table ('(icon, no text)'); the sweep's control_names check found no unnamed control, so its accessible name is lens-a11y's to confirm. What the phone menu holds is not verified: the capture opens triggers at 1440 only.",
+    "T-ERROR-PATH: the demo's actions sent no same-origin request, so no failure run was possible; the page has no form.",
+    "The header shows no current mark, which is expected on the home page; deeper pages were not captured.",
+    "T-TABLE-READ skipped: no data table outside the demo."
+  ]
+}

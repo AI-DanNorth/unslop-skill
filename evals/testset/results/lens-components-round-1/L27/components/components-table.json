@@ -1,0 +1,1409 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L27",
+ "target": "https://stripe.com",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 1,
+  "footer": 1,
+  "header": 5
+ },
+ "buttons": {
+  "count": 30,
+  "variants": [
+   {
+    "count": 8,
+    "fill": "rgb(83, 58, 253)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     32,
+     48
+    ],
+    "labels": [
+     "Get started",
+     "Stripe for enterprises",
+     "Stripe for startups",
+     "Stripe for platforms",
+     "View developer docs",
+     "App Marketplace"
+    ],
+    "first_screen": 1,
+    "in_footer": 1,
+    "icon_only": 0,
+    "example": "section.hds-color-mode.hero-section-container:nth-of-type(1) > div.section-container.hero-section__layout:nth-of-type(1) > div.hero-section__layout-grid > div.hds-button-group.hero-section__actions:nth-of-type(2) > a.hds-button.hds-button--primary:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 5,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(0, 0, 0)",
+    "border": "none",
+    "radius_px": 0,
+    "weight": "400",
+    "heights_px": [
+     24,
+     48
+    ],
+    "labels": [
+     "135+",
+     "US$1.9tn",
+     "99.999%",
+     "200m+",
+     "Hertz unifies commerce with Stripe."
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.section-container.stats-section__container:nth-of-type(1) > div.section-row.section-row-gap:nth-of-type(1) > div.stats-section__stats-menu:nth-of-type(2) > div.stats-menu__stat-wrapper:nth-of-type(1) > button.stats-menu__stat.stats-menu__stat--active",
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "count": 4,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(6, 27, 49)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Products",
+     "Solutions",
+     "Developers",
+     "Resources"
+    ],
+    "first_screen": 4,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.hds-navigation-menu.navigation-menu > div.hds-navigation-menu__content.navigation-menu-content:nth-of-type(1) > ul.hds-navigation-menu__list.navigation-menu-list > li.hds-navigation-menu__item.navigation-item:nth-of-type(1) > button.hds-button.hds-navigation-menu__trigger",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 3,
+    "fill": "rgb(232, 233, 255)",
+    "strong_fill": true,
+    "text_color": "rgb(0, 0, 0)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Next customer story",
+     "Previous slide",
+     "Next slide"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 3,
+    "example": "div.section-row.section-row-gap:nth-of-type(2) > section.section-row.section-row-gap:nth-of-type(2) > section.startups-carousel > div.carousel-nav.startups-carousel__nav:nth-of-type(1) > button.hds-ui-button.hds-ui-button--quiet:nth-of-type(2)",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgba(255, 255, 255, 0)",
+    "strong_fill": false,
+    "text_color": "rgb(83, 58, 253)",
+    "border": "rgb(185, 185, 249)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Read the letter",
+     "Contact sales"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.section-row.section-row-gap > div.section-row.squeezy-carousel:nth-of-type(1) > div.squeezy-carousel__items-details-container > div.squeezy-carousel__item-details:nth-of-type(1) > a.hds-button.hds-button--secondary",
+    "tile": "tiles/1440-13.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(83, 58, 253)",
+    "border": "rgb(255, 255, 255)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Sign in"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "nav.hds-navigation-menu.navigation-menu > ul.navigation-buttons > li.hds-navigation-menu__item.navigation-item:nth-of-type(1) > a.hds-button.navigation-cta-button",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(255, 255, 255, 0.65)",
+    "strong_fill": true,
+    "text_color": "rgb(83, 58, 253)",
+    "border": "rgb(185, 185, 249)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Sign up with Google"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.hds-color-mode.hero-section-container:nth-of-type(1) > div.section-container.hero-section__layout:nth-of-type(1) > div.hero-section__layout-grid > div.hds-button-group.hero-section__actions:nth-of-type(2) > a.hds-button.hero-section__button--google:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(10, 37, 64)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "rgba(255, 255, 255, 0.12)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Chat now with sales"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.NotificationsShell_notifications-shell__list__Ze67V > div.UniversalChatInitializer.UniversalChatInitializer--with-initial-notifications > div.UniversalChatInitializer__cta > div.UniversalChatCtaCard__container > button.UniversalChatCtaCard__cta",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": true,
+    "text_color": "rgb(83, 58, 253)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Watch now"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.sessions-on-demand__wrapper > div.sessions-on-demand-content > div.sessions-on-demand-content-description > div.sessions-on-demand-content-description-text:nth-of-type(1) > a.hds-button.sessions-section__cta-button",
+    "tile": "tiles/1440-03.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(40, 116, 173)",
+    "border": "rgba(43, 145, 223, 0.2)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     32
+    ],
+    "labels": [
+     "Dusk. Choose a time of day"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "section.hds-color-mode.stats-section:nth-of-type(4) > div.section-container.stats-section__container:nth-of-type(1) > div.stats-section__stats-spacer:nth-of-type(2) > div.stats-section__controls:nth-of-type(1) > button.time-of-day-select__trigger",
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(255, 255, 255, 0)",
+    "strong_fill": false,
+    "text_color": "rgba(16, 16, 16, 0.3)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     40
+    ],
+    "labels": [
+     "Previous customer story"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.section-row.section-row-gap:nth-of-type(2) > section.section-row.section-row-gap:nth-of-type(2) > section.startups-carousel > div.carousel-nav.startups-carousel__nav:nth-of-type(1) > button.hds-ui-button.hds-ui-button--quiet:nth-of-type(1)",
+    "tile": "tiles/1440-07.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgba(255, 255, 255, 0)",
+    "strong_fill": false,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "rgba(72, 52, 219, 0.698)",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "View Stripe's GitHub"
+    ],
+    "first_screen": 0,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.hds-color-mode.section:nth-of-type(6) > div.section-container.section-row > div.section-row.section-row-gap:nth-of-type(1) > div.hds-button-group:nth-of-type(2) > a.hds-button.hds-button--secondary:nth-of-type(2)",
+    "tile": "tiles/1440-10.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(83, 58, 253)",
+    "border": "none",
+    "radius_px": 4,
+    "weight": "400",
+    "heights_px": [
+     16
+    ],
+    "labels": [
+     "Canada. Choose your country"
+    ],
+    "first_screen": 0,
+    "in_footer": 1,
+    "icon_only": 0,
+    "example": "footer.hds-color-mode.footer > div.section-container.footer__container > div.footer-bottom:nth-of-type(3) > div:nth-of-type(1) > button.hds-button.locale-switcher__button",
+    "tile": "tiles/1440-16.png"
+   }
+  ],
+  "variant_count": 13,
+  "row_buttons": {
+   "count": 14,
+   "labels": [
+    "Accept and optimise payments globally – ",
+    "Enable any billing model",
+    "Monetise through agentic commerce",
+    "Create a card issuing programme",
+    "Access borderless money movement with st",
+    "Embed payments in your platform"
+   ]
+  },
+  "filled_by_screen": {
+   "1": [
+    "Get started",
+    "Sign up with Google",
+    "Chat now with sales"
+   ],
+   "11": [
+    "View developer docs",
+    "App Marketplace"
+   ]
+  },
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 1,
+  "unreadable_sheets": 9,
+  "rules_with": {
+   "hover": 0,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 0,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all",
+  "not_verified": "9 stylesheet(s) unreadable (cross-origin) and only 1 rule(s) readable: declared states not verified"
+ },
+ "fields": [
+  {
+   "where": "#newsletter-email",
+   "y": 14565,
+   "screen": 17,
+   "tile": "tiles/1440-16.png",
+   "first_screen": false,
+   "in_footer": true,
+   "tag": "input",
+   "type": "email",
+   "name": "email",
+   "accessible_name": "Enter work email",
+   "placeholder": "Enter work email",
+   "autocomplete": "email",
+   "labelled": true,
+   "visible_label": "Get industry insights and updates from Stripe",
+   "label_at": "above",
+   "placeholder_only": false,
+   "required_mark": false,
+   "optional_mark": false,
+   "help_below": null,
+   "font_px": 16.0,
+   "height_px": 46,
+   "form": "footer.hds-color-mode.footer > div.section-container.footer__container > div.footer-newsletter:nth-of-type(2) > div.newsletter-signup > form.hds-form.newsletter-signup__form",
+   "search_like": false,
+   "asks_for": "email",
+   "placeholder_instruction": true
+  }
+ ],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [
+  {
+   "where": "section.hds-color-mode.stats-section:nth-of-type(4) > div.section-container.stats-section__container:nth-of-type(1) > div.stats-section__stats-spacer:nth-of-type(2) > div.stats-section__controls:nth-of-type(1) > button.time-of-day-select__trigger",
+   "y": 3999,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "kind": "custom combobox",
+   "name": "Dusk. Choose a time of day",
+   "labelled": true
+  },
+  {
+   "where": "footer.hds-color-mode.footer > div.section-container.footer__container > div.footer-bottom:nth-of-type(3) > div:nth-of-type(1) > button.hds-button.locale-switcher__button",
+   "y": 14740,
+   "screen": 17,
+   "tile": "tiles/1440-16.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "custom combobox",
+   "name": "Canada. Choose your country",
+   "labelled": true
+  }
+ ],
+ "forms": {
+  "forms": [
+   {
+    "form": "footer__container > div.footer-newsletter:nth-of-type(2) > div.newsletter-signup > form.hds-form.newsletter-signup__form",
+    "method": "get",
+    "action": null,
+    "fields": 2,
+    "text_fields": 1,
+    "visible_labels": 1,
+    "placeholder_only": 0,
+    "required_marks": 0,
+    "help_lines": 0,
+    "buttons": [
+     "Continue"
+    ],
+    "y": 14535,
+    "tile": "tiles/1440-16.png",
+    "hidden": false,
+    "fake_send": {
+     "button": null,
+     "requests_attempted": 13,
+     "new_text": [
+      "Global GDP running on Stripe: 1.74684283%",
+      "1.74684284%"
+     ],
+     "error": "page.evaluate: TypeError: Cannot read properties of undefined (reading 'querySelectorAll')\n    at eval (eval at evaluate (:311:30), <anonymous>:3:26)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    }
+   }
+  ],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "#navigation-menu",
+   "y": 6,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "static",
+   "box": [
+    89,
+    6,
+    1262,
+    64
+   ],
+   "items": 7,
+   "labels": [
+    "Products",
+    "Solutions",
+    "Developers",
+    "Resources",
+    "Pricing",
+    "Sign in",
+    "Stripe homepage"
+   ],
+   "current": [
+    {
+     "item": "Stripe homepage",
+     "by": [
+      "links to this page"
+     ]
+    }
+   ],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 60x25px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "main > section.hds-color-mode.stats-section:nth-of-type(4) > div.section-container.stats-section__container:nth-of-type(1) > div.section-row.section-row-gap:nth-of-type(1) > div.stats-section__stats-menu:nth-of-type(2)",
+   "y": 3792,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "kind": "in-page",
+   "position": "static",
+   "box": [
+    88,
+    3792,
+    1264,
+    183
+   ],
+   "items": 5,
+   "labels": [
+    "135+",
+    "US$1.9tn",
+    "99.999%",
+    "200m+",
+    "historical uptime"
+   ],
+   "current": [
+    {
+     "item": "135+",
+     "by": [
+      "class"
+     ]
+    }
+   ],
+   "dead_links": 0
+  },
+  {
+   "where": "div.section-container.section-row > div.section-row.section-row-gap:nth-of-type(2) > section.section-row.section-row-gap:nth-of-type(2) > section.startups-carousel > div.carousel-nav.startups-carousel__nav:nth-of-type(1)",
+   "y": 6491,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "kind": "in-page",
+   "position": "static",
+   "box": [
+    1248,
+    6491,
+    88,
+    40
+   ],
+   "items": 2,
+   "labels": [
+    "Previous customer story",
+    "Next customer story"
+   ],
+   "current": [],
+   "dead_links": 0
+  },
+  {
+   "where": "div.section-row.section-row-gap:nth-of-type(2) > section.section-row.section-row-gap:nth-of-type(3) > div.testimonial-carousel-container:nth-of-type(2) > div.testimonial-carousel__navigation-customers:nth-of-type(3) > div.testimonial-carousel__navigation-customers-inner",
+   "y": 8876,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "kind": "in-page",
+   "position": "static",
+   "box": [
+    104,
+    8876,
+    1232,
+    100
+   ],
+   "items": 4,
+   "labels": [
+    "Show testimonial from Mindbody",
+    "Show testimonial from Jobber",
+    "Show testimonial from Thinkific",
+    "Show testimonial from Lightspeed"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Toggle navigation menu",
+    "where": "nav.hds-navigation-menu.navigation-menu > button.hds-ui-button.hds-navigation-menu__trigger",
+    "box": [
+     40,
+     40
+    ]
+   }
+  ],
+  "top_links_visible_375": [],
+  "header_items_1440": 7,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 2,
+    "position": "static",
+    "current": [
+     {
+      "item": "Stripe homepage",
+      "by": [
+       "links to this page"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "in-page",
+    "items": 4,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 15,
+  "tried": 6,
+  "by_kind": {
+   "dialog": 6
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "dialog",
+    "name": "Accept and optimise payments globally – online and in person",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [
+     "dialog: Accept and optimise payments globally – ",
+     "div: Accept and optimise payments globally – ",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2627.9
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 1,
+    "kind": "dialog",
+    "name": "Enable any billing model Pro Plan Billed monthly Tokens CA$0",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(2)",
+    "status": "ok",
+    "opened": [
+     "dialog: Enable any billing model Launch fast and",
+     "div: Enable any billing model Launch fast and",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2653.8
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 2,
+    "kind": "dialog",
+    "name": "Monetise through agentic commerce",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(3)",
+    "status": "ok",
+    "opened": [
+     "dialog: Monetise through agentic commerce Reach ",
+     "div: Monetise through agentic commerce Reach ",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2641
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t2-normal-600.png",
+    "still_before": "motion/t2-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 3,
+    "kind": "dialog",
+    "name": "Create a card issuing programme",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(4)",
+    "status": "ok",
+    "opened": [
+     "dialog: Create a card issuing programme Offer co",
+     "div: Create a card issuing programme Offer co",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2376.3
+    ],
+    "closed_after_escape": false,
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 4,
+    "kind": "dialog",
+    "name": "Access borderless money movement with stablecoins and crypto",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(5)",
+    "status": "ok",
+    "opened": [
+     "dialog: Access borderless money movement with st",
+     "div: Access borderless money movement with st",
+     "div: ",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2646.2
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t4-normal-600.png",
+    "still_before": "motion/t4-normal-000.png",
+    "reduce_status": "skipped"
+   },
+   {
+    "t": 5,
+    "kind": "dialog",
+    "name": "Embed payments in your platform",
+    "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(6)",
+    "status": "ok",
+    "opened": [
+     "dialog: Embed payments in your platform Add paym",
+     "div: ",
+     "div: Embed payments in your platform Add paym",
+     "div: "
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": true,
+    "largest_box": [
+     1184,
+     2558
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t5-normal-600.png",
+    "still_before": "motion/t5-normal-000.png",
+    "reduce_status": "skipped"
+   }
+  ],
+  "not_tried": [
+   "Canada. Choose your country: over the cap of 6 triggers",
+   "Products: over the cap of 6 triggers",
+   "URBN consolidates $5 billion in online and in-store revenue : over the cap of 6 triggers",
+   "Dismiss chat: over the cap of 6 triggers",
+   "Chat now with sales: over the cap of 6 triggers",
+   "Show testimonial from Mindbody: over the cap of 6 triggers",
+   "Continue: over the cap of 6 triggers",
+   "135+: over the cap of 6 triggers"
+  ],
+  "not_verified": [
+   "3 iframe(s) on the page: transitions inside frames are not exercised"
+  ],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "main > section.hds-color-mode.hero-section-container:nth-of-type(1)",
+   "y": 76,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "count": 8,
+   "size": [
+    1440,
+    685
+   ],
+   "section": null,
+   "controls_inside": 6,
+   "whole_card_link": 0,
+   "with_heading": 6
+  },
+  {
+   "where": "div.platform-graphic > div:nth-of-type(2) > div.platform-graphic__features:nth-of-type(3) > div.platform-graphic-features > div.platform-graphic__feature-card__container.platform-graphic-features__payments:nth-of-type(1)",
+   "y": 8141,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "count": 4,
+   "size": [
+    356,
+    89
+   ],
+   "section": "Make your SaaS platform a complete financial operating system",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  },
+  {
+   "where": "div:nth-of-type(1) > footer.hds-color-mode.footer > div.section-container.footer__container > div.footer-links-section:nth-of-type(1) > div.section-row.footer-links-section__content:nth-of-type(1)",
+   "y": 13511,
+   "screen": 16,
+   "tile": "tiles/1440-15.png",
+   "first_screen": false,
+   "in_footer": true,
+   "count": 3,
+   "size": [
+    296,
+    990
+   ],
+   "section": "Start building",
+   "controls_inside": 31,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [
+  {
+   "where": "nav.hds-navigation-menu.navigation-menu > div.hds-navigation-menu__content.navigation-menu-content:nth-of-type(1) > div.products-callout.products-callout--mobile",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "products-callout products-callout--mobile",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.dom-graphic.dom-graphic--variant-default > div.dom-graphic__content.dom-graphic__content--horizontal-scale-left > div.payments-graphic__terminal > div.payments-graphic__terminal-screen > div.payments-graphic__terminal-message:nth-of-type(4)",
+   "y": 1343,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "cls": "payments-graphic__terminal-message",
+   "text": "Tap, insert or swipe to pay Zum Bezahlen Karte auflegen, einführen oder durchziehen タップ、挿入、またはスワイプして支払う Tap, insert or s",
+   "fixed": false
+  },
+  {
+   "where": "div.section-row.section-row-gap:nth-of-type(2) > div.columns.columns--auto > div.feature-detail:nth-of-type(1) > div.feature-detail__footer:nth-of-type(3) > a.hds-link.hds-link--callout",
+   "y": 6156,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "cls": "hds-link hds-link--callout",
+   "text": "View services",
+   "fixed": false
+  },
+  {
+   "where": "div.section-row.section-row-gap:nth-of-type(2) > div.columns.columns--auto > div.feature-detail:nth-of-type(2) > div.feature-detail__footer:nth-of-type(3) > a.hds-link.hds-link--callout",
+   "y": 6156,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "cls": "hds-link hds-link--callout",
+   "text": "View partners",
+   "fixed": false
+  },
+  {
+   "where": "div.section-row.section-row-gap:nth-of-type(2) > div.columns.columns--auto > div.feature-detail:nth-of-type(3) > div.feature-detail__footer:nth-of-type(3) > a.hds-link.hds-link--callout",
+   "y": 6156,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "cls": "hds-link hds-link--callout",
+   "text": "View plans",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic > div:nth-of-type(2) > div.platform-graphic__features--stacked:nth-of-type(1) > div.platform-graphic-features > div.platform-graphic__feature-card__container.platform-graphic-features__notification:nth-of-type(4)",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "hidden": true,
+   "cls": "platform-graphic__feature-card__container platform-graphic-f",
+   "text": null,
+   "fixed": false
+  },
+  {
+   "where": "div.browser-graphic__page:nth-of-type(2) > div.platform-graphic-browser-container > div.platform-graphic-browser-content:nth-of-type(2) > div.platform-graphic-browser-cards:nth-of-type(2) > div.platform-graphic-browser-card-item.platform-graphic-browser-card-item--notification:nth-of-type(3)",
+   "y": 7977,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item platform-graphic-browser-",
+   "cls": "platform-graphic-browser-card-item platform-graphic-browser-",
+   "text": "Expires on 12 Jan You're pre-qualified for up to CA$50,000 in financing If approved, you'll receive funds in as little a",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(2) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8191,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(3) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--disputed",
+   "y": 8220,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Disputed",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(4) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8249,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(5) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8278,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(6) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8307,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(7) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--refunded",
+   "y": 8336,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Refunded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(8) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8365,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(9) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8394,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  },
+  {
+   "where": "div.platform-graphic-browser-card-item__payments-content > div.platform-graphic-browser-card-item__payments-table:nth-of-type(2) > div.platform-graphic-browser-card-item__payments-table-row:nth-of-type(10) > div:nth-of-type(2) > span.platform-graphic__status-label.platform-graphic__status-label--succeeded",
+   "y": 8423,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "in_dialog": true,
+   "mock_hint": "platform-graphic-browser-card-item__payments-table-row",
+   "cls": "platform-graphic__status-label platform-graphic__status-labe",
+   "text": "Succeeded",
+   "fixed": false
+  }
+ ],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [
+   {
+    "where": "div.connect-platform-graphic__payment-card:nth-of-type(1) > div.connect-platform-graphic__payment-card-content.connect-platform-graphic__payment-card-content--jackson-hot-yoga:nth-of-type(1) > div.connect-platform-graphic__payment-screen.connect-platform-graphic__payment-screen--success:nth-of-type(3) > div.connect-platform-graphic__payment-screen-summary:nth-of-type(1) > div.connect-platform-graphic__payment-screen-summary-label:nth-of-type(1)",
+    "y": 2568,
+    "screen": 3,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Thank you!",
+    "match": "Thank you"
+   },
+   {
+    "where": "div.newsletter-signup__input-group > div.newsletter-signup__inputs-container:nth-of-type(1) > div.newsletter-signup__swap.newsletter-signup__label-slot:nth-of-type(1) > div.newsletter-signup__swap-item:nth-of-type(3) > label.hds-label.newsletter-signup__input-label",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_footer": true,
+    "in_dialog": true,
+    "hidden": true,
+    "text": "Thanks for subscribing. Look out for Stripe updates in your inbox.",
+    "match": "Thanks"
+   },
+   {
+    "where": "div.hds-field > div.newsletter-signup__input-group > div.newsletter-signup__buttons-container:nth-of-type(2) > span.newsletter-signup__button.newsletter-signup__subscribed-button > p.hds-text.hds-text--md",
+    "y": 14577,
+    "screen": 17,
+    "tile": "tiles/1440-16.png",
+    "first_screen": false,
+    "in_footer": true,
+    "hidden": true,
+    "text": "Subscribed",
+    "match": "Subscribed"
+   }
+  ],
+  "onboarding": [
+   {
+    "where": "div.platform-graphic-features > div.platform-graphic__feature-card__container.platform-graphic-features__notification:nth-of-type(4) > div.platform-graphic__feature-card__wrap:nth-of-type(2) > div.platform-graphic__feature-card__content:nth-of-type(1) > div.platform-graphic__feature-card__description:nth-of-type(2)",
+    "y": 0,
+    "screen": 1,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "hidden": true,
+    "text": "Show a banner listing required actions for risk and onboarding.",
+    "match": "onboarding"
+   }
+  ],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 3,
+   "onboarding": 1
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 3,
+   "onboarding": 1
+  },
+  "state_classes": [
+   {
+    "class": "success",
+    "elements": 3,
+    "example": "m-graphic__payment-screen.connect-platform-graphic__payment-screen--success:nth-of-type(3)"
+   },
+   {
+    "class": "error",
+    "elements": 1,
+    "example": "#newsletter-field-error"
+   }
+  ],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [
+   {
+    "a": 0,
+    "name": "Continue",
+    "kind": "form-button",
+    "selector": "> div:nth-of-type(2) > div > form > div > div > div:nth-of-type(2) > button:nth-of-type(2)",
+    "form": "#__next > div:nth-of-type(1) > footer > div > div:nth-of-type(2) > div > form",
+    "slow": {
+     "status": "not-verified (action not found after reload)"
+    },
+    "fail": {
+     "status": "skipped (the slow run made no same-origin request, so there is nothing to fail)"
+    }
+   }
+  ],
+  "skipped": [],
+  "not_verified": []
+ },
+ "focus": {
+  "stops": 40,
+  "first": "a \"\" href=/en-ca",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 13,
+  "covered": 7,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 8268,
+   "totalChars": 11138
+  },
+  "reduced_motion": {
+   "visibleChars": 8392,
+   "totalChars": 11138
+  },
+  "observer_never_fires": {
+   "visibleChars": 7335,
+   "totalChars": 9600
+  },
+  "scripts_off": {
+   "visibleChars": 7646,
+   "totalChars": 9537
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 43,
+  "prep": {
+   "host": "stripe.com",
+   "config": {
+    "click": [
+     "Reject all"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"reject all\"",
+    "w1280: clicked \"reject all\"",
+    "w1440: clicked \"reject all\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "not-verified: no action could be measured: form-button \"Continue\" (orm > div > div > div:nth-of-type(2) > button:nth-of-type(2)) [slow]: not-verified (action not found after reload)",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "ran",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "button \"Accept and optimise payments globally – online and in person\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Create a card issuing programme\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"135+\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"US$1.9tn\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"99.999%\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"200m+\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Dusk. Choose a time of day\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(40, 116, 173))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"URBN consolidates $5 billion in online and in-store revenue \"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "button \"Le Monde improves local and international payments with Stri\"",
+     "evidence": "no visible focus indicator (outline: none 3px rgb(0, 0, 0))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 12,
+   "hits": [
+    {
+     "where": "nav.hds-navigation-menu.navigation-menu > a.hds-link.navigation-menu-home-link",
+     "evidence": "touch target 60x25px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "nav.hds-navigation-menu.navigation-menu > button.hds-ui-button.hds-navigation-menu__trigger",
+     "evidence": "touch target 40x40px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(1) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(2) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(3) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(4) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(5) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(6) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(7) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.logo-carousel > div.logo-carousel__marquee-container > ul.logo-carousel__marquee > li.logo-carousel__item:nth-of-type(8) > a.hds-link",
+     "evidence": "touch target 142x34px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 2,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "2 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 5,
+   "hits": [
+    {
+     "where": "_dashboard-browser:nth-of-type(2) > div.browser-graphic > div.browser-graphic__page:nth-of-type(2) > div.connect-platform-graphic__dashboard",
+     "evidence": "\"Canada\" repeated 3 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "s:nth-of-type(4) > div.platform-graphic-browser-card-item__content:nth-of-type(4) > div.platform-graphic-browser-card-item__payments-content",
+     "evidence": "\"CA$21.99\" repeated 5 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section-row.section-row-gap:nth-of-type(3) > div.platform-value__graphic-container:nth-of-type(1) > div.columns.columns--auto:nth-of-type(2)",
+     "evidence": "\"Read the guide\" repeated 3 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ow.section-row-gap:nth-of-type(3) > div.testimonial-carousel-container:nth-of-type(2) > div:nth-of-type(1) > div.testimonial-carousel__cards",
+     "evidence": "\"Read the story\" repeated 4 times in one container",
+     "tier": "Reflex"
+    },
+    {
+     "where": "eloper-systems-animation > figure.developer-systems-animation__figure > div.developer-systems-animation__figure--chart-center:nth-of-type(2)",
+     "evidence": "\"PSP\" repeated 4 times in one container",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 1,
+   "hits": [
+    {
+     "where": "id > h1.hds-heading.hero-section__title:nth-of-type(1) > span.hero-section__title-copy  \"Accept payments, offer financial services and impl\"",
+     "evidence": "421 words shown at 1440px are hidden at 375px (132 elements)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "933 characters (11% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "622 characters (8% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "not-verified: 9 stylesheet(s) could not be read; a prefers-reduced-motion rule may be in them",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "not-verified: motion capture skipped (9)",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "not-verified: motion capture skipped (9)",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 30,
+  "button_variants": 13,
+  "fields_visible": 1,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 2,
+  "forms": 1,
+  "nav_regions": 4,
+  "nav_with_current_mark": 2,
+  "tabs": 0,
+  "overlay_triggers": 6,
+  "card_groups": 3,
+  "tables": 0,
+  "status_regions": 16,
+  "async_actions": 1
+ }
+}

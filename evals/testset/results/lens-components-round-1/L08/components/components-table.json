@@ -1,0 +1,654 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L08",
+ "target": "https://gradloom.app",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "landmarks": {
+  "main": 1,
+  "nav": 2,
+  "footer": 1,
+  "header": 1
+ },
+ "buttons": {
+  "count": 9,
+  "variants": [
+   {
+    "count": 2,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "oklab(0.305052 0.000671804 0.00695443 / 0.8)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "About",
+     "Legal"
+    ],
+    "first_screen": 2,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#radix-_r_0_",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 2,
+    "fill": "rgb(16, 122, 105)",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "Build my roadmap"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "section.px-4.pt-12:nth-of-type(1) > div.mx-auto.grid > div.max-w-xl:nth-of-type(1) > div.mt-9.flex > a.group.relative",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "none",
+    "strong_fill": false,
+    "text_color": "rgb(88, 86, 81)",
+    "border": "rgb(214, 211, 204)",
+    "radius_px": 12,
+    "weight": "400",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Dark mode"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 1,
+    "example": "div.min-h-dvh > header.sticky.top-0 > nav.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(3) > button.inline-flex.min-w-\\[44px\\]:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(252, 251, 248)",
+    "strong_fill": false,
+    "text_color": "rgb(49, 47, 43)",
+    "border": "oklab(0.443903 -0.0782428 0.00149038 / 0.3)",
+    "radius_px": 12,
+    "weight": "500",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Sign In"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "header.sticky.top-0 > nav.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(3) > div.hidden.lg\\:block:nth-of-type(1) > button.inline-flex.items-center",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "gradient",
+    "strong_fill": true,
+    "text_color": "rgb(255, 255, 255)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     44
+    ],
+    "labels": [
+     "Start Now"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-dvh > header.sticky.top-0 > nav.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(3) > button.items-center.justify-center:nth-of-type(2)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "oklab(0.443903 -0.0782428 0.00149038 / 0.1)",
+    "strong_fill": false,
+    "text_color": "rgb(10, 97, 84)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     36
+    ],
+    "labels": [
+     "Home"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "div.min-h-dvh > header.sticky.top-0 > nav.max-w-7xl.mx-auto > div.hidden.lg\\:flex:nth-of-type(2) > a.inline-flex.items-center:nth-of-type(1)",
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "count": 1,
+    "fill": "rgb(255, 255, 255)",
+    "strong_fill": false,
+    "text_color": "rgb(87, 85, 80)",
+    "border": "none",
+    "radius_px": 12,
+    "weight": "600",
+    "heights_px": [
+     48
+    ],
+    "labels": [
+     "How it works"
+    ],
+    "first_screen": 1,
+    "in_footer": 0,
+    "icon_only": 0,
+    "example": "#react-aria7945200990-_r_e_",
+    "tile": "tiles/1440-00.png"
+   }
+  ],
+  "variant_count": 7,
+  "row_buttons": {
+   "count": 0,
+   "labels": []
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 192,
+  "unreadable_sheets": 1,
+  "rules_with": {
+   "hover": 137,
+   "hover_media": 6,
+   "focus_visible": 34,
+   "focus": 16,
+   "focus_within": 1,
+   "active": 6,
+   "disabled": 36,
+   "invalid": 14,
+   "checked": 0,
+   "current_selected": 8,
+   "expanded_open": 21,
+   "busy": 1,
+   "placeholder": 6,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "div > div.route-enter.relative > div.min-h-dvh > header.sticky.top-0 > nav.max-w-7xl.mx-auto",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "sticky",
+   "box": [
+    73,
+    0,
+    1280,
+    64
+   ],
+   "items": 8,
+   "labels": [
+    "Dark mode",
+    "Sign In",
+    "Start Now",
+    "GradLoom",
+    "Home",
+    "About",
+    "Legal",
+    "Help / Contact"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 115x28px at 375px (min 44px)"
+   ]
+  },
+  {
+   "where": "div.route-enter.relative > div.min-h-dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap",
+   "y": 2344,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "in_footer": true,
+   "kind": "footer",
+   "position": "static",
+   "box": [
+    456,
+    2344,
+    460,
+    20
+   ],
+   "items": 6,
+   "labels": [
+    "About",
+    "Career Guide",
+    "Privacy Policy",
+    "Terms",
+    "Legal",
+    "Contact"
+   ],
+   "current": [],
+   "dead_links": 0,
+   "sweep": [
+    "targets (A11-004, Reflex): touch target 37x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 81x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 84x20px at 375px (min 44px)",
+    "targets (A11-004, Reflex): touch target 38x20px at 375px (min 44px)"
+   ]
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [
+   {
+    "label": "Open menu",
+    "where": "w-7xl.mx-auto > div.flex.items-center:nth-of-type(3) > div:nth-of-type(2) > button.flex.items-center",
+    "box": [
+     44,
+     44
+    ]
+   }
+  ],
+  "top_links_visible_375": [
+   "GradLoom"
+  ],
+  "header_items_1440": 8,
+  "bottom_bar": [],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 3,
+    "position": "sticky",
+    "current": []
+   },
+   {
+    "kind": "footer",
+    "items": 6,
+    "position": "static",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 4,
+  "tried": 4,
+  "by_kind": {
+   "menu": 1,
+   "button": 3
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "menu",
+    "name": "About",
+    "selector": "#radix-_r_0_",
+    "status": "ok",
+    "opened": [
+     "menu: About Compare Careers Help / Contact"
+    ],
+    "opened_source": "animation-targets",
+    "covers_viewport": false,
+    "largest_box": [
+     224,
+     130
+    ],
+    "closed_after_escape": true,
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok",
+    "sweep": [
+     "motion/easing: transition easing is ease (read from the running animations)"
+    ]
+   },
+   {
+    "t": 1,
+    "kind": "button",
+    "name": "How it works",
+    "selector": "#react-aria6941926599-_r_e_",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t1-normal-600.png",
+    "still_before": "motion/t1-normal-000.png",
+    "reduce_status": "not-verified",
+    "sweep": [
+     "motion/duration_live: transition runs about 390 ms (JavaScript-driven, measured in real time at ~16.8 ms a frame; limit for a button"
+    ]
+   },
+   {
+    "t": 2,
+    "kind": "button",
+    "name": "Start Now",
+    "selector": "#root > div > div > header > nav > div:nth-of-type(3) > button:nth-of-type(2)",
+    "status": "not-verified (the click navigated the page)",
+    "reduce_status": "not-verified"
+   },
+   {
+    "t": 3,
+    "kind": "button",
+    "name": "Dark mode",
+    "selector": "#root > div > div > header > nav > div:nth-of-type(3) > button:nth-of-type(1)",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t3-normal-600.png",
+    "still_before": "motion/t3-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [
+  {
+   "where": "section.border-t.border-secondary:nth-of-type(3) > div.mx-auto.max-w-6xl > div.mt-12.grid > dl.divide-y.divide-\\[var\\(--color-border-secondary\\)\\] > div.py-5:nth-of-type(1)",
+   "y": 1485,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "count": 3,
+   "size": [
+    495,
+    121
+   ],
+   "section": "A plan you can act on this week",
+   "controls_inside": 0,
+   "whole_card_link": 0,
+   "with_heading": 0
+  }
+ ],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 18,
+  "first": "a \"Skip to main content\" href=#main-content",
+  "skip_link_first": true,
+  "no_outline_no_shadow": 0,
+  "covered": 0,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 1489,
+   "totalChars": 1489
+  },
+  "reduced_motion": {
+   "visibleChars": 1489,
+   "totalChars": 1489
+  },
+  "observer_never_fires": {
+   "visibleChars": 1489,
+   "totalChars": 1489
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 4,
+  "prep": {
+   "host": "gradloom.app",
+   "config": {
+    "click": [
+     "Essential only"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"essential only\"",
+    "w1280: clicked \"essential only\"",
+    "w1440: clicked \"essential only\""
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 0,
+   "hits": []
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 7,
+   "hits": [
+    {
+     "where": "div.min-h-dvh > header.sticky.top-0 > nav.max-w-7xl.mx-auto > div.flex.items-center:nth-of-type(1) > a.flex.items-center",
+     "evidence": "touch target 115x28px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".min-h-dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(1)  \"About\"",
+     "evidence": "touch target 37x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(2)  \"Career Guide\"",
+     "evidence": "touch target 81x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "h > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(3)  \"Privacy Policy\"",
+     "evidence": "touch target 84x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".min-h-dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(4)  \"Terms\"",
+     "evidence": "touch target 38x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": ".min-h-dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(5)  \"Legal\"",
+     "evidence": "touch target 34x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "in-h-dvh > footer.py-14.px-4 > div.max-w-6xl.mx-auto > nav.flex.flex-wrap > a.hover\\:text-accent.transition-colors:nth-of-type(6)  \"Contact\"",
+     "evidence": "touch target 48x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 0,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 1,
+   "hits": [
+    {
+     "where": "section.border-t.border-secondary:nth-of-type(3) > div.mx-auto.max-w-6xl > div.mt-12.grid > div.rounded-xl.border > figure.mt-8.rounded-lg",
+     "evidence": "card inside a card (div.rounded-xl.border)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "scripts_off",
+     "evidence": "1489 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 2,
+   "hits": [
+    {
+     "where": "menu trigger \"About\" (#radix-_r_0_)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish",
+     "check": "easing"
+    },
+    {
+     "where": "button trigger \"How it works\" (#react-aria6941926599-_r_e_)",
+     "evidence": "transition runs about 390 ms (JavaScript-driven, measured in real time at ~16.8 ms a frame; limit for a button 300 ms)",
+     "tier": "Reflex",
+     "check": "duration_live"
+    }
+   ]
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 9,
+  "button_variants": 7,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 2,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 4,
+  "card_groups": 1,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}

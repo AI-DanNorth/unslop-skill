@@ -1,0 +1,390 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L30",
+ "target": "https://brand.dropbox.com",
+ "width": 1440,
+ "captured": "2026-11-10",
+ "landmarks": {
+  "main": 0,
+  "nav": 1,
+  "footer": 0,
+  "header": 0
+ },
+ "buttons": {
+  "count": 0,
+  "variants": [],
+  "variant_count": 0,
+  "row_buttons": {
+   "count": 1,
+   "labels": [
+    "Navigation menu"
+   ]
+  },
+  "filled_by_screen": {},
+  "note": "strong fill = a gradient or an opaque colour well away from the page ground; screens listed only where two or more different strongly filled labels sit outside the nav, footer and product pictures"
+ },
+ "declared_states": {
+  "readable_rules": 166,
+  "unreadable_sheets": 2,
+  "rules_with": {
+   "hover": 27,
+   "hover_media": 0,
+   "focus_visible": 0,
+   "focus": 1,
+   "focus_within": 0,
+   "active": 0,
+   "disabled": 0,
+   "invalid": 0,
+   "checked": 0,
+   "current_selected": 0,
+   "expanded_open": 0,
+   "busy": 0,
+   "placeholder": 0,
+   "read_only": 0
+  },
+  "note": "occurrences of each state selector in the readable stylesheet text (nested @media and @layer blocks included); 0 with readable CSS means the state is not styled at all"
+ },
+ "fields": [],
+ "choices": {
+  "choices": [],
+  "radio_groups": {},
+  "recorded_defaults": false
+ },
+ "selects": [],
+ "forms": {
+  "forms": [],
+  "fields_outside_forms": 0
+ },
+ "navigation": [
+  {
+   "where": "html.w-mod-js.w-mod-ix > body.home > div.nav-container.final:nth-of-type(2) > div.nav:nth-of-type(5) > nav.nav-wrapper",
+   "y": 0,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "header",
+   "position": "fixed",
+   "box": [
+    0,
+    0,
+    1440,
+    900
+   ],
+   "items": 8,
+   "labels": [
+    "Framework",
+    "Typography",
+    "Voice & Tone",
+    "Logo",
+    "Color",
+    "Imagery",
+    "Motion",
+    "Iconography"
+   ],
+   "current": [],
+   "dead_links": 0
+  }
+ ],
+ "breadcrumbs": [],
+ "tabs": [],
+ "phone_nav": {
+  "toggle": [],
+  "top_links_visible_375": [
+   "Framework",
+   "Voice & Tone",
+   "Logo",
+   "Typography"
+  ],
+  "header_items_1440": 8,
+  "bottom_bar": [
+   {
+    "where": ".w-mod-js.w-mod-ix > body.home > div.nav-container.final:nth-of-type(2) > aside.outro-page",
+    "items": 4
+   }
+  ],
+  "regions_375": [
+   {
+    "kind": "header",
+    "items": 8,
+    "position": "fixed",
+    "current": []
+   }
+  ],
+  "note": "the capture opens triggers at 1440 only: what the phone menu holds and how it opens and closes is not verified; read shot-375.png and fold-375.png"
+ },
+ "overlays": {
+  "found": 1,
+  "tried": 1,
+  "by_kind": {
+   "button": 1
+  },
+  "triggers": [
+   {
+    "t": 0,
+    "kind": "button",
+    "name": "Navigation menu",
+    "selector": "#nav-button",
+    "status": "ok",
+    "opened": [],
+    "opened_source": "none",
+    "covers_viewport": false,
+    "largest_box": null,
+    "closed_after_escape": null,
+    "note": "no animation started and nothing opened: instant change or none",
+    "still_open": "motion/t0-normal-600.png",
+    "still_before": "motion/t0-normal-000.png",
+    "reduce_status": "ok"
+   }
+  ],
+  "not_tried": [],
+  "not_verified": [],
+  "in_dom": {
+   "dialog_elements": 0,
+   "hidden_overlay_like": 0
+  },
+  "not_measured": "focus moving into an overlay and back to its trigger, scroll lock behind it and a click on the backdrop are not recorded by the capture: read the stills, or list them under not_investigated"
+ },
+ "cards": [],
+ "tables": [],
+ "status_regions": [],
+ "state_text": {
+  "empty": [],
+  "error": [],
+  "loading": [],
+  "success": [],
+  "onboarding": [],
+  "counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "hidden_counts": {
+   "empty": 0,
+   "error": 0,
+   "loading": 0,
+   "success": 0,
+   "onboarding": 0
+  },
+  "state_classes": [],
+  "note": "text and classes in the DOM, shown or hidden: a hidden error or empty template means the state exists; marketing copy also matches ('fewer errors'), so read each row in context"
+ },
+ "async": {
+  "actions": [],
+  "note": "no primary actions (form submits, action buttons) found",
+  "skipped": []
+ },
+ "focus": {
+  "stops": 8,
+  "first": "a \"Brand Partner Toolkit\" href=https://www.dropbox.com/scl/fo/6qjduc7j5ujf09f75w1p7/AFc217w49gnfwVNr64Bd1_A?rlkey=tkqw8jcoi7f24voc6577vakky&st=2l9cr2v5&dl=0",
+  "skip_link_first": false,
+  "no_outline_no_shadow": 0,
+  "covered": 3,
+  "note": "focus visibility and cover are the sweep's (focus_ring, A11-003): cite its hits; a stop with no outline may still draw a ring another way"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 560,
+   "totalChars": 699
+  },
+  "reduced_motion": {
+   "visibleChars": 560,
+   "totalChars": 699
+  },
+  "observer_never_fires": {
+   "visibleChars": 560,
+   "totalChars": 699
+  },
+  "scripts_off": {
+   "visibleChars": 491,
+   "totalChars": 699
+  }
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "prep": {
+   "host": "brand.dropbox.com",
+   "config": {
+    "scrollFrames": 12
+   },
+   "applied": [
+    "w375: 3 scroll frames",
+    "w1280: 3 scroll frames",
+    "w1440: 3 scroll frames"
+   ]
+  }
+ },
+ "sweep": {
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "fake_send": {
+   "status": "skipped: no forms",
+   "rule": "INT-004",
+   "n": 0,
+   "hits": []
+  },
+  "focus_ring": {
+   "status": "ran",
+   "rule": "A11-003",
+   "n": 3,
+   "hits": [
+    {
+     "where": "a \"Imagery\"",
+     "evidence": "focused element is entirely hidden by a fixed or sticky element (WCAG 2.4.11)",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Motion\"",
+     "evidence": "no visible focus indicator (outline: auto 1px rgb(16, 16, 16))",
+     "tier": "Floor"
+    },
+    {
+     "where": "a \"Motion\"",
+     "evidence": "focused element is partly hidden by a fixed or sticky element (WCAG 2.4.12)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "targets": {
+   "status": "ran",
+   "rule": "A11-004",
+   "n": 4,
+   "hits": [
+    {
+     "where": "div.outro-info:nth-of-type(3) > div.outro-links:nth-of-type(2) > a.outro-link.w-inline-block:nth-of-type(1)",
+     "evidence": "touch target 163x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "div.outro-info:nth-of-type(3) > div.outro-links:nth-of-type(2) > a.outro-link.w-inline-block:nth-of-type(2)",
+     "evidence": "touch target 196x20px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "page > div.outro-wrapper:nth-of-type(1) > div.outro-credits:nth-of-type(4) > a.annotation.credit-link:nth-of-type(1)  \"Dropbox Brand Studio\"",
+     "evidence": "touch target 109x14px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    },
+    {
+     "where": "utro-page > div.outro-wrapper:nth-of-type(1) > div.outro-credits:nth-of-type(4) > a.annotation.credit-link:nth-of-type(2)  \"Daybreak Studio\"",
+     "evidence": "touch target 82x14px at 375px (min 44px)",
+     "tier": "Reflex",
+     "width": 375
+    }
+   ]
+  },
+  "form_labels": {
+   "status": "ran",
+   "rule": "A11-010",
+   "n": 0,
+   "hits": []
+  },
+  "control_names": {
+   "status": "ran",
+   "rule": "A11-006",
+   "n": 0,
+   "hits": []
+  },
+  "headings_landmarks": {
+   "status": "ran",
+   "rule": "A11-007",
+   "n": 3,
+   "hits": [
+    {
+     "where": "page",
+     "evidence": "0 visible h1 elements (expected 1)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "no <main> landmark",
+     "tier": "Reflex"
+    },
+    {
+     "where": "page",
+     "evidence": "first focusable element is a \"Brand Partner Toolkit\", not a skip link",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "n": 0,
+   "hits": []
+  },
+  "nested_cards": {
+   "status": "ran",
+   "rule": "SLP-014",
+   "n": 0,
+   "hits": []
+  },
+  "repeated_label": {
+   "status": "ran",
+   "rule": "CPY-006",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "not-verified: 1 stylesheet(s) could not be read; a prefers-reduced-motion rule may be in them",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "n": 0,
+   "hits": []
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "buttons": 0,
+  "button_variants": 0,
+  "fields_visible": 0,
+  "fields_placeholder_only": 0,
+  "choices": 0,
+  "selects": 0,
+  "forms": 0,
+  "nav_regions": 1,
+  "nav_with_current_mark": 0,
+  "tabs": 0,
+  "overlay_triggers": 1,
+  "card_groups": 0,
+  "tables": 0,
+  "status_regions": 0,
+  "async_actions": 0
+ }
+}
