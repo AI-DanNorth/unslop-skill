@@ -1,0 +1,73 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The architecture diagram keeps to five service nodes and one orange focal node (Astro Origin), with orthogonal connectors that each carry a label, and it tells the request path Reader to Cloudflare to origin to content in one read.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-DIAGRAM-EARNS, T-DIAGRAM-FOCAL and T-30S-BOARD pass, and T-CONNECTORS mostly passes (0 crossings, 0 through nodes); it loses points for a watermark numeral over node text and for one colour that marks both protocol and importance (DVZ-014, DVZ-015)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-DIAGRAM-EARNS",
+    "T-DIAGRAM-FOCAL",
+    "T-30S-BOARD",
+    "T-CONNECTORS"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-015",
+      "tier": "Reflex",
+      "where": "html > body > div.frame > svg, the Reader to Cloudflare to Astro Origin connectors, 1440 (contact sheet #1; shot-1440.png x320 to 620, y510 to 550)",
+      "evidence": "The legend says the blue arrow means 'HTTP request' and the orange arrow 'Primary flow'. The Reader to Cloudflare arrow is blue and labelled HTTPS. The Cloudflare to Origin arrow is orange and labelled SSR, though it is also an HTTP request. The arrows from the origin up to 'MDX Bundle' and down to 'Content CMS' are slate grey, a third colour that the legend does not list.",
+      "before": "Arrow colour encodes protocol on one hop and importance on the next. The two content arrows use a colour with no legend entry.",
+      "after": "Let colour mean one thing: draw every request arrow in one ink, mark the main path by weight (or orange on all three hops), and keep dashes for returns only. Then the legend needs two connector entries.",
+      "why": "A reader following the legend expects the main path to be orange from the reader onwards, and has to guess what the grey arrows are.",
+      "test": "T-CONNECTORS",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-014",
+      "tier": "Finish",
+      "where": "the Cloudflare and Astro Origin nodes, 1440 (shot-1440.png about x500 to 800, y535 to 565)",
+      "evidence": "Large outlined numerals '01' and '02' sit in the bottom-right corner of the Cloudflare and Astro Origin nodes. On the crop the '01' overlaps the end of 'Pages · cache'.",
+      "before": "Decorative step numerals drawn behind the node subtitles.",
+      "after": "Drop the numerals, or move them to a small label above the node where they do not touch text.",
+      "why": "The numerals are plan furniture: they number two of five nodes, say nothing the arrows do not, and collide with a label.",
+      "test": "T-DIAGRAM-FOCAL",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Finish",
+      "where": "svg text such as 'CONTENT', 'HTTPS' and 'RESP', 1440 (contact sheet #1)",
+      "evidence": "The sweep's text_floor hit (A11-002) reports 26 labels at 7 to 9px in this svg. The charts table lists label sizes 7, 8, 8.5 and 9px. On the crop the 'CONTENT' group label and the node-type tags (EXT, EDGE, ORIG) are the faintest text in the figure. This finding only cites the sweep's size hit and adds the reading of the crop.",
+      "before": "Connector and tag labels at 7 to 9px in a 1200px-wide figure.",
+      "after": "Set connector labels and the group label to at least 11px and drop the node-type tags, which repeat the legend.",
+      "why": "The connector labels carry the relationships, and at 8px they are the hardest words to read in the diagram.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "One focal node: only Astro Origin has a chromatic fill and border (the charts table reports 0 chromatic node fills elsewhere, and orange is 2% of the region's pixels).",
+    "Orthogonal connectors with 0 crossings, 0 segments through nodes and 0 floating ends, each with a short label (HTTPS, SSR, READ MDX, QUERY).",
+    "The svg carries a title and a desc that state the path, and the node count (5 services in one group) sits well inside the 12-node web budget (C54)."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "T-CHART-FORM, T-HONEST-SCALE, T-CHART-TEXT-MATCH, T-STAT-TILE: no chart or figure, only a diagram",
+    "arrowhead direction and dash patterns come from the crop only; the DOM does not record them",
+    "T-CHART-375: the diagram medium was captured at 1440 only; it is judged at its native size",
+    "visitor mode inferred as Read (an architecture figure, medium diagram) because there is no 00-contract.md"
+  ]
+}

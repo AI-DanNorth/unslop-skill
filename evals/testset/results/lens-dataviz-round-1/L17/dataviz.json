@@ -1,0 +1,47 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The page's only figures are a hero row of six catalogue counts, and one of them contradicts the feature card below it: the tile says '29 Landing Patterns' and the card says '14 conversion-optimized page structures'.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-STAT-TILE passes on the labelled counts, but T-CHART-TEXT-MATCH fails because the hero tile and the feature card give different counts for the same thing (DVZ-005)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-STAT-TILE",
+    "T-CHART-TEXT-MATCH",
+    "T-CHART-FORM"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "hero stat row, div.grid.grid-cols-3 > div.glass-card-hover:nth-of-type(6), 1440, contact sheet #7, tiles/1440-00.png; 'Landing Patterns' card, tiles/1440-01.png",
+      "evidence": "The hero tile reads '29 Landing Patterns'. The 'Landing Patterns' feature card one screen below says '14 conversion-optimized page structures'. The other counts roughly agree with their cards ('56 Font Pairings' against '50+ font pairings'; '57 UI Styles' against five named styles 'and 45+ more').",
+      "before": "Two different counts for the landing patterns on consecutive screens.",
+      "after": "Use one count, taken from the same source as the database, in both the tile and the card (and in the footer's Database list, which repeats the counts).",
+      "why": "When two figures for the same thing disagree a reader stops trusting both, and every other count in the row loses weight with them.",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The hero counts each carry a plain label ('57 UI Styles', '95 Color Palettes', '24 Chart Types'): they are counts of the catalogue, so they need no period or baseline."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a landing page for a design-skill product with 'Get on GitHub'); there is no 00-contract.md",
+    "the two image-chart candidates (contact #1 'SaaS Analytics Dashboard', #2 'Fintech Crypto Dashboard') and the other gallery screenshots are thumbnails of demo sites made with the product: exhibits (conflict C48), not the page's own figures, and their data cannot be read at 409 by 230px",
+    "the gradient and glow on the stat-tile cards are the sweep's (SLP-007, SLP-008)",
+    "23 requests were blocked in capture (manifest network); no chart region depended on them"
+  ]
+}

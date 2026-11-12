@@ -1,0 +1,68 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The hero exploded-axonometric diagram keeps five equal layers, one accent on the layer that matters ('Type reference'), one leader-line grammar and labels outside the drawing, and the gallery shows the same one-accent system across its specimens.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-DIAGRAM-FOCAL, T-CONNECTORS and T-GRAYSCALE pass on the hero diagram; the gallery's radar specimen carries four filled series (DVZ-120) and T-CHART-375 could not be run."
+  },
+  "tests_run": [
+    "T-DIAGRAM-EARNS",
+    "T-DIAGRAM-FOCAL",
+    "T-30S-BOARD",
+    "T-CONNECTORS",
+    "T-GRAYSCALE",
+    "T-FOCAL",
+    "T-CHART-FORM",
+    "T-TAKEAWAY-TITLE",
+    "T-ONE-QUESTION",
+    "T-DATA-INK"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-120",
+      "tier": "Reflex",
+      "where": "gallery card 'Radar', button.pl:nth-of-type(11) > picture > img (radar.webp, 355 by 222px), 1440, contact sheet #9, tiles/1440-05.png",
+      "evidence": "The radar specimen overlays four filled polygons (MinIO, Amazon S3, Ceph, Google Cloud Storage per its alt text) on five axes; on the crop the three grey fills overlap into one shape and only the orange one stands apart.",
+      "before": "A four-series filled radar as the template for 'multiple entities scored'.",
+      "after": "Show two or three series as outlines with the focal one filled, or use a small table or dot plot for four products on five criteria.",
+      "why": "Past three filled series a radar hides the shapes it exists to compare, and because the gallery is the skill's own output, the specimen teaches that form.",
+      "test": "T-CHART-FORM",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-007",
+      "tier": "Finish",
+      "where": "gallery card 'Line chart' (26 / 45), tiles/1440-07.png",
+      "evidence": "The line-chart specimen puts a marker on every point of the accent series (about 8 dots on one line) over an area fill.",
+      "before": "Markers on every point plus an area fill.",
+      "after": "Drop the markers except the last point and any point the caption names.",
+      "why": "Markers on every point add ink without adding information and compete with the line's shape.",
+      "test": "T-DATA-INK",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The hero diagram (contact #1, 534 by 465px) has five same-size layers, one orange accent on 'Type reference', a title and a description in the svg ('From a sentence to a finished diagram'), and a figure caption; it reads in 30 seconds from 'Your prompt' at the base to 'HTML + SVG' at the top.",
+    "Its leader lines are straight horizontals from each layer to a label outside the drawing (no crossings, none through nodes), and the dashed verticals mean one thing: the stacking axis.",
+    "The gallery keeps one accent colour, one neutral palette and one legend style across 44 specimens; the bar specimen starts at zero and puts its accent on one bar.",
+    "Each gallery image has alt text that states what the diagram shows ('Polar chart of request demand across eight UTC windows on a 0 to 100 percent scale')."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade with a Read component (a landing page for a diagram skill that is also its specimen book); the run medium is 'diagram'; there is no 00-contract.md",
+    "T-CHART-375: only 1440 was captured (no dom-375.json, no 375 tiles); the phone rendering of the hero diagram and the gallery is not verified",
+    "the 'before' image (before.webp) is an exhibit of the unskilled output and was not judged as the page's own figure",
+    "tick values and totals on the gallery specimens (waterfall, polar, heatmap): at 355 by 222px the labels cannot be read from the tiles, so T-HONEST-SCALE and T-CHART-TEXT-MATCH on them are not verified",
+    "the table's 9 node size tiers and 70 connectors on the hero come from the small icons and dashed lines inside each layer; on the crop the five layers are one size",
+    "the hero svg's 9px and 10px labels are the sweep's text_floor Floor (A11-002), not repeated here"
+  ]
+}

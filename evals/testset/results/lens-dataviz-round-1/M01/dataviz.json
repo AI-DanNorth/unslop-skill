@@ -1,0 +1,103 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The sequence diagram on slide 3 is clean (solid calls, dashed returns, one label per arrow), but the 'Loading strategy vs accuracy' bar chart stands its two bars on a hidden baseline near 23%, so 53% looks less than half of 85%.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-CONNECTORS and T-DIAGRAM-FOCAL pass on the sequence diagram, but T-HONEST-SCALE fails on the slide 5 bar chart (DVZ-004), T-CHART-TEXT-MATCH on the slide 2 loop diagram (DVZ-005) and T-STAT-TILE on the 10x tile (DVZ-013)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE",
+    "T-DIAGRAM-EARNS",
+    "T-DIAGRAM-FOCAL",
+    "T-30S-BOARD",
+    "T-CONNECTORS"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-004",
+      "tier": "Reflex",
+      "where": "section.slide:nth-of-type(5) > div.diagram-col > svg, 1920 (contact sheet #3, 441 by 362px at y3347; tiles/1920-03.png)",
+      "evidence": "The two bars are labelled 53% and 85%. From zero the short bar would be 62% of the tall one. On the tile the 'Flat loading' bar is 94px tall and the 'Layered loading' bar 195px (48%). Those heights put the baseline near 23%. The value axis has only two ticks, at the two data values (53% and 85%), and no 0, so nothing shows the cut.",
+      "before": "Two bars on an unlabelled baseline near 23%, with ticks only at the data values.",
+      "after": "Start the bars at 0% with ticks at 0, 25, 50, 75 and 100%, and keep the value labels on the bars.",
+      "why": "The audience reads bar height as accuracy, and the cut doubles the gap the labels give. If the two figures are a claimed result, lens-integrity judges the claim.",
+      "test": "T-HONEST-SCALE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "section.slide:nth-of-type(2) > div.diagram-col > svg (the agent loop), 1920 (contact sheet #2, 441 by 363px at y1021; tiles/1920-01.png)",
+      "evidence": "The slide title is 'Simple core, complex surroundings' and the body says 'The loop is small. The infrastructure around it is what keeps it stable'. The diagram draws the four-step core (PLAN, ACT, OBSERVE, REFLECT) at full size around '20 LOC'. The surroundings appear only as one caption above PLAN, 'TOOLS · HARNESS · EVALS · MEMORY', at 9px in the svg (the charts table's font sizes are 9, 10, 14 and 16px), the smallest text on the slide.",
+      "before": "The diagram shows the core and leaves out the surroundings that the slide is about.",
+      "after": "Draw the loop small in the centre, and set four labelled blocks around it (Tools, Harness, Evals, Memory) that take most of the area.",
+      "why": "The picture argues the opposite of the title: it makes the loop look like the whole system.",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "section.slide:nth-of-type(4) > div.metrics, 1920 (contact sheet #4 and #5, y3019; tiles/1920-02.png)",
+      "evidence": "The three tiles read '20 / lines of code in a working Agent core loop', '4 / harness layers that matter' and '10x / velocity gains trace to execution discipline, not model swaps'. The 10x names no baseline and no measure of velocity. The 20 repeats the slide 2 bullet 'fits in about 20 lines of code' and the '20 LOC' in the loop diagram. The sweep's stat_band hit (INT-007) covers the missing sources.",
+      "before": "A row of three figures of three kinds: a count, a count of layers and a multiplier with no baseline.",
+      "after": "Keep one figure on the slide. If 10x stays, say what was measured against what ('10x more tasks closed per week than [DATA NEEDED: baseline team or setup]'), or cut the tile row and let the bullet list carry the slide.",
+      "why": "A multiplier with no baseline cannot be read, and the repeated 20 adds nothing the deck has not said.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-007",
+      "tier": "Finish",
+      "where": "the slide 5 bar chart's value axis, 1920 (tiles/1920-03.png about x600 to 630, y285 to 340)",
+      "evidence": "The rotated axis title 'Accuracy' is drawn across the '53%' tick label. On the tile the two strings overlap and read as one blot.",
+      "before": "An axis title that collides with a tick label.",
+      "after": "Drop the axis title, since the chart title already says 'accuracy', or move it above the axis.",
+      "why": "The collision makes the lower tick unreadable on a projected slide.",
+      "test": "T-FIGURES",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-003",
+      "tier": "Reflex",
+      "where": "section.slide.cover svg (the ring around 'Agent loop'), 1920 (tiles/1920-00.png about x700 to 925, y285 to 510)",
+      "evidence": "The cover draws three concentric circles around 'Agent LOOP', with a dark arc over about a quarter of the outer ring, in the style of a progress gauge. Nothing on the slide gives the arc a value.",
+      "before": "A gauge-like arc that measures nothing.",
+      "after": "Draw a plain ring with no partial arc, or reuse the four-step loop from slide 2 as the cover mark.",
+      "why": "A partial arc reads as a quantity, and here it has none. It is low on the page's list because it is decoration on the cover.",
+      "test": "T-FILLER",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The 'One turn, traced' sequence diagram uses three lifelines and one grammar: solid arrows for calls (ask, invoke(query)), dashed arrows for returns (result, answer), with one label per arrow and no crossings.",
+    "The bar chart puts its value on each bar (53%, 85%) and labels both categories directly, so it needs no legend."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "T-CHART-375: slides are judged at their projected size (1920) only",
+    "the slides render about 1123px wide on a 1920px capture with white space to the right; I treated this as capture context",
+    "visitor mode inferred as Read (a keynote deck that teaches, medium slides) because there is no 00-contract.md"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The hero figure is an honest, captioned example (three career matches sorted 87%, 80%, 74% and labelled on the line ends), but its wavy path and five vertical rules encode nothing and look like a chart scale that is not there.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CHART-TEXT-MATCH and T-DIRECT-LABEL pass on the hero figure, but T-ONE-QUESTION fails on its decorative waves and gridlines (DVZ-003) and T-CHART-375 loses its labels to about 9px (DVZ-012)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-003",
+      "tier": "Reflex",
+      "where": "hero figure, figure.w-full > svg.h-auto.w-full (aria-hidden), 1440, contact sheet #1, tiles/1440-00.png",
+      "evidence": "The figure (531 by 340px at 1440, y 200) draws a line from 'You' through two full sine waves and five evenly spaced vertical rules (charts table: gridlines vertical 5, axes none, line_series_candidates 1) before it forks to 'Data Analyst 87% match', 'BI Developer 80% match' and 'Product Analyst 74% match'. No label names the rules or what the waves stand for. The page's own 'How it works' list has four steps, not five.",
+      "before": "A path with two decorative waves crossing five unlabelled vertical rules, which reads as a time or stage axis with no values.",
+      "after": "Drop the waves and the rules, or make each rule one of the four named steps ('What you studied', 'Skills', 'Where you want to work', 'Your roadmap') with its label under it, and keep the fork to the three matches.",
+      "why": "Rules that look like a scale make a reader look for values the figure does not have; the waves suggest ups and downs in the path that the product does not measure.",
+      "test": "T-ONE-QUESTION",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Reflex",
+      "where": "hero figure svg at 375, contact-375 #1, tiles/375-00.png",
+      "evidence": "At 375 the svg scales to 328 by 210px (phone: width_ratio_vs_1440 0.62, svg_text_scale 0.62), so the 14px labels render at 8.8px (smallest_label_rendered_px 8.8). The '87% match' value lines are the smallest text on the phone screen.",
+      "before": "SVG text that shrinks with the drawing to under 9px on a phone.",
+      "after": "Set the match labels as HTML text beside the svg, or give the svg a phone viewBox with labels at 12px or more.",
+      "why": "The match percentages are the figure's only data, and on a phone they shrink below the size most readers can read; the text-size Floor itself belongs to A11-002.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The hero figure is captioned as an example ('Example: a Computer Science graduate looking for work in Poland.'), sorts its three matches from 87% to 74% top to bottom, and labels each one on the line end instead of using a legend.",
+    "The figure keeps one accent (orange path, teal end points) and still reads in grayscale because every end point carries its name and value (contact-1440-gray.png #1).",
+    "The 'Example match' card states the salary as a range with unit and period ('PLN 9,000-15,000 / month')."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a career-guidance landing page with a 'Build my roadmap' call to action); there is no 00-contract.md",
+    "disputed for lens-integrity and the charts table: the table lists the three end labels as a 'legend' (svg_swatch_entries); on the crop they are direct labels at the line ends",
+    "the contact sheet crop shows the match values mid-animation (67%, 69%); the 1440 tile shows 87%, 80% and 74%, which match the DOM text"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "none",
+  "confidence": "high",
+  "overall_reason": "The page has no chart, sparkline or diagram; its only data figure is the five-line 'day book' table of facts (6 coffees a week, 250 g bags, York, since 1921), which is typeset as a ledger, not plotted.",
+  "score": {
+    "dimension": "Craft",
+    "value": null,
+    "reason": "Nothing to judge: the charts table finds no svg or canvas chart, and the tiles at 1440 and 375 show photographs and one text table, so this lens sets no Craft score."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [],
+  "strengths": [
+    "The day-book table (contact sheet #1, 752 by 444px at y1016) right-aligns its 'Kept' column, gives the unit beside the figure ('250 g'), and stays inside the screen at 375 (343px wide)."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "T-CHART-FORM, T-HONEST-SCALE, T-CHART-TEXT-MATCH, T-FOCAL, T-GRAYSCALE, T-SECOND-ENCODING, T-TAKEAWAY-TITLE, T-DIRECT-LABEL, T-DATA-INK: no chart on the page",
+    "diagram tests: no diagram on the page",
+    "tabular figures: font-variant-numeric is not captured; the crop shows the five figures in one right-aligned column",
+    "visitor mode inferred as Persuade (a roastery landing page) because there is no 00-contract.md"
+  ]
+}

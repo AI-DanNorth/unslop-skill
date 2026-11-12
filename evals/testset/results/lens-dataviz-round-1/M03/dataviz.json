@@ -1,0 +1,68 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The 20-day TSLA candlestick chart has even $20 ticks, trading-day spacing that skips the 3 April holiday, a peak that matches its caption ('4/17 high $409') and a last close that matches the $373.72 headline.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CHART-FORM, T-HONEST-SCALE, T-CHART-TEXT-MATCH and T-STAT-TILE pass on the candlestick chart and the price tile, with the takeaway in the caption as print expects (C53); it loses points because the chart has no source line (DVZ-010) and its up and down colours differ only in tone."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-010",
+      "tier": "Reflex",
+      "where": "html > body > figure > svg (近期价格走势), 794 (contact sheet #1, 673 by 266px at y432; tiles/794-00.png)",
+      "evidence": "The figure has a caption with the takeaway ('图 1. TSLA 近 20 个交易日走势(3/26 - 4/23)。4/17 冲高 $409 后回落, 财报后因 capex 指引下跌。'), but no source line names where the prices come from. The charts table `near` has a caption and no source. The y axis also has no unit (`unit` null): the ticks read 320 to 420 with no '$'.",
+      "before": "A price chart with a caption and no data source or unit.",
+      "after": "Add a source line under the caption ('数据来源: [DATA NEEDED: price data provider], 日线收盘') and put '$' on the top tick or in the axis title.",
+      "why": "A research note's reader checks where a price series came from before acting on it. On a Read figure a source line is expected.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-009",
+      "tier": "Finish",
+      "where": "the candlestick chart, 794 (contact-794-gray.png #1)",
+      "evidence": "Rising candles are navy #1b365d and falling candles grey #6b6a64, both filled. On the grayscale contact sheet they show as dark grey against mid grey. They stay apart, but only by tone.",
+      "before": "Up and down told apart by fill tone alone.",
+      "after": "Draw rising candles hollow (outline only) and falling candles filled. This is the usual print convention, and it survives photocopying.",
+      "why": "A print report gets copied in black and white, where two filled tones can merge.",
+      "test": "T-GRAYSCALE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The candlestick chart is the right form for daily price ranges. Its ticks run in even $20 steps from 320 to 420 (`even_value_steps` true), and the axis does not start at zero, which is correct for a price range.",
+    "The marks match the words. There are 20 candles for '20 trading days', 4/3 (a market holiday) is skipped in the spacing, the tallest wick sits on 4/17 near $409, and the last candle closes near $374 against the $373.72 headline.",
+    "Both financial tables right-align all their figures (14 of 14 and 8 of 8) and use '--' for missing values rather than leaving gaps.",
+    "The price tile gives its date ('2026.04.23 收盘') and a signed change ('财报后 -3.56%') in neutral grey, not in colour alone."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "T-CHART-375: a print page was captured at 794 only",
+    "diagram tests: no diagram on the page",
+    "visitor mode inferred as Read (an equity research note, medium print) because there is no 00-contract.md"
+  ]
+}

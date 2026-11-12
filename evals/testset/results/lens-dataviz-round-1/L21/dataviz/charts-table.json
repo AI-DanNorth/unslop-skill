@@ -1,0 +1,1131 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L21",
+ "target": "https://diagramdesign.dev/",
+ "url": "https://diagramdesign.dev/",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [
+  {
+   "where": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > figure.hero-fig.plate > svg.only-light:nth-of-type(2)",
+   "x": 775,
+   "y": 279,
+   "w": 534,
+   "h": 465,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Editorial diagrams your designer won't hate.",
+   "kind": "diagram",
+   "tag": "svg",
+   "class": "only-light hero-fig plate hero-grid wrap hero",
+   "library_hint": null,
+   "elements": {
+    "path": 62,
+    "g": 16,
+    "rect": 16,
+    "text": 12,
+    "line": 8,
+    "circle": 8,
+    "ellipse": 3,
+    "desc": 1,
+    "title": 1
+   },
+   "shapes": 97,
+   "near": {
+    "svg_desc": "Exploded view of how the diagram-design skill works: your prompt at the base, then SKILL.md picking one of 45 types, the type reference with layout and density ",
+    "svg_title": "From a sentence to a finished diagram",
+    "caption": "FIG. 01 · THE SKILL, DRAWN BY THE SKILL EXPLODED AXONOMETRIC",
+    "heading_above": "Editorial diagrams your designer won't hate."
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#e4ccb4",
+      "share": 0.149,
+      "hue": "orange"
+     },
+     {
+      "hex": "#fce4cc",
+      "share": 0.059,
+      "hue": "orange"
+     }
+    ],
+    "neutral_share": 0.766,
+    "ink_share_of_region": 0.075
+   },
+   "colour_checks": {
+    "hue_families": [
+     "orange"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 12,
+    "numeric": 0,
+    "font_px": [
+     9.0,
+     10.0,
+     16.0
+    ],
+    "samples": [
+     "5 LAYERS · 1 ACCENT",
+     "FIG. 01 · EXPLODED AXONOMETRIC",
+     "one file, no build step",
+     "HTML + SVG",
+     "your brand, one accent",
+     "Style tokens",
+     "layout and density rules",
+     "Type reference",
+     "picks 1 of 45 types",
+     "SKILL.md",
+     "“draw our deploy flow”",
+     "Your prompt"
+    ]
+   },
+   "diagram": {
+    "nodes": 11,
+    "node_size_tiers": 9,
+    "node_sizes": [
+     [
+      32,
+      16
+     ],
+     [
+      56,
+      28
+     ],
+     [
+      40,
+      20
+     ],
+     [
+      164,
+      80
+     ],
+     [
+      48,
+      24
+     ],
+     [
+      44,
+      24
+     ]
+    ],
+    "node_fill_colours": {},
+    "chromatic_node_fills": 0,
+    "connectors": 70,
+    "arrowhead_markers": 0,
+    "straight_segments": {
+     "horizontal": 6,
+     "vertical": 2
+    },
+    "segment_crossings": 0,
+    "segments_through_nodes": 0,
+    "segment_ends_floating_4_to_14px": 2,
+    "labels_in_nodes_max": 0,
+    "words_per_label_max": 0,
+    "note": "connector checks use only straight horizontal and vertical segments from bounding boxes; curves, diagonals, dash patterns and arrowhead direction are not captured: read them on the crop"
+   },
+   "sheet_n": 1
+  }
+ ],
+ "canvases": [],
+ "image_charts": [
+  {
+   "where": "div.wrap > div.ba:nth-of-type(2) > div.fig.rise:nth-of-type(1) > picture.plate > img",
+   "x": 130,
+   "y": 1972,
+   "w": 475,
+   "h": 115,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "section": "The model had the content. It was missing the taste.",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "before.webp",
+   "alt": "A first-pass lifecycle diagram from Claude with no skill: six identical white cards in a row with blue number badges, and a dark bar underneath reading AI plus Governance plus Humans.",
+   "matched": "diagram",
+   "natural": [
+    1600,
+    389
+   ],
+   "near": {
+    "heading_above": "The model had the content. It was missing the taste."
+   },
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 4360,
+   "w": 355,
+   "h": 222,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "architecture.webp",
+   "alt": "Architecture diagram showing reader requests moving through Cloudflare to an Astro origin, MDX bundle, and content CMS.",
+   "matched": "Architecture",
+   "natural": [
+    2400,
+    1154
+   ],
+   "near": {
+    "heading_above": "Forty-four diagrams, one system"
+   },
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 2
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(2) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 4350,
+   "w": 355,
+   "h": 222,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "architecture-delta.webp",
+   "alt": "Architecture delta for order fulfilment: a durable order queue replaces the legacy dispatcher, Orders API moves from v1 to v2, and seven component and relationship changes are listed between the befor",
+   "matched": "Architecture",
+   "natural": [
+    2400,
+    1362
+   ],
+   "near": {
+    "heading_above": "Forty-four diagrams, one system"
+   },
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 3
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(4) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 4692,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "flowchart.webp",
+   "alt": "Flowchart showing when a new workflow should stay manual, become a project note, or be written as a reusable skill.",
+   "matched": "Flowchart",
+   "natural": [
+    2400,
+    1442
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 4
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(5) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 4692,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "sequence.webp",
+   "alt": "Sequence diagram showing a cold-cache article request moving from reader and browser through Cloudflare to an Astro origin and analytics beacon.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1402
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 5
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(7) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 5014,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "er.webp",
+   "alt": "Entity-relationship diagram showing authors writing articles and articles connecting to tags and categories.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1154
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 6
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(8) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 5014,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "timeline.webp",
+   "alt": "Timeline showing product milestones from the first post in February 2025 through three design versions and the schematic skill in April 2026.",
+   "matched": "Timeline",
+   "natural": [
+    2400,
+    1010
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 7
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(9) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 5014,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "swimlane.webp",
+   "alt": "Swimlane diagram showing an article moving from MDX draft through review, editing, approval, build, and Cloudflare Pages deployment.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1154
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 8
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(11) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 5337,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "radar.webp",
+   "alt": "Radar chart comparing MinIO, Amazon S3, Ceph, and Google Cloud Storage across five storage capabilities.",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 9
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(12) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 5337,
+   "w": 355,
+   "h": 222,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "polar.webp",
+   "alt": "Polar chart of request demand across eight UTC windows on a 0 to 100 percent scale, with 12:00 to 15:00 UTC as the peak.",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1250
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 10
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(14) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 5689,
+   "w": 355,
+   "h": 222,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "nested.webp",
+   "alt": "Nested diagram showing how project guidance inherits broader scopes from the global, vault, business, and marketing levels.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 11
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(15) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 5689,
+   "w": 355,
+   "h": 222,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "tree.webp",
+   "alt": "Tree diagram showing a Skills root branching into Design, Engineering, and Research categories and their leaf skills.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1154
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable",
+   "sheet_n": 12
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(16) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 6021,
+   "w": 355,
+   "h": 222,
+   "screen": 7,
+   "tile": "tiles/1440-06.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "org-chart.webp",
+   "alt": "Org chart showing a command center routing work to specialist agents and escalation owners.",
+   "matched": "chart",
+   "natural": [
+    2360,
+    1408
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(20) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 6373,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "venn.webp",
+   "alt": "Venn diagram showing desirable, feasible, and viable product qualities intersecting at shippable.",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1154
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(22) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 6716,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "bar.webp",
+   "alt": "Bar chart showing story points delivered across sprints S1 through S8, with Sprint 5 as the record high.",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(23) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 6706,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "waterfall.webp",
+   "alt": "Waterfall chart bridging a 240 thousand dollar monthly cloud budget to a 236 thousand dollar plan through headcount growth, reserved-instance savings, new ML workloads, and storage tiering, the larges",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(25) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 7078,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "heatmap.webp",
+   "alt": "Heatmap of CI failure rate by service and sprint. The payments service spikes to 47 percent in sprint 4 after a deploy regression and recovers to 4 percent by sprint 6.",
+   "matched": "Heatmap",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(26) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 7048,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "line.webp",
+   "alt": "Line chart showing weekly signups from organic, direct, and referral channels across weeks W1 through W8.",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(27) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 7078,
+   "w": 355,
+   "h": 222,
+   "screen": 8,
+   "tile": "tiles/1440-07.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "gantt.webp",
+   "alt": "Gantt chart showing a twelve-week product launch from market research and interviews through design review, development, beta testing, and launch.",
+   "matched": "chart",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(28) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 7430,
+   "w": 355,
+   "h": 222,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "scatter.webp",
+   "alt": "Scatter plot showing twelve engineering teams by deploy frequency and lead time, with Platform in the best-performing quadrant.",
+   "matched": "plot",
+   "natural": [
+    2400,
+    1202
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(29) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 7450,
+   "w": 355,
+   "h": 222,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "high-level.webp",
+   "alt": "Architecture diagram showing data sources moving through Apache NiFi and MinIO into Trino, data modeling, and Superset dashboards, with Airflow orchestration.",
+   "matched": "Architecture",
+   "natural": [
+    2400,
+    1298
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(30) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 7450,
+   "w": 355,
+   "h": 222,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "process.webp",
+   "alt": "Process diagram showing an order moving through customer, support, warehouse, and finance ownership from placement to close.",
+   "matched": "diagram",
+   "natural": [
+    2240,
+    920
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(32) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 7792,
+   "w": 355,
+   "h": 222,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "data-flow.webp",
+   "alt": "A Data Engineer ingests and stores commerce data, a Data Scientist transforms and analyzes it, and an Analyst publishes a dashboard.",
+   "matched": "dashboard",
+   "natural": [
+    2400,
+    1176
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(33) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 7792,
+   "w": 355,
+   "h": 222,
+   "screen": 9,
+   "tile": "tiles/1440-08.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "dp-integration.webp",
+   "alt": "Integration topology showing CRM, POS exports, and an event stream landing in object storage for query, notebooks, dashboards, and a partner API.",
+   "matched": "dashboards",
+   "natural": [
+    2400,
+    1330
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(35) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 8135,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "sankey.webp",
+   "alt": "Sankey diagram showing 12,000 monthly CI minutes splitting into unit test, E2E, build, and lint stages, then merging into passed, failed, and flaked outcomes, with the flaky-rerun path highlighted as ",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    1346
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(36) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 8135,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "fishbone.webp",
+   "alt": "Fishbone diagram tracing a checkout latency incident to five candidate cause categories, with a missing database index under Data confirmed as the root cause.",
+   "matched": "diagram",
+   "natural": [
+    2640,
+    1072
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(37) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 8477,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "wardley.webp",
+   "alt": "Wardley map plotting an AI assistant product's value chain from the user-facing need down to raw infrastructure against genesis-to-commodity evolution, with agent orchestration commoditising toward th",
+   "matched": "map",
+   "natural": [
+    2400,
+    1106
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(39) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 8477,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "journey.webp",
+   "alt": "User journey map of a new trial user across five stages, showing actions, touchpoints, and a sentiment curve that dips at the usage-limit stage before recovering at upgrade.",
+   "matched": "map",
+   "natural": [
+    2560,
+    1110
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(40) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 8819,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "deployment.webp",
+   "alt": "Deployment diagram placing the checkout service across an edge CDN zone, a production Kubernetes zone running ingress and API pods, and a data zone with a primary Postgres instance replicating to a st",
+   "matched": "diagram",
+   "natural": [
+    2400,
+    962
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(41) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 8819,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "dependency.webp",
+   "alt": "Ranked dependency graph of a TypeScript monorepo showing shared-types as the highest fan-in package with four dependents, and one back-edge cycle from utils into shared-types.",
+   "matched": "graph",
+   "natural": [
+    2400,
+    1442
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(42) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 943,
+   "y": 8819,
+   "w": 355,
+   "h": 222,
+   "screen": 10,
+   "tile": "tiles/1440-09.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "uml-class.webp",
+   "alt": "Class diagram showing Card and BankTransfer realizing a PaymentMethod interface, PaymentService depending on PaymentMethod, and Order composed of OrderLine while associated with Customer.",
+   "matched": "diagram",
+   "natural": [
+    2480,
+    1682
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(43) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 142,
+   "y": 9162,
+   "w": 355,
+   "h": 222,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "story-map.webp",
+   "alt": "User story map for a reporting tool's first release: four narrative activities from finding data to trusting it, walking-skeleton steps beneath each, and three release slices sliced by an MVP release-",
+   "matched": "map",
+   "natural": [
+    2400,
+    1258
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  },
+  {
+   "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(44) > span.pl-img:nth-of-type(2) > picture > img",
+   "x": 543,
+   "y": 9162,
+   "w": 355,
+   "h": 222,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "section": "Forty-four diagrams, one system",
+   "kind": "image chart candidate",
+   "tag": "img",
+   "file": "db-schema.webp",
+   "alt": "Physical database schema diagram showing five commerce tables with column-level foreign keys, SQL types, and constraint chips, including a cascading delete from orders into order_items and a billing s",
+   "matched": "diagram",
+   "natural": [
+    2480,
+    1288
+   ],
+   "near": {},
+   "note": "matched on alt text, file or class name: confirm on the crop that it is a chart or diagram; its data is not readable"
+  }
+ ],
+ "unmatched_large_images": [
+  {
+   "where": "wrap > div.ba:nth-of-type(2) > div.fig.fix:nth-of-type(3) > picture.plate.reg-b:nth-of-type(2) > img",
+   "y": 1860,
+   "w": 593,
+   "h": 339,
+   "alt": "The same lifecycle redrawn with the skill: six stages from Idea to Run and Chang",
+   "file": "after-light.webp",
+   "tile": "tiles/1440-02.png"
+  },
+  {
+   "where": "div.axo-item.rise:nth-of-type(1) > button.pl.rise > span.pl-img:nth-of-type(2) > picture > img",
+   "y": 3564,
+   "w": 553,
+   "h": 346,
+   "alt": "Exploded view of a three-layer app stack: data at the base, logic in the middle,",
+   "file": "exploded.webp",
+   "tile": "tiles/1440-03.png"
+  },
+  {
+   "where": "div.axo-item.rise:nth-of-type(2) > button.pl.rise > span.pl-img:nth-of-type(2) > picture > img",
+   "y": 3564,
+   "w": 553,
+   "h": 346,
+   "alt": "Axonometric floor plan of an office level with an open office, meeting room, kit",
+   "file": "axonometric-plan.webp",
+   "tile": "tiles/1440-03.png"
+  }
+ ],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [],
+ "phone": "dom-375.json not captured: the phone rendering is not verified",
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "diagram",
+    "where": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > figure.hero-fig.plate > svg.only-light:nth-of-type(2)",
+    "y": 279,
+    "w": 534,
+    "h": 465,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 2,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 4360,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "n": 3,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(2) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 4350,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "n": 4,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(4) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 4692,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 5,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(5) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 4692,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 6,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(7) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5014,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 7,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(8) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5014,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 8,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(9) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5014,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 9,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(11) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5337,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 10,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(12) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5337,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 11,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(14) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5689,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-06.png"
+   },
+   {
+    "n": 12,
+    "kind": "image chart candidate",
+    "where": "div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(15) > span.pl-img:nth-of-type(2) > picture > img",
+    "y": 5689,
+    "w": 355,
+    "h": 222,
+    "tile": "tiles/1440-06.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "dom-375.json not captured",
+ "network": {
+  "mode": "direct",
+  "blocked": 2,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 12
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "skipped: needs captures at 1440 and 375",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 1,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "diagram": 1,
+  "image chart candidate": 33,
+  "exhibit_rows": 0,
+  "first_screen": 1
+ }
+}

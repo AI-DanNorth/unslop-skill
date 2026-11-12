@@ -1,0 +1,884 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\G12",
+ "target": "..\\unslop-refs\\ux-ui-agent-skills\\examples\\showcase\\index.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/ux-ui-agent-skills/examples/showcase/index.html",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [
+  {
+   "where": "section.hero:nth-of-type(1) > div.card.lift:nth-of-type(1) > svg.chart",
+   "x": 285,
+   "y": 323,
+   "w": 736,
+   "h": 205,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "chart",
+   "tag": "svg",
+   "class": "chart card lift panel-range page main",
+   "library_hint": "chart",
+   "elements": {
+    "rect": 7,
+    "line": 4,
+    "desc": 1,
+    "title": 1
+   },
+   "shapes": 11,
+   "near": {
+    "svg_desc": "Seven weeks, rising from 1.94 million to 2.48 million with one dip in week four.",
+    "svg_title": "Net recurring revenue by week",
+    "heading_above": "Revenue overview"
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#246ce4",
+      "share": 0.74,
+      "hue": "blue"
+     },
+     {
+      "hex": "#e46c0c",
+      "share": 0.179,
+      "hue": "orange"
+     },
+     {
+      "hex": "#6c9cfc",
+      "share": 0.031,
+      "hue": "blue"
+     },
+     {
+      "hex": "#b4ccfc",
+      "share": 0.021,
+      "hue": "blue"
+     }
+    ],
+    "neutral_share": 0.0,
+    "ink_share_of_region": 0.495
+   },
+   "colour_checks": {
+    "hue_families": [
+     "blue",
+     "orange"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "axes": [],
+   "bars": {
+    "orientation": "vertical",
+    "n": 5,
+    "thickness_px": 78,
+    "gap_px": [
+     24,
+     25,
+     126,
+     127
+    ],
+    "order": "ascending",
+    "lengths_px": [
+     96,
+     108,
+     127,
+     141,
+     178
+    ],
+    "baseline_px": 517,
+    "shortest_to_longest": 0.539,
+    "baseline_is_zero": "no value axis labels: not known from the DOM; read the crop",
+    "bar_colours": {
+     "#2563eb": 4,
+     "#e8710a": 1
+    }
+   },
+   "line_series_candidates": 0,
+   "markers": 0,
+   "gridlines": {
+    "horizontal": 4,
+    "vertical": 0
+   },
+   "legend": {
+    "svg_swatch_entries": [],
+    "html_legend": null
+   },
+   "direct_labels": {
+    "text_in_plot": [],
+    "value_labels": 0
+   },
+   "sheet_n": 1
+  },
+  {
+   "where": "main > div.page:nth-of-type(2) > section.bento:nth-of-type(2) > div.card:nth-of-type(1) > svg.chart",
+   "x": 361,
+   "y": 697,
+   "w": 176,
+   "h": 176,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "chart",
+   "tag": "svg",
+   "class": "chart card bento page main",
+   "library_hint": "chart",
+   "elements": {
+    "circle": 5,
+    "title": 1
+   },
+   "shapes": 5,
+   "near": {
+    "svg_title": "Revenue by plan: Enterprise 46 percent, Growth 31, Team 15, Starter 8"
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#246ce4",
+      "share": 0.437,
+      "hue": "blue"
+     },
+     {
+      "hex": "#e46c0c",
+      "share": 0.293,
+      "hue": "orange"
+     },
+     {
+      "hex": "#0c9c6c",
+      "share": 0.14,
+      "hue": "teal"
+     },
+     {
+      "hex": "#e42484",
+      "share": 0.074,
+      "hue": "magenta"
+     }
+    ],
+    "neutral_share": 0.001,
+    "ink_share_of_region": 0.37
+   },
+   "colour_checks": {
+    "hue_families": [
+     "blue",
+     "magenta",
+     "orange",
+     "teal"
+    ],
+    "close_under_cvd": [
+     {
+      "pair": [
+       "#0c9c6c",
+       "#e42484"
+      ],
+      "normal_de": 123,
+      "deutan_de": 9
+     }
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "axes": [],
+   "bars": null,
+   "line_series_candidates": 0,
+   "markers": 0,
+   "gridlines": {
+    "horizontal": 0,
+    "vertical": 0
+   },
+   "legend": {
+    "svg_swatch_entries": [],
+    "html_legend": null
+   },
+   "direct_labels": {
+    "text_in_plot": [],
+    "value_labels": 0
+   },
+   "sheet_n": 2
+  }
+ ],
+ "sparklines": [
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(1) > svg.chart",
+   "x": 1066,
+   "y": 718,
+   "w": 329,
+   "h": 66,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "sparkline",
+   "tag": "svg",
+   "class": "chart   card bento",
+   "library_hint": "chart",
+   "elements": {
+    "polyline": 1
+   },
+   "shapes": 1,
+   "near": {},
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#2454e4",
+      "share": 0.547,
+      "hue": "blue"
+     },
+     {
+      "hex": "#9cb4fc",
+      "share": 0.2,
+      "hue": "blue"
+     },
+     {
+      "hex": "#6c9cfc",
+      "share": 0.097,
+      "hue": "blue"
+     },
+     {
+      "hex": "#cce4fc",
+      "share": 0.081,
+      "hue": "blue"
+     },
+     {
+      "hex": "#5484e4",
+      "share": 0.075,
+      "hue": "blue"
+     }
+    ],
+    "neutral_share": 0.0,
+    "ink_share_of_region": 0.08
+   },
+   "colour_checks": {
+    "hue_families": [
+     "blue"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "sparkline": {
+    "paths": 1,
+    "w": 329,
+    "h": 66,
+    "aspect": 5.0
+   },
+   "sheet_n": 4
+  },
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(2) > svg.chart",
+   "x": 1066,
+   "y": 821,
+   "w": 329,
+   "h": 66,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "sparkline",
+   "tag": "svg",
+   "class": "chart   card bento",
+   "library_hint": "chart",
+   "elements": {
+    "polyline": 1
+   },
+   "shapes": 1,
+   "near": {},
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#e46c0c",
+      "share": 0.56,
+      "hue": "orange"
+     },
+     {
+      "hex": "#fcb484",
+      "share": 0.183,
+      "hue": "orange"
+     },
+     {
+      "hex": "#e49c54",
+      "share": 0.133,
+      "hue": "orange"
+     },
+     {
+      "hex": "#fce4cc",
+      "share": 0.124,
+      "hue": "orange"
+     }
+    ],
+    "neutral_share": 0.0,
+    "ink_share_of_region": 0.08
+   },
+   "colour_checks": {
+    "hue_families": [
+     "orange"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "sparkline": {
+    "paths": 1,
+    "w": 329,
+    "h": 66,
+    "aspect": 5.0
+   },
+   "sheet_n": 5
+  },
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(3) > svg.chart",
+   "x": 1066,
+   "y": 924,
+   "w": 329,
+   "h": 66,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Revenue overview",
+   "kind": "sparkline",
+   "tag": "svg",
+   "class": "chart   card bento",
+   "library_hint": "chart",
+   "elements": {
+    "polyline": 1
+   },
+   "shapes": 1,
+   "near": {},
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#843ce4",
+      "share": 0.574,
+      "hue": "violet"
+     },
+     {
+      "hex": "#9c6cfc",
+      "share": 0.191,
+      "hue": "violet"
+     },
+     {
+      "hex": "#e4ccfc",
+      "share": 0.16,
+      "hue": "violet"
+     },
+     {
+      "hex": "#b49cfc",
+      "share": 0.075,
+      "hue": "violet"
+     }
+    ],
+    "neutral_share": 0.0,
+    "ink_share_of_region": 0.077
+   },
+   "colour_checks": {
+    "hue_families": [
+     "violet"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "sparkline": {
+    "paths": 1,
+    "w": 329,
+    "h": 66,
+    "aspect": 5.0
+   },
+   "sheet_n": 6
+  }
+ ],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [
+  {
+   "where": "#acctTable",
+   "x": 265,
+   "y": 1043,
+   "w": 776,
+   "h": 459,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Revenue overview",
+   "kind": "number table",
+   "tag": "table",
+   "rows": 7,
+   "cols": 5,
+   "header_cells": 5,
+   "numeric_cells": 18,
+   "numeric_share": 0.6,
+   "numeric_right_aligned": "0 of 18",
+   "near": {
+    "caption": "Accounts at renewal Click a column heading to sort. Sorting runs on the rendered rows."
+   },
+   "samples": [
+    "8 Jan 2027",
+    "120",
+    "$98,000",
+    "16 Sep 2026",
+    "410",
+    "$156,000",
+    "19 Sep 2026",
+    "2,310"
+   ],
+   "note": "font-variant-numeric (tabular figures) is not captured: judge figure alignment on the crop",
+   "sheet_n": 3
+  }
+ ],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "#heroFigure",
+   "x": 285,
+   "y": 229,
+   "w": 736,
+   "h": 60,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "stat tile",
+   "value": "$2.48M",
+   "font_px": 60.0,
+   "row_size": 2,
+   "label": "NET RECURRING REVENUE",
+   "tile_where": "section.hero:nth-of-type(1) > div.card.lift:nth-of-type(1)",
+   "trend_mark": "chart",
+   "sheet_n": 7
+  },
+  {
+   "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(1) > p.v.figure:nth-of-type(2)",
+   "x": 1083,
+   "y": 229,
+   "w": 312,
+   "h": 36,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "stat tile",
+   "value": "118%",
+   "font_px": 36.0,
+   "row_size": 2,
+   "label": "NET REVENUE RETENTION",
+   "tile_where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(1)",
+   "delta": {
+    "text": "+4 pts",
+    "color": "rgb(28, 105, 53)",
+    "has_sign_or_arrow": true,
+    "hue": "green"
+   },
+   "sheet_n": 8
+  },
+  {
+   "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(1) > p.v:nth-of-type(2)",
+   "x": 1083,
+   "y": 399,
+   "w": 312,
+   "h": 36,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "stat tile",
+   "value": "1.4%",
+   "font_px": 24.0,
+   "row_size": 1,
+   "label": "GROSS CHURN",
+   "tile_where": "-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(1)",
+   "delta": {
+    "text": "+0.3 pts",
+    "color": "rgb(163, 32, 29)",
+    "has_sign_or_arrow": true,
+    "hue": "red"
+   },
+   "sheet_n": 9
+  },
+  {
+   "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(3) > p.v:nth-of-type(2)",
+   "x": 1083,
+   "y": 536,
+   "w": 312,
+   "h": 36,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Revenue overview",
+   "kind": "stat tile",
+   "value": "3.2x",
+   "font_px": 24.0,
+   "row_size": 1,
+   "label": "PIPELINE COVERED",
+   "tile_where": "-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(3)",
+   "sheet_n": 10
+  }
+ ],
+ "phone": [
+  {
+   "where": "section.hero:nth-of-type(1) > div.card.lift:nth-of-type(1) > svg.chart",
+   "kind": "chart",
+   "match": "same selector",
+   "at_375": {
+    "w": 301,
+    "h": 84,
+    "y": 522,
+    "visible": true,
+    "tile": "tiles/375-00.png"
+   },
+   "width_ratio_vs_1440": 0.41
+  },
+  {
+   "where": "main > div.page:nth-of-type(2) > section.bento:nth-of-type(2) > div.card:nth-of-type(1) > svg.chart",
+   "kind": "chart",
+   "match": "same selector",
+   "at_375": {
+    "w": 176,
+    "h": 176,
+    "y": 1194,
+    "visible": true,
+    "tile": "tiles/375-01.png"
+   },
+   "width_ratio_vs_1440": 1.0
+  },
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(1) > svg.chart",
+   "kind": "sparkline",
+   "match": "same selector",
+   "at_375": {
+    "w": 301,
+    "h": 60,
+    "y": 1940,
+    "visible": true,
+    "tile": "tiles/375-02.png"
+   },
+   "width_ratio_vs_1440": 0.91
+  },
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(2) > svg.chart",
+   "kind": "sparkline",
+   "match": "same selector",
+   "at_375": {
+    "w": 301,
+    "h": 60,
+    "y": 2037,
+    "visible": true,
+    "tile": "tiles/375-02.png"
+   },
+   "width_ratio_vs_1440": 0.91
+  },
+  {
+   "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(3) > svg.chart",
+   "kind": "sparkline",
+   "match": "same selector",
+   "at_375": {
+    "w": 301,
+    "h": 60,
+    "y": 2135,
+    "visible": true,
+    "tile": "tiles/375-02.png"
+   },
+   "width_ratio_vs_1440": 0.91
+  },
+  {
+   "where": "#acctTable",
+   "kind": "number table",
+   "match": "same selector",
+   "at_375": {
+    "w": 601,
+    "h": 690,
+    "y": 2241,
+    "visible": true,
+    "tile": "tiles/375-02.png"
+   },
+   "width_ratio_vs_1440": 0.77,
+   "scrolls_in": "#accounts"
+  }
+ ],
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "section.hero:nth-of-type(1) > div.card.lift:nth-of-type(1) > svg.chart",
+    "y": 323,
+    "w": 736,
+    "h": 205,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 2,
+    "kind": "chart",
+    "where": "main > div.page:nth-of-type(2) > section.bento:nth-of-type(2) > div.card:nth-of-type(1) > svg.chart",
+    "y": 697,
+    "w": 176,
+    "h": 176,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "number table",
+    "where": "#acctTable",
+    "y": 1043,
+    "w": 776,
+    "h": 459,
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "n": 4,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(1) > svg.chart",
+    "y": 718,
+    "w": 329,
+    "h": 66,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 5,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(2) > svg.chart",
+    "y": 821,
+    "w": 329,
+    "h": 66,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 6,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(3) > svg.chart",
+    "y": 924,
+    "w": 329,
+    "h": 66,
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "n": 7,
+    "kind": "stat tile",
+    "where": "#heroFigure",
+    "y": 229,
+    "w": 736,
+    "h": 60,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 8,
+    "kind": "stat tile",
+    "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(1) > p.v.figure:nth-of-type(2)",
+    "y": 229,
+    "w": 312,
+    "h": 36,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 9,
+    "kind": "stat tile",
+    "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(1) > p.v:nth-of-type(2)",
+    "y": 399,
+    "w": 312,
+    "h": 36,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 10,
+    "kind": "stat tile",
+    "where": "section.hero:nth-of-type(1) > div.stack:nth-of-type(2) > div.card:nth-of-type(2) > div.mini:nth-of-type(3) > p.v:nth-of-type(2)",
+    "y": 536,
+    "w": 312,
+    "h": 36,
+    "tile": "tiles/1440-00.png"
+   }
+  ]
+ },
+ "contact_sheet_375": {
+  "file": "contact-375.png",
+  "grayscale": "contact-375-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "main > div.page:nth-of-type(2) > section.bento:nth-of-type(2) > div.card:nth-of-type(1) > svg.chart",
+    "y": 1194,
+    "w": 176,
+    "h": 176,
+    "tile": "tiles/375-01.png"
+   },
+   {
+    "n": 2,
+    "kind": "chart",
+    "where": "section.hero:nth-of-type(1) > div.card.lift:nth-of-type(1) > svg.chart",
+    "y": 522,
+    "w": 301,
+    "h": 84,
+    "tile": "tiles/375-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "number table",
+    "where": "#acctTable",
+    "y": 2241,
+    "w": 601,
+    "h": 690,
+    "tile": "tiles/375-02.png"
+   },
+   {
+    "n": 4,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(1) > svg.chart",
+    "y": 1940,
+    "w": 301,
+    "h": 60,
+    "tile": "tiles/375-02.png"
+   },
+   {
+    "n": 5,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(2) > svg.chart",
+    "y": 2037,
+    "w": 301,
+    "h": 60,
+    "tile": "tiles/375-02.png"
+   },
+   {
+    "n": 6,
+    "kind": "sparkline",
+    "where": "section.bento:nth-of-type(2) > div.card:nth-of-type(3) > div > div:nth-of-type(3) > svg.chart",
+    "y": 2135,
+    "w": 301,
+    "h": 60,
+    "tile": "tiles/375-02.png"
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 1
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 5,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "chart": 2,
+  "sparkline": 3,
+  "number table": 1,
+  "stat tile": 4,
+  "exhibit_rows": 0,
+  "first_screen": 8
+ }
+}

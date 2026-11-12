@@ -1,0 +1,29 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "none",
+  "confidence": "medium",
+  "overall_reason": "The page is an awards showcase entry: its only large picture is a screenshot of the entry's opening screen (a silhouette on a dark ground), and the related-project thumbnails are other entries, so there is no chart, data figure or diagram of the page's own to judge.",
+  "score": {
+    "dimension": "Craft",
+    "value": null,
+    "reason": "nothing_found is true and the tiles show no chart, data figure or diagram; the related-project thumbnails are exhibits."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION"
+  ],
+  "findings": [],
+  "strengths": [],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Read (an awards showcase page for one entry, with a vote button); there is no 00-contract.md",
+    "the header image (page.jpg, 725 by 470px, alt 'Page') was checked on tiles/1440-00.png: it shows the entry's title screen, not a chart",
+    "the related-project thumbnails ('On Upward Mobility', 'NYC Taxis: A Day in the Life') are other entries shown as exhibits",
+    "the visualisation itself lives on pudding.cool and was not captured"
+  ]
+}

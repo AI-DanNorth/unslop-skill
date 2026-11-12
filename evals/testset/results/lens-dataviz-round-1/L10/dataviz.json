@@ -1,0 +1,73 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The page has no real chart; its figures are KPI confetti: a looping hero row of six baseline-free claims ('98% faster deployment', '300% throughput increase', '6x faster to ship') and a 'Live metrics' block with a ticking clock over four tiles on four different periods.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-STAT-TILE fails on the hero row and the live-metrics block (no baseline, mixed periods, a staged live counter), and T-FILLER fails on the repeated 99.99% uptime tiles (DVZ-013, DVZ-003, DVZ-001)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-STAT-TILE",
+    "T-CHART-TEXT-MATCH",
+    "T-TAKEAWAY-TITLE",
+    "T-GRAYSCALE",
+    "T-DATA-INK"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "hero stat row, section.relative.min-h-screen > div.absolute.bottom-12 > div.flex.gap-16, 1440, contact sheet #10, tiles/1440-00.png",
+      "evidence": "The first screen ends in a row of 48px figures: '98% faster deployment STRIPE', '300% throughput increase LINEAR', '6x faster to ship NOTION', '20 days saved on builds NETFLIX', then '98%' and '300%' again (stat_tiles row_size 6; the row is duplicated for a marquee loop). No tile says faster or more than what, over what period, or for which workload. The row mixes percent, multiplier and days.",
+      "before": "Six 48px figures with a word and a brand name each, no baseline and no period, repeated in a loop.",
+      "after": "One sourced figure with its baseline and period, for example 'Deploys went from [DATA NEEDED: before time] to [DATA NEEDED: after time] at Stripe, Q1 2026', or cut the row.",
+      "why": "A percentage with no baseline cannot be checked or compared, and three different units in one row stop a reader comparing the tiles at all. Whether the claims are real is lens-integrity's (the sweep's INT-001 and INT-007 hits are on the same row).",
+      "test": "T-STAT-TILE",
+      "source": "dataviz",
+      "root": "one stat-tile component without a baseline or period field, used in the hero row and the infrastructure row"
+    },
+    {
+      "rule": "DVZ-003",
+      "tier": "Reflex",
+      "where": "'Performance you can measure.' section, div.grid.grid-cols-1 > div.bg-background.p-8 (four tiles), 1440, contact sheet #4 to #7, tiles/1440-05.png",
+      "evidence": "A green dot and 'Live | 1:08:57 AM' sit beside four 96px tiles: '2,847,392 API requests today', '99.99% Uptime this quarter', '23ms Average response time' and '184 Countries served'. The four tiles use four periods (today, this quarter, none, none) and four units, and none carries a trend or comparison.",
+      "before": "A 'Live metrics' block whose only live element is a clock, over four unrelated figures on different periods.",
+      "after": "Keep one figure the visitor can act on, for example '23ms median API response, last 30 days', with a link to the status page, and drop the clock and the 'Live' dot.",
+      "why": "A ticking clock next to static figures stages a live dashboard on a marketing page; the reader is asked to trust the label 'Live' rather than shown data.",
+      "test": "T-FILLER",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-001",
+      "tier": "Reflex",
+      "where": "infrastructure tiles (tiles/1440-04.png, contact sheet #8, #9) and live-metrics tiles (tiles/1440-05.png, #5)",
+      "evidence": "The page shows 99.99% uptime as a tile three times: 'Uptime SLA' in the infrastructure row, 'Uptime this quarter' in the live block, and again in the security copy (sweep invented_metrics hits on '99.99% uptime' at three selectors). The infrastructure row's '<50ms Global latency' repeats the sentence beside it ('delivering sub-50ms latency to 99% of the world').",
+      "before": "The same figure restated as a big tile in three sections, and a tile that repeats the paragraph next to it.",
+      "after": "Show uptime once, with its period and a link to a status history, and let the edge-network list carry the latency (it already lists 12ms to 45ms per region).",
+      "why": "Repeating one figure in three places adds no information and makes each tile look like filler.",
+      "test": "T-ONE-QUESTION",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The 'Edge Network' list (tiles/1440-04.png) gives one latency per named region (San Francisco 12ms to Sydney 45ms), right-aligned in a monospaced face; it backs the '<50ms' claim better than the tile does.",
+    "The live-metrics tiles carry worded qualifiers under each figure ('API requests today', 'Uptime this quarter')."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a SaaS landing page with 'Start free trial'); there is no 00-contract.md",
+    "the two large canvases (hero, 800 by 800px, contact #2; pricing, 500 by 500px, contact #3) and the footer canvas are generative line-glyph art, not charts; the svg the table lists as a chart (contact #1, 192 by 160px) is a document icon with six text lines",
+    "whether the figures are true or attributed with permission to Stripe, Linear, Notion and Netflix: lens-integrity's (INT-001, INT-007 already in the sweep)"
+  ]
+}

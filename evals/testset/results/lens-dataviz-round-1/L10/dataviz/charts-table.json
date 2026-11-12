@@ -1,0 +1,784 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L10",
+ "target": "https://v0-optimus-delta.vercel.app",
+ "url": "https://v0-optimus-delta.vercel.app/",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [
+  {
+   "where": "div.flex.flex-col > div.flex-1.grid:nth-of-type(2) > div.flex.justify-center:nth-of-type(2) > div.w-48.h-40 > svg.w-full.h-full",
+   "x": 1180,
+   "y": 1376,
+   "w": 192,
+   "h": 160,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Everything you need. Nothing you don't.",
+   "kind": "chart",
+   "tag": "svg",
+   "class": "w-full h-full w-48 h-40 flex justify-center flex-1 grid flex flex-col",
+   "library_hint": null,
+   "elements": {
+    "animate": 13,
+    "rect": 8,
+    "circle": 1,
+    "g": 1,
+    "defs": 1,
+    "clippath": 1
+   },
+   "shapes": 9,
+   "near": {
+    "heading_above": "Everything you need. Nothing you don't."
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [],
+    "neutral_share": 1.0,
+    "ink_share_of_region": 0.235
+   },
+   "colour_checks": {},
+   "effects": {
+    "animations": 13
+   },
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "axes": [],
+   "bars": {
+    "orientation": "horizontal",
+    "n": 6,
+    "thickness_px": 10,
+    "gap_px": [
+     5,
+     6
+    ],
+    "order": "unsorted",
+    "lengths_px": [
+     64,
+     50,
+     35,
+     21,
+     32,
+     46
+    ],
+    "baseline_px": 1218,
+    "shortest_to_longest": 0.328,
+    "baseline_is_zero": "no value axis labels: not known from the DOM; read the crop",
+    "bar_colours": {
+     "#52504d": 2,
+     "#696866": 1,
+     "#393735": 1,
+     "#686665": 1,
+     "#81807d": 1
+    }
+   },
+   "line_series_candidates": 0,
+   "markers": 1,
+   "gridlines": {
+    "horizontal": 0,
+    "vertical": 0
+   },
+   "legend": {
+    "svg_swatch_entries": [],
+    "html_legend": null
+   },
+   "direct_labels": {
+    "text_in_plot": [],
+    "value_labels": 0
+   },
+   "sheet_n": 1
+  }
+ ],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [
+  {
+   "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > section.relative.min-h-screen:nth-of-type(1) > div.absolute.right-0:nth-of-type(1) > canvas.w-full.h-full",
+   "x": 640,
+   "y": 50,
+   "w": 800,
+   "h": 800,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "canvas",
+   "tag": "canvas",
+   "class": "w-full h-full absolute right-0 relative min-h-screen relative min-h-screen",
+   "role_hint": "unknown: read the crop",
+   "library_hint": null,
+   "near": {},
+   "html_text_over": [
+    "Start free trial",
+    "Watch demo",
+    "6x",
+    "faster to ship",
+    "NOTION",
+    "20 days",
+    "saved on builds",
+    "NETFLIX",
+    "98%"
+   ],
+   "html_legend": null,
+   "note": "a canvas is pixels only: axes, scales, series and labels are read from the crop",
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [],
+    "neutral_share": 0.997,
+    "ink_share_of_region": 0.072
+   },
+   "colour_checks": {},
+   "sheet_n": 2
+  },
+  {
+   "where": "div.relative.border > div.relative.z-10:nth-of-type(2) > div.flex.flex-col > div.hidden.lg\\:flex:nth-of-type(2) > canvas.w-full.h-full",
+   "x": 871,
+   "y": 10415,
+   "w": 500,
+   "h": 500,
+   "screen": 12,
+   "tile": "tiles/1440-11.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "canvas",
+   "tag": "canvas",
+   "class": "w-full h-full hidden lg:flex flex flex-col relative z-10 relative border max-w-[1400px] mx-auto",
+   "role_hint": "unknown: read the crop",
+   "library_hint": null,
+   "near": {},
+   "html_text_over": [],
+   "html_legend": null,
+   "note": "a canvas is pixels only: axes, scales, series and labels are read from the crop",
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [],
+    "neutral_share": 1.0,
+    "ink_share_of_region": 0.074
+   },
+   "colour_checks": {},
+   "sheet_n": 3
+  },
+  {
+   "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > footer.relative.border-t > div.absolute.inset-0:nth-of-type(1) > canvas.w-full.h-full",
+   "x": 0,
+   "y": 11141,
+   "w": 1440,
+   "h": 256,
+   "screen": 13,
+   "tile": "tiles/1440-12.png",
+   "first_screen": false,
+   "section": "Ready to build something great?",
+   "in_footer": true,
+   "kind": "canvas",
+   "tag": "canvas",
+   "class": "w-full h-full absolute inset-0 relative border-t relative min-h-screen",
+   "role_hint": "decoration",
+   "library_hint": null,
+   "near": {},
+   "html_text_over": [
+    "Optimus",
+    "TM",
+    "Product",
+    "Features",
+    "How it works",
+    "Pricing",
+    "Developers",
+    "Documentation",
+    "API Reference",
+    "SDK",
+    "Company",
+    "About"
+   ],
+   "html_legend": null,
+   "note": "a canvas is pixels only: axes, scales, series and labels are read from the crop"
+  }
+ ],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(2) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 98,
+   "y": 786,
+   "w": 95,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "98%",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "faster deployment STRIPE",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(2)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ]
+  },
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(3) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 391,
+   "y": 786,
+   "w": 131,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "300%",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "throughput increase LINEAR",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(3)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ],
+   "sheet_n": 10
+  },
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(4) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 732,
+   "y": 786,
+   "w": 54,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "6x",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "faster to ship NOTION",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(4)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ]
+  },
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(2) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 1297,
+   "y": 786,
+   "w": 95,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "98%",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "faster deployment STRIPE",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(2)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ]
+  },
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(3) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 1590,
+   "y": 786,
+   "w": 131,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "300%",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "throughput increase LINEAR",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(3)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ]
+  },
+  {
+   "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(4) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 1932,
+   "y": 786,
+   "w": 54,
+   "h": 48,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "The platform to c r e a t e",
+   "kind": "stat tile",
+   "value": "6x",
+   "font_px": 48.0,
+   "row_size": 6,
+   "label": "faster to ship NOTION",
+   "tile_where": " div.flex.gap-16 > div.flex.gap-16:nth-of-type(2) > div.flex.items-baseline:nth-of-type(4)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 6 unsourced figures: 98%, 300%, 6x, 98%, 300%"
+   ]
+  },
+  {
+   "where": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(1) > div.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 68,
+   "y": 4264,
+   "w": 180,
+   "h": 48,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "section": "Global by default.",
+   "kind": "stat tile",
+   "value": "17",
+   "font_px": 48.0,
+   "row_size": 2,
+   "label": "Data centers",
+   "tile_where": "div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(1)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 17, 99.99%, <50ms"
+   ],
+   "sheet_n": 8
+  },
+  {
+   "where": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(2) > div.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+   "x": 280,
+   "y": 4264,
+   "w": 180,
+   "h": 48,
+   "screen": 5,
+   "tile": "tiles/1440-04.png",
+   "first_screen": false,
+   "section": "Global by default.",
+   "kind": "stat tile",
+   "value": "99.99%",
+   "font_px": 48.0,
+   "row_size": 2,
+   "label": "Uptime SLA",
+   "tile_where": "div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(2)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 17, 99.99%, <50ms"
+   ],
+   "sheet_n": 9
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(1) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+   "x": 116,
+   "y": 4982,
+   "w": 556,
+   "h": 96,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Performance you can measure.",
+   "kind": "stat tile",
+   "value": "2,847,392",
+   "font_px": 96.0,
+   "row_size": 2,
+   "label": "API requests today",
+   "tile_where": "0px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(1)",
+   "sheet_n": 4
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(2) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+   "x": 769,
+   "y": 4982,
+   "w": 556,
+   "h": 96,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Performance you can measure.",
+   "kind": "stat tile",
+   "value": "99.99%",
+   "font_px": 96.0,
+   "row_size": 2,
+   "label": "Uptime this quarter",
+   "tile_where": "0px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(2)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 17, 99.99%, <50ms"
+   ],
+   "sheet_n": 5
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(3) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+   "x": 116,
+   "y": 5219,
+   "w": 556,
+   "h": 96,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Performance you can measure.",
+   "kind": "stat tile",
+   "value": "23ms",
+   "font_px": 96.0,
+   "row_size": 2,
+   "label": "Average response time",
+   "tile_where": "0px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(3)",
+   "sheet_n": 6
+  },
+  {
+   "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(4) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+   "x": 769,
+   "y": 5219,
+   "w": 556,
+   "h": 96,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Performance you can measure.",
+   "kind": "stat tile",
+   "value": "184",
+   "font_px": 96.0,
+   "row_size": 2,
+   "label": "Countries served",
+   "tile_where": "0px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(4)",
+   "sheet_n": 7
+  },
+  {
+   "where": "div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(1) > div.mb-8.pb-8:nth-of-type(2) > div.flex.items-baseline > span.font-display.text-5xl:nth-of-type(1)",
+   "x": 176,
+   "y": 9443,
+   "w": 77,
+   "h": 60,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "stat tile",
+   "value": "$0",
+   "font_px": 60.0,
+   "row_size": 2,
+   "label": "/month",
+   "tile_where": "rid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(1) > div.mb-8.pb-8:nth-of-type(2)",
+   "sheet_n": 12
+  },
+  {
+   "where": "div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(2) > div.mb-8.pb-8:nth-of-type(2) > div.flex.items-baseline > span.font-display.text-5xl:nth-of-type(1)",
+   "x": 573,
+   "y": 9445,
+   "w": 103,
+   "h": 60,
+   "screen": 11,
+   "tile": "tiles/1440-10.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "stat tile",
+   "value": "$24",
+   "font_px": 60.0,
+   "row_size": 2,
+   "label": "/month",
+   "tile_where": "rid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(2) > div.mb-8.pb-8:nth-of-type(2)",
+   "sheet_n": 11
+  }
+ ],
+ "phone": [
+  {
+   "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > section.relative.min-h-screen:nth-of-type(1) > div.absolute.right-0:nth-of-type(1) > canvas.w-full.h-full",
+   "kind": "canvas",
+   "match": "same selector",
+   "at_375": {
+    "w": 600,
+    "h": 600,
+    "y": 106,
+    "visible": true,
+    "tile": "tiles/375-00.png"
+   },
+   "width_ratio_vs_1440": 0.75
+  },
+  {
+   "where": "div.flex.flex-col > div.flex-1.grid:nth-of-type(2) > div.flex.justify-center:nth-of-type(2) > div.w-48.h-40 > svg.w-full.h-full",
+   "kind": "chart",
+   "match": "same selector",
+   "at_375": {
+    "w": 192,
+    "h": 160,
+    "y": 2939,
+    "visible": true,
+    "tile": "tiles/375-03.png"
+   },
+   "width_ratio_vs_1440": 1.0
+  },
+  {
+   "where": "div.relative.border > div.relative.z-10:nth-of-type(2) > div.flex.flex-col > div.hidden.lg\\:flex:nth-of-type(2) > canvas.w-full.h-full",
+   "kind": "canvas",
+   "match": "same selector",
+   "at_375": {
+    "w": 0,
+    "h": 0,
+    "y": 0,
+    "visible": false,
+    "tile": "tiles/375-00.png"
+   },
+   "width_ratio_vs_1440": 0.0
+  },
+  {
+   "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > footer.relative.border-t > div.absolute.inset-0:nth-of-type(1) > canvas.w-full.h-full",
+   "kind": "canvas",
+   "match": "same selector",
+   "at_375": {
+    "w": 375,
+    "h": 256,
+    "y": 14733,
+    "visible": true,
+    "tile": "tiles/375-18.png"
+   },
+   "width_ratio_vs_1440": 0.26
+  }
+ ],
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "div.flex.flex-col > div.flex-1.grid:nth-of-type(2) > div.flex.justify-center:nth-of-type(2) > div.w-48.h-40 > svg.w-full.h-full",
+    "y": 1376,
+    "w": 192,
+    "h": 160,
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "n": 2,
+    "kind": "canvas",
+    "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > section.relative.min-h-screen:nth-of-type(1) > div.absolute.right-0:nth-of-type(1) > canvas.w-full.h-full",
+    "y": 50,
+    "w": 800,
+    "h": 800,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "canvas",
+    "where": "div.relative.border > div.relative.z-10:nth-of-type(2) > div.flex.flex-col > div.hidden.lg\\:flex:nth-of-type(2) > canvas.w-full.h-full",
+    "y": 10415,
+    "w": 500,
+    "h": 500,
+    "tile": "tiles/1440-11.png"
+   },
+   {
+    "n": 4,
+    "kind": "stat tile",
+    "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(1) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+    "y": 4982,
+    "w": 556,
+    "h": 96,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 5,
+    "kind": "stat tile",
+    "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(2) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+    "y": 4982,
+    "w": 556,
+    "h": 96,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 6,
+    "kind": "stat tile",
+    "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(3) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+    "y": 5219,
+    "w": 556,
+    "h": 96,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 7,
+    "kind": "stat tile",
+    "where": "section.relative.py-24:nth-of-type(5) > div.max-w-\\[1400px\\].mx-auto > div.grid.grid-cols-1:nth-of-type(2) > div.bg-background.p-8:nth-of-type(4) > div.text-6xl.lg\\:text-8xl:nth-of-type(1)",
+    "y": 5219,
+    "w": 556,
+    "h": 96,
+    "tile": "tiles/1440-05.png"
+   },
+   {
+    "n": 8,
+    "kind": "stat tile",
+    "where": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(1) > div.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+    "y": 4264,
+    "w": 180,
+    "h": 48,
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "n": 9,
+    "kind": "stat tile",
+    "where": "div.grid.lg\\:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1) > div.grid.grid-cols-3 > div:nth-of-type(2) > div.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+    "y": 4264,
+    "w": 180,
+    "h": 48,
+    "tile": "tiles/1440-04.png"
+   },
+   {
+    "n": 10,
+    "kind": "stat tile",
+    "where": "div.absolute.bottom-12:nth-of-type(4) > div.flex.gap-16 > div.flex.gap-16:nth-of-type(1) > div.flex.items-baseline:nth-of-type(3) > span.text-4xl.lg\\:text-5xl:nth-of-type(1)",
+    "y": 786,
+    "w": 131,
+    "h": 48,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 11,
+    "kind": "stat tile",
+    "where": "div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(2) > div.mb-8.pb-8:nth-of-type(2) > div.flex.items-baseline > span.font-display.text-5xl:nth-of-type(1)",
+    "y": 9445,
+    "w": 103,
+    "h": 60,
+    "tile": "tiles/1440-10.png"
+   },
+   {
+    "n": 12,
+    "kind": "stat tile",
+    "where": "div.grid.md\\:grid-cols-3:nth-of-type(3) > div.relative.p-8:nth-of-type(1) > div.mb-8.pb-8:nth-of-type(2) > div.flex.items-baseline > span.font-display.text-5xl:nth-of-type(1)",
+    "y": 9443,
+    "w": 77,
+    "h": 60,
+    "tile": "tiles/1440-10.png"
+   }
+  ]
+ },
+ "contact_sheet_375": {
+  "file": "contact-375.png",
+  "grayscale": "contact-375-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "div.flex.flex-col > div.flex-1.grid:nth-of-type(2) > div.flex.justify-center:nth-of-type(2) > div.w-48.h-40 > svg.w-full.h-full",
+    "y": 2939,
+    "w": 192,
+    "h": 160,
+    "tile": "tiles/375-03.png"
+   },
+   {
+    "n": 2,
+    "kind": "canvas",
+    "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > section.relative.min-h-screen:nth-of-type(1) > div.absolute.right-0:nth-of-type(1) > canvas.w-full.h-full",
+    "y": 106,
+    "w": 600,
+    "h": 600,
+    "tile": "tiles/375-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "canvas",
+    "where": "body.instrument_sans_35ec9fba-module__BtqIaq__variable.instrument_serif_acda1feb-module__tXlfYG__variable > main.relative.min-h-screen > footer.relative.border-t > div.absolute.inset-0:nth-of-type(1) > canvas.w-full.h-full",
+    "y": 14733,
+    "w": 375,
+    "h": 256,
+    "tile": "tiles/375-18.png"
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 2
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 6
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 9
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 15
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 7
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 1
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 4,
+  "canvas_checked": 3,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "canvas (unknown)": 2,
+  "chart": 1,
+  "canvas (decoration)": 1,
+  "stat tile": 14,
+  "exhibit_rows": 0,
+  "first_screen": 7
+ }
+}

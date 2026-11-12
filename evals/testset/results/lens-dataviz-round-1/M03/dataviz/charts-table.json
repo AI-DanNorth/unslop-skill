@@ -1,0 +1,412 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\M03",
+ "target": "..\\unslop-refs\\kami\\site\\assets\\demos\\demo-tesla.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/kami/site/assets/demos/demo-tesla.html",
+ "width": 794,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [
+  {
+   "where": "html > body > figure > svg",
+   "x": 61,
+   "y": 432,
+   "w": 673,
+   "h": 266,
+   "screen": 1,
+   "tile": "tiles/794-00.png",
+   "first_screen": true,
+   "section": "近期价格走势",
+   "kind": "chart",
+   "tag": "svg",
+   "class": " ",
+   "library_hint": null,
+   "elements": {
+    "line": 27,
+    "rect": 23,
+    "text": 14
+   },
+   "shapes": 50,
+   "near": {
+    "caption": "图 1. TSLA 近 20 个交易日走势（3/26 - 4/23）。4/17 冲高 $409 后回落，财报后因 capex 指引下跌。",
+    "heading_above": "近期价格走势"
+   },
+   "palette": {
+    "background": "#fcfce4",
+    "chromatic": [
+     {
+      "hex": "#243c54",
+      "share": 0.141,
+      "hue": "blue"
+     },
+     {
+      "hex": "#3c546c",
+      "share": 0.024,
+      "hue": "blue"
+     },
+     {
+      "hex": "#546c84",
+      "share": 0.021,
+      "hue": "blue"
+     }
+    ],
+    "neutral_share": 0.802,
+    "ink_share_of_region": 0.038
+   },
+   "colour_checks": {
+    "hue_families": [
+     "blue"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 14,
+    "numeric": 6,
+    "font_px": [
+     11.0,
+     12.0
+    ],
+    "samples": [
+     "下跌",
+     "上涨",
+     "4/23",
+     "4/20",
+     "4/14",
+     "4/8",
+     "4/1",
+     "3/26",
+     "420",
+     "400",
+     "380",
+     "360"
+    ]
+   },
+   "axes": [
+    {
+     "axis": "y",
+     "kind": "value",
+     "labels": [
+      "420",
+      "400",
+      "380",
+      "360",
+      "340",
+      "320"
+     ],
+     "n": 6,
+     "min": 320.0,
+     "max": 420.0,
+     "starts_at_zero": false,
+     "unit": null,
+     "font_px": [
+      11.0
+     ],
+     "monotonic": true,
+     "even_value_steps": true,
+     "even_pixel_steps": true,
+     "step": 20.0
+    },
+    {
+     "axis": "x",
+     "kind": "time",
+     "labels": [
+      "3/26",
+      "4/1",
+      "4/8",
+      "4/14",
+      "4/20",
+      "4/23"
+     ],
+     "n": 6
+    }
+   ],
+   "bars": {
+    "orientation": "vertical",
+    "n": 3,
+    "thickness_px": 14,
+    "gap_px": [
+     50,
+     51
+    ],
+    "order": "unsorted",
+    "lengths_px": [
+     14,
+     18,
+     6
+    ],
+    "baseline_px": 557,
+    "shortest_to_longest": 0.333,
+    "baseline_value": 361.525,
+    "baseline_is_zero": false,
+    "bar_colours": {
+     "#6b6a64": 2,
+     "#1b365d": 1
+    }
+   },
+   "line_series_candidates": 0,
+   "markers": 15,
+   "gridlines": {
+    "horizontal": 7,
+    "vertical": 0
+   },
+   "legend": {
+    "svg_swatch_entries": [
+     "下跌",
+     "上涨"
+    ],
+    "html_legend": null
+   },
+   "direct_labels": {
+    "text_in_plot": [],
+    "value_labels": 0
+   },
+   "sheet_n": 1
+  }
+ ],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [
+  {
+   "where": "html > body > table.financial.compact:nth-of-type(1)",
+   "x": 61,
+   "y": 786,
+   "w": 673,
+   "h": 213,
+   "screen": 1,
+   "tile": "tiles/794-00.png",
+   "first_screen": true,
+   "section": "财务概览",
+   "kind": "number table",
+   "tag": "table",
+   "rows": 9,
+   "cols": 4,
+   "header_cells": 4,
+   "numeric_cells": 14,
+   "numeric_share": 0.44,
+   "numeric_right_aligned": "14 of 14",
+   "near": {
+    "heading_above": "财务概览"
+   },
+   "samples": [
+    "$2.49B",
+    "$1.4B",
+    "4.2%",
+    "7.2%",
+    "21.1%",
+    "17.9%",
+    "$0.41",
+    "$0.13"
+   ],
+   "note": "font-variant-numeric (tabular figures) is not captured: judge figure alignment on the crop",
+   "sheet_n": 2
+  },
+  {
+   "where": "html > body > table.financial.compact:nth-of-type(2)",
+   "x": 61,
+   "y": 1403,
+   "w": 673,
+   "h": 119,
+   "screen": 2,
+   "tile": "tiles/794-01.png",
+   "first_screen": false,
+   "section": "竞争格局",
+   "kind": "number table",
+   "tag": "table",
+   "rows": 5,
+   "cols": 5,
+   "header_cells": 5,
+   "numeric_cells": 8,
+   "numeric_share": 0.4,
+   "numeric_right_aligned": "8 of 8",
+   "near": {
+    "heading_above": "竞争格局"
+   },
+   "samples": [
+    "+12%",
+    "$48B",
+    "-10%",
+    "+8%",
+    "+33%",
+    "21.1%",
+    "+16%",
+    "$1.2T"
+   ],
+   "note": "font-variant-numeric (tabular figures) is not captured: judge figure alignment on the crop",
+   "sheet_n": 3
+  }
+ ],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "html > body > div.report-header:nth-of-type(1) > div.price-block:nth-of-type(2) > div.price-current:nth-of-type(1)",
+   "x": 597,
+   "y": 51,
+   "w": 136,
+   "h": 37,
+   "screen": 1,
+   "tile": "tiles/794-00.png",
+   "first_screen": true,
+   "kind": "stat tile",
+   "value": "$373.72",
+   "font_px": 37.3333,
+   "row_size": 1,
+   "label": "2026.04.23 收盘",
+   "tile_where": "html > body > div.report-header:nth-of-type(1) > div.price-block:nth-of-type(2)",
+   "delta": {
+    "text": "财报后 -3.56%",
+    "color": "rgb(107, 106, 100)",
+    "has_sign_or_arrow": true,
+    "hue": "grey"
+   },
+   "sheet_n": 4
+  }
+ ],
+ "phone": "dom-375.json not captured: the phone rendering is not verified",
+ "contact_sheet": {
+  "file": "contact-794.png",
+  "grayscale": "contact-794-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "html > body > figure > svg",
+    "y": 432,
+    "w": 673,
+    "h": 266,
+    "tile": "tiles/794-00.png"
+   },
+   {
+    "n": 2,
+    "kind": "number table",
+    "where": "html > body > table.financial.compact:nth-of-type(1)",
+    "y": 786,
+    "w": 673,
+    "h": 213,
+    "tile": "tiles/794-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "number table",
+    "where": "html > body > table.financial.compact:nth-of-type(2)",
+    "y": 1403,
+    "w": 673,
+    "h": 119,
+    "tile": "tiles/794-01.png"
+   },
+   {
+    "n": 4,
+    "kind": "stat tile",
+    "where": "html > body > div.report-header:nth-of-type(1) > div.price-block:nth-of-type(2) > div.price-current:nth-of-type(1)",
+    "y": 51,
+    "w": 136,
+    "h": 37,
+    "tile": "tiles/794-00.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "dom-375.json not captured",
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 0
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 1,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "chart": 1,
+  "number table": 2,
+  "stat tile": 1,
+  "exhibit_rows": 0,
+  "first_screen": 3
+ }
+}

@@ -1,0 +1,101 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "The dashboard's figures are chosen for their data (a seven-week revenue bar chart with the current week picked out, ranked account bars with values, a four-part donut with shares), but the revenue bars stand on a hidden baseline near $1.3M, so the first week looks half the size of the last for a 22% difference.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-CHART-FORM, T-STAT-TILE and T-DIRECT-LABEL mostly pass, but T-HONEST-SCALE fails on the hero bar chart (DVZ-004), T-FOCAL on hues reused across charts (DVZ-008) and T-CHART-375 on the accounts table (DVZ-012)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-004",
+      "tier": "Reflex",
+      "where": "section.hero > div.card.lift > svg.chart, 1440 (contact sheet #1, 736 by 205px at y323; fold-1440.png)",
+      "evidence": "The svg's own description says the seven weeks rise 'from 1.94 million to 2.48 million'. From zero the first bar would be 78% of the last. On the crop the first bar is 96px tall and the last 177px (54%; the table's `lengths_px` start at 96 and `shortest_to_longest` is 0.539). Those heights put the baseline near $1.3M. The chart has no value axis and no tick labels (`axes` empty, `baseline_is_zero` unknown), so nothing tells the reader that the bars are cut.",
+      "before": "Seven bars on a hidden baseline near $1.3M, with four unlabelled gridlines.",
+      "after": "Start the bars at $0 with ticks at $0, $1M, $2M and $3M, or keep the bars cut and switch to a line with a labelled axis starting at $1.8M.",
+      "why": "The bars double the growth the description reports. In an Operate screen the bars are the product, and a revenue reader takes bar height as the amount.",
+      "test": "T-HONEST-SCALE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-008",
+      "tier": "Reflex",
+      "where": "the revenue bars, the 'Revenue by plan' donut and the 'Expansion by region' sparklines, 1440 (contact sheet #1, #2, #4 and #5; fold-1440.png)",
+      "evidence": "The charts table samples #2563eb blue on the six past weeks and #e8710a orange on the current week. The donut uses the same blue for Enterprise and the same orange for Growth. The sparklines use blue for North America and orange for Europe. On one screen, orange means 'this partial week', 'Growth plan' and 'Europe'.",
+      "before": "One categorical palette, blue, orange, teal, magenta and purple, applied afresh in each card.",
+      "after": "Keep orange only for the current-week bar. Draw the three region lines in one neutral ink with the label and the change at the line end, and give the donut its own ramp of one hue.",
+      "why": "When a hue means three things, a reader who has just learned 'orange = this week' tries to carry it to the next card and is misled.",
+      "test": "T-FOCAL",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-009",
+      "tier": "Reflex",
+      "where": "main section.bento > div.card > svg.chart (Revenue by plan donut), 1440 (contact sheet #2, 176 by 176px at y697)",
+      "evidence": "The charts table's `colour_checks.close_under_cvd` flags the Team teal #0c9c6c against the Starter magenta #e42484: Delta E 123 to most eyes, 9 under deuteranopia. The two slices sit next to each other, and the legend below matches them by dot colour only.",
+      "before": "Four slices matched to a dot legend by hue.",
+      "after": "Label the slices in place (Enterprise 46%, Growth 31%, Team 15%, Starter 8%), or replace the donut with one 100% stacked bar labelled in order.",
+      "why": "Some readers cannot tell Team from Starter on the ring. The legend gives the shares but cannot point to the slice.",
+      "test": "T-SECOND-ENCODING",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Reflex",
+      "where": "#acctTable inside #accounts, 375 (contact sheet 375 #3; tiles/375-02.png and 375-03.png)",
+      "evidence": "The `phone` row gives the table 601px at 375, inside the #accounts scroll box. On the tile, account names break mid-word ('Northw / ind / Logistic / s', 'Meridia / n / Health / Networ / k'), and the Health and Renews columns are off-screen to the right.",
+      "before": "A five-column table squeezed into the phone card, with the name column broken letter by letter.",
+      "after": "At 375 show each account as a row of two lines: the name and ARR on the first, and health and the renewal date on the second. Or set a minimum width on the name column and let the table scroll as a whole.",
+      "why": "A name broken into four pieces cannot be read, and the columns that matter for a renewal (health and date) are hidden.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-010",
+      "tier": "Reflex",
+      "where": "the revenue bar chart, 1440 (contact sheet #1)",
+      "evidence": "The figure has no week labels on its time axis and no tick values. The only text is the caption 'Week 27 is the current, partial week.' The weeks, the amounts and the dip that the svg desc mentions are on the page only for screen readers.",
+      "before": "Seven unlabelled bars with one caption.",
+      "after": "Add week labels (W21 to W27) under the bars and a short title that carries the desc's takeaway: 'Up from $1.94M to $2.48M in seven weeks, one dip in week 24'.",
+      "why": "A sighted reader sees the shape but cannot read a week or an amount, though the page already has the words.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The 'Largest accounts' bars are sorted from largest to smallest, each with its name and value beside it, so the reader needs no axis or legend.",
+    "The stat tiles carry worded qualifiers with a sign and a baseline ('+4 pts expansion outpaced churn in 5 of 6 segments', 'Target is 3.0x for the quarter', '18.2% against the previous 30 days').",
+    "The donut has four parts whose legend shares sum to 100% (46 + 31 + 15 + 8), and the footer names the data's refresh time and source ('Last run 09:00 UTC from the revenue warehouse')."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "the 90-day and 12-month views: the tabs were not opened",
+    "the three region sparklines: they have no scale, so I could not check whether they share one range",
+    "diagram tests: no diagram on the page",
+    "visitor mode inferred as Operate (a revenue dashboard, medium app) because there is no 00-contract.md"
+  ]
+}

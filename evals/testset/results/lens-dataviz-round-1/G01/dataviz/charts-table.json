@@ -1,0 +1,280 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\G01",
+ "target": "..\\unslop-refs\\hallmark\\skills\\hallmark\\scripts\\fixtures\\exemplars\\editorial.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/hallmark/skills/hallmark/scripts/fixtures/exemplars/editorial.html",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [
+  {
+   "where": "main > section.hero:nth-of-type(1) > figure.hero__photo > img",
+   "y": 76,
+   "w": 1440,
+   "h": 820,
+   "alt": "A fresh roast swept round the cooling tray by its paddle arm",
+   "file": "1280px-Cooling_time_for_coffee.jpg",
+   "tile": "tiles/1440-00.png"
+  },
+  {
+   "where": "v.container > div.split.cup__pair:nth-of-type(2) > figure.cup__note:nth-of-type(1) > div.photo > img",
+   "y": 1881,
+   "w": 752,
+   "h": 544,
+   "alt": "A drum coffee roaster above its copper cooling tray in a roastery",
+   "file": "1280px-Coffee_roasting_machine,_The_Roastery,_Coaltown_Coffe",
+   "tile": "tiles/1440-02.png"
+  },
+  {
+   "where": "iv.container > div.split.cup__pair:nth-of-type(2) > figure.cup__cup:nth-of-type(2) > div.photo > img",
+   "y": 1881,
+   "w": 528,
+   "h": 544,
+   "alt": "Espresso streaming from a chrome machine into two glass cups",
+   "file": "1280px-Espresso_coffee_pouring_from_retro_espresso_machine.j",
+   "tile": "tiles/1440-02.png"
+  }
+ ],
+ "number_tables": [
+  {
+   "where": "section.ledger.band:nth-of-type(2) > div.container.split > div.ledger__book:nth-of-type(2) > table.book",
+   "x": 624,
+   "y": 1016,
+   "w": 752,
+   "h": 444,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Written in the day book",
+   "kind": "number table",
+   "tag": "table",
+   "rows": 6,
+   "cols": 3,
+   "header_cells": 8,
+   "numeric_cells": 7,
+   "numeric_share": 0.78,
+   "numeric_right_aligned": "2 of 7",
+   "near": {
+    "heading_above": "Written in the day book"
+   },
+   "samples": [
+    "1921",
+    "5",
+    "4",
+    "3",
+    "250 g",
+    "2",
+    "1"
+   ],
+   "note": "font-variant-numeric (tabular figures) is not captured: judge figure alignment on the crop",
+   "sheet_n": 1
+  }
+ ],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "table.book > tbody > tr:nth-of-type(2) > td.r:nth-of-type(2) > span.num:nth-of-type(1)",
+   "x": 1317,
+   "y": 1148,
+   "w": 46,
+   "h": 46,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Written in the day book",
+   "kind": "stat tile",
+   "value": "250",
+   "font_px": 31.248,
+   "row_size": 1,
+   "label": "g",
+   "tile_where": "ledger__book:nth-of-type(2) > table.book > tbody > tr:nth-of-type(2) > td.r:nth-of-type(2)",
+   "sheet_n": 3
+  },
+  {
+   "where": "table.book > tbody > tr:nth-of-type(5) > td.r:nth-of-type(2) > span.num",
+   "x": 1315,
+   "y": 1394,
+   "w": 61,
+   "h": 46,
+   "screen": 2,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Written in the day book",
+   "kind": "stat tile",
+   "value": "1921",
+   "font_px": 31.248,
+   "row_size": 1,
+   "label": null,
+   "tile_where": "ledger__book:nth-of-type(2) > table.book > tbody > tr:nth-of-type(5) > td.r:nth-of-type(2)",
+   "sheet_n": 2
+  }
+ ],
+ "phone": [
+  {
+   "where": "section.ledger.band:nth-of-type(2) > div.container.split > div.ledger__book:nth-of-type(2) > table.book",
+   "kind": "number table",
+   "match": "same selector",
+   "at_375": {
+    "w": 343,
+    "h": 479,
+    "y": 960,
+    "visible": true,
+    "tile": "tiles/375-01.png"
+   },
+   "width_ratio_vs_1440": 0.46
+  }
+ ],
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "number table",
+    "where": "section.ledger.band:nth-of-type(2) > div.container.split > div.ledger__book:nth-of-type(2) > table.book",
+    "y": 1016,
+    "w": 752,
+    "h": 444,
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "n": 2,
+    "kind": "stat tile",
+    "where": "table.book > tbody > tr:nth-of-type(5) > td.r:nth-of-type(2) > span.num",
+    "y": 1394,
+    "w": 61,
+    "h": 46,
+    "tile": "tiles/1440-01.png"
+   },
+   {
+    "n": 3,
+    "kind": "stat tile",
+    "where": "table.book > tbody > tr:nth-of-type(2) > td.r:nth-of-type(2) > span.num:nth-of-type(1)",
+    "y": 1148,
+    "w": 46,
+    "h": 46,
+    "tile": "tiles/1440-01.png"
+   }
+  ]
+ },
+ "contact_sheet_375": {
+  "file": "contact-375.png",
+  "grayscale": "contact-375-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "number table",
+    "where": "section.ledger.band:nth-of-type(2) > div.container.split > div.ledger__book:nth-of-type(2) > table.book",
+    "y": 960,
+    "w": 343,
+    "h": 479,
+    "tile": "tiles/375-01.png"
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 0
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 0,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "number table": 1,
+  "stat tile": 2,
+  "exhibit_rows": 0,
+  "first_screen": 0
+ }
+}

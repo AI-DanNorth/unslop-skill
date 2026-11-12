@@ -1,0 +1,66 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The 'backbone of global commerce' tiles give each figure a worded qualifier and period ('US$1.9tn in payments volume processed in 2025'), and the systems diagram has one focal hub and one dotted connector grammar; the developer tiles mix per-day, per-second and per-minute rates.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-STAT-TILE passes on the commerce tiles and T-DIAGRAM-FOCAL and T-CONNECTORS pass on the systems diagram; T-STAT-TILE fails on the developer row's mixed periods (DVZ-013) and the diagram runs past the web-card node budget (DVZ-014)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-STAT-TILE",
+    "T-CHART-TEXT-MATCH",
+    "T-DIAGRAM-EARNS",
+    "T-DIAGRAM-FOCAL",
+    "T-30S-BOARD",
+    "T-CONNECTORS",
+    "T-GRAYSCALE",
+    "T-CHART-375"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "'Scale with confidence.' row, h4.developers-scale-subsection__stats-grid-item-heading (three tiles), 1440, contact sheet #4, #6, #7, tiles/1440-11.png",
+      "evidence": "The three figures in one row use three periods: '500m+ API requests per day', '10k+ API requests per second' and '150k+ transactions per minute'. 500 million a day is about 5,800 a second, so the reader has to do arithmetic to see that the 10k figure is a peak rather than an average, and the tile does not say so.",
+      "before": "Three rates on three time bases in one row.",
+      "after": "Put all three on one time base and name peak or average, for example '10k+ API requests per second at peak', '5,800 per second on average' and the transaction rate per second.",
+      "why": "Tiles in a row invite comparison; different time bases make the comparison wrong unless the reader converts them.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-014",
+      "tier": "Reflex",
+      "where": "'Connect to existing systems.' diagram, svg.developer-systems-animation__center-path-svg (aria-hidden), 1440, contact sheet #1 and #2, tiles/1440-10.png",
+      "evidence": "The diagram holds about twenty nodes: five systems (ERP, CRM, Subscriptions, Legacy billing, Booking system), five methods (SDK, Event Destinations, App Marketplace, Data Pipeline, Orchestration), the Stripe hub, a four-logo partner block with two empty slots, a Snowflake logo and four boxes all labelled 'PSP'. The partner and warehouse logos carry no names.",
+      "before": "A twenty-node board in a web card, with unnamed logos.",
+      "after": "Keep the hub and the five methods as the diagram, name each logo, and move the system list into the caption or a row of text above it.",
+      "why": "Conflict C54 puts a web card's budget at about 12 nodes; past it, the five integration methods (the point of the section) share the eye with logos the reader has to recognise.",
+      "test": "T-DIAGRAM-EARNS",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The commerce tiles state qualifier and period in words under each figure: '135+ currencies and payment methods supported', 'US$1.9tn in payments volume processed in 2025', '99.999% historical uptime for Stripe services', '200m+ active subscriptions managed on Stripe Billing'.",
+    "The systems diagram has one focal node (the Stripe hub), one connector style (thin dotted orthogonal lines) and labelled method boxes on every path; the svg carries a full text description of the diagram.",
+    "The terminal mock shows a single amount ('€26.89') as a payment screen, not as a chart."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a payments platform landing page); there is no 00-contract.md",
+    "the 'backbone' canvas (1234 by 519px, contact #11) is a line-burst showpiece under the stat tabs; whether it changes with the selected stat was not captured (tabs not opened), so it is judged as decoration",
+    "the dimmed state of the three inactive commerce tiles is a tab style; the contrast Floor on 'for Stripe services' belongs to lens-a11y",
+    "T-CHART-375 for the systems diagram: the hub svg is not visible at 375 (phone: w 0) and only the PSP svg is; the phone layout of the diagram is not verified",
+    "the gradient fill on the developer figures is the sweep's (SLP-007)"
+  ]
+}

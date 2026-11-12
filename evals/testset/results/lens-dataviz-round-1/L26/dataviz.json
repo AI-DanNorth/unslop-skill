@@ -1,0 +1,51 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page's data figures are few and plain: an integrations hub diagram with one dark focal node and one connector style, and three review ratings with partly filled stars that link to their sources.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-DIAGRAM-FOCAL, T-CONNECTORS and T-STAT-TILE pass on the integrations diagram and the rating tiles; one case-study figure lacks its period (DVZ-013)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-STAT-TILE",
+    "T-SECOND-ENCODING",
+    "T-DIAGRAM-EARNS",
+    "T-DIAGRAM-FOCAL",
+    "T-CONNECTORS",
+    "T-CHART-TEXT-MATCH"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "customer stories, Deel panel, figure.relative.mx-4 caption, 1440, contact sheet #11, tiles/1440-08.png",
+      "evidence": "The Deel panel's chips read 'From $500M to $1.5B+ ARR', 'From 12s to <2s page loads' and '6,000+ hours saved per week'. The ARR chip gives a before and after but no years, so the reader cannot tell how long the growth took or whether Cal.com had a part in it. The Retell chips next to it do carry periods ('10M+ calls handled per month').",
+      "before": "A before-and-after figure with no time span.",
+      "after": "Add the years to the chip, for example 'From $500M to $1.5B+ ARR, [DATA NEEDED: start year] to [DATA NEEDED: end year]'.",
+      "why": "A growth figure without its span cannot be read as fast or slow. Whether the figure is Cal.com's to claim is lens-integrity's.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The integrations diagram ('All your key tools in sync with your meetings', tiles/1440-05.png) keeps twelve nodes (inside the web-card budget, conflict C54): one dark 'Cal' hub as the only focal node, calendars and video tools on the left, CRM and messaging tools on the right, and every spoke drawn as the same thin grey curve. The list under it names each tool.",
+    "The rating tiles ('4.5 Trustpilot', '4.8 Product Hunt', '4.5 G2') show the score with a partly filled five-star row as a second encoding, and each tile links to its source."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a scheduling product landing page with sign-up buttons); there is no 00-contract.md",
+    "all nine canvases are dithered photographs or textures (hero, inbox photo, customer-story photos, footer art), not charts, so the table's 'probable chart' guesses do not hold; the 'css bars' row is a skeleton text placeholder in the workflows mock",
+    "T-CHART-375 for the integrations diagram: it is HTML and svg outside the charts table, and its phone layout was not checked region by region",
+    "the sweep's invented_metrics hits ('35% less', '50% more demo efficiency', '99.99% uptime') are lens-integrity's"
+  ]
+}

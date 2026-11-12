@@ -1,0 +1,73 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The cloud budget waterfall is a well-chosen form drawn from a zero baseline, with one accent on the largest saving and connectors between steps, but its labelled steps (240 + 64 - 36 + 22 - 52 = 238) do not close to the labelled FY26 total of 236.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-CHART-FORM, T-HONEST-SCALE, T-FOCAL and T-DIRECT-LABEL pass, but T-CHART-TEXT-MATCH fails because the waterfall does not close (DVZ-005), and T-GRAYSCALE fails on the totals and added-cost fills that merge (DVZ-009)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "the waterfall, about 1000 by 430px across the middle of image.png (1200 by 747)",
+      "evidence": "The step labels are FY25 base 240, Headcount +64, Reserved inst. -36, ML workloads +22 and Storage tiering -52. They sum to 238, but the FY26 plan bar is labelled 236. Read against the axis (about 107px per 100), the Storage tiering step ends near 237 and the FY26 bar's top sits at the same height, so the marks close and the labels do not.",
+      "before": "A waterfall whose labelled steps miss the labelled total by 2.",
+      "after": "Correct the label that is wrong so the bridge closes (for example FY26 plan 238, or Storage tiering -54), or add an 'Other / rounding -2' step.",
+      "why": "A budget bridge exists to show that the steps explain the change. A reader who adds them up finds a 2k a month gap and doubts the rest.",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-009",
+      "tier": "Reflex",
+      "where": "the FY25 base and FY26 plan bars against the Headcount and ML workloads bars, image.png",
+      "evidence": "The legend separates 'Start / end total' (light grey fill) from 'Cost added' (a slightly cooler light grey fill). On the picture the two fills differ only slightly, and in grayscale they would be the same tone. 'Cost removed' is white with an outline, so only totals and additions merge.",
+      "before": "Totals and cost increases in two near-identical greys.",
+      "after": "Fill the totals in a darker neutral (or solid ink), and draw added costs in a mid grey with a '+' on each label, as the labels already do.",
+      "why": "Telling a total from a step is the first reading a waterfall needs, and here it rests on a faint tint.",
+      "test": "T-GRAYSCALE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-010",
+      "tier": "Finish",
+      "where": "the title 'Cloud budget bridge · FY25 → FY26' and the y-axis title, image.png",
+      "evidence": "The title names the topic. The takeaway (storage tiering is the largest saving) appears only in the legend entry 'Storage tiering · largest saving'. The unit 'CLOUD SPEND · $K / MO' is a small rotated label on the left, and there is no source line.",
+      "before": "A topic title, the unit in small rotated type, and no source.",
+      "after": "Make the title the takeaway ('Storage tiering saves $52k a month and keeps FY26 below FY25'), move '$k per month' under the title, and add a source line ('Source: [DATA NEEDED: budget system and date]').",
+      "why": "A reader of a budget figure wants the conclusion and the unit before the bars.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The waterfall is the right form for a budget bridge. The bars start at zero (the totals run to the 0 baseline), the ticks are even (100 to 400), and thin connectors carry each step's level to the next.",
+    "One accent: only Storage tiering is orange, and the legend names why ('largest saving'). Every bar carries its value directly."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "T-CHART-375: an image-only item has no phone rendering",
+    "T-STAT-TILE: no stat tiles in the image",
+    "diagram tests: the image is a chart, not a node diagram",
+    "image-only item: no DOM, no charts table rows and no sweep; everything was read by eye from image.png at full size",
+    "visitor mode inferred as Read (a finance figure) because there is no 00-contract.md"
+  ]
+}

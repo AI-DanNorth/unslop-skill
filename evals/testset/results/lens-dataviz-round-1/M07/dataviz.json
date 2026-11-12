@@ -1,0 +1,99 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The traction chart's bar heights do not match its own labels ($8k is drawn at 4.75px per $1k, $81k at 2.96px), and its title says 34% month on month while the labelled values grow 47% to 88% a month, under the deck's blue-to-magenta gradient.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-CHART-TEXT-MATCH and T-HONEST-SCALE fail on the traction bars (DVZ-005, DVZ-004), T-DATA-INK on gradient bars (DVZ-006), and T-STAT-TILE on the market tiles (DVZ-013)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-004",
+      "tier": "Reflex",
+      "where": "section.slide:nth-of-type(7) > div.traction-bar, 1920 (contact sheet #1, 1696 by 241px at y7036; tiles/1920-06.png)",
+      "evidence": "The bars are labelled $8k, $15k, $23k, $36k, $55k and $81k. On the tile they measure 38, 67, 100, 144, 192 and 240px tall from a shared baseline. That is 4.75px per $1k for October and 2.96px per $1k for March. If drawn to scale from March, the October bar would be 24px. If drawn to scale from October, March would be 385px.",
+      "before": "Box-drawn bars whose heights are compressed toward the top, so the later months look smaller than their labels.",
+      "after": "Draw each bar's height in proportion to its value from $0, so March is about 10 times October, and keep the value labels on top.",
+      "why": "On an investor deck the bars are the traction claim. Heights that do not follow the labels make the curve look steadier than the figures say.",
+      "test": "T-HONEST-SCALE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "slide 7 title 'Traction · 6 months, growing 34% MoM.' over the same bars, 1920 (tiles/1920-06.png)",
+      "evidence": "From the bar labels, month-on-month growth is 88% (8 to 15), 53%, 57%, 53% and 47% (55 to 81). The compound rate from $8k to $81k over five months is about 59% a month. None of these is 34%. The chart also never names its measure. Only the ask slide says '$81K to $500K MRR'.",
+      "before": "A headline growth rate that the chart under it does not show, over bars with no metric name.",
+      "after": "Make the title match the figures, for example 'MRR up from $8k to $81k in six months, about 59% a month', and add 'MRR, $k' as the chart's unit line.",
+      "why": "An investor who checks the arithmetic finds the headline and the bars disagree, and then distrusts both. Lens-integrity owns whether the figures are real.",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-006",
+      "tier": "Reflex",
+      "where": "the traction bars and the stat figures on slides 4, 5 and 9, 1920 (contact sheet #1 to #9)",
+      "evidence": "Every bar is filled with the deck's diagonal gradient from blue to magenta. The sweep's gradient hit (SLP-007) reports a hue span of 50 degrees (#3b5bff, #7a46ff, #d94cff), and it covers the stat figures as well.",
+      "before": "Gradient-filled data bars, so each bar changes colour from its bottom-left to its top-right.",
+      "after": "Fill the bars in one flat brand blue, with March in the accent if it is the focal month.",
+      "why": "A colour change inside a bar suggests a second variable that does not exist, and it adds ink to every mark.",
+      "test": "T-DATA-INK",
+      "source": "dataviz",
+      "root": "the deck's .gradient fill token used on text, figures and chart marks"
+    },
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "section.slide:nth-of-type(5) > div.grid.g3 > div.metric, 1920 (contact sheet #2 to #4, y4932; tiles/1920-04.png)",
+      "evidence": "The market slide shows '41M developers worldwide who use an AI coding agent daily', '$92B TAM · design + prototyping software spend' and '38% YoY growth in AI-assisted software teams'. The tiles give no year for any figure, and 38% does not say what grew (team count, or spend). The sweep's stat_band hit (INT-007) covers the missing sources.",
+      "before": "Three figures of three kinds (a count of people, a market size and a growth rate) with no period.",
+      "after": "Give each tile its year and measure ('$92B, 2026 global spend on design and prototyping software'), and add a source line under the row.",
+      "why": "A market slide is read for scale and date. Without a year, the figures cannot be compared or checked.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-001",
+      "tier": "Finish",
+      "where": "section.slide:nth-of-type(9) > div.ask-box, 1920 (contact sheet #8 and #9; tiles/1920-08.png)",
+      "evidence": "The ask slide says '$2.5M' in the headline ('Raising $2.5M seed.') and again as the first tile, and says '$500K MRR' in the body and again in the third tile.",
+      "before": "Two of the three tiles repeat figures already set in larger type on the same slide.",
+      "after": "Keep the headline and body, and turn the tile row into the terms only: 'SAFE, post-money cap $18M' and '18 months of runway'.",
+      "why": "Repeated figures make the slide look full without telling the investor anything new.",
+      "test": "T-ONE-QUESTION",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The traction bars put the value on each bar and the month under it, so the chart needs no legend or gridlines."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "T-CHART-375: slides are judged at their projected size (1920) only",
+    "diagram tests: no diagram in the deck",
+    "visitor mode inferred as Persuade (a seed pitch deck, medium slides) because there is no 00-contract.md"
+  ]
+}

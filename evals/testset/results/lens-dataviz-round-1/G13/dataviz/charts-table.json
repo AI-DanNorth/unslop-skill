@@ -1,0 +1,255 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\G13",
+ "target": "..\\unslop-refs\\diagram-design\\skills\\diagram-design\\assets\\example-architecture.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/diagram-design/skills/diagram-design/assets/example-architecture.html",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [
+  {
+   "where": "html > body > div.frame > svg",
+   "x": 120,
+   "y": 203,
+   "w": 1200,
+   "h": 576,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Content site in production",
+   "kind": "diagram",
+   "tag": "svg",
+   "class": " frame",
+   "library_hint": null,
+   "elements": {
+    "text": 32,
+    "rect": 29,
+    "line": 6,
+    "path": 3,
+    "marker": 3,
+    "polygon": 3,
+    "defs": 1,
+    "pattern": 1,
+    "circle": 1,
+    "desc": 1
+   },
+   "shapes": 42,
+   "near": {
+    "svg_desc": "Architecture diagram showing reader requests moving through Cloudflare to an Astro origin, MDX bundle, and content CMS.",
+    "svg_title": "Content site in production",
+    "heading_above": "Content site in production"
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#e4ccb4",
+      "share": 0.02,
+      "hue": "orange"
+     }
+    ],
+    "neutral_share": 0.967,
+    "ink_share_of_region": 0.039
+   },
+   "colour_checks": {
+    "hue_families": []
+   },
+   "effects": {
+    "patterns": 1
+   },
+   "text": {
+    "labels": 32,
+    "numeric": 2,
+    "font_px": [
+     7.0,
+     8.0,
+     8.5,
+     9.0,
+     12.0,
+     32.0
+    ],
+    "samples": [
+     "Return / async",
+     "Primary flow",
+     "HTTP request",
+     "External",
+     "Cloud",
+     "Store",
+     "Backend / bundle",
+     "Focal / origin",
+     "LEGEND",
+     "assets · og images",
+     "Content CMS",
+     "CMS"
+    ]
+   },
+   "diagram": {
+    "nodes": 11,
+    "node_size_tiers": 4,
+    "node_sizes": [
+     [
+      172,
+      76
+     ],
+     [
+      192,
+      76
+     ],
+     [
+      152,
+      76
+     ],
+     [
+      196,
+      328
+     ]
+    ],
+    "node_fill_colours": {},
+    "chromatic_node_fills": 0,
+    "connectors": 9,
+    "arrowhead_markers": 3,
+    "straight_segments": {
+     "horizontal": 7,
+     "vertical": 0
+    },
+    "segment_crossings": 0,
+    "segments_through_nodes": 0,
+    "segment_ends_floating_4_to_14px": 0,
+    "labels_in_nodes_max": 3,
+    "words_per_label_max": 4,
+    "note": "connector checks use only straight horizontal and vertical segments from bounding boxes; curves, diagonals, dash patterns and arrowhead direction are not captured: read them on the crop"
+   },
+   "sweep": [
+    "text_floor (A11-002, Reflex): label at 7px (label floor 11px; 26 such)",
+    "text_floor (A11-002, Reflex): label at 8px (label floor 11px; 26 such)",
+    "text_floor (A11-002, Reflex): label at 8px (label floor 11px; 26 such)",
+    "text_floor (A11-002, Reflex): label at 8px (label floor 11px; 26 such)"
+   ],
+   "sheet_n": 1
+  }
+ ],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [],
+ "phone": "dom-375.json not captured: the phone rendering is not verified",
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "diagram",
+    "where": "html > body > div.frame > svg",
+    "y": 203,
+    "w": 1200,
+    "h": 576,
+    "tile": "tiles/1440-00.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "dom-375.json not captured",
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 5
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 1,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "diagram": 1,
+  "exhibit_rows": 0,
+  "first_screen": 1
+ }
+}

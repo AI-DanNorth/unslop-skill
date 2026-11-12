@@ -1,0 +1,409 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\M07",
+ "target": "..\\unslop-refs\\open-design\\design-templates\\html-ppt-pitch-deck\\example.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/open-design/design-templates/html-ppt-pitch-deck/example.html",
+ "width": 1920,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [],
+ "css_bars": [
+  {
+   "where": "html > body.tpl-pitch-deck > div.deck > section.slide:nth-of-type(7) > div.traction-bar.mt-l",
+   "x": 112,
+   "y": 7036,
+   "w": 1696,
+   "h": 241,
+   "screen": 8,
+   "tile": "tiles/1920-07.png",
+   "first_screen": false,
+   "section": "6 months, growing 34% MoM.",
+   "kind": "css bars",
+   "tag": "div",
+   "orientation": "vertical",
+   "n": 6,
+   "lengths_px": [
+    38,
+    67,
+    101,
+    144,
+    192,
+    240
+   ],
+   "thickness_px": 271,
+   "colours": {
+    "rgba(0, 0, 0, 0)": 6
+   },
+   "near": {
+    "heading_above": "6 months, growing 34% MoM."
+   },
+   "note": "bars drawn as boxes have no axis in the DOM: their baseline and scale are read on the crop",
+   "sheet_n": 1
+  }
+ ],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(1) > div.n:nth-of-type(1)",
+   "x": 112,
+   "y": 4932,
+   "w": 549,
+   "h": 72,
+   "screen": 6,
+   "tile": "tiles/1920-05.png",
+   "first_screen": false,
+   "section": "A massive, underserved wedge.",
+   "kind": "stat tile",
+   "value": "41M",
+   "font_px": 72.0,
+   "row_size": 3,
+   "label": "developers worldwide who use an AI coding agent daily",
+   "tile_where": "h-deck > div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(1)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 41M, $92B, 38%",
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff"
+   ],
+   "sheet_n": 2
+  },
+  {
+   "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(2) > div.n:nth-of-type(1)",
+   "x": 685,
+   "y": 4932,
+   "w": 549,
+   "h": 72,
+   "screen": 6,
+   "tile": "tiles/1920-05.png",
+   "first_screen": false,
+   "section": "A massive, underserved wedge.",
+   "kind": "stat tile",
+   "value": "$92B",
+   "font_px": 72.0,
+   "row_size": 3,
+   "label": "TAM · design + prototyping software spend",
+   "tile_where": "h-deck > div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(2)",
+   "sweep": [
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff",
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 41M, $92B, 38%"
+   ],
+   "sheet_n": 3
+  },
+  {
+   "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(3) > div.n:nth-of-type(1)",
+   "x": 1259,
+   "y": 4932,
+   "w": 549,
+   "h": 72,
+   "screen": 6,
+   "tile": "tiles/1920-05.png",
+   "first_screen": false,
+   "section": "A massive, underserved wedge.",
+   "kind": "stat tile",
+   "value": "38%",
+   "font_px": 72.0,
+   "row_size": 3,
+   "label": "YoY growth in AI-assisted software teams",
+   "tile_where": "h-deck > div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(3)",
+   "sweep": [
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff",
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 41M, $92B, 38%"
+   ],
+   "sheet_n": 4
+  },
+  {
+   "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(1) > div.metric.mt-s > div.n:nth-of-type(1)",
+   "x": 141,
+   "y": 6062,
+   "w": 491,
+   "h": 56,
+   "screen": 7,
+   "tile": "tiles/1920-06.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "stat tile",
+   "value": "$0",
+   "font_px": 56.0,
+   "row_size": 3,
+   "label": "Community",
+   "tile_where": "tch-deck > div.deck > section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(1)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: $0, $79, 0.6%",
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff"
+   ],
+   "sheet_n": 5
+  },
+  {
+   "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card.card-accent:nth-of-type(2) > div.metric.mt-s > div.n:nth-of-type(1)",
+   "x": 714,
+   "y": 6064,
+   "w": 491,
+   "h": 56,
+   "screen": 7,
+   "tile": "tiles/1920-06.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "stat tile",
+   "value": "$79",
+   "font_px": 56.0,
+   "row_size": 3,
+   "label": "Pro",
+   "tile_where": "iv.deck > section.slide:nth-of-type(6) > div.grid.g3 > div.card.card-accent:nth-of-type(2)",
+   "sweep": [
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff",
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: $0, $79, 0.6%"
+   ],
+   "sheet_n": 6
+  },
+  {
+   "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(3) > div.metric.mt-s > div.n:nth-of-type(1)",
+   "x": 1288,
+   "y": 6062,
+   "w": 491,
+   "h": 56,
+   "screen": 7,
+   "tile": "tiles/1920-06.png",
+   "first_screen": false,
+   "section": "Pro",
+   "kind": "stat tile",
+   "value": "0.6%",
+   "font_px": 56.0,
+   "row_size": 3,
+   "label": "Cloud",
+   "tile_where": "tch-deck > div.deck > section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(3)",
+   "sweep": [
+    "gradient (SLP-007, Reflex): gradient hue span 50°: #3b5bff, #7a46ff, #d94cff",
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: $0, $79, 0.6%"
+   ],
+   "sheet_n": 7
+  },
+  {
+   "where": "section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(1) > div:nth-of-type(1)",
+   "x": 176,
+   "y": 9261,
+   "w": 219,
+   "h": 70,
+   "screen": 11,
+   "tile": "tiles/1920-10.png",
+   "first_screen": false,
+   "section": "Raising $2.5M seed.",
+   "kind": "stat tile",
+   "value": "$2.5M",
+   "font_px": 44.0,
+   "row_size": 2,
+   "label": "SAFE · post-money cap $18M",
+   "tile_where": "deck > section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(1)",
+   "sheet_n": 8
+  },
+  {
+   "where": "section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(3) > div:nth-of-type(1)",
+   "x": 615,
+   "y": 9261,
+   "w": 153,
+   "h": 70,
+   "screen": 11,
+   "tile": "tiles/1920-10.png",
+   "first_screen": false,
+   "section": "Raising $2.5M seed.",
+   "kind": "stat tile",
+   "value": "$500K",
+   "font_px": 44.0,
+   "row_size": 2,
+   "label": "MRR target by close",
+   "tile_where": "deck > section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(3)",
+   "sheet_n": 9
+  }
+ ],
+ "phone": "dom-375.json not captured: the phone rendering is not verified",
+ "contact_sheet": {
+  "file": "contact-1920.png",
+  "grayscale": "contact-1920-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "css bars",
+    "where": "html > body.tpl-pitch-deck > div.deck > section.slide:nth-of-type(7) > div.traction-bar.mt-l",
+    "y": 7036,
+    "w": 1696,
+    "h": 241,
+    "tile": "tiles/1920-07.png"
+   },
+   {
+    "n": 2,
+    "kind": "stat tile",
+    "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(1) > div.n:nth-of-type(1)",
+    "y": 4932,
+    "w": 549,
+    "h": 72,
+    "tile": "tiles/1920-05.png"
+   },
+   {
+    "n": 3,
+    "kind": "stat tile",
+    "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(2) > div.n:nth-of-type(1)",
+    "y": 4932,
+    "w": 549,
+    "h": 72,
+    "tile": "tiles/1920-05.png"
+   },
+   {
+    "n": 4,
+    "kind": "stat tile",
+    "where": "div.deck > section.slide:nth-of-type(5) > div.grid.g3 > div.metric:nth-of-type(3) > div.n:nth-of-type(1)",
+    "y": 4932,
+    "w": 549,
+    "h": 72,
+    "tile": "tiles/1920-05.png"
+   },
+   {
+    "n": 5,
+    "kind": "stat tile",
+    "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(1) > div.metric.mt-s > div.n:nth-of-type(1)",
+    "y": 6062,
+    "w": 491,
+    "h": 56,
+    "tile": "tiles/1920-06.png"
+   },
+   {
+    "n": 6,
+    "kind": "stat tile",
+    "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card.card-accent:nth-of-type(2) > div.metric.mt-s > div.n:nth-of-type(1)",
+    "y": 6064,
+    "w": 491,
+    "h": 56,
+    "tile": "tiles/1920-06.png"
+   },
+   {
+    "n": 7,
+    "kind": "stat tile",
+    "where": "section.slide:nth-of-type(6) > div.grid.g3 > div.card:nth-of-type(3) > div.metric.mt-s > div.n:nth-of-type(1)",
+    "y": 6062,
+    "w": 491,
+    "h": 56,
+    "tile": "tiles/1920-06.png"
+   },
+   {
+    "n": 8,
+    "kind": "stat tile",
+    "where": "section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(1) > div:nth-of-type(1)",
+    "y": 9261,
+    "w": 219,
+    "h": 70,
+    "tile": "tiles/1920-10.png"
+   },
+   {
+    "n": 9,
+    "kind": "stat tile",
+    "where": "section.slide:nth-of-type(9) > div.ask-box.mt-m > div.row.mt-l > div:nth-of-type(3) > div:nth-of-type(1)",
+    "y": 9261,
+    "w": 153,
+    "h": 70,
+    "tile": "tiles/1920-10.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "dom-375.json not captured",
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 2
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 12
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 15
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 21
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 2
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 0,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "css bars": 1,
+  "stat tile": 8,
+  "exhibit_rows": 0,
+  "first_screen": 0
+ }
+}

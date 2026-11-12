@@ -1,0 +1,477 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\M01",
+ "target": "..\\unslop-refs\\kami\\site\\assets\\demos\\demo-agent-slides.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/kami/site/assets/demos/demo-agent-slides.html",
+ "width": 1920,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [
+  {
+   "where": "body > section.slide:nth-of-type(2) > div.body-grid:nth-of-type(3) > div.diagram-col:nth-of-type(2) > svg",
+   "x": 589,
+   "y": 1021,
+   "w": 441,
+   "h": 363,
+   "screen": 2,
+   "tile": "tiles/1920-01.png",
+   "first_screen": true,
+   "section": "Things you don't know about Agents",
+   "kind": "diagram",
+   "tag": "svg",
+   "class": " diagram-col body-grid slide",
+   "library_hint": null,
+   "elements": {
+    "path": 8,
+    "text": 7,
+    "rect": 4,
+    "circle": 1
+   },
+   "shapes": 13,
+   "near": {},
+   "palette": {
+    "background": "#fcfce4",
+    "chromatic": [],
+    "neutral_share": 0.965,
+    "ink_share_of_region": 0.038
+   },
+   "colour_checks": {},
+   "effects": {},
+   "text": {
+    "labels": 7,
+    "numeric": 0,
+    "font_px": [
+     9.0,
+     10.0,
+     14.0,
+     16.0
+    ],
+    "samples": [
+     "CORE",
+     "20 LOC",
+     "REFLECT",
+     "OBSERVE",
+     "ACT",
+     "PLAN",
+     "TOOLS · HARNESS · EVALS · MEMORY"
+    ]
+   },
+   "diagram": {
+    "nodes": 5,
+    "node_size_tiers": 2,
+    "node_sizes": [
+     [
+      128,
+      48
+     ],
+     [
+      248,
+      248
+     ]
+    ],
+    "node_fill_colours": {},
+    "chromatic_node_fills": 0,
+    "connectors": 8,
+    "arrowhead_markers": 0,
+    "straight_segments": {
+     "horizontal": 0,
+     "vertical": 0
+    },
+    "segment_crossings": 0,
+    "segments_through_nodes": 0,
+    "segment_ends_floating_4_to_14px": 0,
+    "labels_in_nodes_max": 2,
+    "words_per_label_max": 2,
+    "note": "connector checks use only straight horizontal and vertical segments from bounding boxes; curves, diagonals, dash patterns and arrowhead direction are not captured: read them on the crop"
+   },
+   "sheet_n": 2
+  },
+  {
+   "where": "html > body > section.slide:nth-of-type(3) > div:nth-of-type(3) > svg",
+   "x": 241,
+   "y": 1878,
+   "w": 640,
+   "h": 427,
+   "screen": 3,
+   "tile": "tiles/1920-02.png",
+   "first_screen": false,
+   "section": "Things you don't know about Agents",
+   "kind": "diagram",
+   "tag": "svg",
+   "class": "  slide",
+   "library_hint": null,
+   "elements": {
+    "g": 7,
+    "text": 7,
+    "line": 7,
+    "rect": 3,
+    "marker": 2,
+    "defs": 1,
+    "polyline": 1,
+    "polygon": 1,
+    "style": 1
+   },
+   "shapes": 12,
+   "near": {},
+   "palette": {
+    "background": "#fcfce4",
+    "chromatic": [],
+    "neutral_share": 0.926,
+    "ink_share_of_region": 0.03
+   },
+   "colour_checks": {},
+   "effects": {},
+   "text": {
+    "labels": 7,
+    "numeric": 0,
+    "font_px": [
+     11.0,
+     13.0
+    ],
+    "samples": [
+     "Tool",
+     "Agent",
+     "User",
+     "answer",
+     "result",
+     "invoke(query)",
+     "ask"
+    ]
+   },
+   "diagram": {
+    "nodes": 3,
+    "node_size_tiers": 1,
+    "node_sizes": [
+     [
+      120,
+      60
+     ]
+    ],
+    "node_fill_colours": {},
+    "chromatic_node_fills": 0,
+    "connectors": 8,
+    "arrowhead_markers": 2,
+    "straight_segments": {
+     "horizontal": 4,
+     "vertical": 3
+    },
+    "segment_crossings": 0,
+    "segments_through_nodes": 0,
+    "segment_ends_floating_4_to_14px": 0,
+    "labels_in_nodes_max": 1,
+    "words_per_label_max": 1,
+    "note": "connector checks use only straight horizontal and vertical segments from bounding boxes; curves, diagonals, dash patterns and arrowhead direction are not captured: read them on the crop"
+   },
+   "sheet_n": 1
+  },
+  {
+   "where": "body > section.slide:nth-of-type(5) > div.body-grid:nth-of-type(3) > div.diagram-col:nth-of-type(2) > svg",
+   "x": 589,
+   "y": 3347,
+   "w": 441,
+   "h": 362,
+   "screen": 4,
+   "tile": "tiles/1920-03.png",
+   "first_screen": false,
+   "section": "Things you don't know about Agents",
+   "kind": "diagram",
+   "tag": "svg",
+   "class": " diagram-col body-grid slide",
+   "library_hint": null,
+   "elements": {
+    "text": 10,
+    "line": 5,
+    "rect": 3
+   },
+   "shapes": 8,
+   "near": {},
+   "palette": {
+    "background": "#fcfce4",
+    "chromatic": [
+     {
+      "hex": "#6c849c",
+      "share": 0.061,
+      "hue": "blue"
+     },
+     {
+      "hex": "#849cb4",
+      "share": 0.032,
+      "hue": "blue"
+     },
+     {
+      "hex": "#546c84",
+      "share": 0.03,
+      "hue": "blue"
+     },
+     {
+      "hex": "#ccb49c",
+      "share": 0.023,
+      "hue": "orange"
+     }
+    ],
+    "neutral_share": 0.807,
+    "ink_share_of_region": 0.049
+   },
+   "colour_checks": {
+    "hue_families": [
+     "blue"
+    ]
+   },
+   "effects": {},
+   "text": {
+    "labels": 10,
+    "numeric": 4,
+    "font_px": [
+     7.5,
+     8.0,
+     8.5
+    ],
+    "samples": [
+     "loading",
+     "Layered",
+     "85%",
+     "loading",
+     "Flat",
+     "53%",
+     "53%",
+     "85%",
+     "Accuracy",
+     "LOADING STRATEGY vs ACCURACY"
+    ]
+   },
+   "diagram": {
+    "nodes": 2,
+    "node_size_tiers": 2,
+    "node_sizes": [
+     [
+      108,
+      196
+     ],
+     [
+      108,
+      96
+     ]
+    ],
+    "node_fill_colours": {},
+    "chromatic_node_fills": 0,
+    "connectors": 5,
+    "arrowhead_markers": 0,
+    "straight_segments": {
+     "horizontal": 4,
+     "vertical": 1
+    },
+    "segment_crossings": 0,
+    "segments_through_nodes": 0,
+    "segment_ends_floating_4_to_14px": 0,
+    "labels_in_nodes_max": 0,
+    "words_per_label_max": 0,
+    "note": "connector checks use only straight horizontal and vertical segments from bounding boxes; curves, diagonals, dash patterns and arrowhead direction are not captured: read them on the crop"
+   },
+   "sheet_n": 3
+  }
+ ],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "body > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(1) > div.v:nth-of-type(1)",
+   "x": 83,
+   "y": 3019,
+   "w": 301,
+   "h": 43,
+   "screen": 4,
+   "tile": "tiles/1920-03.png",
+   "first_screen": false,
+   "section": "Things you don't know about Agents",
+   "kind": "stat tile",
+   "value": "20",
+   "font_px": 42.6667,
+   "row_size": 2,
+   "label": "lines of code in a working Agent core loop",
+   "tile_where": "dy > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(1)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 20, 4, 10"
+   ],
+   "sheet_n": 4
+  },
+  {
+   "where": "body > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(3) > div.v:nth-of-type(1)",
+   "x": 738,
+   "y": 3019,
+   "w": 301,
+   "h": 43,
+   "screen": 4,
+   "tile": "tiles/1920-03.png",
+   "first_screen": false,
+   "section": "Things you don't know about Agents",
+   "kind": "stat tile",
+   "value": "10",
+   "font_px": 42.6667,
+   "row_size": 2,
+   "label": "×",
+   "tile_where": "dy > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(3)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 20, 4, 10"
+   ],
+   "sheet_n": 5
+  }
+ ],
+ "phone": "dom-375.json not captured: the phone rendering is not verified",
+ "contact_sheet": {
+  "file": "contact-1920.png",
+  "grayscale": "contact-1920-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "diagram",
+    "where": "html > body > section.slide:nth-of-type(3) > div:nth-of-type(3) > svg",
+    "y": 1878,
+    "w": 640,
+    "h": 427,
+    "tile": "tiles/1920-02.png"
+   },
+   {
+    "n": 2,
+    "kind": "diagram",
+    "where": "body > section.slide:nth-of-type(2) > div.body-grid:nth-of-type(3) > div.diagram-col:nth-of-type(2) > svg",
+    "y": 1021,
+    "w": 441,
+    "h": 363,
+    "tile": "tiles/1920-01.png"
+   },
+   {
+    "n": 3,
+    "kind": "diagram",
+    "where": "body > section.slide:nth-of-type(5) > div.body-grid:nth-of-type(3) > div.diagram-col:nth-of-type(2) > svg",
+    "y": 3347,
+    "w": 441,
+    "h": 362,
+    "tile": "tiles/1920-03.png"
+   },
+   {
+    "n": 4,
+    "kind": "stat tile",
+    "where": "body > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(1) > div.v:nth-of-type(1)",
+    "y": 3019,
+    "w": 301,
+    "h": 43,
+    "tile": "tiles/1920-03.png"
+   },
+   {
+    "n": 5,
+    "kind": "stat tile",
+    "where": "body > section.slide:nth-of-type(4) > div.metrics:nth-of-type(4) > div.metric:nth-of-type(3) > div.v:nth-of-type(1)",
+    "y": 3019,
+    "w": 301,
+    "h": 43,
+    "tile": "tiles/1920-03.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "dom-375.json not captured",
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 1
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 12
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "skipped: disabled by profile",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 4,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "diagram": 3,
+  "stat tile": 2,
+  "exhibit_rows": 0,
+  "first_screen": 1
+ }
+}

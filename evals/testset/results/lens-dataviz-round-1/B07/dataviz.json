@@ -1,0 +1,87 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The only chart is a hero product mock whose two smoothed lines have no axis, no tick, no series name and no value, so the 'Performance Overview' graph is a squiggle that shows rising lines and nothing else.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-ONE-QUESTION and T-FILLER fail on the unlabelled squiggle chart (DVZ-003), T-STAT-TILE fails on the 3x and 50% tiles with no baseline (DVZ-013), and T-CHART-375 fails because the chart stays 648px wide on a 375px screen (DVZ-012)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-003",
+      "tier": "Reflex",
+      "where": "div.hero-dashboard > div.dashboard-card > div.chart-container > svg.chart-svg, 1440 (contact sheet #1, 648 by 200px at y299; tiles/1440-00.png)",
+      "evidence": "The charts table finds no axes (`axes` empty), 0 text labels and 0 value labels in the plot, no legend, and 3 line candidates with 2 markers. On the crop a solid line and a dashed line rise left to right over an orange gradient fill. Nothing names either series or gives a unit, and one marker sits on the solid line near the right edge with no value beside it.",
+      "before": "Two unlabelled smoothed lines under 'Performance Overview', one solid and one dashed, with no scale.",
+      "after": "If the mock should show the product, draw one revenue line with three y ticks ($0, $1.5M, $3M), date ticks for the 30 days, a label 'Revenue' at the line end and the dashed line labelled 'Target'. Otherwise cut the chart and keep the four KPI figures.",
+      "why": "A visitor reads the graph as 'numbers go up' and learns nothing about what the product shows. A faux dashboard is judged as an illustration (C48), and sample data in a mock is fine (C22), but this one shows no data at all.",
+      "test": "T-FILLER",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Reflex",
+      "where": "svg.chart-svg and the whole hero, 375 (tiles/375-00.png, fold-375.png)",
+      "evidence": "The charts table `phone` row gives the chart 648 by 200px at 375 with `width_ratio_vs_1440` 1.0 and `overflows_viewport_px` 941. The sweep's overflow hit reports that the page is 1440px wide at a 375px viewport. fold-375.png shows the headline cut at 'Turn data into' and no chart on the first phone screen.",
+      "before": "The dashboard card keeps its desktop width on a phone and sits off-screen to the right.",
+      "after": "Stack the dashboard card under the hero text at 375 and draw the chart at the card width (about 340px), with three y ticks kept.",
+      "why": "On a phone the chart is reached only by scrolling sideways, so most visitors never see it.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "div.hero-text > div.metrics, 1440 (contact sheet #2 and #3, y608; tiles/1440-00.png)",
+      "evidence": "The three hero tiles read '3x Faster insights', '50% Less meeting time' and '99.9% Uptime SLA'. The first two compare against nothing on the page: there is no 'than' and no 'per week'. The sweep already reports these as stat_band (INT-007) and invented_metrics (INT-001); this finding is only about how the tiles show a figure.",
+      "before": "'3x / Faster insights' and '50% / Less meeting time' with no baseline or period.",
+      "after": "Give each tile a worded qualifier with its baseline, for example '3x faster than [DATA NEEDED: the baseline tool or process] in [period]', or cut the two comparison tiles and keep the SLA figure.",
+      "why": "A multiplier with no baseline cannot be read as a quantity. Lens-integrity owns whether the claims are true.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-006",
+      "tier": "Finish",
+      "where": "svg.chart-svg, 1440 (contact sheet #1)",
+      "evidence": "The charts table reports `effects.gradients` 1. On the crop an orange gradient fades from under the solid line to the card colour.",
+      "before": "A gradient area fill under an unlabelled line.",
+      "after": "Drop the gradient, or use one flat 10% tint under the revenue line once the line has a scale.",
+      "why": "A fading fill adds ink and no data. It is the chart-library default look of the hero mock.",
+      "test": "T-DATA-INK",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The four KPI figures inside the mock ($2.4M Revenue, 84.2K Users, 1.2% Churn, $142 ARPU) each carry a worded label, and 'Last 30 days' gives them one shared period."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "T-HONEST-SCALE: the chart has no value scale to judge",
+    "diagram tests (T-DIAGRAM-EARNS, T-DIAGRAM-FOCAL, T-30S-BOARD, T-CONNECTORS): no diagram on the page",
+    "visitor mode inferred as Persuade (a SaaS landing hero) because there is no 00-contract.md"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The monthly sales bars start at zero on even ticks and the deltas carry arrows, but the rest is chart-library default: a six-slice donut, a row of six conversion gauges with no values, a 'ranking' of seven stores that all read 323,234, and a two-line chart told apart by blue against teal and a legend.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-HONEST-SCALE passes on the bar chart, but T-CHART-FORM fails on the donut (DVZ-002), T-FILLER on the gauge row (DVZ-106), T-CHART-TEXT-MATCH on the ranking (DVZ-005), T-SECOND-ENCODING on the line chart (DVZ-009) and T-CHART-375 on the squeezed charts (DVZ-012)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "'门店销售额排名' (store sales ranking) list beside the sales bar chart, 1440, tiles/1440-00.png",
+      "evidence": "The ranking lists seven stores, '工专路 0 号店' to '工专路 6 号店', each at '323,234'. Seven equal values ranked 1 to 7 rank nothing. The mock data also changes between renders: the search table reads 577 and 177 users on the tile and 964 and 262 on the contact sheet (number table #8).",
+      "before": "A ranked list of seven identical figures.",
+      "after": "Feed the ranking from values that differ, sorted descending, or show one store with its rank and value.",
+      "why": "A ranking whose values are all equal tells the reader the order means nothing. Sample data in a template is fine (conflict C22); data that defeats the chart form is not.",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz",
+      "root": "the template's random mock-data generator, used for every chart and table on the screen"
+    },
+    {
+      "rule": "DVZ-002",
+      "tier": "Reflex",
+      "where": "'销售额类别占比' donut, ant-card-body > canvas (492 by 340px), 1440, contact sheet #3, tiles/1440-01.png",
+      "evidence": "The donut splits into six slices (家用电器 4,544, 食用酒水 3,321, 个护健康 3,113, 服饰箱包 2,341, 母婴产品 1,231, 其他 1,231) in six hues. colour_checks flags #2484fc against #846cfc (Delta E 2 under deuteranopia) and #fc8454 against #6ccc3c (Delta E 6).",
+      "before": "A six-part donut with a hue per slice.",
+      "after": "Sorted horizontal bars with the value at each bar end, in one colour with the largest category as the accent.",
+      "why": "Conflict C04 keeps pies to two to five parts; at six, the reader compares arc lengths that differ by a few degrees, and two pairs merge for colour-blind readers. The value labels on the leader lines keep the numbers readable.",
+      "test": "T-CHART-FORM",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-106",
+      "tier": "Reflex",
+      "where": "store tabs 'Stores 0' to 'Stores 5', ant-tabs, 1440, tiles/1440-01.png",
+      "evidence": "Each of six tabs holds a ring gauge labelled '转化率' (conversion rate) with no number; the value is told only by arc length, in one light blue.",
+      "before": "A row of six unlabelled ring gauges used as tab headers.",
+      "after": "Print the conversion rate as a figure in each tab ('Stores 0: 34%') and drop the rings, or sort the stores in a bar chart by conversion.",
+      "why": "A gauge row with no values makes the reader estimate six arcs to compare six numbers the page could print.",
+      "test": "T-FILLER",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-009",
+      "tier": "Reflex",
+      "where": "visitor and payment line chart, div.ant-tabs-tabpane-active canvas (1008 by 400px), 1440, contact sheet #1, tiles/1440-01.png",
+      "evidence": "Two thin solid lines, blue for 客流量 (visitors) and teal for 支付笔数 (payments), zigzag across 24 half-hour points and cross more than ten times. A legend at the top is the only key. In contact-1440-gray.png #1 the two lines are the same grey. The payments line runs above the visitors line at several points (its tallest peak reaches about 103 on the 0 to 120 axis where the visitors line is near 55), which real data could not do.",
+      "before": "Two series told apart only by blue against teal, with a legend.",
+      "after": "Label each line at its right end, make the payments line the grey context and the visitors line the accent (or plot conversion rate as one line), and use one dashed line if both must stay.",
+      "why": "Without hue the lines cannot be told apart, and the legend makes the reader match colours back and forth at every crossing.",
+      "test": "T-SECOND-ENCODING",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Reflex",
+      "where": "line chart and donut at 375, contact-375 #1 and #2, tiles/375-03.png and 375-04.png",
+      "evidence": "At 375 the line chart shrinks to 199 by 400px (width_ratio_vs_1440 0.2) with all 24 time ticks rotated and overlapping; the donut's leader-line labels are cut at the card edge ('44', '21' with their names lost).",
+      "before": "Desktop charts squeezed into the phone column.",
+      "after": "On the phone, show the last 6 hours of the line chart with 3 ticks, and replace the donut with the sorted bar list (the labels then fit inside the column).",
+      "why": "On a phone the line chart's ticks cannot be read and the donut loses the names of its categories.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "top tiles, ant-card-body (four tiles), 1440, contact sheet #9 to #12, tiles/1440-00.png",
+      "evidence": "'总销售额 ¥ 126,560' and '访问量 8,846' name no period; the date-range picker (本年, 2026-01-01 to 2026-12-31) sits under the tiles in the chart card, so the reader cannot tell whether it applies. The visits sparkline and the payments bar sparkline have no axis or period. '运营活动效果 78%' shows the same figure twice (as the headline and as '78%' at the end of its progress bar).",
+      "before": "Four tiles with figures and trend marks but no period.",
+      "after": "State the period in each tile ('This year to date') and say what each sparkline spans ('daily, last 30 days').",
+      "why": "A headline figure and a trend mark without a period cannot be compared with the deltas beside them (周同比, 日同比).",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-010",
+      "tier": "Reflex",
+      "where": "sales bar chart, rc-tabs-0-panel-sales canvas (704 by 300px), 1440, contact sheet #2, tiles/1440-00.png",
+      "evidence": "The chart's only title is the tab '销售额' (sales); its value axis runs 0 to 1200 in steps of 200 with no unit (yuan, thousands or orders).",
+      "before": "A topic title and a unitless axis.",
+      "after": "Add the unit to the axis ('¥ thousand') and a title that states the takeaway, for example the peak month and its value.",
+      "why": "Without a unit the bars cannot be squared with the ¥126,560 tile above them.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The monthly sales bars start at zero with even, rounded ticks (0 to 1200 in steps of 200), keep months in time order and use one colour.",
+    "Every delta pairs its colour with an arrow (周同比 12% with an up triangle, 日同比 11% with a down triangle; the search table's 周涨幅 column), so direction survives without hue.",
+    "The donut labels each slice with its name and value on a leader line, so the numbers are readable even where hues merge."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Operate (an analytics dashboard page of a dashboard template, Ant Design Pro); there is no 00-contract.md",
+    "the 访问量 tab of the main chart, the 今日, 本周 and 本月 ranges, and the other store tabs were not opened",
+    "the search table's numeric cells are left-aligned (numeric_right_aligned 0 of 15); tabular figures are not captured, so DVZ-007 on figure alignment is noted, not reported",
+    "whether a template's sample data is staged as results: lens-integrity's (INT-013); 35 blocked requests were analytics pings and did not affect any chart"
+  ]
+}

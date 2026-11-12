@@ -1,0 +1,99 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The dashboard is chart-library default output: a smoothed two-series line chart with dots on every point and a legend, a five-slice donut with no value anywhere, and KPI tiles whose arrows give no period, one of which shows a fall in wait time in red.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-STAT-TILE fails on the deltas (DVZ-013), T-TAKEAWAY-TITLE on the unvalued donut and the topic titles (DVZ-010), T-DATA-INK and T-DIRECT-LABEL on the line chart's defaults (DVZ-007, DVZ-011), and T-CHART-375 on both charts off-screen at 375 (DVZ-012)."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-GRAYSCALE",
+    "T-SECOND-ENCODING",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-DATA-INK",
+    "T-FIGURES",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-013",
+      "tier": "Reflex",
+      "where": "main > div.grid.grid-cols-4 (the four KPI tiles), 1440 (contact sheet #3 to #5, y205; fold-1440.png)",
+      "evidence": "Each tile shows an arrow and a percentage (up 12%, up 8%, down 3%, up 5%) with no period and no baseline. The table records no `delta` text for the tiles, so the only qualifier is the arrow. The '24 min Avg. Wait Time' tile shows 'down 3%' in red with a red down arrow. A shorter wait is good news, so red here reads as a warning. The sweep's stat_band hit (INT-007) covers the missing sources.",
+      "before": "Four deltas with no comparison period, and red used for 'down' on a measure where down is better.",
+      "after": "Write the baseline on each tile ('+12% vs last week'), and colour each delta by whether it is good: the wait-time fall in green, with its sign and the word 'shorter'.",
+      "why": "In an Operate screen a clinician scans the tiles for problems. A red arrow on an improvement draws attention to the wrong tile.",
+      "test": "T-STAT-TILE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-010",
+      "tier": "Reflex",
+      "where": "#departmentChart (Department Distribution donut), 1440 (contact sheet #2, canvas 307 by 256px at y399)",
+      "evidence": "The donut splits into five slices (Cardiology, Neurology, Orthopedics, Pediatrics, Other), and the page gives no share, count or total for any of them. There are no labels on the ring and no figures in the legend. The canvas is pixels only, and the table finds no HTML text over it.",
+      "before": "A five-slice donut with a colour legend and no numbers.",
+      "after": "Replace it with five sorted horizontal bars labelled with patient counts and shares (for example 'Cardiology 812, 29%'), or add the count and share to each legend row.",
+      "why": "The reader can only guess that Cardiology is 'about a quarter'. A distribution with no figures answers no question a department head would ask.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-007",
+      "tier": "Finish",
+      "where": "#admissionsChart (Patient Admissions Trend), 1440 (contact sheet #1, canvas 689 by 256px at y403)",
+      "evidence": "Both series are drawn as smoothed splines with a dot on all seven days and a blue area fill under the admissions line. On the crop the green discharges curve dips below its Saturday dot (about 28) between Saturday and Sunday. The smoothing invents values between the daily points.",
+      "before": "Smoothed lines with markers on every point and an area fill: the chart library's default style.",
+      "after": "Draw straight segments between the daily values, remove the area fill and the dots, and mark only the busiest day (Thursday, about 65 admissions).",
+      "why": "Curve overshoot shows counts that were never recorded, and the fill and dots add ink without data.",
+      "test": "T-DATA-INK",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-011",
+      "tier": "Finish",
+      "where": "#admissionsChart legend 'Admissions · Discharges', 1440 (contact sheet #1)",
+      "evidence": "Two series are matched to a dot legend under the x axis, about 50px below the plot, though both lines end at Sunday with room to the right for a label.",
+      "before": "A legend for two lines.",
+      "after": "Label each line at its Sunday end ('Admissions 41', 'Discharges 35') and drop the legend.",
+      "why": "The reader has to look down at the legend and back to tell blue from green, and the two lines cross three times.",
+      "test": "T-DIRECT-LABEL",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-012",
+      "tier": "Reflex",
+      "where": "#admissionsChart and #departmentChart, 375 (tiles/375-00.png)",
+      "evidence": "The `phone` rows give the line chart `overflows_viewport_px` 269 and the donut 470 at 375. The sweep's overflow hit reports that the page is 903px wide at a 375px viewport because the 256px sidebar stays. On the tile the charts sit to the right of the sidebar and run past the right edge.",
+      "before": "The desktop layout kept on a phone, with both charts partly off-screen.",
+      "after": "Collapse the sidebar at 375 and stack the charts at full card width (about 340px), with the donut replaced by labelled bars.",
+      "why": "On a phone the charts can be read only by scrolling sideways.",
+      "test": "T-CHART-375",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The line chart's value axis starts at 0 with even steps of 10 (0 to 70), and its days run in order Monday to Sunday."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it; only what the page shows was judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "whether a source line points to a real source (lens-integrity's)",
+    "the Monthly and Yearly views of the admissions chart: the tabs were not opened",
+    "canvas internals: both charts are canvases, read from their crops only",
+    "diagram tests: no diagram on the page",
+    "visitor mode inferred as Operate (a hospital dashboard, medium app) because there is no 00-contract.md"
+  ]
+}

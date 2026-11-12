@@ -1,0 +1,301 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-local\\B07",
+ "target": "..\\unslop-refs\\huashu-design-en\\assets\\showcases\\website-saas\\saas-build.html",
+ "url": "file:///C:/Users/warwicka/Documents/unslop-refs/huashu-design-en/assets/showcases/website-saas/saas-build.html",
+ "width": 1440,
+ "nothing_found": false,
+ "note": "every row is a pointer, not a finding: read each on its crop and tile",
+ "charts": [
+  {
+   "where": "div.hero > div.hero-dashboard:nth-of-type(2) > div.dashboard-card > div.chart-container:nth-of-type(3) > svg.chart-svg",
+   "x": 668,
+   "y": 299,
+   "w": 648,
+   "h": 200,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Turn data into decisions, not dashboards.",
+   "kind": "chart",
+   "tag": "svg",
+   "class": "chart-svg chart-container dashboard-card hero-dashboard hero",
+   "library_hint": "chart",
+   "elements": {
+    "path": 3,
+    "line": 3,
+    "circle": 2,
+    "stop": 2,
+    "defs": 1,
+    "lineargradient": 1
+   },
+   "shapes": 8,
+   "near": {
+    "heading_above": "Turn data into decisions, not dashboards."
+   },
+   "palette": {
+    "background": "#fcfcfc",
+    "chromatic": [
+     {
+      "hex": "#e4b49c",
+      "share": 0.759,
+      "hue": "orange"
+     },
+     {
+      "hex": "#fce4cc",
+      "share": 0.105,
+      "hue": "orange"
+     }
+    ],
+    "neutral_share": 0.126,
+    "ink_share_of_region": 0.021
+   },
+   "colour_checks": {
+    "hue_families": [
+     "orange"
+    ]
+   },
+   "effects": {
+    "gradients": 1
+   },
+   "text": {
+    "labels": 0,
+    "numeric": 0,
+    "font_px": [],
+    "samples": []
+   },
+   "axes": [],
+   "bars": null,
+   "line_series_candidates": 3,
+   "markers": 2,
+   "gridlines": {
+    "horizontal": 3,
+    "vertical": 0
+   },
+   "legend": {
+    "svg_swatch_entries": [],
+    "html_legend": null
+   },
+   "direct_labels": {
+    "text_in_plot": [],
+    "value_labels": 0
+   },
+   "sheet_n": 1
+  }
+ ],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [
+  {
+   "where": "div.hero > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(2) > div.metric-value:nth-of-type(1)",
+   "x": 231,
+   "y": 608,
+   "w": 108,
+   "h": 44,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Turn data into decisions, not dashboards.",
+   "kind": "stat tile",
+   "value": "50",
+   "font_px": 36.0,
+   "row_size": 2,
+   "label": "%",
+   "tile_where": "ro > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(2)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 3, 50, 99.9"
+   ],
+   "sheet_n": 2
+  },
+  {
+   "where": "div.hero > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(3) > div.metric-value:nth-of-type(1)",
+   "x": 387,
+   "y": 608,
+   "w": 99,
+   "h": 44,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "section": "Turn data into decisions, not dashboards.",
+   "kind": "stat tile",
+   "value": "99.9",
+   "font_px": 36.0,
+   "row_size": 2,
+   "label": "%",
+   "tile_where": "ro > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(3)",
+   "sweep": [
+    "stat_band (INT-007, Reflex): stat band of 3 unsourced figures: 3, 50, 99.9"
+   ],
+   "sheet_n": 3
+  }
+ ],
+ "phone": [
+  {
+   "where": "div.hero > div.hero-dashboard:nth-of-type(2) > div.dashboard-card > div.chart-container:nth-of-type(3) > svg.chart-svg",
+   "kind": "chart",
+   "match": "same selector",
+   "at_375": {
+    "w": 648,
+    "h": 200,
+    "y": 299,
+    "visible": true,
+    "tile": "tiles/375-00.png"
+   },
+   "width_ratio_vs_1440": 1.0,
+   "overflows_viewport_px": 941
+  }
+ ],
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "grayscale": "contact-1440-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "div.hero > div.hero-dashboard:nth-of-type(2) > div.dashboard-card > div.chart-container:nth-of-type(3) > svg.chart-svg",
+    "y": 299,
+    "w": 648,
+    "h": 200,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 2,
+    "kind": "stat tile",
+    "where": "div.hero > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(2) > div.metric-value:nth-of-type(1)",
+    "y": 608,
+    "w": 108,
+    "h": 44,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 3,
+    "kind": "stat tile",
+    "where": "div.hero > div.hero-text:nth-of-type(1) > div.metrics:nth-of-type(3) > div.metric:nth-of-type(3) > div.metric-value:nth-of-type(1)",
+    "y": 608,
+    "w": 99,
+    "h": 44,
+    "tile": "tiles/1440-00.png"
+   }
+  ]
+ },
+ "contact_sheet_375": {
+  "file": "contact-375.png",
+  "grayscale": "contact-375-gray.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "chart",
+    "where": "div.hero > div.hero-dashboard:nth-of-type(2) > div.dashboard-card > div.chart-container:nth-of-type(3) > svg.chart-svg",
+    "y": 299,
+    "w": 648,
+    "h": 200,
+    "tile": "tiles/375-00.png"
+   }
+  ]
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 0,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 1
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 3
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 10
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 15
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 2
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 1
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 1,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "chart": 1,
+  "stat tile": 2,
+  "exhibit_rows": 0,
+  "first_screen": 3
+ }
+}

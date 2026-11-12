@@ -1,0 +1,65 @@
+{
+  "lens": "dataviz",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The one chart on the page, 'Cycle time by agent' in the planning product mock, is a strip plot by month with no value axis and no agent breakdown, so its title promises a comparison the marks do not show.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CHART-TEXT-MATCH and T-HONEST-SCALE fail on the one product-mock chart (DVZ-005, DVZ-010); the page otherwise has no decorative charts or stat confetti."
+  },
+  "tests_run": [
+    "T-ONE-QUESTION",
+    "T-FILLER",
+    "T-CHART-FORM",
+    "T-HONEST-SCALE",
+    "T-CHART-TEXT-MATCH",
+    "T-FOCAL",
+    "T-TAKEAWAY-TITLE",
+    "T-DIRECT-LABEL",
+    "T-CHART-375",
+    "T-STAT-TILE"
+  ],
+  "findings": [
+    {
+      "rule": "DVZ-005",
+      "tier": "Reflex",
+      "where": "'Planning and monitoring' product mock, div.fFDhtq_plot > svg.fFDhtq_dots (aria-hidden), 1440, contact sheet #1, tiles/1440-04.png and 1440-05.png",
+      "evidence": "The panel is titled 'Cycle time by agent'. The svg (825 by 400px) draws about 438 dots (markers 438) in four columns under 'Oct 2025', 'Nov 2025', 'Dec 2025' and a faded fourth month, all in one teal (palette: teal family only). Nothing separates one agent from another, and the value axis has no tick labels or unit (axes: none).",
+      "before": "A one-colour strip plot by month under a title that promises a split by agent, with no cycle-time scale.",
+      "after": "Either retitle it 'Cycle time per issue, by month' and add a value axis in days, or split the dots by agent with a direct label at the end of each group.",
+      "why": "A product picture that shows a chart is still read as a chart; this one cannot answer its own title, and without a scale the spread of the dots means nothing. Sample data inside the mock is fine (conflict C22).",
+      "test": "T-CHART-TEXT-MATCH",
+      "source": "dataviz"
+    },
+    {
+      "rule": "DVZ-010",
+      "tier": "Reflex",
+      "where": "same panel, 1440",
+      "evidence": "The plot shows no unit, no value ticks and no reference line for a target or median; the orange stepped lines behind the dots are not labelled and the in-plot words 'Public Beta' and 'Alpha' (direct_labels) belong to the roadmap beside it.",
+      "before": "A plot with month labels only.",
+      "after": "Add a median line labelled with its value in days and a y-axis with two or three rounded ticks.",
+      "why": "Cycle time is a duration; with no unit the reader cannot tell whether a dot is hours or weeks.",
+      "test": "T-TAKEAWAY-TITLE",
+      "source": "dataviz"
+    }
+  ],
+  "strengths": [
+    "The roadmap mock beside the plot uses a real date axis (MAR, APR with weekly ticks) with milestones placed on it and labelled directly ('Core screens', 'Polish').",
+    "The page makes no stat-band claims and uses no decorative chart: the one figure belongs to a product picture."
+  ],
+  "not_investigated": [
+    "the data behind each chart: the capture cannot see it, so only what the page shows is judged",
+    "tooltips, hover values and keyboard access to data points",
+    "charts inside tabs, carousels or menus the capture did not open",
+    "charts that animate in: each screenshot is one moment",
+    "canvas internals: canvas regions were read from their crops only",
+    "whether a source line points to a real source (lens-integrity's)",
+    "visitor mode inferred as Persuade (a product landing page for Linear); there is no 00-contract.md",
+    "T-CHART-375: the plot is not found at 375 (phone: 'not found at 375'); the phone layout of the planning mock is not verified",
+    "the four 'sparklines' in the table are the roadmap bars' gradient tails and a customer logo (Cursor), not sparklines",
+    "298 requests were blocked in capture (manifest network); the plot rendered, so no chart region is affected that the tiles show",
+    "whether the mock's figures are staged as results: lens-integrity's (INT-013)"
+  ]
+}

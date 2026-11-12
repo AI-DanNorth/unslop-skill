@@ -1,0 +1,129 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L31",
+ "target": "https://www.informationisbeautifulawards.com/showcase/7177-this-is-a-teenager",
+ "url": "https://www.informationisbeautifulawards.com/showcase/7177-this-is-a-teenager",
+ "width": 1440,
+ "nothing_found": true,
+ "note": "nothing chart-like found: no svg chart, sparkline or diagram, no chart canvas, no number table, no box-drawn bars and no big figures. Check the tiles once (and any unmatched_large_images) for a chart drawn as an image or in HTML the table cannot see, then write score null.",
+ "charts": [],
+ "sparklines": [],
+ "diagrams": [],
+ "canvases": [],
+ "image_charts": [],
+ "unmatched_large_images": [
+  {
+   "where": "3) > div.page-main:nth-of-type(1) > div.page-image-header:nth-of-type(1) > a.open-image-viewer > img",
+   "y": 190,
+   "w": 725,
+   "h": 470,
+   "alt": "Page",
+   "file": "page.jpg",
+   "tile": "tiles/1440-00.png"
+  }
+ ],
+ "number_tables": [],
+ "css_bars": [],
+ "meters": [],
+ "stat_tiles": [],
+ "phone": [],
+ "contact_sheet": "nothing to crop",
+ "contact_sheet_375": "nothing to crop",
+ "network": {
+  "mode": "direct",
+  "blocked": 16,
+  "fonts_missing": []
+ },
+ "sweep": {
+  "stat_band": {
+   "status": "ran",
+   "rule": "INT-007",
+   "n": 0
+  },
+  "invented_metrics": {
+   "status": "ran",
+   "rule": "INT-001",
+   "n": 0
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 4
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 15
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "n": 0
+  },
+  "reduced_motion": {
+   "status": "skipped: no movement in stylesheets (spinners and opacity/visibility-only keyframes excluded)",
+   "rule": "A11-011",
+   "n": 0
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0
+  },
+  "data_slots": {
+   "status": "ran",
+   "rule": "INT-006",
+   "n": 0
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0
+  }
+ },
+ "not_captured": [
+  "svg path data, per-shape fill and stroke, stroke-dasharray and marker orientation (series colours come from pixels)",
+  "canvas internals (a canvas chart is read from its crop)",
+  "font-variant-numeric (tabular figures)",
+  "tooltips, hover values and keyboard access to data points",
+  "charts inside tabs, carousels or menus the capture did not open",
+  "HTML-only diagrams (boxes and arrows drawn with divs): look for them on the tiles"
+ ],
+ "counts": {
+  "svg_checked": 0,
+  "canvas_checked": 0,
+  "other_tables": 0,
+  "svg_wider_than_page_skipped": 0,
+  "exhibit_rows": 0,
+  "first_screen": 0
+ }
+}
