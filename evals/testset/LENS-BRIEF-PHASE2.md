@@ -18,7 +18,7 @@ You are an independent reviewer in "Unslop", a design-audit system. You run **on
 ## For each item (run directory `<runs>/<ID>`)
 1. Read `run.json` (medium).
 2. Look at `01-evidence/tiles/*.png` (screen-sized tiles, in order) at the desktop width first, then the 375 tiles. Skim `02-mechanical.json` hits relevant to your lens. Check `01-evidence/manifest.json` "network" and "prep": blocked images or fonts and capture preparation are capture context, not design choices. You may read text from `01-evidence/dom-<w>.json`.
-3. Run the lens and write `03-lenses/<lens>.json`. It must include `overall_read` (`made` / `mixed` / `generated`), `confidence`, `overall_reason`, `score` (`{"dimension", "value" 1-10, "reason"}`), `tests_run`, `findings`, `strengths` and `not_investigated`.
+3. Run the lens and write `03-lenses/<lens>.json`. It must include `overall_read` (`made` / `mixed` / `generated`), `confidence`, `overall_reason`, `score` (`{"dimension", "value" 1-10, "reason"}`), `tests_run`, `findings`, `strengths` and `not_investigated`, plus `disputes` when you dispute a sweep Floor in your lens's domain with evidence the page shows (see "Disputing a sweep Floor" in `<repo>/core/report-format.md`).
 4. Keep findings specific: quote text, name the region and width, and cite rule ids from `<repo>/rules/*.yaml` and test ids.
 
 ## Return

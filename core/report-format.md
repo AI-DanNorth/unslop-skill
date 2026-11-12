@@ -49,3 +49,7 @@ Source: an external "unslop" writing skill reviewed 9 Nov 2026 (`research/notes/
 - An open Floor finding caps the overall score at 4.
 - Concept at 5 or below caps the overall score at 6.
 - Straight 9s and 10s must name what was cut to earn them.
+
+## Disputing a sweep Floor
+
+A lens may dispute a sweep Floor in its own domain by listing it under `disputes` in its output: `detector`, `where` (a substring of the hit's `where` or `evidence`), `evidence` you can point to (a linked case study, an "Ad" label, a fixture or example label, a tile path and region) and `reason`. `synthesize.py` demotes each matching Floor to Reflex and records `disputed_by` on the finding. It never drops the finding, and it ignores a dispute with no evidence or one from a lens that does not own the rule's domain (integrity D18, a11y D10, copy D11, color D06, typography D05, structure D07, concept D02, motion D09, slop D03). Dispute only what the page itself shows to be true; suspicion is not evidence. (Owner decision, 11 Nov 2026, from lens-integrity round 1.)

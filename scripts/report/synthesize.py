@@ -13,6 +13,13 @@ DIM_OF_DOMAIN = {"D10": "Accessibility", "D18": "Integrity", "D03": "Distinctive
                  "D07": "Hierarchy", "D04": "Craft", "D08": "Usability", "D09": "Craft", "D11": "Craft", "D12": "Craft", "D13": "Craft",
                  "D15": "Usability", "D14": "Craft", "D17": "Craft", "D19": "Distinctiveness", "D20": "Concept"}
 
+LENS_DOMAIN = {"integrity": "D18", "a11y": "D10", "copy": "D11", "color": "D06", "typography": "D05", "structure": "D07",
+               "concept": "D02", "motion": "D09", "slop": "D03"}
+# Owner decision (11 Nov 2026): on Craft, motion separates slop from good less than the visual lenses (lens-motion round 1:
+# slop mean 5.0, good 6.9, overlapping), so it may pull Craft at most this far below the weakest visual Craft lens.
+MOTION_MAX_PULL = 1
+
+
 def cards():
     out = {}
     for f in (ROOT / "rules").glob("[A-Z]*.yaml"):
@@ -41,14 +48,28 @@ def main(run):
     if other: not_inv.append(f"capture: {len(other)} other request(s) blocked, e.g. {other[0][:90]}")
     lens_dir = run / "03-lenses"
     lens_scores = collections.defaultdict(list)          # dimension -> [(value, lens, reason)]
+    disputes = []                                         # (lens, dispute) from each lens's `disputes` list
     if lens_dir.exists():
         for f in sorted(lens_dir.glob("*.json")):
             data = json.loads(f.read_text(encoding="utf-8"))
+            for d in data.get("disputes", []) or []: disputes.append((f.stem, d))
             for h in data.get("findings", []): h.setdefault("source", f.stem); findings.append(h)
             for n in data.get("not_investigated", []): not_inv.append(f"{f.stem}: {n}")
             sc = data.get("score") or {}
             if sc.get("dimension") and isinstance(sc.get("value"), (int, float)):
                 lens_scores[sc["dimension"]].append((sc["value"], f.stem, sc.get("reason", "")))
+    # Owner decision (11 Nov 2026): a lens may dispute a sweep Floor with evidence (a linked case study, an "Ad" label, a
+    # fixture label). The Floor is demoted to Reflex, never dropped, and the dispute is recorded on the finding. Only the
+    # lens that owns the rule's domain may do it, and only with evidence (lens-integrity round 1: L26, L38).
+    for lens, d in disputes:
+        det, where, ev = d.get("detector"), d.get("where", ""), (d.get("evidence") or "").strip()
+        if not det or not ev: continue
+        for f in findings:
+            if f.get("source") != "sweep" or f.get("detector") != det or f.get("tier") != "Floor": continue
+            if where and where not in f.get("where", "") and where not in f.get("evidence", ""): continue
+            if C.get(f["rule"], {}).get("domain") != LENS_DOMAIN.get(lens): continue
+            f["tier"] = "Reflex"; f["priority"] = "P1"
+            f["disputed_by"] = {"lens": lens, "evidence": ev[:300], "reason": (d.get("reason") or "")[:300], "was": "Floor"}
     for f in findings:
         c = C.get(f["rule"], {})
         f.setdefault("title", c.get("title", f["rule"])); f.setdefault("remedy", c.get("remedy")); f.setdefault("fix", c.get("fix"))
@@ -81,6 +102,11 @@ def main(run):
     lens_dims = {}
     for d, vals in lens_scores.items():
         if d not in dims: continue
+        if d == "Craft":                 # motion's pull on Craft is capped against the visual lenses (owner decision above)
+            visual = [x for x, l, _ in vals if l != "motion"]
+            if visual:
+                floor_v = min(visual) - MOTION_MAX_PULL
+                vals = [((max(x, floor_v), l, r + f" (motion capped at {floor_v})") if l == "motion" and x < floor_v else (x, l, r)) for x, l, r in vals]
         v, lens, reason = min(vals)
         if dims[d] is not None:            # Accessibility, Integrity: computed from findings; a lower lens score still stands
             if v < dims[d]:
