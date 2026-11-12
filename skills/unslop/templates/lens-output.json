@@ -7,7 +7,7 @@
   "score": {
     "dimension": "Distinctiveness",
     "value": 3,
-    "reason": "Phase-2 lenses add a 1-10 score for their report dimension (concept: Concept, structure: Hierarchy, typography, color and motion: Craft; motion may set null when nothing was captured, copy: Distinctiveness, integrity: Integrity, components: Usability; components may set null when nothing is interactive, imagery: Craft; imagery may set null when there is no imagery worth judging, dataviz: Craft; dataviz may set null when there are no charts, data figures or diagrams). lens-slop and lens-a11y may omit it."
+    "reason": "Phase-2 lenses add a 1-10 score for their report dimension (concept: Concept, structure: Hierarchy, typography, color and motion: Craft; motion may set null when nothing was captured, copy: Distinctiveness, integrity: Integrity, components: Usability; components may set null when nothing is interactive, imagery: Craft; imagery may set null when there is no imagery worth judging, dataviz: Craft; dataviz may set null when there are no charts, data figures or diagrams, robustness: Usability; robustness may set null only for an image-only item with no text slots). lens-slop and lens-a11y may omit it."
   },
   "tests_run": [
     "T-RIVAL-NAME",

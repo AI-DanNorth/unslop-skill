@@ -468,6 +468,54 @@
    run: "Throttle to 1.6 Mbit/s with 400ms RTT and scroll.", pass: "No image frame empty 1s after it enters the viewport.", sources: ["taste-skill §622"]}
 - {id: T-PHONE-PARITY, name: Phone parity, lens: [robustness], kind: M, detector: phone_parity,
    run: "Compare words visible at 1440 and at 375.", pass: "Fewer than 40 words hidden on phone.", sources: ["hallmark §435"]}
+- {id: T-HOSTILE-CONTENT, name: Hostile content, lens: [robustness], kind: H,
+   run: "For each slot that holds a name, title, price, label or count, read its rows in the robustness table (white-space and clipping, box widths across the captured widths, card heights, long strings) and put the fixtures of data/fixtures/hostile.yaml into it in your head: F-LONG-NAME (60 characters), F-UNBROKEN (a 16-character word), F-URL, F-EMPTY. Nothing is injected: say so.",
+   pass: "Each slot wraps, or truncates with an ellipsis and a way to the full text; nothing runs out of its box, under a neighbour or off the screen, and an empty value leaves no broken frame.",
+   sources: ["hallmark §4 §400 §426", "uupm §107 §236", "huashu §376", "krehel §113"]}
+- {id: T-TRUNCATION, name: Truncation read, lens: [robustness], kind: H,
+   run: "List every clipped, clamped or overflowing text row (text_risk.nowrap_clipped, line_clamped, text_outside_box) and say what each text is: a heading, an action, an error, a price, a distinguishing name, or secondary text.",
+   pass: "Only secondary text is cut, always with an ellipsis or a clamp and an operable way to the full text; headings, actions, errors, prices and distinguishing names are whole.",
+   sources: ["uupm §101 §105 §107 §236 §335", "taste-skill §84"]}
+- {id: T-TRANSLATE, name: Translation growth, lens: [robustness], kind: H,
+   run: "Grow every label, button, tab and navigation link by 35% (F-GERMAN) against controls.rows_without_room_for_35pct, controls.fixed_width_buttons_tight and controls.labels_that_wrap, and look for words that live only in pictures (text_in_images).",
+   pass: "Every row and control takes the longer text by wrapping or reflowing at a phrase, not by clipping or overlapping; no words exist only in a picture.",
+   sources: ["hallmark §90 §263 §407"]}
+- {id: T-LOCALE-FORMAT, name: Locale formats, lens: [robustness], kind: H,
+   run: "Read formats.found and formats.mixed_on_one_surface against the page's lang and audience; check each sample on its tile, because versions, codes and phone numbers match the patterns too.",
+   pass: "One date, time, number, currency and unit style per surface, and no numeric date that reads two ways on a page read in more than one country.",
+   sources: ["hallmark §263", "uupm §102 §103 §240", "kami §167 §653"]}
+- {id: T-RTL-READY, name: Right-to-left readiness, lens: [robustness], kind: H,
+   run: "Read css.physical_props against css.logical_props and logical_start_end, css.dir_rules and mirroring_rules, and language.directional_marks; note whether the page serves or links to a right-to-left language. No right-to-left render was captured: say so.",
+   pass: "Spacing and alignment use logical properties or are mirrored under dir=rtl, and arrows, carousels, progress and directional motion are mirrored; on a page with no right-to-left audience this is readiness, not a fault.",
+   sources: ["hallmark §263", "adp §264", "uupm §247 §364"]}
+- {id: T-SCRIPT-COVERAGE, name: Language and script coverage, lens: [robustness], kind: H,
+   run: "Compare language.html_lang with language.scripts_share and lang_script_mismatch, and read fonts.nodes_with_glyphs_from_an_undeclared_face and families_drawn.",
+   pass: "lang names the page's language, one locale per document, each script is drawn by a face chosen for it, and no glyph falls to a system face mid-line by accident.",
+   sources: ["huashu §127 §375", "kami §51 §61 §630 §708"]}
+- {id: T-NO-SCRIPT, name: No-script read, lens: [robustness], kind: H,
+   run: "Read resilience.hidden_content (the visible share with scripts off and with an observer that never fires) beside the sweep's hidden_content hits and resilience.console_errors, and name what a visitor without script loses: the text, the navigation, the primary action.",
+   pass: "A page meant to be read keeps its content, navigation and primary action without script; only an application's working surface needs script, and it says so.",
+   sources: ["hallmark §84 §445 §462", "taste-skill §427 §437", "kami §680 §681"]}
+- {id: T-FAILURE-PATH, name: Failure path, lens: [robustness], kind: H,
+   run: "Read resilience.async (each primary action held 3 s and forced to fail), performance.images.not_loaded, network (blocked requests are not verified) and the async screenshots.",
+   pass: "A slow request shows progress, a failed one says what happened and offers a retry with input kept, and a missing image, embed or canvas leaves a styled frame or a poster, never a broken icon or a blank panel.",
+   sources: ["uupm §233 §238", "taste-skill §67 §622 §630", "hallmark §463"]}
+- {id: T-LAYOUT-SHIFT, name: Late arrivals, lens: [robustness], kind: H,
+   run: "List what arrives late (images, embeds, chat and consent banners, web fonts, a stored theme) from perf.json, css.aspect_ratio, css.font_face and resilience.skeleton_or_loader_elements, and ask what moves when each arrives. Layout shift is not measured: say so.",
+   pass: "Each late piece has its space held (width and height or aspect-ratio, a skeleton in its shape, an out-of-flow banner) and fonts swap with a metric-matched fallback.",
+   sources: ["hallmark §262 §297 §470", "taste-skill §621 §622", "agent-skills §288 §291 §298 §383"]}
+- {id: T-WEIGHT-FOR-JOB, name: Weight for the job, lens: [robustness], kind: H,
+   run: "Read performance (LCP and its band, known bytes by kind, the heaviest files, oversized images, against_budgets, the share of bytes whose size is unknown) and name what the weight buys for this page's job.",
+   pass: "Within the WARN budgets (ROB-018), or over them only where the weight is the content (a portfolio's photographs, a product's demo video), with the LCP element loaded early and everything below the fold lazy.",
+   sources: ["taste-skill §621 §622 §623", "agent-skills §276 §284", "hallmark §472"]}
+- {id: T-WIDTHS, name: Width sweep, lens: [robustness], kind: H,
+   run: "Step through the 375, 1280 and 1440 tiles, then read css.breakpoints_px, parity (text present at one width and missing at another) and document_widths; name what happens just either side of each breakpoint the stylesheet declares and past 1440 (conflict C40).",
+   pass: "No sideways scroll, wrapping controls, overlaps or cut text at any captured width, the container is capped at wide sizes, and nothing suggests a break between the captures (a fixed width, a vh hero, a row with no room).",
+   sources: ["hallmark §152 §256 §424 §452 §453", "uupm §81 §244 §334", "taste-skill §641", "kami §168"]}
+- {id: T-EXTREME-COUNTS, name: Extreme counts, lens: [robustness], kind: J,
+   run: "For each count, list, search and number on the page, put 0, 1, 2, 99, 10000 and 1234567 (data/fixtures/hostile.yaml counts) into it in your head.",
+   pass: "Plurals read right, zero is a designed state and not a stray '0', long lists stay fast, and the largest number fits its box.",
+   sources: ["agent-skills §387", "uupm §110 §140", "hallmark §321"]}
 - {id: T-COVER-FRAME, name: Cover (video), lens: [media-video], kind: J,
    run: "Pause at 3 random times.", pass: "Each frame works as a cover: one protagonist, at most 3 active elements.", sources: ["huashu §478 §479"]}
 - {id: T-THUMBNAIL, name: 50% thumbnail and 3-metre, lens: [media-social, media-video], kind: H, detector: thumbnail,

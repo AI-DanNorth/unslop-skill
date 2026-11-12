@@ -15,7 +15,7 @@ DIM_OF_DOMAIN = {"D10": "Accessibility", "D18": "Integrity", "D03": "Distinctive
 
 LENS_DOMAIN = {"integrity": "D18", "a11y": "D10", "copy": "D11", "color": "D06", "typography": "D05", "structure": "D07",
                "concept": "D02", "motion": "D09", "slop": "D03", "components": "D08", "imagery": "D13",
-               "dataviz": "D12"}
+               "dataviz": "D12", "robustness": "D15"}
 # Owner decision (11 Nov 2026): on Craft, motion separates slop from good less than the visual lenses (lens-motion round 1:
 # slop mean 5.0, good 6.9, overlapping), so it may pull Craft at most this far below the weakest visual Craft lens.
 MOTION_MAX_PULL = 1
