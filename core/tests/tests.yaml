@@ -205,7 +205,7 @@
    sources: ["research/notes/unslop-writing-skill-review.md", "agent-skills §107-124", "writing-guidelines §10 §18"]}
 - {id: T-DELETION, name: Deletion (image, line, element), lens: [imagery, structure, copy], kind: J,
    run: "Remove it (for copy: a sentence, an intro line, a caption or a closing line).", pass: "Meaning, state, grouping, navigation or a fact is lost.", sources: ["hallmark §114", "kami §250 §394 §428", "huashu §71 §180"]}
-- {id: T-FILLER, name: Filler, lens: [integrity], kind: J,
+- {id: T-FILLER, name: Filler, lens: [integrity, dataviz], kind: J,
    run: "Remove an element; ask what problem it solves and whether its data is real.", pass: "Worse without it; solves a real problem; real data.", sources: ["huashu §71 §101"]}
 - {id: T-FAKE-SEND, name: Fake-send, lens: [integrity], kind: M, detector: fake_send,
    run: "Submit every form with the network blocked.", pass: "No success copy appears; an honest failure message shows.", sources: ["hallmark §364 §510"]}
@@ -349,12 +349,64 @@
    run: "For each logo_rows row and each named tool's or partner's mark, read heights, widths, width_ratio and filters, then look at the row on its tile.",
    pass: "Each mark is its owner's own, in its colours or its official one-colour version; the row has even visual weight (wordmarks about 0.7 of the row height, none wider than 4.5 times its height).",
    sources: ["taste-skill §360 §365-367", "stageshow §28"]}
+- {id: T-ONE-QUESTION, name: One question, lens: [dataviz], kind: J,
+   run: "For each chart, stat tile and diagram in the charts table (skills/lens-dataviz/charts_table.py writes 03-lenses/dataviz/charts-table.json and contact sheets), write the one question it answers and what it adds that the text beside it does not.",
+   pass: "Every chart answers a question a reader has and adds a comparison, trend, distribution or connection; none only restates a figure or sentence already on screen or decorates the page.",
+   sources: ["kami §141 §262 §301 §338", "taste-skill §372", "hallmark §304"]}
+- {id: T-CHART-FORM, name: Chart form, lens: [dataviz], kind: H,
+   run: "For each chart, name the data relationship (time, ranking, part-to-whole, correlation, distribution, flow, magnitude, place), then read its form on the crop and the table (bars, line_series_candidates, pie_or_donut, axes kinds, category and point counts).",
+   pass: "The form fits the relationship and its limits: lines of four points or more, sorted bars, about 8 categories by 3 series, pies of 2 to 5 labelled parts (conflict C04), a table past about 12 rows, one value as a stat tile.",
+   sources: ["huashu §266", "kami §343 §419 §433 §436", "hallmark §305", "ui-ux-pro-max §170-193"]}
+- {id: T-HONEST-SCALE, name: Honest scale, lens: [dataviz], kind: H,
+   run: "Read each chart's axes (starts_at_zero, min, max, even_value_steps, even_pixel_steps, log_like), bars.baseline_is_zero and baseline_value, and dual_axis; for canvas and image charts read the ticks on the crop.",
+   pass: "Bars and areas start at zero; a line axis that does not is labelled; ticks are even, rounded and 4 to 8; no dual y-axes; small multiples share one range. Candlesticks and ranges are exempt from zero.",
+   sources: ["hallmark §306 §308", "kami §425 §438", "huashu §272"]}
+- {id: T-CHART-TEXT-MATCH, name: Chart matches its words, lens: [dataviz], kind: J,
+   run: "Read each chart's title, caption and value labels (near, text.samples, direct_labels) against its marks on the crop: the direction, the series the words name, totals, shares and closing bars.",
+   pass: "The words describe what the marks show, the focal colour sits on the series the caption names, labelled values match their marks, shares sum to 100% and a waterfall closes on its running sum.",
+   sources: ["kami §262 §299 §436 §437 §453"]}
+- {id: T-DATA-INK, name: Data ink, lens: [dataviz], kind: H,
+   run: "Read each chart's effects (gradients, filters, patterns, animations, shadow), gridlines, bars (thickness, gaps), markers and label colours, then look at the crop for 3D, shadows, glows and moving traces.",
+   pass: "Marks are flat and still once drawn; 3 to 5 hairline gridlines; bars 24px or thinner with tight gaps; 2px lines with markers only where annotated; labels in muted ink, not series colours.",
+   sources: ["hallmark §306 §307 §309", "kami §263 §425 §433 §434", "taste-skill §25", "ui-ux-pro-max §191"]}
+- {id: T-FOCAL, name: Focal series, lens: [dataviz], kind: H,
+   run: "For each chart, read the palette (chromatic colours and shares) and bar_colours, then name the series the title or caption is about and find its colour on the crop; compare colours across all charts on the page.",
+   pass: "One series carries the accent and it is the one the words name; the rest are neutral or a one-hue lightness ramp; no per-bar rainbow; one colour means one thing on every chart.",
+   sources: ["hallmark §305 §307", "kami §420", "huashu §168 §258 §272", "taste-skill §612"]}
+- {id: T-SECOND-ENCODING, name: Second encoding, lens: [dataviz], kind: H,
+   run: "Read colour_checks (red_and_green, close_under_cvd) and each colour-coded thing on the crop and the grayscale contact sheet (contact-<w>-gray.png): series, status, direction, map classes; look for a text alternative (svg_title, svg_desc, aria_label, a table or summary nearby).",
+   pass: "Every colour-coded meaning also has a label, line style, shape, sign or position; red with green has a second encoding (conflict C05); a chart whose figures the text does not repeat has a summary or table.",
+   sources: ["ui-ux-pro-max §41 §170-194", "hallmark §307", "kami §358 §420 §421"]}
+- {id: T-TAKEAWAY-TITLE, name: Takeaway title, lens: [dataviz], kind: J,
+   run: "Read each chart's heading_above, caption and svg_title, the axis units and any subtitle, and the source_line.",
+   pass: "The title or caption states the finding, once (conflict C53), the unit and any index base are on the figure, and a data chart names its source.",
+   sources: ["kami §262 §301 §342 §427 §429", "huashu §261 §266 §268 §269 §272"]}
+- {id: T-DIRECT-LABEL, name: Direct labels, lens: [dataviz], kind: H,
+   run: "For each chart, compare legend (svg_swatch_entries, html_legend) with direct_labels (text_in_plot, value_labels) and the series count on the crop.",
+   pass: "Series are named on the lines or bars where they fit; a legend appears only for several series that cannot be labelled, below the plot, with only the encodings used; a single series has none.",
+   sources: ["kami §367 §428 §434", "huashu §269", "ui-ux-pro-max §170 §288"]}
+- {id: T-CHART-375, name: Chart at 375, lens: [dataviz], kind: H,
+   run: "Read the phone rows (at_375, width_ratio_vs_1440, overflows_viewport_px, scrolls_in, smallest_label_rendered_px), then compare contact-1440.png with contact-375.png.",
+   pass: "At 375 each chart still reads at about 11px labels as rendered with nothing cut off, or becomes a table or list; nothing overflows the page; no chart is capped in height or shrunk to fit at 1440.",
+   sources: ["awesome-design-patterns §226", "kami §408 §424 §641"]}
+- {id: T-STAT-TILE, name: Stat tile, lens: [dataviz], kind: H,
+   run: "Read each stat_tiles row (value, label, delta with its colour and sign, trend_mark, row_size) and its crop; read the sweep's stat_band hits as evidence, not as this lens's finding.",
+   pass: "Each figure has a worded qualifier and period; a delta is signed against a named baseline and its direction is not told by colour alone; a sparkline plots that figure; a row shares one unit system and period.",
+   sources: ["hallmark §305 §306", "ui-ux-pro-max §170", "kami §167"]}
+- {id: T-DIAGRAM-FOCAL, name: Diagram focal point, lens: [dataviz], kind: H,
+   run: "For each diagram, read nodes, node_size_tiers, chromatic_node_fills, labels_in_nodes_max and words_per_label_max, then mark the focal elements and the main path on the crop.",
+   pass: "About 9 nodes (12 on a web card, conflict C54), one or two focal elements on the one the caption names, two or three node sizes, short node copy in the product's terms, no new colours or fonts.",
+   sources: ["kami §339 §342 §348 §350 §351 §360 §361", "taste-skill §376"]}
+- {id: T-CONNECTORS, name: Connector grammar, lens: [dataviz], kind: H,
+   run: "For each diagram, read straight_segments, segment_crossings, segments_through_nodes, segment_ends_floating_4_to_14px and arrowhead_markers, then follow every connector on the crop: route, endpoint, arrowhead, dash and label.",
+   pass: "Connectors route orthogonally behind nodes and through none, land on node edges, use one line style per meaning (dashes only for exceptional or not-yet paths), and carry short verb labels on masks; no crossing a reader cannot follow.",
+   sources: ["kami §363-366 §369 §391 §439 §441 §450"]}
 - {id: T-DIAGRAM-EARNS, name: Diagram earns its place, lens: [dataviz], kind: J,
    run: "Would a paragraph or table teach as much? Can any node, arrow or label be removed?", pass: "No and no.", sources: ["diagram-design §4 §5", "kami §338"]}
 - {id: T-30S-BOARD, name: 30-second board, lens: [dataviz], kind: J,
    run: "Ask a reader to state a diagram's main path.", pass: "Done in 30 seconds.", sources: ["kami §398"]}
 - {id: T-GRAYSCALE, name: Grayscale, lens: [dataviz, color], kind: H, detector: grayscale_render,
-   run: "View the chart or palette in grayscale (skills/lens-color/palette_table.py writes 03-lenses/color/gray-fold-<w>.png).", pass: "Meaning survives without hue.", sources: ["ui-ux-pro-max §256"]}
+   run: "View the chart or palette in grayscale (skills/lens-color/palette_table.py writes 03-lenses/color/gray-fold-<w>.png; skills/lens-dataviz/charts_table.py writes 03-lenses/dataviz/contact-<w>-gray.png).", pass: "Meaning survives without hue.", sources: ["ui-ux-pro-max §256"]}
 - {id: T-GRADIENT-STOPS, name: Gradient-stop contrast, lens: [color, a11y], kind: M, detector: contrast,
    run: "Sample the darkest and lightest pixels behind each text run.", pass: "Worst sample meets 4.5:1 body, 3:1 large.", sources: ["hallmark §411 §454"]}
 - {id: T-TAB-THROUGH, name: Focus by tabbing, lens: [a11y], kind: M, detector: focus_walk,
