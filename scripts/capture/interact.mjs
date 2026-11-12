@@ -499,7 +499,8 @@ async function liveRun(page, selector, guard, load, dirty, liveMs) {
 // Motion that plays without a click (an intro, a looping demo, a ticker) is ambient to the click runs above and left
 // out. The passive pass records it: it loads the page, records every painted element's box for `ms` from the load
 // event, and runs the same snap analysis with nothing treated as ambient. Off by default (capture.mjs --passive <ms>):
-// on most pages ambient motion is a carousel or marquee, and the click runs are the right test.
+// on most pages ambient motion is a carousel or marquee, and the click runs are the right test. It also saves up to
+// seven viewport stills over the window (01-evidence/passive/, listed in passive.json "stills") for the motion lens.
 export async function capturePassive({ browser, open, url, ev, note, prepWait = 0, ms = 6000 }) {
   const out = { version: 1, viewport: [VIEW, 900], ms, log: [] };
   for (const mode of ["normal", "reduce"]) {
@@ -518,6 +519,27 @@ export async function capturePassive({ browser, open, url, ev, note, prepWait = 
     guard.armed = false;
     await ctx.close();
   }
+  // stills for a reviewer, from a separate load so screenshots do not disturb the recording's frame timing; the times
+  // are when each shot was taken (a screenshot takes ~100 ms, so they are approximate)
+  out.stills = [];
+  try {
+    const sdir = path.join(ev, "passive"); fs.rmSync(sdir, { recursive: true, force: true }); fs.mkdirSync(sdir, { recursive: true });
+    const { ctx, page } = await open(browser, VIEW, { reducedMotion: "no-preference" });
+    await ctx.addInitScript(pageHelpers, { delay: { slow: 0, fail: 0 } });
+    const guard = await routeGuard(ctx, page, url, out.log);
+    await page.goto(url, { waitUntil: "load", timeout: 45000 });
+    if (prepWait) await page.waitForTimeout(prepWait);
+    guard.armed = true;
+    const t0 = Date.now();
+    for (const at of [0, 400, 900, 1600, 2600, 4000, 5500].filter((x) => x < ms)) {
+      const wait = at - (Date.now() - t0); if (wait > 0) await page.waitForTimeout(wait);
+      const tAt = Date.now() - t0, f = `normal-${String(tAt).padStart(5, "0")}.png`;
+      await page.screenshot({ path: path.join(sdir, f) });
+      out.stills.push({ file: `passive/${f}`, atMs: tAt });
+    }
+    guard.armed = false;
+    await ctx.close();
+  } catch (e) { out.stillsError = e.message.split(String.fromCharCode(10))[0]; }
   fs.writeFileSync(path.join(ev, "passive.json"), JSON.stringify(out, null, 1));
   const n = out.normal || {};
   note(`passive: ${n.frames || 0} frames over ${ms} ms, ${n.snapCount || 0} snap(s), motion ${n.motionEndMs === null || n.motionEndMs === undefined ? "none" : n.stillMoving ? "still running at the end" : `ends at ${n.motionEndMs} ms`}`);

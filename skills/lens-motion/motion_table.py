@@ -165,6 +165,8 @@ def passive_row(p):
             d.update({"motion_end_ms": x.get("motionEndMs"), "still_moving": x.get("stillMoving"), "frame_ms": x.get("frameMs"), "late_frames": x.get("lateFrames"),
                       "snaps": [f"{s['kind']} {s['dPx']:+g} px on {s['axis']} at {s['atMs']} ms: \"{(s.get('text') or s.get('name') or '')[:30]}\"" for s in x.get("snaps", [])][:6]})
         out[mode] = d
+    if p.get("stills"): out["stills"] = [{"file": s["file"], "at_ms": s["atMs"]} for s in p["stills"]]
+    elif p.get("stillsError"): out["stills"] = f"not made: {p['stillsError']}"
     return out
 
 
@@ -206,9 +208,12 @@ def declared(ev):
     }
 
 
-def contact_sheet(ev, rows, path, h=120, max_w=260):
+def contact_sheet(ev, rows, path, h=120, max_w=260, passive=None):
     from PIL import Image, ImageDraw
     lines = [(f"t{r['t']} {r['kind']} \"{r['name'][:28]}\" {m}", r["frames"][m], r["frame_ms"][m]) for r in rows for m in ("normal", "reduce") if r["frames"].get(m)]
+    if passive and isinstance(passive.get("stills"), list) and passive["stills"]:
+        st = passive["stills"][:7]   # plays without a click, from page load (a separate load from the recording)
+        lines.append(("passive: no click, from load", [s["file"] for s in st], [s["at_ms"] for s in st]))
     if not lines: return None
     label_w, gap = 230, 6
     width = label_w + 7 * (max_w + gap)
@@ -271,8 +276,8 @@ def table(run, out_dir, sheet=True):
                        **({"missing": reasons} if reasons else {})}
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    if sheet and rows:
-        try: res["contact_sheet"] = str(contact_sheet(ev, rows, out_dir / "contact-sheet.png") or "") or None
+    if sheet and (rows or isinstance(res["passive"].get("stills"), list)):
+        try: res["contact_sheet"] = str(contact_sheet(ev, rows, out_dir / "contact-sheet.png", passive=res["passive"]) or "") or None
         except Exception as e: res["contact_sheet"] = f"not made: {e}"
     (out_dir / "motion-table.json").write_text(json.dumps(res, indent=1, ensure_ascii=False), encoding="utf8")
     return res
