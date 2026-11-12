@@ -1,0 +1,765 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L03",
+ "target": "https://ai-stack-recommendat-7v45.bolt.host/",
+ "url": "https://ai-stack-recommendat-7v45.bolt.host/",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "page_host": "ai-stack-recommendat-7v45.bolt.host",
+ "images": [],
+ "backgrounds": [],
+ "svg_illustrations": [],
+ "media": [],
+ "decoration": [
+  {
+   "where": "div.min-h-screen.flex > main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)",
+   "x": 0,
+   "y": 65,
+   "w": 1440,
+   "h": 572,
+   "share_of_viewport": 0.636,
+   "screen": 1,
+   "tile": "tiles/1440-00.png",
+   "first_screen": true,
+   "kind": "decoration",
+   "class": "absolute inset-0",
+   "background": "radial-gradient(60% 50% at 50% 0%, rgba(59, 130, 246, 0.06), rgba(0, 0, 0, 0))",
+   "reason": "large gradient field with no text"
+  },
+  {
+   "where": "main.flex-1 > div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.absolute.inset-0:nth-of-type(1)",
+   "x": 168,
+   "y": 2274,
+   "w": 1104,
+   "h": 328,
+   "share_of_viewport": 0.279,
+   "screen": 3,
+   "tile": "tiles/1440-02.png",
+   "first_screen": false,
+   "section": "ElevenLabs",
+   "kind": "decoration",
+   "class": "absolute inset-0",
+   "background": "radial-gradient(50% 60%, rgba(59, 130, 246, 0.15), rgba(0, 0, 0, 0))",
+   "reason": "large gradient field with no text",
+   "sweep": [
+    "glow (SLP-008, Reflex): radial spotlight #3b82f6 alpha 0.15"
+   ]
+  }
+ ],
+ "empty_frames": [],
+ "placeholder_text": [],
+ "picture_sets": [],
+ "logo_rows": [],
+ "repeats": [],
+ "icons": {
+  "sets": {
+   "lucide": {
+    "n": 33,
+    "sizes": {
+     "20x20": 15,
+     "15x15": 7,
+     "14x14": 4,
+     "16x16": 4,
+     "18x18": 2,
+     "32x32": 1
+    },
+    "paint": {
+     "outline": 33
+    },
+    "stroke_widths": {
+     "2px": 33
+    },
+    "glyphs": [
+     "target",
+     "plus",
+     "layers",
+     "arrow-right",
+     "git-compare",
+     "sparkles",
+     "shield-check",
+     "zap",
+     "trending-up",
+     "wallet",
+     "code-xml",
+     "twitter"
+    ]
+   }
+  },
+  "set_count": 1,
+  "count": 33,
+  "off_grid_sizes": 7,
+  "note": "set names come from class names and data-lucide; 'unnamed svg' is inline SVG with no set class (a custom set, a logo glyph or a hand-drawn icon: read it on the tile). Mixed fill and outline in one group is the sweep's mixed_icons (SLP-017).",
+  "rows": [
+   {
+    "where": "header.sticky.top-0 > nav.section.flex > a.flex.items-center > div.w-9.h-9 > svg.lucide.lucide-layers",
+    "y": 22,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "layers",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": null
+   },
+   {
+    "where": "nav.section.flex > div.hidden.md\\:flex > a.relative.ml-1:nth-of-type(7) > span.btn-secondary.px-2\\.5 > svg.lucide.lucide-git-compare",
+    "y": 25,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "git-compare",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": null
+   },
+   {
+    "where": "div > section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.inline-flex.items-center:nth-of-type(1) > svg.lucide.lucide-sparkles",
+    "y": 137,
+    "w": 14,
+    "h": 14,
+    "set": "lucide",
+    "glyph": "sparkles",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": null
+   },
+   {
+    "where": "section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-8.flex:nth-of-type(2) > a.btn-primary.px-6:nth-of-type(1) > svg.lucide.lucide-arrow-right",
+    "y": 459,
+    "w": 18,
+    "h": 18,
+    "set": "lucide",
+    "glyph": "arrow-right",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "Tell us the goal. We'll build the stack."
+   },
+   {
+    "where": "section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-12.flex:nth-of-type(3) > span.flex.items-center:nth-of-type(1) > svg.lucide.lucide-shield-check",
+    "y": 542,
+    "w": 14,
+    "h": 14,
+    "set": "lucide",
+    "glyph": "shield-check",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "Tell us the goal. We'll build the stack."
+   },
+   {
+    "where": "section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-12.flex:nth-of-type(3) > span.flex.items-center:nth-of-type(2) > svg.lucide.lucide-zap",
+    "y": 542,
+    "w": 14,
+    "h": 14,
+    "set": "lucide",
+    "glyph": "zap",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "Tell us the goal. We'll build the stack."
+   },
+   {
+    "where": "section.relative.overflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.mt-12.flex:nth-of-type(3) > span.flex.items-center:nth-of-type(3) > svg.lucide.lucide-trending-up",
+    "y": 542,
+    "w": 14,
+    "h": 14,
+    "set": "lucide",
+    "glyph": "trending-up",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "Tell us the goal. We'll build the stack."
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 837,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "What are you trying to accomplish?"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 837,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "What are you trying to accomplish?"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 837,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "What are you trying to accomplish?"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(4) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 837,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "What are you trying to accomplish?"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(5) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 837,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 1,
+    "section": "What are you trying to accomplish?"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(6) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 989,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Build a SaaS product"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(7) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 989,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Build a SaaS product"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(8) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 989,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Build a SaaS product"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(9) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 989,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Build a SaaS product"
+   },
+   {
+    "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(10) > div.w-10.h-10:nth-of-type(1) > svg.lucide.lucide-target",
+    "y": 989,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Build a SaaS product"
+   },
+   {
+    "where": "div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(1) > div.card.p-6 > div.flex.items-center > svg.lucide.lucide-target",
+    "y": 1366,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "target",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "How it works"
+   },
+   {
+    "where": "div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(2) > div.card.p-6 > div.flex.items-center > svg.lucide.lucide-wallet",
+    "y": 1366,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "wallet",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "How it works"
+   },
+   {
+    "where": "div.grid.md\\:grid-cols-3:nth-of-type(2) > div.relative:nth-of-type(3) > div.card.p-6 > div.flex.items-center > svg.lucide.lucide-code-xml",
+    "y": 1366,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "code-xml",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "How it works"
+   },
+   {
+    "where": "div > section.section.py-16:nth-of-type(4) > div.flex.items-end:nth-of-type(1) > a.btn-ghost.text-sm > svg.lucide.lucide-arrow-right",
+    "y": 1678,
+    "w": 16,
+    "h": 16,
+    "set": "lucide",
+    "glyph": "arrow-right",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 2,
+    "section": "Featured tools"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(1) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 1898,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "Gemini"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(2) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 1947,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "Gemini"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(3) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 1898,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "Gemini"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(4) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 2167,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "ElevenLabs"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(5) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 2167,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "ElevenLabs"
+   },
+   {
+    "where": "div.card.card-hover:nth-of-type(6) > div.flex.items-center:nth-of-type(3) > div.flex.items-center > button.btn-ghost.px-2 > svg.lucide.lucide-plus",
+    "y": 2167,
+    "w": 15,
+    "h": 15,
+    "set": "lucide",
+    "glyph": "plus",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "ElevenLabs"
+   },
+   {
+    "where": "div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.relative:nth-of-type(2) > svg.lucide.lucide-layers",
+    "y": 2330,
+    "w": 32,
+    "h": 32,
+    "set": "lucide",
+    "glyph": "layers",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "ElevenLabs"
+   },
+   {
+    "where": "section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.relative:nth-of-type(2) > a.btn-primary.mt-6 > svg.lucide.lucide-arrow-right",
+    "y": 2513,
+    "w": 18,
+    "h": 18,
+    "set": "lucide",
+    "glyph": "arrow-right",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 3,
+    "section": "Ready to find your stack?"
+   },
+   {
+    "where": "div.grid.gap-8:nth-of-type(1) > div.md\\:col-span-1:nth-of-type(1) > a.flex.items-center > div.w-9.h-9 > svg.lucide.lucide-layers",
+    "y": 2818,
+    "w": 20,
+    "h": 20,
+    "set": "lucide",
+    "glyph": "layers",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 4,
+    "section": "Ready to find your stack?"
+   },
+   {
+    "where": "div.grid.gap-8:nth-of-type(1) > div:nth-of-type(4) > div.flex.gap-3 > a.w-9.h-9:nth-of-type(1) > svg.lucide.lucide-twitter",
+    "y": 2852,
+    "w": 16,
+    "h": 16,
+    "set": "lucide",
+    "glyph": "twitter",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 4,
+    "section": "Ready to find your stack?"
+   },
+   {
+    "where": "div.grid.gap-8:nth-of-type(1) > div:nth-of-type(4) > div.flex.gap-3 > a.w-9.h-9:nth-of-type(2) > svg.lucide.lucide-github",
+    "y": 2852,
+    "w": 16,
+    "h": 16,
+    "set": "lucide",
+    "glyph": "github",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 4,
+    "section": "Ready to find your stack?"
+   },
+   {
+    "where": "div.grid.gap-8:nth-of-type(1) > div:nth-of-type(4) > div.flex.gap-3 > a.w-9.h-9:nth-of-type(3) > svg.lucide.lucide-linkedin",
+    "y": 2852,
+    "w": 16,
+    "h": 16,
+    "set": "lucide",
+    "glyph": "linkedin",
+    "paint": "outline",
+    "stroke_width": "2px",
+    "screen": 4,
+    "section": "Ready to find your stack?"
+   }
+  ]
+ },
+ "phone": [],
+ "contact_sheet": {
+  "file": "contact-1440.png",
+  "cells": [
+   {
+    "n": 1,
+    "kind": "decoration",
+    "role_hint": null,
+    "where": "div.min-h-screen.flex > main.flex-1 > div > section.relative.overflow-hidden:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)",
+    "y": 65,
+    "w": 1440,
+    "h": 572,
+    "src": null,
+    "tile": "tiles/1440-00.png"
+   },
+   {
+    "n": 2,
+    "kind": "decoration",
+    "role_hint": null,
+    "where": "main.flex-1 > div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.absolute.inset-0:nth-of-type(1)",
+    "y": 2274,
+    "w": 1104,
+    "h": 328,
+    "src": null,
+    "tile": "tiles/1440-02.png"
+   }
+  ]
+ },
+ "contact_sheet_375": "no picture large enough for a contact sheet",
+ "network": {
+  "mode": "direct",
+  "blocked_images": 0,
+  "blocked_examples": [],
+  "fonts_missing": []
+ },
+ "perf": {
+  "lcp_ms": 584,
+  "images_in_perf_pass": 0,
+  "note": "perf.json is a separate page load at 1440; bytes are matched by URL"
+ },
+ "stylesheet": {
+  "unreadable_sheets": 0,
+  "object_fit_rules": 0,
+  "note": "object-fit and object-position are inferred from class names and readable CSS; the DOM does not record them"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "reduced_motion": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "observer_never_fires": {
+   "visibleChars": 2145,
+   "totalChars": 2145
+  },
+  "scripts_off": {
+   "visibleChars": 0,
+   "totalChars": 0
+  }
+ },
+ "sweep": {
+  "fake_people": {
+   "status": "ran",
+   "rule": "INT-003",
+   "n": 0,
+   "hits": []
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0,
+   "hits": []
+  },
+  "ai_sparkle": {
+   "status": "ran",
+   "rule": "SLP-015",
+   "n": 1,
+   "hits": [
+    {
+     "where": "rflow-hidden:nth-of-type(1) > div.section.relative:nth-of-type(2) > div.inline-flex.items-center:nth-of-type(1) > svg.lucide.lucide-sparkles",
+     "evidence": "\"sparkles\" icon (lucide lucide-sparkles text-brand-500): a sparkle or wand as the generic sign for AI says nothing about what the feature does",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "invented_mark": {
+   "status": "ran",
+   "rule": "SLP-016",
+   "n": 0,
+   "hits": []
+  },
+  "mixed_icons": {
+   "status": "ran",
+   "rule": "SLP-017",
+   "n": 0,
+   "hits": []
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "n": 0,
+   "hits": []
+  },
+  "icon_tile": {
+   "status": "ran",
+   "rule": "SLP-003",
+   "n": 10,
+   "hits": [
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Study smarter\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Start a YouTube channel\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Create content\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(4) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Build a website\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(5) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Build a SaaS product\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(6) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Start a business\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(7) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Freelance\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(8) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Grow a blog\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(9) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Automate repetitive work\" (10 repeats)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ection.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(10) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "40px tinted tile above heading \"Design faster\" (10 repeats)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0,
+   "hits": []
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 1,
+   "hits": [
+    {
+     "where": "main.flex-1 > div > section.section.pb-20:nth-of-type(5) > div.rounded-2xl.bg-ink-900 > div.absolute.inset-0:nth-of-type(1)",
+     "evidence": "radial spotlight #3b82f6 alpha 0.15",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "n": 4,
+   "hits": [
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(1) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "radius 8px inset 17px in a 14px-radius container: container 14px, expected about 25px",
+     "tier": "Finish"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(2) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "radius 8px inset 17px in a 14px-radius container: container 14px, expected about 25px",
+     "tier": "Finish"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(3) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "radius 8px inset 17px in a 14px-radius container: container 14px, expected about 25px",
+     "tier": "Finish"
+    },
+    {
+     "where": "section.section.py-16:nth-of-type(2) > div.grid.grid-cols-2:nth-of-type(2) > a.card.card-hover:nth-of-type(4) > div.w-10.h-10:nth-of-type(1)",
+     "evidence": "radius 8px inset 17px in a 14px-radius container: container 14px, expected about 25px",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "performance": {
+   "status": "ran",
+   "rule": "WEB-001",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "n": 0,
+   "hits": []
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0,
+   "hits": []
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "images": 0,
+  "images_visible": 0,
+  "backgrounds": 0,
+  "content_pictures": 0,
+  "svg_illustrations": 0,
+  "svg_charts": 0,
+  "media": {},
+  "decoration": 2,
+  "icons": 33,
+  "icon_sets": 1,
+  "roles": {},
+  "content_hosts": {},
+  "stock_or_pack_or_ai": 0,
+  "broken": 0,
+  "blocked": 0,
+  "not_loaded": 0,
+  "upscaled": 0,
+  "large_under_2x": 0,
+  "ratio_changed": 0,
+  "with_filter": 0,
+  "text_over_pictures": 0,
+  "repeats": 0,
+  "empty_frames": 0,
+  "placeholder_text": 0,
+  "content_radii": [],
+  "imagery_share_of_page": 0.0,
+  "first_screen_imagery_share": 0.0,
+  "exhibit_rows": 0
+ }
+}

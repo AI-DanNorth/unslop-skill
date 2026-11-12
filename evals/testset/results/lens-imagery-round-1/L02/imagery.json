@@ -1,0 +1,68 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Stop searching. Start building.' and the 'Find my AI stack' CTA.",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The only pictures are the hero's styled-div stack card, which marks real tools (ChatGPT, Canva, CapCut, ElevenLabs) with invented letter tiles ('*', 'C', 'CC', '11'), and a row of four coloured initial circles ('A', 'S', 'M', 'J') standing in for '12,000+ curious builders'.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-STAND-IN and T-LOGO-ROW fail on the hero card's letter tiles in place of the owners' marks and on the initial-circle avatars, and T-ICON-SYSTEM shows a sparkle used as the logo glyph (IMG-005, IMG-014, IMG-013)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ILLUSTRATION-READ",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "hero card 'YOUR PERSONALIZED STACK / Launch a content engine', tool rows, 1440 (tiles/1440-00.png, x 805 to 1290, y 300 to 580)",
+   "evidence": "The four tool rows show ChatGPT with an asterisk on a mint tile, Canva with 'C' on a cyan tile, CapCut with 'CC' on grey and ElevenLabs with '11' on yellow. None of them is the owner's mark, and the table records no img on the page (counts.images 0).",
+   "before": "Letter and glyph tiles in pastel squares standing in for four real product logos.",
+   "after": "Each owner's one-colour mark at one height (20px) in the same tile, or no tile and the name alone.",
+   "why": "Redrawn marks for real products look invented and make the card read as a mock rather than a result.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-005",
+   "tier": "Reflex",
+   "where": "hero, social proof row under the CTAs, 1440 (tiles/1440-00.png x 113 to 215, y 630 to 660)",
+   "evidence": "Four overlapping circles in blue, orange, green and violet, each holding one capital letter (A, S, M, J), sit beside 'Trusted by 12,000+ curious builders'. They stand in for people without showing anyone.",
+   "before": "Four initial circles as a crowd of users.",
+   "after": "Remove the circles, or [DATA NEEDED: real user photographs or a count the visitor can check].",
+   "why": "Placeholder avatars borrow the look of a real user base without picturing one; whether the claim is true is lens-integrity's.",
+   "test": "T-STAND-IN",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "header logo and hero kicker pill, 1440 (tiles/1440-00.png)",
+   "evidence": "The brand mark is a white sparkle in a blue tile, and the kicker 'A better way to discover AI' repeats the sparkle; the sweep's ai_sparkle hit records two lucide-sparkles icons (SLP-015).",
+   "before": "The generic AI sparkle as the logo and as a kicker icon.",
+   "after": "A mark drawn for this product (for example a stack or layers glyph) used once in the header, and no icon in the kicker.",
+   "why": "The sparkle is the default sign for AI and says nothing about stacking tools.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The hero card's content is specific (a named goal, four named tools with their categories, and an estimated cost of 1,200 rupees a month), so it reads as an example of the output at its size."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Stop searching. Start building.' and the 'Find my AI stack' CTA.)",
+  "T-CAPTURE-READ: no product capture on the page",
+  "T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE, T-TREATMENT: no photograph or raster picture on the page",
+  "The page is two screens long at 1440; sections below 'How it works' hold no pictures"
+ ]
+}

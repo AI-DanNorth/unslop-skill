@@ -1,0 +1,47 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade with a tool entry point (a career-guidance tool for European graduates, GradLoom); inferred from 'Find the careers your studies and skills lead to.' and 'Build my roadmap'.",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The one picture is a hand-built SVG diagram in the hero that maps 'You' to three named careers with match scores, labelled 'Example: a Computer Science graduate looking for work in Poland', drawn in the page's own green and orange.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-ILLUSTRATION-READ passes on the hero diagram's real strings (Data Analyst 87% match, BI Developer 80%, Product Analyst 74%), but T-DELETION finds its double wave through five gridlines carries no data (IMG-003)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ILLUSTRATION-READ",
+  "T-CROP-375",
+  "T-ICON-SYSTEM",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-003",
+   "tier": "Reflex",
+   "where": "hero diagram, inline svg (531 by 340px at y 200), 1440 (contact sheet #1; fold-1440.png x 780 to 1290)",
+   "evidence": "Between the 'You' dot and the three career branches, the orange line rises and falls twice across five grey vertical gridlines. The gridlines have no labels and the wave has no axis, so its peaks and troughs say nothing about the path.",
+   "before": "A decorative double wave through unlabelled gridlines.",
+   "after": "Either label the gridlines as the roadmap's steps (degree, skills, first role) or draw a straight path from 'You' to the branches.",
+   "why": "Shape that looks like data but carries none invites the visitor to look for a meaning that is not there.",
+   "test": "T-DELETION",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The hero diagram is the product's own illustration with real strings (three careers and their match scores) and an honest caption naming it as an example, drawn in the brand's green and orange.",
+  "At 375 the diagram scales to 328 by 210px and keeps its labels (contact-375 #1)."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade with a tool entry point (a career-guidance tool for European graduates, GradLoom); inferred from 'Find the careers your studies and skills lead to.' and 'Build my roadmap'.)",
+  "T-CAPTURE-READ: no product capture on the page",
+  "T-ONE-REGISTER, T-IMAGE-SIZE, T-TEXT-ON-IMAGE, T-LOGO-ROW: no photograph, picture set or logo row"
+ ]
+}

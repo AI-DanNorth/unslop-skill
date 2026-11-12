@@ -1,0 +1,53 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The 39 figures are the original 2004 LinkedIn Series B slides (contact sheet #1 to #12), each placed beside the commentary on it.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-MATERIAL-SOURCE, T-DELETION and T-ONE-REGISTER pass: every slide is the real document, in one 4:3 frame, and each carries the paragraph next to it; T-IMAGE-SIZE fails because the 720px slides show at 698px, about 1x, so their small type is soft (IMG-009)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "slide figures (figure.wp-block-image.alignwide > img), 1440 (tiles/1440-01.png, contact sheet #1 to #12)",
+      "evidence": "The slides are 720 by 540px files shown at 698 by 524px (density 1.03). The footer 'August 2004 CONFIDENTIAL' and the chart axis labels on slides 10 and 11 render at about 7 to 8px and blur on the tile.",
+      "before": "the deck slides at 1x with 7 to 8px slide type",
+      "after": "Export the slides from the original deck at 1440 by 1080px (2x) and let them open full size on click",
+      "why": "The essay asks the reader to study each slide, and the small print on the charts is part of the argument.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery",
+      "root": "slide image exports"
+    }
+  ],
+  "strengths": [
+    "The figures are the primary source itself: the real deck the essay discusses, in order, numbered, with LinkedIn's 2004 template intact.",
+    "One frame for the whole set: 4:3, radius 0, no border, centred in the text column."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (an essay that annotates a historical pitch deck slide by slide)",
+    "36 slide images were reported blocked (manifest network.blocked, table rows 'not verified') although the contact sheet crops show them rendered; their natural sizes and bytes are not verified",
+    "the 2004 clip-art figures on slide 1 (#2) are part of the historical deck, not the page's own choice, and are not judged",
+    "skipped tests: T-TEXT-ON-IMAGE, T-ICON-SYSTEM, T-LOGO-ROW, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

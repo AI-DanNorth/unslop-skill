@@ -1,0 +1,65 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a design skill for AI coding agents, Hallmark); inferred from 'The design skill that ends AI slop.' and the install command.",
+ "overall_read": "made",
+ "confidence": "high",
+ "overall_reason": "Every picture is a real capture of a page the skill built (Farm records, Relay webhooks, Field Office, Wheel House pottery, Ashfield Stoneware, Reelcut, The Low Room), dealt as a fan of desktop and phone frames in the hero and laid out in one frame recipe below.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-MATERIAL-SOURCE, T-CAPTURE-READ and T-ONE-REGISTER pass on real theme captures in one frame, with two gaps: T-IMAGE-SIZE fails on the 1240px before-and-after full-page captures at 1.16x, and T-CROP-375 and T-DELETION fail on the 'Made with Hallmark' fan, which crops captures to slivers (IMG-009, IMG-010)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-009",
+   "tier": "Reflex",
+   "where": "'One prompt, two pages', img fieldbook-bare-full.webp and fieldbook-hallmark-full.webp (1240 by 3227px and 1240 by 4920px at y 1284), 1440 (contact sheet #1, #2)",
+   "evidence": "Both full-page captures are 1440px files shown at 1240px wide, a density of 1.16. The pages' body text inside them is small and soft at that density.",
+   "before": "The before-and-after captures at 1.16x.",
+   "after": "Export both full-page captures at 2480px wide (2x).",
+   "why": "This comparison is the page's main argument; soft text inside the captures makes the difference harder to see.",
+   "test": "T-IMAGE-SIZE",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-010",
+   "tier": "Reflex",
+   "where": "'Made with Hallmark' fan, img darkroom-photographer.webp (52 by 224px), custom-photo-rename-cli.webp (107 by 197px) and others at y 7272, 1440",
+   "evidence": "The fan of 16 captures overlaps them so that several show only a sliver: darkroom-photographer.webp is a 1440 by 900px landscape file shown in a 52 by 224px portrait strip (density 27.7), and custom-photo-rename-cli.webp in 107 by 197px. Their alt texts describe content ('a fisherman casting a net in black and white') that the strip cannot show.",
+   "before": "Landscape captures cut to narrow portrait strips in an overlapping fan.",
+   "after": "A grid of the 16 captures at one landscape ratio (for example 4 across at 300 by 188px), or let the fan spread on hover with object-position on each subject.",
+   "why": "A capture cut to a sliver shows nothing of the page it names.",
+   "test": "T-CROP-375",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "Every picture is a real capture of a page the skill built, and the alt texts name what each one shows ('Ashfield Stoneware: tall pale vases on a workshop table').",
+  "One frame recipe: a 14px radius for desktop captures and 10.6px for phone frames across the hero fan and the theme sections.",
+  "The 'Kiln' and 'Midnight' theme pairs show each theme twice (a pottery school and a stoneware shop, a video tool and a jazz club) at 497 by 310px and 2.9x density, where their headlines read."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a design skill for AI coding agents, Hallmark); inferred from 'The design skill that ends AI slop.' and the install command.)",
+  "Hero 'Deal again' states other than the first were not opened",
+  "licence and credit of the material: the capture cannot see licences",
+  "Images inside the 'Fifty themes' carousel past the first three were not opened"
+ ]
+}

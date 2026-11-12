@@ -1,0 +1,59 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The photographs are one film-photo set (office-holiday-party, dinner-party-apartment, graduation-portrait) under one pixel-dither treatment, and the customer story (tiles/1440-08.png) shows the Retell AI team in front of a Y Combinator sign.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-ONE-REGISTER and T-TREATMENT pass: one film-photo register and one dither treatment from the hero inset to the customer stories; T-ICON-SYSTEM shows Lucide beside a custom set at five stroke widths (IMG-013)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-013",
+      "tier": "Reflex",
+      "where": "product mock panels and hub diagram, 1440 (tiles/1440-00.png to tiles/1440-05.png)",
+      "evidence": "The icons summary lists two sets on the page: 68 Lucide glyphs at 1.75px and 2px stroke, and 53 unnamed inline SVG glyphs at 1px, 1.4px, 1.5px, 1.6px and 1.8px. The sweep's mixed_icons hit finds 1.1px, 1.3px and 1.75px strokes in one bar (div.hp-bar).",
+      "before": "two icon sets at seven stroke widths across the mocks",
+      "after": "Draw the custom glyphs on Lucide's grid at its 1.75px stroke, or replace them with Lucide glyphs",
+      "why": "The mocks present a single product, and mixed stroke weights inside one bar break that.",
+      "test": "T-ICON-SYSTEM",
+      "source": "imagery",
+      "root": "icon components in the homepage mock panels"
+    }
+  ],
+  "strengths": [
+    "A signature treatment used throughout: every photograph, from the hero word inset to the Retell AI customer photo (tiles/1440-08.png), carries the same coarse pixel dither and film grade.",
+    "The customer story picture is a real team photograph at a real place (five people in front of a Y Combinator sign), not a library handshake.",
+    "The avatars inside the booking mocks (Felix, Ida, Pieter, Clara Voss) are cut from the same film set, so the sample data matches the page's own register (C22)."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade (scheduling product home page)",
+    "20 rows are flagged broken (customer logos and testimonial avatars at y 7188 to 14537), but the tiles show those logos rendered (Retell AI, Storyblok, Kiaora on tiles/1440-08.png): treated as a capture timing artefact, not verified",
+    "canvas #2 and #3 (1260 by 551px accordion photos) show a blank beige frame in the contact sheet while tiles/1440-08.png shows the open item's photo; the closed items' pictures are not verified",
+    "the sweep's ai_sparkle hit (lucide-sparkles, SLP-015) is the sweep's and is not repeated here",
+    "no tests skipped",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

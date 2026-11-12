@@ -1,0 +1,67 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The four article figures (contact sheet #3 to #6) and the hero bento (#1) are the agency's own brand work for NimbleFest: mood board, tool screen, speaker portraits in the festival frame and the live site hero.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-MATERIAL-SOURCE and T-DELETION pass on the article figures, which each show the step the text describes, but T-CAPTURE-READ fails on the tool screenshot (#4) and the related-article card (#8) is a floating faux-UI collage on a purple gradient (IMG-006, IMG-001)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-006",
+      "tier": "Reflex",
+      "where": "article figure 2, section 'What This Visual Language Is Actually Saying', 1440 (tiles/1440-05.png, contact sheet #4)",
+      "evidence": "nf-brand-2.png is a 3840 by 2160px screenshot shown at 846 by 476px. The alt text says it shows 'the NimbleFest 2026 project inside an AI image generation tool', but on the tile the portraits are about 20px squares on a black canvas and every label is unreadable.",
+      "before": "a full-window capture of the tool with 25 thumbnail portraits about 20px wide",
+      "after": "Crop the capture to the part the paragraph discusses (one row of six portraits and the prompt panel) at 2x, so the faces and the settings read at 846px",
+      "why": "The figure is the evidence for the article's point about how the portraits were made, and at this crop it shows only a dark grid.",
+      "test": "T-CAPTURE-READ",
+      "source": "imagery"
+    },
+    {
+      "rule": "IMG-001",
+      "tier": "Reflex",
+      "where": "'Have you read these?' card 1, 1440 (tiles/1440-11.png, contact sheet #8)",
+      "evidence": "devday-2026-hero.png (a 400 by 256px card) shows floating glass UI panels (a Walmart order card, 'Cheapest electricity tonight', a chat panel) on a blue-to-orange glow field. Its two neighbours (#9, #10) use the festival's own warm portrait frame.",
+      "before": "a generic floating-dashboard collage on a gradient glow as a related-article cover",
+      "after": "Use a photograph or capture from the DevDay event itself, in the same warm frame as the two neighbouring covers",
+      "why": "Beside an article about avoiding the generic AI look, this cover is the generated-page kit it argues against.",
+      "test": "T-AI-LOOK",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The hero bento (#1, 1296 by 640px) is the agency's own festival identity: the lanyard, wristband, badge, sticker sheet, typeface card and venue photograph, all in one warm palette.",
+    "The speaker portraits (#5, #9, #10) share one frame recipe (a soft rounded window on a warm orange ground) across the article and the related cards.",
+    "The author portrait in 'The Closing Question' (#11) is a plain photograph against a pink wall, not a stock headshot."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (agency article about the NimbleFest brand)",
+    "18 lazy images did not load (counts.not_loaded 18)",
+    "the gradient hit on the top banner (section.banner_component, #2fdbfb to #2442bb) is the sweep's (SLP-007) and is not imagery",
+    "skipped tests: T-LOGO-ROW (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

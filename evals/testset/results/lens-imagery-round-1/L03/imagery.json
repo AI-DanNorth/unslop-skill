@@ -1,0 +1,68 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Tell us the goal. We'll build the stack.' and 'Find my stack'.",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The page has no pictures at all; its imagery is ten identical target icons in tinted tiles on ten different goal cards and two-letter monogram tiles ('GP', 'Cl', 'Ge', 'Px', 'Cv', 'EL') in place of the real tools' marks.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-ICON-SYSTEM fails on one target glyph repeated on all ten goal cards (the sweep's icon_tile, 10 repeats) and T-LOGO-ROW fails on the monogram tiles standing in for ChatGPT, Claude, Gemini, Perplexity, Canva and ElevenLabs (IMG-013, IMG-014)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "'What are you trying to accomplish?' goal cards, 40px tinted tiles, 1440 (tiles/1440-00.png and 1440-01.png; shot-1440.png y 690 to 910)",
+   "evidence": "All ten goal cards (Study smarter, Start a YouTube channel, Create content, Build a website, Build a SaaS product, Start a business, Freelance, Grow a blog, Automate repetitive work, Design faster) carry the same concentric-target icon in the same blue tile. The sweep's icon_tile hit records a 40px tinted tile above each heading (10 repeats, SLP-003).",
+   "before": "One target glyph on every goal card.",
+   "after": "Either a distinct Lucide glyph per goal at 20px (graduation cap, video, pen, globe, rocket, store, briefcase, file-text, workflow, palette) or no icon, letting the headings carry the cards.",
+   "why": "An icon that is the same on every card cannot help a visitor tell the goals apart; it is decoration in the shape of a signpost.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery",
+   "root": "the goal-card component's fixed icon slot"
+  },
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "'Featured tools' cards, monogram tiles, 1440 (shot-1440.png y 1490 to 1860)",
+   "evidence": "Each featured tool shows a two-letter monogram on a coloured square: 'GP' for ChatGPT, 'Cl' for Claude, 'Ge' for Gemini, 'Px' for Perplexity, 'Cv' for Canva, 'EL' for ElevenLabs. The table records no img on the page (counts.images 0).",
+   "before": "Invented monogram tiles for six real products.",
+   "after": "Each owner's one-colour mark at one height (24px) in the same slot.",
+   "why": "Monograms for real brands read as placeholders; the visitor's eye looks for the marks it knows.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-012",
+   "tier": "Reflex",
+   "where": "hero and closing CTA band, radial blue glows, 1440 (contact sheet #1 and #2)",
+   "evidence": "The table lists two large gradient fields with no text: a radial glow at 6% blue over the 1440 by 572px hero and a 15% blue glow over the 1104 by 328px dark CTA band (the sweep's glow hit, 'radial spotlight #3b82f6 alpha 0.15', SLP-008).",
+   "before": "Blue radial spotlights behind the hero and the CTA band.",
+   "after": "Flat grounds; no brand authority names a glow.",
+   "why": "The glow is the kit's default treatment and carries nothing; at 6% it barely shows.",
+   "test": "T-TREATMENT",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "One Lucide set at one stroke width (33 outline icons, 2px) with no mixing of filled and outline glyphs."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Tell us the goal. We'll build the stack.' and 'Find my stack'.)",
+  "T-CAPTURE-READ and T-ILLUSTRATION-READ: no product capture or product illustration on the page",
+  "T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE: no photograph or raster picture",
+  "T-DELETE-PICTURE: the hero has no picture"
+ ]
+}

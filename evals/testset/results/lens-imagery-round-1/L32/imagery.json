@@ -1,0 +1,39 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The only picture is the masthead illustration (contact sheet #1, 347 by 274px): a flat drawing of a laptop showing a 'Service' page, a checkbox and radio, a terminal and colour swatches, in the GOV.UK house illustration style.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-STAND-IN and T-ICON-SYSTEM pass: one owned SVG illustration in the house style and the crown logotype; the illustration names the system's parts but adds little to the heading (T-DELETION)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [],
+  "strengths": [
+    "The masthead illustration is the design system's own flat style (homepage-illustration.svg, 4 KB, served from the site) and draws the system's real parts: a checkbox, a radio, a 'Service' page header, a terminal prompt and the colour palette.",
+    "The page uses no decorative photographs or icon tiles: content links carry the page."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (government design-system documentation home)",
+    "the table flags the illustration as upscaled (190 by 150 natural at 347 by 274px), but it is an SVG and renders sharp, so it is not a finding",
+    "skipped tests: T-CAPTURE-READ, T-TEXT-ON-IMAGE, T-LOGO-ROW, T-ONE-REGISTER (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

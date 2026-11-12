@@ -1,0 +1,75 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (an AI workflow SaaS landing page, 'Lumina'); inferred from 'Build faster with intelligent workflows for modern teams' and 'Start free trial'.",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "The page has no picture: its hero art is a fine grid texture under a peach radial glow, its feature icons are emoji (lightning, padlock, chart) in small white tiles, and its customer row is six names set in an italic serif.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-TREATMENT fails on a decorative grid and glow over nothing in the hero, T-ICON-SYSTEM fails on emoji as feature icons, and T-LOGO-ROW fails on typed names in place of marks; nothing shows the product (IMG-012, IMG-013, IMG-014, IMG-002)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-012",
+   "tier": "Reflex",
+   "where": "hero, grid texture and peach glow, 1440 (shot-1440.png y 80 to 950)",
+   "evidence": "The hero ground is a 32px grid of fine lines under a peach radial glow centred on the headline. The sweep records the glow ('radial spotlight #c8552b alpha 0.20', SLP-008). The grid frames no picture, chart or product.",
+   "before": "A decorative grid and glow over an empty hero.",
+   "after": "A flat ground; put a capture of the workflow builder where the grid suggests a canvas.",
+   "why": "A grid over nothing is texture standing in for content.",
+   "test": "T-TREATMENT",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "feature cards, 56px icon tiles, 1440 (shot-1440.png y 1530 to 1585)",
+   "evidence": "The three feature icons are emoji (lightning, padlock, chart-increasing) in white rounded tiles; the sweep's emoji_icons hit records all three (SLP-013).",
+   "before": "Emoji as feature icons.",
+   "after": "One drawn icon set at one weight without tiles, or no icons.",
+   "why": "Emoji clash with the page's serif and change look on every system.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "customer row, 1440 (shot-1440.png y 1005 to 1040)",
+   "evidence": "Six names ('Northwind', 'Halcyon', 'Meridian', 'Fieldnote', 'Atlas & Co.', 'Verity') are set in the page's italic serif in grey, not as owners' marks. Whether they are customers is lens-integrity's.",
+   "before": "Typed names as a logo row.",
+   "after": "Each customer's own mark at one height, or remove the row.",
+   "why": "Names typed in one font imitate a logo row without the marks.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-002",
+   "tier": "Reflex",
+   "where": "whole page, 1440 (counts.images 0, svg_illustrations 0)",
+   "evidence": "The imagery table finds no picture, capture or illustration on the page, which sells 'the all-in-one platform' and offers 'Watch demo'.",
+   "before": "A product page with no picture of the product.",
+   "after": "[DATA NEEDED: a capture of the platform's main workflow view at 2x].",
+   "why": "Without a picture the visitor has nothing to judge the product by.",
+   "test": "T-MATERIAL-SOURCE",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (an AI workflow SaaS landing page, 'Lumina'); inferred from 'Build faster with intelligent workflows for modern teams' and 'Start free trial'.)",
+  "T-CAPTURE-READ, T-ILLUSTRATION-READ, T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE: no picture on the page"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a developer platform landing page, Optimus); inferred from 'The platform to ...', 'Start free trial' and 'Watch demo'.",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The hero art is a canvas sphere of drifting ASCII-like ticks behind the headline with no subject, and the four feature pictures are generic line drawings (a text block, a hub of nodes, A and B boxes, a shield with a padlock) while the platform itself is never shown.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-AI-LOOK fails on the particle-sphere hero art, T-MATERIAL-SOURCE fails because no capture of the platform appears anywhere, and T-DELETION fails on four tech-cliché feature drawings (IMG-001, IMG-002, IMG-003)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "hero canvas (800 by 800px at y 50) and closing CTA canvas (500 by 500px at y 10415), 1440 (contact sheet #2, #4; fold-1440.png)",
+   "evidence": "The hero canvas draws a sphere of short grey ticks and arcs that sits behind 'The platform to' and the CTAs; the closing section repeats it as a funnel of ticks. Neither shows a product, a person or a number.",
+   "before": "A generative particle sphere as hero art.",
+   "after": "A 2x capture of the platform's deploy or dashboard view in the hero's right half.",
+   "why": "Abstract generative art is the kit's stand-in for a product and tells the visitor nothing about what Optimus does.",
+   "test": "T-AI-LOOK",
+   "source": "imagery",
+   "root": "the canvas background component"
+  },
+  {
+   "rule": "IMG-002",
+   "tier": "Reflex",
+   "where": "whole page, 1440 (counts.images 0, content_pictures 0)",
+   "evidence": "The imagery table finds no img and no capture on the page: only three canvases, four 192 by 160px feature drawings and icons. The page offers 'Watch demo' but shows no frame of the product.",
+   "before": "A platform landing page with no picture of the platform.",
+   "after": "[DATA NEEDED: captures of the deploy view, the AI workflow and the collaboration view at 2x].",
+   "why": "Visitors judge a developer platform by its interface; with none shown, every claim stays abstract.",
+   "test": "T-MATERIAL-SOURCE",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-003",
+   "tier": "Reflex",
+   "where": "'Everything you need' feature list, four inline svgs (192 by 160px at y 1376 to 2339), 1440 (contact sheet #5 to #8)",
+   "evidence": "The four feature drawings are a framed block of grey text bars, a black hub with six circle nodes, two boxes marked 'A' and 'B' joined by a dashed line, and a shield with a padlock. Each repeats its heading ('Instant Deployment', 'AI-Native Workflows', 'Real-time Collaboration') in the most generic sign available.",
+   "before": "Generic tech glyph drawings beside each feature.",
+   "after": "A cropped capture of each feature in use, or no picture and a tighter list.",
+   "why": "Deleting any of the four loses nothing: the heading already says it.",
+   "test": "T-DELETION",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The feature drawings are one monochrome line style at one stroke weight, so the set is consistent with itself and with the page's black-on-off-white palette."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a developer platform landing page, Optimus); inferred from 'The platform to ...', 'Start free trial' and 'Watch demo'.)",
+  "T-CAPTURE-READ, T-CROP-375 on captures, T-TEXT-ON-IMAGE: no capture or photograph on the page",
+  "Canvas content is read from the screenshots only; the canvas animates and later frames were not seen"
+ ]
+}

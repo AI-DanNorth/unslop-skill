@@ -1,0 +1,38 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "The only picture is the rendered world on tiles/1440-00.png: a hand-modelled, toon-shaded planet with a lake, forest, orange machinery and a lighthouse, which is the artifact itself, not stock or kit art.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-AI-LOOK and T-TREATMENT pass on the rendered scene, which has one flat-shaded register with hand-drawn outlines and no generator artefacts; the score rests on one captured frame per width."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CROP-375",
+    "T-TREATMENT"
+  ],
+  "findings": [],
+  "strengths": [
+    "The scene is one consistent art direction: a flat teal sky with scattered speck shapes, a small planet with ink-outlined trees, rocks and buildings, and orange as the one warm accent.",
+    "Nothing on the first screen is decoration: the world is the content."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Experience (an interactive 3D world rendered in WebGL)",
+    "the DOM lists no img, background, SVG or media rows, so the scene was judged only from the three screenshots (one per width)",
+    "the world is interactive; states after scrolling, dragging or clicking were not captured",
+    "T-IMAGE-SIZE: the canvas resolution against device pixels was not captured",
+    "skipped tests: T-CAPTURE-READ, T-ILLUSTRATION-READ, T-ONE-REGISTER, T-TEXT-ON-IMAGE, T-ICON-SYSTEM, T-LOGO-ROW, T-IMAGE-SIZE (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

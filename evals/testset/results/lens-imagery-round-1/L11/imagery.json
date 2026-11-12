@@ -1,0 +1,75 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Experience and Operate (a browser game library and store, GameGhost); inferred from the game carousel, 'PLAY', the price button and keyboard hints.",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The pictures are the games' own key art and screenshots (Xonotic's arena as the hero, the Xonotic wordmark, real covers for SuperTuxKart, The Simpsons: Hit & Run, Super Monkey Ball), but at 1440 the cover carousel overlaps the purple play button and its labels, and cover art arrives at very different sizes and crops.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-MATERIAL-SOURCE passes on the games' own art, but T-CROP-375 and T-TEXT-ON-IMAGE fail at 1440 where covers sit over the play button and the 'ADD TO CART' and 'FEATURED GAMES' labels, and T-IMAGE-SIZE fails on covers shown near 1x (IMG-010, IMG-011, IMG-009)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-011",
+   "tier": "Reflex",
+   "where": "hero, cover carousel over the action row, 1440 (fold-1440.png y 540 to 820; contact sheet #1, #4)",
+   "evidence": "The 160 by 224px covers start at y 595 and cover the purple play button (only its left edge and a 'P' show), the 'ADD TO CART — $0' label runs across the second cover, and 'FEATURED GAMES' prints over the 'Follow game' button. At 375 the same row sits below the buttons and nothing overlaps (fold-375.png).",
+   "before": "Cover art laid over the hero's primary action and its labels.",
+   "after": "Start the cover row below the action row at 1440 (as it does at 375), with at least 24px between them.",
+   "why": "The visitor cannot see or press the main 'Play' action, and labels over pictures do not read.",
+   "test": "T-TEXT-ON-IMAGE",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-009",
+   "tier": "Reflex",
+   "where": "cover carousel, img.absolute.inset-0 (20 covers at 160 by 224px), 1440 (contact sheet #3 to #10)",
+   "evidence": "Covers arrive at very different sizes: xonotic-cover is 194 by 259px (1.21x), super-monkey-ball-cover 183 by 275px (1.14x), maelstrom-cover and moonsigil-cover are square 225px files cropped to a 0.71 portrait slot, and mcf-background is a 1200 by 630px landscape file cropped to portrait. Others are 1536 to 2048px tall.",
+   "before": "Covers from 1.1x to 12.8x their shown width, several cropped from square or landscape files.",
+   "after": "One portrait cover per game at 320 by 448px (2x), each made for the slot.",
+   "why": "Soft 1x covers sit next to sharp ones, and landscape art cropped to portrait loses its subject.",
+   "test": "T-IMAGE-SIZE",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "cover carousel, img dark-thumbnail_df11fd43.png (160 by 224px), 1440 (contact sheet #6)",
+   "evidence": "The 'DARK' cover shows an armoured knight with a sword before a lit gothic cathedral in smoky orange light. The file is 1536 by 2304px, the default output size of a common image generator, and it is served from a cdn host unlike the builder uploads around it. Its glossy, detail-dense look differs from the game captures beside it.",
+   "before": "A generated-looking fantasy still as a game's cover.",
+   "after": "The game's own key art or an in-game capture.",
+   "why": "A cover that does not show the game misleads the player about what they will launch.",
+   "test": "T-AI-LOOK",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The hero is a real in-game capture of Xonotic's arena with the game's own wordmark and an ESRB Teen badge, and a left-to-right black gradient (rgb(0,0,0) to transparent) keeps the description readable over it.",
+  "At 375 the hero stacks cleanly: the wordmark, description and buttons sit above the cover row (fold-375.png)."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Experience and Operate (a browser game library and store, GameGhost); inferred from the game carousel, 'PLAY', the price button and keyboard hints.)",
+  "Covers past the first carousel row and the second and third rows (backgrounds at y 819) were only partly visible",
+  "licence and credit of the material: the capture cannot see licences",
+  "Whether the games are the site owner's to distribute: not visible in the capture"
+ ]
+}

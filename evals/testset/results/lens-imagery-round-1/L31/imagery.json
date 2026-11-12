@@ -1,0 +1,62 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The lead picture (contact sheet #1, 725 by 470px) is a real capture of the entry, but it shows its title screen (a single purple silhouette and 'this is a teenager') rather than the visualisation at work.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-MATERIAL-SOURCE passes on the real capture and related thumbnails, but T-CAPTURE-READ fails because the lead capture shows the entry's opening screen (IMG-006), and T-IMAGE-SIZE fails at 1.5x (IMG-009)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-006",
+      "tier": "Reflex",
+      "where": "lead image (div.page-image-header > a.open-image-viewer > img), 1440 (tiles/1440-00.png, contact sheet #1)",
+      "evidence": "page.jpg (1090 by 707px) shows The Pudding's intro screen: a dark purple field, the title 'this is a teenager' at about 12px, one small figure silhouette and a 'Watch the video instead!' bar. None of the charts the entry won for are visible.",
+      "before": "the entry's title screen as the only picture of an awarded visualisation",
+      "after": "Use a capture of the story mid-scroll, where the crowd of teenagers splits into outcome groups, and add a second capture of one chart at 2x",
+      "why": "A showcase page exists to show the work, and judges and voters see only its cover.",
+      "test": "T-CAPTURE-READ",
+      "source": "imagery"
+    },
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "lead image and related-project thumbnails, 1440 (tiles/1440-00.png)",
+      "evidence": "The lead file is 1090px shown at 725px (density 1.5), and the related thumbnail medium.jpg is 313px shown at 260px (density 1.2).",
+      "before": "the lead capture at 1.5x and thumbnails at 1.2x",
+      "after": "Serve the lead capture at 1450px or wider and the thumbnails at 520px",
+      "why": "Small captions in a capture blur first, and this page's subject is a visual.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The pictures are real captures of the entries (The Pudding's story, 'On Upward Mobility', 'NYC Taxis: A Day in the Life'), not illustrations or stock."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (an awards showcase entry for a data-visualisation story)",
+    "an empty white panel below the credits block (about 726 by 80px, tiles/1440-01.png) may be an embed that did not load; not verified",
+    "the image viewer opened by the lead link was not captured",
+    "skipped tests: T-TEXT-ON-IMAGE, T-ICON-SYSTEM, T-LOGO-ROW, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

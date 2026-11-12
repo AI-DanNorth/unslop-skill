@@ -1,0 +1,30 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The page has no pictures: its only imagery is the Vercel triangle mark and one 16px icon (tiles/1440-00.png), and the two placeholder_text rows are guideline text about form placeholders, not empty slots.",
+  "score": {
+    "dimension": "Craft",
+    "value": null,
+    "reason": "No imagery worth judging: no img, background or illustration rows, only the logo and one icon, which T-ICON-SYSTEM passes."
+  },
+  "tests_run": [
+    "T-EMPTY-FRAME",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [],
+  "strengths": [
+    "The document carries no decorative pictures, icon tiles or hero art: the guidelines are the content."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (a text-only guidelines document)",
+    "every picture test except T-EMPTY-FRAME and T-ICON-SYSTEM: the page has no pictures to judge",
+    "skipped tests: T-MATERIAL-SOURCE, T-AI-LOOK, T-DELETION, T-STAND-IN, T-CAPTURE-READ, T-ILLUSTRATION-READ, T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE, T-TREATMENT, T-LOGO-ROW (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

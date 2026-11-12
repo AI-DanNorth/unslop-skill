@@ -1,0 +1,65 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a local, private family AI app, KinAI); inferred from 'Share your local AI with your family' and the download links.",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "Every content picture is a real capture of the KinAI app (welcome, host setup, chat, calendar, reminder pop-up, vision routing, image search) in one dark register, but the lead capture is the welcome screen, which shows a heading and a 'Get started' button rather than the product at work.",
+ "score": {
+  "dimension": "Craft",
+  "value": 7,
+  "reason": "T-MATERIAL-SOURCE and T-ONE-REGISTER pass on seven real app captures, but T-CAPTURE-READ fails on the welcome screen as the lead shot and T-IMAGE-SIZE fails on the lead file shown at 0.99x and seven 124 by 76px thumbnails (IMG-006, IMG-009)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-006",
+   "tier": "Reflex",
+   "where": "screenshot gallery, lead img welcome.png (1214 by 683px at y 765), 1440 (contact sheet #1; tiles/1440-01.png)",
+   "evidence": "The lead capture shows the welcome screen: the house logo, 'Your family's AI. Nobody else's.', one privacy card and a 'Get started' button over a mostly empty dark field. Its own small print reads 'This welcome appears only while setup is unfinished'.",
+   "before": "The setup welcome screen as the first product picture.",
+   "after": "Lead with chat.png or calendar.png: a family member's conversation or the reminders view with real entries.",
+   "why": "A welcome screen is the one state a visitor will barely see; the product at work is what persuades.",
+   "test": "T-CAPTURE-READ",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-009",
+   "tier": "Reflex",
+   "where": "screenshot gallery, welcome.png and the thumbnail strip (seven 124 by 76px), 1440 (contact sheet #1, #7 to #12)",
+   "evidence": "welcome.png is 1200 by 820px shown at 1214 by 683px: a density of 0.99 with object-fit cover changing its ratio from 1.46 to 1.78, so the top and bottom of the screen are cut. The seven thumbnails show 1200px files at 124px, where no text can be read.",
+   "before": "A lead capture at 1x, cropped to a new ratio, above thumbnails too small to read.",
+   "after": "Export each capture at 2428px wide in the gallery's 16:9 ratio (or set the frame to the capture's 1.46 ratio), and label the thumbnails with their screen names.",
+   "why": "Text inside a 1x capture is soft on high-density screens, and the crop removes part of the app window.",
+   "test": "T-IMAGE-SIZE",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "All seven gallery pictures are real captures of the KinAI app in one dark register with one frame (12 to 16px radius), and their alt text names what each screen does ('Calendar — every reminder you asked KinAI to keep').",
+  "The 'Connect your AI' capture (contact sheet #4) shows the real setup wizard with found model servers and readable fields."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a local, private family AI app, KinAI); inferred from 'Share your local AI with your family' and the download links.)",
+  "Gallery slides 2 to 7 at full size: the capture shows only the first slide large",
+  "video content past its first frame",
+  "art direction between 375 and 1440: only those two widths were compared",
+  "The sweep's performance hits (1200px files shown at 124px) are WEB-001's"
+ ]
+}

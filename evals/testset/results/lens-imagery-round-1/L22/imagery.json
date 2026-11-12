@@ -1,0 +1,52 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The three cover thumbnails on the right (contact sheet #2 to #4) are the skill's own outputs, and the purple 'AI · GENERATED' panel on the left is a labelled exhibit of the default result, not the slide's own imagery.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-MATERIAL-SOURCE and T-ONE-REGISTER pass on the three real cover outputs in one frame, but T-CAPTURE-READ fails: at 320 by 136px on a 1920 slide their headlines cannot be read from a seat (IMG-006)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-006",
+      "tier": "Reflex",
+      "where": "right panel, 'SCHOOLS, SIDE BY SIDE' triplet, 1920 (tiles/1920-00.png, contact sheet #2 to #4)",
+      "evidence": "The three covers (cover-pentagram.png, cover-takram.png, cover-build.png) are 1175 by 500px files shown at 320 by 136px. Their headlines render at about 10 to 14px and their body lines at about 3px on a 1920 by 1080 slide, while the left exhibit panel is 706 by 300px.",
+      "before": "the three real outputs at a third of the size of the generic exhibit they are compared against",
+      "after": "Give the three covers the same width as the left panel combined (three across at about 560px each, or one large with two small), so the headlines read at projection size",
+      "why": "The slide's claim is that the skill's outputs are better, and the generic picture is the one the audience can actually see.",
+      "test": "T-CAPTURE-READ",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The left 'AI · GENERATED' cover is an exhibit, labelled with a tag and a caption ('呃，能用，但...大家都长这样'): the slide shows the generic result on purpose.",
+    "The three outputs share one frame: ratio 2.35, radius 0, the same caption bar naming each school (Pentagram, Takram, Build)."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade (a single presentation slide at 1920 by 1080 comparing a generic AI result with the skill's three outputs)",
+    "only the 1920 width was captured (dom-375.json missing): T-CROP-375 not verified",
+    "the 'grain' layer (div.grain, a radial-gradient dot at alpha 0.02) is a texture candidate but is invisible on the tile; not judged",
+    "skipped tests: T-LOGO-ROW, T-ICON-SYSTEM, T-TEXT-ON-IMAGE, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

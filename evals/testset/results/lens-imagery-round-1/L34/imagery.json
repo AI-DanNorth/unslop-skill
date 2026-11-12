@@ -1,0 +1,57 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The figures (contact sheet #1 to #12) are the design system's own diagrams of button use, drawn in its own components, but about half carry Chinese strings baked into the image files on an English page.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-MATERIAL-SOURCE and T-ONE-REGISTER pass on 22 figures in one grey-plate frame at 2x, but T-TEXT-ON-IMAGE fails because the labels inside many figures are baked-in Chinese on the English page (IMG-011)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-011",
+      "tier": "Reflex",
+      "where": "figures under 'Emphasis', 'Special Button Types', 'Button Ordering' and 'Grouping Buttons', 1440 (contact sheet #1, #4, #9, #10, #12)",
+      "evidence": "The figure files carry their labels as pixels in Chinese: '高强调 主色填充' and '中强调' (#9), '主要操作 次要操作 警示操作' (#4), '下拉按钮 分离的下拉按钮 更多按钮' (#10), '你确定删除这项内容吗？' (#12). The surrounding page text and captions are English. Other figures (#2, #6) use grey bars in place of words.",
+      "before": "spec figures with Chinese labels baked into the bitmaps on the English edition",
+      "after": "Export each figure per locale with English labels, or rebuild the labels as HTML text over the figure so they translate with the page",
+      "why": "Readers of the English page cannot read the labels the figures use to explain emphasis and order.",
+      "test": "T-TEXT-ON-IMAGE",
+      "source": "imagery",
+      "root": "figure exports shared between the Chinese and English docs"
+    }
+  ],
+  "strengths": [
+    "The figures are the system's own components in real layouts (a delete confirmation dialog, a form footer, dropdown buttons), at exactly 2x (928px files at 464px).",
+    "One frame across the set: grey plate, 6px radius, a blue 'Do' or red 'Don't' bar under each pair."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (design-system specification page for buttons)",
+    "6 contributor avatars from github.com were blocked (manifest network.blocked); not verified",
+    "the image preview (ant-image) opened on click was not captured",
+    "the sweep's img_alt hits on the figures (A11-005, 10 hits) are the sweep's and are not repeated here",
+    "the sample upload thumbnails in figure #3 (a man's portrait and a cartoon tiger) are sample data inside a component example (C22) and are not judged",
+    "skipped tests: T-LOGO-ROW, T-CROP-375 (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

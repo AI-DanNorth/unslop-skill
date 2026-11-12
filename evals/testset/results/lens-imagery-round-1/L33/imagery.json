@@ -1,0 +1,56 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The screen's imagery is the Ant Design icon set and live charts (contact sheet #2 to #4); the only pictures are faint background washes (#5 to #7) and a cartoon default avatar for 'ProUser'.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-ICON-SYSTEM and T-EMPTY-FRAME pass: 44 filled 14px icons from one set and no empty slots; T-TREATMENT finds a triangle-grid texture behind the cards that the screen does not need (IMG-012)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-012",
+      "tier": "Reflex",
+      "where": "page background (div.ant-pro-layout-bg-list > img, 3 images), 1440 (contact sheet #5 to #7)",
+      "evidence": "Three images (609 by 606px and 884 by 496px from mdn.alipayobjects.com) sit behind the layout: two blurred blue washes and a faint triangle grid (contact sheet #7). Card text and figures sit over them (text_over: '工专路 5 号店', '323,234').",
+      "before": "a decorative triangle-grid texture and blur washes behind the dashboard cards",
+      "after": "Drop the background images and use the flat #f5f5f5 ground the gradient layer already provides",
+      "why": "A texture behind dense numbers adds noise to an operating screen and carries no information.",
+      "test": "T-TREATMENT",
+      "source": "imagery",
+      "root": "ant-pro-layout-bg-list"
+    }
+  ],
+  "strengths": [
+    "One icon system: the menu, toolbar and card glyphs are all from the Ant Design set, filled, mostly 14px.",
+    "The charts are live canvases drawn from the data (bar, line, donut), not pictures of charts."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Operate (an analytics dashboard template preview)",
+    "the user avatar ('ProUser', 26px) is the template's default cartoon; as sample data in a template preview it is not judged (C22)",
+    "4 badge images from img.shields.io were blocked (manifest network.blocked); they sit outside the dashboard and are not verified",
+    "T-CROP-375: the 375 capture shows the same cards stacked, with no content pictures to crop",
+    "the sweep's img_alt hit on the avatar (A11-005) is the sweep's and is not repeated here",
+    "skipped tests: T-CAPTURE-READ, T-LOGO-ROW, T-CROP-375 (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

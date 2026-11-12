@@ -1,0 +1,67 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The lead picture is a real capture of Apple's WWDC24 email (contact sheet #1), but the file is 552px wide shown at 894px, so the captured email is upscaled and soft on the page that exists to show it.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-MATERIAL-SOURCE passes on real email captures, but T-IMAGE-SIZE fails on the lead capture at 0.62x and the 'You might also like' thumbnails at 1.1x (IMG-009)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "lead email capture (div.jTWvec.dMMuNs > img), 1440 (tiles/1440-00.png, tiles/1440-01.png, contact sheet #1)",
+      "evidence": "The capture file is 552 by 776px shown at 894 by 1257px: density 0.62, upscaled 1.6 times. On tiles/1440-01.png the email's small print ('TM and © 2024 Apple Inc. One Apple Park Way') and the calendar icon are visibly blurred.",
+      "before": "the email the page is about, upscaled to 162% of its file width",
+      "after": "Capture the email at 2x its 600px design width (1200px) and show it at 600 to 894px, or cap the frame at the file's width",
+      "why": "Visitors come to study the email's type and spacing, and the blur hides exactly those details.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery",
+      "root": "email capture pipeline (file width 552px)"
+    },
+    {
+      "rule": "IMG-010",
+      "tier": "Reflex",
+      "where": "'You might also like' cards, 1440 (tiles/1440-01.png, contact sheet #2 to #9)",
+      "evidence": "Each card frame is 325 by 650px (ratio 0.5) while the source captures run from 359 by 727px to 359 by 4890px. The table marks seven as cropped, so only the top 650px of a long email shows.",
+      "before": "tall email captures cut to a fixed 1:2 window",
+      "after": "Keep the top-crop, but fade the bottom edge or label the card with the email's full length so the cut reads as deliberate",
+      "why": "A hard cut through a section looks like a broken image in a gallery of finished work.",
+      "test": "T-CROP-375",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "Every picture on the page is a real email capture from the named sender (Apple, Airbnb, Alessi, AMC+), not a mock.",
+    "The cards share one frame: 12px radius, 1px border, one size."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (an email gallery's detail page for one email)",
+    "the specimen emails are exhibits from other brands; their own imagery (stock or not) is the sender's and is not judged",
+    "2 lazy images did not load (counts.not_loaded 2)",
+    "the ad unit in the right column is a third-party picture and is not judged",
+    "skipped tests: T-LOGO-ROW, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

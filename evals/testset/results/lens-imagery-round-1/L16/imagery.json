@@ -1,0 +1,26 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Operate (an internal weekly-ops dashboard, 'Northline weekly ops'); inferred from the stat tiles, filters, urgent table and pending list.",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The only imagery is eleven small inline SVG icons (status circles, trend arrows, mail, pencil, check) in one filled set at 14 and 16px, each beside a word that it supports.",
+ "score": {
+  "dimension": "Craft",
+  "value": null,
+  "reason": "No imagery worth judging beyond icons: T-ICON-SYSTEM passes on one set of eleven 14 to 16px glyphs at one weight."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-EMPTY-FRAME",
+  "T-ICON-SYSTEM"
+ ],
+ "findings": [],
+ "strengths": [
+  "One icon set (11 inline SVG glyphs at 14 and 16px, one 1px weight) used only where it adds meaning: status icons beside Blocked, Waiting and Clear, direction arrows beside the change figures, and type icons beside Email, Draft and Done."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Operate (an internal weekly-ops dashboard, 'Northline weekly ops'); inferred from the stat tiles, filters, urgent table and pending list.)",
+  "All picture tests except T-MATERIAL-SOURCE, T-EMPTY-FRAME and T-ICON-SYSTEM: the page has no pictures"
+ ]
+}

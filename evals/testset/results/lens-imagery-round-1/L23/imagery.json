@@ -1,0 +1,42 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The 'Learn more' cards (contact sheet #2 to #5) carry one house collage system of scanned engravings, ruled paper and flat colour blocks, and the hero frame shows the same scanned-ruler collage.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-ONE-REGISTER and T-TREATMENT pass on the four collage cards (640 by 800px at 2.1x, one 4px radius); confidence is lower because the hero media and five 1280px images were blocked."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [],
+  "strengths": [
+    "One illustration system the brand owns: the four card pictures (Doric columns on graph paper, a compass rose on a yellow field, an x-ray nautilus beside a green block, cloud paintings cut into blue squares) share a scanned-collage method, a warm paper ground and the 304 by 380px frame.",
+    "The hero frame at 1440 and 375 shows a scanned ruler between blue and red halftone fields, in the same collage register as the cards.",
+    "The three model announcement cards carry no decorative pictures at all: they rely on text and links."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade and Read (company home page linking to research and policy)",
+    "the hero media: manifest network.blocked lists the hero .webm, so the hero is judged from its captured frame only (contact sheet #1 shows a different frame, an aurora over the earth, which may be a slide from the same rotation)",
+    "five 1280 by 1280px images from www-cdn.anthropic.com were blocked (manifest network.blocked); their slots (likely the '···' category chips on the announcement cards) are not verified",
+    "the cards are list items in a slider (li.xiAwRW_slide); slides off screen were not opened",
+    "skipped tests: T-LOGO-ROW, T-CAPTURE-READ, T-ILLUSTRATION-READ, T-TEXT-ON-IMAGE (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

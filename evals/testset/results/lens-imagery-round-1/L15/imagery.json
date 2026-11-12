@@ -1,0 +1,26 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Operate (an internal weekly-ops page, 'Northline weekly ops', with stats, tables and actions); inferred from the content. The page labels itself 'Skill fixture, before'.",
+ "overall_read": "made",
+ "confidence": "low",
+ "overall_reason": "The page has no imagery at all: no img, svg, icon, background picture or decoration in the capture, so there is nothing to judge.",
+ "score": {
+  "dimension": "Craft",
+  "value": null,
+  "reason": "No imagery worth judging: the imagery table records no image, illustration, icon or decoration (counts.images 0, icons 0)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-EMPTY-FRAME",
+  "T-ICON-SYSTEM"
+ ],
+ "findings": [],
+ "strengths": [
+  "No empty frames, placeholder labels or decorative fills: the page does not pretend to have pictures it lacks."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Operate (an internal weekly-ops page, 'Northline weekly ops', with stats, tables and actions); inferred from the content. The page labels itself 'Skill fixture, before'.)",
+  "All picture tests except T-MATERIAL-SOURCE, T-EMPTY-FRAME and T-ICON-SYSTEM: the page has no pictures or icons"
+ ]
+}

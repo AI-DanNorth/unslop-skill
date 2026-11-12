@@ -1,0 +1,44 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Every photograph is of the driver himself at named places and dates ('Qatar, 2024', 'Miami GP, 2024', 'FIA Prize Giving, 2024'), and the helmet portrait (contact sheet #1, 1440 by 1080px at 2.4x) leads the 'Helmets Hall of Fame' section.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-MATERIAL-SOURCE, T-ONE-REGISTER, T-IMAGE-SIZE and T-TREATMENT pass: 59 photographs of the driver at 2.2x to 4.2x density, one dark-olive and lime frame and one topographic line texture. Cut to earn it: no stock, no generic hero art, no icon tiles; the only decoration is the brand's own contour lines and helmet pattern."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [],
+  "strengths": [
+    "The photographs are the subject's own: walking the paddock in Qatar, lifting the Miami trophy, holding the FIA award, captioned with place and year.",
+    "One signature treatment: dark olive grounds, lime accents and a faint topographic contour texture behind the photographs from the hero to the footer.",
+    "Photographs are large and sharp: the helmet portrait is 3456 by 3092px at 1440px, and the profile pair (#9, #10) is 3.9x to 4.2x."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Experience (a racing driver's personal site)",
+    "the page uses 12 scroll frames (manifest prep) and scroll-driven reveals: contact sheet #9 and #10 show only slivers of the two profile photographs, so their full crops are not verified",
+    "67 images did not load (counts.not_loaded 67), and the footer mask and lime helmet SVG for mobile were blocked (manifest network.blocked)",
+    "the three canvases (Rive animations, contact sheet #3, #5, #6) were judged from their captured frames only",
+    "skipped tests: T-CAPTURE-READ, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

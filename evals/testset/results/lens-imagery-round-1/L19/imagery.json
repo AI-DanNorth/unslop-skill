@@ -1,0 +1,54 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade and Read (a design skill for AI agents, Impeccable, with docs and a gallery); inferred from 'The missing design vocabulary for agents.' and 'Install Impeccable'.",
+ "overall_read": "made",
+ "confidence": "medium",
+ "overall_reason": "The hero picture is a built before-and-after card ('LAUNCH / 14, Ship the launch plan by Friday') with a drag handle and labelled tells (AI kicker, Italic serif, Side-tab border, AI beige), and the gallery shows real captures of example pages; the icon set is the only gap.",
+ "score": {
+  "dimension": "Craft",
+  "value": 8,
+  "reason": "T-ILLUSTRATION-READ passes on the hero's before-and-after card and T-MATERIAL-SOURCE passes on the gallery captures and the owners' marks in the tool row; T-ICON-SYSTEM fails on outline glyphs at 1.5px and 2px in one group and eight off-grid sizes (IMG-013)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "icons across the page, unnamed inline svg set (43 glyphs), 1440",
+   "evidence": "The sweep's mixed_icons hit records outline icons in one group at stroke widths of 1.5px and 2px (SLP-017). The icons table shows stroke widths of 1px, 1.5px, 1.6px, 1.7px and 2px, and eight glyphs at off-grid sizes (12, 14, 15 and 16px, plus 16 by 8px).",
+   "before": "One unnamed icon set drawn at five stroke widths and several sizes.",
+   "after": "One stroke width (1.5px) and two sizes (16px and 20px) for every glyph.",
+   "why": "Small weight changes between neighbouring icons make the set look assembled from parts.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The hero picture is a deliberate product illustration (conflict C48): one card shown before and after the skill's /polish command, with the tells it fixes named in yellow labels, so the picture explains the product.",
+  "The gallery shows real captures of example pages (Pickling Brine Calendar, Gravity Rain Garden, Oscilloscope Signal Bench, Neo Mirai conference) in one frame, each with an expand control.",
+  "The supported-tools row uses each owner's own mark at one height (22px)."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade and Read (a design skill for AI agents, Impeccable, with docs and a gallery); inferred from 'The missing design vocabulary for agents.' and 'Install Impeccable'.)",
+  "Example pages in the gallery are exhibits of the skill's output; their own imagery (for example the conference poster's illustrated skyline) was judged as specimen, not as this page's imagery",
+  "Gallery items past the first two rows and the live demo were not opened",
+  "licence and credit of the material: the capture cannot see licences"
+ ]
+}

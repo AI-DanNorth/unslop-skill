@@ -1,0 +1,109 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a team-management SaaS landing page, Consile); inferred from 'Everything your team runs on, in one workspace' and Start free / Book a demo.",
+ "overall_read": "generated",
+ "confidence": "medium",
+ "overall_reason": "The 'What we believe' picture (contact sheet #9) is a generated-looking library scene of five smiling people around a laptop with 'Consile' printed on its lid, and the hero's product picture is a styled-div dashboard with drawn traffic lights over orange and green glow orbs, while a live demo exists.",
+ "score": {
+  "dimension": "Craft",
+  "value": 4,
+  "reason": "T-AI-LOOK and T-MATERIAL-SOURCE fail on the team photograph, T-STAND-IN fails on the hero's drawn browser chrome and HTML dashboard, and T-CAPTURE-READ fails on the near-blank video poster (IMG-001, IMG-002, IMG-005, IMG-006)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "'What we believe' section, img brand-collaboration-Jrd_07pR.jpg (537 by 378px at y 5610), 1440 (contact sheet #9; 375 contact sheet #1)",
+   "evidence": "The picture shows five smiling people of different ages leaning over a laptop whose lid reads 'Consile' in clean type, with a Consile sticker pinned in the top-left corner, sticky notes and an orange mug. The file is 1365 by 768px, and its alt is 'Diverse team of collaborators working together around a shar...'. A brand wordmark printed on a stock laptop lid is a generator's or a compositor's mark, not a photograph of a real team.",
+   "before": "A glossy mood scene of a diverse team around a branded laptop.",
+   "after": "[DATA NEEDED: a photograph of the actual Consile team or of a customer team using the product], or remove the picture.",
+   "why": "Visitors read a staged team picture as stock; it shows no fact about the product or the people who make it.",
+   "test": "T-AI-LOOK",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-005",
+   "tier": "Reflex",
+   "where": "hero right half, the 'Acme Studio' dashboard panel, 1440 (fold-1440.png x 745 to 1300, y 150 to 870; contact sheet #6)",
+   "evidence": "The hero product picture is HTML: a drawn browser bar with red, amber and green traffic lights, an 'Acme Studio / Workspace' pill, four stat tiles and a 92% attendance ring (an inline svg, contact sheet #11). It is labelled 'PRODUCT PREVIEW · SAMPLE DATA'. The page offers 'Explore the live demo', so the real dashboard could have been captured.",
+   "before": "A styled-div dashboard inside drawn window chrome.",
+   "after": "A 2x capture of the live demo's dashboard at the same size, without drawn traffic lights.",
+   "why": "Drawn chrome and a rebuilt dashboard show what the team wishes the product looked like; a capture shows what it is.",
+   "test": "T-STAND-IN",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "hero background, span.hero-motion-orb (three orbs, 578px, 466px and 332px) and hero-motion-glow, 1440 (contact sheet #5, #7, #8, #10)",
+   "evidence": "The table lists three radial orbs at 38%, 34% and 18% alpha in orange and green, an animated sheen (hero-motion-sheen-sweep) and a 480px glow behind the hero panel. The sweep records six glow hits, for example 'radial spotlight #f97015 alpha 0.38' (SLP-008).",
+   "before": "Moving orange and green orbs and a sheen as hero art.",
+   "after": "A flat warm ground behind the hero; let the product capture carry the first screen.",
+   "why": "Gradient orbs are the generated-page kit's default hero art and carry no fact.",
+   "test": "T-AI-LOOK",
+   "source": "imagery",
+   "root": "the hero-motion-layer component"
+  },
+  {
+   "rule": "IMG-006",
+   "tier": "Reflex",
+   "where": "'See Consile in two minutes' video poster, img maxresdefault.jpg (894 by 502px at y 1224), 1440 (contact sheet #4)",
+   "evidence": "The YouTube poster is a flat grey field with five faint pastel initial circles ('PR', 'TB', 'TT', 'HR', 'LV') and an orange play button. It shows no screen of the product. The file is 1280 by 720px, 1.43x its shown width.",
+   "before": "A near-blank grey poster with five initial circles.",
+   "after": "A poster frame taken from the video at the dashboard, at 2x the shown width.",
+   "why": "The poster is the picture most visitors see; a blank grey frame gives no reason to press play.",
+   "test": "T-CAPTURE-READ",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "'FEATURED ON' badge marquee, ul.flex.shrink-0 (12 marks, three copies), 1440 (tiles/1440-02.png)",
+   "evidence": "The logo_rows entry records heights of 28 and 48px and widths from 28 to 174px (width ratio 6.2), mixing launch-site badges ('SaasHunt Top 1 Daily Winner', 'Featured on LaunchBuff') with favicons. Six favicons were blocked by the network and are not verified.",
+   "before": "Launch badges and favicons at two heights and mixed shapes.",
+   "after": "One height (28px) for every mark, each in its owner's one-colour version.",
+   "why": "Uneven heights make some sources look larger than others; the row reads as a collection of badges rather than evidence.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "feature cards with 40px tinted tiles, 1440 (tiles/1440-02.png and later)",
+   "evidence": "The sweep's icon_tile hit records a 40px tinted tile above each of 12 feature headings ('SAML 2.0 Single Sign-On', 'SCIM 2.0 Provisioning', 'Audit Log Streaming', and so on), and the 'Why we built Consile' card uses lucide sparkles (SLP-015).",
+   "before": "An icon tile on every feature heading, one of them a sparkle.",
+   "after": "Icons only where they help scanning, at 20px without tiles, and no sparkle on the story card.",
+   "why": "An icon on every heading becomes texture and stops helping a visitor scan.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "One Lucide set at one 2px stroke (94 icons, 93 outline) across the page.",
+  "The hero panel is honestly labelled 'PRODUCT PREVIEW · SAMPLE DATA' and uses the product's own nouns (tasks, attendance, people, reviews)."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a team-management SaaS landing page, Consile); inferred from 'Everything your team runs on, in one workspace' and Start free / Book a demo.)",
+  "images inside menus, carousels and tabs the capture did not open",
+  "Six launch-badge favicons blocked by the network (gstatic faviconV2, kittylaunch.com): not verified",
+  "Photograph source: without a contract the team picture's origin is judged from what it shows; confidence lowered to medium"
+ ]
+}

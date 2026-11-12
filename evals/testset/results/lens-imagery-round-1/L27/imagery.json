@@ -1,0 +1,59 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The section pictures are product illustrations in Stripe's own chrome with real-looking transactions (contact sheet #4, #7, #10), plus two real photographs: the Hertz aerial crossing (#5) and a Sessions keynote stage (#11).",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-ILLUSTRATION-READ and T-ONE-REGISTER pass on the product illustrations and the two photographs; T-IMAGE-SIZE fails on the bento background bitmaps served at 1x (IMG-009)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "payments bento and connect bento backgrounds, 1440 (tiles/1440-01.png, tiles/1440-02.png, contact sheet #7, #10)",
+      "evidence": "payment-bento-background.jpg is 860 by 712px shown at 860 by 712px (density 1.0), and connect-bento-card-background-image.jpg is 1232 by 450px shown at 1243 by 454px (density 0.99, slightly upscaled). The platform graphic and Hertz image are 1440px files at 1232px (density 1.17).",
+      "before": "illustration bitmaps at 1x under live text",
+      "after": "Export the bento backgrounds and story images at 2x their shown width (1720px and 2486px) and serve them through srcset",
+      "why": "On a 2x screen the gradient art and photo edges blur next to the sharp HTML UI drawn on top of them.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery",
+      "root": "bento background image exports"
+    }
+  ],
+  "strengths": [
+    "The product illustrations show real flows with real numbers: a card terminal at €26.89, a checkout for an 'Unverzichtbarer Hoodie' with Klarna, a connected-accounts table for Daybreak Yoga.",
+    "The Hertz customer story uses an aerial photograph of a real intersection, not a library handshake.",
+    "The hero logo marquee keeps every mark at 34px tall in one colour (width ratio 1.0)."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade (payments platform home page)",
+    "18 images were blocked (manifest network.blocked, including map-dots.png and product pictures such as oak_dining_chair.png); the empty usage meter in 'Enable any billing model' (tiles/1440-01.png) and the empty_frames row in the platform graphic are not verified",
+    "17 lazy images did not load (counts.not_loaded 17)",
+    "the glow hits on the billing graphic and the icon_tile hits (SLP-008, SLP-003) are the sweep's and are not repeated here",
+    "no tests skipped",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

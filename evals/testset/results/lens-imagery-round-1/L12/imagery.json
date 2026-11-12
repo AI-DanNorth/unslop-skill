@@ -1,0 +1,65 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (an AI workflow SaaS landing page, 'Lumina'); inferred from 'Build faster with intelligent workflows' and 'Join the waitlist'. The page itself shows no exhibit label at 1440.",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "The page has no picture of any kind: its first screen is violet and teal glow fields behind a gradient headline, its feature icons are emoji (lightning, padlock, chart) in violet-to-pink gradient tiles, and its customer row is six names set as grey text.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-AI-LOOK fails on the glow fields as hero art, T-ICON-SYSTEM fails on emoji in gradient tiles and a sparkle in the wordmark, and T-LOGO-ROW fails on a row of names in place of marks (IMG-001, IMG-013, IMG-014)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "hero and closing CTA, radial glows, 1440 (shot-1440.png y 80 to 880 and 1850 to 2330)",
+   "evidence": "The hero's only picture is a violet glow over the headline and a teal glow to its right; the closing CTA repeats a violet glow. The sweep records six glow hits ('zero-offset coloured boxShadow #8b5cf6 blur 40px alpha 0.50') and nine gradient hits on violet and pink (SLP-007, SLP-008).",
+   "before": "Violet and teal glow fields as hero art.",
+   "after": "[DATA NEEDED: a capture of the product's workflow builder] in the hero, on a flat ground.",
+   "why": "Glow fields are the kit's default hero art and show nothing a visitor could use.",
+   "test": "T-AI-LOOK",
+   "source": "imagery",
+   "root": "the page's glow treatment"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "'Everything you need to ship faster' cards, 56px icon tiles, 1440 (shot-1440.png y 1430 to 1490)",
+   "evidence": "The three feature icons are emoji (lightning, padlock, chart-increasing) in 56px violet-to-pink gradient tiles. The sweep's emoji_icons hit records all three (SLP-013), and the wordmark 'Lumina' carries a pink sparkle.",
+   "before": "Emoji in gradient tiles as feature icons.",
+   "after": "One drawn icon set at one stroke width (for example Lucide at 24px, 1.5px stroke) without tiles, or no icons.",
+   "why": "Emoji render differently on every system and read as filler beside a product's own type.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "customer row under the hero, 1440 (shot-1440.png y 940 to 970)",
+   "evidence": "Six names ('Northwind', 'Halcyon', 'Meridian', 'Fieldnote', 'Atlas & Co.', 'Verity') are set as grey bold text in the page's own font, not as marks. Whether these customers exist is lens-integrity's.",
+   "before": "Names typed in the page font as a logo row.",
+   "after": "Each real customer's own mark at one height, or remove the row.",
+   "why": "A row of typed names imitates a logo row without the owners' marks.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (an AI workflow SaaS landing page, 'Lumina'); inferred from 'Build faster with intelligent workflows' and 'Join the waitlist'. The page itself shows no exhibit label at 1440.)",
+  "T-CAPTURE-READ, T-ILLUSTRATION-READ, T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE: no picture on the page (counts.images 0)"
+ ]
+}

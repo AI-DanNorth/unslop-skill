@@ -1,0 +1,67 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The lead picture is a real capture of Apple's 'Welcome to Apple Arcade' email (contact sheet #1), but the file is 591px wide shown at 894px, so its game art and body text are upscaled and soft.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-MATERIAL-SOURCE passes on real email captures, but T-IMAGE-SIZE fails on the lead capture at 0.66x and the thumbnails at 1.1x (IMG-009)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "lead email capture (div.jTWvec.dMMuNs > img), 1440 (tiles/1440-01.png, contact sheet #1)",
+      "evidence": "The capture file is 591 by 2556px shown at 894 by 3868px: density 0.66, upscaled about 1.5 times. On tiles/1440-01.png the headline 'You're Going to Love It Here' and the body paragraph have soft, haloed edges, and the wheat-field game art is blurred.",
+      "before": "the email the page is about, upscaled to 151% of its file width",
+      "after": "Capture the email at 2x its design width (1200px) and show it at no more than the design width times the screen density",
+      "why": "Visitors come to study the email's craft, and upscaling hides the type and image detail they came for.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery",
+      "root": "email capture pipeline (file width 591px)"
+    },
+    {
+      "rule": "IMG-010",
+      "tier": "Reflex",
+      "where": "'You might also like' cards, 1440 (tiles/1440-04.png, contact sheet #3 to #9)",
+      "evidence": "Each card frame is 325 by 650px while the captures run up to 359 by 4890px; the table marks seven as cropped, so each card shows only the top of a long email.",
+      "before": "tall email captures cut to a fixed 1:2 window",
+      "after": "Keep the top-crop but fade the bottom edge so the cut reads as deliberate",
+      "why": "A hard cut through a section looks like a broken image in a gallery of finished work.",
+      "test": "T-CROP-375",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The pictures are real email captures from named senders, not mocks.",
+    "The cards share one frame: 12px radius, 1px border, one size."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (an email gallery's detail page for one email)",
+    "the ad image in the right column (2522b0ad...png) was blocked (manifest network.blocked): not verified",
+    "the specimen emails are exhibits from other brands; their own imagery is the sender's and is not judged",
+    "2 lazy images did not load (counts.not_loaded 2)",
+    "skipped tests: T-LOGO-ROW, T-ILLUSTRATION-READ (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

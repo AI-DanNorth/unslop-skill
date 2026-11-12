@@ -1,0 +1,52 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The only imagery is the brand's own drawn system: the Dropbox mark and the section tiles' glyphs (a bezier for Framework, quote marks for Voice, a lock for Iconography, an easing curve for Motion) on tiles/1440-02.png.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-ICON-SYSTEM and T-ONE-REGISTER pass: every tile glyph is drawn in one flat, thick-stroke style in the brand palette (24 inline SVGs, 2px stroke in most); the gap is the 'Imagery' tile, which uses the generic mountain-and-sun picture glyph (IMG-003)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-003",
+      "tier": "Reflex",
+      "where": "'Imagery' tile in the section grid, 1440 (tiles/1440-02.png)",
+      "evidence": "The Imagery tile shows a pink rectangle with a circle and a wave: the generic 'image placeholder' glyph, while its neighbours each draw something specific to their section (an easing curve for Motion, a lock for Iconography).",
+      "before": "the stock image-placeholder glyph standing for the brand's photography",
+      "after": "Show a crop of one real Dropbox brand photograph or illustration in the tile, in the same flat frame",
+      "why": "The tile is the door to the brand's picture rules, and the placeholder glyph says nothing about what Dropbox imagery looks like.",
+      "test": "T-DELETION",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The section grid is one system: flat colour fields from the brand palette, one weight of drawn glyph, and the Dropbox mark used once at small size.",
+    "No decoration beyond the palette's colour blocks: the opening screens use flat orange and cyan bars, not gradient art."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Read (brand guidelines hub)",
+    "only 3 scroll frames were captured per width (manifest prep), and the opening screen at 1440 is mostly blank: content that animates in later was not verified",
+    "dom-375 rows for the phone crops are empty (phone list is empty), so T-CROP-375 is not verified",
+    "skipped tests: T-CAPTURE-READ, T-TEXT-ON-IMAGE, T-LOGO-ROW, T-CROP-375 (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

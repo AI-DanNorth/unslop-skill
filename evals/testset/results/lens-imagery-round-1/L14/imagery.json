@@ -1,0 +1,66 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a workspace SaaS landing page, 'lumina.'); inferred from 'YOUR WORK. MINUS THE WORK.' and 'START MAKING MOVES'. The footer reads 'Fictional product · Impeccable design-pattern example', so the whole page is a specimen; judged as built.",
+ "overall_read": "generated",
+ "confidence": "high",
+ "overall_reason": "The hero picture is a tilted HTML window with drawn traffic lights, a 'BUILT DIFFERENT.' starburst sticker and a 'less grind, more go.' tag over a to-do list, and the feature icons mix emoji (lightning) with drawn glyphs (arrow, asterisk) in boxed tiles.",
+ "score": {
+  "dimension": "Craft",
+  "value": 3,
+  "reason": "T-STAND-IN fails on the drawn window chrome and stickered faux UI, T-ILLUSTRATION-READ fails on its generic strings ('Have a big idea', 'Make a plan', 'Ship something great'), and T-ICON-SYSTEM fails on emoji mixed with drawn glyphs (IMG-005, IMG-007, IMG-013)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ILLUSTRATION-READ",
+  "T-ICON-SYSTEM",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-005",
+   "tier": "Reflex",
+   "where": "hero right half, tilted window, 1440 (shot-1440.png x 765 to 1420, y 200 to 630)",
+   "evidence": "The hero picture is HTML: a lavender title bar with three drawn circles for traffic lights and 'YOUR_NEXT_BI...' cut off, a coral starburst sticker reading 'BUILT DIFFERENT.' and a coral tag 'less grind, more go.' stuck across the bottom edge.",
+   "before": "A drawn browser window with stickers as the product picture.",
+   "after": "A capture of the real workspace at 2x, flat, without drawn chrome or stickers.",
+   "why": "Drawn chrome and stickers say 'product' without showing one.",
+   "test": "T-STAND-IN",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-007",
+   "tier": "Reflex",
+   "where": "hero window content, 1440 (shot-1440.png y 280 to 590)",
+   "evidence": "The faux UI holds three to-do rows ('Have a big idea', 'Make a plan', 'Ship something great'), an 'IN THE ZONE' pill and a 'BIG THINGS LOADING 75%' bar. None of the strings names a real task, team or number.",
+   "before": "Generic motivational strings in a faux to-do list.",
+   "after": "If an illustration stays, fill it with one real team's week (named tasks, owners, due dates) in the product's own components.",
+   "why": "Generic strings make the illustration read as a template, so it shows nothing about the product.",
+   "test": "T-ILLUSTRATION-READ",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "'All the tools. None of the blah.' cards, 62px icon tiles, 1440 (shot-1440.png y 970 to 1035)",
+   "evidence": "The three tiles hold a thin drawn arrow, a thin drawn asterisk and an orange lightning emoji. The sweep's emoji_icons hit records the lightning and the asterisk character (SLP-013), and the marquee band uses the four-point star glyph as a bullet.",
+   "before": "Two drawn glyphs and one emoji in one group.",
+   "after": "Three icons from one set at one stroke width, or none.",
+   "why": "Mixing an emoji with line glyphs in one row breaks the set.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a workspace SaaS landing page, 'lumina.'); inferred from 'YOUR WORK. MINUS THE WORK.' and 'START MAKING MOVES'. The footer reads 'Fictional product · Impeccable design-pattern example', so the whole page is a specimen; judged as built.)",
+  "T-CAPTURE-READ, T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE: no capture or photograph on the page",
+  "T-LOGO-ROW: no logo row",
+  "The page labels itself a fictional design-pattern example in its footer; as the whole page is the specimen, its imagery was judged as built"
+ ]
+}

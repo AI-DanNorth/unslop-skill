@@ -1,0 +1,68 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The hero (contact sheet #2, 1440 by 804px) and every section picture (#4 to #9) are the real product: the issue view, the Slack thread, the cycle-time scatter and the code review, drawn in the product's own chrome and data.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-MATERIAL-SOURCE, T-CAPTURE-READ and T-ONE-REGISTER pass on the product pictures, which read at their shown size; the gaps are a hero file at 1.78x and two outline stroke widths in one property column (IMG-009, IMG-013)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TEXT-ON-IMAGE",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-013",
+      "tier": "Reflex",
+      "where": "issue properties column (div.KFZpfa_propertiesColumn), hero, 1440 (tiles/1440-00.png)",
+      "evidence": "The sweep's mixed_icons hit reports outline icons at 1px and 1.5px stroke in one group; the icons summary counts 165 icons at 1px, 21 at 1.5px and 4 at 2px across the page.",
+      "before": "property icons at two stroke widths side by side",
+      "after": "Draw the property glyphs at the 1px stroke the rest of the issue view uses",
+      "why": "The hero sells a precise tool, and two stroke weights in one column are the first detail a designer sees.",
+      "test": "T-ICON-SYSTEM",
+      "source": "imagery"
+    },
+    {
+      "rule": "IMG-009",
+      "tier": "Reflex",
+      "where": "hero product picture (img.Sz_9La_root), 1440 (tiles/1440-00.png, contact sheet #2)",
+      "evidence": "The hero bitmap is 2560 by 1429px shown at 1440 by 804px: density 1.78, below 2x on a retina screen, while the HTML panels drawn over it are sharp.",
+      "before": "a 1.78x hero bitmap under crisp live text",
+      "after": "Serve a 2880px file (or a 3x srcset step) for the 1440 hero",
+      "why": "On a 2x screen the bitmap layers look soft next to the live type that sits on them.",
+      "test": "T-IMAGE-SIZE",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The product pictures are the real Linear interface with plausible work in progress (issue DRV-8852 'Faster app launch', a Slack thread from lena, didier and andreas, 'Cycle time by agent'), legible at their shown size.",
+    "One icon system: 192 inline glyphs, almost all 14 or 16px and filled, with priority glyphs named in the DOM.",
+    "The customer logo row (OpenAI, Vercel, Figma, Cursor, Coinbase, Ramp) is in one colour at heights of 17 to 26px, width ratio 1.4."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade (software product home page)",
+    "4 lazy images did not load (counts.not_loaded 4)",
+    "the grain layers (div.SPbJba_grain) are a faint texture under the product frames; at opacity 0.25 to 0.6 they do not touch body text, so T-TREATMENT passes",
+    "no tests skipped",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}

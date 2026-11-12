@@ -1,0 +1,57 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Tell us the goal. We'll build the stack.' and the question-1-of-3 goal picker.",
+ "overall_read": "mixed",
+ "confidence": "low",
+ "overall_reason": "The page has no photographs or captures; its icons are one Lucide set with a distinct glyph per goal, but every real tool (Claude, Perplexity, NotebookLM, ElevenLabs, Lovable, Gamma, ChatGPT, Framer) is shown as a two-letter monogram tile instead of its owner's mark.",
+ "score": {
+  "dimension": "Craft",
+  "value": 6,
+  "reason": "T-ICON-SYSTEM passes on one Lucide set at 2px with a different glyph for each goal, but T-LOGO-ROW fails on monogram tiles for every named tool and T-DELETION finds the closing band's three stripes carry nothing (IMG-014, IMG-003)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW",
+  "T-TREATMENT"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-014",
+   "tier": "Reflex",
+   "where": "'Three people want a website' stack cards and '23 hand-picked tools' directory, monogram tiles, 1440 (shot-1440.png y 1310 to 3080)",
+   "evidence": "Every tool carries a two-letter monogram on a coloured square: 'Gt' ChatGPT, 'Fr' Framer, 'Ca' Canva, 'G' Grammarly, 'Px' Perplexity, 'v0', 'Mj' Midjourney, 'Cu' Cursor, 'Cl' Claude, 'Nb' NotebookLM, '11' ElevenLabs, 'Lv' Lovable, 'Ga' Gamma. The table finds only two img elements on the page, both the header logo (counts.images 2).",
+   "before": "Monogram tiles for thirteen real products.",
+   "after": "Each owner's one-colour mark at one height (20px in the stack rows, 28px in the directory cards).",
+   "why": "On a page whose job is to recommend named tools, the visitor should recognise each tool at a glance; invented monograms make the directory read as a placeholder.",
+   "test": "T-LOGO-ROW",
+   "source": "imagery",
+   "root": "the tool-avatar component"
+  },
+  {
+   "rule": "IMG-003",
+   "tier": "Reflex",
+   "where": "closing CTA band 'Stop collecting tools. Start using the right ones.', right side, 1440 (shot-1440.png x 1010 to 1265, y 3330 to 3410)",
+   "evidence": "Three horizontal bars (one orange-red, two dark grey) run off the band's right edge beside the headline. They carry no label, number or picture.",
+   "before": "Three decorative stripes as the band's picture.",
+   "after": "Remove the stripes, or show the real ordered stack output for one goal in that space.",
+   "why": "Deleting the stripes loses nothing; they fill the band for balance.",
+   "test": "T-DELETION",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "One Lucide icon set at one 2px stroke, with a distinct glyph per goal card (graduation cap, video, pen, globe, rocket, store, briefcase, file, workflow, palette), so the icons help a visitor tell the goals apart."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade with a tool entry point (an AI tool-stack recommender landing page); inferred from 'Tell us the goal. We'll build the stack.' and the question-1-of-3 goal picker.)",
+  "T-CAPTURE-READ and T-ILLUSTRATION-READ: no product capture or product illustration",
+  "T-ONE-REGISTER, T-IMAGE-SIZE, T-CROP-375, T-TEXT-ON-IMAGE: no photograph or raster content picture",
+  "The sweep's performance hits (a 512px logo shown at 20px) are WEB-001's"
+ ]
+}

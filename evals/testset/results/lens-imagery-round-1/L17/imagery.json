@@ -1,0 +1,87 @@
+{
+ "lens": "imagery",
+ "ran_at": "2026-11-12T12:00:00",
+ "visitor_mode": "Persuade (a UI design-intelligence skill for AI coding tools, 'UI UX Pro Max'); inferred from the install command, the GitHub star count and 'View Demos'.",
+ "overall_read": "mixed",
+ "confidence": "medium",
+ "overall_reason": "The demo gallery shows real captures of pages the skill built (Pet Grooming, SaaS Analytics, Learning, AI Chatbot), and the tool pills carry the owners' real marks, but the first screen and the closing band are blue and orange glow fields with no picture.",
+ "score": {
+  "dimension": "Craft",
+  "value": 5,
+  "reason": "T-MATERIAL-SOURCE passes on the demo captures and the tool marks, but T-AI-LOOK and T-TREATMENT fail on glow fields as hero and CTA art, T-IMAGE-SIZE fails on 409 by 230px captures under 2x in the lead slot, and T-ONE-REGISTER finds the pet-grooming capture used twice (IMG-001, IMG-009, IMG-015)."
+ },
+ "tests_run": [
+  "T-MATERIAL-SOURCE",
+  "T-AI-LOOK",
+  "T-DELETION",
+  "T-DELETE-PICTURE",
+  "T-EMPTY-FRAME",
+  "T-STAND-IN",
+  "T-CAPTURE-READ",
+  "T-ILLUSTRATION-READ",
+  "T-ONE-REGISTER",
+  "T-IMAGE-SIZE",
+  "T-CROP-375",
+  "T-TEXT-ON-IMAGE",
+  "T-TREATMENT",
+  "T-ICON-SYSTEM",
+  "T-LOGO-ROW"
+ ],
+ "findings": [
+  {
+   "rule": "IMG-001",
+   "tier": "Reflex",
+   "where": "hero and closing CTA, radial gradient fields and heavy-blur shapes, 1440 (contact sheet #1, #2, #5 to #8)",
+   "evidence": "The table lists two large gradient fields (radial blue at 30% over the 1440 by 900px hero and over the 574px CTA band) and six heavy-blur shapes in blue and orange. The sweep records 18 gradient hits ('gradient hue span 148°: #2563eb, #3b82f6, #f97316') and two glow hits. The first screen shows no picture of the skill's output.",
+   "before": "Blue and orange glow fields behind the hero and the closing CTA.",
+   "after": "One demo capture (the Pet Grooming page at 2x) in the hero below the install command, on a flat dark ground.",
+   "why": "The skill's proof is the pages it builds; the first screen shows a glow instead.",
+   "test": "T-AI-LOOK",
+   "source": "imagery",
+   "root": "the page background glow component"
+  },
+  {
+   "rule": "IMG-009",
+   "tier": "Reflex",
+   "where": "'Final Result' capture pet-grooming.png (726 by 408px at y 4080) and the demo gallery (409 by 230px), 1440 (contact sheet #3, #9 to #12)",
+   "evidence": "pet-grooming.png is 1280 by 800px shown at 726px wide (1.76x) and cropped from a 1.6 to a 1.78 ratio; the gallery captures are 1280px files at 409px, where body text inside them cannot be read.",
+   "before": "Demo captures under 2x and small in the gallery.",
+   "after": "Export the lead capture at 1452px wide in its frame's ratio, and open each gallery capture at full width on click.",
+   "why": "The demos are the page's evidence; soft or small captures weaken it.",
+   "test": "T-IMAGE-SIZE",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-015",
+   "tier": "Reflex",
+   "where": "'Final Result' and '39 Website Demos Gallery', pet-grooming.png used twice, 1440 (contact sheet #3 and #11)",
+   "evidence": "The repeats row records https://uupm.cc/thumbnails/pet-grooming.png twice: once as the 'Final Result' capture and again in the demo gallery.",
+   "before": "One capture shown in two sections.",
+   "after": "Use a different demo in the gallery slot, or link the 'Final Result' to the gallery entry.",
+   "why": "A repeated capture makes a gallery of 39 demos look thinner.",
+   "test": "T-ONE-REGISTER",
+   "source": "imagery"
+  },
+  {
+   "rule": "IMG-013",
+   "tier": "Reflex",
+   "where": "feature cards and CTA, 1440 (contact sheet #4, #6)",
+   "evidence": "The sweep records three 48px tinted icon tiles above feature headings (SLP-003), a lucide sparkles icon (SLP-015) and a rocket emoji above 'Ready to Build Beautiful Interfaces?' (chrome_glyphs). The icons table shows 46 unnamed SVGs at stroke widths of 1px, 1.5px, 2px and 3px beside six Lucide icons.",
+   "before": "Icon tiles, a sparkle, a rocket emoji and glyphs at four stroke widths.",
+   "after": "One icon set at one stroke width, no emoji and no sparkle.",
+   "why": "Mixed weights and an emoji break the set the page is meant to teach.",
+   "test": "T-ICON-SYSTEM",
+   "source": "imagery"
+  }
+ ],
+ "strengths": [
+  "The tool pills under the header use each owner's real mark (Claude Code, Cursor, Windsurf, GitHub Copilot, Codex and others) at one height.",
+  "The demo gallery shows real captures of pages the skill built, each named by its alt text ('SaaS Analytics Dashboard', 'Educational Platform')."
+ ],
+ "not_investigated": [
+  "No 00-contract.md: visitor mode inferred (Persuade (a UI design-intelligence skill for AI coding tools, 'UI UX Pro Max'); inferred from the install command, the GitHub star count and 'View Demos'.)",
+  "Demo captures past the first two gallery rows were not opened at full size",
+  "licence and credit of the material: the capture cannot see licences",
+  "Whether the demos were built with this skill: only the page's own labels say so"
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L35",
+ "target": "https://vercel.com/design/guidelines",
+ "url": "https://vercel.com/design/guidelines",
+ "width": 1440,
+ "captured": "2026-11-09",
+ "page_host": "vercel.com",
+ "images": [],
+ "backgrounds": [],
+ "svg_illustrations": [],
+ "media": [],
+ "decoration": [],
+ "empty_frames": [],
+ "placeholder_text": [
+  {
+   "where": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(5) > li.mb-3.text-copy-16:nth-of-type(14)",
+   "x": 380,
+   "y": 5081,
+   "w": 685,
+   "h": 48,
+   "share_of_viewport": 0.025,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forms",
+   "text": "Set placeholder to an example value or pattern e.g., &"
+  },
+  {
+   "where": "strong.font-medium.text-gray-1000\\/90 > a.relative.text-current > span.relative.z-10:nth-of-type(1)",
+   "x": 380,
+   "y": 5082,
+   "w": 139,
+   "h": 21,
+   "share_of_viewport": 0.002,
+   "screen": 6,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Forms",
+   "link": "#placeholder-value",
+   "text": "Placeholder value."
+  }
+ ],
+ "picture_sets": [],
+ "logo_rows": [],
+ "repeats": [],
+ "icons": {
+  "sets": {
+   "unnamed svg": {
+    "n": 2,
+    "sizes": {
+     "20x17": 1,
+     "16x16": 1
+    },
+    "paint": {
+     "filled": 2
+    },
+    "stroke_widths": {
+     "1px": 2
+    },
+    "glyphs": [
+     "Vercel Logo"
+    ]
+   }
+  },
+  "set_count": 1,
+  "count": 2,
+  "off_grid_sizes": 0,
+  "note": "set names come from class names and data-lucide; 'unnamed svg' is inline SVG with no set class (a custom set, a logo glyph or a hand-drawn icon: read it on the tile). Mixed fill and outline in one group is the sweep's mixed_icons (SLP-017).",
+  "rows": [
+   {
+    "where": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > a.focus-visible\\:outline-2.focus-visible\\:outline-focus > svg.block.w-5",
+    "y": 80,
+    "w": 20,
+    "h": 17,
+    "set": "unnamed svg",
+    "glyph": "Vercel Logo",
+    "paint": "filled",
+    "stroke_width": "1px",
+    "screen": 1,
+    "section": null
+   },
+   {
+    "where": "button.outline-none.m-0 > span.truncate.px-1\\.5 > div.relative.size-4 > div.absolute.transition-all:nth-of-type(2) > svg",
+    "y": 8310,
+    "w": 16,
+    "h": 16,
+    "set": "unnamed svg",
+    "glyph": null,
+    "paint": "filled",
+    "stroke_width": "1px",
+    "screen": 10,
+    "section": "Review Command"
+   }
+  ]
+ },
+ "phone": [],
+ "contact_sheet": "no picture large enough for a contact sheet",
+ "contact_sheet_375": "no picture large enough for a contact sheet",
+ "network": {
+  "mode": "direct",
+  "blocked_images": 0,
+  "blocked_examples": [],
+  "fonts_missing": []
+ },
+ "perf": {
+  "lcp_ms": 260,
+  "images_in_perf_pass": 0,
+  "note": "perf.json is a separate page load at 1440; bytes are matched by URL"
+ },
+ "stylesheet": {
+  "unreadable_sheets": 0,
+  "object_fit_rules": 5,
+  "note": "object-fit and object-position are inferred from class names and readable CSS; the DOM does not record them"
+ },
+ "hidden_content": {
+  "baseline": {
+   "visibleChars": 13516,
+   "totalChars": 13516
+  },
+  "reduced_motion": {
+   "visibleChars": 13516,
+   "totalChars": 13516
+  },
+  "observer_never_fires": {
+   "visibleChars": 13516,
+   "totalChars": 13516
+  },
+  "scripts_off": {
+   "visibleChars": 13516,
+   "totalChars": 13516
+  }
+ },
+ "sweep": {
+  "fake_people": {
+   "status": "ran",
+   "rule": "INT-003",
+   "n": 0,
+   "hits": []
+  },
+  "img_alt": {
+   "status": "ran",
+   "rule": "A11-005",
+   "n": 0,
+   "hits": []
+  },
+  "ai_sparkle": {
+   "status": "ran",
+   "rule": "SLP-015",
+   "n": 0,
+   "hits": []
+  },
+  "invented_mark": {
+   "status": "ran",
+   "rule": "SLP-016",
+   "n": 0,
+   "hits": []
+  },
+  "mixed_icons": {
+   "status": "ran",
+   "rule": "SLP-017",
+   "n": 0,
+   "hits": []
+  },
+  "emoji_icons": {
+   "status": "ran",
+   "rule": "SLP-013",
+   "n": 0,
+   "hits": []
+  },
+  "icon_tile": {
+   "status": "ran",
+   "rule": "SLP-003",
+   "n": 0,
+   "hits": []
+  },
+  "gradient": {
+   "status": "ran",
+   "rule": "SLP-007",
+   "n": 0,
+   "hits": []
+  },
+  "glow": {
+   "status": "ran",
+   "rule": "SLP-008",
+   "n": 0,
+   "hits": []
+  },
+  "neon_violet": {
+   "status": "ran",
+   "rule": "SLP-009",
+   "n": 0,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "n": 0,
+   "hits": []
+  },
+  "performance": {
+   "status": "ran",
+   "rule": "WEB-001",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "chrome_glyphs": {
+   "status": "ran",
+   "rule": "SLP-010",
+   "n": 0,
+   "hits": []
+  },
+  "contrast": {
+   "status": "ran",
+   "rule": "A11-001",
+   "n": 0,
+   "hits": []
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "counts": {
+  "images": 0,
+  "images_visible": 0,
+  "backgrounds": 0,
+  "content_pictures": 0,
+  "svg_illustrations": 0,
+  "svg_charts": 0,
+  "media": {},
+  "decoration": 0,
+  "icons": 2,
+  "icon_sets": 1,
+  "roles": {},
+  "content_hosts": {},
+  "stock_or_pack_or_ai": 0,
+  "broken": 0,
+  "blocked": 0,
+  "not_loaded": 0,
+  "upscaled": 0,
+  "large_under_2x": 0,
+  "ratio_changed": 0,
+  "with_filter": 0,
+  "text_over_pictures": 0,
+  "repeats": 0,
+  "empty_frames": 0,
+  "placeholder_text": 2,
+  "content_radii": [],
+  "imagery_share_of_page": 0.0,
+  "first_screen_imagery_share": 0.0,
+  "exhibit_rows": 0
+ }
+}

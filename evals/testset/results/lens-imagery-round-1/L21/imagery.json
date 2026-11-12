@@ -1,0 +1,67 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T11:58:46",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Every picture on the page is a diagram the tool itself drew: the hero exploded axonometric (contact sheet #2) and the 44 gallery plates (#4 to #12) are the product's own output in one plate frame and one accent.",
+  "score": {
+    "dimension": "Craft",
+    "value": 9,
+    "reason": "T-MATERIAL-SOURCE, T-ONE-REGISTER and T-DELETION pass: all 49 content pictures are the product's own diagrams, served from diagramdesign.dev at 2.7x to 6.8x density in one square plate with radius 0; the only gap is that each gallery plate is too small to read its labels (T-CAPTURE-READ). Cut to earn it: no stock, no decoration, no icon tiles, no gradient art."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-CAPTURE-READ",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-006",
+      "tier": "Reflex",
+      "where": "gallery plates, section 'Forty-four diagrams, one system', 1440 (tiles/1440-05.png, contact sheet #6 to #12)",
+      "evidence": "Each plate shows a 2400px-wide diagram scaled to 355 by 222px (density 6.76, object-fit contain). At that size the node labels and legends render at about 3 to 4px and cannot be read on the tile; each plate is a button, so the full diagram opens on click.",
+      "before": "44 thumbnails at 355 by 222px whose labels cannot be read in place",
+      "after": "Crop each thumbnail to one readable region of its diagram (a 2x detail of two or three nodes at real label size), or show fewer, larger plates per row",
+      "why": "The gallery sells label and density craft, and at this size the visitor sees only the shapes.",
+      "test": "T-CAPTURE-READ",
+      "source": "imagery",
+      "root": "gallery plate component (button.pl > span.pl-img)"
+    },
+    {
+      "rule": "IMG-015",
+      "tier": "Reflex",
+      "where": "featured axonometric plates and gallery plates 18 and 19, 1440 (tiles/1440-04.png)",
+      "evidence": "The table's repeats row lists exploded.webp and axonometric-plan.webp twice each: once in 'New: two axonometric types' at 553 by 346px and again as gallery plates 18 and 19.",
+      "before": "the two new axonometric diagrams shown in the feature row and again in the full gallery",
+      "after": "Keep them in the feature row and mark the gallery plates as 'new' without repeating the same frame, or feature a different example of each type",
+      "why": "A repeated frame on one page reads as padding in a gallery whose point is breadth.",
+      "test": "T-ONE-REGISTER",
+      "source": "imagery"
+    }
+  ],
+  "strengths": [
+    "The hero figure is the skill drawing itself (an exploded axonometric of its own five layers), labelled 'FIG. 01 · THE SKILL, DRAWN BY THE SKILL': the lead picture is the product at work.",
+    "The before and after pair (FIG. 02A, 02B) shows a real first-pass diagram beside the redrawn one; it is an exhibit, labelled as such, and it carries the page's argument.",
+    "One frame recipe throughout: square plates, radius 0, a mono caption strip, one orange accent across all 44 diagrams."
+  ],
+  "not_investigated": [
+    "visitor mode inferred (no 00-contract.md): Persuade (open-source skill landing page for a diagram tool)",
+    "phone crops: dom-375.json was not captured, so T-CROP-375 is not verified",
+    "the demo video (#demo, 1154 by 649px): manifest network.blocked lists demo-light.mp4 and demo-dark.mp4, so its footage and poster are not verified",
+    "skipped tests: T-LOGO-ROW, T-TEXT-ON-IMAGE (no matching content)",
+    "licences and credits: the capture cannot see licences",
+    "whether photographs show the client's own people, place or work: no 00-contract.md and no supplied-asset list, so judged from what the pictures show",
+    "images inside menus, carousels, tabs and dialogs the capture did not open",
+    "video content past its first frame",
+    "art direction between 375 and 1440 (only those two widths are compared)"
+  ]
+}
