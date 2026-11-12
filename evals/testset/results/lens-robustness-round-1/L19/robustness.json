@@ -1,0 +1,55 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T13:40:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade with Read (the home page of a design skill for agents, with a before-and-after hero, a testimonial marquee, a labelled gallery of AI-slop tells, a command console, a live demo, a 'design directions' card deck and documentation-style sections). The slop gallery, the before panels and the demo hotel page are exhibits shown on purpose; they are judged as exhibits, and the page's own layout is judged here. English only (html lang en at every width), no market named. No right-to-left language.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The layout is built for real content (20 breakpoints, 112 min-width: 0 rules, wrapping labels, no overflow at any width), but a quarter of the text needs script and the observer to appear, and the design-direction cards load 2,048px images into 300px slots.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WIDTHS, T-HOSTILE-CONTENT and T-TRUNCATION pass, but T-WEIGHT-FOR-JOB fails the largest-image budget on the card deck (ROB-018) and T-NO-SCRIPT loses 25% of the text (ROB-015, citing the sweep's ROB-001 Floors)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "'Give your design a different starting point.' card deck, div.worlds-hand-zone > ul.worlds-hand > li.worlds-card > div.worlds-card-media > img, 1440px",
+      "evidence": "highlife-sleeve-hero.webp (704 KiB) and digital-design-canon-greiman-hybrid-collage-hero.webp (692 KiB) are 2,048px wide and shown at about 302px (6.8 times oversize); ten oversized images total 2,341 KiB of the page's 2,373 KiB of images (performance.images.oversized_over_2.2x). The largest-image budget fails (700 KiB) and the transfer and image budgets warn.",
+      "before": "The card deck shows each design direction's full hero image as a card thumbnail.",
+      "after": "Serve 320px and 640px WebP thumbnails through srcset for the cards and load the 2,048px hero only on the direction's own page (draft ROB-167).",
+      "why": "Two cards in a deck cost 1.4 MB, more than the rest of the page's code, styles and fonts together, on a page a phone visitor scrolls through once.",
+      "root": "Card thumbnails taken from the full hero renditions",
+      "test": "T-WEIGHT-FOR-JOB"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page, scripts off and observer never fires, all widths",
+      "evidence": "With scripts off 5,397 of 7,492 characters are visible (share 0.72) and the scripts-off page has 221 fewer characters in total; with an observer that never fires 5,421 are visible (share 0.724) (resilience.hidden_content). The sweep's hidden_content detector records both as ROB-001 Floors (1,765 and 1,741 characters).",
+      "before": "About a quarter of the text is revealed by script or by an IntersectionObserver.",
+      "after": "Render the revealed sections visible in the HTML and arm the reveal only from script, with a timeout that shows everything (draft ROB-204); keep script for the console, the demo and the card deck.",
+      "why": "A reader without script, or whose observer does not fire, loses a quarter of the documentation-style sections.",
+      "test": "T-NO-SCRIPT"
+    }
+  ],
+  "strengths": [
+    "The document width equals the viewport at every width, and 20 breakpoints with 112 min-width: 0 rules let the hero, the slop gallery, the console and the documentation sections restack cleanly at 375 (tiles/375-00.png to tiles/375-11.png).",
+    "The console's intent buttons wrap at a phrase inside fixed tiles at 375 ('Make text easier to read' on three lines, tiles/375-05.png) instead of clipping, and file paths in the terminal panel stay inside their box (long_unbroken_strings).",
+    "75 of 81 images are lazy-loaded, 14 aspect-ratio rules reserve their space, and the lab LCP is 616 ms.",
+    "The testimonial marquee clamps long quotes inside fixed cards and runs in its own clipped track, so no quote pushes the layout.",
+    "The exhibit regions (the labelled slop tells, the before panels, the 'Welcome to Our Hotel' demo) are judged as exhibits; their deliberate faults are not counted against the page."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured. The page uses physical properties almost only (263 physical against 23 logical); a readiness note for an English-only page.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record). The one readable @font-face has font-display not set.",
+    "T-FAILURE-PATH and T-SLOW-LINE: the async runs on 'Book Now' and 'generate' navigated the page and are not verified.",
+    "T-EXTREME-COUNTS: '62 checks' and '184k' stars are fixed copy; the card deck's 'Showing 6 design directions' count was not exercised.",
+    "One stylesheet was cross-origin and unreadable; its rules are unknown, not absent. 25 requests were blocked by the capture.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Running text, cards and headings wrap and the page reads with scripts off at 99.5% of its text, but the install cards cut the shell commands at the card edge and only 1440 was captured.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-NO-SCRIPT and T-WEIGHT-FOR-JOB pass (1467 KiB known, LCP 500 ms), but T-TRUNCATION fails on the install commands (ROB-006) and T-WIDTHS could not run below 1440."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-006",
+      "title": "Wrap before truncating, and never truncate what matters",
+      "tier": "Reflex",
+      "where": "Install section, Claude Code and Codex cards (div.sheet.rise code lines), 1440px, tiles/1440-10.png",
+      "evidence": "The tile shows '/plugin marketplace add cathrynlavery/diagram-de' cut at the right edge of the Claude Code card and 'codex plugin marketplace add cathrynlavery/diagr' cut at the right edge of the Codex card, with no ellipsis. The table's long_unbroken_strings rows put the text's right edge on the box's right edge (text_right 939 against box_right 938; 1377 against 1378). The page declares no overflow-wrap rule.",
+      "before": "Each install command is one unbreakable line that the card cuts at its edge.",
+      "after": "Let the command lines wrap inside the card (white-space: pre-wrap; overflow-wrap: anywhere on the code lines), or give the block a visible horizontal scroll.",
+      "why": "The repository name is the part a visitor must read or retype, and the cut hides it. The COPY button helps only mouse users who trust it blind.",
+      "test": "T-TRUNCATION",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Exploded axonometric tag row (div.axo links: APP STACK, PHONE TEARDOWN, UNBOXING, PHONE, ANIMATED, UNBOXING, ANIMATED), 1440px, tiles/1440-04.png",
+      "evidence": "rows_without_room_for_35pct: five links in a 556px row with free_px 21 against needed_for_35pct_px 169. The stylesheet has no flex-wrap evidence for this row on the tile; the five labels already fill the column.",
+      "before": "Five uppercase tag links fill their column with 21px to spare.",
+      "after": "Let the tag row wrap (flex-wrap: wrap with a row gap).",
+      "why": "The page is English-only, so this is a readiness note: a longer gallery name or a translation will push the last tag out of line.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "Text reads with scripts off: 7889 of 7931 characters are visible (99.5% of baseline).",
+    "The hero heading, body copy and gallery captions wrap at phrases; no label wraps or clips at 1440.",
+    "Weight fits the job: 1467 KiB known, of which 1146 KiB is the demo video, and lab LCP is 500 ms.",
+    "The stylesheet uses aspect-ratio (4 rules) and min-width: 0 (3 rules) for the figure grids."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-WIDTHS at 375 and 1280: only 1440 was captured (medium recorded as diagram), so phone parity and the 640 and 900px breakpoints were not seen",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; 8 image entries are listed as not loaded but none is visible as a hole on the tiles",
+    "T-EXTREME-COUNTS: the only counts are fixed figures ('66k', '45 types')",
+    "contract: no 00-contract.md; inferred a Persuade landing page for an open-source skill, English only, international developer audience",
+    "the 545 characters hidden when IntersectionObserver never fires are the sweep's ROB-001 Floor (the .rise reveal); not repeated here"
+  ],
+  "disputes": []
+}

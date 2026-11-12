@@ -1,0 +1,56 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T10:30:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a landing page for an AI tool-stack picker, with sample stacks and a tool directory), English only (html lang en at every width), an Indian market (the footer says 'Prices are approximate monthly amounts in INR'). No right-to-left language.",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "Cards and grids reflow well at every width, but the whole page is rendered by script and is blank with scripts off, and the sample stacks cut each tool's task with an ellipsis even at 1440.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-NO-SCRIPT fails completely on a marketing page (ROB-015, citing the sweep's ROB-001 Floor) and T-TRUNCATION fails on the stack step lines (ROB-006), while T-WIDTHS and T-WEIGHT-FOR-JOB pass."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page (Base44 single-page app, assets/index-DVCafgGk.js), all widths",
+      "evidence": "With scripts off the page has 0 visible and 0 total characters against 2,766 in the baseline (resilience.hidden_content.scripts_off; scripts_off_note 'no text at all with scripts off'). The sweep's hidden_content hit (ROB-001, Floor) records the same 100%. The headline, the goal picker, the sample stacks, the directory and the footer all come from one 211 KiB script.",
+      "before": "An empty root element that a 211 KiB client bundle fills on load.",
+      "after": "Prerender the landing route to static HTML and hydrate the goal picker and the Compare buttons on top.",
+      "why": "A visitor whose script fails or is blocked sees a blank page, and so do crawlers and link previews that do not run script.",
+      "root": "Client-only rendering of the landing route",
+      "test": "T-NO-SCRIPT"
+    },
+    {
+      "rule": "ROB-006",
+      "title": "Wrap before truncating, and never truncate what matters",
+      "tier": "Reflex",
+      "where": "Sample stack cards, ol.mt-5 > li.flex.min-w-0 > span.min-w-0.truncate (5th step, 'Research SEO and competitors'), 375, 1280 and 1440px",
+      "evidence": "The table lists the step label as nowrap and clipped in a 163px box at 375 and a 180px box at 1280 and 1440, with the truncate class (ellipsis rule matches). tiles/1440-02.png and tiles/375-03.png show 'Research SEO and compet…' and 'Research SEO and com…' in the Zero-Cost and Smart Starter stacks, while the cards have free height below.",
+      "before": "Each step's task is a single truncated line, cut at every captured width.",
+      "after": "Let the task wrap to two lines (drop truncate, keep min-width: 0 on the flex child), or line-clamp it at 2 and keep 'See full stack' as the way to the full text.",
+      "why": "The task is what tells the visitor why each tool is in the stack. A longer task, or the same task in another language, would lose most of its words.",
+      "root": "The stack step row component",
+      "test": "T-TRUNCATION"
+    }
+  ],
+  "strengths": [
+    "The goal cards, stack cards and directory cards stack cleanly at 375 and let names and descriptions wrap (tiles/375-01.png, tiles/375-05.png); the document width equals the viewport at every width.",
+    "Prices use one currency and one grouping ('₹1,749', '₹7,949', 'Free · from ₹1,800/mo'), and the footer states that amounts are approximate monthly INR.",
+    "The page weighs 232 KiB over 8 requests, with an LCP of 616 ms in the lab, inside every budget.",
+    "The truncated step labels use a real ellipsis and a 'See full stack' link, so the cut text has a way back."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long tool names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; the goal picker's next questions and the Compare tray were not opened.",
+    "T-EXTREME-COUNTS: the compare count was never shown; '23 hand-picked tools' is fixed copy.",
+    "The goal-card descriptions hidden at 375 are the sweep's phone_parity hit (ROB-002); cited, not repeated.",
+    "The 'Edit with Base44' badge is host chrome fixed over the goal cards at 1440 and 375; it is the host's, not the design's.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

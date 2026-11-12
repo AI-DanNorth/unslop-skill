@@ -1,0 +1,54 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T13:55:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade with Read (the site of an open-source design skill, with a hero carrying an install command and a tabbed demo of example builds, a scrolling 20-step 'draw' list, feature sections, before-and-after builds, an install card with tabs, sponsors and an FAQ). The example builds (a German coffee shop 'Bohne & Söhne', the NoteFlow before-and-after, the dashboard with '€38.4k') are exhibits and judged as exhibits. English only (html lang en at every width), no market named. No right-to-left language. Capture prep ran 12 scroll frames at every width.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The page holds at every width and reads fully with scripts off, but 84% of its text waits on an IntersectionObserver to appear, and the lab LCP is 3.8 s behind 102 requests and a 199 KiB font file.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-WIDTHS, T-HOSTILE-CONTENT and T-NO-SCRIPT pass, but T-HIDDEN-CONTENT fails when the observer never fires (ROB-015, citing the sweep's ROB-001 Floor) and T-WEIGHT-FOR-JOB warns on LCP, requests and font weight (ROB-018)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Revealed sections below the hero (the draw list, feature sections, before-and-after, install, FAQ), observer never fires, all widths",
+      "evidence": "With an observer that never fires only 840 of 5,385 characters are visible (share 0.156), while with scripts off 5,355 are visible (share 0.997) and with reduced motion 5,360 (resilience.hidden_content). So script arms the sections as hidden and only the observer shows them. The sweep's hidden_content hit (ROB-001, Floor) records 3,513 characters (81%) invisible. Even the scrolled baseline shows only 4,353 of 5,372 characters (share 0.81).",
+      "before": "Script hides each section on load and waits for IntersectionObserver to reveal it.",
+      "after": "Arm the reveal only for sections the observer has reported below the fold, and add a timeout that shows every section after 2 s (draft ROB-204); the reduced-motion path already shows everything and can be the fallback.",
+      "why": "In a browser where the observer is throttled or never fires, the visitor sees the hero and almost nothing else; even after a normal scroll a fifth of the text was still hidden.",
+      "root": "The section reveal script",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Whole page, performance (perf.json); font file _next/static/media/9ef465ce7ba5114b…woff2, 1440px",
+      "evidence": "The lab LCP is 3,828 ms, in the warn band above 2,500 ms (sweep performance hit). The page makes 102 requests (warn), 27 of them script files (288 KiB). Two font files weigh 233 KiB (font budget warn), one of them 199 KiB, the heaviest file on the page, for 'Google Sans Flex', the face of the hero head. Images are light (230 KiB, 48 of 54 lazy).",
+      "before": "A variable display face of 199 KiB and 27 script chunks load before the hero settles.",
+      "after": "Subset the hero face to the Latin range and the weights the page uses, preload it, and defer the demo and draw-list scripts until after first paint.",
+      "why": "A phone visitor waits close to four seconds for the main heading of a page whose job is a one-line install.",
+      "test": "T-WEIGHT-FOR-JOB"
+    }
+  ],
+  "strengths": [
+    "With scripts off 99.7% of the text is in the HTML, so the content does not depend on script, only on the reveal.",
+    "The layout holds at every width (document width equals the viewport; 15 breakpoints and 55 min-width: 0 rules), the install command 'npx skills add Leonxlnx/taste-skill' stays whole inside its box at 375, and the hero tabs and FAQ links wrap at a phrase (tiles/375-00.png, tiles/375-15.png).",
+    "All 21 @font-face rules use font-display: swap with unicode-range subsets.",
+    "The demo builds and before-and-after pages are framed as labelled exhibits ('Before and after', 'Step 1 of 4'), so their sample content and formats are not the page's own."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured. The page uses physical properties mostly (163 physical against 26 logical); a readiness note for an English-only page.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record). The fonts swap with no metric overrides, so the 3.8 s hero head may reflow on swap; not measured.",
+    "T-FAILURE-PATH and T-SLOW-LINE: the only action found, 'Copy: npx skills add Leonxlnx/taste-skill', showed no visible response at 0.5 s or 2 s in the slow run; action feedback is CMP-001's.",
+    "T-LOCALE-FORMAT: the euro amounts and '9 %' sit inside the exhibit builds, not in the page's own copy.",
+    "T-EXTREME-COUNTS: '112.1k' stars and '247 curated sites' are fixed copy.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

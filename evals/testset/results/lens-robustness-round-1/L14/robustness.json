@@ -1,0 +1,43 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:20:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a one-page landing page for 'lumina.' with a hero, a mock dashboard card, a marquee strip and three feature cards). The footer labels it 'Fictional product · Impeccable design-pattern example', so it is a specimen page; it is judged here as the layout that ships. English only (html lang en at every width), no market named. No right-to-left language.",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page is static HTML that reads fully without script, weighs almost nothing and has a phone layout at 650px; its one brittle slot is the rotated 'BUILT DIFFERENT.' sticker, which covers the mock window's title and pushes the page 9px past the screen at 375.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-NO-SCRIPT, T-WEIGHT-FOR-JOB and T-HOSTILE-CONTENT pass, and T-WIDTHS fails once on the sticker over the window bar at 375 and 1440 (ROB-009, with the sweep's ROB-003 overflow Floor)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Hero mock dashboard, div.dashboard-wrap > div.sticker ('BUILT DIFFERENT.') over div.window-bar > span 'YOUR_NEXT_BIG_THING.exe', 375 and 1440px",
+      "evidence": "At 375 the absolutely placed sticker spans x 263 to 383 and y 644 to 764 (dom-375), on top of the window-bar title at x 204 to 342, y 700. tiles/375-00.png shows the title cut to 'YOUR_NEXT_BI'; tiles/1440-00.png shows the same title half under the sticker. The sticker's 8px past the viewport makes the page 384px wide at 375, which the sweep's overflow detector records as a ROB-003 Floor.",
+      "before": "A rotated sticker placed at a fixed offset over the top-right corner of the window card, with no room reserved and no clip.",
+      "after": "Move the sticker inside the card's right padding (inset-inline-end: 0 and a negative top only), or clip the hero with overflow: clip, and right-align the window title away from it.",
+      "why": "The sticker hides the card's title and makes the phone page scroll sideways by a few pixels, and any longer title is hidden further.",
+      "test": "T-WIDTHS"
+    }
+  ],
+  "strengths": [
+    "All 730 characters are in the HTML and stay visible with scripts off, with an observer that never fires and with reduced motion.",
+    "The page weighs about 1 KiB known over 5 requests, with an LCP of 360 ms in the lab, and draws its icons and sticker as inline SVG.",
+    "A 650px breakpoint stacks the hero, the dashboard card and the feature cards one per row at 375 (tiles/375-00.png to tiles/375-02.png), and the buttons keep their labels on one line.",
+    "The long token 'YOUR_NEXT_BIG_THING.exe' (23 characters) stays inside its 138px box at 375 (long_unbroken_strings)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions, and no image failed.",
+    "T-EXTREME-COUNTS: the mock card's '75%' is fixed sample copy.",
+    "At 375 the two nav links ('The good stuff', 'How it works') are hidden with no menu; they are in-page anchors to sections a phone reader scrolls to anyway.",
+    "One stylesheet was cross-origin and unreadable; its rules are unknown, not absent. Capture prep blocked /js/detect-antipatterns-browser.js, the host's overlay script.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A lean guidelines portal whose tiles hold one-word titles with room, whose text wraps at every width and which loads nine requests; the only gap is physical-only CSS.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-WIDTHS, T-HOSTILE-CONTENT and T-WEIGHT-FOR-JOB pass (9 requests, LCP 1736 ms); T-RTL-READY leaves a readiness note (ROB-013)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-013",
+      "title": "Ready for right-to-left",
+      "tier": "Finish",
+      "where": "Readable stylesheet, all widths",
+      "evidence": "css: 32 physical properties (left 19, right 11, padding-left 2) and 0 logical, no [dir] rules, no mirroring rules.",
+      "before": "Positioning is written in left and right only.",
+      "after": "Use inset-inline-start and margin-inline-start for the tile positions when the portal adds a right-to-left language.",
+      "why": "Readiness note only: the portal is English and the page does not name a right-to-left market.",
+      "test": "T-RTL-READY",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The section tiles hold one-word titles with room; the titles wrap if needed (white-space normal) and nothing clips at any width (tiles/1280-02.png).",
+    "The intro statement wraps at 375 and 1280 and the document matches every viewport width.",
+    "The page is lean: 9 requests and lab LCP 1736 ms.",
+    "Most text reads with scripts off (491 of 699 characters against 560 in the baseline), and the sweep found no hidden-content hit."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "true weight: bytes known for 2 of 9 requests, and the main Webflow stylesheet could not be read",
+    "which 69 characters are missing with scripts off: hidden.json records counts only",
+    "T-FAILURE-PATH: async found no primary actions",
+    "the section pages behind each tile (Framework, Voice & Tone, Logo and others) were not captured",
+    "contract: no 00-contract.md; inferred a Read portal for brand guidelines, English only"
+  ],
+  "disputes": []
+}

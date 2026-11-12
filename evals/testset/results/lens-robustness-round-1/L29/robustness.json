@@ -1,0 +1,83 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The WebGL game is the content, but the page carries no HTML text at all, has no poster or fallback without script, and loads a 2.2 MB music track before the visitor starts.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-NO-SCRIPT fails with no text in the DOM (ROB-015), T-WEIGHT-FOR-JOB fails at 5698 KiB (ROB-018) and T-TRANSLATE fails on the canvas title (ROB-011)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-SLOW-LINE",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page, all widths, tiles/1440-00.png and tiles/375-00.png",
+      "evidence": "resilience.hidden_content: visible_chars 0 and total_chars 0 in every condition (baseline, reduced motion, observer never fires, scripts off); fonts.json drew no text. The title 'MESSENGER' and the start button are geometry in the canvas (tiles/375-00.png).",
+      "before": "Everything, including the title and the start button, exists only inside the WebGL canvas.",
+      "after": "Put an HTML title, a one-line description and a start button over a poster image, and show a message when script or WebGL is missing.",
+      "why": "Without script, without WebGL or before the assets arrive, the visitor sees a blank teal screen with no name and no way in.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness",
+      "root": "canvas-only page"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "First load, all widths",
+      "evidence": "performance: 5698 KiB known across 108 requests (transfer_kib fail; budget 1500 to 3000). The heaviest file is bgmusic-highq.ogg at 2257 KiB, then App3D JS 493 KiB, planet.drc 329 KiB, the basis transcoder 227 KiB and a 217 KiB font. LCP was not measured because nothing in the DOM paints.",
+      "before": "The page loads the high-quality music track with the scene, before the visitor presses start.",
+      "after": "Load the music after the first interaction, start with a low-quality stream, and load the 3D assets the intro needs first.",
+      "why": "Weight is the content of a game, but 2.2 MB of audio buys nothing until sound plays, and on a phone line it delays the planet.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Title and start button, 375px, tiles/375-00.png",
+      "evidence": "The title 'MESSENGER' is built from 3D blocks and the yellow start button label is drawn in the canvas; the DOM holds no text to translate (language.scripts_share is empty).",
+      "before": "The only words on the screen are set in geometry.",
+      "after": "Mirror the title and the start label in HTML so translation, screen readers and search can reach them.",
+      "why": "No translation tool, screen reader or search engine can read the name of the piece or the label of its only action.",
+      "test": "T-TRANSLATE",
+      "source": "robustness",
+      "root": "canvas-only page"
+    }
+  ],
+  "strengths": [
+    "The canvas fills each viewport with no sideways scroll, and the 375 layout recomposes the title for a phone (tiles/375-00.png).",
+    "html lang is set to en."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-TRUNCATION, T-LOCALE-FORMAT and T-EXTREME-COUNTS: no DOM text",
+    "T-FAILURE-PATH: no primary actions in the DOM; the in-canvas loader, if any, was not measured",
+    "contract: no 00-contract.md; inferred an Experience piece (a WebGL game), English, international audience"
+  ],
+  "disputes": []
+}

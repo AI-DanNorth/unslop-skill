@@ -1,0 +1,80 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Clamped changelog entries link to their full text, empty slots leave no hole and the layout fits every width, but the page makes 248 requests with LCP 3.5 s and a sixth of its text needs script.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-TRUNCATION, T-HOSTILE-CONTENT and T-WIDTHS pass; T-WEIGHT-FOR-JOB (ROB-018, 248 requests) and T-NO-SCRIPT (ROB-015) fail."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-FAILURE-PATH",
+    "T-SLOW-LINE",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Whole page, all widths",
+      "evidence": "performance: 248 requests (requests fail; budget 60 to 110), 197 of them script files and 46 stylesheets; bytes are known for only 3 of 248. The sweep's performance hit (WEB-001) records lab LCP 3488 ms (warn over 2500).",
+      "before": "The home page fetches about two hundred script chunks before the hero settles.",
+      "after": "Bundle the landing route's scripts into a few chunks and defer the product-demo panels until they scroll into view.",
+      "why": "On a phone line each request costs a round trip; the LCP is already past the 2.5 s warning in the lab.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Product demo panels and lower sections, all widths",
+      "evidence": "resilience.hidden_content.scripts_off: 5573 of 7149 characters visible (74.9% of baseline); the sweep's hidden_content hit (ROB-001, Floor) records 1102 characters (17%) invisible with JavaScript off.",
+      "before": "A sixth of the page's text appears only after script runs.",
+      "after": "Ship the demo copy in the server HTML and let script animate it, not create it.",
+      "why": "Visitors whose bundle fails, or search previews, lose the product descriptions that sell the page.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "Changelog descriptions clamp to two lines with an ellipsis and each entry links to its full page (tiles/1440-08.png); the 'Mobile Diffs' entry has no description and leaves no hole.",
+    "The stylesheet declares 12 ellipsis classes and 3 line-clamp classes, and has [dir=\"rtl\"] and [dir=\"ltr\"] rules with 303 logical properties.",
+    "The hero heading wraps cleanly at 375 (tiles/375-00.png) and the document matches every viewport width.",
+    "The demo's primary actions answer within 0.5 s when held slow (resilience.async).",
+    "Times use one 12-hour style ('4:34 PM')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "true page weight: bytes known for 3 of 248 requests",
+    "the failed path for the demo actions: the slow run made no same-origin request, so there was nothing to fail",
+    "the visually hidden h1 span (1px box, 'The product development system for teams and agents') is screen-reader text, not a clipped label",
+    "the 935 words hidden at 375 are the sweep's phone_parity hit (ROB-002): the product mock is cropped on phones",
+    "the footer legal row (Privacy, Terms, Other Policies, DPA, AUP) has 1px free at 1280; footer, not raised",
+    "contract: no 00-contract.md; inferred a Persuade product home page, English, international audience"
+  ],
+  "disputes": []
+}

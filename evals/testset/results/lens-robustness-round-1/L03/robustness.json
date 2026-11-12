@@ -1,0 +1,54 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T10:20:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a landing page for an AI tool recommender, with a featured-tools directory), English only (html lang en at every width), an Indian market (every price is in rupees, '₹1,650'). No right-to-left language.",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "The layout wraps and stacks cleanly at every captured width, but the whole landing page is rendered by script and shows no text at all with scripts off.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-NO-SCRIPT fails completely on a marketing page (ROB-015, citing the sweep's ROB-001 Floor), while T-WIDTHS, T-HOSTILE-CONTENT and T-WEIGHT-FOR-JOB pass."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page (Vite single-page app, assets/index-DLxzFw0P.js), all widths",
+      "evidence": "With scripts off the page has 0 visible and 0 total characters against 2,145 in the baseline (resilience.hidden_content.scripts_off; scripts_off_note 'no text at all with scripts off'). The sweep's hidden_content hit (ROB-001, Floor) records the same 100%. The headline, the navigation, the goal cards and 'Find my stack' all come from one 67 KiB script.",
+      "before": "An empty root element that a 67 KiB client bundle fills on load.",
+      "after": "Prerender the landing route to static HTML at build time (Vite SSG or a static export) and hydrate the goal picker and the compare buttons on top.",
+      "why": "A visitor whose script fails, is blocked or arrives late sees a blank page, and so do crawlers and link previews that do not run script. A landing page has one visit to make its case.",
+      "root": "Client-only rendering of the landing route",
+      "test": "T-NO-SCRIPT"
+    },
+    {
+      "rule": "ROB-017",
+      "title": "Loading never moves what the visitor is reading",
+      "tier": "Reflex",
+      "where": "Stylesheet @font-face rules for Inter and Plus Jakarta Sans, hero h1 'Tell us the goal. We'll build the stack.', all widths",
+      "evidence": "The readable stylesheet declares 2 @font-face rules with font-display not set and no metric overrides (css.font_face: font_display {'not set': 2}, metric_overrides 0). Plus Jakarta Sans draws 453 characters, including the two-line hero head (fonts.families_drawn).",
+      "before": "Web fonts loaded with the default block period and no metric-matched fallback.",
+      "after": "Set font-display: swap and add size-adjust, ascent-override and descent-override to a local fallback face for both families (draft ROB-180).",
+      "why": "On a slow line the hero text stays invisible for up to 3 s, then reflows when the face arrives, because the fallback's metrics differ.",
+      "test": "T-LAYOUT-SHIFT"
+    }
+  ],
+  "strengths": [
+    "The goal cards, featured-tool cards and step cards stack one or two per row at 375 and let names, descriptions and tag chips wrap (tiles/375-01.png, tiles/375-04.png); no text_risk row and no equal-height card group was found.",
+    "The page weighs 73 KiB over 4 requests with an LCP of 584 ms in the lab, inside every budget.",
+    "Prices use one currency and one grouping throughout ('₹1,650', '₹4,000', '₹415'), matching the rupee audience.",
+    "The 'Add to compare' buttons answered within 0.5 s in the slow run without waiting on a request."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long tool names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The fail run of each 'Add to compare' action was skipped because the slow run made no request; the compare view and the 'Find my stack' wizard were not opened.",
+    "T-EXTREME-COUNTS: the compare tray count was not shown in any capture; '20+ curated tools' is fixed copy.",
+    "The 'Made in Bolt' badge is host chrome fixed over the goal cards at 1440 and 375 (tiles/1440-00.png); it is the host's, not the design's.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

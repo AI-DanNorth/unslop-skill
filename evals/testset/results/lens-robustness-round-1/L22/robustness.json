@@ -1,0 +1,74 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The fixed 1920 slide holds its copy, but the Chinese runs set in Latin-only stacks fall back to SimSun and half the slide's text needs script to appear.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-SCRIPT-COVERAGE fails (ROB-014: SimSun draws Chinese in 9 nodes) and T-NO-SCRIPT fails on the step lists (ROB-015); T-WEIGHT-FOR-JOB passes at 152 KiB."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-014",
+      "title": "Each language and script is declared and has its face",
+      "tier": "Reflex",
+      "where": "Kicker, panel names, step text and reaction line (div.kicker, span.name, span.text, span.reaction), 1920px, tiles/1920-00.png",
+      "evidence": "fonts.nodes_with_glyphs_from_an_undeclared_face: 'A real task from yesterday · 一个昨晚刚发生的真实场景。' declares \"Source Serif 4\", serif and SimSun drew 13 glyphs; '「呃，能用，但…」' 14 SimSun glyphs; '检查点 1：先答四问' 8; '通用 AI / Agent' 2; 'huashu-design 启动后' 3. Even nodes that declare \"Noto Serif SC\" ('没有问任何问题', 11 glyphs; the scene title, 9 glyphs) were drawn partly by SimSun. families_drawn lists SimSun at 139 glyphs and NSimSun at 11.",
+      "before": "Chinese words inside Latin serif stacks, and characters missing from the loaded Noto Serif SC subset, fall back to the system face.",
+      "after": "Add \"Noto Serif SC\" to every stack that sets Chinese (\"Source Serif 4\", \"Noto Serif SC\", serif) and load the subset that covers the slide's characters (self-hosted subset or unicode-range slices).",
+      "why": "On Windows the title and kicker mix two Han designs in one line; on a Mac or phone a different system face draws them, so the slide looks different on every machine that presents it.",
+      "test": "T-SCRIPT-COVERAGE",
+      "source": "robustness",
+      "root": "font stacks without a CJK face"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Both step lists (div.step.show) and output panels, 1920px, tiles/1920-00.png",
+      "evidence": "resilience.hidden_content.scripts_off: 332 of 640 characters visible (51.9%); the sweep's hidden_content hit (ROB-001, Floor) records 308 characters (48%) invisible with JavaScript off. The steps carry a script-added .show class and the slide has a REPLAY control, so script stages them.",
+      "before": "The numbered steps on both sides of the comparison appear only when script adds .show.",
+      "after": "Render the steps visible in the HTML and let script hide and replay them only after it runs (a .js class on html gates the hidden state).",
+      "why": "A slide exported to PDF, opened in a reader view or shown on a locked-down machine loses the half of the comparison that carries the argument.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The slide is light: one stylesheet request of 152 KiB and lab LCP 416 ms.",
+    "Headings and step text wrap inside their columns; nothing clips at 1920.",
+    "html lang is set to zh, matching the main language of the slide."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-WIDTHS: slide medium at a fixed 1920 stage; other widths and phone parity were not captured",
+    "T-FAILURE-PATH: the three output previews are embedded pages listed as not loaded (the slide's own URL three times); the tile shows them drawn, so no failure path was seen",
+    "T-RTL-READY: a single-language Chinese slide never flips",
+    "T-EXTREME-COUNTS: counts are fixed figures ('5 SEC', '3 OUTPUTS')",
+    "lang_script_mismatch ('lang=zh but most letters are latin'): the English phrases are not marked lang=\"en\"; noted, not raised, because Chinese is the slide's language",
+    "contract: no 00-contract.md; inferred one slide of a Chinese presentation deck (Persuade), audience in China (WeChat)"
+  ],
+  "disputes": []
+}

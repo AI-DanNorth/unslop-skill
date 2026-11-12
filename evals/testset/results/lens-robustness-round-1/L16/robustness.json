@@ -1,0 +1,44 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:50:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: an app screen (the same 'Northline weekly ops' dashboard restyled, with stat cards, segmented filters, an Urgent table, pending items, an insight note and contact actions). The masthead labels it 'After, from nextlevelbuilder/ui-ux-pro-max-skill' and the footer links the shared 'before', so it is a styled fixture; it is judged here as the layout that ships. Visitor mode Operate. English only (html lang en), US formats ('$18,400', '9:14am'). No right-to-left language.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The markup reads fully with scripts off and the layout stacks sensibly at 375, but every section below the first screen is held at opacity 0 by a GSAP ScrollTrigger reveal, and in the capture the Urgent table, the pending list and the actions never appeared at 375.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-HIDDEN-CONTENT fails on the working sections of an operations dashboard (ROB-015, with the sweep's phone_parity hit), while T-NO-SCRIPT, T-WEIGHT-FOR-JOB and T-HOSTILE-CONTENT pass."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB", "T-EXTREME-COUNTS"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "main > section.reveal:nth-of-type(3) to section.panel.reveal:nth-of-type(6) (Urgent table, Pending, Empty, Reach them), 375px; sections 5 and 6 at 1440px",
+      "evidence": "After load and scrolling, dom-375 records sections 3 to 6 with opacity 0 and not visible, while sections 1 and 2 are at opacity 1; at 1440 sections 5 and 6 stay at opacity 0. tiles/375-01.png and tiles/375-02.png are blank screens where the Urgent table and the pending list belong, and tiles/1440-01.png shows an empty band above the footer. The page loads gsap.min.js and ScrollTrigger.min.js. With reduced motion or scripts off all 1,161 characters are visible (resilience.hidden_content), so the reveal script alone hides them. The sweep's phone_parity hit records 124 words hidden at 375; the share stayed under the hidden_content threshold.",
+      "before": "Dashboard sections start at opacity 0 and wait for a ScrollTrigger reveal that did not fire.",
+      "after": "Render the sections visible and animate only from a class that script adds, with a timeout that forces them visible (drafts ROB-202, ROB-204), or drop the reveal on the working sections of the dashboard.",
+      "why": "An operator on a phone, or on any device where the scroll trigger misfires, sees empty space where the urgent accounts, the drafted reply and the follow-up actions should be.",
+      "root": "The .reveal class driven by GSAP ScrollTrigger",
+      "test": "T-HIDDEN-CONTENT"
+    }
+  ],
+  "strengths": [
+    "With scripts off the full dashboard is in the HTML (scripts_off share 1.0), so the content itself does not depend on script.",
+    "The page weighs 42 KiB over 5 requests with an LCP of 388 ms in the lab.",
+    "The Urgent table sits in a div.table-wrap with a screen-reader caption, and at 375 the stat cards and the segmented filters stack one per row (tiles/375-00.png); the long repo URL in the footer wraps inside its box.",
+    "Money and changes use one style throughout ('$18,400', '$6,200', '12%'), with direction given in words for screen readers ('Down', 'Up')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long account names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "'Remove filter Owner: Ada' showed no response at 0.5 s or 2 s in the slow run; the fail run was skipped because it made no request. Action feedback is CMP-001's.",
+    "The nowrap-clipped rows are sr-only captions and labels, clipped by design; not a finding.",
+    "The 'Powered by Vibe Rooster' badge is host chrome fixed at the bottom right.",
+    "One stylesheet was cross-origin and unreadable; its rules are unknown, not absent.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

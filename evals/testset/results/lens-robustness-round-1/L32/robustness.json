@@ -1,0 +1,63 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Every slot wraps, the page reads fully with scripts off, weighs 150 KiB and fits every width; only the physical-only stylesheet leaves a right-to-left readiness note.",
+  "score": {
+    "dimension": "Usability",
+    "value": 9,
+    "reason": "T-NO-SCRIPT (2510 characters with scripts off, the full text), T-WEIGHT-FOR-JOB (7 requests, 150 KiB, LCP 396 ms), T-WIDTHS (inline links wrap at 375, no overflow) and T-LOCALE-FORMAT ('15 October 2026') pass; what keeps it from 10 is the physical-only CSS (ROB-013, Finish)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-013",
+      "title": "Ready for right-to-left",
+      "tier": "Finish",
+      "where": "Readable stylesheet, all widths",
+      "evidence": "css: 333 physical properties (margin-left 65, margin-right 65, padding-left 60, float 16) and 0 logical, no [dir] rules.",
+      "before": "Spacing and floats are written in left and right only.",
+      "after": "Move the frontend's spacing to logical properties (margin-inline-start, padding-inline) as components are touched.",
+      "why": "Readiness note only: the design system serves English government services; services that publish in Arabic or Urdu would need mirrored layouts.",
+      "test": "T-RTL-READY",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The page reads with scripts off: 2510 characters visible, all of the text.",
+    "Inline links wrap mid-phrase at 375 ('upcoming components and patterns', 'GOV.UK Design System Roadmap', tiles/375-03.png) instead of clipping.",
+    "The stylesheet declares overflow-wrap on tags, panels and summary lists and a text-break-word utility, and 14 text-wrap balance or pretty rules.",
+    "The page weighs 150 KiB in 7 requests with lab LCP 396 ms; two font files.",
+    "Dates use the unambiguous long day-first form ('15 October 2026')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-FAILURE-PATH: async found no primary actions",
+    "T-EXTREME-COUNTS: no counts or lists with variable length",
+    "contract: no 00-contract.md; inferred a Read documentation home page for UK government services, English"
+  ],
+  "disputes": []
+}

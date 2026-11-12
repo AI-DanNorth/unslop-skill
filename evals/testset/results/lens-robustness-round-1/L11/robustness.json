@@ -1,0 +1,67 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T11:50:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: an app screen (a console-style game launcher and store in one 100dvh stage: a featured game's details and actions above a game carousel, a top bar with search and account actions, a cart). Visitor mode Operate with Experience (game browsing with keyboard and gamepad hints). English only (html lang en at every width), prices in dollars ('$0.49'). No right-to-left language. Capture prep clicked 'Use essential only' and the 'click anywhere to enter fullscreen' prompt at every width.",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The launcher is laid out for one viewport height and one description length: at 1440 the game carousel covers the Play and Add to cart actions, and at 1280 the game's details slide up under the top bar.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-WIDTHS and T-HOSTILE-CONTENT fail on the first screen at both desktop widths (ROB-009, ROB-008), with primary actions and the game details hidden at common sizes; T-WEIGHT-FOR-JOB passes."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB", "T-EXTREME-COUNTS"],
+  "findings": [
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Featured game actions (div.gg-desktop-actions > button 'PLAY', button 'ADD TO CART — $0.49') under the game carousel, 1440px (viewport 1440 by 900)",
+      "evidence": "At 1440 the 'ADD TO CART — $0.49' button sits at y 604 to 652 (dom-1440) while the carousel cards start at about y 590. tiles/1440-00.png shows the purple Play button cut to 'P' and the cart button showing through behind the second and third cards. The 'Featured Games' caption (y 545) is printed over the 'Follow game' button.",
+      "before": "The details and actions block is placed from the top, and the carousel is pinned to the bottom of a 100dvh stage, with no rule that keeps them apart.",
+      "after": "Lay the stage out as a grid with rows (header auto, details 1fr with min-height: 0 and its own scroll, carousel auto), so the carousel always starts below the actions at any viewport height.",
+      "why": "On a common 1440 by 900 screen the visitor cannot see or reach Play or Add to cart for the featured game, the two actions the screen exists for.",
+      "root": "The 100dvh launcher stage with absolutely placed regions",
+      "test": "T-WIDTHS"
+    },
+    {
+      "rule": "ROB-008",
+      "title": "Boxes grow with their content",
+      "tier": "Reflex",
+      "where": "Featured game details (div.text-cyan-400 'Studio: Team Xonotic', ESRB box, description), under the top bar, 1280px (viewport 1280 by 800)",
+      "evidence": "At 1280 the details block starts at y 3 ('Studio: Team Xonotic', dom-1280), inside the 88px top bar. tiles/1280-00.png shows 'Studio', 'Genre' and 'Released' printed over the GG logo and the search field, the ESRB 'Teen' box over the search field, and the game logo missing. The description is already cut with an ellipsis after two lines ('Xonotic…').",
+      "before": "The details block is anchored to the bottom of the action row and grows upward, so 100px less viewport height pushes it into the header.",
+      "after": "Anchor the details to the top of the area below the header and let a longer description clamp at three lines with a 'More' link to the game page.",
+      "why": "A game with a longer title, two genres or a longer studio name will cover the search field and the account actions on any laptop screen shorter than 900px.",
+      "root": "The 100dvh launcher stage with absolutely placed regions",
+      "test": "T-HOSTILE-CONTENT"
+    },
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Top bar, button 'Enter Fullscreen' (div.absolute.top-4) over button 'Install App', 1280 and 1440px",
+      "evidence": "The 'Enter Fullscreen' button is absolutely placed at x 654, y 16 at 1440 (x 574 at 1280) and covers the 'Install App' button at x 606, y 26 (dom-1440). tiles/1440-00.png shows 'Install App' half hidden and the 'Join our Discord' icon covered.",
+      "before": "A floating fullscreen button centred over the top bar's action row.",
+      "after": "Put the fullscreen control in the top bar's own row (or the side dock) so it takes its own space.",
+      "why": "A visitor who wants to install the app clicks the fullscreen control instead.",
+      "test": "T-WIDTHS"
+    }
+  ],
+  "strengths": [
+    "At 375 the launcher switches to its own phone layout: icon-only top actions, the game details stacked above Play and the price, and the carousel below (tiles/375-00.png), with nothing overlapping.",
+    "The page weighs 998 KiB known over 56 requests with an LCP of 892 ms, inside every budget, and 22 of 42 images are lazy-loaded.",
+    "All five @font-face rules use font-display: swap, and the stylesheet uses 116 logical properties, 34 start and end rules and 6 container queries.",
+    "'ADD TO CART — $0.49' answered within 0.5 s in the slow run ('XONOTIC added to cart', 'View Cart')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long game titles and descriptions were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The fail runs were skipped because the slow runs made no request; checkout, sign-in and the friends panel were not opened. 'Join our Discord' showed no response at 0.5 s or 2 s (an outside link).",
+    "53 font requests and 32 other requests were blocked by the capture; the fallback_face hits may come from that block and are not verified here.",
+    "T-NO-SCRIPT: with scripts off 824 characters stay visible (share 0.409); a game launcher may need script, and the hidden share after load is the sweep's hidden_content hit. The zoom block is the sweep's zoom_blocked Floor (A11-009); cited, not repeated.",
+    "Viewport heights other than 800 and 900 at desktop widths; the overlap depends on height, so other laptop sizes were not seen.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

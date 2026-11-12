@@ -1,0 +1,100 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "On a phone the header's search field pushes the menu button off the screen, a fixed legal pill covers the email, and half the page's own text waits for script.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-WIDTHS fails at 375 (ROB-010, ROB-009, ROB-007) and T-NO-SCRIPT fails (ROB-015); T-WEIGHT-FOR-JOB is within byte budgets but over on requests."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-010",
+      "title": "The layout holds between and beyond the captured widths",
+      "tier": "Reflex",
+      "where": "Site header (search field and div.navbar10_menu-button), 375px, tiles/375-00.png",
+      "evidence": "The sweep's overflow Floor (ROB-003) records the page at 383px at a 375 viewport, with the menu button (div.menu-icon5) as the culprit; parity.document_widths confirms 383 against 375. The tile shows the logo and a search field whose placeholder is cut ('Search by c' or 'Search by colo'), and no menu button on screen.",
+      "before": "The search field keeps its width on phones and pushes the menu button past the right edge.",
+      "after": "Below 480px collapse search to an icon, or let the field shrink (flex: 1; min-width: 0) so the menu button stays on screen.",
+      "why": "A phone visitor sees no navigation control at all and has to scroll sideways to find it.",
+      "test": "T-WIDTHS",
+      "source": "robustness",
+      "root": "header row with a fixed-width search field"
+    },
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Fixed 'Legal and Privacy info' pill, 375 and 1440px, tiles/375-00.png and tiles/1440-00.png",
+      "evidence": "The tiles show the 'Legal and Privacy info' pill fixed at the bottom right, over the email preview at 375 and over the side ad at 1440. The page reserves no space for it.",
+      "before": "A fixed pill floats over the content in every screen.",
+      "after": "Move the link into the footer, or reserve its height at the bottom of the viewport (padding-block-end on the page).",
+      "why": "It covers part of the email the visitor came to study, on every scroll position.",
+      "test": "T-WIDTHS",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-007",
+      "title": "Short labels stay whole on one line",
+      "tier": "Reflex",
+      "where": "Preview tabs (Desktop, Code, Text, Info, Editable templates NEW!), 375 and 1440px, tiles/375-00.png",
+      "evidence": "At 375 the tile shows 'Editable templates NEW!' pushed onto a second line under the other four tabs. controls.fixed_width_buttons_tight at 1440: the 'Editable templates NEW!' tab is 213px with 8px of slack (5%).",
+      "before": "The tab row wraps one tab onto its own line on phones.",
+      "after": "Make the tab row scroll horizontally on phones, or shorten the tab to 'Templates'.",
+      "why": "A wrapped tab reads as a separate control, and the row has no room for a longer label.",
+      "test": "T-WIDTHS",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Page chrome and side panel, all widths",
+      "evidence": "resilience.hidden_content: scripts off shows 363 of 424 characters (34% of baseline); the sweep's hidden_content hits record the scripts-off Floor (ROB-001) and about half the text hidden after load.",
+      "before": "The page's own text needs script to appear.",
+      "after": "Render the page chrome and the email metadata in the server HTML.",
+      "why": "A visitor whose script fails sees the email specimen without the page that frames it.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The email specimen is shown at its own width and scales down inside the frame at 375 instead of widening the page.",
+    "From and Subject rows wrap inside their card (tiles/375-00.png).",
+    "Lab LCP is 1164 ms and known bytes stay within budget (1436 KiB)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "the email itself is an exhibit (a specimen from another sender); its own layout and text set in images were not judged",
+    "T-FAILURE-PATH: async found no primary actions",
+    "requests: 111 (fail), including a 109 KiB loading.gif; bytes known for 70 of 111",
+    "contract: no 00-contract.md; inferred a Read gallery page showing one email ('Welcome to Apple Arcade'), English",
+    "the 40 words hidden at 375 (the 'Ctrl K' hint and ad text) are the sweep's phone_parity hit (ROB-002)"
+  ],
+  "disputes": []
+}

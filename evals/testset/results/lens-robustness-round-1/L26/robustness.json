@@ -1,0 +1,101 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The layout is built for other languages (logical properties, [dir=rtl], a language switch), but a scheduling product shows three time formats on one page, downloads its display font twice and needs script for half its text.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-WIDTHS and T-RTL-READY pass; T-LOCALE-FORMAT (ROB-012), T-WEIGHT-FOR-JOB (ROB-018), T-NO-SCRIPT (ROB-015) and T-TRANSLATE on the header (ROB-011) fail."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-FAILURE-PATH",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-012",
+      "title": "Dates, numbers and money follow one locale",
+      "tier": "Reflex",
+      "where": "Inbox mock, booking slots and hero chip, 375px, tiles/375-03.png and tiles/375-00.png",
+      "evidence": "formats.mixed_on_one_surface: '12-hour and 24-hour times'. The inbox mock shows '13:40', '11:03' and '09:52'; the booking card below shows '9:30am' and '10:00am'; the hero chip shows '2:00 AM' (tiles/375-00.png). That is three styles: 24-hour, lowercase am and uppercase AM.",
+      "before": "Each product mock formats time its own way.",
+      "after": "Format every time on the page from one locale setting (Intl.DateTimeFormat with the visitor's locale), the way the product would.",
+      "why": "For a scheduling product whose pitch is time zones, mixed formats on the home page suggest the product will mix them too.",
+      "test": "T-LOCALE-FORMAT",
+      "source": "robustness",
+      "root": "mock components each formatting time"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "CalSansVF font files, all widths",
+      "evidence": "performance.heaviest: https://cal.com/_next/static/media/CalSansVF-s.p.051r2yy2270w-.woff2 (146 KiB) and https://cal.com/_site/_next/static/media/CalSansVF-s.p.1_01gtw8uoq3u.woff2 (144 KiB): the same variable face from two app builds. Fonts total 337 KiB (font_kib fail over 320); 187 requests (fail) and JS 713 KiB (warn).",
+      "before": "Two Next.js apps on one page each ship their own copy of Cal Sans.",
+      "after": "Serve one CalSansVF file from one shared URL to both apps.",
+      "why": "Every visitor downloads 144 KiB twice for one typeface.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Lower feature sections, all widths",
+      "evidence": "resilience: scripts off shows 3880 of 8901 characters (43.6% of baseline); the sweep's hidden_content hits (ROB-001, Floor) record 52% invisible. console_errors 35, including \"Refused to execute script from 'https://cal.com/1100e7f5c1bf1a7d/script.js' because its MIME type ('text/html')\", 404s and 429s.",
+      "before": "Half the page waits for script, and the page throws 35 errors while loading.",
+      "after": "Render the section text in the server HTML; remove or fix the script path that returns an HTML page.",
+      "why": "A failed or blocked bundle leaves a marketing page with half its argument missing.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Header nav (Products, Use cases, Features, Resources, Enterprise, Pricing), 1280 and 1440px, tiles/1440-00.png",
+      "evidence": "controls.fixed_width_buttons_tight: 'Products' 104px box, 27% room; 'Use cases' 24%; 'Features' 28%; 'Resources' 23%; all nowrap. rows_without_room_for_35pct at 1280: six items, free_px 58 against needed 129. The footer has a language switch ('English', tiles/1440-15.png).",
+      "before": "Fixed-width nowrap triggers fill the header row at 1280.",
+      "after": "Size triggers to their labels and move the nav into the menu when the row has no room.",
+      "why": "The site offers other languages, and German or French labels 35% longer will not fit the row at 1280.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "Logical properties are used throughout (587, with 279 start and end), and the stylesheet has [dir=\"rtl\"] rules and :lang(ar) rules.",
+    "Inbox previews truncate with an ellipsis inside rows that keep the sender and time (tiles/375-03.png).",
+    "The hero heading with its inline chips rewraps at 375 (tiles/375-00.png) and the document matches every viewport width.",
+    "Lab LCP is 656 ms."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "the failed path: the one held action did not respond at 0.5 or 2 s but made no same-origin request, so there was nothing to fail; CMP-001 is the sweep's",
+    "fallback face: 2 font requests were blocked by the capture network (not verified)",
+    "the 140 words hidden at 375 are the sweep's phone_parity hit (ROB-002)",
+    "contract: no 00-contract.md; inferred a Persuade home page for an international scheduling product with a language switch"
+  ],
+  "disputes": []
+}

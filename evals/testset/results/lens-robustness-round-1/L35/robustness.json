@@ -1,0 +1,63 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "A text page that reads fully with scripts off, wraps long tokens and code inside the screen at 375, and loads 502 KiB; only six font faces that block text while loading remain.",
+  "score": {
+    "dimension": "Usability",
+    "value": 9,
+    "reason": "T-NO-SCRIPT (13,516 of 13,516 characters), T-WIDTHS (15 long tokens stay inside their boxes at 375, document within the viewport), T-WEIGHT-FOR-JOB (502 KiB, LCP 260 ms) and T-HOSTILE-CONTENT pass; what keeps it from 10 is six font-display: block faces (ROB-017)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-017",
+      "title": "Loading never moves what the visitor is reading",
+      "tier": "Reflex",
+      "where": "Font faces in the stylesheet, all widths",
+      "evidence": "css.font_face: 15 faces, font_display swap 7, block 6, not set 2; metric_overrides 2.",
+      "before": "Six faces hide their text until the font file arrives.",
+      "after": "Set font-display: swap on the block faces and add metric overrides to the fallback, as two faces already do.",
+      "why": "On a slow line the guidelines are invisible for up to three seconds while the font loads.",
+      "test": "T-LAYOUT-SHIFT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The page reads with scripts off: 13,516 visible characters, all of them.",
+    "Long tokens ('content=\"width=device-width,', 'webkit-tap-highlight-color', 'prefers-reduced-motion') stay inside their boxes at 375 (long_unbroken_strings inside_box true), and the document fits the viewport (360 at 375).",
+    "The install command sits in a pre block that scrolls within itself at 375 without widening the page.",
+    "Weight fits: 30 requests, 502 KiB, lab LCP 260 ms.",
+    "Links that wrap ('WAI-ARIA Authoring Patterns') wrap inside running text, not as buttons."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-FAILURE-PATH: async found no primary actions",
+    "T-EXTREME-COUNTS: no counts or lists with variable length",
+    "contract: no 00-contract.md; inferred a Read guidelines page, English, international developer audience"
+  ],
+  "disputes": []
+}

@@ -1,0 +1,73 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Money is written for the en-CA locale and the layout fits every width, but the page ships 1.2 MB of script in 112 files and its fixed nowrap buttons have little room for the site's other languages.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-LOCALE-FORMAT and T-WIDTHS pass; T-WEIGHT-FOR-JOB fails on script (ROB-018) and T-TRANSLATE on fixed buttons (ROB-011)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Page scripts (b.stripecdn.com mkt-ssr-statics chunks), all widths",
+      "evidence": "performance.by_kind.js: 112 files, 1232 KiB (js_kib fail; budget 450 to 900); 198 requests (fail). The heaviest are pages/_app 340 KiB and pages/index 172 KiB.",
+      "before": "The marketing page loads 1.2 MB of script, much of it for the animated product graphics.",
+      "after": "Load each section's graphic code when the section scrolls into view, and keep the first screen's script to what the nav and hero need.",
+      "why": "On a phone line the script cost delays the page and drains the battery; LCP is fine in the lab (1352 ms) but the main thread is busy.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Header triggers and section buttons, 1440px, tiles/1440-00.png, tiles/1440-03.png, tiles/1440-13.png",
+      "evidence": "controls.fixed_width_buttons_tight: 'Solutions' 34% room, 'Developers' 28%, 'Resources' 30% (header, nowrap); 'Watch now' 17%; 'Read the letter' 14%; 'App Marketplace' 19%; all nowrap with widths that do not change across viewports. The page is served at /en-ca with html lang en-CA, a locale of a site that is translated.",
+      "before": "Buttons hold fixed widths sized to their English labels.",
+      "after": "Size buttons to their labels with padding, not a width, and allow two lines on section buttons.",
+      "why": "French Canadian 'Lire la lettre' or German 'Brief lesen' variants run longer than the 14% to 34% of room these buttons have.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "Money follows the locale: the en-CA page writes 'US$1.9tn' and uses 'CAD' codes, and the multi-currency amounts ('£22.00', '€22.60') sit inside checkout demos where they are the point.",
+    "The document matches every viewport width, and lab LCP is 1352 ms.",
+    "Most text reads with scripts off (7646 of 9537 characters; 8% missing per the sweep's ROB-001 hit)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "the stylesheet: 9 cross-origin sheets could not be read, so ellipsis, wrap, logical-property and RTL rules are unknown, not absent; T-RTL-READY not run",
+    "T-FAILURE-PATH: the one form action was not found after reload (not verified); 18 images were blocked by the capture",
+    "the 421 words hidden at 375 are the sweep's phone_parity hit (ROB-002)",
+    "the 1px clipped rows ('Interactive diagram showing…', 'Item 1 of 8…') are screen-reader text, not visible labels",
+    "contract: no 00-contract.md; inferred a Persuade home page in the en-CA locale of a translated international site"
+  ],
+  "disputes": []
+}

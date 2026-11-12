@@ -1,0 +1,75 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The long article reads fully with scripts off, wraps at 375 and lazy-loads its 36 slides, but the slides' words exist only in pictures and the page ships an icon font and a slider library it barely uses.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-NO-SCRIPT, T-WIDTHS and T-HOSTILE-CONTENT pass; T-TRANSLATE fails on the slide images (ROB-011) and T-WEIGHT-FOR-JOB on unused assets (ROB-018)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Pitch deck slides (figure.wp-block-image img, Slide06.jpg and on), 1440px, tiles/1440-09.png",
+      "evidence": "text_in_images: 15 rows; each slide is a JPEG or PNG whose alt text is only 'LinkedIn Series B Pitch Deck to Greylock: Slide 5', 'Slide 6' and so on. The slide titles, bullets and figures are set in the pictures.",
+      "before": "The deck's words exist only as pixels.",
+      "after": "Add each slide's text below its picture, or in a details element beside it.",
+      "why": "The deck is the subject of the article; translation tools, screen readers and search cannot reach what the slides say.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Material Icons font and Slider Revolution script, all widths",
+      "evidence": "performance.heaviest: MaterialIcons-Regular.woff2 at 122 KiB while fonts.json drew 2 glyphs from Material Icons; wp-content/plugins/revslider/public/js/sr7.js at 101 KiB on an article with no slider on the tiles. Total known transfer is 3101 KiB (fail over 3000), of which 2450 KiB is the slide images (79%).",
+      "before": "The theme loads a full icon font and a slider library on every page.",
+      "after": "Replace the two icons with inline SVG and load the slider script only on pages that have a slider.",
+      "why": "The slides earn their weight; the 223 KiB of icon font and slider code does not.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The article reads with scripts off: 47,663 visible characters, the same as the baseline.",
+    "36 of the 39 images carry loading=\"lazy\", so a reader pays for slides as they reach them.",
+    "Long slashed tokens ('model/criteria/triggers', 'identities/CVs/profiles,') stay inside the 263px column at 375, and the document matches every viewport width.",
+    "Money and numbers use one US style ('$0.60', '500,000') under html lang en-US."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "36 images were blocked by the capture network at some width (not verified); the tiles show the slides drawn",
+    "T-FAILURE-PATH: async found no primary actions",
+    "the 'Skip to content' link reads as clipped because it is screen-reader text until focused",
+    "contract: no 00-contract.md; inferred a Read long-form article, English (US)"
+  ],
+  "disputes": []
+}

@@ -1,0 +1,1107 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L07",
+ "url": "https://cineyx.ai/",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "manifest_widths": [
+  375,
+  1280,
+  1440
+ ],
+ "text_risk": {
+  "nowrap_clipped": [],
+  "text_outside_box": [],
+  "line_clamped": [],
+  "fixed_width_text_boxes": [],
+  "long_unbroken_strings": [],
+  "single_line_with_ellipsis_rule_not_clipped": {},
+  "ellipsis_classes_in_css": [
+   "ellipsis",
+   "text-ellipsis",
+   "text-truncate",
+   "truncate"
+  ],
+  "line_clamp_classes_in_css": [
+   "line-clamp-1",
+   "line-clamp-2",
+   "line-clamp-3",
+   "line-clamp-5",
+   "line-clamp-6"
+  ]
+ },
+ "card_groups_equal_height_unequal_text": [],
+ "controls": {
+  "labels_that_wrap": [
+   {
+    "where": "div.min-h-screen.text-foreground:nth-of-type(2) > nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > a.text-sm.text-muted-foreground:nth-of-type(1)",
+    "width": 375,
+    "x": 181,
+    "y": 12,
+    "w": 43,
+    "h": 40,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "in_header": true,
+    "label": "Sign In",
+    "lines": 2
+   },
+   {
+    "where": "div.min-h-screen.text-foreground:nth-of-type(2) > nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > a.px-4.py-2:nth-of-type(2)",
+    "width": 375,
+    "x": 236,
+    "y": 4,
+    "w": 115,
+    "h": 56,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "in_header": true,
+    "label": "Start for free",
+    "lines": 2
+   }
+  ],
+  "fixed_width_buttons_tight": [
+   {
+    "where": "section.relative.z-10:nth-of-type(7) > div.max-w-3xl.mx-auto > a.inline-flex.items-center",
+    "width": 1440,
+    "x": 624,
+    "y": 5274,
+    "w": 192,
+    "h": 56,
+    "tile": "tiles/1440-05.png",
+    "first_screen": false,
+    "section": "Promo & Cover Studio",
+    "label": "Start for free",
+    "box_w": 192,
+    "text_w": 100,
+    "slack_px": 28,
+    "room_for_longer_text_pct": 28,
+    "nowrap": false
+   },
+   {
+    "where": "div.min-h-screen.text-foreground:nth-of-type(2) > section.py-24.px-6:nth-of-type(9) > div.max-w-5xl.mx-auto > div.mt-10.text-center:nth-of-type(3) > button.inline-flex.items-center",
+    "width": 1440,
+    "x": 624,
+    "y": 6722,
+    "w": 192,
+    "h": 56,
+    "tile": "tiles/1440-07.png",
+    "first_screen": false,
+    "section": "Titles & SEO",
+    "label": "Start for free",
+    "box_w": 192,
+    "text_w": 100,
+    "slack_px": 28,
+    "room_for_longer_text_pct": 28,
+    "nowrap": false
+   }
+  ],
+  "rows_without_room_for_35pct": [],
+  "rows_checked": 2
+ },
+ "formats": {
+  "found": {},
+  "mixed_on_one_surface": []
+ },
+ "language": {
+  "html_lang": {
+   "1280": "en",
+   "1440": "en",
+   "375": "en"
+  },
+  "scripts_share": {
+   "latin": 1.0
+  },
+  "dominant_script": "latin",
+  "rtl_language": false,
+  "language_switch": [
+   {
+    "where": "nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(1)",
+    "width": 1440,
+    "x": 982,
+    "y": 20,
+    "w": 32,
+    "h": 24,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_header": true,
+    "label": "EN",
+    "flag_emoji": false
+   },
+   {
+    "where": "nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(2)",
+    "width": 1440,
+    "x": 1016,
+    "y": 20,
+    "w": 31,
+    "h": 24,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_header": true,
+    "label": "FR",
+    "flag_emoji": false
+   },
+   {
+    "where": "nav.fixed.top-0 > div.max-w-6xl.mx-auto > div.flex.items-center:nth-of-type(2) > div.flex.items-center > button.px-2.py-1:nth-of-type(3)",
+    "width": 1440,
+    "x": 1049,
+    "y": 20,
+    "w": 33,
+    "h": 24,
+    "tile": "tiles/1440-00.png",
+    "first_screen": true,
+    "in_header": true,
+    "label": "RU",
+    "flag_emoji": false
+   }
+  ],
+  "directional_marks": [
+   {
+    "where": "button.hidden.md\\:flex:nth-of-type(1) > svg.lucide.lucide-chevron-left",
+    "kind": "icon",
+    "class": "lucide lucide-chevron-left w-5 h-5"
+   },
+   {
+    "where": "utton.hidden.md\\:flex:nth-of-type(2) > svg.lucide.lucide-chevron-right",
+    "kind": "icon",
+    "class": "lucide lucide-chevron-right w-5 h-5"
+   },
+   {
+    "where": "nline-flex.items-center:nth-of-type(1) > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nline-flex.items-center:nth-of-type(1) > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nline-flex.items-center:nth-of-type(1) > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "nth-of-type(2) > span.mt-4.inline-flex > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-4 h-4 transition-trans"
+   },
+   {
+    "where": "ype(2) > span.inline-flex.items-center > svg.lucide.lucide-arrow-right",
+    "kind": "icon",
+    "class": "lucide lucide-arrow-right w-5 h-5 transition-trans"
+   }
+  ]
+ },
+ "text_in_images": [
+  {
+   "where": "div.max-w-6xl.mx-auto > div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(3) > div.relative.aspect-video:nth-of-type(1) > img.w-full.h-full",
+   "width": 1440,
+   "x": 929,
+   "y": 1600,
+   "w": 366,
+   "h": 205,
+   "tile": "tiles/1440-01.png",
+   "first_screen": false,
+   "section": "Restore and enhance old photos",
+   "file": "cards-and-banners.png",
+   "alt": "Greeting cards, banners and promotional designs created with AI",
+   "why": [
+    "file name"
+   ]
+  },
+  {
+   "where": "div.relative.flex:nth-of-type(3) > div.flex-1.text-center:nth-of-type(2) > div.flex.flex-wrap:nth-of-type(2) > a.inline-block.transition-transform:nth-of-type(1) > img.h-14.md\\:h-16",
+   "width": 1440,
+   "x": 497,
+   "y": 4778,
+   "w": 165,
+   "h": 64,
+   "tile": "tiles/1440-05.png",
+   "first_screen": false,
+   "section": "Promo & Cover Studio",
+   "file": "en_badge_web_generic.png",
+   "alt": "Get it on Google Play",
+   "why": [
+    "file name"
+   ]
+  }
+ ],
+ "css": {
+  "readable_rules": 2131,
+  "unreadable_sheets": 0,
+  "unreadable_hosts": [],
+  "physical_props": 263,
+  "physical_top": [
+   [
+    "left",
+    56
+   ],
+   [
+    "padding-right",
+    38
+   ],
+   [
+    "padding-left",
+    35
+   ],
+   [
+    "margin-left",
+    34
+   ],
+   [
+    "right",
+    31
+   ],
+   [
+    "margin-right",
+    27
+   ]
+  ],
+  "logical_props": 39,
+  "logical_start_end": 12,
+  "logical_top": [
+   [
+    "block-size",
+    3
+   ],
+   [
+    "border-end-end-radius",
+    3
+   ],
+   [
+    "border-end-start-radius",
+    3
+   ],
+   [
+    "border-inline",
+    3
+   ],
+   [
+    "border-start-end-radius",
+    3
+   ],
+   [
+    "border-start-start-radius",
+    3
+   ]
+  ],
+  "dir_rules": 5,
+  "dir_rule_samples": [
+   "[dir=\"ltr\"]",
+   "[dir=\"rtl\"]"
+  ],
+  "mirroring_rules": 0,
+  "lang_rules": [],
+  "text_overflow_ellipsis": [
+   ".truncate",
+   ".\\[\\&\\>span\\:last-child\\]\\:truncate > span:last-child"
+  ],
+  "line_clamp": [
+   ".line-clamp-1",
+   ".line-clamp-2",
+   ".line-clamp-3",
+   ".line-clamp-5",
+   ".line-clamp-6",
+   ".\\[\\&\\>span\\]\\:line-clamp-1 > span"
+  ],
+  "nowrap_rules": 4,
+  "overflow_wrap": [
+   ".break-words",
+   ":where([data-sonner-toast])"
+  ],
+  "word_break": [
+   ".break-all"
+  ],
+  "hyphens_auto": [],
+  "text_wrap_balance_pretty": 0,
+  "min_width_0": 24,
+  "breakpoints_px": [
+   600,
+   640,
+   768,
+   1024,
+   1280,
+   1400
+  ],
+  "container_queries": 0,
+  "height_vh": 4,
+  "height_dvh_svh": 2,
+  "safe_area": 0,
+  "aspect_ratio": 8,
+  "content_visibility": 0,
+  "font_face": {
+   "count": 0,
+   "font_display": {},
+   "metric_overrides": 0,
+   "unicode_range": 0
+  }
+ },
+ "resilience": {
+  "hidden_content": {
+   "baseline": {
+    "visible_chars": 3950,
+    "total_chars": 3950,
+    "visible_share_of_baseline": 1.0
+   },
+   "reduced_motion": {
+    "visible_chars": 3950,
+    "total_chars": 3950,
+    "visible_share_of_baseline": 1.0
+   },
+   "observer_never_fires": {
+    "visible_chars": 632,
+    "total_chars": 3950,
+    "visible_share_of_baseline": 0.16
+   },
+   "scripts_off": {
+    "visible_chars": 0,
+    "total_chars": 0,
+    "visible_share_of_baseline": 0.0
+   }
+  },
+  "scripts_off_note": "no text at all with scripts off: the page is rendered by script",
+  "console_errors": 0,
+  "async": {
+   "actions": [
+    {
+     "name": "Send feedback",
+     "kind": "action-button",
+     "slow": {
+      "status": "ok",
+      "responded": {
+       "0.5s": true,
+       "2s": true
+      },
+      "first_answer_ms": 3251,
+      "final_new_text": [
+       "Beta Feedback",
+       "Everything's great! 🚀",
+       "Character Drift",
+       "Identity Issue"
+      ],
+      "spinner_after_answer": true
+     },
+     "fail": {
+      "status": "ok",
+      "responded": {
+       "0.5s": true,
+       "2s": true
+      },
+      "first_answer_ms": 1753,
+      "final_new_text": [
+       "Beta Feedback",
+       "Everything's great! 🚀",
+       "Character Drift",
+       "Identity Issue"
+      ],
+      "spinner_after_answer": true
+     }
+    }
+   ]
+  },
+  "skeleton_or_loader_elements": []
+ },
+ "performance": {
+  "lcp_ms": 2452,
+  "lcp_band": "ok",
+  "requests": 29,
+  "bytes_known_for": "28 of 29 requests (cross-origin files without timing headers report 0)",
+  "known_kib": 22465,
+  "by_kind": {
+   "css": {
+    "n": 2,
+    "kib": 25,
+    "unknown_bytes": 0
+   },
+   "image": {
+    "n": 20,
+    "kib": 13782,
+    "unknown_bytes": 1
+   },
+   "js": {
+    "n": 3,
+    "kib": 2075,
+    "unknown_bytes": 0
+   },
+   "media": {
+    "n": 3,
+    "kib": 6582,
+    "unknown_bytes": 0
+   },
+   "other": {
+    "n": 1,
+    "kib": 0,
+    "unknown_bytes": 0
+   }
+  },
+  "heaviest": [
+   {
+    "file": "https://cineyx.ai/videos/cyberpunk-drone.mp4",
+    "kib": 3477,
+    "kind": "media"
+   },
+   {
+    "file": "/assets-v1/3f5c22d5-4591-44e5-9c9d-0df8acef2eec/old-photo-animated.mp4",
+    "kib": 3105,
+    "kind": "media"
+   },
+   {
+    "file": "https://cineyx.ai/cineyx-logo.png",
+    "kib": 2422,
+    "kind": "image"
+   },
+   {
+    "file": "https://cineyx.ai/assets/index-C3E1u1tG.js",
+    "kib": 2055,
+    "kind": "js"
+   },
+   {
+    "file": "https://cineyx.ai/covers/cover-4.jpg",
+    "kib": 1249,
+    "kind": "image"
+   },
+   {
+    "file": "https://cineyx.ai/covers/cover-9.jpg",
+    "kib": 1244,
+    "kind": "image"
+   },
+   {
+    "file": "https://cineyx.ai/covers/cover-5.jpg",
+    "kib": 1130,
+    "kind": "image"
+   },
+   {
+    "file": "https://cineyx.ai/covers/cover-2.jpg",
+    "kib": 1027,
+    "kind": "image"
+   }
+  ],
+  "images": {
+   "n": 41,
+   "largest_kib": 2422,
+   "oversized_over_2.2x": [
+    {
+     "file": "cineyx-logo.png",
+     "natural_w": 1440,
+     "shown_w": 40,
+     "ratio": 36.0,
+     "kib": 2422
+    },
+    {
+     "file": "cineyx-logo.png",
+     "natural_w": 1440,
+     "shown_w": 32,
+     "ratio": 45.0,
+     "kib": 2422
+    },
+    {
+     "file": "cover-4.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1249
+    },
+    {
+     "file": "cover-4.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1249
+    },
+    {
+     "file": "cover-4.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1249
+    },
+    {
+     "file": "cover-4.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1249
+    },
+    {
+     "file": "cover-9.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1244
+    },
+    {
+     "file": "cover-9.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1244
+    },
+    {
+     "file": "cover-5.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1130
+    },
+    {
+     "file": "cover-5.jpg",
+     "natural_w": 1376,
+     "shown_w": 160,
+     "ratio": 8.6,
+     "kib": 1130
+    }
+   ],
+   "not_loaded": []
+  },
+  "budgets": {
+   "transfer_kib": [
+    1500,
+    3000
+   ],
+   "image_kib": [
+    1200,
+    2400
+   ],
+   "largest_image_kib": [
+    350,
+    700
+   ],
+   "js_kib": [
+    450,
+    900
+   ],
+   "css_kib": [
+    120,
+    250
+   ],
+   "requests": [
+    60,
+    110
+   ],
+   "font_files": [
+    4,
+    6
+   ],
+   "font_kib": [
+    160,
+    320
+   ],
+   "lcp_ms": [
+    2500,
+    4500
+   ]
+  },
+  "against_budgets": {
+   "transfer_kib": "fail",
+   "image_kib": "fail",
+   "largest_image_kib": "fail",
+   "js_kib": "fail",
+   "css_kib": "ok",
+   "requests": "ok",
+   "font_files": null,
+   "font_kib": null
+  },
+  "note": "bands read known bytes only: an 'ok' on a page with many unknown sizes is not verified",
+  "image_bytes_share": 0.61,
+  "lazy_attr": {
+   "auto": 3,
+   "lazy": 38
+  }
+ },
+ "fonts": {
+  "families_drawn": [
+   [
+    "Inter",
+    4481
+   ],
+   [
+    "Consolas",
+    97
+   ],
+   [
+    "Segoe UI Emoji",
+    1
+   ]
+  ],
+  "nodes_with_glyphs_from_an_undeclared_face": [
+   {
+    "where": "-of-type(2) > div:nth-of-type(1) > div.mt-6.inline-flex:nth-of-type(3)",
+    "text": "🎁 Sign up today: 50 AI Energy + 1 Free Character",
+    "declared": "Inter, system-ui, sans-serif",
+    "drawn_by_other_faces": [
+     "Segoe UI Emoji (1 glyphs)"
+    ]
+   }
+  ],
+  "note": "fonts.json covers the first 400 text nodes at 1440; emoji and symbols often fall back to a system face, which is fine when the declared face has no such glyph"
+ },
+ "parity": {
+  "shown_at_1440_missing_at_375": [
+   {
+    "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(5) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex:nth-of-type(2) > span.text-\\[11px\\].uppercase",
+    "width": 1440,
+    "x": 656,
+    "y": 2138,
+    "w": 129,
+    "h": 17,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "section": "Turn any idea into viral content",
+    "text": "Soundtrack preview",
+    "words": 2
+   },
+   {
+    "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(6) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex:nth-of-type(2) > span.text-\\[11px\\].uppercase",
+    "width": 1440,
+    "x": 1030,
+    "y": 2162,
+    "w": 164,
+    "h": 17,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "section": "Turn any idea into viral content",
+    "text": "Thumbnails that convert",
+    "words": 3
+   },
+   {
+    "where": "a.relative.block > div.relative.grid:nth-of-type(3) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex > span.text-\\[11px\\].uppercase",
+    "width": 1440,
+    "x": 361,
+    "y": 2635,
+    "w": 143,
+    "h": 17,
+    "tile": "tiles/1440-02.png",
+    "first_screen": false,
+    "section": "Voice narration in any language",
+    "text": "Full film production",
+    "words": 3
+   },
+   {
+    "where": "section.relative.z-10:nth-of-type(5) > div.max-w-4xl.mx-auto > p.text-xs.uppercase",
+    "width": 1440,
+    "x": 272,
+    "y": 4264,
+    "w": 896,
+    "h": 16,
+    "tile": "tiles/1440-04.png",
+    "first_screen": false,
+    "section": "Promo & Cover Studio",
+    "text": "Integrated with the industry's best technologies",
+    "words": 6
+   }
+  ],
+  "words_missing_at_375": 14,
+  "shown_at_375_missing_at_1440": [
+   {
+    "where": "section.relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div:nth-of-type(1) > h1.text-4xl.sm\\:text-5xl > span.block.text-sm:nth-of-type(1)",
+    "width": 375,
+    "x": 24,
+    "y": 216,
+    "w": 327,
+    "h": 40,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "text": "AI Video & Character Studio — no experience needed",
+    "words": 9
+   },
+   {
+    "where": "div.min-h-screen.text-foreground:nth-of-type(2) > section.relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div:nth-of-type(1) > p.mt-6.text-base",
+    "width": 375,
+    "x": 24,
+    "y": 330,
+    "w": 327,
+    "h": 104,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "text": "Try the advanced Seedance 2.5 model for cinematic video up to 30 seconds, native",
+    "words": 20
+   },
+   {
+    "where": "section.relative.z-10:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div:nth-of-type(1) > div.mt-10.flex:nth-of-type(2) > a.px-8.py-4:nth-of-type(2)",
+    "width": 375,
+    "x": 56,
+    "y": 546,
+    "w": 262,
+    "h": 58,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "text": "Learn more Seedance 2.5",
+    "words": 4
+   },
+   {
+    "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(5) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex:nth-of-type(2) > span.text-\\[11px\\].uppercase",
+    "width": 375,
+    "x": 123,
+    "y": 4087,
+    "w": 129,
+    "h": 17,
+    "tile": "tiles/375-05.png",
+    "first_screen": false,
+    "section": "Voice narration in any language",
+    "text": "Soundtrack preview",
+    "words": 2
+   },
+   {
+    "where": "div.grid.sm\\:grid-cols-2:nth-of-type(2) > a.glass-card.group:nth-of-type(6) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex:nth-of-type(2) > span.text-\\[11px\\].uppercase",
+    "width": 375,
+    "x": 105,
+    "y": 4508,
+    "w": 164,
+    "h": 17,
+    "tile": "tiles/375-05.png",
+    "first_screen": false,
+    "section": "Soundtracks, music, and SFX",
+    "text": "Thumbnails that convert",
+    "words": 3
+   },
+   {
+    "where": "a.relative.block > div.relative.grid:nth-of-type(3) > div.relative.aspect-video:nth-of-type(1) > div.relative.flex > span.text-\\[11px\\].uppercase",
+    "width": 375,
+    "x": 116,
+    "y": 4895,
+    "w": 143,
+    "h": 17,
+    "tile": "tiles/375-06.png",
+    "first_screen": false,
+    "section": "Thumbnails that get clicks",
+    "text": "Full film production",
+    "words": 3
+   },
+   {
+    "where": "section.relative.z-10:nth-of-type(5) > div.max-w-4xl.mx-auto > p.text-xs.uppercase",
+    "width": 375,
+    "x": 24,
+    "y": 7627,
+    "w": 327,
+    "h": 32,
+    "tile": "tiles/375-09.png",
+    "first_screen": false,
+    "section": "Promo & Cover Studio",
+    "text": "Integrated with the industry's best technologies",
+    "words": 6
+   }
+  ],
+  "words_missing_at_1440": 47,
+  "document_widths": {
+   "1280": {
+    "doc_w": 1280,
+    "viewport_w": 1280
+   },
+   "1440": {
+    "doc_w": 1440,
+    "viewport_w": 1440
+   },
+   "375": {
+    "doc_w": 375,
+    "viewport_w": 375
+   }
+  },
+  "note": "text matched by its first 60 characters against the other width's rendered text; navigation that moves into a menu counts as missing"
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 6,
+  "blocked_images": 0,
+  "blocked_fonts": 0,
+  "fonts_missing": [],
+  "prep": {
+   "host": "cineyx.ai",
+   "config": {
+    "click": [
+     "Reject non-essential"
+    ]
+   },
+   "applied": [
+    "w375: clicked \"reject non-essential\"",
+    "w1280: clicked \"reject non-essential\"",
+    "w1440: clicked \"reject non-essential\""
+   ]
+  }
+ },
+ "sweep": {
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 2,
+   "hits": [
+    {
+     "where": "observer_never_fires",
+     "evidence": "3318 characters (84% of text) stay invisible when IntersectionObserver never fires",
+     "tier": "Floor"
+    },
+    {
+     "where": "scripts_off",
+     "evidence": "3950 characters (100% of text) stay invisible with JavaScript off",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "widows": {
+   "status": "ran",
+   "rule": "ROB-004",
+   "n": 8,
+   "hits": [
+    {
+     "where": "lative.z-10:nth-of-type(2) > div:nth-of-type(1) > p.mt-6.text-base  \"Try the advanced Seedance 2.5 model for cinematic \"",
+     "evidence": "last line is 18% of the measure at 375px (4 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": " div.max-w-6xl.mx-auto > div.text-center.mb-14:nth-of-type(1) > h2.text-3xl.md\\:text-5xl  \"What you can actually create\"",
+     "evidence": "last line is 29% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "iv.text-center.mb-14:nth-of-type(1) > p.mt-5.text-muted-foreground  \"Real outcomes, not abstract features. Here's what \"",
+     "evidence": "last line is 29% of the measure at 375px (3 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "e(2) > div.glass-card.group:nth-of-type(3) > div.p-6.flex-1 > h3.text-lg.font-semibold  \"Restore and enhance old photos\"",
+     "evidence": "last line is 28% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Brainstorm with top-tier AI models and walk away w\"",
+     "evidence": "last line is 21% of the measure at 375px (3 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "ard.group:nth-of-type(3) > div.p-6.flex-1:nth-of-type(2) > h3.text-lg.font-semibold  \"Greeting cards, banners, and more\"",
+     "evidence": "last line is 18% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Birthdays, holidays, ads, social posts — polished \"",
+     "evidence": "last line is 16% of the measure at 375px (3 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Create original scores and sound effects tailored \"",
+     "evidence": "last line is 29% of the measure at 375px (3 lines)",
+     "tier": "Finish",
+     "width": 375
+    }
+   ]
+  },
+  "performance": {
+   "status": "ran",
+   "rule": "WEB-001",
+   "n": 70,
+   "hits": [
+    {
+     "where": "https://cineyx.ai/cineyx-logo.png",
+     "evidence": "image is 2422KB (max 400KB)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "https://cineyx.ai/cineyx-logo.png",
+     "evidence": "image is 1440px wide but shown at 40px",
+     "tier": "Reflex"
+    },
+    {
+     "where": "1b52f5dc-6d13-4ca3-b5e5-22455b3a62e8/old-photo-montargis.jpg",
+     "evidence": "image is 1127px wide but shown at 183px",
+     "tier": "Reflex"
+    },
+    {
+     "where": "c1e-eac3-410b-9b8e-e07d23e100f9/character-styles-grid-v2.jpg",
+     "evidence": "image is 841KB (max 400KB)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "s-v1/262ab1cc-4dbd-495d-aba2-2fe8b135c4eb/restore-before.jpg",
+     "evidence": "image is 556KB (max 400KB)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "s-v1/262ab1cc-4dbd-495d-aba2-2fe8b135c4eb/restore-before.jpg",
+     "evidence": "image is 1120px wide but shown at 183px",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ts-v1/1752201b-4088-483a-9c81-706ffc7d3843/restore-after.jpg",
+     "evidence": "image is 1072px wide but shown at 182px",
+     "tier": "Reflex"
+    },
+    {
+     "where": "649-4390-9f60-fd9998aad8e7/ai-screenwriter-viral-content.jpg",
+     "evidence": "image is 1920px wide but shown at 366px",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "async_state": {
+   "status": "ran",
+   "rule": "CMP-001",
+   "n": 1,
+   "hits": [
+    {
+     "where": "action-button \"Send feedback\" (#root > button)",
+     "evidence": "progress state still showing 1 s after the request completed (3251 ms): 8) > div > a > div:nth-of-type(1) > div:nth-of-type(1) > div",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 12,
+   "hits": [
+    {
+     "where": ":nth-of-type(1) > div.p-6.flex-1 > p.text-sm.text-muted-foreground  \"Upload a faded family photo and turn it into a sho\"",
+     "evidence": "121-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": ":nth-of-type(2) > div.p-6.flex-1 > p.text-sm.text-muted-foreground  \"Realistic, Pixar-like, anime, claymation, comic bo\"",
+     "evidence": "121-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": ":nth-of-type(3) > div.p-6.flex-1 > p.text-sm.text-muted-foreground  \"Remove noise and scratches, bring back natural col\"",
+     "evidence": "106-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Brainstorm with top-tier AI models and walk away w\"",
+     "evidence": "89-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"New outfits, locations, and styles — for yourself \"",
+     "evidence": "101-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Birthdays, holidays, ads, social posts — polished \"",
+     "evidence": "85-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Use your own cloned voice or pick from a rich stud\"",
+     "evidence": "100-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " > div.p-6.flex-1:nth-of-type(2) > p.text-sm.text-muted-foreground  \"Create original scores and sound effects tailored \"",
+     "evidence": "89-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "n": 0,
+   "hits": []
+  },
+  "lang_and_title": {
+   "status": "ran",
+   "rule": "A11-008",
+   "n": 0,
+   "hits": []
+  },
+  "zoom_blocked": {
+   "status": "ran",
+   "rule": "A11-009",
+   "n": 0,
+   "hits": []
+  },
+  "unit_wrapped": {
+   "status": "ran",
+   "rule": "TYP-024",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "not_captured": [
+  "text-overflow, line-clamp, min-width, max-width, overflow-wrap and word-break per element (inferred from stylesheet rules and the first two recorded classes)",
+  "hostile content was not injected (the stress matrix, T-STRESS, has no detector yet): long names, translations and missing images are judged from layout evidence",
+  "no right-to-left render: RTL readiness is read from the stylesheet and the directional marks",
+  "page load was not throttled and layout shift (CLS) was not measured; only primary actions were held slow and failed (async.json)",
+  "widths between the captured ones, landscape, zoom at 200%",
+  "string concatenation and the code that formats dates and numbers (only the rendered text is seen)"
+ ],
+ "counts": {
+  "nowrap_clipped": 0,
+  "text_outside_box": 0,
+  "fixed_width_text_boxes": 0,
+  "line_clamped": 0,
+  "long_unbroken_strings": 0,
+  "card_groups": 0,
+  "labels_that_wrap": 2,
+  "tight_fixed_buttons": 2,
+  "rows_without_room": 0,
+  "formats_mixed": 0,
+  "text_in_images": 2,
+  "scripts_off_visible_share": 0.0,
+  "lcp_ms": 2452,
+  "known_kib": 22465
+ }
+}

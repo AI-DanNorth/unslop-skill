@@ -1,0 +1,45 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T11:10:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (the landing page of a career-guidance tool whose 'Build my roadmap' starts an app flow), English only (html lang en at every width), a European audience across several countries ('Career guidance for Europe', salaries 'matched to that country', the example in Poland with 'PLN 9,000–15,000 / month'). No right-to-left language is named.",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "The layout is built for real content (logical properties, wrap-anywhere rules, dvh heights, currency codes per country), but the landing page is rendered by script and shows no text at all with scripts off.",
+  "score": {
+    "dimension": "Usability",
+    "value": 4,
+    "reason": "T-NO-SCRIPT fails completely on a landing page (ROB-015, citing the sweep's ROB-001 Floor), while T-WIDTHS, T-HOSTILE-CONTENT, T-LOCALE-FORMAT and T-WEIGHT-FOR-JOB pass."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page (React single-page app, assets/index-Cc41x9iY.js with react, supabase and motion chunks), all widths",
+      "evidence": "With scripts off the page has 0 visible and 0 total characters against 1,489 in the baseline (resilience.hidden_content.scripts_off; scripts_off_note 'no text at all with scripts off'). The sweep's hidden_content hit (ROB-001, Floor) records the same 100%. The headline, the four steps, the example match, the navigation and the footer links (Privacy Policy, Terms, Legal) all need the 109 KiB app script.",
+      "before": "The marketing route and the legal links are rendered by the same client app as the roadmap tool.",
+      "after": "Prerender the landing, legal and contact routes to static HTML; keep the roadmap builder as the script-driven part.",
+      "why": "A visitor or crawler without script sees a blank page, including the privacy and legal pages a European audience may need to reach.",
+      "root": "Client-only rendering of the marketing routes",
+      "test": "T-NO-SCRIPT"
+    }
+  ],
+  "strengths": [
+    "The stylesheet uses logical properties almost as often as physical ones (121 logical against 126 physical, 34 start and end rules, 5 dir rules), a head start for any right-to-left market.",
+    "Long strings have wrap rules in the stylesheet (.wrap-anywhere, .wrap-break-word), and 17 min-width: 0 rules keep flex text from forcing overflow.",
+    "Salaries carry a currency code and a period ('PLN 9,000–15,000 / month'), so the figure stays unambiguous across the European countries the page serves.",
+    "Headings and step texts wrap at 375 without clipping (tiles/375-00.png to tiles/375-03.png); the header collapses to a menu button and a theme toggle at 375.",
+    "The page weighs 339 KiB over 11 requests, with an LCP of 552 ms in the lab, inside every budget; heights use dvh or svh in 7 rules against 1 vh."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long career names and degree names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; the roadmap builder and its result page were not opened.",
+    "T-EXTREME-COUNTS: the only counts are the example's salary and match figures, which are labelled as an example.",
+    "One stylesheet was cross-origin and unreadable; its rules are unknown, not absent.",
+    "Capture prep clicked 'Essential only' on the cookie banner at every width.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

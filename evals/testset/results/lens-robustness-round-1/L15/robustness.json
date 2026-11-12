@@ -1,0 +1,42 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:35:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: an app screen (a weekly-ops dashboard, 'Northline weekly ops', with stat figures, filters, an Urgent table, pending items, an empty state, contact actions and a 35-row 'Campaign tracker' table of repos, forks and pull requests). The page labels itself 'Skill fixture, before' and 'Basic HTML … No design system', so it is a test fixture; it is judged here as the layout that ships. Visitor mode Operate. English only (html lang en), US formats (dollars, 'Oct 13, 2026', '9:14am', 'EST'). No right-to-left language.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "Plain static HTML reads fully without script, weighs almost nothing and lets every cell wrap, but the six-column campaign tracker has no phone treatment and widens the whole page to 773px at 375.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-NO-SCRIPT, T-WEIGHT-FOR-JOB, T-LOCALE-FORMAT and T-EXTREME-COUNTS pass, but T-WIDTHS fails on the campaign tracker at 375 (ROB-010, with the sweep's ROB-003 overflow Floor)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB", "T-EXTREME-COUNTS"],
+  "findings": [
+    {
+      "rule": "ROB-010",
+      "title": "The layout holds between and beyond the captured widths",
+      "tier": "Reflex",
+      "where": "Campaign tracker, #campaign-tracker > section:nth-of-type(7) > table, 375px",
+      "evidence": "At 375 the six-column table is 749px wide and sits directly in the page, not in a scroll box, so the document is 773px wide (parity.document_widths; the sweep's overflow Floor names the table). The Fork and PR columns start past the screen (long_unbroken_strings: 'VibeRooster/cool-claude-skills' at x 489, inside_viewport false). tiles/375-02.png to tiles/375-05.png show the PR column squeezed to about 55px with notes such as 'not opened yet (branch add-before-after-example); after pinned' set two words per line. This matches draft ROB-209 (a phone table with two or more columns off-screen).",
+      "before": "A wide data table with no phone layout and no scroll container; the whole page scrolls sideways.",
+      "after": "Wrap the table in a container with overflow-x: auto and a sticky first column, or below 640px render each row as a stacked card (repo as the title, skill, fork and PR as labelled lines).",
+      "why": "A phone user loses the Fork and PR columns off the right edge, and the sideways page scroll also moves the Urgent table and every heading above it.",
+      "test": "T-WIDTHS"
+    }
+  ],
+  "strengths": [
+    "All 4,323 characters are in the HTML and stay visible with scripts off, with an observer that never fires and with reduced motion.",
+    "The page makes 2 requests with an LCP of 756 ms and uses the system face, so nothing late can move the text.",
+    "Table cells wrap long repo names and notes at their hyphens instead of clipping them (text_risk shows no nowrap or clipped rows; tiles/1440-01.png).",
+    "The filtered list has a written empty state ('No matching threads in this filter.'), and counts and money use one style ('128 Open threads', '$18,400', 'Oct 13, 2026')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The fail runs of 'Send follow-up', 'Remove' and the other actions were skipped because the slow runs made no request.",
+    "The 'Review required 1/5' chip (#vr-hitl-chip) floats over the Urgent table at 375 and over the Empty section at 1440 (tiles/375-00.png); it reads as review tooling added to the fixture, not the page's own layout.",
+    "The compact '$42.6k' pipeline figure beside full figures such as '$18,400' is a single-surface style mix at most; not raised.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

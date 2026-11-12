@@ -1,0 +1,67 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T13:20:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade with Experience (the site of an open-source design skill, built around large before-and-after page screenshots, a theme gallery with filters, example builds, an FAQ accordion and an install block with copy buttons). English only (html lang en at every width), no market named. No right-to-left language. The screenshots are the product's evidence, so image weight is partly the content.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The static page reads with scripts off and its layout holds at every width, but 73% of the text waits on an IntersectionObserver to appear, and theme images are served at 1,440px into slots as small as 28px.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-WIDTHS, T-HOSTILE-CONTENT and T-NO-SCRIPT pass, but T-HIDDEN-CONTENT fails when the observer never fires (ROB-015, citing the sweep's ROB-001 Floor), T-WEIGHT-FOR-JOB fails the image budget on unresized thumbnails (ROB-018), and T-TRUNCATION cuts one install command (ROB-006)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Sections with div.wrap.reveal (comparison, 'It designs before it codes', themes, examples, Questions), observer never fires, all widths",
+      "evidence": "With an observer that never fires only 419 of 1,862 characters are visible (share 0.225); with scripts off 1,569 are visible (share 0.843), so the text is in the HTML and the reveal script hides it until IntersectionObserver fires (resilience.hidden_content). The sweep's hidden_content hit (ROB-001, Floor) records 1,121 characters (73%) invisible when the observer never fires. The how-it-works list carries the class 'is-armed' (ol.how.is-armed).",
+      "before": "Script arms each .reveal section as hidden on load and waits for the observer to show it.",
+      "after": "Arm the reveal only for sections below the fold after the observer reports them out of view, and add a timeout that shows every section after 2 s (draft ROB-204).",
+      "why": "A browser where the observer is throttled or fails (some in-app browsers, print, reader tools) shows a quarter of the page.",
+      "root": "The .reveal arming script",
+      "test": "T-HIDDEN-CONTENT"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Theme gallery and example images (theme-furrow.webp, darkroom-photographer.webp, hedgerow-dog-walking.webp, theme-dose.webp), 1440px",
+      "evidence": "Images total 2,588 KiB over 37 files, past the 2,400 KiB fail budget (against_budgets image_kib fail). Ten images are served at 2.4 to 51 times their shown width, 867 KiB together: theme-furrow.webp (123 KiB) and darkroom-photographer.webp (117 KiB) are 1,440px wide and shown at 28px, and hedgerow-dog-walking.webp is 1,440px shown at 164px (performance.images.oversized_over_2.2x). The full-page comparison screenshot (fieldbook-hallmark-full.webp, 500 KiB) is the content the page exists to show.",
+      "before": "One 1,440px rendition of each theme screenshot, used for the full view, the cards and the small thumbnails.",
+      "after": "Keep the full comparison screenshots, and serve the theme and example cards through srcset at 1 and 2 times their shown widths (for example 200, 400 and 800px WebP) (draft ROB-167).",
+      "why": "A phone visitor pays nearly 0.9 MB for thumbnails drawn a few dozen pixels wide, on top of the screenshots that carry the argument.",
+      "root": "One image size per theme",
+      "test": "T-WEIGHT-FOR-JOB"
+    },
+    {
+      "rule": "ROB-006",
+      "title": "Wrap before truncating, and never truncate what matters",
+      "tier": "Reflex",
+      "where": "Footer install block, dl.ag > div:nth-of-type(4) > dd > code ('Only this agent'), 375, 1280 and 1440px",
+      "evidence": "The command 'npx skills add nutlope/hallmark -g --agent claude-code' is nowrap with an ellipsis and clipped by 122px at 375, 45px at 1280 and 17px at 1440 (text_risk.nowrap_clipped). tiles/375-10.png shows 'npx skills add nutlope/hallmark -g --…' and tiles/1440-09.png 'npx skills add nutlope/hallmark -g --agent claude-…'. A copy button sits beside it.",
+      "before": "A one-line command cut at its distinguishing flag at every width.",
+      "after": "Let the code line wrap (white-space: pre-wrap with overflow-wrap: anywhere) or scroll inside its own box, and keep the copy button.",
+      "why": "The cut part is the flag that names the agent, so a reader cannot see which agent the command installs for before running it.",
+      "test": "T-TRUNCATION"
+    }
+  ],
+  "strengths": [
+    "With scripts off 84% of the text is visible and the page has 15 KiB of script, so it is static HTML at heart.",
+    "The layout holds at every width: the document width equals the viewport, the theme filter is its own horizontal scroller (div.seg overflow-x: auto) and the FAQ rows wrap their questions (tiles/375-05.png, tiles/375-08.png).",
+    "Headings carry overflow-wrap rules (h1, h2), 10 aspect-ratio rules reserve space for the screenshots, and 67 of 85 images are lazy-loaded.",
+    "The lab LCP is 440 ms over 47 requests."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured. The page uses physical properties almost only (46 physical against 4 logical); a readiness note for an English-only page.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; the copy buttons, the theme filters and the example wheel were not exercised.",
+    "T-EXTREME-COUNTS: the filter counts ('All 50', 'Editorial 20') are fixed catalog numbers.",
+    "The FAQ answers are behind closed accordions and were not opened.",
+    "One stylesheet was cross-origin and unreadable; its rules are unknown, not absent.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

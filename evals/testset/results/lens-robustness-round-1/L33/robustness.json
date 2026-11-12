@@ -1,0 +1,86 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The kit's logical properties and table scrolling hold, but at 375 the store ranking cuts every name to its first characters, the screen stacks an English menu over Chinese content without a lang, and KPI cards keep one fixed height.",
+  "score": {
+    "dimension": "Usability",
+    "value": 5,
+    "reason": "T-TRUNCATION fails on the store names (ROB-006), T-SCRIPT-COVERAGE on the mixed locales (ROB-014) and T-EXTREME-COUNTS on the fixed KPI cards (ROB-019); the app needs script, so T-NO-SCRIPT is not held against it."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-WEIGHT-FOR-JOB",
+    "T-EXTREME-COUNTS"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-006",
+      "title": "Wrap before truncating, and never truncate what matters",
+      "tier": "Reflex",
+      "where": "Store sales ranking (门店销售额排名 list), 375px, tiles/375-02.png",
+      "evidence": "text_risk.nowrap_clipped: seven rows '工专路 0 号店' to '工专路 6 号店' in 70px slots, each clipped by 15px with an ellipsis rule. The tile shows every name cut to '工专路 N ...', and the list sits indented with about 120px empty to its left.",
+      "before": "The name column has a fixed 70px slot on phones while the row has free space.",
+      "after": "Let the name take the row's free width (flex: 1; min-width: 0) and show the full name on tap or in a title attribute.",
+      "why": "Real store names differ after the street name; cut at 70px they become indistinguishable in a ranking that exists to tell them apart.",
+      "test": "T-TRUNCATION",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-014",
+      "title": "Each language and script is declared and has its face",
+      "tier": "Reflex",
+      "where": "Whole screen, 1440px, tiles/1440-00.png",
+      "evidence": "language: html_lang is null at every width (the sweep's lang_and_title Floor, A11-008) and scripts_share is 52% Han, 48% Latin. The sidebar menu is English ('Welcome', 'Admin', 'Dashboard', 'Analysis', 'Monitor') while every card, chart and table is Chinese ('总销售额', '访问量', '门店销售额排名'). Chinese glyphs in 'AlibabaSans, sans-serif' stacks are drawn by Microsoft YaHei (216 glyphs).",
+      "before": "Two locales share one screen, with no declared language and no chosen Chinese face.",
+      "after": "Drive the menu and the content from one locale setting, set lang on html, and add a Chinese face to the stack.",
+      "why": "A user switching locale gets half a translated screen, and each operating system draws the Chinese in a different face.",
+      "test": "T-SCRIPT-COVERAGE",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-019",
+      "title": "Counts and lists survive their extremes",
+      "tier": "Reflex",
+      "where": "KPI cards (总销售额, 访问量, 支付笔数, 运营活动效果), 1440 and 375px, tiles/1440-00.png",
+      "evidence": "card_groups_equal_height_unequal_text: four cards of 237px with texts of 19 to 40 characters, same_height_when_stacked true at 375. The figures are set at about 30px in 258px cards at 1440 ('¥ 126,560', '8,846').",
+      "before": "The KPI cards keep one fixed height and size their figures for six digits.",
+      "after": "Let the cards grow with content and scale the figure with the card (clamp() on font-size, or compact notation such as 1.2亿 past a limit).",
+      "why": "Reasoned, not observed: a dashboard total of '¥ 1,234,567,890' needs about the full card width at that size, and a second footer line has no height to go into.",
+      "test": "T-EXTREME-COUNTS",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The kit uses logical properties throughout (1022, with 861 start and end, such as inset-inline-start and margin-inline-start).",
+    "The search table scrolls inside its card at 375 instead of widening the page (tiles/375-02.png); the document matches every viewport width.",
+    "Ellipsis is applied by the kit's classes on menu items and list names."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-NO-SCRIPT: an Operate dashboard that is rendered by script (no text with scripts off; the sweep's ROB-001 Floor); judged acceptable for an app, but no failure state for its data requests was captured",
+    "T-FAILURE-PATH: async found no primary actions; 35 requests (4 images) were blocked by the capture",
+    "T-LOCALE-FORMAT: '4.6.51' was flagged as an ambiguous date and '0 964' as space groups; neither could be placed on a tile as a date or a figure, so they were not raised",
+    "contract: no 00-contract.md; inferred an Operate dashboard demo, Chinese content with an English menu, market China"
+  ],
+  "disputes": []
+}

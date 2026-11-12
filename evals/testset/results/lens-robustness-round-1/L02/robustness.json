@@ -1,0 +1,42 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T10:10:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a short landing page for an AI tool picker whose 'Get started' opens a three-step wizard), English only (html lang en at every width), an Indian market (the sample stack is priced in rupees, '₹1,200 / month'). No right-to-left language.",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The short page is server-rendered, keeps all its text with scripts off, weighs 154 KiB and lets its text wrap; the one brittle slot is the 'Ready to go' status pill, which breaks onto two lines beside the stack title at 375.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-NO-SCRIPT, T-WEIGHT-FOR-JOB and T-LOCALE-FORMAT pass, and T-WIDTHS fails once on the status pill in the hero card at 375 (ROB-007)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-007",
+      "title": "Short labels stay whole on one line",
+      "tier": "Reflex",
+      "where": "Hero stack card, span.rounded-full.bg-emerald-100 'Ready to go', 375px",
+      "evidence": "At 375 the pill is 79px wide and 40px tall with white-space normal (dom-375), so its three words break into 'Ready to' and 'go'. tiles/375-00.png and tiles/375-01.png show the pill split over two lines beside the two-line title 'Launch a content engine' (182px wide). The title and the pill share one flex row with no room left for either.",
+      "before": "A status pill that shrinks with its flex row and wraps at 375.",
+      "after": "Give the pill white-space: nowrap and flex-shrink: 0, and let the stack title take the remaining width (min-width: 0) or move the pill under the title below 400px.",
+      "why": "A status label read as two lines no longer reads as one state, and a longer stack name or a translated status would push it to three lines.",
+      "test": "T-WIDTHS"
+    }
+  ],
+  "strengths": [
+    "All 697 characters stay visible with scripts off, with an observer that never fires and with reduced motion (resilience.hidden_content share 1.0 in every run).",
+    "The page weighs 154 KiB over 9 requests, with an LCP of 224 ms in the lab, and uses the system face (Arial) so no font swap can move the text.",
+    "Buttons and the hero copy are content-sized and wrap normally; no label is nowrap inside a clipping box (text_risk rows are all empty).",
+    "The 'Get started' action answered at 0.5 s in the slow run by opening the wizard ('STEP 1 OF 3', 'What are you trying to accomplish?') without waiting on the network.",
+    "The stylesheet favours logical properties (31 logical against 14 physical, 6 start and end rules)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The wizard's later steps and its result screen were not captured, so its failure path and long tool names in results are not judged; the fail run was skipped because the slow run made no request.",
+    "T-EXTREME-COUNTS: the only counts ('12,000+ curious builders', 'Estimated cost ₹1,200 / month') are fixed sample copy.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

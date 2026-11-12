@@ -1,0 +1,54 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T13:05:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade with a Read part (the product site of a design-intelligence skill, with feature cards, a tech-stack grid, a six-step walkthrough with code samples, a filterable demo gallery with 'Load More', other products and a footer). English only (html lang en at every width), no market named. No right-to-left language.",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Cards, filter chips and code samples wrap at 375, the page stays within every budget and most text is server-rendered; about a fifth of the text still needs script, and one gallery thumbnail is served at three times its size.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WIDTHS, T-HOSTILE-CONTENT and T-TRANSLATE pass, T-NO-SCRIPT loses about 20% of the text (ROB-015, citing the sweep's ROB-001 Floor) and T-WEIGHT-FOR-JOB has one oversized thumbnail (ROB-018)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB", "T-EXTREME-COUNTS"],
+  "findings": [
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page, scripts off, all widths",
+      "evidence": "With scripts off 4,211 characters are visible against 5,298 in the baseline, a share of 0.795; the scripts-off page also has 924 fewer characters in total (4,374), so part of the content is never rendered without script (resilience.hidden_content). The sweep's hidden_content hit (ROB-001, Floor) records 816 characters (16%) invisible with JavaScript off.",
+      "before": "Part of the page is rendered on the client after load.",
+      "after": "Render the remaining sections, including the first page of demos, in the static Next.js output, and keep script for filtering and 'Load More'.",
+      "why": "A visitor or crawler without script loses about a fifth of the page, which the product site needs for its case.",
+      "test": "T-NO-SCRIPT"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Demo gallery card image thumbnails/pet-grooming.png, 1440px",
+      "evidence": "The Pet Grooming thumbnail is a 1,280px PNG of 333 KiB shown at 409px (3.1 times its shown width; performance.images.oversized_over_2.2x), the heaviest file on the page. The other thumbnails and the total of 853 KiB over 44 requests stay inside the budgets.",
+      "before": "A full-size PNG screenshot used as a gallery thumbnail.",
+      "after": "Serve gallery thumbnails at 1 and 2 times their shown width as WebP or AVIF through srcset (draft ROB-167), which Next.js Image does by default.",
+      "why": "One card costs more than the page's three largest scripts together, and each thumbnail added to the gallery in the same way repeats the cost.",
+      "test": "T-WEIGHT-FOR-JOB"
+    }
+  ],
+  "strengths": [
+    "At 375 the feature cards, tech-stack tiles and walkthrough steps stack cleanly, the gallery's category chips wrap onto several rows, and the code sample wraps its long class strings inside its box (tiles/375-03.png to tiles/375-07.png); the document width equals the viewport at every width.",
+    "The stylesheet favours logical properties (93 logical against 62 physical, 28 start and end rules) and has 21 min-width: 0 rules and 8 aspect-ratio rules.",
+    "Five of seven @font-face rules use font-display: swap with unicode-range subsets, and two declare metric overrides ('DM Sans Fallback').",
+    "All 14 images are lazy-loaded, and 'Load More' answered within 0.5 s with the next demos; the gallery states its count ('Showing 6 of 39 demos').",
+    "The lab LCP is 556 ms."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long demo names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The fail run of 'Load More' was skipped because the slow run made no request; the gallery filters were not exercised, so an empty filter result was not seen.",
+    "perf.json lists eight lazy thumbnails and partner logos as not loaded at measurement time, but the tiles show them drawn; not treated as failed images.",
+    "23 requests (analytics) were blocked by the capture.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

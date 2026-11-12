@@ -1,0 +1,64 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T11:35:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a developer-platform landing page with stats, a live-metrics block, integrations, security badges, pricing and an SDK section), English only (html lang en at every width), a global audience ('17 data centers across 6 continents', '184 Countries served'). No right-to-left language is named.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The page is light and its fonts swap with metric overrides, but at 375 two stat figures collide and run past their cells, the SDK section's grid column is wider than the screen and slices its copy, and half the text needs script to appear.",
+  "score": {
+    "dimension": "Usability",
+    "value": 5,
+    "reason": "T-WEIGHT-FOR-JOB and T-LAYOUT-SHIFT pass, but T-WIDTHS fails on the stat row and the SDK grid at 375 (ROB-009, ROB-010) and T-NO-SCRIPT loses half the text (ROB-015, citing the sweep's ROB-001 Floors)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB", "T-EXTREME-COUNTS"],
+  "findings": [
+    {
+      "rule": "ROB-010",
+      "title": "The layout holds between and beyond the captured widths",
+      "tier": "Reflex",
+      "where": "'For developers' section, section.relative.py-24:nth-of-type(8) > div.grid.lg:grid-cols-2 > div.transition-all.duration-700:nth-of-type(1), 375px",
+      "evidence": "At 375 the grid is 327px wide but its first column is 387px wide (dom-375), so the h2 'Built by devs.', the paragraph 'A thoughtfully designed SDK that gets out of your way…' and the 'Zero config' and '12KB gzipped' items end at x 411, 36px past the screen. The document width stays 375, so the overflow is clipped, not scrolled. tiles/375-11.png shows the paragraph cut at the right edge ('SDK that gets', 'intuitive A').",
+      "before": "A grid track sized by its content (an implicit auto or 1fr track with min-width auto) that grows past its container at 375.",
+      "after": "Define the columns as minmax(0, 1fr) and give the code and stat children min-width: 0 (draft ROB-104).",
+      "why": "A phone reader loses the last word of every line in the section that explains the SDK, and longer copy loses more.",
+      "test": "T-WIDTHS"
+    },
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "'Global by default.' stats, div.grid.grid-cols-3 > div > div.text-4xl ('99.99%', '<50ms'), 375px",
+      "evidence": "At 375 each of the three stat cells is 88px wide while '99.99%' at text-4xl runs 34px past its cell and '<50ms' runs 26px past its own (text_risk.text_outside_box, clipped false). tiles/375-06.png shows '99.99%<50ms' printed as one run with no gap, and '<50ms' reaching the screen edge.",
+      "before": "Three fixed columns of 36px figures at 375.",
+      "after": "Below 480px, stack the stats one per row or use two columns, and size the figure with clamp() against the cell (for example font-size: clamp(1.75rem, 8vw, 2.25rem)).",
+      "why": "The uptime and latency claims read as one garbled figure on a phone, and any longer figure (for example '99.999%') would push further.",
+      "test": "T-HOSTILE-CONTENT"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page, scripts off and observer never fires, all widths",
+      "evidence": "With scripts off 2,503 of 5,009 characters stay visible (share 0.5); with an observer that never fires 2,861 (share 0.571) (resilience.hidden_content). The sweep's hidden_content detector records both as ROB-001 Floors. The hero head is animated per character (span.animate-char-in).",
+      "before": "Sections and the hero head start hidden and are revealed by script and IntersectionObserver.",
+      "after": "Render every section visible in the HTML and run the reveal only when script has added a 'js' class, with a safety timeout (draft ROB-204).",
+      "why": "Half the page's case stays invisible for a visitor whose script or observer does not run.",
+      "test": "T-NO-SCRIPT"
+    }
+  ],
+  "strengths": [
+    "The page weighs 263 KiB over 14 requests with an LCP of 376 ms in the lab, inside every budget, and draws its diagrams as inline SVG rather than images.",
+    "Ten of thirteen @font-face rules use font-display: swap with unicode-range subsets, and three declare metric overrides ('Instrument Sans Fallback'), so the web faces arrive without moving the text.",
+    "The stylesheet uses 6 container queries and 77 logical properties against 108 physical.",
+    "The large live counter '2,847,392' fits its cell at every width and uses one grouping style throughout."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; the trial sign-up and the demo were not opened.",
+    "The '$0 /month' and '$24 /month' price units that break onto their own line are the sweep's unit_wrapped hits (TYP-024); cited, not repeated.",
+    "The integrations marquee runs past both screen edges by design; its track is clipped by its own container and the document width equals the viewport.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

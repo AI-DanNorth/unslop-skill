@@ -1,0 +1,86 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "The showcase page wraps names and links at every width and reads with scripts off, but its byline prints a separator for an empty author and a dead share library throws on load.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WIDTHS and T-NO-SCRIPT pass; T-HOSTILE-CONTENT fails on the empty byline name (ROB-019) and a script error on load fails ROB-015."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-WEIGHT-FOR-JOB",
+    "T-EXTREME-COUNTS"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-019",
+      "title": "Counts and lists survive their extremes",
+      "tier": "Reflex",
+      "where": "Project byline under the h1 ('by , Jan Diehm, Amber Thomas (The Pudding)'), 1280 and 375px, tiles/1280-00.png and tiles/375-00.png",
+      "evidence": "The byline reads 'by , Jan Diehm, Amber Thomas (The Pudding)' at both widths: the template prints the comma separator for an empty first author. The Credits row below names 'Alvin Chang, Journalist-Engineer, The Pudding', so the first author record exists elsewhere and is blank in the byline.",
+      "before": "The author list joins every entry with commas, including an empty one.",
+      "after": "Join only non-empty names, and fall back to the credit name when the author field is blank.",
+      "why": "The first line under the title looks broken and drops the lead author's name.",
+      "test": "T-HOSTILE-CONTENT",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Share widget script, all widths",
+      "evidence": "resilience.console_errors: 4, including 'addthis is not defined', net::ERR_NAME_NOT_RESOLVED, a 404 and a connection reset. Text still reads with scripts off (974 of 1085 characters, 87%).",
+      "before": "The page calls a share library that no longer loads.",
+      "after": "Remove the AddThis calls or guard them, and drop the dead library request.",
+      "why": "Each showcase page throws an error on load, and the share buttons do nothing.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Header nav (About, News, Awards, FAQs, Entry Showcase, Nominations, Sponsor), 1280 and 1440px, tiles/1280-00.png",
+      "evidence": "rows_without_room_for_35pct: seven links in a 557px row with free_px 30 against needed_for_35pct_px 132.",
+      "before": "The header row is almost as wide as its seven English labels.",
+      "after": "Move the nav into the menu at a width where the row runs out of room, not only at the phone breakpoint.",
+      "why": "The site is English-only, so this is a readiness note: one more section will not fit.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "At 375 the credit rows wrap long names and award titles ('Alvin Chang, Journalist-Engineer, The Pudding', 'Information is Beautiful Awards 2024') inside their cells (tiles/375-00.png).",
+    "The vote panel and related projects move below the article on phones (tiles/375-01.png); nothing is lost.",
+    "The page reads with scripts off at the same share as the baseline (87%) and the document matches every viewport width.",
+    "Weight fits: 29 requests, 725 KiB known, lab LCP 932 ms."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "the missing html lang is the sweep's lang_and_title Floor (A11-008); not repeated",
+    "T-FAILURE-PATH: the VOTE action was not found as a primary action by async",
+    "contract: no 00-contract.md; inferred a Read showcase page on an awards site, English only"
+  ],
+  "disputes": []
+}

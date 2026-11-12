@@ -1,0 +1,562 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L14",
+ "url": "https://impeccable.style/antipattern-examples/new-slop-2026",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "manifest_widths": [
+  375,
+  1280,
+  1440
+ ],
+ "text_risk": {
+  "nowrap_clipped": [],
+  "text_outside_box": [],
+  "line_clamped": [],
+  "fixed_width_text_boxes": [],
+  "long_unbroken_strings": [
+   {
+    "where": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.window-bar:nth-of-type(1) > span",
+    "width": 375,
+    "x": 204,
+    "y": 700,
+    "w": 138,
+    "h": 18,
+    "tile": "tiles/375-00.png",
+    "first_screen": true,
+    "section": "YOUR WORK. MINUS THE",
+    "token": "YOUR_NEXT_BIG_THING.exe",
+    "chars": 23,
+    "box_right": 342,
+    "text_right": 342,
+    "inside_viewport": true,
+    "inside_box": true
+   }
+  ],
+  "single_line_with_ellipsis_rule_not_clipped": {},
+  "ellipsis_classes_in_css": [
+   "ellipsis",
+   "text-ellipsis",
+   "text-truncate",
+   "truncate"
+  ],
+  "line_clamp_classes_in_css": []
+ },
+ "card_groups_equal_height_unequal_text": [],
+ "controls": {
+  "labels_that_wrap": [],
+  "fixed_width_buttons_tight": [],
+  "rows_without_room_for_35pct": [],
+  "rows_checked": 0
+ },
+ "formats": {
+  "found": {},
+  "mixed_on_one_surface": []
+ },
+ "language": {
+  "html_lang": {
+   "1280": "en",
+   "1440": "en",
+   "375": "en"
+  },
+  "scripts_share": {
+   "latin": 1.0
+  },
+  "dominant_script": "latin",
+  "rtl_language": false,
+  "language_switch": [],
+  "directional_marks": []
+ },
+ "text_in_images": [],
+ "css": {
+  "readable_rules": 73,
+  "unreadable_sheets": 1,
+  "unreadable_hosts": [
+   "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Ple"
+  ],
+  "physical_props": 4,
+  "physical_top": [
+   [
+    "margin-left",
+    2
+   ],
+   [
+    "right",
+    1
+   ],
+   [
+    "left",
+    1
+   ]
+  ],
+  "logical_props": 0,
+  "logical_start_end": 0,
+  "logical_top": [],
+  "dir_rules": 0,
+  "dir_rule_samples": [],
+  "mirroring_rules": 0,
+  "lang_rules": [],
+  "text_overflow_ellipsis": [],
+  "line_clamp": [],
+  "nowrap_rules": 0,
+  "overflow_wrap": [],
+  "word_break": [],
+  "hyphens_auto": [],
+  "text_wrap_balance_pretty": 0,
+  "min_width_0": 2,
+  "breakpoints_px": [
+   650
+  ],
+  "container_queries": 0,
+  "height_vh": 0,
+  "height_dvh_svh": 0,
+  "safe_area": 0,
+  "aspect_ratio": 0,
+  "content_visibility": 0,
+  "font_face": {
+   "count": 0,
+   "font_display": {},
+   "metric_overrides": 0,
+   "unicode_range": 0
+  }
+ },
+ "resilience": {
+  "hidden_content": {
+   "baseline": {
+    "visible_chars": 730,
+    "total_chars": 730,
+    "visible_share_of_baseline": 1.0
+   },
+   "reduced_motion": {
+    "visible_chars": 730,
+    "total_chars": 730,
+    "visible_share_of_baseline": 1.0
+   },
+   "observer_never_fires": {
+    "visible_chars": 730,
+    "total_chars": 730,
+    "visible_share_of_baseline": 1.0
+   },
+   "scripts_off": {
+    "visible_chars": 730,
+    "total_chars": 730,
+    "visible_share_of_baseline": 1.0
+   }
+  },
+  "console_errors": 1,
+  "console_error_samples": [
+   "Failed to load resource: net::ERR_FAILED"
+  ],
+  "async": {
+   "actions": [],
+   "note": "no primary actions (form submits, action buttons) found"
+  },
+  "skeleton_or_loader_elements": []
+ },
+ "performance": {
+  "lcp_ms": 360,
+  "lcp_band": "ok",
+  "requests": 5,
+  "bytes_known_for": "1 of 5 requests (cross-origin files without timing headers report 0)",
+  "known_kib": 1,
+  "by_kind": {
+   "css": {
+    "n": 1,
+    "kib": 1,
+    "unknown_bytes": 0
+   },
+   "js": {
+    "n": 3,
+    "kib": 0,
+    "unknown_bytes": 3
+   },
+   "other": {
+    "n": 1,
+    "kib": 0,
+    "unknown_bytes": 1
+   }
+  },
+  "heaviest": [
+   {
+    "file": "https://fonts.googleapis.com/css2",
+    "kib": 1,
+    "kind": "css"
+   }
+  ],
+  "images": {
+   "n": 0,
+   "largest_kib": 0,
+   "oversized_over_2.2x": [],
+   "not_loaded": []
+  },
+  "budgets": {
+   "transfer_kib": [
+    1500,
+    3000
+   ],
+   "image_kib": [
+    1200,
+    2400
+   ],
+   "largest_image_kib": [
+    350,
+    700
+   ],
+   "js_kib": [
+    450,
+    900
+   ],
+   "css_kib": [
+    120,
+    250
+   ],
+   "requests": [
+    60,
+    110
+   ],
+   "font_files": [
+    4,
+    6
+   ],
+   "font_kib": [
+    160,
+    320
+   ],
+   "lcp_ms": [
+    2500,
+    4500
+   ]
+  },
+  "against_budgets": {
+   "transfer_kib": "ok",
+   "image_kib": null,
+   "largest_image_kib": "ok",
+   "js_kib": "ok",
+   "css_kib": "ok",
+   "requests": "ok",
+   "font_files": null,
+   "font_kib": null
+  },
+  "note": "bands read known bytes only: an 'ok' on a page with many unknown sizes is not verified",
+  "image_bytes_share": 0.0,
+  "lazy_attr": {}
+ },
+ "fonts": {
+  "families_drawn": [
+   [
+    "Space Grotesk Light",
+    532
+   ],
+   [
+    "IBM Plex Mono SemiBold",
+    269
+   ],
+   [
+    "IBM Plex Mono",
+    145
+   ],
+   [
+    "Segoe UI Symbol",
+    15
+   ],
+   [
+    "IBM Plex Mono Medium",
+    11
+   ],
+   [
+    "Segoe UI Emoji",
+    1
+   ]
+  ],
+  "nodes_with_glyphs_from_an_undeclared_face": [
+   {
+    "where": "html > body > nav > a.button:nth-of-type(2)",
+    "text": "LET’S GO ↗",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": ":nth-of-type(1) > div.actions:nth-of-type(2) > a.button:nth-of-type(1)",
+    "text": "START MAKING MOVES ↗",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+    "text": "✦ less grind, more go.",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(1)",
+    "text": "✦ WORK SMARTER",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(2)",
+    "text": "✦ SHIP LOUDER",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(3)",
+    "text": "✦ BREAK THE MOLD",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(4)",
+    "text": "✦ MAKE BIG MOVES",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(5)",
+    "text": "✦ WORK SMARTER",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(6)",
+    "text": "✦ SHIP LOUDER",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(7)",
+    "text": "✦ BREAK THE MOLD",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   },
+   {
+    "where": "main > div.ticker > div > span:nth-of-type(8)",
+    "text": "✦ MAKE BIG MOVES",
+    "declared": "\"IBM Plex Mono\", monospace",
+    "drawn_by_other_faces": [
+     "Segoe UI Symbol (1 glyphs)"
+    ]
+   }
+  ],
+  "note": "fonts.json covers the first 400 text nodes at 1440; emoji and symbols often fall back to a system face, which is fine when the declared face has no such glyph"
+ },
+ "parity": {
+  "shown_at_1440_missing_at_375": [],
+  "words_missing_at_375": 0,
+  "shown_at_375_missing_at_1440": [],
+  "words_missing_at_1440": 0,
+  "document_widths": {
+   "1280": {
+    "doc_w": 1280,
+    "viewport_w": 1280
+   },
+   "1440": {
+    "doc_w": 1440,
+    "viewport_w": 1440
+   },
+   "375": {
+    "doc_w": 384,
+    "viewport_w": 375
+   }
+  },
+  "note": "text matched by its first 60 characters against the other width's rendered text; navigation that moves into a menu counts as missing"
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 1,
+  "blocked_images": 0,
+  "blocked_fonts": 0,
+  "fonts_missing": [],
+  "prep": {
+   "host": "impeccable.style",
+   "config": {
+    "block": [
+     "/js/detect-antipatterns-browser.js"
+    ]
+   },
+   "applied": [
+    "blocked /js/detect-antipatterns-browser.js"
+   ]
+  }
+ },
+ "sweep": {
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 1,
+   "hits": [
+    {
+     "where": "div.dashboard-wrap:nth-of-type(2) > div.sticker:nth-of-type(2)",
+     "evidence": "page is 384px wide at a 375px viewport (sideways scroll); widest culprit 120px",
+     "tier": "Floor",
+     "width": 375
+    }
+   ]
+  },
+  "widows": {
+   "status": "ran",
+   "rule": "ROB-004",
+   "n": 0,
+   "hits": []
+  },
+  "performance": {
+   "status": "ran",
+   "rule": "WEB-001",
+   "n": 0,
+   "hits": []
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 9,
+   "hits": [
+    {
+     "where": "section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > span.fine-print  \"NO CREDIT CARD. NO BS. JUST BETTER WORK.\"",
+     "evidence": "40-character run at 10px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Floor"
+    },
+    {
+     "where": "of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > p  \"Supercharge your workflow and turn big ideas into \"",
+     "evidence": "70-character run at 13px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "of-type(2) > div.feature-grid > article.feature:nth-of-type(2) > p  \"One place for everything. Because your genius dese\"",
+     "evidence": "80-character run at 13px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "of-type(2) > div.feature-grid > article.feature:nth-of-type(3) > p  \"Automate the boring stuff. Focus on what matters. \"",
+     "evidence": "69-character run at 13px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)  \"YOUR UNFAIR ADVANTAGE\"",
+     "evidence": "label at 10px (label floor 12px; 12 such)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "ard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.window-bar:nth-of-type(1) > span  \"YOUR_NEXT_BIG_THING.exe\"",
+     "evidence": "label at 10px (label floor 12px; 12 such)",
+     "tier": "Reflex"
+    },
+    {
+     "where": ") > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > span.tag  \"IN THE ZONE\"",
+     "evidence": "label at 10px (label floor 12px; 12 such)",
+     "tier": "Reflex"
+    },
+    {
+     "where": " div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > span.check:nth-of-type(1)  \"✓\"",
+     "evidence": "label at 11px (label floor 12px; 12 such)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "n": 0,
+   "hits": []
+  },
+  "lang_and_title": {
+   "status": "ran",
+   "rule": "A11-008",
+   "n": 0,
+   "hits": []
+  },
+  "zoom_blocked": {
+   "status": "ran",
+   "rule": "A11-009",
+   "n": 0,
+   "hits": []
+  },
+  "unit_wrapped": {
+   "status": "ran",
+   "rule": "TYP-024",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "not_captured": [
+  "text-overflow, line-clamp, min-width, max-width, overflow-wrap and word-break per element (inferred from stylesheet rules and the first two recorded classes)",
+  "hostile content was not injected (the stress matrix, T-STRESS, has no detector yet): long names, translations and missing images are judged from layout evidence",
+  "no right-to-left render: RTL readiness is read from the stylesheet and the directional marks",
+  "page load was not throttled and layout shift (CLS) was not measured; only primary actions were held slow and failed (async.json)",
+  "widths between the captured ones, landscape, zoom at 200%",
+  "string concatenation and the code that formats dates and numbers (only the rendered text is seen)"
+ ],
+ "counts": {
+  "nowrap_clipped": 0,
+  "text_outside_box": 0,
+  "fixed_width_text_boxes": 0,
+  "line_clamped": 0,
+  "long_unbroken_strings": 1,
+  "card_groups": 0,
+  "labels_that_wrap": 0,
+  "tight_fixed_buttons": 0,
+  "rows_without_room": 0,
+  "formats_mixed": 0,
+  "text_in_images": 0,
+  "scripts_off_visible_share": 1.0,
+  "lcp_ms": 360,
+  "known_kib": 1
+ }
+}

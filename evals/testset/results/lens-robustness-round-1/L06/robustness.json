@@ -1,0 +1,66 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T10:45:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a SaaS landing page for a team workspace, with sign-up and demo actions), English only (html lang en at every width), several markets (the hero strip names 'US, EU, UK & APAC regions' and the footer links a 'South Africa Payslip Generator'). No right-to-left language is named.",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The cards and sections wrap and reserve space well, but the page pays 249 requests and a 3.5 s lab LCP for a landing page, and its own install prompt covers the hero actions on the first phone screen.",
+  "score": {
+    "dimension": "Usability",
+    "value": 6,
+    "reason": "T-HOSTILE-CONTENT and T-TRANSLATE pass on the card grid, but T-WEIGHT-FOR-JOB fails on 209 script requests (ROB-018), T-WIDTHS fails on the install prompt over the hero at 375 (ROB-009), and T-NO-SCRIPT loses 30% of the text (the sweep's ROB-001 Floor)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "'Install Consile' prompt (div.flex-1.min-w-0 > p 'Install Consile', button 'Maybe later'), hero, 375px",
+      "evidence": "At 375 the page's own install card sits at y 650 to 800 (dom-375: 'Install Consile' at y 670, 'Maybe later' at y 755), directly under the 'Start free' button. tiles/375-00.png shows it covering 'Explore the live demo' and the 'Book a demo' line on the first screen.",
+      "before": "An install prompt that opens over the hero on the first phone visit.",
+      "after": "Show the install prompt only after a second visit or a completed action, and dock it as a bottom bar that reserves its own height instead of covering the hero.",
+      "why": "A first-time phone visitor sees the secondary call to action hidden behind a prompt to install an app they have not tried yet.",
+      "test": "T-WIDTHS"
+    },
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Whole page, performance (perf.json), 1440px",
+      "evidence": "The landing page makes 249 requests (budget fail), 209 of them script files totalling 481 KiB (budget warn), and loads 5 font files (warn). The lab LCP is 3,452 ms, in the warn band above 2,500 ms (sweep performance hit). The brand logo is a 6,250px PNG shown at 28px (sweep performance hit).",
+      "before": "The landing route loads the app's code split into 209 script chunks and an unresized logo.",
+      "after": "Ship the landing route as static HTML with one small script for the demo and marquee, preload the hero face, and serve the logo as the existing SVG or a 56px PNG.",
+      "why": "Each of 209 script requests costs a round trip on a phone line, and the first paint of the hero waits on them for a visitor who has not signed up yet.",
+      "root": "The app bundle shared with the landing route",
+      "test": "T-WEIGHT-FOR-JOB"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page, scripts off, all widths",
+      "evidence": "With scripts off 5,064 characters stay visible against 7,272 in the baseline, a share of 0.696 (resilience.hidden_content.scripts_off). The sweep's hidden_content hit (ROB-001, Floor) records 1,830 characters (27%) invisible with JavaScript off. The page also logs three 'net::ERR_CONNECTION_RESET' resource failures on load (console_errors 5).",
+      "before": "About a third of the landing text appears only after script runs.",
+      "after": "Render the remaining sections in the static HTML and use script only to animate them in, behind a no-script safety class (draft ROB-204).",
+      "why": "A visitor or crawler without script loses a third of the case the page makes.",
+      "test": "T-NO-SCRIPT"
+    }
+  ],
+  "strengths": [
+    "The feature, problem and security cards stack one per row at 375 and let titles such as 'SCIM 2.0 Provisioning' and long descriptions wrap (tiles/375-07.png, tiles/375-08.png); the document width equals the viewport at every width.",
+    "The stylesheet carries overflow-wrap: anywhere and break-words rules, 43 min-width: 0 rules, 11 dvh or svh heights against 5 vh, and 16 aspect-ratio rules, so long strings, phone chrome and late images have room.",
+    "Six of nine @font-face rules use font-display: swap, and three declare metric overrides ('Figtree Fallback'), so the main face swaps in without moving the text.",
+    "78 of 93 images are lazy-loaded and the largest image is 138 KiB."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions; sign-up and the live demo were not opened. Six images were blocked by the capture and are not verified.",
+    "T-EXTREME-COUNTS: the product preview's counts ('18 tasks due', '92%') are labelled sample data.",
+    "The hero text and links hidden at 375 are the sweep's phone_parity hit (ROB-002); cited, not repeated.",
+    "Capture prep clicked 'Reject All' on the cookie banner at every width.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

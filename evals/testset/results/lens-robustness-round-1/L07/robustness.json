@@ -1,0 +1,77 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T11:00:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade (a landing page for an AI video and character studio, with a hero carousel, studio cards, a mobile-app block and sign-up actions). The header offers EN, FR and RU switches, so the page serves at least three languages and two scripts (Latin and Cyrillic); html lang is en in the captured English view. T-TRANSLATE is a Reflex test here. No right-to-left language.",
+  "overall_read": "generated",
+  "confidence": "high",
+  "overall_reason": "The page is blank without script, ships 22 MB to a first-time visitor (a 2.4 MB logo shown at 40px), and its phone header already wraps 'Sign In' and 'Start for free' in English on a site that also serves French and Russian.",
+  "score": {
+    "dimension": "Usability",
+    "value": 3,
+    "reason": "T-WEIGHT-FOR-JOB fails far over budget (ROB-018), T-NO-SCRIPT fails completely (ROB-015, citing the sweep's ROB-001 Floors), and T-WIDTHS and T-TRANSLATE fail on the phone header (ROB-007, ROB-011)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-FAILURE-PATH", "T-SLOW-LINE", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Whole page, performance (perf.json); header logo img cineyx-logo.png; studio card covers covers/cover-*.jpg, 1440px",
+      "evidence": "The page transfers at least 22,465 KiB against a fail budget of 3,000 KiB: 13,782 KiB of images, 6,582 KiB of video and 2,075 KiB of script (performance.by_kind, all fail). The header logo is a 2,422 KiB PNG 1,440px wide shown at 40px (36 times oversize). Cover JPEGs of 1,027 to 1,249 KiB are shown at 160px. Two autoplay demo videos weigh 3,477 and 3,105 KiB. The sweep's performance detector logged 70 hits.",
+      "before": "Source images and videos served as uploaded, at full size, to every visitor.",
+      "after": "Serve the logo as an SVG or an 80px WebP, serve the covers with srcset at 1 and 2 times their shown width in AVIF or WebP, and give the demo videos preload='none' with a poster until they scroll into view (drafts ROB-167, ROB-173).",
+      "why": "A first-time phone visitor downloads more than 22 MB before the page has made its case, most of it for pictures shown at a small fraction of their size.",
+      "root": "No image or video resizing in the asset pipeline",
+      "test": "T-WEIGHT-FOR-JOB"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Whole page (single-page app, assets/index-C3E1u1tG.js, 2,055 KiB), all widths",
+      "evidence": "With scripts off the page has 0 visible and 0 total characters against 3,950 in the baseline (scripts_off_note 'no text at all with scripts off'). With an observer that never fires only 632 characters (16%) are visible. The sweep's hidden_content detector records both as ROB-001 Floors.",
+      "before": "A client-rendered page whose sections also wait on IntersectionObserver to appear.",
+      "after": "Prerender the landing route to static HTML and make the reveal animations start from visible content, with a no-script safety class (draft ROB-204).",
+      "why": "A visitor whose 2 MB script fails or arrives late sees a blank page, and a reader whose observer never fires sees five-sixths of the text missing.",
+      "root": "Client-only rendering plus observer-gated reveals",
+      "test": "T-NO-SCRIPT"
+    },
+    {
+      "rule": "ROB-007",
+      "title": "Short labels stay whole on one line",
+      "tier": "Reflex",
+      "where": "Fixed header nav, a.text-sm 'Sign In' and a.px-4.py-2 'Start for free', 375px",
+      "evidence": "At 375 the header row holds the logo, the EN, FR and RU switches, 'Sign In' and 'Start for free'. The table lists 'Sign In' at 43px wide on 2 lines and 'Start for free' at 115px wide and 56px tall on 2 lines (controls.labels_that_wrap). tiles/375-00.png shows 'Sign / In' and 'Start for / free' stacked.",
+      "before": "Five header controls share one row at 375 and the two actions wrap.",
+      "after": "Below 480px, move the language switch and 'Sign In' into the menu and keep 'Start for free' on one line with white-space: nowrap.",
+      "why": "A two-line 'Sign / In' reads as two words, and the main action shrinks to a stacked box on the first phone screen.",
+      "test": "T-WIDTHS"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Fixed header nav, 375px and 1280px; language switch buttons EN, FR, RU",
+      "evidence": "The English labels already wrap at 375 (see the ROB-007 finding). The header offers French and Russian, whose usual labels for 'Start for free' and 'Sign in' run about 35% to 60% longer. The header row leaves no slack at 375 and the buttons have no nowrap rule.",
+      "before": "A header sized to the English labels on a site that serves French and Russian.",
+      "after": "Plan the header for the longest locale: collapse the switch into one 'EN' menu, and let the action label shorten per locale or move under the hero below 480px.",
+      "why": "A French or Russian visitor gets a header whose actions break onto three lines or push the logo out.",
+      "test": "T-TRANSLATE"
+    }
+  ],
+  "strengths": [
+    "The studio and feature cards stack one per row at 375 and let their titles and descriptions wrap (tiles/375-02.png to tiles/375-05.png); the document width equals the viewport at every width.",
+    "38 of 41 images are lazy-loaded and the cards use aspect-video boxes, so pictures below the hero arrive without moving the text.",
+    "The 'Send feedback' action answered within 0.5 s in both the slow and the failed run by opening its form."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "The French and Russian views were not captured, so translated strings were judged from the English layout only.",
+    "A right-to-left render was not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "The 'Send feedback' spinner left after the answer is the sweep's async_state hit (CMP-001); cited, not repeated.",
+    "T-EXTREME-COUNTS: the only counts ('50 AI Energy + 1 Free Character') are fixed offer copy.",
+    "Capture prep clicked 'Reject non-essential' on the cookie banner at every width.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

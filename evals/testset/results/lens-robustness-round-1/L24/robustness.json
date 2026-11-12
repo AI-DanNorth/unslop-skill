@@ -1,0 +1,87 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The article reads fully with scripts off and wraps at every width, but a broken script embed throws on load and the page fetches 13 font files and 3840px images for an 846px column.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-NO-SCRIPT and T-WIDTHS pass; T-WEIGHT-FOR-JOB fails on fonts and image sizes (ROB-018) and a script error on load fails ROB-015."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Fonts and article figures (figure.w-richtext-figure-type-image > img), all widths, tiles/1440-02.png",
+      "evidence": "performance: 13 font files (font_files fail; budget 4 to 6) while fonts.json drew one family, Suisse Int'l (12,531 glyphs); webfont.js also requests Droid Sans and Lato from Google. Four mood boards are 3840px wide and shown at 846px (4.5 times; the sweep's performance hits, WEB-001). Bytes are known for 8 of 74 requests, so the true weight is not verified.",
+      "before": "The page loads font families it never draws and serves 4K mood boards into an 846px column.",
+      "after": "Drop webfont.js and the unused Droid Sans and Lato requests; serve the mood boards with srcset at 846 and 1692px.",
+      "why": "A phone reader pays for 4K images and a dozen font files to read one article.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Story page script embed, all widths",
+      "evidence": "resilience.console_errors: 5, including \"Refused to execute script from 'https://www.nimblestudio.com/story/%E2%80%9Chttps://sdk.intent.upflowy.com/upflowy-inten…'\". The %E2%80%9C is a curly opening quote inside the src attribute, so the browser resolves the URL as a relative path on the story page and the script never runs. A 404 and two connection resets follow.",
+      "before": "A third-party script tag pasted with typographic quotes fails on every story page.",
+      "after": "Fix the src attribute to straight quotes, or remove the embed.",
+      "why": "Each story page throws errors on load; whatever the embed was meant to do never happens.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Header nav pill (Work, Industries, Technologies, Services, Insights, Careers), 1280 and 1440px, tiles/1280-00.png",
+      "evidence": "rows_without_room_for_35pct: six links in a 585px row, free_px -1 against needed_for_35pct_px 75, at both 1280 and 1440.",
+      "before": "The nav pill is exactly as wide as its six English labels.",
+      "after": "Let the pill collapse to the menu when it runs out of room, not at a fixed breakpoint.",
+      "why": "The site is English-only, so this is a readiness note: one more section or a longer label will not fit.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The article reads with scripts off: 10,477 visible characters, the same as the baseline.",
+    "The title and body wrap at 375 and the document matches every viewport width.",
+    "18 height rules use dvh or svh and 65 use aspect-ratio.",
+    "Phone and desktop show the same article text (the parity rows are a text-matching artifact and the QR prompt 'On your laptop?' is desktop-only by design)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "true page weight: 66 of 74 requests are cross-origin without timing headers, and 68 requests were blocked by the capture (trackers)",
+    "T-FAILURE-PATH: async found no primary actions",
+    "T-LOCALE-FORMAT: 'Jun 2, 2026' and '20/30/50' were flagged as two date styles; '20/30/50' reads as a ratio, not a date, so it was not raised",
+    "contract: no 00-contract.md; inferred a Read article on an agency site, English only"
+  ],
+  "disputes": []
+}

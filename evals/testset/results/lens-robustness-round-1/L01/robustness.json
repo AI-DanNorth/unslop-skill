@@ -1,0 +1,56 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T10:00:00",
+  "contract_inferred": "No 00-contract.md. Inferred from the page: web, Persuade with a light Operate part (a goal picker and a tool directory with prices), English only (html lang en at every width), markets the US and India (the header offers a USD and INR price switch). No right-to-left language.",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The page is server-rendered and keeps all its text with scripts off, weighs 155 KiB, and its cards and labels wrap; the one brittle slot is the compare table, which opens at 375 with its Level and Best-for columns off the right edge of a scroll box.",
+  "score": {
+    "dimension": "Usability",
+    "value": 8,
+    "reason": "T-NO-SCRIPT, T-WEIGHT-FOR-JOB and T-HOSTILE-CONTENT pass on the cards and headings, and T-WIDTHS fails only on the compare table at 375 and the overlapping hero mock-up cards (ROB-009)."
+  },
+  "tests_run": ["T-HOSTILE-CONTENT", "T-TRUNCATION", "T-WIDTHS", "T-TRANSLATE", "T-LOCALE-FORMAT", "T-RTL-READY", "T-SCRIPT-COVERAGE", "T-NO-SCRIPT", "T-HIDDEN-CONTENT", "T-LAYOUT-SHIFT", "T-WEIGHT-FOR-JOB"],
+  "findings": [
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Compare tools section, div.mt-8.overflow-x-auto > table.w-full.min-w-[560px], 375px",
+      "evidence": "At 375 the table has min-width 560px inside a 261px scroll box (dom-375 rect x 57, w 261). The Level column starts at x 303 and Best for at x 377, so the visible box ends mid-column. tiles/375-07.png shows the cells cut to 'no' and 'be' and the header to 'LE', with no shadow, fade or hint that the box scrolls. This matches draft ROB-209 (a phone table with two columns off-screen).",
+      "before": "A five-column table forced to 560px and clipped by its scroll box at 375, with no scroll cue.",
+      "after": "Below 640px, render each tool as a stacked row (name and price on one line, category, level and best-for under it), or keep the scroller and add an edge fade with the first column sticky.",
+      "why": "A phone visitor comparing tools sees the level cut to two letters and never sees the Best-for reason unless they guess that the table scrolls sideways.",
+      "test": "T-WIDTHS"
+    },
+    {
+      "rule": "ROB-009",
+      "title": "Nothing overlaps, is sliced or hides under chrome",
+      "tier": "Reflex",
+      "where": "Hero mock-up, div.floaty.absolute cards ('Your goal' and 'Recommended stack'), 375px",
+      "evidence": "At 375 the absolutely positioned 'Recommended stack' card sits on top of the 'Your goal' card (tiles/375-01.png). The goal title 'Start a YouTube channel' (p.mt-1.font-display, 198px wide, 56px tall at 375) is covered after 'chann'.",
+      "before": "Floating cards placed at fixed offsets that overlap once the stage narrows to 375.",
+      "after": "At narrow widths, stack the mock-up cards in normal flow or scale the whole stage as one unit so their offsets keep their gaps.",
+      "why": "The hero illustration explains the product's promise. At 375 its sample goal reads 'Start a YouTube chann', and any longer goal would be hidden further.",
+      "test": "T-WIDTHS"
+    }
+  ],
+  "strengths": [
+    "The page keeps all 2,180 characters visible with scripts off, with an observer that never fires and with reduced motion (resilience.hidden_content share 1.0 in every run).",
+    "The page weighs 155 KiB over 15 requests with an LCP of 1,216 ms in the lab, inside every budget (performance.against_budgets all ok).",
+    "Tool cards and goal cards let their names and descriptions wrap (white-space normal, no fixed heights; card_groups_equal_height_unequal_text is empty), so a longer tool name gets a second line instead of being cut.",
+    "The header's USD and INR switch serves two markets with one price format per view ('$20/mo' throughout the captured USD view).",
+    "The stylesheet uses logical properties in 67 of 137 box rules, with 20 start and end rules and 4 dir rules, so a right-to-left version has a head start."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names were judged from layout evidence.",
+    "A right-to-left render and translated strings were not captured.",
+    "The page load was not throttled and layout shift was not measured as a number (capture predates the CLS record).",
+    "T-FAILURE-PATH and T-SLOW-LINE: async found no primary actions (the goal picker and 'Find my stack' were not opened), and no image failed.",
+    "T-EXTREME-COUNTS: the only counts ('17 curated tools', '5 budget tiers') are fixed copy; the directory search and results were not opened.",
+    "The INR view of the prices was not captured, so its number format was not checked.",
+    "fallback_face is not-verified: one font request was blocked by the capture.",
+    "The Lovable 'Edit with Lovable' badge is host chrome fixed over the bottom-right card at 1440 (tiles/1440-00.png); it is the host's, not the design's.",
+    "Widths between the captures, landscape, zoom at 200%, back navigation and deep links."
+  ]
+}

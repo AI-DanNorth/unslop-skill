@@ -1,0 +1,86 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The site reads with scripts off, but lab LCP is 6.4 s with gallery images served at five times their size, and the phone headings sit nowrap in a 165px column with no room for a longer word.",
+  "score": {
+    "dimension": "Usability",
+    "value": 5,
+    "reason": "T-NO-SCRIPT passes; T-WEIGHT-FOR-JOB fails (ROB-018, LCP 6360 ms), T-HOSTILE-CONTENT fails on the phone headings (ROB-005) and T-LAYOUT-SHIFT on the display face (ROB-017)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Home gallery images (ln-home-horiz-*.webp) and page load, all widths",
+      "evidence": "The sweep's performance hits (WEB-001): lab LCP 6360 ms (fail over 4500) and 1440px-wide images shown at 251 to 317px (4.5 to 5.7 times). performance: 121 requests (fail), 198 image entries; bytes are known for only 2 of 121 requests.",
+      "before": "The gallery serves one 1440px file to every slot, including the small offset photos.",
+      "after": "Serve each gallery image with srcset and sizes matched to its slot, and give the hero a light poster that paints first.",
+      "why": "Fans arrive on phones; a 6.4 s lab LCP means seconds of empty screen on a real mobile line.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness",
+      "root": "one image size for every slot"
+    },
+    {
+      "rule": "ROB-005",
+      "title": "Long and unbroken text reflows",
+      "tier": "Reflex",
+      "where": "Section headings (div.title-headline-w h2: 'HELMETS / HALL OF FAME', 'PARTNERS / &CAMPAIGNS', 'WORLD DRIVERS' CHAMPION'), 375px, tiles/375-06.png and tiles/375-09.png",
+      "evidence": "text_risk.nowrap_clipped: '&campaigns' in a 165px box clipped by 164px, 'Hall of Fame' 165px box clipped by 164px, 'Champion' clipped by 424px, all nowrap with no ellipsis; the clipping comes from the line masks of the reveal animation. On tiles/375-09.png '&CAMPAIGNS' already fills the left column and touches the paragraph beside it, and 'CHAMPION' runs from x 13 to 185.",
+      "before": "Display headings set nowrap in a half-width column beside the paragraph on phones.",
+      "after": "Below 480px stack the heading above its paragraph, and allow it to wrap (white-space: normal; overflow-wrap: break-word).",
+      "why": "Reasoned, not observed: a longer word (a new partner category, a translated title) has no room and will run under the paragraph or be cut by the mask.",
+      "test": "T-HOSTILE-CONTENT",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-017",
+      "title": "Loading never moves what the visitor is reading",
+      "tier": "Reflex",
+      "where": "Display face 'Brier Bold' on the large headings, all widths",
+      "evidence": "css.font_face: 3 faces, metric_overrides 0, one face with font-display not set and two with swap. fonts.json shows 'Brier Bold' drawing the large headline words (408 glyphs) inside 'Mona Sans' stacks.",
+      "before": "The large display words swap from Arial to Brier Bold with no metric overrides.",
+      "after": "Add size-adjust, ascent-override and descent-override to the display face, or preload it.",
+      "why": "The biggest words on the page reflow when the font lands; layout shift was not measured in this capture.",
+      "test": "T-LAYOUT-SHIFT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The page reads with scripts off: 1533 visible characters, the same share as the baseline, and no hidden-content hits.",
+    "The document matches every viewport width; 90 aspect-ratio rules hold the image slots.",
+    "Phone and desktop show the same text (no parity loss)."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-FAILURE-PATH and T-SLOW-LINE: async was not captured (--no-async)",
+    "true page weight: bytes known for 2 of 121 requests",
+    "T-LOCALE-FORMAT: no dates, money or units found",
+    "contract: no 00-contract.md; inferred an Experience site for a racing driver, English, international fans"
+  ],
+  "disputes": []
+}

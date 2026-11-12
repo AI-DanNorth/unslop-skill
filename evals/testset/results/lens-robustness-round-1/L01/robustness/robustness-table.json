@@ -1,0 +1,622 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L01",
+ "url": "https://findaistack.lovable.app/",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "manifest_widths": [
+  375,
+  1280,
+  1440
+ ],
+ "text_risk": {
+  "nowrap_clipped": [],
+  "text_outside_box": [],
+  "line_clamped": [],
+  "fixed_width_text_boxes": [],
+  "long_unbroken_strings": [],
+  "single_line_with_ellipsis_rule_not_clipped": {},
+  "ellipsis_classes_in_css": [
+   "ellipsis",
+   "text-ellipsis",
+   "text-truncate",
+   "truncate"
+  ],
+  "line_clamp_classes_in_css": []
+ },
+ "card_groups_equal_height_unequal_text": [],
+ "controls": {
+  "labels_that_wrap": [],
+  "fixed_width_buttons_tight": [],
+  "rows_without_room_for_35pct": [],
+  "rows_checked": 2
+ },
+ "formats": {
+  "found": {
+   "currency_symbol_before": {
+    "n": 11,
+    "samples": [
+     "$15",
+     "$20",
+     "$25",
+     "$5",
+     "$9.99"
+    ]
+   },
+   "currency_code": {
+    "n": 2,
+    "samples": [
+     "INR",
+     "USD"
+    ]
+   }
+  },
+  "mixed_on_one_surface": [
+   "currencies ['$', 'INR', 'USD']"
+  ]
+ },
+ "language": {
+  "html_lang": {
+   "1280": "en",
+   "1440": "en",
+   "375": "en"
+  },
+  "scripts_share": {
+   "latin": 1.0
+  },
+  "dominant_script": "latin",
+  "rtl_language": false,
+  "language_switch": [],
+  "directional_marks": [
+   {
+    "where": "flex:nth-of-type(1) > a.inline-flex.items-center:nth-of-type(1) > span",
+    "kind": "text",
+    "text": "→"
+   },
+   {
+    "where": "-type(3) > div.flex.flex-wrap:nth-of-type(1) > a.text-sm.font-semibold",
+    "kind": "text",
+    "text": "Open directory →"
+   },
+   {
+    "where": "l.border > div.flex.flex-wrap:nth-of-type(1) > a.text-sm.font-semibold",
+    "kind": "text",
+    "text": "Open compare →"
+   }
+  ]
+ },
+ "text_in_images": [],
+ "css": {
+  "readable_rules": 954,
+  "unreadable_sheets": 1,
+  "unreadable_hosts": [
+   "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:w"
+  ],
+  "physical_props": 70,
+  "physical_top": [
+   [
+    "left",
+    14
+   ],
+   [
+    "right",
+    10
+   ],
+   [
+    "padding-right",
+    7
+   ],
+   [
+    "margin-left",
+    5
+   ],
+   [
+    "border-top-left-radius",
+    5
+   ],
+   [
+    "padding-left",
+    5
+   ]
+  ],
+  "logical_props": 67,
+  "logical_start_end": 20,
+  "logical_top": [
+   [
+    "padding-block",
+    24
+   ],
+   [
+    "padding-inline",
+    13
+   ],
+   [
+    "margin-block-start",
+    7
+   ],
+   [
+    "margin-block-end",
+    7
+   ],
+   [
+    "margin-inline",
+    4
+   ],
+   [
+    "margin-inline-end",
+    3
+   ]
+  ],
+  "dir_rules": 4,
+  "dir_rule_samples": [
+   "[dir=\"rtl\"]"
+  ],
+  "mirroring_rules": 0,
+  "lang_rules": [
+   ":lang(ae)",
+   ":lang(ar)",
+   ":lang(arc)",
+   ":lang(bcc)",
+   ":lang(bqi)",
+   ":lang(ckb)"
+  ],
+  "text_overflow_ellipsis": [
+   ".\\[\\&\\>span\\:last-child\\]\\:truncate > span:last-child"
+  ],
+  "line_clamp": [
+   ".\\[\\&\\>span\\]\\:line-clamp-1 > span"
+  ],
+  "nowrap_rules": 4,
+  "overflow_wrap": [
+   ".break-words"
+  ],
+  "word_break": [],
+  "hyphens_auto": [],
+  "text_wrap_balance_pretty": 0,
+  "min_width_0": 7,
+  "breakpoints_px": [],
+  "container_queries": 0,
+  "height_vh": 1,
+  "height_dvh_svh": 2,
+  "safe_area": 0,
+  "aspect_ratio": 2,
+  "content_visibility": 0,
+  "font_face": {
+   "count": 0,
+   "font_display": {},
+   "metric_overrides": 0,
+   "unicode_range": 0
+  }
+ },
+ "resilience": {
+  "hidden_content": {
+   "baseline": {
+    "visible_chars": 2180,
+    "total_chars": 2181,
+    "visible_share_of_baseline": 1.0
+   },
+   "reduced_motion": {
+    "visible_chars": 2180,
+    "total_chars": 2181,
+    "visible_share_of_baseline": 1.0
+   },
+   "observer_never_fires": {
+    "visible_chars": 2180,
+    "total_chars": 2181,
+    "visible_share_of_baseline": 1.0
+   },
+   "scripts_off": {
+    "visible_chars": 2180,
+    "total_chars": 2181,
+    "visible_share_of_baseline": 1.0
+   }
+  },
+  "console_errors": 0,
+  "async": {
+   "actions": [],
+   "note": "no primary actions (form submits, action buttons) found"
+  },
+  "skeleton_or_loader_elements": []
+ },
+ "performance": {
+  "lcp_ms": 1216,
+  "lcp_band": "ok",
+  "requests": 15,
+  "bytes_known_for": "15 of 15 requests (cross-origin files without timing headers report 0)",
+  "known_kib": 155,
+  "by_kind": {
+   "css": {
+    "n": 2,
+    "kib": 14,
+    "unknown_bytes": 0
+   },
+   "js": {
+    "n": 12,
+    "kib": 141,
+    "unknown_bytes": 0
+   },
+   "other": {
+    "n": 1,
+    "kib": 0,
+    "unknown_bytes": 0
+   }
+  },
+  "heaviest": [
+   {
+    "file": "https://findaistack.lovable.app/assets/index-D6y6A1Qr.js",
+    "kib": 94,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/assets/styles-CFpgL3E5.css",
+    "kib": 13,
+    "kind": "css"
+   },
+   {
+    "file": "https://findaistack.lovable.app/__l5e/events.270c78a44fc53e7b.js",
+    "kib": 12,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/assets/link-Ddfgt-ke.js",
+    "kib": 10,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/~flock.js",
+    "kib": 8,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/assets/tools-But4sDQP.js",
+    "kib": 5,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/assets/recommend-BsqhY0AG.js",
+    "kib": 4,
+    "kind": "js"
+   },
+   {
+    "file": "https://findaistack.lovable.app/assets/jsx-runtime-Cltr0gcK.js",
+    "kib": 3,
+    "kind": "js"
+   }
+  ],
+  "images": {
+   "n": 0,
+   "largest_kib": 0,
+   "oversized_over_2.2x": [],
+   "not_loaded": []
+  },
+  "budgets": {
+   "transfer_kib": [
+    1500,
+    3000
+   ],
+   "image_kib": [
+    1200,
+    2400
+   ],
+   "largest_image_kib": [
+    350,
+    700
+   ],
+   "js_kib": [
+    450,
+    900
+   ],
+   "css_kib": [
+    120,
+    250
+   ],
+   "requests": [
+    60,
+    110
+   ],
+   "font_files": [
+    4,
+    6
+   ],
+   "font_kib": [
+    160,
+    320
+   ],
+   "lcp_ms": [
+    2500,
+    4500
+   ]
+  },
+  "against_budgets": {
+   "transfer_kib": "ok",
+   "image_kib": null,
+   "largest_image_kib": "ok",
+   "js_kib": "ok",
+   "css_kib": "ok",
+   "requests": "ok",
+   "font_files": null,
+   "font_kib": null
+  },
+  "note": "bands read known bytes only: an 'ok' on a page with many unknown sizes is not verified",
+  "image_bytes_share": 0.0,
+  "lazy_attr": {}
+ },
+ "fonts": {
+  "families_drawn": [
+   [
+    "Inter",
+    2083
+   ],
+   [
+    "Space Grotesk Light",
+    346
+   ],
+   [
+    "Segoe UI",
+    9
+   ],
+   [
+    "Segoe UI Semibold",
+    4
+   ]
+  ],
+  "nodes_with_glyphs_from_an_undeclared_face": [
+   {
+    "where": "v.mt-8.flex:nth-of-type(1) > a.inline-flex.items-center:nth-of-type(1)",
+    "text": "Find my stack",
+    "declared": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "drawn_by_other_faces": [
+     "Segoe UI Semibold (1 glyphs)"
+    ]
+   },
+   {
+    "where": "-type(3) > div.flex.flex-wrap:nth-of-type(1) > a.text-sm.font-semibold",
+    "text": "Open directory →",
+    "declared": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "drawn_by_other_faces": [
+     "Segoe UI Semibold (1 glyphs)"
+    ]
+   },
+   {
+    "where": "l.border > div.flex.flex-wrap:nth-of-type(1) > a.text-sm.font-semibold",
+    "text": "Open compare →",
+    "declared": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "drawn_by_other_faces": [
+     "Segoe UI Semibold (1 glyphs)"
+    ]
+   }
+  ],
+  "note": "fonts.json covers the first 400 text nodes at 1440; emoji and symbols often fall back to a system face, which is fine when the declared face has no such glyph"
+ },
+ "parity": {
+  "shown_at_1440_missing_at_375": [],
+  "words_missing_at_375": 0,
+  "shown_at_375_missing_at_1440": [],
+  "words_missing_at_1440": 0,
+  "document_widths": {
+   "1280": {
+    "doc_w": 1280,
+    "viewport_w": 1280
+   },
+   "1440": {
+    "doc_w": 1440,
+    "viewport_w": 1440
+   },
+   "375": {
+    "doc_w": 375,
+    "viewport_w": 375
+   }
+  },
+  "note": "text matched by its first 60 characters against the other width's rendered text; navigation that moves into a menu counts as missing"
+ },
+ "network": {
+  "mode": "direct",
+  "blocked": 10,
+  "blocked_images": 0,
+  "blocked_fonts": 1,
+  "fonts_missing": [],
+  "prep": null
+ },
+ "sweep": {
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "n": 0,
+   "hits": []
+  },
+  "phone_parity": {
+   "status": "ran",
+   "rule": "ROB-002",
+   "n": 0,
+   "hits": []
+  },
+  "overflow": {
+   "status": "ran",
+   "rule": "ROB-003",
+   "n": 0,
+   "hits": []
+  },
+  "widows": {
+   "status": "ran",
+   "rule": "ROB-004",
+   "n": 8,
+   "hits": [
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(2) > p.mt-2.text-sm  \"Research, script, voice, edit and package every vi\"",
+     "evidence": "last line is 30% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": " div.mt-8.grid > a.group.rounded-2xl:nth-of-type(4) > p.mt-2.text-sm  \"From copy and imagery to a live, published site.\"",
+     "evidence": "last line is 10% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(5) > p.mt-2.text-sm  \"Validate, design, build and automate a real produc\"",
+     "evidence": "last line is 20% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(6) > p.mt-2.text-sm  \"Research the market, build the brand, pitch and ru\"",
+     "evidence": "last line is 23% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(7) > p.mt-2.text-sm  \"Win clients, deliver faster, and look bigger than \"",
+     "evidence": "last line is 31% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(8) > p.mt-2.text-sm  \"Plan topics, research, write, illustrate and repur\"",
+     "evidence": "last line is 26% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "v.mt-8.grid > a.group.rounded-2xl:nth-of-type(10) > p.mt-2.text-sm  \"Concept, generate, assemble and hand off visual wo\"",
+     "evidence": "last line is 28% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    },
+    {
+     "where": "grid:nth-of-type(2) > div.group.flex:nth-of-type(3) > p.mt-2.flex-1  \"Drag-and-drop design with AI generation built in.\"",
+     "evidence": "last line is 18% of the measure at 375px (2 lines)",
+     "tier": "Finish",
+     "width": 375
+    }
+   ]
+  },
+  "performance": {
+   "status": "ran",
+   "rule": "WEB-001",
+   "n": 0,
+   "hits": []
+  },
+  "async_state": {
+   "status": "skipped: no primary actions (form submits, action buttons) on the page",
+   "rule": "CMP-001",
+   "n": 0,
+   "hits": []
+  },
+  "text_floor": {
+   "status": "ran",
+   "rule": "A11-002",
+   "n": 12,
+   "hits": [
+    {
+     "where": ") > div.mx-auto.grid > div.lg\\:col-span-6:nth-of-type(1) > span.inline-flex.items-center  \"Personalized AI tool bundles\"",
+     "evidence": "28-character run at 12px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(1) > p.mt-2.text-sm  \"Turn lecture material into revision you actually r\"",
+     "evidence": "56-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(2) > p.mt-2.text-sm  \"Research, script, voice, edit and package every vi\"",
+     "evidence": "54-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(3) > p.mt-2.text-sm  \"Keep a consistent publishing cadence across channe\"",
+     "evidence": "53-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": " div.mt-8.grid > a.group.rounded-2xl:nth-of-type(4) > p.mt-2.text-sm  \"From copy and imagery to a live, published site.\"",
+     "evidence": "48-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(5) > p.mt-2.text-sm  \"Validate, design, build and automate a real produc\"",
+     "evidence": "52-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(6) > p.mt-2.text-sm  \"Research the market, build the brand, pitch and ru\"",
+     "evidence": "55-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    },
+    {
+     "where": "iv.mt-8.grid > a.group.rounded-2xl:nth-of-type(7) > p.mt-2.text-sm  \"Win clients, deliver faster, and look bigger than \"",
+     "evidence": "58-character run at 14px (hard floor 12px, dense UI 14px, body 16px)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "fallback_face": {
+   "status": "not-verified: 1 font request(s) were blocked by the capture network",
+   "rule": "TYP-004",
+   "n": 0,
+   "hits": []
+  },
+  "lang_and_title": {
+   "status": "ran",
+   "rule": "A11-008",
+   "n": 0,
+   "hits": []
+  },
+  "zoom_blocked": {
+   "status": "ran",
+   "rule": "A11-009",
+   "n": 0,
+   "hits": []
+  },
+  "unit_wrapped": {
+   "status": "ran",
+   "rule": "TYP-024",
+   "n": 0,
+   "hits": []
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "n": 0,
+   "hits": []
+  },
+  "placeholder_residue": {
+   "status": "ran",
+   "rule": "INT-005",
+   "n": 0,
+   "hits": []
+  },
+  "near_blank": {
+   "status": "ran",
+   "rule": "PRC-001",
+   "n": 0,
+   "hits": []
+  }
+ },
+ "not_captured": [
+  "text-overflow, line-clamp, min-width, max-width, overflow-wrap and word-break per element (inferred from stylesheet rules and the first two recorded classes)",
+  "hostile content was not injected (the stress matrix, T-STRESS, has no detector yet): long names, translations and missing images are judged from layout evidence",
+  "no right-to-left render: RTL readiness is read from the stylesheet and the directional marks",
+  "page load was not throttled and layout shift (CLS) was not measured; only primary actions were held slow and failed (async.json)",
+  "widths between the captured ones, landscape, zoom at 200%",
+  "string concatenation and the code that formats dates and numbers (only the rendered text is seen)"
+ ],
+ "counts": {
+  "nowrap_clipped": 0,
+  "text_outside_box": 0,
+  "fixed_width_text_boxes": 0,
+  "line_clamped": 0,
+  "long_unbroken_strings": 0,
+  "card_groups": 0,
+  "labels_that_wrap": 0,
+  "tight_fixed_buttons": 0,
+  "rows_without_room": 0,
+  "formats_mixed": 1,
+  "text_in_images": 0,
+  "scripts_off_visible_share": 1.0,
+  "lcp_ms": 1216,
+  "known_kib": 155
+ }
+}

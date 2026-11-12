@@ -1,0 +1,88 @@
+{
+  "lens": "robustness",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "high",
+  "overall_reason": "Cards stretch to their longest text, logical properties and :lang rules are in place and the page is fast, but seven font files weigh 855 KiB and the header buttons have little room for longer labels.",
+  "score": {
+    "dimension": "Usability",
+    "value": 7,
+    "reason": "T-WIDTHS and T-HOSTILE-CONTENT pass, but T-WEIGHT-FOR-JOB fails on fonts (ROB-018) and T-TRANSLATE on two fixed header buttons (ROB-011)."
+  },
+  "tests_run": [
+    "T-HOSTILE-CONTENT",
+    "T-TRUNCATION",
+    "T-WIDTHS",
+    "T-TRANSLATE",
+    "T-LOCALE-FORMAT",
+    "T-RTL-READY",
+    "T-SCRIPT-COVERAGE",
+    "T-NO-SCRIPT",
+    "T-HIDDEN-CONTENT",
+    "T-LAYOUT-SHIFT",
+    "T-WEIGHT-FOR-JOB"
+  ],
+  "findings": [
+    {
+      "rule": "ROB-018",
+      "title": "Weight fits the page's job",
+      "tier": "Reflex",
+      "where": "Page fonts (_next/static/media), all widths",
+      "evidence": "performance.by_kind.font: 7 files, 855 KiB; against_budgets marks font_files and font_kib as fail (budgets 4 to 6 files, 160 to 320 KiB). The heaviest are AnthropicSerif_Roman 171 KiB, AnthropicSerif_Italic 163 KiB, JetBrainsMono_VF as an uncompressed .ttf at 145 KiB, AnthropicSans_Italic 127 KiB and AnthropicSans_Roman 116 KiB. fonts.json drew only Anthropic Sans and Anthropic Serif Light in the first 400 text nodes at 1440.",
+      "before": "The home page downloads both italics and a TrueType monospace face it does not draw on the first screens.",
+      "after": "Serve the monospace face as woff2 and load it, and the italics, only on pages that set them; keep the roman faces preloaded.",
+      "why": "On a phone line the fonts are the page's largest cost: 855 KiB of 1952 KiB known.",
+      "test": "T-WEIGHT-FOR-JOB",
+      "source": "robustness",
+      "root": "global font loading"
+    },
+    {
+      "rule": "ROB-011",
+      "title": "Room for other languages",
+      "tier": "Reflex",
+      "where": "Header buttons 'Commitments' and 'Try Claude' (#base-ui-… triggers), 1440px, tiles/1440-00.png",
+      "evidence": "controls.fixed_width_buttons_tight: 'Commitments' box 139px, text 89px, room_for_longer_text_pct 25, nowrap; 'Try Claude' box 117px, text 67px, 33%, nowrap. The stylesheet carries :lang(hi), :lang(ja) and :lang(ko) rules, so the design system expects other languages.",
+      "before": "Two header triggers hold fixed widths with a quarter to a third of room for a longer label.",
+      "after": "Size the triggers to their content (width: auto with padding) and let the nav collapse into the menu earlier when the row runs out of room.",
+      "why": "A translated 'Commitments' (German 'Verpflichtungen' is about 35% longer) will clip or push the row.",
+      "test": "T-TRANSLATE",
+      "source": "robustness"
+    },
+    {
+      "rule": "ROB-015",
+      "title": "Content and navigation do not depend on script",
+      "tier": "Reflex",
+      "where": "Reveal-animated blocks below the first screen, all widths",
+      "evidence": "resilience.hidden_content: scripts off shows 1068 of 1657 characters (64.5%) and an observer that never fires shows 1102 (66.5%), while reduced motion shows 1652 (99.7%). The sweep's hidden_content hits (ROB-001, Floor) record 450 characters with JavaScript off. The capture does not record which blocks are lost.",
+      "before": "Text waits for a scroll-triggered reveal; with reduced motion it shows, without script it does not.",
+      "after": "Gate the hidden starting state behind a class that script adds, so the default HTML shows the text.",
+      "why": "The reduced-motion path already proves the copy can stand without the reveal; scripts-off visitors and failed bundles lose a third of the page.",
+      "test": "T-NO-SCRIPT",
+      "source": "robustness"
+    }
+  ],
+  "strengths": [
+    "The model cards stretch to the longest title and description and keep the 'Model Details' and 'System Card' rows aligned at the bottom (tiles/1280-01.png).",
+    "Logical properties outnumber physical ones (539 to 471, 68 start and end), and the stylesheet has :lang rules for Hindi, Japanese and Korean.",
+    "Four font faces carry metric overrides, and 20 height rules use dvh or svh against 11 in vh.",
+    "The document fits every viewport (360 at 375, 1265 at 1280), with no overflow and no phone-parity loss; lab LCP is 560 ms.",
+    "Dates use one month-first long style ('Nov 9, 2026', 'Sep 22, 2026')."
+  ],
+  "not_investigated": [
+    "T-STRESS: no hostile content was injected; long names, translations and missing images are reasoned from layout evidence, not observed",
+    "right-to-left render: not captured; readiness read from the stylesheet only",
+    "translated strings: not captured",
+    "page load on a throttled line: only actions were held slow",
+    "layout shift as a number: this capture predates CLS recording",
+    "computed text-overflow per element: absent in this capture; ellipsis rows come from class rules and were checked on tiles",
+    "widths between the captures, 320px and landscape",
+    "zoom at 200%",
+    "field performance data",
+    "back navigation and deep links",
+    "regions behind menus, tabs, dialogs or a login that the capture did not open",
+    "T-FAILURE-PATH: async found no primary actions; 5 images were blocked by the capture network (not verified)",
+    "T-EXTREME-COUNTS: no counts or lists with variable length",
+    "contract: no 00-contract.md; inferred a Persuade company home page, English, international audience, with other languages expected (:lang rules)"
+  ],
+  "disputes": []
+}
