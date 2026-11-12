@@ -736,6 +736,19 @@ def table(run, out):
             "string concatenation and the code that formats dates and numbers (only the rendered text is seen)",
         ],
     }
+    # the stress pass (capture.mjs --stress, from 12 Nov 2026): short slots made ~40% longer and up to five runs given a
+    # 40-character unbroken token, then measured; absent on captures that did not ask for it
+    sj = run / "01-evidence" / "stress.json"
+    if sj.exists():
+        st = json.loads(sj.read_text(encoding="utf-8"))
+        res["stress"] = {"note": st.get("note"), "widths": {w: (r if r.get("error") else {
+            "changed": r["changed"], "page_overflow_px": {"before": r["before"]["pageOverflowPx"], "after": r["after"]["pageOverflowPx"]},
+            "cut": {"before": r["before"]["cutCount"], "after": r["after"]["cutCount"], "rows": r["after"]["cut"][:12]},
+            "past_viewport": {"before": r["before"]["pastViewportCount"], "after": r["after"]["pastViewportCount"], "rows": r["after"]["pastViewport"][:12]},
+            "tall_controls": {"before": r["before"]["tallControlCount"], "after": r["after"]["tallControlCount"], "rows": r["after"]["tallControls"][:8]},
+            "screenshot": f"01-evidence/stress-{w}.png"}) for w, r in (st.get("widths") or {}).items()}}
+    else:
+        res["stress"] = {"note": "not run: the capture did not use --stress, so T-STRESS is reasoned from layout evidence, not observed"}
     pf = res["performance"] if isinstance(res["performance"], dict) else {}
     hc = res["resilience"].get("hidden_content")
     so = (hc or {}).get("scripts_off", {}) if isinstance(hc, dict) else {}

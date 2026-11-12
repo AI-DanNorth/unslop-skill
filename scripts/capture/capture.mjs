@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Unslop capture: renders a web artifact and writes evidence for the sweep.
 // usage: node capture.mjs <url-or-file> <run-dir> [--widths 375,1440] [--bless-control] [--skip-control]
-//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000] [--passive <ms>]
+//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000] [--passive <ms>] [--stress]
 // Writes <run-dir>/01-evidence/: shot-<w>.png, bg-<w>.png, fold-<w>.png, dom-<w>.json, fonts.json,
 // hidden.json, focus.json + focus/*.png, forms.json, perf.json, motion.json + motion/*.png, async.json + async/*.png, manifest.json
 import { createRequire } from "node:module";
@@ -425,6 +425,71 @@ catch (e) { manifest.interaction.passive = { error: e.message.split(String.fromC
 if (flag("--no-async") || flag("--no-interact")) manifest.interaction.async = { skipped: "--no-async" };
 else try { manifest.interaction.async = await captureAsync({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--async-budget", 60000) }); }
 catch (e) { manifest.interaction.async = { error: e.message.split("\n")[0] }; note(`async capture failed: ${e.message}`); }
+
+// ---- 10. hostile-content stress pass (opt-in: --stress) ------------------------------------------
+// Real content is longer than the sample. At each stress width the page is loaded, short labels, headings, names and
+// buttons are made about 40% longer (a German-length translation), and up to five text runs get a 40-character unbroken
+// token (a long email, URL or product code). Then it measures what breaks: horizontal overflow, text cut by its box,
+// buttons that grew, and overlaps. The page is never navigated or submitted; nothing leaves it.
+function stressPage(cfg) {
+  const out = { changed: 0, unbroken: 0 };
+  const pick = (el) => {
+    if (!el.offsetParent && getComputedStyle(el).position !== "fixed") return false;
+    if (el.closest("script,style,noscript,svg,code,pre,[contenteditable],input,textarea,select")) return false;
+    return [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length >= 3);
+  };
+  const sel = "h1,h2,h3,h4,h5,h6,a,button,label,th,td,li,dt,dd,[role=button],[role=tab],[role=menuitem],span,strong,b,p";
+  let unb = 0;
+  for (const el of document.body.querySelectorAll(sel)) {
+    if (!pick(el)) continue;
+    for (const n of el.childNodes) {
+      if (n.nodeType !== 3) continue;
+      const s = n.textContent; const tr = s.trim(); if (tr.length < 3) continue;
+      if (el.tagName === "P" && tr.length > 60) continue;              // long body copy reflows anyway; stress the short slots
+      const extra = tr.split(/\s+/).slice(0, Math.max(1, Math.ceil(tr.split(/\s+/).length * cfg.grow))).join(" ");
+      let add = " " + extra;
+      if (unb < cfg.unbroken && tr.length <= 40 && /[A-Za-z]/.test(tr) && el.tagName !== "P") { add += " " + cfg.token; unb++; }
+      n.textContent = s.replace(tr, tr + add); out.changed++;
+    }
+  }
+  out.unbroken = unb;
+  return out;
+}
+function stressMeasure() {
+  const vw = document.documentElement.clientWidth, sw = document.documentElement.scrollWidth;
+  const cut = [], grew = [], over = [];
+  const U = (e) => { const p = []; for (let x = e; x && x.nodeType === 1 && p.length < 4; x = x.parentElement) p.unshift(x.tagName.toLowerCase() + (x.id ? "#" + x.id : "") + (typeof x.className === "string" && x.className.trim() ? "." + x.className.trim().split(/\s+/)[0] : "")); return p.join(" > "); };
+  for (const el of document.body.querySelectorAll("*")) {
+    const own = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()); if (!own) continue;
+    const r = el.getBoundingClientRect(); if (r.width < 2 || r.height < 2) continue;
+    const cs = getComputedStyle(el);
+    if (el.scrollWidth > el.clientWidth + 2 && /hidden|clip/.test(cs.overflowX + cs.overflow))
+      cut.push({ sel: U(el), text: el.textContent.trim().slice(0, 60), cutPx: el.scrollWidth - el.clientWidth, ellipsis: cs.textOverflow === "ellipsis" });
+    if (r.right > vw + 2 && cs.position !== "fixed") over.push({ sel: U(el), text: el.textContent.trim().slice(0, 60), pastPx: Math.round(r.right - vw) });
+    if (el.matches("button,a,[role=button]") && r.height > 2.2 * parseFloat(cs.lineHeight || cs.fontSize || 16)) grew.push({ sel: U(el), text: el.textContent.trim().slice(0, 40), h: Math.round(r.height) });
+  }
+  return { viewport: vw, scrollWidth: sw, pageOverflowPx: Math.max(0, sw - vw), cut: cut.slice(0, 40), cutCount: cut.length,
+           pastViewport: over.slice(0, 40), pastViewportCount: over.length, tallControls: grew.slice(0, 30), tallControlCount: grew.length };
+}
+if (flag("--stress")) {
+  const res = { version: 1, widths: {}, note: "short slots made ~40% longer and up to 5 runs given a 40-character unbroken token" };
+  for (const w of [375, 1440].filter((x) => widths.includes(x) || x === 1440)) {
+    try {
+      const { ctx, page } = await open(browser, w);
+      await goLoad(page, url, `stress pass ${w}`); await settle(page);
+      const before = await page.evaluate(stressMeasure);
+      const changed = await page.evaluate(stressPage, { grow: 0.4, unbroken: 5, token: "Kundenkontaktverwaltungseinstellungen-2026" });
+      await page.waitForTimeout(300);
+      const after = await page.evaluate(stressMeasure);
+      await page.screenshot({ path: path.join(ev, `stress-${w}.png`), fullPage: true });
+      res.widths[w] = { changed, before: { pageOverflowPx: before.pageOverflowPx, cutCount: before.cutCount, pastViewportCount: before.pastViewportCount, tallControlCount: before.tallControlCount }, after };
+      await ctx.close();
+    } catch (e) { res.widths[w] = { error: e.message.split(String.fromCharCode(10))[0] }; }
+  }
+  fs.writeFileSync(path.join(ev, "stress.json"), JSON.stringify(res, null, 1));
+  manifest.stress = Object.fromEntries(Object.entries(res.widths).map(([w, r]) => [w, r.error ? { error: r.error } : { changed: r.changed.changed, overflowPx: r.after.pageOverflowPx, newCut: r.after.cutCount - r.before.cutCount }]));
+  note(`stress: ${Object.entries(manifest.stress).map(([w, r]) => `${w}px ${r.error ? "error" : `+${r.newCut} cut, page overflow ${r.overflowPx}px`}`).join("; ")}`);
+}
 
 await browser.close();
 const uniq = (k) => [...new Set(NETS.flatMap((n) => n[k]))];
