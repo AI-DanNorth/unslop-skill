@@ -1,0 +1,40 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Pressing 'Add note' rolls only the changed word to 'Hide', opens the note with a 400 ms grid-template-rows transition that carries the shipping line down with it, and collapses it faster than it opened.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY and T-ENTER-EXIT pass, and T-MOTION-SYSTEM passes on one ease-out family; the open and close are caught only at their ends."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "Only 'Add' rolls to 'Hide' while 'note' stays in place, so the button changes only what changed (MOT-254).",
+    "The note opens over 400 ms (grid-template-rows, not height, MOT-116) and closes in 320 ms after an 80 ms delay, so the exit is quicker than the entrance (MOT-009).",
+    "The 'Standard shipping' line moves down by the note's 52 px within the same transition, with no shove (motion_snap 0 hits)."
+  ],
+  "not_investigated": [
+    "The reduced-motion recording shows movement until 236 ms; the reduced-motion check (A11-011) belongs to the sweep, which reports 0 hits.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

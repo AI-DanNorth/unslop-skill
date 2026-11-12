@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The square icon button answers its press at UI speed, but the plus becomes a close mark in one frame instead of turning the same strokes.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-CONTINUITY fails on the one-frame glyph swap; T-FREQUENCY passes for the 140 ms press."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-257",
+      "tier": "Finish",
+      "where": "svg.tc-glyph in div.tc-button (36 by 36 px), 1440",
+      "evidence": "svg.tc-glyph declares no transition at capture. In the 1615 ms still the button still shows its pressed, darker background and the glyph is already a finished close mark; at 4009 ms it is a finished plus again.",
+      "before": "The plus is swapped for a close mark in one frame",
+      "after": "Rotate the same strokes 45 degrees (about 250 to 450 ms on cubic-bezier(0.22, 1, 0.36, 1)) so the plus turns into the close mark",
+      "why": "A plus that turns says the same control now closes what it opened; a swap reads as a different button.",
+      "test": "T-CONTINUITY"
+    }
+  ],
+  "strengths": [
+    "The press darkens the background on 140 ms cubic-bezier(0.22, 1, 0.36, 1), and the button keeps its 36 px box."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

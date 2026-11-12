@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The Day, Week and Month segmented control moves its white indicator by a 600 ms transform on cubic-bezier(0.25, 1, 0.5, 1); the indicator sits past Week toward Month at 1604 ms and rests on Week at 2615 ms, movement ends at 1983 ms, and no cursor or tap is shown.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-SPATIAL-MEANING passes because the indicator slides along its own track, but T-FREQUENCY finds a 600 ms indicator move on a control people switch often."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-SPATIAL-MEANING",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-005",
+      "tier": "Reflex",
+      "where": "passive recording, the segmented-control indicator, 1440",
+      "evidence": "The indicator declares a 600 ms transform on cubic-bezier(0.25, 1, 0.5, 1), while the segment labels change colour on a 150 ms 'ease'.",
+      "before": "The indicator takes 600 ms to move between segments.",
+      "after": "Move the indicator in about 200 to 250 ms on the same ease-out curve, with the label colour on the same clock.",
+      "why": "A range switch is used many times while reading a chart, and each switch waits on the indicator (MOT-250: UI feedback in a demo keeps the product's speed).",
+      "test": "T-FREQUENCY",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The indicator moves by transform along its own track, the right kind of motion for one selection among peers (MOT-117)."
+  ],
+  "not_investigated": [
+    "whether the indicator overshoots Week (it sits past Week at 1604 ms) or the demo picks Month first: one still cannot tell",
+    "what selects each segment: no cursor or tap is in frame",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

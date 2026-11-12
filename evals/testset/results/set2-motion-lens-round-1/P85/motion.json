@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "A cursor presses 'More detail', the button relabels only 'More' to 'Less' with a blur, and the 'Link access' popup grows to show 'Anyone with the link can view.', but the popup jumps 130 px wider, 26 px taller and 65 px left in one frame at 1317 ms (the sweep's MOT-003 hits) while its detail line fades in, so the surface does not resize as one transition.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-CONTINUITY fails on the demo's one beat because the popup's size and position change in one frame while its content animates (MOT-016), although the label change passes."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-016",
+      "tier": "Finish",
+      "where": "passive recording, div.tr-popup ('Link access'), 1440",
+      "evidence": "The sweep's motion_snap records the popup jumping +130 px in width, +26 px in height, -65 px on x and -26 px on y in one frame at 1317 ms, and the detail span jumping +13 px at 2984 ms; the popup declares a 480 ms transition on --tr-surface-progress that does not carry the box geometry.",
+      "before": "The popup's box jumps to its new size while its text fades in.",
+      "after": "Drive width, height and position from the same 480 ms surface progress so the box, its anchor and its content move as one transition (MOT-262).",
+      "why": "The surface is the thing the demo shows changing, and a one-frame resize breaks it into a cut plus a fade.",
+      "test": "T-CONTINUITY",
+      "source": "motion",
+      "root": "the popup's size is not driven by --tr-surface-progress"
+    }
+  ],
+  "strengths": [
+    "The button changes only the word that changes: 'More' blurs into 'Less' while 'detail' holds (1609 ms still)."
+  ],
+  "not_investigated": [
+    "the one-frame jumps themselves are the sweep's MOT-003 and are cited, not repeated",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

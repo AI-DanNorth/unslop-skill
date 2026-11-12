@@ -1,0 +1,59 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "high",
+  "overall_reason": "A cursor presses 'Connect' (pressed tint at 1614 ms), then the label is replaced by 'Disconnect account' in one frame and the button grows 66 px at once, shoving 'Settings' 67 px right (the sweep's two MOT-003 hits at 1666 ms); the reset back to 'Connect' at 4002 ms has no visible cause.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-CONTINUITY fails on the demo's one beat because the label swaps whole in one frame with the button resizing around it; the press before the result passes."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS",
+    "T-HOVER-SIGNAL"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-015",
+      "tier": "Finish",
+      "where": "passive recording, div.tc-button ('Connect' to 'Disconnect account'), 1440",
+      "evidence": "The sweep records the button's width jumping +66 px and 'Settings' jumping +67 px on x in one frame at 1666 ms; the stills show 'Connect' at 1614 ms and 'Disconnect account' at 2601 ms, and the button declares no width or label transition.",
+      "before": "The whole label is replaced and the button jumps to its new width.",
+      "after": "Keep 'connect' in place, bring in 'Dis' and 'account' as the changed spans, and grow the button to the measured width over the same transition so 'Settings' moves continuously (MOT-254, MOT-255).",
+      "why": "The change the demo shows is the button's new state, and a one-frame swap gives the viewer no motion to follow.",
+      "test": "T-CONTINUITY",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the reset to 'Connect', 1440",
+      "evidence": "The button reads 'Disconnect account' at 2601 ms and 'Connect' at 4002 ms, and the cursor has not moved between those stills.",
+      "before": "The button resets to 'Connect' with no second press.",
+      "after": "Press 'Disconnect account' to reset, or hide the reset.",
+      "why": "An account that disconnects itself reads as a fault.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The press shows before the result: the 1614 ms still has the button's pressed tint before the label changes (MOT-256)."
+  ],
+  "not_investigated": [
+    "the composition is still blank at 401 ms; one still cannot say why it paints later",
+    "the one-frame shove of 'Settings' is the sweep's MOT-003 and is cited, not repeated",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

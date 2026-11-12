@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The revenue card's line draws left to right on an 1100 ms stroke-dashoffset transition with cubic-bezier(0.45, 0, 0.3, 1), the fill follows it (part-drawn at 1611 ms), the end dot arrives after, and the full chart holds at 2617 ms; the card is then empty at 4003 ms before the line redraws.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-POSTER and T-PURPOSE pass because the line drawing tells the trend and the payoff holds, but T-DEMO-LOOP finds the card empty between loops."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the chart reset, 1440",
+      "evidence": "The chart is full at 2617 ms, gone at 4003 ms with only 'Revenue, 14 days' and '$68,200' on a blank card, and part-redrawn at 5509 ms.",
+      "before": "The chart disappears and the card sits empty before it redraws.",
+      "after": "Reset while the card is hidden, or draw the next period's line over the old one as new data, so the card is never blank.",
+      "why": "A revenue card with no chart for a second reads as missing data.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The line draws left to right (stroke-dashoffset over 1100 ms), so the arrival shows revenue rising, and the fill and end dot follow in causal order (MOT-251).",
+    "The finished chart is the poster frame in fold-1440.png."
+  ],
+  "not_investigated": [
+    "the exact lag between the line and the fill: one still (1611 ms) falls inside the draw",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

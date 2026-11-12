@@ -1,0 +1,38 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Pressing 'Connect' grows the button to 'Disconnect account' (73 to 139 px) while the label rolls with a blur, and the neighbouring 'Settings' link moves with the growth in the same transition; the sweep reports no snaps.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY passes: size, label and neighbour change as one 0.4 s transition (C51); most of the growth's frames fall between stills."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "At 1616 ms the button has grown and the label is mid-roll with a blur, and 'Settings' has moved by the same width with no shove (motion_snap 0 hits).",
+    "The press, the roll and the width share cubic-bezier(0.22, 1, 0.36, 1), one curve family."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

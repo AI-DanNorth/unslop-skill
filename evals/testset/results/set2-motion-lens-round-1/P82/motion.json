@@ -1,0 +1,58 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The demo's only beat is a heart reaction on the 'Send photos' bubble, and it switches on and off in single frames: the passive recorder reports no movement, the composition declares no transitions, and the stills show the heart absent at 914 ms, present at 1613 ms, gone at 4010 ms and back at 5508 ms.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-CONTINUITY fails because the reaction, the demo's payoff, appears and disappears in one frame, and T-DEMO-LOOP fails because the heart vanishes with no seen cause; nothing else moves."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-269",
+      "tier": "Finish",
+      "where": "passive recording, the heart badge on the 'Send photos' bubble, 1440",
+      "evidence": "passive.json reports no movement in the normal or reduced run, and the composition declares no transition or animation; the heart is absent at 914 ms and fully present at 1613 ms.",
+      "before": "The heart switches on in one frame.",
+      "after": "Give the reaction an arrival: a short scale from about 0.6 with an opacity fade on an ease-out curve, about 200 to 300 ms.",
+      "why": "The reaction is the payoff of the demo, and a one-frame switch gives the viewer nothing to notice it by.",
+      "test": "T-CONTINUITY",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the heart badge reset, 1440",
+      "evidence": "The heart is present at 1613 and 2612 ms, gone at 4010 ms with no cursor, tap or undo in frame, and back at 5508 ms.",
+      "before": "The reaction disappears with no cause and reappears.",
+      "after": "Give the reset a seen cause (a tap that removes the reaction) or hide it while the scene resets, and fade it out rather than cutting it.",
+      "why": "A reaction that vanishes on its own reads as a failed tap, not a loop.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "Nothing else in the composition moves, so the reaction is the only place the eye goes."
+  ],
+  "not_investigated": [
+    "whether the badge covering the 'S' of 'Send photos' is intended: a layout question for other lenses",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Files arrive one at a time with a short 3 px rise while only the count's digit rolls, and the list empties after a visible press on 'Clear'; every motion has a job and the reset has a seen cause.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CHOREOGRAPHY, T-CONTINUITY and T-DEMO-LOOP pass; the frames of the clear transition fall between stills."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "Only the changed digit rolls ('2' rolls out and '3' rolls in over 420 ms) while 'files' stays still, so the count changes only what changed (MOT-254).",
+    "The files enter with a 250 ms fade and 3 px rise as each arrives (1 file at 1608 ms, 3 at 2615 ms), not as a cascade on load.",
+    "The reset follows a pressed 'Clear' at 4009 ms and ends on 'No files yet' at 5505 ms, a seen cause (MOT-245)."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

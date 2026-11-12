@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The 'Open preview' press answers with a background step and a 2 px scale-down, which is good feedback, but the label is then replaced by 'Back to editor' in one frame with no transition.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-CONTINUITY fails on the one-frame label swap; T-FREQUENCY and T-MOTION-SYSTEM pass for the 140 ms press."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-015",
+      "tier": "Finish",
+      "where": "span.tc-label 'Back to editor' in div.tc-button, 1440",
+      "evidence": "span.tc-label declares no transition and no animation and has no roll or crossfade wrapper. The stills show 'Open preview' whole at 1604 ms, 'Back to editor' whole at 2611 ms and 'Open preview' whole again at 4013 ms.",
+      "before": "The label text is replaced in one frame",
+      "after": "Roll or crossfade the label (about 250 to 350 ms with a short blur, on the button's ease-out curve) while the button keeps its width",
+      "why": "A label that swaps in one frame after a smooth press breaks the chain from press to result (MOT-253).",
+      "test": "T-CONTINUITY"
+    }
+  ],
+  "strengths": [
+    "At 1604 ms the button shows its press: the background steps from rgb(242, 242, 242) to rgb(228, 228, 228) and the box shrinks by 2 px a side, on 140 ms cubic-bezier(0.22, 1, 0.36, 1)."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

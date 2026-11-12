@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The 'Save changes' press darkens the button while the old label is already rolling out at 1607 ms, and 'Saved' arrives through the masked roll inside a 128 px button; press, label and reset are feedback in causal order.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY passes with press and label overlapping; T-FREQUENCY passes for the 140 ms press; the roll's curve is read from declarations, not frames."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "At 1607 ms the background has stepped to rgb(239, 239, 239) and 'Save changes' is half faded through the ss-roll mask, so the press and the label change start together (MOT-251, MOT-256).",
+    "The label roll uses a 0.4 s width transition on cubic-bezier(0.22, 1, 0.36, 1), the same curve family as the press."
+  ],
+  "not_investigated": [
+    "The sweep's hidden_content (ROB-001) hit, 69% of text hidden, comes from the stacked roll items; it belongs to the sweep.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

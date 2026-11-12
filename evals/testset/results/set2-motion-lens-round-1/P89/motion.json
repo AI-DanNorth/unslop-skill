@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A grab-hand cursor carries the 'Draft' chip right: the chip lifts with a deeper shadow at 1612 ms, travels at a fixed grab offset and settles by 2610 ms, with movement ending at 1966 ms and no snaps.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CONTINUITY passes because the chip is held at a fixed grab offset and lands without a snap, but the hand covers the end of the chip's label in every still."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS",
+    "T-HOVER-SIGNAL"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-267",
+      "tier": "Finish",
+      "where": "passive recording, the grab cursor on the 'Draft' chip, 1440",
+      "evidence": "In the 411, 912, 1612, 2610 and 4010 ms stills the hand covers the 't' of 'Draft', so the chip reads 'Draf'.",
+      "before": "The cursor sits on the chip's label.",
+      "after": "Grab the chip by its document icon or its left padding and keep that offset through the drag.",
+      "why": "The chip's name is the only thing that says what is being moved, and the hand hides part of it.",
+      "test": "T-CONTINUITY",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The chip is held, not slid: it lifts with a shadow while carried and keeps a fixed grab offset (MOT-270).",
+    "The cursor kind follows the action: an open hand on the draggable chip."
+  ],
+  "not_investigated": [
+    "the return trip of the chip: the stills at 4010 and 5510 ms show it at both ends, not the travel",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The 'Project files' list scrolls itself upward one row at a time on an 800 ms transform with Tailwind's default curve, cut by a hard edge under the header that slices the top and bottom rows ('Wireframes.fig' and '182 KB' clipped at 2612 ms), and it is still moving at 5951 ms.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-CONTINUITY fails because a moving hard edge slices file names, T-LOOPS fails because the list moves on its own with nothing new to show, and T-MOTION-SYSTEM finds a framework default curve."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-016",
+      "tier": "Finish",
+      "where": "passive recording, the file list under 'Project files', 1440",
+      "evidence": "At 2612 ms the clip edge under the header cuts through 'Wireframes.fig' and '182 KB', and the bottom edge cuts the next row to a line of dots; fold-1440.png shows the same slicing.",
+      "before": "A hard clip edge slices file names as the list scrolls.",
+      "after": "Fade rows at the list's top and bottom edges with a short mask, or move whole rows in and out with an opacity change so no text is cut (MOT-260).",
+      "why": "A sliced file name cannot be read, and the moving cut draws the eye to the edge instead of the files.",
+      "test": "T-CONTINUITY",
+      "source": "motion",
+      "root": "the list's overflow clip"
+    },
+    {
+      "rule": "MOT-014",
+      "tier": "Reflex",
+      "where": "passive recording, the self-scrolling file list, 1440",
+      "evidence": "The list moves from 'Brief.pdf' at the top (1609 ms) to 'Review.md' at the top (4011 ms) with no input, and the recorder reports it still moving at 5951 ms; the five files never change.",
+      "before": "The list scrolls on its own through the same five files.",
+      "after": "Show the files still, or move the list only when a file arrives, so the motion reports new data.",
+      "why": "An idle list that keeps moving pulls attention without telling the viewer anything new.",
+      "test": "T-LOOPS",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-007",
+      "tier": "Finish",
+      "where": "the list's transform transition, 1440",
+      "evidence": "The one declared transition is transform 800 ms on cubic-bezier(0.4, 0, 0.2, 1), which the motion table flags as Tailwind's default curve.",
+      "before": "A framework default curve on the only motion.",
+      "after": "Use the composition's own ease-out curve and a shorter step, about 300 to 400 ms per row.",
+      "why": "The default curve shows no decision behind the timing.",
+      "test": "T-MOTION-SYSTEM",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "Each row keeps its name and size together as it moves, so a file is never split from its size."
+  ],
+  "not_investigated": [
+    "anything moving on its own past 5 s with no pause control is WCAG 2.2.2 and belongs to lens-a11y",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

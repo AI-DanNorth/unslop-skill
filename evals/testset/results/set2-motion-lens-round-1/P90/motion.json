@@ -1,0 +1,60 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "When the checkout switches from United States and Card to Germany and Bank transfer, the whole address panel slides sideways on a 900 ms transform with cubic-bezier(0.72, 0, 0.22, 1), and the passive recorder reports movement still running at 5907 ms, so the form is in motion through most of the window.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-SPATIAL-MEANING fails because address formats for two countries are peers, not steps, and T-FREQUENCY fails because a 900 ms slide is too long for a form a buyer changes; the price and pay button change cleanly in place."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-SPATIAL-MEANING",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-010",
+      "tier": "Reflex",
+      "where": "passive recording, the address fields under 'Payment method', 1440",
+      "evidence": "The address panel declares a 900 ms transform on cubic-bezier(0.72, 0, 0.22, 1) on 6 elements; the 5504 ms still shows the old fields sliding out to the left ('ex Morgan', 'ndenstraße 18') while a new set ('Na', 'Str', 'Ci', 'Po') enters from the card's right edge.",
+      "before": "Changing the country slides the whole address panel sideways like a page.",
+      "after": "Keep the shared fields (Name, street, city) in place, move only the fields that differ, and crossfade the changed labels (MOT-273).",
+      "why": "A sideways slide says 'next step', but the buyer has only changed country, so the fields they already filled seem to leave.",
+      "test": "T-SPATIAL-MEANING",
+      "source": "motion",
+      "root": "the 900 ms transform on the address panel"
+    },
+    {
+      "rule": "MOT-005",
+      "tier": "Reflex",
+      "where": "passive recording, the address panel transition, 1440",
+      "evidence": "The address panel's transform lasts 900 ms, and the recorder reports the composition still moving at 5907 ms of a 6000 ms window.",
+      "before": "900 ms of sideways movement per country or payment change.",
+      "after": "Treat the change as feedback: under about 250 ms on an ease-out curve.",
+      "why": "A buyer may change country or payment method several times while checking prices, and each change waits on the form.",
+      "test": "T-FREQUENCY",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The order summary and pay button change in place: the 2612 ms still shows '€35.00' and 'Pay €35.00' without the summary moving."
+  ],
+  "not_investigated": [
+    "whether the price and 'Ship to' text swap in one frame while the panel slides (MOT-015): no still falls on the change",
+    "the sweep's hidden_content Floor (100% of text invisible without JavaScript) is ROB-001 and is left to the sweep",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

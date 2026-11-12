@@ -1,0 +1,59 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The inbox demo swipes 'Northwind Air' left so the row visibly slides off over the purple 'Archive' action (part-way at 1607 ms), the list closes up by 2606 ms with no snaps, and the row is back in place by 4016 ms before the swipe repeats; no finger or cursor is shown.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-CONTINUITY passes because the row travels and the list closes up continuously, but T-DEMO-LOOP finds the archived email returning, and no touch indicator shows the swipe."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-SPATIAL-MEANING",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the 'Northwind Air' row returning, 1440",
+      "evidence": "At 2606 ms the list shows only 'Jon Park' and a placeholder; at 4016 ms 'Northwind Air / Your trip to Lisbon' is back on top, and at 5513 ms the swipe has run again.",
+      "before": "The archived email comes back for the next loop.",
+      "after": "Bring the next loop in with a new message, or restore the row while the card is hidden (MOT-246).",
+      "why": "An archived email that returns reads as the archive failing.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-272",
+      "tier": "Finish",
+      "where": "passive recording, the swipe on the 'Northwind Air' row, 1440",
+      "evidence": "The 1607 ms still shows the row part-way off to the left with no finger, touch indicator or cursor in frame.",
+      "before": "The row slides with no visible gesture.",
+      "after": "Show a touch indicator dragging the row at finger speed.",
+      "why": "The swipe is the action the demo teaches, and without the hand it reads as the row leaving by itself.",
+      "test": "T-PURPOSE",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The swipe is a real travel: at 1607 ms the row has slid part-way to reveal 'Archive', rather than switching to the action colour.",
+    "The list closes up after the archive with no snaps."
+  ],
+  "not_investigated": [
+    "how the row returns between 2606 and 4016 ms: no still falls on it",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

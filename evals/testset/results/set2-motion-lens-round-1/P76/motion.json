@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The reaction pill grows from half size at its corner on a springy 380 ms curve (cubic-bezier(0.3, 1.35, 0.5, 1)) with a 160 ms fade, a demo showpiece where overshoot fits (C15), but the reaction disappears at about 4 s with no cause shown and returns later.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-PURPOSE and T-CONTINUITY pass for the anchored spring; T-DEMO-LOOP finds a reset with no seen cause."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "span.dr-pill reaction on the 'Send photos' bubble, 1440",
+      "evidence": "The reaction shows at 1609 ms and 2612 ms, is gone at 4001 ms and is back at 5511 ms. No still shows a pointer, an undo or any other cause for its removal.",
+      "before": "The reaction vanishes and returns with no cause",
+      "after": "Remove the reaction only with a visible cause (a tap on it), or keep it and restart the loop on a calm frame while hidden",
+      "why": "A reaction that disappears on its own reads as lost data, not as part of the story (MOT-245).",
+      "test": "T-DEMO-LOOP"
+    }
+  ],
+  "strengths": [
+    "The pill scales from 0.5 with transform-origin 30% 20%, toward the bubble it belongs to, so it arrives from its anchor; the overshoot sits on a one-off demo beat, not on a control."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

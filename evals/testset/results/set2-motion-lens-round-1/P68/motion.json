@@ -1,0 +1,59 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The drag demo moves the 'Draft' file on a 600 ms ease-out, but the file jumps 24 px under the hand when it is picked up, and the grab cursor covers the label it acts on through the whole demo.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-CONTINUITY fails twice: the grab point slides at pickup and the cursor covers the words; T-MOTION-SYSTEM passes for the one 600 ms travel curve."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-270",
+      "tier": "Finish",
+      "where": "div.ci-drag__travel and div.ci-file 'Draft', 1440",
+      "evidence": "At capture the travel container sits at x 544 and the file box at x 568, 24 px apart. The sweep's motion_snap passive_shove hit reports 'Draft' jumping +24 px on x at 1426 ms. In the stills the hand sits over the end of 'Draft' at 916 ms and over 'Dr' from 1612 ms on.",
+      "before": "The file jumps 24 px under the hand at pickup",
+      "after": "Fix the grab point: give the file and the hand the same offset in one travel container, so the drag is one motion from where the file is",
+      "why": "A file that jumps when grabbed says the hand slipped; the drag no longer reads as one held object.",
+      "test": "T-CONTINUITY",
+      "root": "24 px offset between .ci-drag__travel and .ci-file"
+    },
+    {
+      "rule": "MOT-267",
+      "tier": "Finish",
+      "where": "grab cursor (div.ss-cursor) over div.ci-file 'Draft', 1440",
+      "evidence": "In every still from 405 ms to 5503 ms the hand glyph overlaps the letters of 'Draft' ('Draf', then 'Dr').",
+      "before": "The cursor covers the label of the thing it drags",
+      "after": "Grab the file by its icon or its edge so the label stays readable through the drag",
+      "why": "The viewer cannot read what is being moved while it moves.",
+      "test": "T-CONTINUITY"
+    }
+  ],
+  "strengths": [
+    "The file travels on one 600 ms cubic-bezier(0.25, 1, 0.5, 1) ease-out with a box-shadow that answers in 160 ms, and it lands and holds at its new place from 2602 ms."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

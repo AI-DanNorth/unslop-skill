@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The 'Open preview' press answers with a background step and a small scale-down, then the label rolls to 'Back to editor' through a masked roll while the button keeps its width; each motion is feedback at UI speed.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY and T-FREQUENCY pass: press before result, a rolled label and a 140 ms press; most of the roll's frames fall between stills."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "At 1613 ms the button background steps to rgb(230, 230, 230) and the old label is already fading through the ss-roll mask, so press and label change overlap in causal order (MOT-251).",
+    "The button holds 128 px through 'Open preview', 'Back to editor' and back."
+  ],
+  "not_investigated": [
+    "The reduced-motion recording shows movement until 237 ms; the reduced-motion check (A11-011) belongs to the sweep, which reports 0 hits.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

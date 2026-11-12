@@ -1,0 +1,47 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "The demo carries the AT avatar into the empty Assignee slot: it lifts with a shadow at 1613 ms, lands inside the ring by 2616 ms and holds that payoff to the end of the 6 s window, with movement ending at 1917 ms and no snaps.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-POSTER and T-DEMO-LOOP pass because the payoff (the avatar in the slot) holds from 2616 ms on, and T-CONTINUITY finds no snaps; no cursor or hand drives the drag, so the cause of the move is only implied."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-266",
+      "tier": "Finish",
+      "where": "passive recording, the AT avatar moving into the Assignee slot, 1440",
+      "evidence": "The stills at 415, 901, 1613 and 2616 ms show the avatar lifting and travelling into the slot with no cursor or touch point anywhere in the frame; the composition declares no transitions, so the move is script-driven.",
+      "before": "The avatar lifts and travels by itself.",
+      "after": "Show the pointer that grabs the avatar and keep it at a fixed grab offset through the drop (MOT-270), or show the change as an assignment without a drag.",
+      "why": "A drag with no hand reads as the object moving itself, so the viewer cannot tell who made the assignment.",
+      "test": "T-PURPOSE",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The payoff holds: the avatar sits in the slot from 2616 ms to the end of the 6 s window, so the poster frame (fold-1440.png) shows the result.",
+    "The drop target stays put while the avatar travels (MOT-270), and the passive recording reports no snaps."
+  ],
+  "not_investigated": [
+    "the landing curve and whether the avatar decelerates into the ring: no still falls between 1613 and 2616 ms",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

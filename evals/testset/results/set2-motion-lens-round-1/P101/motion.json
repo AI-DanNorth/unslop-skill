@@ -1,0 +1,49 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A cursor presses 'Add Ana', only 'Add' blurs into 'Remove', and the new Ana row opens at the top while Maya and Jon move down with it on a 500 ms grid-template-rows transition (cubic-bezier(0.45, 0, 0.2, 1)); the recorder reports no snaps, and the reset follows the 'Remove Ana' state.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY passes because the new row carries the rows below it with no snaps, and T-MOTION-SYSTEM finds one ease-out family; the cursor resting on the label is the one drift."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS",
+    "T-HOVER-SIGNAL"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-267",
+      "tier": "Finish",
+      "where": "passive recording, the cursor on the 'Add Ana' button, 1440",
+      "evidence": "In the 408, 1608 and 4016 ms stills the arrow's tip sits on the last letter of 'Ana' in the button label.",
+      "before": "The cursor rests on the word it clicks.",
+      "after": "Park the cursor on the button's empty padding to the right of the label.",
+      "why": "The viewer reads the label change, and the cursor covers part of it.",
+      "test": "T-CONTINUITY",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The new reviewer row opens its space with its neighbours: Maya and Jon move down continuously on grid-template-rows, with no one-frame shove (MOT-255).",
+    "The button changes only the word that changes ('Add' to 'Remove' while 'Ana' holds)."
+  ],
+  "not_investigated": [
+    "the row's exit against its enter (MOT-009): no still falls inside the removal",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

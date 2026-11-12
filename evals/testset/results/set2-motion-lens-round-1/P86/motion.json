@@ -1,0 +1,58 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The revenue card's chart arrives as a whole-block fade (one 600 ms opacity transition on the browser's default ease; the recorder sees no geometry change), holds for about two seconds, then disappears so the card sits empty at 4016 ms before the chart returns by 5504 ms.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-POSTER passes for the held chart, but T-DEMO-LOOP fails because the reset empties the card with no cause, and T-MOTION-SYSTEM finds the payoff on the browser's default ease."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the revenue chart reset, 1440",
+      "evidence": "The chart is full at 1610 and 2610 ms, gone at 4016 ms with only 'Revenue, 14 days' and '$68,200' left on a blank card, and back at 5504 ms; nothing in frame causes the reset.",
+      "before": "The chart vanishes and the card sits empty mid-loop.",
+      "after": "Make the reset invisible (swap the data while the card is hidden) or bring the next period's chart in as new data, and start the next loop within about 1 s.",
+      "why": "An empty card under a revenue figure reads as missing data, not as a loop.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-017",
+      "tier": "Finish",
+      "where": "passive recording, the chart arrival, 1440",
+      "evidence": "The chart declares one 600 ms opacity transition on 'ease' (browser default), and the passive recorder reports no movement: the line and fill appear together as a block between the 912 and 1610 ms stills.",
+      "before": "The whole chart fades in on the browser's default curve.",
+      "after": "Draw the line left to right on a storytelling curve and let the fill follow it, so the arrival tells the trend; keep a fade only for the end dot.",
+      "why": "A fade shows that a chart exists but not that revenue rose, which is the card's one point.",
+      "test": "T-POSTER",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The chart holds full from at least 1610 to 2610 ms, and the poster frame (fold-1440.png) shows the finished chart."
+  ],
+  "not_investigated": [
+    "how the chart's clip rect is used during the arrival: no still falls inside the 600 ms fade",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

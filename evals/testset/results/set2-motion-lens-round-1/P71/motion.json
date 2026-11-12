@@ -1,0 +1,48 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The 'Verify' to 'Undo' label rolls cleanly, but the check that appears before 'Design review' opens its slot in one frame, so the label is shoved 24 px instead of moving with the check; the sweep's shove is that symptom.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-CONTINUITY fails on the added check; T-PURPOSE and T-FREQUENCY pass for the button's press and label roll."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-255",
+      "tier": "Finish",
+      "where": "div.tr-inline check slot and span.tr-inline__label 'Design review', 1440",
+      "evidence": "div.tr-inline declares no transition at capture, and the sweep's motion_snap passive_shove hit reports 'Design review' jumping +24 px on x at 1505 ms. In the 1605 ms still the check is fully drawn and the label already sits 24 px to the right.",
+      "before": "The 24 px check slot appears in one frame and shoves the label",
+      "after": "Open the slot's width and the check together (about 300 to 480 ms on the button's ease-out curve) so the label slides over by the measured 24 px",
+      "why": "Added content should open its own space; a label that jumps sideways pulls the eye away from the check it should confirm.",
+      "test": "T-CONTINUITY"
+    }
+  ],
+  "strengths": [
+    "The 'Verify' to 'Undo' label rolls with a blur mid-change (1605 ms) inside a button that keeps its 72 px width, and the reset to 'Verify' follows a visible 'Undo' button, a seen cause."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

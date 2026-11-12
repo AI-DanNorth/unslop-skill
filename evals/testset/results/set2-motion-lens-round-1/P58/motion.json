@@ -1,0 +1,49 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The demo is one press on 'Save changes' that rolls the label to 'Saved' through a masked roll (0.4 s width on cubic-bezier(0.22, 1, 0.36, 1)), which is continuity, but at 1613 ms the pointer shows its press while the button shows none; there is no sweep timing hit to judge (MOT-002 not-verified).",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-CONTINUITY finds the press with no surface response at the one still that catches the click; T-PURPOSE and T-MOTION-SYSTEM pass for the label roll."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-256",
+      "tier": "Finish",
+      "where": "div.tc-button 'Save changes', press-card demo, 1440",
+      "evidence": "Between the 901 ms and 1613 ms stills the only changed pixels are the pointer glyph (x 582 to 591, y 60 to 73). The button keeps its rgb(242, 242, 242) background and its 128 by 36 px box while the pointer presses.",
+      "before": "The pointer presses and the button does not answer until the label changes later",
+      "after": "A press response on the button itself (a background step and a small scale-down on the declared 140 ms curve) that starts on the pointer's press, before the label rolls",
+      "why": "Viewers read the click from the button's response; a pointer that presses on a still button looks like a missed click.",
+      "test": "T-CONTINUITY"
+    }
+  ],
+  "strengths": [
+    "The label rolls 'Save changes' to 'Saved' inside a masked ss-roll with a 0.4 s width transition, and the button holds its 128 px width, so nothing around it moves."
+  ],
+  "not_investigated": [
+    "The press may fall between stills: only one still (1613 ms) lands near the click, so the missing press response is low confidence.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

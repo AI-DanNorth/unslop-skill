@@ -1,0 +1,143 @@
+{
+ "run": "P90",
+ "interaction": {
+  "motion": {
+   "skipped": "--no-motion"
+  },
+  "passive": {
+   "ms": 6000,
+   "coverage": "ok",
+   "snaps": 0
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "not-verified: motion capture skipped (--no-motion)",
+   "rule": "MOT-002",
+   "hits": 0
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 8
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 1
+  },
+  "async_state": {
+   "status": "not-verified: async capture skipped (--no-async)",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "triggers_note": "motion.json missing (skipped: --no-motion)",
+ "triggers": [],
+ "passive": {
+  "window_ms": 6000,
+  "normal": {
+   "coverage": "ok",
+   "motion_end_ms": 5907,
+   "still_moving": true,
+   "frame_ms": 16.7,
+   "late_frames": 3,
+   "snaps": []
+  },
+  "reduce": {
+   "coverage": "ok",
+   "motion_end_ms": null,
+   "still_moving": false,
+   "frame_ms": 16.7,
+   "late_frames": 3,
+   "snaps": []
+  },
+  "stills": [
+   {
+    "file": "passive/normal-00000.png",
+    "at_ms": 0
+   },
+   {
+    "file": "passive/normal-00411.png",
+    "at_ms": 411
+   },
+   {
+    "file": "passive/normal-00910.png",
+    "at_ms": 910
+   },
+   {
+    "file": "passive/normal-01610.png",
+    "at_ms": 1610
+   },
+   {
+    "file": "passive/normal-02612.png",
+    "at_ms": 2612
+   },
+   {
+    "file": "passive/normal-04009.png",
+    "at_ms": 4009
+   },
+   {
+    "file": "passive/normal-05504.png",
+    "at_ms": 5504
+   }
+  ]
+ },
+ "declared": {
+  "visible_elements": 109,
+  "transitions": [
+   {
+    "props": "transform",
+    "ms": "900",
+    "easing": "cubic-bezier(0.72, 0, 0.22, 1)",
+    "elements": 6
+   }
+  ],
+  "transition_elements": 6,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.72, 0, 0.22, 1)",
+    "elements": 6
+   }
+  ],
+  "durations_ms": {
+   "900": 6
+  },
+  "running_animations": [],
+  "stylesheet": {
+   "readable_rules": 769,
+   "keyframes": 25,
+   "infinite": 8,
+   "prefers_reduced_motion": 12,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 0,
+   "will_change": 23
+  }
+ },
+ "measured_system": {
+  "easings": [],
+  "durations_ms": {}
+ },
+ "evidence": {
+  "triggers_measured": 0,
+  "triggers_with_motion": 0,
+  "passive_ok": true,
+  "has_motion_evidence": true,
+  "missing": [
+   "motion.json missing (skipped: --no-motion)"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P90\\03-lenses\\motion\\contact-sheet.png"
+}

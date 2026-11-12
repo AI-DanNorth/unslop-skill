@@ -1,0 +1,49 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The permission label crossfades with a 2 px blur over 250 ms inside a fixed slot, which is continuity with no layout movement, but the value cycles three times and back with no cursor, no open menu and no click shown.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CONTINUITY and T-MOTION-SYSTEM pass for the crossfade; T-DEMO-LOOP finds a value that changes and resets with no seen cause."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "span.dp-select permission value, sharing-row demo, 1440",
+      "evidence": "The stills show 'Can view' from 413 to 1613 ms, 'Can edit' at 2604 ms, 'Full access' at 4001 ms and 'Can view' again at 5501 ms. No still shows a pointer, a menu or a pressed state.",
+      "before": "The value cycles by itself and returns to 'Can view' in view",
+      "after": "Show the cause of each change (a pointer opening the menu and picking the option), or let the value change once and hold, resetting only while hidden",
+      "why": "A setting that changes with no cause reads as a glitch, not as a person choosing an option.",
+      "test": "T-DEMO-LOOP"
+    }
+  ],
+  "strengths": [
+    "The three labels share one 58 px grid cell and crossfade with a 2 px blur over 250 ms after an 80 ms delay, so the chevron and the row never move."
+  ],
+  "not_investigated": [
+    "The sweep's hidden_content (ROB-001) hit, 53% of text hidden, comes from the stacked alternate labels; it belongs to the sweep and is not judged here.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

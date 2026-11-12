@@ -1,0 +1,180 @@
+{
+ "run": "P96",
+ "interaction": {
+  "motion": {
+   "skipped": "--no-motion"
+  },
+  "passive": {
+   "ms": 6000,
+   "coverage": "ok",
+   "snaps": 0
+  }
+ },
+ "sweep": {
+  "motion": {
+   "status": "not-verified: motion capture skipped (--no-motion)",
+   "rule": "MOT-002",
+   "hits": 0
+  },
+  "motion_snap": {
+   "status": "ran",
+   "rule": "MOT-003",
+   "hits": 0
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "hits": 8
+  },
+  "reduced_motion": {
+   "status": "ran",
+   "rule": "A11-011",
+   "hits": 0
+  },
+  "hidden_content": {
+   "status": "ran",
+   "rule": "ROB-001",
+   "hits": 0
+  },
+  "async_state": {
+   "status": "not-verified: async capture skipped (--no-async)",
+   "rule": "CMP-001",
+   "hits": 0
+  }
+ },
+ "triggers_note": "motion.json missing (skipped: --no-motion)",
+ "triggers": [],
+ "passive": {
+  "window_ms": 6000,
+  "normal": {
+   "coverage": "ok",
+   "motion_end_ms": 5068,
+   "still_moving": false,
+   "frame_ms": 16.6,
+   "late_frames": 3,
+   "snaps": []
+  },
+  "reduce": {
+   "coverage": "ok",
+   "motion_end_ms": 2759,
+   "still_moving": false,
+   "frame_ms": 16.7,
+   "late_frames": 2,
+   "snaps": []
+  },
+  "stills": [
+   {
+    "file": "passive/normal-00001.png",
+    "at_ms": 1
+   },
+   {
+    "file": "passive/normal-00404.png",
+    "at_ms": 404
+   },
+   {
+    "file": "passive/normal-00901.png",
+    "at_ms": 901
+   },
+   {
+    "file": "passive/normal-01610.png",
+    "at_ms": 1610
+   },
+   {
+    "file": "passive/normal-02614.png",
+    "at_ms": 2614
+   },
+   {
+    "file": "passive/normal-04017.png",
+    "at_ms": 4017
+   },
+   {
+    "file": "passive/normal-05501.png",
+    "at_ms": 5501
+   }
+  ]
+ },
+ "declared": {
+  "visible_elements": 24,
+  "transitions": [
+   {
+    "props": "--tr-surface-progress",
+    "ms": "480",
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "elements": 1
+   },
+   {
+    "props": "transform, background",
+    "ms": "140/140",
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "elements": 1
+   },
+   {
+    "props": "width",
+    "ms": "400",
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "elements": 1
+   },
+   {
+    "props": "transform",
+    "ms": "120",
+    "easing": "ease",
+    "elements": 1,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "transition_elements": 4,
+  "easings": [
+   {
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "elements": 3
+   },
+   {
+    "easing": "ease",
+    "elements": 2,
+    "flags": [
+     "browser default ease"
+    ]
+   }
+  ],
+  "durations_ms": {
+   "120": 1,
+   "140": 1,
+   "400": 1,
+   "480": 1
+  },
+  "running_animations": [
+   {
+    "name": "ss-fade-in",
+    "ms": "350",
+    "elements": 1
+   }
+  ],
+  "stylesheet": {
+   "readable_rules": 769,
+   "keyframes": 25,
+   "infinite": 8,
+   "prefers_reduced_motion": 12,
+   "scroll_timeline": 0,
+   "view_transitions": 0,
+   "smooth_scroll": 0,
+   "transition_all": 0,
+   "will_change": 23
+  }
+ },
+ "measured_system": {
+  "easings": [],
+  "durations_ms": {}
+ },
+ "evidence": {
+  "triggers_measured": 0,
+  "triggers_with_motion": 0,
+  "passive_ok": true,
+  "has_motion_evidence": true,
+  "missing": [
+   "motion.json missing (skipped: --no-motion)"
+  ]
+ },
+ "contact_sheet": "C:\\Users\\warwicka\\Documents\\unslop-runs-set2\\P96\\03-lenses\\motion\\contact-sheet.png"
+}

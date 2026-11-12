@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The file list scrolls as one track over 800 ms on cubic-bezier(0.4, 0, 0.2, 1) inside a viewport whose top and bottom edges fade, a showpiece that plays at load; nothing slices or snaps (0 snaps).",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY passes because rows fade at the viewport edges and move together; T-MOTION-SYSTEM is held back by the 800 ms track on the Material standard curve, and the recording is still moving at 5.9 s, so the seam was not seen."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "In the 2614 ms still the row crossing the top edge fades from luminance 245 to 96 over 8 rows instead of being cut, and the row at the bottom edge is a faint trace: the viewport masks its edges.",
+    "All five rows move on one track (div.ed-file-track, one transform), so the list keeps its spacing through the scroll."
+  ],
+  "not_investigated": [
+    "T-DEMO-LOOP: the passive recording is still moving at 5931 ms (still_moving true), so the loop's seam is outside the 6 s window.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

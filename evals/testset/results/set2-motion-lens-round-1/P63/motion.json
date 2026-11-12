@@ -1,0 +1,70 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The Day/Week/Month segmented control is repeated feedback, yet its highlight travels for 600 ms and restarts from the first segment, while the label colour switches in 150 ms and runs ahead of the highlight.",
+  "score": {
+    "dimension": "Craft",
+    "value": 4,
+    "reason": "T-CONTINUITY and T-SPATIAL-MEANING fail on the highlight and label, and T-FREQUENCY finds a 600 ms indicator on a control used many times."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-015",
+      "tier": "Finish",
+      "where": "span.tc-tabs__label 'Month' and span.tc-tabs__highlight, 1440",
+      "evidence": "In the 1603 ms still 'Month' is already in the active dark colour while the white highlight sits halfway between 'Week' and 'Month'. The labels transition color over 150 ms on ease; the highlight transitions transform over 600 ms.",
+      "before": "The label switches in 150 ms while its highlight glides for 600 ms",
+      "after": "Time the label colour to the highlight's arrival (start it in the last third of the travel), or shorten the highlight to a 200 to 250 ms step so both land together",
+      "why": "The active label lights up before the selection reaches it, so the viewer sees two answers to one click.",
+      "test": "T-CONTINUITY"
+    },
+    {
+      "rule": "MOT-010",
+      "tier": "Reflex",
+      "where": "span.tc-tabs__highlight[data-restart], 1440",
+      "evidence": "The highlight runs animation tc-tab-restart (0.6 s, cubic-bezier(0.25, 1, 0.5, 1)) at capture, and its keyframe starts at transform: translateX(0px), the 'Day' position. Each restart therefore begins from the first segment, not from the tab that was active.",
+      "before": "The highlight restarts from the 'Day' segment on each change",
+      "after": "Transition the highlight from its current position to the new tab (transform only, no restart keyframe)",
+      "why": "A highlight that jumps back to the first tab and slides from there reverses direction when moving left, and says the selection came from 'Day'.",
+      "test": "T-SPATIAL-MEANING",
+      "root": "@keyframes tc-tab-restart"
+    },
+    {
+      "rule": "MOT-005",
+      "tier": "Reflex",
+      "where": "span.tc-tabs__highlight, 1440",
+      "evidence": "The highlight declares transform 0.6 s on cubic-bezier(0.25, 1, 0.5, 1), and the 1603 ms still catches it mid-travel. A segmented control is used many times a visit.",
+      "before": "600 ms indicator travel",
+      "after": "200 to 250 ms on the same ease-out curve",
+      "why": "A demo of a control should run at the real product's speed (MOT-250); 600 ms on every switch makes the control feel slow.",
+      "test": "T-FREQUENCY"
+    }
+  ],
+  "strengths": [
+    "The highlight moves by transform, not by width or left (MOT-117), and the labels only change colour, so nothing shifts in the row."
+  ],
+  "not_investigated": [
+    "Whether the restart from 'Day' is visible in a given switch: no still catches a restart frame, so the MOT-010 finding rests on the declared animation and keyframe.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

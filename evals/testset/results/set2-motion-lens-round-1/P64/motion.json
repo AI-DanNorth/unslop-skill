@@ -1,0 +1,49 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "low",
+  "overall_reason": "The demo shows a 'Link copied' toast whose dismiss control darkens on press at about 1.6 s before the toast leaves, which is feedback in the right order, but the demo ends on an empty frame and the exit itself falls between stills.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-POSTER fails because the end state is an empty stage; T-CONTINUITY passes for the press before the result, and T-ENTER-EXIT could not be judged from the stills."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-017",
+      "tier": "Finish",
+      "where": "div.tc-exit toast demo, final frame and fold-1440.png",
+      "evidence": "fold-1440.png has no pixel darker than 250 anywhere, and the stills from about 2.6 s to 5.5 s show an empty white stage. The demo holds nothing after the toast leaves.",
+      "before": "The demo ends on a blank stage for more than 3 s",
+      "after": "Hold a payoff after the dismiss (the content the toast sat over, or the toast's resting place) and use that as the poster frame",
+      "why": "A thumbnail, a reduced-motion viewer or a screenshot of this demo shows nothing, so it cannot say what the dismiss does.",
+      "test": "T-POSTER"
+    }
+  ],
+  "strengths": [
+    "The dismiss control shows a pressed background, rgb(234, 234, 234), at about 1.6 s while the toast is still whole, so the press reads before the result."
+  ],
+  "not_investigated": [
+    "T-ENTER-EXIT: the toast's exit (the stylesheet declares opacity and a 4 px rise over 320 ms on .tc-toast[data-leaving]) happens between the 1.6 s and 2.6 s stills, so whether this toast fades or vanishes in one frame is not visible.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

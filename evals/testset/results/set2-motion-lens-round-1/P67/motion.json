@@ -1,0 +1,39 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The avatar handoff is one object making one trip: the 'AT' avatar lifts with a soft shadow at 1606 ms, travels right and lands in the assignee slot by 2610 ms, leaving its start position empty; it is a showpiece that plays once at load.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY and T-PURPOSE pass with one object, one trip and a held payoff; the travel curve falls between stills."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "The avatar carries a lift shadow only while it travels (1606 ms) and drops it in the slot, so the move reads as pick up, carry and place (MOT-263).",
+    "The payoff, the avatar in the 'Assignee' slot, is held from 2610 ms to the end of the window and is the screenshot's state (T-POSTER passes)."
+  ],
+  "not_investigated": [
+    "The handoff's duration and curve: the move falls between the 914 ms and 2610 ms stills, and the avatar's transition is not among the transitions declared at 1440.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The permission label on Jon Park's row cycles 'Can view', 'Can edit', 'Full access' and back with no menu opening and no cursor, and it changes by crossfading three stacked spans in place (opacity and filter 250 ms on the browser's default ease; the DOM holds all three, two at opacity 0).",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-PURPOSE fails because the value changes with no seen cause and the dropdown never opens, and T-CONTINUITY fails because three spans crossfade in one slot; nothing in the motion tells the story of choosing a permission."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-017",
+      "tier": "Finish",
+      "where": "passive recording, the permission control on 'Jon Park', 1440",
+      "evidence": "The stills show 'Can view' at 910 ms, 'Can edit' at 2609 ms, 'Full access' at 4012 ms and 'Can view' at 5509 ms; no cursor, menu or chevron change appears in any frame, and the recorder reports no movement.",
+      "before": "The permission value changes by itself every second or so.",
+      "after": "Tell it in beats: a cursor opens the menu from the chevron, picks 'Can edit', the menu closes and the label updates, then hold that payoff.",
+      "why": "A value that changes on its own looks like a glitch, not a person granting access.",
+      "test": "T-PURPOSE",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-015",
+      "tier": "Finish",
+      "where": "the permission label spans ('Can view', 'Can edit', 'Full access'), 1440",
+      "evidence": "dom-1440.json holds three spans in the same slot, two at opacity 0, with a declared opacity and filter transition of 250 ms on 'ease'; the sweep's hidden_content check counts 53% of the text hidden after load.",
+      "before": "Three labels crossfade in one place.",
+      "after": "Roll the new value into the slot (old up and out, new up and in) and size the control to the incoming label (MOT-254).",
+      "why": "Crossfaded words pass through a frame where both are half-visible, which reads as a blur, not a change.",
+      "test": "T-CONTINUITY",
+      "source": "motion",
+      "root": "three stacked label spans with an opacity crossfade"
+    }
+  ],
+  "strengths": [
+    "The avatar and name stay still while the label changes, so the eye goes to the one changing value."
+  ],
+  "not_investigated": [
+    "the crossfade frames themselves: no still falls inside the 250 ms transition",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

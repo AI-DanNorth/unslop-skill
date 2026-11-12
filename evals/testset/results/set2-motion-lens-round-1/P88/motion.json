@@ -1,0 +1,37 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "A cursor presses 'Verify', a check mark opens its own space before 'Design review' (declared 480 ms --tr-insert-progress on cubic-bezier(0.22, 1, 0.36, 1); the check is half-in at 1604 ms), the button becomes 'Undo', and the reset follows a press of 'Undo'; there are no snaps and reduced motion ends at 210 ms.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CONTINUITY and T-DEMO-LOOP pass because the label moves over as the check opens its space and the reset has a seen cause; the button is blank in the 1604 ms still, which may be a short gap between labels."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "The check mark opens its space with its neighbour: 'Design review' slides right while the check grows in (MOT-255).",
+    "The reset has a seen cause: the demo presses 'Undo' (MOT-018).",
+    "Under reduced motion the change completes in 210 ms."
+  ],
+  "not_investigated": [
+    "the button label is empty at 1604 ms: one still cannot show whether the gap between 'Verify' and 'Undo' exceeds 0.3 s (MOT-009)",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

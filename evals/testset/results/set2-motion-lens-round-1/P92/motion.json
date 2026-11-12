@@ -1,0 +1,58 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The inbox demo archives 'Northwind Air': the row is fully covered by the purple 'Archive' action at 1605 ms with no finger or cursor shown, the list closes up by 2611 ms, and then the archived row comes back into view, its lower edge under the 'Jon Park' row at 4013 ms, before the swipe repeats.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-DEMO-LOOP fails because the archived email returns in view with no cause, and the swipe has no visible hand; T-CONTINUITY passes for the list closing up with no snaps."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-SPATIAL-MEANING",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-018",
+      "tier": "Finish",
+      "where": "passive recording, the 'Northwind Air' row returning, 1440",
+      "evidence": "At 2611 ms the list shows only 'Jon Park' and a placeholder row; at 4013 ms 'Northwind Air / Your trip to Lisbon' is back on top with its lower edge under the 'Jon Park' row, and at 5512 ms it is archived again.",
+      "before": "The archived email slides back into the list in view.",
+      "after": "Bring the next loop's email in as a new message (a different sender), or restore the row while the card is hidden, so data never rewinds in view (MOT-246).",
+      "why": "An archived email coming back reads as the archive failing.",
+      "test": "T-DEMO-LOOP",
+      "source": "motion"
+    },
+    {
+      "rule": "MOT-272",
+      "tier": "Finish",
+      "where": "passive recording, the swipe on the 'Northwind Air' row, 1440",
+      "evidence": "No still shows a finger, touch indicator or cursor; at 1605 ms the purple 'Archive' action already fills the row.",
+      "before": "The row swipes away on its own.",
+      "after": "Show a touch indicator that drags the row left at finger speed and lifts at the archive threshold.",
+      "why": "Without the gesture the viewer sees a row turn purple and vanish, not a swipe they could make.",
+      "test": "T-PURPOSE",
+      "source": "motion"
+    }
+  ],
+  "strengths": [
+    "The list closes up continuously after the archive: the recorder reports no snaps while 'Jon Park' moves up."
+  ],
+  "not_investigated": [
+    "the swipe's own travel: no still falls between 912 and 1605 ms",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Files arrive one at a time under the count (tc-file-in 250 ms on 3 rows) while the count rolls to '1 file' and '3 files' (ss-roll-in 420 ms), the full list holds from 2613 to 4004 ms, and the list empties back to 'No files yet' by 5504 ms next to the 'Clear' button; there are no snaps.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-CHOREOGRAPHY and T-CONTINUITY pass for three short arrivals with a count that rolls, and T-POSTER passes for the held list; the reset may come from 'Clear', but no press of it is visible."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-CHOREOGRAPHY",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP",
+    "T-LOOPS"
+  ],
+  "findings": [],
+  "strengths": [
+    "The count changes with the list: '0 files' becomes '1 file' then '3 files' as each row arrives, on a 420 ms roll (MOT-253).",
+    "Three rows arrive with a short 250 ms entrance each, inside the eight-item and 500 ms stagger limits (MOT-011)."
+  ],
+  "not_investigated": [
+    "whether the 'Clear' button is pressed before the list empties: no cursor is in frame and no still falls on the reset",
+    "no click runs: the capture skipped click motion (--no-motion), so the sweep's MOT-002 measured limits are not verified and no trigger rows exist",
+    "the passive stills are 7 frames over 6 s (about 0, 400, 900, 1600, 2600, 4000 and 5500 ms); in-between frames, exact curves and the loop seam timing cannot be seen",
+    "interruptibility and rapid toggles (T-RAPID-TOGGLE): no detector built",
+    "hover as it plays, gestures, scroll-driven motion and route transitions: not captured",
+    "the 8 MOT-001 motion_css hits come from the shared stylesheet every item loads (.ss-bubble, .ss-receipt, .ss-roll__mid and others), not from this composition; they are left to the sweep"
+  ]
+}

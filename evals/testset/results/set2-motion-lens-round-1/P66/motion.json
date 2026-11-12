@@ -1,0 +1,41 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The save demo chains a press, a spinner and a check in one 14 px slot while the label rolls from 'Save' to 'Saving' to 'Saved', each step fading in 160 to 180 ms; this is feedback in causal order, and the spinner loop shows a real state.",
+  "score": {
+    "dimension": "Craft",
+    "value": 8,
+    "reason": "T-CONTINUITY, T-LOOPS and T-MOTION-SYSTEM pass; the spinner's first frames and its delay fall between stills, so the score stops short of 9."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [],
+  "strengths": [
+    "At about 1.6 s the button shows its press (darker background, 1 px smaller box) before the label changes, so press feedback comes before the result.",
+    "The icon, spinner and check share one slot and fade over 160 to 180 ms, the label rolls through ss-roll, and the button holds its 92 px width through all three states.",
+    "The 800 ms spinner loop runs only while saving (animation-play-state stays paused otherwise), so the loop shows a state, not decoration."
+  ],
+  "not_investigated": [
+    "MOT-200 and MOT-258: whether the spinner is already turning when it becomes visible, and its delay before showing, fall between the 1.6 s and 2.6 s stills.",
+    "The sweep's hidden_content (ROB-001) hit, 40% of text hidden, comes from the stacked label and icon states; it belongs to the sweep.",
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

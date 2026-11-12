@@ -1,0 +1,49 @@
+{
+  "lens": "motion",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The 'Add a note' to 'Note added' swap is continuity feedback with a short fade and blur, but it animates margin-block, which pushes the neighbouring 'Optional' label off its line; the sweep's 4 px shove is that symptom.",
+  "score": {
+    "dimension": "Craft",
+    "value": 5,
+    "reason": "T-CONTINUITY fails because the change moves a neighbour that did not change; T-PURPOSE and T-FREQUENCY pass for the 250 ms swap."
+  },
+  "tests_run": [
+    "T-PURPOSE",
+    "T-FREQUENCY",
+    "T-MOTION-BUDGET",
+    "T-MOTION-SYSTEM",
+    "T-ENTER-EXIT",
+    "T-SPATIAL-MEANING",
+    "T-CHOREOGRAPHY",
+    "T-HOVER-SIGNAL",
+    "T-LOOPS",
+    "T-CONTINUITY",
+    "T-POSTER",
+    "T-DEMO-LOOP"
+  ],
+  "findings": [
+    {
+      "rule": "MOT-015",
+      "tier": "Finish",
+      "where": "span.ts-unstable__item 'Note added' and its neighbour span.ts-secondary 'Optional', 1440",
+      "evidence": "The entering item transitions margin-block from 4px -4px to 0 over 0.3 s on cubic-bezier(0.22, 1, 0.36, 1). In the 2608 ms still 'Optional' sits about 4 px below its 1613 ms position, and the sweep's motion_snap passive_shove hit reports 'Optional' jumping +4 px on y at 1733 ms.",
+      "before": "margin-block 4px -4px to 0 over 300 ms on the swapping label",
+      "after": "Move the entering label with transform: translateY(4px) to none over the same 300 ms and keep margin fixed, so 'Optional' never moves",
+      "why": "Only the label changed, yet the secondary text jumps; the eye follows the jump instead of the new label.",
+      "test": "T-CONTINUITY",
+      "root": ".ts-unstable__item margin-block transition"
+    }
+  ],
+  "strengths": [
+    "The label swap itself is a quick crossfade: the old item leaves in 150 ms and the new one arrives in 250 ms on ease-out after a 70 ms delay, so the exit is shorter than the entrance."
+  ],
+  "not_investigated": [
+    "Frame-level timing: the passive stills are seven shots over 6 s from a separate load, so durations and curves come from the declarations at 1440, not from frames between stills.",
+    "Sweep motion (MOT-002) is not-verified: motion capture was skipped (--no-motion) and there were no click runs; async_state (CMP-001) is not-verified (--no-async).",
+    "T-RAPID-TOGGLE and interruptibility: no detector built and no click runs.",
+    "Gestures and drags as a person plays them, scroll-driven motion, hover as it plays (only declarations read), and route or page transitions: not captured.",
+    "The shared stylesheet's 8 motion_css (MOT-001) hits belong to the sweep and are not repeated here."
+  ]
+}

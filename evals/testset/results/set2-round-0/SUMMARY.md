@@ -81,3 +81,20 @@ Stageshow's 22 motion pairs were added as P58 to P101 (44 halves). Each was capt
 ### Transform-aware text size
 
 `extract.js` records each text element's rendered-to-layout scale. `text_floor` judges text at its drawn size. When three or more short runs are shrunk below the floor, it reports one `scaled` hit, which counts labels and table cells too. Both bad halves (P25 at `scale(0.5)`, P43 at about 0.62) now carry a `scaled` hit; their good halves (P20, P31) carry none. The hits are Reflex, because CSS-scaled mocks count as incidental (live round 1).
+
+## Motion pairs, lens-motion blind (12 Nov 2026)
+
+The 44 motion halves were recaptured with passive stills: viewport shots over the first 5.5 s, from a separate load. Two blind reviewers then ran `lens-motion` on them. The judgments are in `../set2-motion-lens-round-1/`.
+
+**The lens scores the bad half lower on 17 of 22 pairs**, against 5 of 22 for the passive sweep. It ties on 4 and inverts on 1. Every pair the sweep separates, the lens separates too.
+
+- **What the stills let the lens see:**
+  - Label and icon swaps in one frame (label, identity, detail-reaction)
+  - A highlight that restarts from its origin (interrupt)
+  - Hard clip edges that slice text (label-boundary, viewport-edge)
+  - A value cycling with no cause shown (detail-pin)
+  - A chart that fades in whole (detail-chart)
+  - A press with no response (press)
+- **Ties:** dependent-starts (both halves slide a panel sideways for 900 ms), exit (both stages end empty, and the exit falls between stills), space and spinner-start (the fault is in timing that falls between stills).
+- **Inversion:** detail-throw (bad 6, good 5). The reviewer read the bad half's swipe as travelling visibly; the fault, a pause at release, is shorter than the gap between stills.
+- **Limit:** seven stills over about 5.5 s cannot show faults that last under about 400 ms, or the order of overlapping starts. A denser still series or a short video would close it.
