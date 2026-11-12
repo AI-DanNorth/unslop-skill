@@ -1,0 +1,46 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "low",
+  "overall_reason": "The artifact is a single waterfall chart with no photographs, illustrations, icons or logos; the only imagery decision is a faint dot-grid texture behind the whole canvas.",
+  "score": {
+    "dimension": "Craft",
+    "value": null,
+    "reason": "No imagery worth judging: the artifact is one data chart, which belongs to lens-dataviz; T-TREATMENT raised only the background dot grid (IMG-012)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW",
+    "T-TEXT-ON-IMAGE"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-012",
+      "title": "Treatment and texture come from the brand",
+      "tier": "Reflex",
+      "where": "whole canvas, 1200 by 747 image, most visible in the margins left of the y axis (x 30 to 110) and right of the plot (x 1125 to 1170)",
+      "evidence": "A faint dot grid covers the whole canvas, including the margins outside the plot and the area behind the title, under the chart's own horizontal gridlines at 100, 200, 300 and 400. The dots sit on no axis and mark no value.",
+      "before": "A decorative dot grid behind the chart, plus the chart's own gridlines.",
+      "after": "A flat background, keeping only the four value gridlines.",
+      "why": "Two grids compete for the same job, and the decorative one adds noise behind the thin bar outlines and the small value labels.",
+      "test": "T-TREATMENT"
+    }
+  ],
+  "strengths": [
+    "No stock, generated or decorative pictures: every mark on the canvas is part of the chart, and the one accent colour marks the largest saving as the legend says."
+  ],
+  "not_investigated": [
+    "image-only item: natural sizes, hosts, file names, alt text, density, crops at 375 and the sweep's per-element hits (fake_people, img_alt, mixed_icons, emoji_icons, icon_tile, gradient, glow, performance) were not captured; T-IMAGE-SIZE and T-CROP-375 were judged only from what the one image shows",
+    "the artifact is one chart image; there is only one sample",
+    "T-CAPTURE-READ, T-ILLUSTRATION-READ, T-ONE-REGISTER, T-IMAGE-SIZE and T-CROP-375: no product capture, illustration, picture set or photograph",
+    "for lens-dataviz: the bridge does not add up as drawn. 240 + 64 - 36 + 22 - 52 = 238, but the end bar reads 236",
+    "chart encoding, labels and legend are lens-dataviz's domain"
+  ]
+}

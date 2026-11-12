@@ -1,0 +1,66 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "mixed",
+  "confidence": "medium",
+  "overall_reason": "The hero retention chart is a readable, labelled product illustration, but the logo row is six placeholder names typed in the page font and the small feature charts carry no values.",
+  "score": {
+    "dimension": "Craft",
+    "value": 6,
+    "reason": "T-ILLUSTRATION-READ passes on the hero cohort chart, but T-LOGO-ROW fails on the typed logo row and T-DELETION finds the feature-row sparklines carry no fact (IMG-014, IMG-003)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-DELETE-PICTURE",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-014",
+      "title": "Logos are the owners' marks at even weight",
+      "tier": "Reflex",
+      "where": "'Trusted by fast-moving teams at' row, about y 690 of the 1280 image",
+      "evidence": "The logo row sets six names (Northwind, Lumen, Vertex, Quanta, Beacon, Atlas) as dark bold text in the page font, not as marks. Northwind is a well-known sample-company name. Whether these customers exist belongs to SLP-016 and INT-010 (lens-integrity).",
+      "before": "Six placeholder names typed in the page font.",
+      "after": "[DATA NEEDED: the real customers' one-colour marks at one optical height], or remove the row until real customers agree to appear.",
+      "why": "A row of typed names in the house font shows that no owner supplied a mark, so it reads as a template slot directly under the hero.",
+      "test": "T-LOGO-ROW"
+    },
+    {
+      "rule": "IMG-003",
+      "title": "Every picture carries a fact",
+      "tier": "Reflex",
+      "where": "feature rows, right column, about x 1040 to 1240 and y 960 to 1110 of the 1280 image",
+      "evidence": "The 'Live dashboards' row ends in a 200 by 30px sparkline captioned 'events in the last hour' with no axis or count, and the 'Funnels & retention' row ends in three bars captioned 'visit, sign up, invite' with no values. Removing either leaves the row's meaning unchanged.",
+      "before": "A valueless sparkline and three valueless bars.",
+      "after": "Give each a number the reader can take away (for example '1,204 events in the last hour' and '62% to 31% to 12%'), or drop them and keep the hero chart as the one picture.",
+      "why": "A chart with no values is decoration on a page that sells answers from data.",
+      "test": "T-DELETION"
+    }
+  ],
+  "strengths": [
+    "The hero 'Weekly retention by signup week' chart reads at its size: labelled rows and weeks, a value in every cell, a correct triangular cohort shape (Aug 25 has only week 0), and a legend from 'Fewer' to 'More still active'.",
+    "The third feature row uses a real annotation ('Maya annotated Tuesday, New onboarding shipped, activation up') in place of an icon, which shows the feature.",
+    "No emoji, icon tiles, gradients or glows; the footer social links are plain text."
+  ],
+  "not_investigated": [
+    "image-only item: natural sizes, hosts, file names, alt text, density, crops at 375 and the sweep's per-element hits (fake_people, img_alt, mixed_icons, emoji_icons, icon_tile, gradient, glow, performance) were not captured; T-IMAGE-SIZE and T-CROP-375 were judged only from what the one image shows",
+    "the whole artifact is one screenshot, so it is one sample; confidence is medium at most",
+    "licences and credits: the capture cannot see licences",
+    "menus, carousels, tabs, hover states and lazy content: no interaction was captured",
+    "art direction at other widths: only one width exists",
+    "T-CAPTURE-READ: no product capture; the hero chart is an illustration, judged with T-ILLUSTRATION-READ (C48)",
+    "T-TEXT-ON-IMAGE: no text over a picture",
+    "the 12,000+, 8B, 4.9 and 99.99% figures and the customer names belong to lens-integrity"
+  ]
+}

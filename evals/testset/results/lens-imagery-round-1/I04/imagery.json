@@ -1,0 +1,89 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "generated",
+  "confidence": "medium",
+  "overall_reason": "The hero picture is a skeleton dashboard of six unlabelled purple gradient bars, and the rest of the imagery is the generated-page kit: emoji feature icons in tinted tiles, a sparkle 'Powered by AI' pill, a gradient CTA band and a grey text logo row of placeholder names.",
+  "score": {
+    "dimension": "Craft",
+    "value": 3,
+    "reason": "T-ILLUSTRATION-READ and T-DELETE-PICTURE fail on the empty hero dashboard, and T-AI-LOOK, T-TREATMENT, T-ICON-SYSTEM and T-LOGO-ROW fail on the emoji icons, purple gradients and the text logo row (IMG-007, IMG-012, IMG-013, IMG-014)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-DELETE-PICTURE",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-007",
+      "title": "A product illustration is built to be read",
+      "tier": "Reflex",
+      "where": "hero, below the CTAs, about x 181 to 1100 and y 530 to 860 of the 1280 image",
+      "evidence": "The hero's product picture, about 920 by 330px and the largest picture on the page, is a window with grey skeleton bars where the sidebar and title would be and six purple-to-violet gradient bars with no axis, labels, values or dates. Removing it leaves the hero's message unchanged (T-DELETE-PICTURE).",
+      "before": "A skeleton dashboard with six unlabelled gradient bars.",
+      "after": "[DATA NEEDED: a capture of a real Cadence chart, for example a funnel or retention view with its labels and numbers, at 2x]",
+      "why": "An analytics product's lead picture is its one chance to show an answer; a chart with no labels shows no answer and reads as a template filler (IMG-003 as well).",
+      "root": "hero illustration component",
+      "test": "T-ILLUSTRATION-READ"
+    },
+    {
+      "rule": "IMG-013",
+      "title": "One icon system",
+      "tier": "Reflex",
+      "where": "feature cards, about y 1310 to 1370 of the 1280 image; 'Powered by AI' pill at y 172; footer, bottom right at y 3120",
+      "evidence": "The three feature cards use colour emoji (a bar chart, a lightning bolt and a rocket) inside pale tinted tiles, the hero pill opens with a sparkle emoji, and the footer's three social links are small colour emoji-style glyphs. These are three unrelated drawing styles, and none is a drawn icon set. Sweep rules SLP-013 (emoji icons), SLP-003 (icon tile) and SLP-015 (AI sparkle) cover the same marks; their hits were not captured for this item.",
+      "before": "Emoji in tinted tiles, a sparkle emoji, and emoji-style social glyphs.",
+      "after": "One stroke icon set at one weight (for example 1.5px at 20px) for the three features, no sparkle, and the owners' own one-colour marks or plain text labels for the social links.",
+      "why": "Emoji render differently on every platform and carry no meaning specific to the feature; the sparkle and rocket are the generated-page kit's default marks (IMG-001).",
+      "root": "feature card icon slot",
+      "test": "T-ICON-SYSTEM"
+    },
+    {
+      "rule": "IMG-012",
+      "title": "Treatment and texture come from the brand",
+      "tier": "Reflex",
+      "where": "hero headline 'just works', hero bars and glow, stat figures, CTA band at about y 2530 to 2812 of the 1280 image",
+      "evidence": "One indigo-to-violet-to-pink gradient is applied to the headline words 'just works', the six hero bars, the four stat figures, the primary buttons and the full-width 'Ready to get started?' band, and a violet glow spreads under the hero window. No brand authority names this treatment. Sweep rules SLP-007 (gradient), SLP-008 (glow) and the neon_violet detector's hits were not captured for this item.",
+      "before": "A purple gradient and violet glow on text, bars, buttons and the CTA band.",
+      "after": "One flat brand colour for the primary action, solid bars in the chart, and the CTA band on a flat surface with no glow under the hero frame.",
+      "why": "The same gradient on every element is the generated-page default and removes the one cue that would mark the primary action.",
+      "root": "one gradient token used across components",
+      "test": "T-TREATMENT"
+    },
+    {
+      "rule": "IMG-014",
+      "title": "Logos are the owners' marks at even weight",
+      "tier": "Reflex",
+      "where": "'Trusted by fast-moving teams at' row, about y 1010 of the 1280 image",
+      "evidence": "The logo row sets six names (Northwind, Lumen, Vertex, Quanta, Beacon, Atlas) as grey bold text in the page font, not as marks. Northwind is a well-known sample-company name. Whether these customers exist belongs to SLP-016 and INT-010 (lens-integrity); this lens notes only that no owner's mark is shown.",
+      "before": "Six placeholder names typed in the page font.",
+      "after": "[DATA NEEDED: the real customers' one-colour marks at one optical height], or remove the row until real customers agree to appear.",
+      "why": "A text row in one font shows that no real marks were supplied; it reads as a template slot.",
+      "test": "T-LOGO-ROW"
+    }
+  ],
+  "strengths": [
+    "Nothing qualifies as real material; the only consistent element is the purple diamond logo, which is used the same way in the header and footer."
+  ],
+  "not_investigated": [
+    "image-only item: natural sizes, hosts, file names, alt text, density, crops at 375 and the sweep's per-element hits (fake_people, img_alt, mixed_icons, emoji_icons, icon_tile, gradient, glow, performance) were not captured; T-IMAGE-SIZE and T-CROP-375 were judged only from what the one image shows",
+    "the whole artifact is one screenshot, so it is one sample; confidence is medium at most",
+    "licences and credits: the capture cannot see licences",
+    "menus, carousels, tabs, hover states and lazy content: no interaction was captured",
+    "art direction at other widths: only one width exists",
+    "T-CAPTURE-READ: no product capture; the hero window is an illustration, judged with T-ILLUSTRATION-READ (C48)",
+    "T-TEXT-ON-IMAGE: no text over a picture",
+    "the invented customer names and the 12,000+, 8B, 4.9 and 99.99% figures belong to lens-integrity (INT-010, SLP-016)"
+  ]
+}

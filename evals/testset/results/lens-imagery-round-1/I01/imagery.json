@@ -1,0 +1,66 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "The only pictures are two product illustrations built for this product, the phone log in the hero and the medicine record table, and both carry specific, consistent farm data; the drawn phone bezel is the one stand-in.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-ILLUSTRATION-READ and T-ONE-REGISTER pass on the two product illustrations and the letter-tile icons, but T-STAND-IN finds a CSS-drawn phone bezel and the hero log's weekday does not match the 2026 record (IMG-005, IMG-007)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-DELETE-PICTURE",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-005",
+      "title": "No drawn stand-ins for real things",
+      "tier": "Reflex",
+      "where": "hero, right column, about x 877 to 1186 and y 141 to 583 of the 1440 image",
+      "evidence": "The hero product picture is a phone drawn in CSS: a dark rounded bezel about 310 by 440px with a drop shadow, wrapped around four log entries and a yellow '+ Add entry' button. The page sells a working phone app ('Log movements, medicines and field work from your phone'), so the real log screen could have been captured.",
+      "before": "A drawn phone bezel framing a hand-built copy of the log screen.",
+      "after": "A capture of the real Hill Farm log screen at 2x, shown without a drawn device frame, or the same illustration without the bezel so it reads as an illustration (C48).",
+      "why": "A drawn device frame claims to show the app on a phone while showing a mock; a capture shows the visitor the screen they will use in the yard.",
+      "test": "T-STAND-IN"
+    },
+    {
+      "rule": "IMG-007",
+      "title": "A product illustration is built to be read",
+      "tier": "Reflex",
+      "where": "hero phone illustration, header strip, about x 905 and y 180 of the 1440 image",
+      "evidence": "The phone header reads 'Tuesday 21 October'. The medicine record table in section 3 is dated 'Jul to Oct 2026' and lists a Wormer dose on 21 Oct. 21 October 2026 is a Wednesday, so the two illustrations disagree about the year or the day.",
+      "before": "'Tuesday 21 October' in the hero log.",
+      "after": "'Wednesday 21 October', so the hero log and the medicine record describe the same day in 2026.",
+      "why": "The illustrations earn trust through exact farm detail (batch 4471, 21-day withdrawal that clears on 11 Nov); one wrong weekday is the detail a farmer checking dates will notice.",
+      "test": "T-ILLUSTRATION-READ"
+    }
+  ],
+  "strengths": [
+    "The two product illustrations use specific, cross-checked data: the hero's 'Wormer, batch 4471, 8 lambs, 21 day withdrawal' matches the medicine record row 'Wormer, Lambs, 8, 21 Oct, clear 11 Nov' (21 days).",
+    "One icon system: the MV, RX and FW letter tiles in the phone log are the same tiles that head the three feature cards, and the section 3 list uses one green check glyph.",
+    "No stock photographs, illustration packs, orbs or gradient art anywhere on the page."
+  ],
+  "not_investigated": [
+    "image-only item: natural sizes, hosts, file names, alt text, density, crops at 375 and the sweep's per-element hits (fake_people, img_alt, mixed_icons, emoji_icons, icon_tile, gradient, glow, performance) were not captured; T-IMAGE-SIZE and T-CROP-375 were judged only from what the one image shows",
+    "the whole artifact is one screenshot, so it is one sample; confidence is medium at most",
+    "licences and credits: the capture cannot see licences",
+    "menus, carousels, tabs, hover states and lazy content: no interaction was captured",
+    "art direction at other widths: only one width exists",
+    "T-CAPTURE-READ: no product capture; both product pictures are illustrations, judged with T-ILLUSTRATION-READ (C48)",
+    "T-TEXT-ON-IMAGE: no text over a picture",
+    "T-LOGO-ROW: no logo row",
+    "whether a farm, yard or livestock photograph belongs on the page is a lead-material question for lens-concept (CON-013 to CON-017)"
+  ]
+}

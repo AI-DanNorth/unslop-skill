@@ -1,0 +1,54 @@
+{
+  "lens": "imagery",
+  "ran_at": "2026-11-12T12:00:00",
+  "overall_read": "made",
+  "confidence": "medium",
+  "overall_reason": "Every picture is a code, log or terminal panel showing this product's own API, CLI and delivery data, drawn in one frame recipe; the hero log's tiny status pills are the one reading gap.",
+  "score": {
+    "dimension": "Craft",
+    "value": 7,
+    "reason": "T-MATERIAL-SOURCE, T-ONE-REGISTER and T-LOGO-ROW pass on the code, delivery and terminal panels, but T-ILLUSTRATION-READ finds status pills near 9px with one wrapping to two lines (IMG-007)."
+  },
+  "tests_run": [
+    "T-MATERIAL-SOURCE",
+    "T-AI-LOOK",
+    "T-DELETION",
+    "T-DELETE-PICTURE",
+    "T-EMPTY-FRAME",
+    "T-STAND-IN",
+    "T-ILLUSTRATION-READ",
+    "T-ONE-REGISTER",
+    "T-IMAGE-SIZE",
+    "T-CROP-375",
+    "T-TREATMENT",
+    "T-ICON-SYSTEM",
+    "T-LOGO-ROW"
+  ],
+  "findings": [
+    {
+      "rule": "IMG-007",
+      "title": "A product illustration is built to be read",
+      "tier": "Reflex",
+      "where": "hero code panel, event log rows, right edge, about x 1200 to 1255 and y 500 to 660 of the 1440 image",
+      "evidence": "The status pills in the hero's event log ('200', 'retry 3', 'replay') are set at roughly 9 to 10px, and the 'retry 3' pill wraps onto two lines, which makes that row taller than the other three. The timestamps and latencies in the same rows sit near 11px.",
+      "before": "Pills near 9px, with 'retry 3' broken over two lines.",
+      "after": "Pills at 12px or more on one line ('retry 3' fits at a pill width of about 64px), so the four rows keep one height.",
+      "why": "The retry and replay states are what the panel exists to show; at 9px they are the hardest words on the first screen to read.",
+      "test": "T-ILLUSTRATION-READ"
+    }
+  ],
+  "strengths": [
+    "The panels show this product at work with consistent data: the delivery-attempt panel's 'backoff 2s, 8s, 32s' and 'delivered after 42.6s' add up, and the replay terminal reports 1,842 matched and 1,842 delivered.",
+    "One frame recipe: the hero code panel, the delivery-attempt panel, the replay terminal and the closing CLI panel share one dark surface, one radius, one thin border and one mono face.",
+    "The provider strip ('stripe github shopify twilio linear slack your own') sets the names in plain mono text under 'Works with any HTTP sender, including', so it neither redraws owners' marks nor claims them as customers."
+  ],
+  "not_investigated": [
+    "image-only item: natural sizes, hosts, file names, alt text, density, crops at 375 and the sweep's per-element hits (fake_people, img_alt, mixed_icons, emoji_icons, icon_tile, gradient, glow, performance) were not captured; T-IMAGE-SIZE and T-CROP-375 were judged only from what the one image shows",
+    "the whole artifact is one screenshot, so it is one sample; confidence is medium at most",
+    "licences and credits: the capture cannot see licences",
+    "menus, carousels, tabs, hover states and lazy content: no interaction was captured",
+    "art direction at other widths: only one width exists",
+    "T-CAPTURE-READ: no product capture; the panels are illustrations, judged with T-ILLUSTRATION-READ (C48)",
+    "T-TEXT-ON-IMAGE: no text over a picture"
+  ]
+}

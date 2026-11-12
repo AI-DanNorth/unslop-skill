@@ -23,3 +23,15 @@ Two blind reviewers ran `lens-imagery` (LENS-BRIEF-PHASE2) on 38 live sites of t
   - Untranslated labels baked into figures (L34).
 - **No imagery:** L15, L16 and L35 have no imagery worth judging and got `score: null`, as designed.
 - **Capture limits:** `object-fit` and `object-position` are inferred from class names; video and iframe sources are not captured; lazy images that never loaded are "not verified" (L28: 67).
+
+## Image-only items (I01 to I06)
+
+Each item's image was placed in `01-evidence/` (`image.webp` or `image.png`), with a manifest saying it is image-only: no DOM, no interaction, no other width, target withheld. A third blind reviewer ran the lens's image-only mode on them.
+
+| Item | Expected | Read | Score | Note |
+|---|---|---|---|---|
+| I04 | slop | generated | 3 | Skeleton dashboard with unlabelled gradient bars; deleting it loses nothing |
+| I05 | good (the fix of I04) | mixed | 6 | The logo row is typed placeholder names; the cohort chart is a strength |
+| I01, I02, I03 | slop | made | 7 each | Their faults are layout and copy, not pictures; imagery is the wrong lens for them |
+| I06 | slop (numbers wrong) | made | null | The only picture is a data chart. The reviewer still found the planted fault (240 + 64 - 36 + 22 - 52 = 238, the end bar says 236) and handed it to lens-dataviz |
+
