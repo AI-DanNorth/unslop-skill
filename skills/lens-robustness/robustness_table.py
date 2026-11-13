@@ -749,6 +749,9 @@ def table(run, out):
             "screenshot": f"01-evidence/stress-{w}.png"}) for w, r in (st.get("widths") or {}).items()}}
     else:
         res["stress"] = {"note": "not run: the capture did not use --stress, so T-STRESS is reasoned from layout evidence, not observed"}
+    slj = run / "01-evidence" / "slow.json"
+    res["slow_line"] = json.loads(slj.read_text(encoding="utf-8")) if slj.exists() else {
+        "note": "not run: the capture did not use --slow, so T-SLOW-LINE is reasoned from weight and resilience evidence, not observed"}
     pf = res["performance"] if isinstance(res["performance"], dict) else {}
     hc = res["resilience"].get("hidden_content")
     so = (hc or {}).get("scripts_off", {}) if isinstance(hc, dict) else {}

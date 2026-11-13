@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Unslop capture: renders a web artifact and writes evidence for the sweep.
 // usage: node capture.mjs <url-or-file> <run-dir> [--widths 375,1440] [--bless-control] [--skip-control]
-//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000] [--passive <ms>] [--stress]
+//        [--no-motion] [--no-async] [--no-interact] [--motion-budget 60000] [--async-budget 60000] [--passive <ms>] [--stress] [--slow]
 // Writes <run-dir>/01-evidence/: shot-<w>.png, bg-<w>.png, fold-<w>.png, dom-<w>.json, fonts.json,
 // hidden.json, focus.json + focus/*.png, forms.json, perf.json, motion.json + motion/*.png, async.json + async/*.png, manifest.json
 import { createRequire } from "node:module";
@@ -425,6 +425,41 @@ catch (e) { manifest.interaction.passive = { error: e.message.split(String.fromC
 if (flag("--no-async") || flag("--no-interact")) manifest.interaction.async = { skipped: "--no-async" };
 else try { manifest.interaction.async = await captureAsync({ browser, open, url, ev, note, prepWait, budgetMs: +opt("--async-budget", 60000) }); }
 catch (e) { manifest.interaction.async = { error: e.message.split("\n")[0] }; note(`async capture failed: ${e.message}`); }
+
+// ---- 11. throttled page load (opt-in: --slow) ---------------------------------------------------------
+// The lab pass above loads on the real line. A visitor on a slow phone line sees the page arrive over seconds: what
+// shows first, whether text waits for fonts or script, and what jumps. This loads at 375 with a slow-4G-like line
+// (CDP: 400 ms latency, ~1.6 Mbit/s down) and 4x CPU slowdown, and screenshots at 1, 3 and 6 s from navigation start.
+if (flag("--slow")) {
+  const res = { version: 1, profile: { latencyMs: 400, downKbps: 1600, upKbps: 750, cpuSlowdown: 4, width: 375 }, shots: [] };
+  try {
+    const { ctx, page } = await open(browser, 375);
+    await page.addInitScript(() => { window.__lcp = 0; window.__cls = 0; window.__firstText = null;
+      try { new PerformanceObserver(l => { for (const e of l.getEntries()) window.__lcp = e.startTime; }).observe({ type: "largest-contentful-paint", buffered: true }); } catch {}
+      try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: "layout-shift", buffered: true }); } catch {}
+      const tick = () => { if (window.__firstText === null && document.body && document.body.innerText.trim().length > 20) window.__firstText = performance.now(); if (window.__firstText === null) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick); });
+    const cdp = await ctx.newCDPSession(page);
+    await cdp.send("Network.enable");
+    await cdp.send("Network.emulateNetworkConditions", { offline: false, latency: 400, downloadThroughput: 1600 * 1024 / 8, uploadThroughput: 750 * 1024 / 8 });
+    await cdp.send("Emulation.setCPUThrottlingRate", { rate: 4 });
+    const t0 = Date.now();
+    const nav = page.goto(url, { waitUntil: "load", timeout: 60000 }).then(() => { res.loadMs = Date.now() - t0; }).catch((e) => { res.loadError = e.message.split(String.fromCharCode(10))[0]; });
+    for (const at of [1000, 3000, 6000]) {
+      const wait = at - (Date.now() - t0); if (wait > 0) await page.waitForTimeout(wait);
+      const f = `slow-375-${String(at).padStart(5, "0")}.png`;
+      try { await page.screenshot({ path: path.join(ev, f) }); res.shots.push({ file: f, atMs: Date.now() - t0 }); } catch (e) { res.shots.push({ atMs: at, error: e.message.split(String.fromCharCode(10))[0] }); }
+    }
+    await Promise.race([nav, page.waitForTimeout(30000)]);
+    const m = await page.evaluate(() => ({ lcp: window.__lcp, cls: Math.round((window.__cls || 0) * 1000) / 1000, firstText: window.__firstText,
+      text: document.body ? document.body.innerText.replace(/\s+/g, "").length : 0 })).catch(() => ({}));
+    Object.assign(res, { lcpMs: Math.round(m.lcp || 0) || null, cls: m.cls, firstTextMs: m.firstText ? Math.round(m.firstText) : null, textChars: m.text });
+    await ctx.close();
+  } catch (e) { res.error = e.message.split(String.fromCharCode(10))[0]; }
+  fs.writeFileSync(path.join(ev, "slow.json"), JSON.stringify(res, null, 1));
+  manifest.slow = res.error ? { error: res.error } : { loadMs: res.loadMs || null, firstTextMs: res.firstTextMs, lcpMs: res.lcpMs, cls: res.cls };
+  note(`slow line: ${res.error ? "error " + res.error : `first text ${res.firstTextMs} ms, LCP ${res.lcpMs} ms, load ${res.loadMs || "not reached"} ms, CLS ${res.cls}`}`);
+}
 
 // ---- 10. hostile-content stress pass (opt-in: --stress) ------------------------------------------
 // Real content is longer than the sample. At each stress width the page is loaded, short labels, headings, names and
