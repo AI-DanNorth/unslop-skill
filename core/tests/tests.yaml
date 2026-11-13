@@ -93,7 +93,7 @@
    run: "List each drawn face with the roles it sets (heading levels, body, controls, small labels, code, figures) from the type table that skills/lens-typography/type_table.py writes.",
    pass: "Display and body faces, plus at most one outlier with one role; no face in unrelated roles; mono only on code and figures; display-only cuts only at 24px and up.",
    sources: ["hallmark §52 §61 §64 §290", "huashu §124 §126", "taste-skill §57"]}
-- {id: T-LADDER, name: Ladder audit, lens: [typography], kind: H,
+- {id: T-LADDER, name: Ladder audit, lens: [typography, tokens], kind: H,
    run: "List every distinct font size with its roles and the ratio between adjacent roles (type table), then compare same-kind elements across sections.",
    pass: "Each size is a declared step on one ratio fitted to the medium; each kind of element has one size; weight steps that carry hierarchy are clear.",
    sources: ["kami §35", "huashu §118", "hallmark §54", "taste-skill §59"]}
@@ -516,6 +516,38 @@
    run: "For each count, list, search and number on the page, put 0, 1, 2, 99, 10000 and 1234567 (data/fixtures/hostile.yaml counts) into it in your head.",
    pass: "Plurals read right, zero is a designed state and not a stray '0', long lists stay fast, and the largest number fits its box.",
    sources: ["agent-skills §387", "uupm §110 §140", "hallmark §321"]}
+- {id: T-VALUE-INVENTORY, name: Value inventory, lens: [tokens], kind: H,
+   run: "From the tokens table, list the distinct computed values per property family (colour, size, line height, tracking, spacing, radius, shadow, border, layer) with their counts, then group same-kind elements (cards, buttons, inputs, section gaps, body text) and read which values each group carries.",
+   pass: "Each group uses one value per property, and every value is a step the page reuses. Many values in total on a long page with exhibits, illustrations or product pictures is not a failure by itself; one job done with two or three values is.",
+   sources: ["kami §35", "hallmark §413", "taste-skill §53"]}
+- {id: T-SCALE-FIT, name: Scale fit, lens: [tokens], kind: H,
+   run: "Read the fitted scales: spacing against bases of 4, 5, 6, 8 and 10px, font sizes against modular ratios and the framework's text scale, z-index as a ladder. Compare each share on the scale with the share chance alone would put there.",
+   pass: "One base or ratio holds the page's values well above chance, with at most three deliberate nudges; layers come from one ladder. A page with too few values to fit is not off-scale.",
+   sources: ["hallmark §73 §416 §487 §489", "uupm §310 §311 §312", "taste-skill §55"]}
+- {id: T-HARDCODE, name: Hard-coded values, lens: [tokens], kind: H,
+   run: "Where the artifact declares tokens, read literal against var() use per property family in the readable stylesheet, the literals that retype a token's value, bracketed one-off utilities and references to undeclared tokens without a fallback.",
+   pass: "Rules reference the tokens; literals are a framework's own steps or a preprocessor's compiled values on the page's scale; no reference names a missing token.",
+   sources: ["hallmark §348 §413 §494", "uupm §236 §307", "kami §16 §17"]}
+- {id: T-TOKEN-TIERS, name: Token tiers, lens: [tokens], kind: H,
+   run: "Read the token inventory: names by tier (primitive, semantic, component), aliases, component tokens that point straight at primitives, value-named roles and synonyms, and the colour roles with their on-colour pairs.",
+   pass: "Roles are named by job and point at primitives; components read roles; the roles the page uses are present and every fill has its ink. Either role vocabulary passes (conflict C57).",
+   sources: ["uupm §307 §308 §313", "hallmark §65 §138 §348 §484"]}
+- {id: T-THEME-PARITY, name: Theme parity, lens: [tokens], kind: H,
+   run: "If the stylesheet ships a second theme (a dark media query, a theme class or data attribute), compare the token names it redefines with the base's semantic colour tokens, and count literal colours set in theme rules.",
+   pass: "The theme redefines the same semantic names and only those, mirrored for the unset mode, with no per-component literal overrides. The theme is read from the stylesheet only: its rendering is not verified.",
+   sources: ["hallmark §301 §303", "uupm §242 §315 §339 §360"]}
+- {id: T-DRIFT-PAIRS, name: Drift pairs, lens: [tokens], kind: H,
+   run: "Read the near-duplicate clusters (colours within 0.02 OKLab, sizes within 8%, spacings 1px apart) and find each pair on the page.",
+   pass: "Each pair is merged or kept for a stated reason; no one job is done by two values a hair apart.",
+   sources: ["kami §24 §35", "hallmark §140 §413"]}
+- {id: T-FRAMEWORK-FIT, name: Framework fit, lens: [tokens], kind: H,
+   run: "Read the framework fingerprints (token prefixes, class names, a v4 theme layer) and the bracketed one-off utilities, parallel token sets and name collisions.",
+   pass: "A framework's scale is used consistently or extended through its theme; nothing is typed past it and no second set duplicates it. Using a framework is never itself a finding.",
+   sources: ["hallmark §138 §349 §350 §353"]}
+- {id: T-SYSTEM-DRIFT, name: System drift, lens: [tokens], kind: H,
+   run: "When the contract supplies a brand or design system's tokens, run the table with --system <file> and read each family's share on the system and its off-system values with the nearest supplied step.",
+   pass: "Every value the page's own components use maps to a supplied value; an off-system value is a recorded variant. Without a supplied system the test is not run.",
+   sources: ["huashu §30 §31 §32", "hallmark §134 §140", "kami §339"]}
 - {id: T-COVER-FRAME, name: Cover (video), lens: [media-video], kind: J,
    run: "Pause at 3 random times.", pass: "Each frame works as a cover: one protagonist, at most 3 active elements.", sources: ["huashu §478 §479"]}
 - {id: T-THUMBNAIL, name: 50% thumbnail and 3-metre, lens: [media-social, media-video], kind: H, detector: thumbnail,

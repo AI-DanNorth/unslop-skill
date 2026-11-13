@@ -1378,6 +1378,85 @@
    fix: "Pluralise with the locale's rules, guard falsy counts, design the empty search, and size counters for their largest value.",
    sources: ["ROB-113 (agent §387)", "ROB-198 (uupm §110, hallmark §321)", "ROB-159 (uupm §140 §233, agent §227 §380)"]}
 
+# ---------------- D04 tokens and system (lens-tokens; judgment and hybrid cards, no detector) ----------------
+# Promoted from the mined drafts in rules/D04-TOK.yaml; each source cites the draft id and its original sections.
+# Token findings are Reflex or Finish, never Floor: draft Floors (TOK-110, TOK-116, TOK-117, TOK-131, TOK-133, TOK-143) are
+# promoted as Reflex. Contrast of token pairs is A11-001's (Floor) and lens-a11y's; dark-mode lightness and elevation are
+# CLR-016 and CLR-017; colour roles and dosage are lens-color's, hierarchy is lens-typography's. The measured tells are cited,
+# never repeated: off-scale spacing (LAY-002), spacing monotony (LAY-001), the type ladder (TYP-002), stock swatches (CLR-002),
+# nested radii (LAY-024), container monotony (SLP-006), the motion scale (MOT-007). This lens judges the system: whether the
+# artifact is built on a small, named set of decisions used consistently and themed in parallel, or on a scatter of one-off
+# values. A framework's scale used consistently is a system; a page that needs few values is not short of tokens.
+- {id: TOK-001, title: "Each property uses a few values, and each is a step", domain: D04, tier: Reflex, kind: cap, check: H, remedy: fix-polish, waivable_by: brand-system, tests: [T-VALUE-INVENTORY, T-SCALE-FIT],
+   rule: "Colours, font sizes, line heights, letter spacing, spacing, radii, shadows, border widths, layers and durations each come from a small declared set, and every value an element carries maps to a step of it. Judge same-kind elements: cards, buttons, inputs, section gaps and body text that use two or three values for one job (three card radii, four button heights, body copy in two greys) are scatter. A long page with illustrations, a specimen or an embedded product picture may show many values in total; count the ones the page's own components carry, not the exhibit's. A page that needs only a few values passes on those few.",
+   why: "A small set of reused values is what makes a page read as one design; a value typed per element makes every section look slightly different and every change a hunt.",
+   fix: "List the values per property, map each to the nearest step, and replace the one-offs with the step.",
+   sources: ["TOK-123 (kami §35, hallmark §413)", "TOK-122 (taste §53)", "TOK-112 (hallmark §138 §348)", "TOK-125 (kami §35, hallmark §140)"]}
+- {id: TOK-002, title: Spacing sits on one scale, domain: D04, tier: Reflex, check: H, remedy: fix-layout, waivable_by: brand-system, tests: [T-SCALE-FIT],
+   rule: "Margins, paddings and gaps are steps of one scale on one base (4px is the default; 5, 6 or 8 when the system says so), with at most three deliberate optical nudges. A second scale beside the first (multiples of 4 in one region and of 5 or 6 in another), fractional values from em-based padding, or a gap set to 13, 15, 18 and 22px in one component family is a finding. Values compiled from a preprocessor or a framework are literals in the CSS but a scale on the page: judge the computed values, not whether they were typed as var(). The count of off-scale values is LAY-002's (off_scale_spacing): cite it; this card judges whether there is one scale.",
+   values: {base_px: 4, nudges: 3},
+   why: "Spacing on one scale is the rhythm a visitor feels without measuring it; a second scale shows as gaps that are almost, but not quite, the same.",
+   fix: "Pick the base the page mostly uses, snap every margin, padding and gap to its steps, and keep the few deliberate nudges named.",
+   sources: ["TOK-120 (hallmark §73 §416 §417, taste §55, uupm §310 §467)", "TOK-103 (hallmark §73 §416)"]}
+- {id: TOK-003, title: Type sizes come from one scale, domain: D04, tier: Reflex, check: H, remedy: fix-typeset, waivable_by: brand-system, tests: [T-SCALE-FIT, T-LADDER],
+   rule: "Font sizes, line heights and letter spacing are steps of one declared set: a modular ratio, a framework's text scale or the system's own named steps, with leading and tracking paired to each size. Two sizes within 8% of each other used for one kind of text (15 and 16px body, 13 and 14px labels), a size that sits on no step and appears once, or line heights that differ for the same size are drift. Whether the sizes make a clear hierarchy is lens-typography's (TYP-009, TYP-010); the count of sizes is TYP-002's: cite them.",
+   values: {near_size_ratio: 1.08},
+   why: "A type scale is the most visible token set; sizes one pixel apart read as a mistake, not a choice.",
+   fix: "Declare the size steps with their line heights and tracking, and move every off-step size to its nearest step.",
+   sources: ["TOK-121 (hallmark §487, uupm §311)", "TOK-115 (hallmark §348 §484)"]}
+- {id: TOK-004, title: "Radii, shadows and borders come from small families", domain: D04, tier: Reflex, kind: cap, check: H, remedy: fix-polish, waivable_by: brand-system, tests: [T-VALUE-INVENTORY],
+   rule: "Corners, shadows and rules are a family: about three radii (control, card, pill or full), one resting shadow and one for floating layers (conflict C43), one hairline width and one emphasis width. A fourth or fifth radius on cards of one kind, a shadow recipe per component, or 1px and 1.5px hairlines side by side is a finding. Whether a card should have a shadow at all is lens-color's (CLR-013, CLR-014); radii that do not nest is LAY-024's: cite them.",
+   values: {radii: 3, shadows: 2, hairlines: 1},
+   why: "Shape and depth repeat on every card and control, so a mixed family shows on every screen.",
+   fix: "Name the radius, shadow and border steps and replace the one-off recipes with them.",
+   sources: ["TOK-115 (hallmark §348 §484)", "TOK-122 (taste §53)"]}
+- {id: TOK-005, title: Layers stack on one ladder, domain: D04, tier: Finish, check: H, remedy: fix-polish, tests: [T-SCALE-FIT],
+   rule: "z-index values come from one fixed ladder of named layers (base, raised, sticky, overlay, modal, toast, tooltip), whichever ladder the system picks (conflict C56). Many unrelated values (2, 9, 99, 999, 9999, 2147483647) stacked to win a fight are drift. Durations and easings are judged as a motion scale by lens-motion (MOT-007, conflicts C38 and C39): cite the duration row as evidence there, not here.",
+   why: "A ladder makes stacking predictable; escalating numbers mean each new layer was patched over the last.",
+   fix: "Declare the layer tokens once and replace each z-index with its layer.",
+   sources: ["TOK-119 (hallmark §77 §489, uupm §312)", "TOK-112 (hallmark §138 §348)"]}
+- {id: TOK-006, title: "Values are referenced, not retyped", domain: D04, tier: Reflex, check: H, remedy: fix-polish, waivable_by: brand-system, tests: [T-HARDCODE],
+   rule: "Where the artifact declares tokens, its rules reference them: a colour, size or length typed as a literal that equals a token's value, a colour literal outside the token block, a bracketed one-off utility (text-[15px], bg-[#f5f5f5]) beside a framework scale, or a var() that names no declared token and has no fallback is a finding. Literals compiled from a preprocessor (Sass variables) or a framework's own utility steps are references by another route: judge the computed values. An artifact with no custom properties and few, consistent values is not a finding under this card.",
+   why: "A retyped value no longer follows the token: the next theme or brand change misses it and the page drifts one element at a time.",
+   fix: "Replace each retyped literal with its token, declare any missing token, and move one-off utilities onto the scale.",
+   sources: ["TOK-102 (hallmark §413, uupm §236 §242 §307 §461 §288)", "TOK-103 (hallmark §73 §416)", "TOK-150 (kami §16 §17)", "TOK-110 (hallmark §348)", "TOK-111 (hallmark §494)"]}
+- {id: TOK-007, title: Tokens are named by role and tiered, domain: D04, tier: Finish, kind: context, check: H, remedy: fix-polish, tests: [T-TOKEN-TIERS],
+   rule: "Primitive tokens name values (--blue-600, --space-4); semantic tokens name roles (--color-action, --text-muted, --surface-raised) and point at primitives; component tokens (--button-bg) point at semantic ones, never at primitives. Names follow one pattern (category, item, variant, state) with one name per role and no synonyms. Components reading primitives directly, role names that describe a value (--color-black for ink, --red for danger), or two names for one role are findings. The format of the values (HSL channels or OKLCH) is not a finding (conflict C58). Finish on a page; Reflex when the artifact is itself a design system, theme or component kit meant for reuse.",
+   why: "Role names are what let a theme or a rebrand change one layer; a component tied to a primitive has to be found and edited by hand.",
+   fix: "Add a semantic layer between primitives and components, rename value-named roles, and merge synonyms.",
+   sources: ["TOK-104 (uupm §307 §308)", "TOK-105 (hallmark §65 §138, uupm §308)", "TOK-106 (uupm §308)", "TOK-108 (hallmark §491)", "TOK-107 (kami §24, hallmark §491)"]}
+- {id: TOK-008, title: The colour roles are complete and paired, domain: D04, tier: Reflex, kind: context, check: H, remedy: fix-colorize, waivable_by: brand-system, tests: [T-TOKEN-TIERS],
+   rule: "A colour token set covers the roles the artifact uses (ground, ink, muted ink, rule, accent, accent ink, focus, error and success; or the shadcn-style background, foreground, card, popover, primary, secondary, muted, accent, destructive, border, input and ring; either vocabulary, conflict C57) and pairs every fill token with its on-colour token. A fill with no foreground token, a state colour used with no token, or a role filled in by a raw value in one component is a finding. Whether each pair passes contrast is A11-001's (Floor): cite it; text on colour as rendered is CLR-011's.",
+   why: "An unpaired fill invites whatever text colour is nearest, and a missing role gets improvised differently on every screen.",
+   fix: "Add the missing role tokens and an on-colour token for every fill, and route the improvised values through them.",
+   sources: ["TOK-113 (hallmark §348 §484)", "TOK-114 (uupm §313 §336 §461 §666)", "TOK-116 (uupm §313 §667)", "TOK-117 (hallmark §485)"]}
+- {id: TOK-009, title: Themes swap the same tokens, domain: D04, tier: Reflex, kind: context, check: H, remedy: fix-colorize, tests: [T-THEME-PARITY],
+   rule: "An artifact that ships a second theme (dark, high contrast, a brand variant) redefines the same semantic token names under it, and only those: light at the base, the moving tokens in the theme block, the dark block mirrored for the unset mode under prefers-color-scheme when a class or attribute also switches it, alternate brands scoped by a data attribute. A theme done by overriding component rules with literal colours, semantic colour tokens missing from the dark block while the components that use them appear in both modes, or a dark block that defines names the base never declares is a finding. The second theme is not captured: judge the stylesheet and say the rendered theme is not verified. How dark looks is CLR-016's and CLR-017's.",
+   why: "A theme that swaps tokens stays complete as the product grows; one built from overrides misses every new component.",
+   fix: "Move the theme's colours into redefinitions of the base's semantic tokens and delete the per-component overrides.",
+   sources: ["TOK-128 (uupm §315 §360, hallmark §301)", "TOK-129 (hallmark §301)", "TOK-130 (uupm §339)", "TOK-131 (hallmark §303, uupm §242)"]}
+- {id: TOK-010, title: Near-duplicate values are merged, domain: D04, tier: Finish, check: H, remedy: fix-polish, tests: [T-DRIFT-PAIRS],
+   rule: "No two values do one job a hair apart: colours within about 0.02 in OKLab (#333 and #323232), sizes within 8% (15 and 16px), spacings 1px apart where one is on the base (23 and 24px), two shadows that differ only in blur. Each pair is either merged to the step or kept with a reason the system records. A token renamed in one place and not another, so two names hold one value, is the same drift.",
+   values: {near_oklab: 0.02, near_size_ratio: 1.08, near_space_px: 1},
+   why: "Near-duplicates are invisible one at a time and add up to a page that never quite lines up.",
+   fix: "Merge each near-duplicate into the step it was meant to be and delete the stray token or literal.",
+   sources: ["TOK-123 (kami §35, hallmark §413)", "TOK-125 (kami §35, hallmark §140)", "TOK-127 (kami §24)"]}
+- {id: TOK-011, title: "Build on the framework's scale, not beside it", domain: D04, tier: Reflex, check: H, remedy: fix-polish, tests: [T-FRAMEWORK-FIT],
+   rule: "A framework's scale (Tailwind, Bootstrap, MUI, Ant, Carbon, a component kit) used consistently is a system: fitting, not a finding. Extend its theme with the project's own values instead of inlining arbitrary ones; map the project's tokens onto the framework's existing names instead of adding a parallel set; never name a Tailwind v4 token --spacing-<name> or reuse --text-* and --ease-* names for other meanings; keep the kit's accent and muted out of the brand's own accent and muted, or rename. Bracketed one-off utilities beside the scale, a second token set that duplicates the framework's, or a framework name collision is a finding. Whether the framework's default palette is the brand is CLR-002's and lens-color's: cite it.",
+   why: "A framework's scale is free consistency; one-off values typed past it lose it, and a parallel set means two sources of truth.",
+   fix: "Add the missing values to the framework's theme, replace bracketed one-offs with theme steps, and merge the parallel set.",
+   sources: ["TOK-109 (hallmark §349 §138)", "TOK-139 (hallmark §138)", "TOK-140 (hallmark §138)", "TOK-135 (hallmark §350)", "TOK-133 (hallmark §350)", "TOK-137 (hallmark §353)"]}
+- {id: TOK-012, title: The supplied system is followed, domain: D04, tier: Reflex, kind: context, check: H, remedy: fix-polish, tests: [T-SYSTEM-DRIFT],
+   rule: "When the contract names a brand or design system with tokens, judge drift from those values, not taste: every colour, size, spacing, radius and duration the artifact uses maps to a supplied value, names keep the system's names, and a needed value takes the nearest existing step or is added to the system as a recorded variant, never overridden locally. Values lifted from the real token files and components beat values read off screenshots. A design system's own documentation site is held to its own tokens. With no supplied system, this card does not apply.",
+   why: "A brand system is a decision someone already made; drift from it is the artifact quietly disagreeing with its own brand.",
+   fix: "Replace each off-system value with the nearest supplied step, or add it to the system as a named variant with its reason.",
+   sources: ["TOK-142 (huashu §30)", "TOK-143 (huashu §31, hallmark §134)", "TOK-146 (hallmark §140)", "TOK-144 (huashu §32 §73 §144)", "TOK-107 (kami §24, hallmark §491)"]}
+- {id: TOK-013, title: Inserted pieces stay on the system, domain: D04, tier: Reflex, check: H, remedy: fix-polish, waivable_by: brand-system, tests: [T-VALUE-INVENTORY, T-SYSTEM-DRIFT],
+   rule: "Charts, diagrams, embedded widgets, product pictures built in HTML and third-party components use the page's own colours, faces, radii and spacing: zero new colours and zero new fonts unless the piece is an exhibit or another product shown as itself. A chart in a palette the page never uses, a chat widget in its vendor's blue and type, or a pricing table with its own radius and shadow family is a finding. How a chart encodes data is lens-dataviz's.",
+   why: "An inserted piece on its own values reads as pasted in, and it is the part of the page most often left behind by a rebrand.",
+   fix: "Theme the inserted piece from the page's tokens, or frame it clearly as an exhibit.",
+   sources: ["TOK-126 (kami §339)", "TOK-122 (taste §53)"]}
+
 # ---------------- process ----------------
 - {id: PRC-001, title: Capture must be trustworthy, domain: D17, tier: Floor, detector: near_blank, remedy: none, waivable_by: never, tests: [T-VERIFY-VERIFIER],
    rule: "Stop the run if the control render fails or a screenshot is empty (under 0.15% of pixels differ by more than 24 levels from the dominant colour).",

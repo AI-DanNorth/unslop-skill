@@ -38,8 +38,8 @@ Requirements: Node 18+, Playwright with Chromium, and Python 3.10+ with PyYAML, 
 |---|---|
 | `core/` | Contracts every skill reads: rule schema, severity, report format, guardrails, precedence, gates, glossary, conflict register, named tests, profiles |
 | `data/` | Thresholds, 12 lexicons, look-family definitions, stress fixtures |
-| `rules/` | Rule cards: `curated.yaml` (257 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,194 mined drafts with provenance) |
-| `skills/` | `unslop`, `intake`, `capture`, `sweep`, `lens-slop`, `lens-a11y`, `lens-concept`, `lens-structure`, `lens-typography`, `lens-color`, `lens-copy`, `lens-motion`, `lens-integrity`, `lens-components`, `lens-imagery`, `lens-dataviz`, `lens-robustness`, `synthesize`, `media-web` |
+| `rules/` | Rule cards: `curated.yaml` (270 active, hand-written) and generated `<PREFIX>.yaml` files (adds 2,194 mined drafts with provenance) |
+| `skills/` | `unslop`, `intake`, `capture`, `sweep`, `lens-slop`, `lens-a11y`, `lens-concept`, `lens-structure`, `lens-typography`, `lens-color`, `lens-copy`, `lens-motion`, `lens-integrity`, `lens-components`, `lens-imagery`, `lens-dataviz`, `lens-robustness`, `lens-tokens`, `synthesize`, `media-web` |
 | `scripts/` | Capture (Node), checks and sweep (Python), report synthesis, build tools, self-test |
 | `evals/seeded-defects/` | Control page (must stay clean) and seed pages (every detector must catch its seed) |
 | `research/` | The 21 source docs, the mining files the cards were built from, reader notes and the web research report |
