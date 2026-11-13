@@ -1,0 +1,2245 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L13",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 1
+ },
+ "stylesheet": {
+  "rules_listed": 52,
+  "unreadable_sheets": 1,
+  "unreadable": [
+   "/* unreadable: https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9"
+  ],
+  "style_rules": 48,
+  "declarations": 204,
+  "root_font_px": 16.0,
+  "note": "cross-origin sheets could not be read: their tokens and declarations are unknown, not absent",
+  "verified": true
+ },
+ "tokens": {
+  "declared": 8,
+  "own": 8,
+  "framework_internal": 0,
+  "by_scope": {
+   "root": 8
+  },
+  "by_family": {
+   "colour": 8
+  },
+  "by_tier_guess": {
+   "semantic": 3,
+   "other": 3,
+   "primitive": 2
+  },
+  "aliases": 0,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [],
+  "referenced_by_declarations": 8,
+  "var_references": 38,
+  "alias_references": 0,
+  "own_tokens_never_referenced": {
+   "count": 0,
+   "sample": []
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--cream",
+    "uses": 9,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--ink",
+    "uses": 8,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--soft",
+    "uses": 8,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--line",
+    "uses": 6,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--accent-deep",
+    "uses": 4,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--accent",
+    "uses": 1,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--peach",
+    "uses": 1,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--cream-warm",
+    "uses": 1,
+    "family": "colour",
+    "tier": "primitive"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--cream",
+    "--cream-warm"
+   ],
+   "semantic": [
+    "--accent",
+    "--accent-deep",
+    "--ink"
+   ],
+   "component": [],
+   "scale_step": [],
+   "other": [
+    "--line",
+    "--peach",
+    "--soft"
+   ]
+  },
+  "pools": {
+   "colour": 8
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "colour": {
+    "var": 36,
+    "literal": 2,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.947,
+    "literal_share_of_non_keyword": 0.053
+   },
+   "duration": {
+    "var": 0,
+    "literal": 5,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "font_family": {
+    "var": 0,
+    "literal": 8,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "font_size": {
+    "var": 0,
+    "literal": 19,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 7,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "spacing": {
+    "var": 0,
+    "literal": 32,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 5,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "z_index": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   }
+  },
+  "literal_retypes_a_token_value": {},
+  "distinct_literal_colours": 2,
+  "literal_colours_top": [
+   {
+    "value": "#faf6ef/0.85",
+    "count": 1
+   },
+   {
+    "value": "#faf6ef/0.70",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 8,
+  "base_colour_tokens": 8,
+  "base_semantic_colour_tokens": 6,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [],
+  "dark_selectors": [],
+  "dark_redefines_base": 0,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "bootstrap": {
+   "distinct_class_names": 1
+  },
+  "tailwind": {
+   "distinct_class_names": 1
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 57,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#5b4f44",
+      "count": 19,
+      "share": 0.475
+     },
+     {
+      "value": "#1f1a15",
+      "count": 12,
+      "share": 0.3
+     },
+     {
+      "value": "#a8431f",
+      "count": 5,
+      "share": 0.125
+     },
+     {
+      "value": "#faf6ef",
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": "#faf6ef/0.70",
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#5b4f44": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "#1f1a15": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "#faf6ef": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#faf6ef/0.70": "html > body > section.cta-section:nth-of-type(4) > p"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 15,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "#faf6ef",
+      "count": 6,
+      "share": 0.4
+     },
+     {
+      "value": "#1f1a15",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#f4ebdc",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#faf6ef/0.85",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#c8552b",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#a8431f",
+      "count": 1,
+      "share": 0.067
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#faf6ef": "html > body > section.logos:nth-of-type(2)",
+     "#1f1a15": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#f4ebdc": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "#faf6ef/0.85": "html > body > nav.nav",
+     "#c8552b": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e6dccb",
+      "count": 9,
+      "share": 0.9
+     },
+     {
+      "value": "#1f1a15",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#e6dccb": "html > body > nav.nav",
+     "#1f1a15": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-ghost:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 40,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 22.0,
+      "count": 10,
+      "share": 0.25
+     },
+     {
+      "value": 14.0,
+      "count": 7,
+      "share": 0.175
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.15
+     },
+     {
+      "value": 11.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 13.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 48.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 36.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 18.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 20.0,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "22.0": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "14.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "15.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "11.0": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "13.0": "html > body > section.hero:nth-of-type(1) > div.trust:nth-of-type(3)",
+     "28.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon",
+     "48.0": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "36.0": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       3,
+       7
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       7,
+       6
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.125,
+      "base_px": 22.0,
+      "share_on": 0.95,
+      "chance_share": 0.502,
+      "excess": 0.448,
+      "steps_used": [
+       -6,
+       -5,
+       -4,
+       -3,
+       -2,
+       -1,
+       0,
+       2,
+       4,
+       7
+      ]
+     },
+     "off_best_ratio_px": [
+      48.0
+     ],
+     "tailwind_scale_share": 0.375
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 40,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 36,
+      "share": 0.9
+     },
+     {
+      "value": 1.05,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 1.1,
+      "count": 2,
+      "share": 0.05
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "1.05": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "1.1": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2"
+    }
+   },
+   "letter_spacing": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 28,
+      "share": 0.7
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": -0.02,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": 0.18,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 0.16,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "-0.01": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "-0.02": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "0.18": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "0.16": "html > body > section.hero:nth-of-type(1) > div.eyebrow:nth-of-type(1)"
+    }
+   },
+   "spacing": {
+    "considered": 87,
+    "distinct": 17,
+    "values": [
+     {
+      "value": 32.0,
+      "count": 23,
+      "share": 0.264
+     },
+     {
+      "value": 40.0,
+      "count": 11,
+      "share": 0.126
+     },
+     {
+      "value": 28.0,
+      "count": 9,
+      "share": 0.103
+     },
+     {
+      "value": 12.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 14.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 8.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 120.0,
+      "count": 5,
+      "share": 0.057
+     },
+     {
+      "value": 18.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 16.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.034
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 56.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 20.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 140.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 44.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 80.0,
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "32.0": "html > body > nav.nav > div.nav-inner paddingLeft",
+     "40.0": "html > body > nav.nav > div.nav-inner rowGap",
+     "28.0": "html > body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) rowGap",
+     "12.0": "html > body > section.hero:nth-of-type(1) > span.section-number marginBottom",
+     "14.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) paddingTop",
+     "8.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) rowGap",
+     "120.0": "html > body > section.hero:nth-of-type(1) paddingTop",
+     "18.0": "html > body > nav.nav > div.nav-inner paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       6,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.931,
+     "share_on_8px": 0.713,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.862,
+       "chance_share": 0.3,
+       "excess": 0.562
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.23,
+       "chance_share": 0.25,
+       "excess": -0.02
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.218,
+       "chance_share": 0.217,
+       "excess": 0.001
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.644,
+       "chance_share": 0.175,
+       "excess": 0.469
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.23,
+       "chance_share": 0.15,
+       "excess": 0.08
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.862,
+      "chance_share": 0.3,
+      "excess": 0.562
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 18.0,
+       "count": 4
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 10,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "full",
+      "count": 4,
+      "share": 0.4
+     },
+     {
+      "value": 20.0,
+      "count": 3,
+      "share": 0.3
+     },
+     {
+      "value": 14.0,
+      "count": 3,
+      "share": 0.3
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "20.0": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "14.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon"
+    },
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 10,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 10,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "html > body > nav.nav"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "10": "html > body > nav.nav"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 6,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 150,
+      "count": 3,
+      "share": 0.5
+     },
+     {
+      "value": 1800,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 900,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 12000,
+      "count": 1,
+      "share": 0.167
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "150": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "1800": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot (animation)",
+     "900": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor (animation)",
+     "12000": "html > body > section.logos:nth-of-type(2) > div.logos-inner (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "ease",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)"
+    }
+   },
+   "font_family": {
+    "considered": 40,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Inter",
+      "count": 26,
+      "share": 0.65
+     },
+     {
+      "value": "Fraunces",
+      "count": 14,
+      "share": 0.35
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Inter": "Inter, system-ui, sans-serif",
+     "Fraunces": "Fraunces, Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 65,
+    "distinct": 9,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1280": {
+   "elements_visible": 57,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#5b4f44",
+      "count": 19,
+      "share": 0.475
+     },
+     {
+      "value": "#1f1a15",
+      "count": 12,
+      "share": 0.3
+     },
+     {
+      "value": "#a8431f",
+      "count": 5,
+      "share": 0.125
+     },
+     {
+      "value": "#faf6ef",
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": "#faf6ef/0.70",
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#5b4f44": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "#1f1a15": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "#faf6ef": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#faf6ef/0.70": "html > body > section.cta-section:nth-of-type(4) > p"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 15,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "#faf6ef",
+      "count": 6,
+      "share": 0.4
+     },
+     {
+      "value": "#1f1a15",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#f4ebdc",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#faf6ef/0.85",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#c8552b",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#a8431f",
+      "count": 1,
+      "share": 0.067
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#faf6ef": "html > body > section.logos:nth-of-type(2)",
+     "#1f1a15": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#f4ebdc": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "#faf6ef/0.85": "html > body > nav.nav",
+     "#c8552b": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e6dccb",
+      "count": 9,
+      "share": 0.9
+     },
+     {
+      "value": "#1f1a15",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#e6dccb": "html > body > nav.nav",
+     "#1f1a15": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-ghost:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 40,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 22.0,
+      "count": 10,
+      "share": 0.25
+     },
+     {
+      "value": 14.0,
+      "count": 7,
+      "share": 0.175
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.15
+     },
+     {
+      "value": 11.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 13.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 88.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 18.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 20.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 52.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 60.0,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "22.0": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "14.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "15.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "11.0": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "13.0": "html > body > section.hero:nth-of-type(1) > div.trust:nth-of-type(3)",
+     "28.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon",
+     "88.0": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "18.0": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > p"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       3,
+       7
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       7,
+       6
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.125,
+      "base_px": 22.0,
+      "share_on": 0.95,
+      "chance_share": 0.502,
+      "excess": 0.448,
+      "steps_used": [
+       -6,
+       -5,
+       -4,
+       -3,
+       -2,
+       -1,
+       0,
+       2,
+       7,
+       9,
+       12
+      ]
+     },
+     "off_best_ratio_px": [
+      52.0,
+      60.0
+     ],
+     "tailwind_scale_share": 0.3
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 40,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 36,
+      "share": 0.9
+     },
+     {
+      "value": 1.05,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 1.1,
+      "count": 2,
+      "share": 0.05
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "1.05": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "1.1": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2"
+    }
+   },
+   "letter_spacing": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 28,
+      "share": 0.7
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": -0.02,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": 0.18,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 0.16,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "-0.01": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "-0.02": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "0.18": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "0.16": "html > body > section.hero:nth-of-type(1) > div.eyebrow:nth-of-type(1)"
+    }
+   },
+   "spacing": {
+    "considered": 87,
+    "distinct": 17,
+    "values": [
+     {
+      "value": 32.0,
+      "count": 23,
+      "share": 0.264
+     },
+     {
+      "value": 40.0,
+      "count": 11,
+      "share": 0.126
+     },
+     {
+      "value": 28.0,
+      "count": 9,
+      "share": 0.103
+     },
+     {
+      "value": 12.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 14.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 8.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 120.0,
+      "count": 5,
+      "share": 0.057
+     },
+     {
+      "value": 18.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 16.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.034
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 56.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 20.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 140.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 44.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 80.0,
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "32.0": "html > body > nav.nav > div.nav-inner paddingLeft",
+     "40.0": "html > body > nav.nav > div.nav-inner rowGap",
+     "28.0": "html > body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) rowGap",
+     "12.0": "html > body > section.hero:nth-of-type(1) > span.section-number marginBottom",
+     "14.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) paddingTop",
+     "8.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) rowGap",
+     "120.0": "html > body > section.hero:nth-of-type(1) paddingTop",
+     "18.0": "html > body > nav.nav > div.nav-inner paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       6,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.931,
+     "share_on_8px": 0.713,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.862,
+       "chance_share": 0.3,
+       "excess": 0.562
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.23,
+       "chance_share": 0.25,
+       "excess": -0.02
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.218,
+       "chance_share": 0.217,
+       "excess": 0.001
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.644,
+       "chance_share": 0.175,
+       "excess": 0.469
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.23,
+       "chance_share": 0.15,
+       "excess": 0.08
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.862,
+      "chance_share": 0.3,
+      "excess": 0.562
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 18.0,
+       "count": 4
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 10,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "full",
+      "count": 4,
+      "share": 0.4
+     },
+     {
+      "value": 20.0,
+      "count": 3,
+      "share": 0.3
+     },
+     {
+      "value": 14.0,
+      "count": 3,
+      "share": 0.3
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "20.0": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "14.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon"
+    },
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 10,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 10,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "html > body > nav.nav"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "10": "html > body > nav.nav"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 6,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 150,
+      "count": 3,
+      "share": 0.5
+     },
+     {
+      "value": 1800,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 900,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 12000,
+      "count": 1,
+      "share": 0.167
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "150": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "1800": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot (animation)",
+     "900": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor (animation)",
+     "12000": "html > body > section.logos:nth-of-type(2) > div.logos-inner (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "ease",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)"
+    }
+   },
+   "font_family": {
+    "considered": 40,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Inter",
+      "count": 26,
+      "share": 0.65
+     },
+     {
+      "value": "Fraunces",
+      "count": 14,
+      "share": 0.35
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Inter": "Inter, system-ui, sans-serif",
+     "Fraunces": "Fraunces, Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 65,
+    "distinct": 9,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1440": {
+   "elements_visible": 57,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#5b4f44",
+      "count": 19,
+      "share": 0.475
+     },
+     {
+      "value": "#1f1a15",
+      "count": 12,
+      "share": 0.3
+     },
+     {
+      "value": "#a8431f",
+      "count": 5,
+      "share": 0.125
+     },
+     {
+      "value": "#faf6ef",
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": "#faf6ef/0.70",
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#5b4f44": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "#1f1a15": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "#faf6ef": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#faf6ef/0.70": "html > body > section.cta-section:nth-of-type(4) > p"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 15,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "#faf6ef",
+      "count": 6,
+      "share": 0.4
+     },
+     {
+      "value": "#1f1a15",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#f4ebdc",
+      "count": 3,
+      "share": 0.2
+     },
+     {
+      "value": "#faf6ef/0.85",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#c8552b",
+      "count": 1,
+      "share": 0.067
+     },
+     {
+      "value": "#a8431f",
+      "count": 1,
+      "share": 0.067
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#faf6ef": "html > body > section.logos:nth-of-type(2)",
+     "#1f1a15": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "#f4ebdc": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "#faf6ef/0.85": "html > body > nav.nav",
+     "#c8552b": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot",
+     "#a8431f": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e6dccb",
+      "count": 9,
+      "share": 0.9
+     },
+     {
+      "value": "#1f1a15",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#e6dccb": "html > body > nav.nav",
+     "#1f1a15": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-ghost:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 40,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 22.0,
+      "count": 10,
+      "share": 0.25
+     },
+     {
+      "value": 14.0,
+      "count": 7,
+      "share": 0.175
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.15
+     },
+     {
+      "value": 11.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 13.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 88.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 18.0,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 20.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 52.0,
+      "count": 1,
+      "share": 0.025
+     },
+     {
+      "value": 60.0,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "22.0": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "14.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "15.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "11.0": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "13.0": "html > body > section.hero:nth-of-type(1) > div.trust:nth-of-type(3)",
+     "28.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon",
+     "88.0": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "18.0": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > p"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       3,
+       7
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       7,
+       6
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.125,
+      "base_px": 22.0,
+      "share_on": 0.95,
+      "chance_share": 0.502,
+      "excess": 0.448,
+      "steps_used": [
+       -6,
+       -5,
+       -4,
+       -3,
+       -2,
+       -1,
+       0,
+       2,
+       7,
+       9,
+       12
+      ]
+     },
+     "off_best_ratio_px": [
+      52.0,
+      60.0
+     ],
+     "tailwind_scale_share": 0.3
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 40,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 36,
+      "share": 0.9
+     },
+     {
+      "value": 1.05,
+      "count": 2,
+      "share": 0.05
+     },
+     {
+      "value": 1.1,
+      "count": 2,
+      "share": 0.05
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "1.05": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "1.1": "html > body > section.features:nth-of-type(3) > div.features-head:nth-of-type(1) > h2"
+    }
+   },
+   "letter_spacing": {
+    "considered": 40,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 28,
+      "share": 0.7
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": -0.02,
+      "count": 4,
+      "share": 0.1
+     },
+     {
+      "value": 0.18,
+      "count": 3,
+      "share": 0.075
+     },
+     {
+      "value": 0.16,
+      "count": 1,
+      "share": 0.025
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) > a:nth-of-type(1)",
+     "-0.01": "html > body > nav.nav > div.nav-inner > div.logo:nth-of-type(1)",
+     "-0.02": "html > body > section.hero:nth-of-type(1) > h1.h1",
+     "0.18": "html > body > section.hero:nth-of-type(1) > span.section-number",
+     "0.16": "html > body > section.hero:nth-of-type(1) > div.eyebrow:nth-of-type(1)"
+    }
+   },
+   "spacing": {
+    "considered": 87,
+    "distinct": 17,
+    "values": [
+     {
+      "value": 32.0,
+      "count": 23,
+      "share": 0.264
+     },
+     {
+      "value": 40.0,
+      "count": 11,
+      "share": 0.126
+     },
+     {
+      "value": 28.0,
+      "count": 9,
+      "share": 0.103
+     },
+     {
+      "value": 12.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 14.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 8.0,
+      "count": 6,
+      "share": 0.069
+     },
+     {
+      "value": 120.0,
+      "count": 5,
+      "share": 0.057
+     },
+     {
+      "value": 18.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 16.0,
+      "count": 4,
+      "share": 0.046
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.034
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 56.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 20.0,
+      "count": 2,
+      "share": 0.023
+     },
+     {
+      "value": 140.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 44.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.011
+     },
+     {
+      "value": 80.0,
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "32.0": "html > body > nav.nav > div.nav-inner paddingLeft",
+     "40.0": "html > body > nav.nav > div.nav-inner rowGap",
+     "28.0": "html > body > nav.nav > div.nav-inner > div.nav-links:nth-of-type(2) rowGap",
+     "12.0": "html > body > section.hero:nth-of-type(1) > span.section-number marginBottom",
+     "14.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) paddingTop",
+     "8.0": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1) rowGap",
+     "120.0": "html > body > section.hero:nth-of-type(1) paddingTop",
+     "18.0": "html > body > nav.nav > div.nav-inner paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       6,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.931,
+     "share_on_8px": 0.713,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.862,
+       "chance_share": 0.3,
+       "excess": 0.562
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.23,
+       "chance_share": 0.25,
+       "excess": -0.02
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.218,
+       "chance_share": 0.217,
+       "excess": 0.001
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.644,
+       "chance_share": 0.175,
+       "excess": 0.469
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.23,
+       "chance_share": 0.15,
+       "excess": 0.08
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.862,
+      "chance_share": 0.3,
+      "excess": 0.562
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 18.0,
+       "count": 4
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 10,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "full",
+      "count": 4,
+      "share": 0.4
+     },
+     {
+      "value": 20.0,
+      "count": 3,
+      "share": 0.3
+     },
+     {
+      "value": 14.0,
+      "count": 3,
+      "share": 0.3
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "body > nav.nav > div.nav-inner > div.nav-cta:nth-of-type(3) > a.pill:nth-of-type(2)",
+     "20.0": "html > body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1)",
+     "14.0": "body > section.features:nth-of-type(3) > div.grid:nth-of-type(2) > div.card:nth-of-type(1) > div.icon"
+    },
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 10,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 10,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "html > body > nav.nav"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "10": "html > body > nav.nav"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 6,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 150,
+      "count": 3,
+      "share": 0.5
+     },
+     {
+      "value": 1800,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 900,
+      "count": 1,
+      "share": 0.167
+     },
+     {
+      "value": 12000,
+      "count": 1,
+      "share": 0.167
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "150": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)",
+     "1800": "body > nav.nav > div.nav-inner > div.logo:nth-of-type(1) > span.logo-dot (animation)",
+     "900": "html > body > section.hero:nth-of-type(1) > h1.h1 > span.fake-cursor (animation)",
+     "12000": "html > body > section.logos:nth-of-type(2) > div.logos-inner (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "ease",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "html > body > section.hero:nth-of-type(1) > div.ctas:nth-of-type(2) > a.btn.btn-primary:nth-of-type(1)"
+    }
+   },
+   "font_family": {
+    "considered": 40,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Inter",
+      "count": 26,
+      "share": 0.65
+     },
+     {
+      "value": "Fraunces",
+      "count": 14,
+      "share": 0.35
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Inter": "Inter, system-ui, sans-serif",
+     "Fraunces": "Fraunces, Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 65,
+    "distinct": 9,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": []
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "12 distinct font sizes: 11, 12, 13, 14, 15, 18, 20, 22, 28, 52, 60, 88 (max 8)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "h3 vs body",
+     "evidence": "h3 22px is only 1.22x body 18px (min 1.25x)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "warm-paper-serif: 6 of 6 tells (cream_bg (page #faf6ef); terracotta_accent (#c8552b); serif_display (Fraunces); italic_serif_hero (italic serif headline); eyebrows (eyebrow detector); numbered_labels (numbered labels)); ",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

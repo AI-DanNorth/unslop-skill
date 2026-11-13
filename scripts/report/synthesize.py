@@ -19,6 +19,9 @@ LENS_DOMAIN = {"integrity": "D18", "a11y": "D10", "copy": "D11", "color": "D06",
 # Owner decision (11 Nov 2026): on Craft, motion separates slop from good less than the visual lenses (lens-motion round 1:
 # slop mean 5.0, good 6.9, overlapping), so it may pull Craft at most this far below the weakest visual Craft lens.
 MOTION_MAX_PULL = 1
+# Owner decision (13 Nov 2026), same reasoning: lens-tokens does not separate slop from good (round 1: slop mean 6.4, good 6.7;
+# generated pages inherit a framework's tidy scale while long-lived human sites drift), so its pull on Craft is capped too.
+CAPPED_CRAFT = {"motion": MOTION_MAX_PULL, "tokens": 1}
 
 
 def cards():
@@ -104,10 +107,10 @@ def main(run):
     for d, vals in lens_scores.items():
         if d not in dims: continue
         if d == "Craft":                 # motion's pull on Craft is capped against the visual lenses (owner decision above)
-            visual = [x for x, l, _ in vals if l != "motion"]
+            visual = [x for x, l, _ in vals if l not in CAPPED_CRAFT]
             if visual:
-                floor_v = min(visual) - MOTION_MAX_PULL
-                vals = [((max(x, floor_v), l, r + f" (motion capped at {floor_v})") if l == "motion" and x < floor_v else (x, l, r)) for x, l, r in vals]
+                vals = [((max(x, min(visual) - CAPPED_CRAFT[l]), l, r + f" ({l} capped at {min(visual) - CAPPED_CRAFT[l]})")
+                         if l in CAPPED_CRAFT and x < min(visual) - CAPPED_CRAFT[l] else (x, l, r)) for x, l, r in vals]
         v, lens, reason = min(vals)
         if dims[d] is not None:            # Accessibility, Integrity: computed from findings; a lower lens score still stands
             if v < dims[d]:

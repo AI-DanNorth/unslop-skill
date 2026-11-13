@@ -1,0 +1,2179 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L32",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 0
+ },
+ "stylesheet": {
+  "rules_listed": 1465,
+  "unreadable_sheets": 0,
+  "unreadable": [],
+  "style_rules": 1499,
+  "declarations": 2970,
+  "root_font_px": 16.0,
+  "note": null,
+  "verified": true
+ },
+ "tokens": {
+  "declared": 43,
+  "own": 43,
+  "framework_internal": 0,
+  "by_scope": {
+   "scoped": 2,
+   "root": 41
+  },
+  "by_family": {
+   "colour": 29,
+   "other": 9,
+   "breakpoint": 3,
+   "spacing": 1,
+   "font_family": 1
+  },
+  "by_tier_guess": {
+   "semantic": 28,
+   "other": 12,
+   "component": 3
+  },
+  "aliases": 2,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [
+   "--govuk-input-border-colour"
+  ],
+  "referenced_by_declarations": 23,
+  "var_references": 279,
+  "alias_references": 12,
+  "own_tokens_never_referenced": {
+   "count": 20,
+   "sample": [
+    "--active",
+    "--anchor",
+    "--auto-spacing",
+    "--current",
+    "--ellipsis",
+    "--error",
+    "--govuk-breakpoint-desktop",
+    "--govuk-breakpoint-mobile",
+    "--govuk-breakpoint-tablet",
+    "--govuk-frontend-version",
+    "--inverse",
+    "--merged",
+    "--muted",
+    "--no-actions",
+    "--no-underline",
+    "--no-visited-state",
+    "--secondary",
+    "--text-colour",
+    "--warning",
+    "--with-link"
+   ]
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--govuk-focus-text-colour",
+    "uses": 61,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-focus-colour",
+    "uses": 44,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-text-colour",
+    "uses": 44,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-border-colour",
+    "uses": 28,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-link-colour",
+    "uses": 21,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-secondary-text-colour",
+    "uses": 12,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-link-hover-colour",
+    "uses": 9,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-link-active-colour",
+    "uses": 7,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-brand-colour",
+    "uses": 7,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-error-colour",
+    "uses": 6,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-surface-border-colour",
+    "uses": 6,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-inverse-text-colour",
+    "uses": 5,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-input-border-colour",
+    "uses": 5,
+    "family": "colour",
+    "tier": "component"
+   },
+   {
+    "name": "--govuk-body-background-colour",
+    "uses": 4,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-link-visited-colour",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-surface-text-colour",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-surface-background-colour",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-success-colour",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--govuk-template-background-colour",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--_govuk-notification-banner-colour",
+    "uses": 2,
+    "family": "colour",
+    "tier": "component"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [],
+   "semantic": [
+    "--active",
+    "--error",
+    "--govuk-body-background-colour",
+    "--govuk-border-colour",
+    "--govuk-brand-colour",
+    "--govuk-error-colour",
+    "--govuk-focus-colour",
+    "--govuk-focus-text-colour",
+    "--govuk-hover-colour",
+    "--govuk-inverse-text-colour",
+    "--govuk-link-active-colour",
+    "--govuk-link-colour"
+   ],
+   "component": [
+    "--_govuk-notification-banner-colour",
+    "--_govuk-notification-banner-title-text-colour",
+    "--govuk-input-border-colour"
+   ],
+   "scale_step": [],
+   "other": [
+    "--anchor",
+    "--auto-spacing",
+    "--current",
+    "--ellipsis",
+    "--govuk-breakpoint-desktop",
+    "--govuk-breakpoint-mobile",
+    "--govuk-breakpoint-tablet",
+    "--govuk-frontend-version",
+    "--merged",
+    "--no-actions",
+    "--no-underline",
+    "--no-visited-state"
+   ]
+  },
+  "pools": {
+   "colour": 14,
+   "length": 3
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "border_width": {
+    "var": 0,
+    "literal": 48,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 7,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "colour": {
+    "var": 241,
+    "literal": 164,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 73,
+    "var_share_of_non_keyword": 0.595,
+    "literal_share_of_non_keyword": 0.405
+   },
+   "font_family": {
+    "var": 0,
+    "literal": 112,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "font_size": {
+    "var": 0,
+    "literal": 189,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 5,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 2,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 177,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 9,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 7,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "shadow": {
+    "var": 23,
+    "literal": 9,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 3,
+    "var_share_of_non_keyword": 0.719,
+    "literal_share_of_non_keyword": 0.281
+   },
+   "spacing": {
+    "var": 0,
+    "literal": 635,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 172,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "z_index": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   }
+  },
+  "literal_retypes_a_token_value": {
+   "colour": {
+    "count": 45,
+    "samples": [
+     {
+      "sel": ".govuk-button",
+      "prop": "color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".govuk-button",
+      "prop": "background-color",
+      "value": "#0f7a52"
+     },
+     {
+      "sel": ".govuk-button:link, .govuk-button:visited, .govuk-button:active, .govuk-button:h",
+      "prop": "color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".govuk-button[disabled]:hover",
+      "prop": "background-color",
+      "value": "#0f7a52"
+     },
+     {
+      "sel": ".govuk-button--secondary, .govuk-button--secondary:link, .govuk-button--secondar",
+      "prop": "color",
+      "value": "#0b0c0c"
+     },
+     {
+      "sel": ".govuk-button--secondary:hover",
+      "prop": "background-color",
+      "value": "#cecece"
+     },
+     {
+      "sel": ".govuk-button--warning",
+      "prop": "background-color",
+      "value": "#ca3535"
+     },
+     {
+      "sel": ".govuk-button--warning, .govuk-button--warning:link, .govuk-button--warning:visi",
+      "prop": "color",
+      "value": "#ffffff"
+     }
+    ]
+   }
+  },
+  "distinct_literal_colours": 44,
+  "literal_colours_top": [
+   {
+    "value": "#ffffff",
+    "count": 20
+   },
+   {
+    "value": "#f3f3f3",
+    "count": 8
+   },
+   {
+    "value": "#0b0c0c",
+    "count": 5
+   },
+   {
+    "value": "#cecece",
+    "count": 5
+   },
+   {
+    "value": "#484949",
+    "count": 5
+   },
+   {
+    "value": "#1d70b8",
+    "count": 4
+   },
+   {
+    "value": "#7a3c1c",
+    "count": 3
+   },
+   {
+    "value": "#0f7a52",
+    "count": 2
+   },
+   {
+    "value": "#ca3535",
+    "count": 2
+   },
+   {
+    "value": "#651b1b",
+    "count": 2
+   },
+   {
+    "value": "#083d29",
+    "count": 2
+   },
+   {
+    "value": "#fde4d7",
+    "count": 2
+   },
+   {
+    "value": "#0b4144",
+    "count": 2
+   },
+   {
+    "value": "#d0e6e7",
+    "count": 2
+   },
+   {
+    "value": "#651b3e",
+    "count": 2
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 25,
+  "base_colour_tokens": 21,
+  "base_semantic_colour_tokens": 21,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [],
+  "dark_selectors": [],
+  "dark_redefines_base": 0,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "govuk": {
+   "tokens_or_refs": 25,
+   "distinct_class_names": 58
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 150,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 61,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#0b0c0c",
+      "count": 30,
+      "share": 0.492
+     },
+     {
+      "value": "#1a65a6",
+      "count": 26,
+      "share": 0.426
+     },
+     {
+      "value": "#ffffff",
+      "count": 4,
+      "share": 0.066
+     },
+     {
+      "value": "#1d70b8",
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#0b0c0c": "#whats-new",
+     "#1a65a6": "div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop > div.app-prose-scope > p:nth-of-type(1) > a",
+     "#ffffff": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "#1d70b8": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 7,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#1d70b8",
+      "count": 3,
+      "share": 0.429
+     },
+     {
+      "value": "#ffffff",
+      "count": 2,
+      "share": 0.286
+     },
+     {
+      "value": "#f4f8fb",
+      "count": 2,
+      "share": 0.286
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1d70b8": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input",
+     "#f4f8fb": "main > div.app-whats-new.app-surface:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#cecece",
+      "count": 5,
+      "share": 0.5
+     },
+     {
+      "value": "#8eb8dc",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#1d70b8",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#cecece": "main > div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapper--l > hr.govuk-section-break.govuk-section-break--visible:nth-of-type(1)",
+     "#8eb8dc": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container",
+     "#1d70b8": "main > div.app-masthead:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 61,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 19.0,
+      "count": 46,
+      "share": 0.754
+     },
+     {
+      "value": 27.0,
+      "count": 10,
+      "share": 0.164
+     },
+     {
+      "value": 21.0,
+      "count": 3,
+      "share": 0.049
+     },
+     {
+      "value": 31.0,
+      "count": 1,
+      "share": 0.016
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "19.0": "div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container > div.govuk-service-navigation__container > nav.govuk-service-navigation__wrapper.app-service-navigation__wrapper > button.govuk-service-navigation__toggle.govuk-js-service-navigation-toggle",
+     "27.0": "#whats-new",
+     "21.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description",
+     "31.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "32.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       31.0,
+       32.0
+      ],
+      "counts": [
+       1,
+       1
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.414,
+      "base_px": 19.0,
+      "share_on": 0.918,
+      "chance_share": 0.171,
+      "excess": 0.747,
+      "steps_used": [
+       0,
+       1,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      21.0,
+      31.0,
+      32.0
+     ],
+     "tailwind_scale_share": 0.0
+    },
+    "on_token_share": 0.0
+   },
+   "line_height": {
+    "considered": 61,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 1.3,
+      "count": 46,
+      "share": 0.754
+     },
+     {
+      "value": 1.1,
+      "count": 11,
+      "share": 0.18
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.033
+     },
+     {
+      "value": 1.2,
+      "count": 2,
+      "share": 0.033
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.3": "div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container > div.govuk-service-navigation__container > nav.govuk-service-navigation__wrapper.app-service-navigation__wrapper > button.govuk-service-navigation__toggle.govuk-js-service-navigation-toggle",
+     "1.1": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "1.2": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description"
+    }
+   },
+   "letter_spacing": {
+    "considered": 61,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 60,
+      "share": 0.984
+     },
+     {
+      "value": -0.015,
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container > div.govuk-service-navigation__container > nav.govuk-service-navigation__wrapper.app-service-navigation__wrapper > button.govuk-service-navigation__toggle.govuk-js-service-navigation-toggle",
+     "-0.015": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name"
+    }
+   },
+   "spacing": {
+    "considered": 99,
+    "distinct": 14,
+    "values": [
+     {
+      "value": 15.0,
+      "count": 40,
+      "share": 0.404
+     },
+     {
+      "value": 20.0,
+      "count": 17,
+      "share": 0.172
+     },
+     {
+      "value": 30.0,
+      "count": 14,
+      "share": 0.141
+     },
+     {
+      "value": 5.0,
+      "count": 8,
+      "share": 0.081
+     },
+     {
+      "value": 10.0,
+      "count": 6,
+      "share": 0.061
+     },
+     {
+      "value": 25.0,
+      "count": 4,
+      "share": 0.04
+     },
+     {
+      "value": 1.0,
+      "count": 3,
+      "share": 0.03
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 2.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 35.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 21.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 8.0,
+      "count": 1,
+      "share": 0.01
+     },
+     {
+      "value": 7.0,
+      "count": 1,
+      "share": 0.01
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "15.0": "main > div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) paddingLeft",
+     "20.0": "main > div.app-masthead:nth-of-type(1) paddingTop",
+     "30.0": "main > div.app-whats-new.app-surface:nth-of-type(2) > div.app-width-container > div.govuk-main-wrapper.govuk-main-wrapper--l paddingTop",
+     "5.0": "#app-site-search__input paddingTop",
+     "10.0": "body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.app-site-search:nth-of-type(2) marginTop",
+     "25.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer paddingTop",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name marginBottom",
+     "16.0": "body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       1,
+       1
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       40,
+       1
+      ]
+     },
+     {
+      "values": [
+       20.0,
+       21.0
+      ],
+      "counts": [
+       17,
+       1
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.303,
+     "share_on_8px": 0.071,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.242,
+       "chance_share": 0.3,
+       "excess": -0.058
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.949,
+       "chance_share": 0.25,
+       "excess": 0.699
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.192,
+       "chance_share": 0.217,
+       "excess": -0.025
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.061,
+       "chance_share": 0.175,
+       "excess": -0.114
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.414,
+       "chance_share": 0.15,
+       "excess": 0.264
+      }
+     ],
+     "best_base": {
+      "base_px": 5,
+      "share_on": 0.949,
+      "chance_share": 0.25,
+      "excess": 0.699
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 15.0,
+       "count": 40
+      },
+      {
+       "value": 30.0,
+       "count": 14
+      },
+      {
+       "value": 5.0,
+       "count": 8
+      },
+      {
+       "value": 25.0,
+       "count": 4
+      },
+      {
+       "value": 35.0,
+       "count": 1
+      },
+      {
+       "value": 21.0,
+       "count": 1
+      },
+      {
+       "value": 7.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.0
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgb(15, 56, 92) 0px 2px 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(15, 56, 92) 0px 2px 0px 0px": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 12,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 9,
+      "share": 0.75
+     },
+     {
+      "value": 2.0,
+      "count": 2,
+      "share": 0.167
+     },
+     {
+      "value": 10.0,
+      "count": 1,
+      "share": 0.083
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.0": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "2.0": "#app-site-search__input",
+     "10.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 61,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "GDS Transport",
+      "count": 61,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GDS Transport": "\"GDS Transport\", arial, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 78,
+    "distinct": 7,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1280": {
+   "elements_visible": 164,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 66,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#0b0c0c",
+      "count": 30,
+      "share": 0.455
+     },
+     {
+      "value": "#1a65a6",
+      "count": 26,
+      "share": 0.394
+     },
+     {
+      "value": "#ffffff",
+      "count": 9,
+      "share": 0.136
+     },
+     {
+      "value": "#1d70b8",
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#0b0c0c": "#whats-new",
+     "#1a65a6": "div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop > div.app-prose-scope > p:nth-of-type(1) > a",
+     "#ffffff": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "#1d70b8": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 7,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#1d70b8",
+      "count": 3,
+      "share": 0.429
+     },
+     {
+      "value": "#ffffff",
+      "count": 2,
+      "share": 0.286
+     },
+     {
+      "value": "#f4f8fb",
+      "count": 2,
+      "share": 0.286
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1d70b8": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input",
+     "#f4f8fb": "main > div.app-whats-new.app-surface:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#cecece",
+      "count": 5,
+      "share": 0.5
+     },
+     {
+      "value": "#8eb8dc",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#1d70b8",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#cecece": "main > div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapper--l > hr.govuk-section-break.govuk-section-break--visible:nth-of-type(1)",
+     "#8eb8dc": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container",
+     "#1d70b8": "main > div.app-masthead:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 66,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 19.0,
+      "count": 51,
+      "share": 0.773
+     },
+     {
+      "value": 36.0,
+      "count": 10,
+      "share": 0.152
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.045
+     },
+     {
+      "value": 31.0,
+      "count": 1,
+      "share": 0.015
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "19.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "36.0": "#whats-new",
+     "24.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description",
+     "31.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "48.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.618,
+      "base_px": 19.0,
+      "share_on": 0.788,
+      "chance_share": 0.123,
+      "excess": 0.665,
+      "steps_used": [
+       0,
+       1,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      24.0,
+      36.0,
+      48.0
+     ],
+     "tailwind_scale_share": 0.212
+    },
+    "on_token_share": 0.0
+   },
+   "line_height": {
+    "considered": 66,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 1.3,
+      "count": 45,
+      "share": 0.682
+     },
+     {
+      "value": 1.1,
+      "count": 10,
+      "share": 0.152
+     },
+     {
+      "value": 1.55,
+      "count": 6,
+      "share": 0.091
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.03
+     },
+     {
+      "value": 1.25,
+      "count": 2,
+      "share": 0.03
+     },
+     {
+      "value": 1.05,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.3": "div.govuk-main-wrapper.govuk-main-wrapper--l > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop > div.app-prose-scope > p:nth-of-type(1)",
+     "1.1": "#whats-new",
+     "1.55": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "1.25": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description",
+     "1.05": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title"
+    }
+   },
+   "letter_spacing": {
+    "considered": 66,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 65,
+      "share": 0.985
+     },
+     {
+      "value": -0.015,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "-0.015": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name"
+    }
+   },
+   "spacing": {
+    "considered": 111,
+    "distinct": 16,
+    "values": [
+     {
+      "value": 15.0,
+      "count": 36,
+      "share": 0.324
+     },
+     {
+      "value": 20.0,
+      "count": 18,
+      "share": 0.162
+     },
+     {
+      "value": 30.0,
+      "count": 14,
+      "share": 0.126
+     },
+     {
+      "value": 50.0,
+      "count": 14,
+      "share": 0.126
+     },
+     {
+      "value": 5.0,
+      "count": 8,
+      "share": 0.072
+     },
+     {
+      "value": 10.0,
+      "count": 4,
+      "share": 0.036
+     },
+     {
+      "value": 25.0,
+      "count": 4,
+      "share": 0.036
+     },
+     {
+      "value": 1.0,
+      "count": 3,
+      "share": 0.027
+     },
+     {
+      "value": 40.0,
+      "count": 3,
+      "share": 0.027
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 2.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 35.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 8.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 7.0,
+      "count": 1,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "15.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) paddingTop",
+     "20.0": "#\\31 5-october-2026-weve-released-govuk-frontend-v660 marginBottom",
+     "30.0": "main > div.app-masthead:nth-of-type(1) paddingTop",
+     "50.0": "main > div.app-whats-new.app-surface:nth-of-type(2) > div.app-width-container > div.govuk-main-wrapper.govuk-main-wrapper--l paddingTop",
+     "5.0": "#app-site-search__input paddingTop",
+     "10.0": "body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.app-site-search:nth-of-type(2) marginTop",
+     "25.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer paddingBottom",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       1,
+       1
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       36,
+       1
+      ]
+     },
+     {
+      "values": [
+       24.0,
+       25.0
+      ],
+      "counts": [
+       1,
+       4
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.297,
+     "share_on_8px": 0.099,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.261,
+       "chance_share": 0.3,
+       "excess": -0.039
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.955,
+       "chance_share": 0.25,
+       "excess": 0.705
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.18,
+       "chance_share": 0.217,
+       "excess": -0.037
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.09,
+       "chance_share": 0.175,
+       "excess": -0.085
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.514,
+       "chance_share": 0.15,
+       "excess": 0.364
+      }
+     ],
+     "best_base": {
+      "base_px": 5,
+      "share_on": 0.955,
+      "chance_share": 0.25,
+      "excess": 0.705
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 15.0,
+       "count": 36
+      },
+      {
+       "value": 30.0,
+       "count": 14
+      },
+      {
+       "value": 50.0,
+       "count": 14
+      },
+      {
+       "value": 5.0,
+       "count": 8
+      },
+      {
+       "value": 25.0,
+       "count": 4
+      },
+      {
+       "value": 35.0,
+       "count": 1
+      },
+      {
+       "value": 7.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.0
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgb(15, 56, 92) 0px 2px 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(15, 56, 92) 0px 2px 0px 0px": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 12,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 9,
+      "share": 0.75
+     },
+     {
+      "value": 2.0,
+      "count": 2,
+      "share": 0.167
+     },
+     {
+      "value": 10.0,
+      "count": 1,
+      "share": 0.083
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.0": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "2.0": "#app-site-search__input",
+     "10.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 66,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "GDS Transport",
+      "count": 66,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GDS Transport": "\"GDS Transport\", arial, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 83,
+    "distinct": 7,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1440": {
+   "elements_visible": 164,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 66,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#0b0c0c",
+      "count": 30,
+      "share": 0.455
+     },
+     {
+      "value": "#1a65a6",
+      "count": 26,
+      "share": 0.394
+     },
+     {
+      "value": "#ffffff",
+      "count": 9,
+      "share": 0.136
+     },
+     {
+      "value": "#1d70b8",
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#0b0c0c": "#whats-new",
+     "#1a65a6": "div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop > div.app-prose-scope > p:nth-of-type(1) > a",
+     "#ffffff": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "#1d70b8": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 7,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#1d70b8",
+      "count": 3,
+      "share": 0.429
+     },
+     {
+      "value": "#ffffff",
+      "count": 2,
+      "share": 0.286
+     },
+     {
+      "value": "#f4f8fb",
+      "count": 2,
+      "share": 0.286
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1d70b8": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input",
+     "#f4f8fb": "main > div.app-whats-new.app-surface:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 10,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#cecece",
+      "count": 5,
+      "share": 0.5
+     },
+     {
+      "value": "#8eb8dc",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#1d70b8",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#cecece": "main > div.app-width-container:nth-of-type(3) > div.govuk-main-wrapper.govuk-main-wrapper--l > hr.govuk-section-break.govuk-section-break--visible:nth-of-type(1)",
+     "#8eb8dc": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-service-navigation.govuk-service-navigation--inverse:nth-of-type(2) > div.govuk-width-container",
+     "#1d70b8": "main > div.app-masthead:nth-of-type(1)",
+     "#ffffff": "#app-site-search__input"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 66,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 19.0,
+      "count": 51,
+      "share": 0.773
+     },
+     {
+      "value": 36.0,
+      "count": 10,
+      "share": 0.152
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.045
+     },
+     {
+      "value": 31.0,
+      "count": 1,
+      "share": 0.015
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "19.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "36.0": "#whats-new",
+     "24.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description",
+     "31.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "48.0": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.618,
+      "base_px": 19.0,
+      "share_on": 0.788,
+      "chance_share": 0.123,
+      "excess": 0.665,
+      "steps_used": [
+       0,
+       1,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      24.0,
+      36.0,
+      48.0
+     ],
+     "tailwind_scale_share": 0.212
+    },
+    "on_token_share": 0.0
+   },
+   "line_height": {
+    "considered": 66,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 1.3,
+      "count": 45,
+      "share": 0.682
+     },
+     {
+      "value": 1.1,
+      "count": 10,
+      "share": 0.152
+     },
+     {
+      "value": 1.55,
+      "count": 6,
+      "share": 0.091
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.03
+     },
+     {
+      "value": 1.25,
+      "count": 2,
+      "share": 0.03
+     },
+     {
+      "value": 1.05,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.3": "div.govuk-main-wrapper.govuk-main-wrapper--l > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop > div.app-prose-scope > p:nth-of-type(1)",
+     "1.1": "#whats-new",
+     "1.55": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name",
+     "1.25": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > p.app-masthead__description",
+     "1.05": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > h1.govuk-heading-xl.app-masthead__title"
+    }
+   },
+   "letter_spacing": {
+    "considered": 66,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 65,
+      "share": 0.985
+     },
+     {
+      "value": -0.015,
+      "count": 1,
+      "share": 0.015
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) > a.govuk-service-navigation__link",
+     "-0.015": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name"
+    }
+   },
+   "spacing": {
+    "considered": 111,
+    "distinct": 16,
+    "values": [
+     {
+      "value": 15.0,
+      "count": 36,
+      "share": 0.324
+     },
+     {
+      "value": 20.0,
+      "count": 18,
+      "share": 0.162
+     },
+     {
+      "value": 30.0,
+      "count": 14,
+      "share": 0.126
+     },
+     {
+      "value": 50.0,
+      "count": 14,
+      "share": 0.126
+     },
+     {
+      "value": 5.0,
+      "count": 8,
+      "share": 0.072
+     },
+     {
+      "value": 10.0,
+      "count": 4,
+      "share": 0.036
+     },
+     {
+      "value": 25.0,
+      "count": 4,
+      "share": 0.036
+     },
+     {
+      "value": 1.0,
+      "count": 3,
+      "share": 0.027
+     },
+     {
+      "value": 40.0,
+      "count": 3,
+      "share": 0.027
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 12.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 2.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 35.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 8.0,
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": 7.0,
+      "count": 1,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "15.0": "ul.govuk-service-navigation__list > li.govuk-service-navigation__item:nth-of-type(1) paddingTop",
+     "20.0": "#\\31 5-october-2026-weve-released-govuk-frontend-v660 marginBottom",
+     "30.0": "main > div.app-masthead:nth-of-type(1) paddingTop",
+     "50.0": "main > div.app-whats-new.app-surface:nth-of-type(2) > div.app-width-container > div.govuk-main-wrapper.govuk-main-wrapper--l paddingTop",
+     "5.0": "#app-site-search__input paddingTop",
+     "10.0": "body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.app-site-search:nth-of-type(2) marginTop",
+     "25.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer paddingBottom",
+     "1.0": "div.govuk-header.govuk-header--full-width-border:nth-of-type(1) > div.govuk-header__container.app-width-container > div.govuk-header__logo.app-header-logo:nth-of-type(1) > a.govuk-header__homepage-link > span.govuk-header__product-name marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       1,
+       1
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       36,
+       1
+      ]
+     },
+     {
+      "values": [
+       24.0,
+       25.0
+      ],
+      "counts": [
+       1,
+       4
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.297,
+     "share_on_8px": 0.099,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.261,
+       "chance_share": 0.3,
+       "excess": -0.039
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.955,
+       "chance_share": 0.25,
+       "excess": 0.705
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.18,
+       "chance_share": 0.217,
+       "excess": -0.037
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.09,
+       "chance_share": 0.175,
+       "excess": -0.085
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.514,
+       "chance_share": 0.15,
+       "excess": 0.364
+      }
+     ],
+     "best_base": {
+      "base_px": 5,
+      "share_on": 0.955,
+      "chance_share": 0.25,
+      "excess": 0.705
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 15.0,
+       "count": 36
+      },
+      {
+       "value": 30.0,
+       "count": 14
+      },
+      {
+       "value": 50.0,
+       "count": 14
+      },
+      {
+       "value": 5.0,
+       "count": 8
+      },
+      {
+       "value": 25.0,
+       "count": 4
+      },
+      {
+       "value": 35.0,
+       "count": 1
+      },
+      {
+       "value": 7.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.0
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgb(15, 56, 92) 0px 2px 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(15, 56, 92) 0px 2px 0px 0px": "div.app-masthead:nth-of-type(1) > div.app-width-container > div.govuk-grid-row > div.govuk-grid-column-two-thirds-from-desktop:nth-of-type(1) > a.govuk-button.govuk-button--inverse"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 12,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 9,
+      "share": 0.75
+     },
+     {
+      "value": 2.0,
+      "count": 2,
+      "share": 0.167
+     },
+     {
+      "value": 10.0,
+      "count": 1,
+      "share": 0.083
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.0": "html.govuk-template > body.govuk-template__body.js-enabled > header.govuk-template__header > div.govuk-header.govuk-header--full-width-border:nth-of-type(1)",
+     "2.0": "#app-site-search__input",
+     "10.0": "html.govuk-template > body.govuk-template__body.js-enabled > footer.govuk-template__footer > div.govuk-footer.app-footer"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 66,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "GDS Transport",
+      "count": 66,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GDS Transport": "\"GDS Transport\", arial, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 83,
+    "distinct": 7,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "7 off-scale spacing values: 5px, 7px, 15px, 25px, 30px, 35px, 50px (e.g. #app-site-search__input)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": []
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": []
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "first screen at 1280px",
+     "evidence": "saturated accent covers 50.7% of the fold (fail > 8%)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

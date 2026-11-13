@@ -1,0 +1,637 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L29",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 1
+ },
+ "stylesheet": {
+  "rules_listed": 24,
+  "unreadable_sheets": 0,
+  "unreadable": [],
+  "style_rules": 23,
+  "declarations": 66,
+  "root_font_px": 16.0,
+  "note": null,
+  "verified": true
+ },
+ "tokens": {
+  "declared": 1,
+  "own": 1,
+  "framework_internal": 0,
+  "by_scope": {
+   "root": 1
+  },
+  "by_family": {
+   "other": 1
+  },
+  "by_tier_guess": {
+   "semantic": 1
+  },
+  "aliases": 0,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [],
+  "referenced_by_declarations": 0,
+  "var_references": 0,
+  "alias_references": 0,
+  "own_tokens_never_referenced": {
+   "count": 1,
+   "sample": [
+    "--default-font"
+   ]
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [],
+  "naming_samples": {
+   "primitive": [],
+   "semantic": [
+    "--default-font"
+   ],
+   "component": [],
+   "scale_step": [],
+   "other": []
+  },
+  "pools": {},
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "colour": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "duration": {
+    "var": 0,
+    "literal": 8,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "spacing": {
+    "var": 0,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": null,
+    "literal_share_of_non_keyword": null
+   }
+  },
+  "literal_retypes_a_token_value": {},
+  "distinct_literal_colours": 4,
+  "literal_colours_top": [
+   {
+    "value": "#222222",
+    "count": 1
+   },
+   {
+    "value": "#ffffff",
+    "count": 1
+   },
+   {
+    "value": "#4c4f53",
+    "count": 1
+   },
+   {
+    "value": "#777c81",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 1,
+  "base_colour_tokens": 0,
+  "base_semantic_colour_tokens": 0,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [],
+  "dark_selectors": [],
+  "dark_redefines_base": 0,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {},
+ "values": {
+  "375": {
+   "elements_visible": 20,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "0 distinct sizes: too few to fit a scale (a page with few sizes is not off-scale)"
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "letter_spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "no spacing values"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "colour_all": {
+    "considered": 0,
+    "distinct": 0,
+    "opaque_distinct": 0,
+    "near_duplicates": [],
+    "on_token_share": null
+   }
+  },
+  "1280": {
+   "elements_visible": 20,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "0 distinct sizes: too few to fit a scale (a page with few sizes is not off-scale)"
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "letter_spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "no spacing values"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "colour_all": {
+    "considered": 0,
+    "distinct": 0,
+    "opaque_distinct": 0,
+    "near_duplicates": [],
+    "on_token_share": null
+   }
+  },
+  "1440": {
+   "elements_visible": 20,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "0 distinct sizes: too few to fit a scale (a page with few sizes is not off-scale)"
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "letter_spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "spacing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "near_duplicates": [],
+    "scale": {
+     "note": "no spacing values"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "colour_all": {
+    "considered": 0,
+    "distinct": 0,
+    "opaque_distinct": 0,
+    "near_duplicates": [],
+    "on_token_share": null
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": []
+  },
+  "spacing_monotony": {
+   "status": "skipped: only 0 spacing values",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": []
+  },
+  "flat_hierarchy": {
+   "status": "skipped: only 0 type roles",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": []
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

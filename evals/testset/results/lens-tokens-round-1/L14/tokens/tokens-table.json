@@ -1,0 +1,2625 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L14",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 1
+ },
+ "stylesheet": {
+  "rules_listed": 66,
+  "unreadable_sheets": 1,
+  "unreadable": [
+   "/* unreadable: https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400"
+  ],
+  "style_rules": 71,
+  "declarations": 250,
+  "root_font_px": 16.0,
+  "note": "cross-origin sheets could not be read: their tokens and declarations are unknown, not absent",
+  "verified": true
+ },
+ "tokens": {
+  "declared": 6,
+  "own": 6,
+  "framework_internal": 0,
+  "by_scope": {
+   "root": 6
+  },
+  "by_family": {
+   "colour": 6
+  },
+  "by_tier_guess": {
+   "primitive": 4,
+   "semantic": 2
+  },
+  "aliases": 0,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [],
+  "referenced_by_declarations": 6,
+  "var_references": 24,
+  "alias_references": 0,
+  "own_tokens_never_referenced": {
+   "count": 0,
+   "sample": []
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--ink",
+    "uses": 9,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--yellow",
+    "uses": 5,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--purple",
+    "uses": 3,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--lime",
+    "uses": 3,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--paper",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--orange",
+    "uses": 2,
+    "family": "colour",
+    "tier": "primitive"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--lime",
+    "--orange",
+    "--purple",
+    "--yellow"
+   ],
+   "semantic": [
+    "--ink",
+    "--paper"
+   ],
+   "component": [],
+   "scale_step": [],
+   "other": []
+  },
+  "pools": {
+   "colour": 6
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "colour": {
+    "var": 20,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 2,
+    "var_share_of_non_keyword": 0.87,
+    "literal_share_of_non_keyword": 0.13
+   },
+   "duration": {
+    "var": 0,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "font_family": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "font_size": {
+    "var": 0,
+    "literal": 12,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 6,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 0,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 2,
+    "var_share_of_non_keyword": null,
+    "literal_share_of_non_keyword": null
+   },
+   "shadow": {
+    "var": 4,
+    "literal": 7,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.364,
+    "literal_share_of_non_keyword": 0.636
+   },
+   "spacing": {
+    "var": 0,
+    "literal": 41,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   }
+  },
+  "literal_retypes_a_token_value": {},
+  "distinct_literal_colours": 3,
+  "literal_colours_top": [
+   {
+    "value": "#7340cb",
+    "count": 1
+   },
+   {
+    "value": "#35b948",
+    "count": 1
+   },
+   {
+    "value": "#f2f2f2",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 6,
+  "base_colour_tokens": 6,
+  "base_semantic_colour_tokens": 2,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [],
+  "dark_selectors": [],
+  "dark_redefines_base": 0,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {},
+ "values": {
+  "375": {
+   "elements_visible": 79,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 46,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 38,
+      "share": 0.826
+     },
+     {
+      "value": "#ffdf38",
+      "count": 8,
+      "share": 0.174
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#171717": "html > body > nav > a.logo:nth-of-type(1)",
+     "#ffdf38": "main > div.ticker > div > span:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 31,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.323
+     },
+     {
+      "value": "#ffdf38",
+      "count": 7,
+      "share": 0.226
+     },
+     {
+      "value": "#c4adff",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#ceff75",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#f2f2f2",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#171717",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#ff8d63",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#fffdf5",
+      "count": 1,
+      "share": 0.032
+     },
+     {
+      "value": "#35b948",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#ffffff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "#ffdf38": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "#c4adff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "#ceff75": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > span.tag",
+     "#f2f2f2": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2)",
+     "#171717": "div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.progress:nth-of-type(5) > div.track:nth-of-type(2) > span",
+     "#ff8d63": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "#fffdf5": "html > body > nav"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 30,
+      "share": 0.968
+     },
+     {
+      "value": "#ffdf38",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#171717": "html > body > nav",
+     "#ffdf38": "main > div.ticker"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 46,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 13.0,
+      "count": 14,
+      "share": 0.304
+     },
+     {
+      "value": 10.0,
+      "count": 9,
+      "share": 0.196
+     },
+     {
+      "value": 11.0,
+      "count": 6,
+      "share": 0.13
+     },
+     {
+      "value": 12.0,
+      "count": 4,
+      "share": 0.087
+     },
+     {
+      "value": 32.0,
+      "count": 3,
+      "share": 0.065
+     },
+     {
+      "value": 19.0,
+      "count": 3,
+      "share": 0.065
+     },
+     {
+      "value": 27.0,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": 60.0,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.022
+     },
+     {
+      "value": 22.0,
+      "count": 1,
+      "share": 0.022
+     },
+     {
+      "value": 38.0,
+      "count": 1,
+      "share": 0.022
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "13.0": "html > body > nav > a.button:nth-of-type(2)",
+     "10.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "11.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > span.check:nth-of-type(1)",
+     "12.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > strong",
+     "32.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > div.feature-icon",
+     "19.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > h3",
+     "27.0": "html > body > nav > a.logo:nth-of-type(1)",
+     "60.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.25,
+      "base_px": 13.0,
+      "share_on": 0.717,
+      "chance_share": 0.265,
+      "excess": 0.452,
+      "steps_used": [
+       -1,
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       7
+      ]
+     },
+     "off_best_ratio_px": [
+      12.0,
+      19.0,
+      22.0,
+      27.0,
+      38.0,
+      60.0
+     ],
+     "tailwind_scale_share": 0.152
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 46,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "normal",
+      "count": 37,
+      "share": 0.804
+     },
+     {
+      "value": 1.6,
+      "count": 4,
+      "share": 0.087
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": 1.5,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": 1.1,
+      "count": 1,
+      "share": 0.022
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "normal": "html > body > nav > a.logo:nth-of-type(1)",
+     "1.6": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p",
+     "1.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "1.5": "html > body > footer.footer > span:nth-of-type(1)",
+     "1.1": "div.dashboard-wrap:nth-of-type(2) > div.sticker:nth-of-type(2) > span"
+    }
+   },
+   "letter_spacing": {
+    "considered": 46,
+    "distinct": 7,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 38,
+      "share": 0.826
+     },
+     {
+      "value": -0.035,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": -0.065,
+      "count": 2,
+      "share": 0.043
+     },
+     {
+      "value": 0.1,
+      "count": 1,
+      "share": 0.022
+     },
+     {
+      "value": -0.045,
+      "count": 1,
+      "share": 0.022
+     },
+     {
+      "value": 0.18,
+      "count": 1,
+      "share": 0.022
+     },
+     {
+      "value": -0.055,
+      "count": 1,
+      "share": 0.022
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "0.0": "html > body > nav > a.button:nth-of-type(2)",
+     "-0.035": "html > body > nav > a.logo:nth-of-type(1)",
+     "-0.065": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "0.1": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "-0.045": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > strong",
+     "0.18": "section.features:nth-of-type(2) > span.section-label",
+     "-0.055": "section.features:nth-of-type(2) > h2"
+    }
+   },
+   "spacing": {
+    "considered": 133,
+    "distinct": 21,
+    "values": [
+     {
+      "value": 12.0,
+      "count": 21,
+      "share": 0.158
+     },
+     {
+      "value": 22.0,
+      "count": 21,
+      "share": 0.158
+     },
+     {
+      "value": 13.0,
+      "count": 14,
+      "share": 0.105
+     },
+     {
+      "value": 9.0,
+      "count": 12,
+      "share": 0.09
+     },
+     {
+      "value": 10.0,
+      "count": 11,
+      "share": 0.083
+     },
+     {
+      "value": 20.0,
+      "count": 9,
+      "share": 0.068
+     },
+     {
+      "value": 24.0,
+      "count": 8,
+      "share": 0.06
+     },
+     {
+      "value": 14.0,
+      "count": 6,
+      "share": 0.045
+     },
+     {
+      "value": 19.0,
+      "count": 6,
+      "share": 0.045
+     },
+     {
+      "value": 6.0,
+      "count": 5,
+      "share": 0.038
+     },
+     {
+      "value": 36.0,
+      "count": 3,
+      "share": 0.023
+     },
+     {
+      "value": 56.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 7.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 11.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 8.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 18.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.008
+     },
+     {
+      "value": 25.0,
+      "count": 1,
+      "share": 0.008
+     },
+     {
+      "value": 28.0,
+      "count": 1,
+      "share": 0.008
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "12.0": "html > body > nav > a.button:nth-of-type(2) paddingTop",
+     "22.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p marginBottom",
+     "13.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) paddingTop",
+     "9.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark marginTop",
+     "10.0": "html > body > nav > a.logo:nth-of-type(1) rowGap",
+     "20.0": "html > body > nav paddingLeft",
+     "24.0": "html > body > nav rowGap",
+     "14.0": "html > body > nav paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       2,
+       2
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       2,
+       12
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       2,
+       21
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       13.0
+      ],
+      "counts": [
+       21,
+       14
+      ]
+     },
+     {
+      "values": [
+       19.0,
+       20.0
+      ],
+      "counts": [
+       6,
+       9
+      ]
+     },
+     {
+      "values": [
+       24.0,
+       25.0
+      ],
+      "counts": [
+       8,
+       1
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.549,
+     "share_on_8px": 0.286,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.383,
+       "chance_share": 0.3,
+       "excess": 0.083
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.158,
+       "chance_share": 0.25,
+       "excess": -0.092
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.301,
+       "chance_share": 0.217,
+       "excess": 0.084
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.113,
+       "chance_share": 0.175,
+       "excess": -0.062
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.15,
+       "chance_share": 0.15,
+       "excess": 0.0
+      }
+     ],
+     "best_base": {
+      "base_px": 6,
+      "share_on": 0.301,
+      "chance_share": 0.217,
+      "excess": 0.084
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 22.0,
+       "count": 21
+      },
+      {
+       "value": 13.0,
+       "count": 14
+      },
+      {
+       "value": 9.0,
+       "count": 12
+      },
+      {
+       "value": 19.0,
+       "count": 6
+      },
+      {
+       "value": 7.0,
+       "count": 2
+      },
+      {
+       "value": 11.0,
+       "count": 2
+      },
+      {
+       "value": 18.0,
+       "count": 2
+      },
+      {
+       "value": 25.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 17,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "rgb(23, 23, 23) 3px 3px 0px 0px",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "rgb(23, 23, 23) 6px 6px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 4px 4px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 5px 5px 0px 0px",
+      "count": 3,
+      "share": 0.176
+     },
+     {
+      "value": "rgb(23, 23, 23) 10px 10px 0px 0px",
+      "count": 1,
+      "share": 0.059
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(23, 23, 23) 3px 3px 0px 0px": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "rgb(23, 23, 23) 6px 6px 0px 0px": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "rgb(23, 23, 23) 4px 4px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "rgb(23, 23, 23) 5px 5px 0px 0px": "html > body > nav > a.button:nth-of-type(2)",
+     "rgb(23, 23, 23) 10px 10px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1)"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 3.0,
+      "count": 17,
+      "share": 0.548
+     },
+     {
+      "value": 2.0,
+      "count": 14,
+      "share": 0.452
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "3.0": "html > body > nav",
+     "2.0": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 2,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1400,
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "value": 24000,
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1400": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1) > i (animation)",
+     "24000": "main > div.ticker > div (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 46,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "IBM Plex Mono",
+      "count": 25,
+      "share": 0.543
+     },
+     {
+      "value": "Space Grotesk",
+      "count": 21,
+      "share": 0.457
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "IBM Plex Mono": "\"IBM Plex Mono\", monospace",
+     "Space Grotesk": "\"Space Grotesk\", sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 108,
+    "distinct": 9,
+    "opaque_distinct": 9,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ],
+    "on_token_share": 0.88
+   }
+  },
+  "1280": {
+   "elements_visible": 82,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 48,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 40,
+      "share": 0.833
+     },
+     {
+      "value": "#ffdf38",
+      "count": 8,
+      "share": 0.167
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#171717": "html > body > nav > a.logo:nth-of-type(1)",
+     "#ffdf38": "main > div.ticker > div > span:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 31,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.323
+     },
+     {
+      "value": "#ffdf38",
+      "count": 7,
+      "share": 0.226
+     },
+     {
+      "value": "#c4adff",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#ceff75",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#f2f2f2",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#171717",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#ff8d63",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#fffdf5",
+      "count": 1,
+      "share": 0.032
+     },
+     {
+      "value": "#35b948",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#ffffff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "#ffdf38": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "#c4adff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "#ceff75": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > span.tag",
+     "#f2f2f2": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2)",
+     "#171717": "div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.progress:nth-of-type(5) > div.track:nth-of-type(2) > span",
+     "#ff8d63": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "#fffdf5": "html > body > nav"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 30,
+      "share": 0.968
+     },
+     {
+      "value": "#ffdf38",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#171717": "html > body > nav",
+     "#ffdf38": "main > div.ticker"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 48,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 13.0,
+      "count": 16,
+      "share": 0.333
+     },
+     {
+      "value": 10.0,
+      "count": 9,
+      "share": 0.188
+     },
+     {
+      "value": 11.0,
+      "count": 6,
+      "share": 0.125
+     },
+     {
+      "value": 12.0,
+      "count": 4,
+      "share": 0.083
+     },
+     {
+      "value": 32.0,
+      "count": 3,
+      "share": 0.062
+     },
+     {
+      "value": 19.0,
+      "count": 3,
+      "share": 0.062
+     },
+     {
+      "value": 27.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 82.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 22.0,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 38.0,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "13.0": "html > body > nav > div.nav-links > a:nth-of-type(1)",
+     "10.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "11.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > span.check:nth-of-type(1)",
+     "12.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > strong",
+     "32.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > div.feature-icon",
+     "19.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > h3",
+     "27.0": "html > body > nav > a.logo:nth-of-type(1)",
+     "82.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.2,
+      "base_px": 16.0,
+      "share_on": 0.812,
+      "chance_share": 0.324,
+      "excess": 0.488,
+      "steps_used": [
+       -3,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       9
+      ]
+     },
+     "off_best_ratio_px": [
+      12.0,
+      22.0,
+      32.0,
+      38.0
+     ],
+     "tailwind_scale_share": 0.104
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 48,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "normal",
+      "count": 39,
+      "share": 0.812
+     },
+     {
+      "value": 1.6,
+      "count": 4,
+      "share": 0.083
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 1.5,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 1.1,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "normal": "html > body > nav > a.logo:nth-of-type(1)",
+     "1.6": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p",
+     "1.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "1.5": "html > body > footer.footer > span:nth-of-type(1)",
+     "1.1": "div.dashboard-wrap:nth-of-type(2) > div.sticker:nth-of-type(2) > span"
+    }
+   },
+   "letter_spacing": {
+    "considered": 48,
+    "distinct": 7,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 40,
+      "share": 0.833
+     },
+     {
+      "value": -0.035,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": -0.065,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 0.1,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": -0.045,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 0.18,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": -0.055,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "0.0": "html > body > nav > div.nav-links > a:nth-of-type(1)",
+     "-0.035": "html > body > nav > a.logo:nth-of-type(1)",
+     "-0.065": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "0.1": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "-0.045": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > strong",
+     "0.18": "section.features:nth-of-type(2) > span.section-label",
+     "-0.055": "section.features:nth-of-type(2) > h2"
+    }
+   },
+   "spacing": {
+    "considered": 135,
+    "distinct": 24,
+    "values": [
+     {
+      "value": 22.0,
+      "count": 25,
+      "share": 0.185
+     },
+     {
+      "value": 12.0,
+      "count": 21,
+      "share": 0.156
+     },
+     {
+      "value": 13.0,
+      "count": 14,
+      "share": 0.104
+     },
+     {
+      "value": 9.0,
+      "count": 12,
+      "share": 0.089
+     },
+     {
+      "value": 10.0,
+      "count": 11,
+      "share": 0.081
+     },
+     {
+      "value": 19.0,
+      "count": 6,
+      "share": 0.044
+     },
+     {
+      "value": 38.0,
+      "count": 6,
+      "share": 0.044
+     },
+     {
+      "value": 20.0,
+      "count": 5,
+      "share": 0.037
+     },
+     {
+      "value": 6.0,
+      "count": 5,
+      "share": 0.037
+     },
+     {
+      "value": 18.0,
+      "count": 4,
+      "share": 0.03
+     },
+     {
+      "value": 14.0,
+      "count": 4,
+      "share": 0.03
+     },
+     {
+      "value": 30.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 36.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 7.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 11.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 8.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 50.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 64.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 62.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 25.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 28.0,
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "22.0": "html > body > nav > div.nav-links rowGap",
+     "12.0": "html > body > nav > a.button:nth-of-type(2) paddingTop",
+     "13.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) paddingTop",
+     "9.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark marginTop",
+     "10.0": "html > body > nav > a.logo:nth-of-type(1) rowGap",
+     "19.0": "html > body > nav > a.button:nth-of-type(2) paddingLeft",
+     "38.0": "main > section.hero:nth-of-type(1) paddingLeft",
+     "20.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       2,
+       2
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       2,
+       12
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       2,
+       21
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       13.0
+      ],
+      "counts": [
+       21,
+       14
+      ]
+     },
+     {
+      "values": [
+       19.0,
+       20.0
+      ],
+      "counts": [
+       6,
+       5
+      ]
+     },
+     {
+      "values": [
+       24.0,
+       25.0
+      ],
+      "counts": [
+       2,
+       1
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.43,
+     "share_on_8px": 0.222,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.281,
+       "chance_share": 0.3,
+       "excess": -0.019
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.156,
+       "chance_share": 0.25,
+       "excess": -0.094
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.267,
+       "chance_share": 0.217,
+       "excess": 0.05
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.052,
+       "chance_share": 0.175,
+       "excess": -0.123
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.148,
+       "chance_share": 0.15,
+       "excess": -0.002
+      }
+     ],
+     "best_base": {
+      "base_px": 6,
+      "share_on": 0.267,
+      "chance_share": 0.217,
+      "excess": 0.05
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 22.0,
+       "count": 25
+      },
+      {
+       "value": 13.0,
+       "count": 14
+      },
+      {
+       "value": 9.0,
+       "count": 12
+      },
+      {
+       "value": 19.0,
+       "count": 6
+      },
+      {
+       "value": 38.0,
+       "count": 6
+      },
+      {
+       "value": 18.0,
+       "count": 4
+      },
+      {
+       "value": 30.0,
+       "count": 2
+      },
+      {
+       "value": 7.0,
+       "count": 2
+      },
+      {
+       "value": 11.0,
+       "count": 2
+      },
+      {
+       "value": 50.0,
+       "count": 2
+      },
+      {
+       "value": 62.0,
+       "count": 1
+      },
+      {
+       "value": 25.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 17,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "rgb(23, 23, 23) 3px 3px 0px 0px",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "rgb(23, 23, 23) 6px 6px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 4px 4px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 5px 5px 0px 0px",
+      "count": 3,
+      "share": 0.176
+     },
+     {
+      "value": "rgb(23, 23, 23) 10px 10px 0px 0px",
+      "count": 1,
+      "share": 0.059
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(23, 23, 23) 3px 3px 0px 0px": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "rgb(23, 23, 23) 6px 6px 0px 0px": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "rgb(23, 23, 23) 4px 4px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "rgb(23, 23, 23) 5px 5px 0px 0px": "html > body > nav > a.button:nth-of-type(2)",
+     "rgb(23, 23, 23) 10px 10px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1)"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 3.0,
+      "count": 17,
+      "share": 0.548
+     },
+     {
+      "value": 2.0,
+      "count": 14,
+      "share": 0.452
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "3.0": "html > body > nav",
+     "2.0": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 2,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1400,
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "value": 24000,
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1400": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1) > i (animation)",
+     "24000": "main > div.ticker > div (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 48,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "IBM Plex Mono",
+      "count": 25,
+      "share": 0.521
+     },
+     {
+      "value": "Space Grotesk",
+      "count": 23,
+      "share": 0.479
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "IBM Plex Mono": "\"IBM Plex Mono\", monospace",
+     "Space Grotesk": "\"Space Grotesk\", sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 110,
+    "distinct": 9,
+    "opaque_distinct": 9,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ],
+    "on_token_share": 0.882
+   }
+  },
+  "1440": {
+   "elements_visible": 82,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 48,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 40,
+      "share": 0.833
+     },
+     {
+      "value": "#ffdf38",
+      "count": 8,
+      "share": 0.167
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#171717": "html > body > nav > a.logo:nth-of-type(1)",
+     "#ffdf38": "main > div.ticker > div > span:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 31,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.323
+     },
+     {
+      "value": "#ffdf38",
+      "count": 7,
+      "share": 0.226
+     },
+     {
+      "value": "#c4adff",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#ceff75",
+      "count": 3,
+      "share": 0.097
+     },
+     {
+      "value": "#f2f2f2",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#171717",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#ff8d63",
+      "count": 2,
+      "share": 0.065
+     },
+     {
+      "value": "#fffdf5",
+      "count": 1,
+      "share": 0.032
+     },
+     {
+      "value": "#35b948",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#ffffff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "#ffdf38": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "#c4adff": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "#ceff75": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > span.tag",
+     "#f2f2f2": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2)",
+     "#171717": "div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.progress:nth-of-type(5) > div.track:nth-of-type(2) > span",
+     "#ff8d63": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "#fffdf5": "html > body > nav"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#171717",
+      "count": 30,
+      "share": 0.968
+     },
+     {
+      "value": "#ffdf38",
+      "count": 1,
+      "share": 0.032
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#171717": "html > body > nav",
+     "#ffdf38": "main > div.ticker"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 48,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 13.0,
+      "count": 16,
+      "share": 0.333
+     },
+     {
+      "value": 10.0,
+      "count": 9,
+      "share": 0.188
+     },
+     {
+      "value": 11.0,
+      "count": 6,
+      "share": 0.125
+     },
+     {
+      "value": 12.0,
+      "count": 4,
+      "share": 0.083
+     },
+     {
+      "value": 32.0,
+      "count": 3,
+      "share": 0.062
+     },
+     {
+      "value": 19.0,
+      "count": 3,
+      "share": 0.062
+     },
+     {
+      "value": 27.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 84.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 16.0,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 22.0,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 38.0,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "13.0": "html > body > nav > div.nav-links > a:nth-of-type(1)",
+     "10.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "11.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > span.check:nth-of-type(1)",
+     "12.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) > strong",
+     "32.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > div.feature-icon",
+     "19.0": "section.features:nth-of-type(2) > div.feature-grid > article.feature:nth-of-type(1) > h3",
+     "27.0": "html > body > nav > a.logo:nth-of-type(1)",
+     "84.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.2,
+      "base_px": 16.0,
+      "share_on": 0.812,
+      "chance_share": 0.324,
+      "excess": 0.488,
+      "steps_used": [
+       -3,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       9
+      ]
+     },
+     "off_best_ratio_px": [
+      12.0,
+      22.0,
+      32.0,
+      38.0
+     ],
+     "tailwind_scale_share": 0.104
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 48,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "normal",
+      "count": 39,
+      "share": 0.812
+     },
+     {
+      "value": 1.6,
+      "count": 4,
+      "share": 0.083
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 1.5,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 1.1,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "normal": "html > body > nav > a.logo:nth-of-type(1)",
+     "1.6": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p",
+     "1.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "1.5": "html > body > footer.footer > span:nth-of-type(1)",
+     "1.1": "div.dashboard-wrap:nth-of-type(2) > div.sticker:nth-of-type(2) > span"
+    }
+   },
+   "letter_spacing": {
+    "considered": 48,
+    "distinct": 7,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 40,
+      "share": 0.833
+     },
+     {
+      "value": -0.035,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": -0.065,
+      "count": 2,
+      "share": 0.042
+     },
+     {
+      "value": 0.1,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": -0.045,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": 0.18,
+      "count": 1,
+      "share": 0.021
+     },
+     {
+      "value": -0.055,
+      "count": 1,
+      "share": 0.021
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "0.0": "html > body > nav > div.nav-links > a:nth-of-type(1)",
+     "-0.035": "html > body > nav > a.logo:nth-of-type(1)",
+     "-0.065": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1",
+     "0.1": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1)",
+     "-0.045": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.board-heading:nth-of-type(1) > strong",
+     "0.18": "section.features:nth-of-type(2) > span.section-label",
+     "-0.055": "section.features:nth-of-type(2) > h2"
+    }
+   },
+   "spacing": {
+    "considered": 135,
+    "distinct": 24,
+    "values": [
+     {
+      "value": 22.0,
+      "count": 25,
+      "share": 0.185
+     },
+     {
+      "value": 12.0,
+      "count": 21,
+      "share": 0.156
+     },
+     {
+      "value": 13.0,
+      "count": 14,
+      "share": 0.104
+     },
+     {
+      "value": 9.0,
+      "count": 12,
+      "share": 0.089
+     },
+     {
+      "value": 10.0,
+      "count": 11,
+      "share": 0.081
+     },
+     {
+      "value": 19.0,
+      "count": 6,
+      "share": 0.044
+     },
+     {
+      "value": 38.0,
+      "count": 6,
+      "share": 0.044
+     },
+     {
+      "value": 20.0,
+      "count": 5,
+      "share": 0.037
+     },
+     {
+      "value": 6.0,
+      "count": 5,
+      "share": 0.037
+     },
+     {
+      "value": 18.0,
+      "count": 4,
+      "share": 0.03
+     },
+     {
+      "value": 14.0,
+      "count": 4,
+      "share": 0.03
+     },
+     {
+      "value": 30.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 36.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 7.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 11.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 8.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 50.0,
+      "count": 2,
+      "share": 0.015
+     },
+     {
+      "value": 64.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 62.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 25.0,
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": 28.0,
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "22.0": "html > body > nav > div.nav-links rowGap",
+     "12.0": "html > body > nav > a.button:nth-of-type(2) paddingTop",
+     "13.0": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1) > div.board:nth-of-type(2) > div.task.done:nth-of-type(2) paddingTop",
+     "9.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark marginTop",
+     "10.0": "html > body > nav > a.logo:nth-of-type(1) rowGap",
+     "19.0": "html > body > nav > a.button:nth-of-type(2) paddingLeft",
+     "38.0": "main > section.hero:nth-of-type(1) paddingLeft",
+     "20.0": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       2,
+       2
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       2,
+       12
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       2,
+       21
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       13.0
+      ],
+      "counts": [
+       21,
+       14
+      ]
+     },
+     {
+      "values": [
+       19.0,
+       20.0
+      ],
+      "counts": [
+       6,
+       5
+      ]
+     },
+     {
+      "values": [
+       24.0,
+       25.0
+      ],
+      "counts": [
+       2,
+       1
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.43,
+     "share_on_8px": 0.222,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.281,
+       "chance_share": 0.3,
+       "excess": -0.019
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.156,
+       "chance_share": 0.25,
+       "excess": -0.094
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.267,
+       "chance_share": 0.217,
+       "excess": 0.05
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.052,
+       "chance_share": 0.175,
+       "excess": -0.123
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.148,
+       "chance_share": 0.15,
+       "excess": -0.002
+      }
+     ],
+     "best_base": {
+      "base_px": 6,
+      "share_on": 0.267,
+      "chance_share": 0.217,
+      "excess": 0.05
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 22.0,
+       "count": 25
+      },
+      {
+       "value": 13.0,
+       "count": 14
+      },
+      {
+       "value": 9.0,
+       "count": 12
+      },
+      {
+       "value": 19.0,
+       "count": 6
+      },
+      {
+       "value": 38.0,
+       "count": 6
+      },
+      {
+       "value": 18.0,
+       "count": 4
+      },
+      {
+       "value": 30.0,
+       "count": 2
+      },
+      {
+       "value": 7.0,
+       "count": 2
+      },
+      {
+       "value": 11.0,
+       "count": 2
+      },
+      {
+       "value": 50.0,
+       "count": 2
+      },
+      {
+       "value": 62.0,
+       "count": 1
+      },
+      {
+       "value": 25.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 17,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "rgb(23, 23, 23) 3px 3px 0px 0px",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "rgb(23, 23, 23) 6px 6px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 4px 4px 0px 0px",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "rgb(23, 23, 23) 5px 5px 0px 0px",
+      "count": 3,
+      "share": 0.176
+     },
+     {
+      "value": "rgb(23, 23, 23) 10px 10px 0px 0px",
+      "count": 1,
+      "share": 0.059
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgb(23, 23, 23) 3px 3px 0px 0px": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark",
+     "rgb(23, 23, 23) 6px 6px 0px 0px": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > h1 > mark",
+     "rgb(23, 23, 23) 4px 4px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > span.floating-tag",
+     "rgb(23, 23, 23) 5px 5px 0px 0px": "html > body > nav > a.button:nth-of-type(2)",
+     "rgb(23, 23, 23) 10px 10px 0px 0px": "div.dashboard-wrap:nth-of-type(2) > div.dashboard:nth-of-type(1)"
+    },
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 31,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 3.0,
+      "count": 17,
+      "share": 0.548
+     },
+     {
+      "value": 2.0,
+      "count": 14,
+      "share": 0.452
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "3.0": "html > body > nav",
+     "2.0": "html > body > nav > a.logo:nth-of-type(1) > span.logo-mark"
+    }
+   },
+   "z_index": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "ladder": {
+     "values": [],
+     "max": null,
+     "over_1000": [],
+     "distinct": 0
+    }
+   },
+   "duration": {
+    "considered": 2,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1400,
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "value": 24000,
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1400": "main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1) > i (animation)",
+     "24000": "main > div.ticker > div (animation)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {}
+   },
+   "font_family": {
+    "considered": 48,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "IBM Plex Mono",
+      "count": 25,
+      "share": 0.521
+     },
+     {
+      "value": "Space Grotesk",
+      "count": 23,
+      "share": 0.479
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "IBM Plex Mono": "\"IBM Plex Mono\", monospace",
+     "Space Grotesk": "\"Space Grotesk\", sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 110,
+    "distinct": 9,
+    "opaque_distinct": 9,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 10
+       },
+       {
+        "value": "#fffdf5",
+        "count": 1
+       }
+      ],
+      "count": 11,
+      "max_oklab": 0.0126
+     }
+    ],
+    "on_token_share": 0.882
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "12 off-scale spacing values: 7px, 9px, 11px, 13px, 18px, 19px, 22px, 25px, 30px, 38px, 50px, 62px (e.g. main > section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.kicker:nth-of-type(1))",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "11 distinct font sizes: 10, 11, 12, 13, 16, 19, 22, 27, 32, 38, 84 (max 8)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": []
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "first screen at 1280px",
+     "evidence": "saturated accent covers 59.4% of the fold (fail > 8%)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": []
+  },
+  "motion": {
+   "status": "skipped: no transition triggers (dialogs, menus, tabs, disclosures, buttons) on the page",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

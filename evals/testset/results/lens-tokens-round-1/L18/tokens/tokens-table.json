@@ -1,0 +1,3988 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L18",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 0
+ },
+ "stylesheet": {
+  "rules_listed": 333,
+  "unreadable_sheets": 1,
+  "unreadable": [
+   "/* unreadable: https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..500&family=Newsreader:opsz,wght@6"
+  ],
+  "style_rules": 374,
+  "declarations": 1429,
+  "root_font_px": 16.0,
+  "note": "cross-origin sheets could not be read: their tokens and declarations are unknown, not absent",
+  "verified": true
+ },
+ "tokens": {
+  "declared": 129,
+  "own": 129,
+  "framework_internal": 0,
+  "by_scope": {
+   "root": 119,
+   "scoped": 10
+  },
+  "by_family": {
+   "colour": 84,
+   "length": 16,
+   "other": 13,
+   "easing": 3,
+   "font_family": 3,
+   "shadow": 3,
+   "duration": 2,
+   "spacing": 2,
+   "container": 1,
+   "font_weight": 1,
+   "z_index": 1
+  },
+  "by_tier_guess": {
+   "other": 54,
+   "semantic": 47,
+   "primitive": 24,
+   "component": 4
+  },
+  "aliases": 2,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [],
+  "referenced_by_declarations": 93,
+  "var_references": 555,
+  "alias_references": 15,
+  "own_tokens_never_referenced": {
+   "count": 36,
+   "sample": [
+    "--accent-55",
+    "--accent-light",
+    "--d-bloom-a",
+    "--d-bloom-p",
+    "--d-carnival-a",
+    "--d-carnival-p",
+    "--d-cobalt-a",
+    "--d-cobalt-p",
+    "--d-garden-a",
+    "--d-garden-p",
+    "--d-halftone-a",
+    "--d-halftone-p",
+    "--d-hedgerow-a",
+    "--d-hedgerow-p",
+    "--d-kiln-a",
+    "--d-kiln-p",
+    "--d-manifesto-a",
+    "--d-manifesto-p",
+    "--d-midnight-a",
+    "--d-midnight-p",
+    "--d-riso-a",
+    "--d-riso-p",
+    "--d-sport-a",
+    "--d-sport-p",
+    "--d-terminal-a"
+   ]
+  },
+  "undeclared_references": {
+   "count": 5,
+   "without_fallback": [
+    {
+     "name": "--i",
+     "uses": 8
+    },
+    {
+     "name": "--k",
+     "uses": 1
+    }
+   ],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--ease",
+    "uses": 41,
+    "family": "easing",
+    "tier": "other"
+   },
+   {
+    "name": "--ink",
+    "uses": 32,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--s-4",
+    "uses": 28,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--s-5",
+    "uses": 24,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--paper",
+    "uses": 23,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--dur",
+    "uses": 23,
+    "family": "duration",
+    "tier": "other"
+   },
+   {
+    "name": "--s-2",
+    "uses": 21,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--dur-fast",
+    "uses": 21,
+    "family": "duration",
+    "tier": "other"
+   },
+   {
+    "name": "--r-pill",
+    "uses": 20,
+    "family": "length",
+    "tier": "component"
+   },
+   {
+    "name": "--s-3",
+    "uses": 18,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--on-ink",
+    "uses": 17,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--text-small",
+    "uses": 14,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--accent",
+    "uses": 13,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ease-out",
+    "uses": 13,
+    "family": "easing",
+    "tier": "other"
+   },
+   {
+    "name": "--s-6",
+    "uses": 12,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--r",
+    "uses": 12,
+    "family": "length",
+    "tier": "other"
+   },
+   {
+    "name": "--muted",
+    "uses": 11,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--s-1",
+    "uses": 11,
+    "family": "length",
+    "tier": "primitive"
+   },
+   {
+    "name": "--on-ink-muted",
+    "uses": 10,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ease-spring",
+    "uses": 10,
+    "family": "easing",
+    "tier": "other"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--black-90",
+    "--line-2",
+    "--s-1",
+    "--s-10",
+    "--s-2",
+    "--s-3",
+    "--s-4",
+    "--s-5",
+    "--s-6",
+    "--s-7",
+    "--s-8",
+    "--s-9"
+   ],
+   "semantic": [
+    "--accent",
+    "--accent-03",
+    "--accent-10",
+    "--accent-14",
+    "--accent-55",
+    "--accent-light",
+    "--accent-on-ink",
+    "--accent-soft",
+    "--bad-ink",
+    "--display-track",
+    "--display-track-h1",
+    "--display-weight"
+   ],
+   "component": [
+    "--nav-h",
+    "--r-pill",
+    "--shadow-card",
+    "--z-nav"
+   ],
+   "scale_step": [],
+   "other": [
+    "--at",
+    "--bad",
+    "--bad-soft",
+    "--container",
+    "--cw",
+    "--d-bloom-a",
+    "--d-bloom-p",
+    "--d-carnival-a",
+    "--d-carnival-p",
+    "--d-cobalt-a",
+    "--d-cobalt-p",
+    "--d-garden-a"
+   ]
+  },
+  "pools": {
+   "colour": 75,
+   "length": 19,
+   "duration": 2,
+   "shadow": 3,
+   "z_index": 1
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "border_width": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "colour": {
+    "var": 149,
+    "literal": 5,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 30,
+    "var_share_of_non_keyword": 0.968,
+    "literal_share_of_non_keyword": 0.032
+   },
+   "duration": {
+    "var": 40,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.93,
+    "literal_share_of_non_keyword": 0.07
+   },
+   "font_family": {
+    "var": 9,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 1.0,
+    "literal_share_of_non_keyword": 0.0
+   },
+   "font_size": {
+    "var": 27,
+    "literal": 16,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 2,
+    "var_share_of_non_keyword": 0.628,
+    "literal_share_of_non_keyword": 0.372
+   },
+   "letter_spacing": {
+    "var": 2,
+    "literal": 6,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.25,
+    "literal_share_of_non_keyword": 0.75
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 7,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 3,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 35,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.972,
+    "literal_share_of_non_keyword": 0.028
+   },
+   "shadow": {
+    "var": 35,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 1.0,
+    "literal_share_of_non_keyword": 0.0
+   },
+   "spacing": {
+    "var": 103,
+    "literal": 7,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 23,
+    "var_share_of_non_keyword": 0.936,
+    "literal_share_of_non_keyword": 0.064
+   },
+   "z_index": {
+    "var": 1,
+    "literal": 9,
+    "utility_literal": 1,
+    "arbitrary_utility": 0,
+    "keyword": 2,
+    "var_share_of_non_keyword": 0.091,
+    "literal_share_of_non_keyword": 0.818
+   }
+  },
+  "literal_retypes_a_token_value": {
+   "font_size": {
+    "count": 12,
+    "samples": [
+     {
+      "sel": ".brand",
+      "prop": "font-size",
+      "value": 24.0
+     },
+     {
+      "sel": ".install",
+      "prop": "font-size",
+      "value": 15.0
+     },
+     {
+      "sel": ".how__step h3",
+      "prop": "font-size",
+      "value": 17.0
+     },
+     {
+      "sel": ".how__art--lint",
+      "prop": "font-size",
+      "value": 12.0
+     },
+     {
+      "sel": ".th-dlg__name",
+      "prop": "font-size",
+      "value": 32.0
+     },
+     {
+      "sel": ".faq summary",
+      "prop": "font-size",
+      "value": 17.0
+     },
+     {
+      "sel": ".wheel__cap b",
+      "prop": "font-size",
+      "value": 24.0
+     },
+     {
+      "sel": ".ag code",
+      "prop": "font-size",
+      "value": 13.0
+     }
+    ]
+   },
+   "spacing": {
+    "count": 1,
+    "samples": [
+     {
+      "sel": ".hl__ink",
+      "prop": "padding",
+      "value": 4.0
+     }
+    ]
+   }
+  },
+  "distinct_literal_colours": 2,
+  "literal_colours_top": [
+   {
+    "value": "#1e1f21",
+    "count": 1
+   },
+   {
+    "value": "#08090b",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 116,
+  "base_colour_tokens": 84,
+  "base_semantic_colour_tokens": 70,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [],
+  "dark_selectors": [],
+  "dark_redefines_base": 0,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 7,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "webflow": {
+   "distinct_class_names": 1
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 414,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 139,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "#0f0f0e",
+      "count": 51,
+      "share": 0.367
+     },
+     {
+      "value": "#6b6b66",
+      "count": 33,
+      "share": 0.237
+     },
+     {
+      "value": "#3a3a37",
+      "count": 15,
+      "share": 0.108
+     },
+     {
+      "value": "#8e8e88",
+      "count": 15,
+      "share": 0.108
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 10,
+      "share": 0.072
+     },
+     {
+      "value": "#fafaf9",
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": "#fc4c02",
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": "#c9c9c4",
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": "#b4232a",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#13703b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#ff9a6b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#5bd38d",
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "#0f0f0e": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__name:nth-of-type(2)",
+     "#6b6b66": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub",
+     "#3a3a37": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "#8e8e88": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(4) > div.how__art.how__art--lint > p.lint__cmd:nth-of-type(1)",
+     "#f5f5f3": "#ex-title",
+     "#fafaf9": "html.js > body > a.skip",
+     "#fc4c02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "#c9c9c4": "footer.foot > div.wrap.foot__bottom:nth-of-type(2) > nav.foot__links > a:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f5f5f3",
+        "count": 10
+       },
+       {
+        "value": "#fafaf9",
+        "count": 5
+       }
+      ],
+      "count": 15,
+      "max_oklab": 0.0153
+     }
+    ]
+   },
+   "colour_fill": {
+    "considered": 74,
+    "distinct": 14,
+    "values": [
+     {
+      "value": "#1c1c1a",
+      "count": 20,
+      "share": 0.27
+     },
+     {
+      "value": "#f2f2f0",
+      "count": 17,
+      "share": 0.23
+     },
+     {
+      "value": "#fafaf9",
+      "count": 13,
+      "share": 0.176
+     },
+     {
+      "value": "#0f0f0e",
+      "count": 8,
+      "share": 0.108
+     },
+     {
+      "value": "#1e1f21",
+      "count": 4,
+      "share": 0.054
+     },
+     {
+      "value": "#e9e9e6",
+      "count": 4,
+      "share": 0.054
+     },
+     {
+      "value": "#e5484d/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#d4d4cf",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#fc4c02",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#cfc6ba",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#121211",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.16",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 8,
+    "examples": {
+     "#1c1c1a": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "#f2f2f0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "#fafaf9": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "#0f0f0e": "html.js > body > a.skip",
+     "#1e1f21": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "#e9e9e6": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-p:nth-of-type(3)",
+     "#e5484d/0.12": "div.cmp > p.chip.chip--l:nth-of-type(1) > b",
+     "#1f9d55/0.12": "div.cmp > p.chip.chip--r:nth-of-type(2) > b"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#f2f2f0",
+        "count": 17
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 1
+       }
+      ],
+      "count": 18,
+      "max_oklab": 0.009
+     },
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 8
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 9,
+      "max_oklab": 0.0138
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 13,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e4e4e0",
+      "count": 8,
+      "share": 0.615
+     },
+     {
+      "value": "#f5f5f3/0.12",
+      "count": 5,
+      "share": 0.385
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#e4e4e0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list",
+     "#f5f5f3/0.12": "footer.foot > div.wrap.foot__top:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 139,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 13.0,
+      "count": 40,
+      "share": 0.288
+     },
+     {
+      "value": 15.0,
+      "count": 38,
+      "share": 0.273
+     },
+     {
+      "value": 17.0,
+      "count": 18,
+      "share": 0.129
+     },
+     {
+      "value": 12.0,
+      "count": 14,
+      "share": 0.101
+     },
+     {
+      "value": 16.0,
+      "count": 8,
+      "share": 0.058
+     },
+     {
+      "value": 44.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 34.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.022
+     },
+     {
+      "value": 28.0,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 14.5,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 40.0,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "13.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(3) > span.card__name",
+     "15.0": "span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col > span:nth-of-type(1)",
+     "17.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub",
+     "12.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > span.install__caret",
+     "16.0": "html.js > body > a.skip",
+     "44.0": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "34.0": "#cmp-title",
+     "24.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       14.5,
+       15.0
+      ],
+      "counts": [
+       2,
+       38
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       38,
+       8
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       17.0
+      ],
+      "counts": [
+       8,
+       18
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 13.0,
+      "share_on": 0.986,
+      "chance_share": 0.512,
+      "excess": 0.473,
+      "steps_used": [
+       -1,
+       0,
+       2,
+       3,
+       4,
+       9,
+       12,
+       15,
+       17,
+       19
+      ]
+     },
+     "off_best_ratio_px": [
+      40.0
+     ],
+     "tailwind_scale_share": 0.194
+    },
+    "on_token_share": 0.885
+   },
+   "line_height": {
+    "considered": 139,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 93,
+      "share": 0.669
+     },
+     {
+      "value": 1.2,
+      "count": 21,
+      "share": 0.151
+     },
+     {
+      "value": 1.0,
+      "count": 18,
+      "share": 0.129
+     },
+     {
+      "value": 1.5,
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": 1.45,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html.js > body > a.skip",
+     "1.2": "span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col > span:nth-of-type(1)",
+     "1.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "1.5": "section.sec:nth-of-type(2) > div.wrap > div.head:nth-of-type(1) > p.head__sub",
+     "1.45": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask > p.ask__me"
+    }
+   },
+   "letter_spacing": {
+    "considered": 139,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 112,
+      "share": 0.806
+     },
+     {
+      "value": -0.02,
+      "count": 9,
+      "share": 0.065
+     },
+     {
+      "value": -0.035,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.025,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": -0.03,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "html.js > body > a.skip",
+     "-0.02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "-0.035": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "-0.025": "#cmp-title",
+     "-0.01": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > h3",
+     "-0.03": "section.sec:nth-of-type(5) > div.wrap.reveal > div.pairs:nth-of-type(2) > div.pair:nth-of-type(1) > h3.pair__name"
+    }
+   },
+   "spacing": {
+    "considered": 330,
+    "distinct": 17,
+    "values": [
+     {
+      "value": 8.0,
+      "count": 80,
+      "share": 0.242
+     },
+     {
+      "value": 16.0,
+      "count": 75,
+      "share": 0.227
+     },
+     {
+      "value": 24.0,
+      "count": 57,
+      "share": 0.173
+     },
+     {
+      "value": 12.0,
+      "count": 39,
+      "share": 0.118
+     },
+     {
+      "value": 4.0,
+      "count": 22,
+      "share": 0.067
+     },
+     {
+      "value": 3.0,
+      "count": 16,
+      "share": 0.048
+     },
+     {
+      "value": 32.0,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": 48.0,
+      "count": 7,
+      "share": 0.021
+     },
+     {
+      "value": 122.0,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 96.0,
+      "count": 5,
+      "share": 0.015
+     },
+     {
+      "value": 4.5,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 41.0,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 3.5,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 5.5,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 108.5,
+      "count": 1,
+      "share": 0.003
+     },
+     {
+      "value": 128.0,
+      "count": 1,
+      "share": 0.003
+     },
+     {
+      "value": 64.0,
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "8.0": "html.js > body > a.skip paddingTop",
+     "16.0": "html.js > body > a.skip paddingLeft",
+     "24.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub marginTop",
+     "12.0": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2) paddingLeft",
+     "4.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(3) > span.card__name paddingTop",
+     "3.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) paddingTop",
+     "32.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install marginTop",
+     "48.0": "section.sec:nth-of-type(2) > div.wrap > div.head:nth-of-type(1) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       2,
+       22
+      ]
+     },
+     {
+      "values": [
+       4.0,
+       4.5
+      ],
+      "counts": [
+       22,
+       4
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.894,
+     "share_on_8px": 0.894,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.894,
+       "chance_share": 0.3,
+       "excess": 0.594
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.0,
+       "chance_share": 0.25,
+       "excess": -0.25
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.327,
+       "chance_share": 0.217,
+       "excess": 0.11
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.709,
+       "chance_share": 0.175,
+       "excess": 0.534
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.0,
+       "chance_share": 0.15,
+       "excess": -0.15
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.894,
+      "chance_share": 0.3,
+      "excess": 0.594
+     },
+     "share_fractional": 0.027,
+     "off_4px_values": [
+      {
+       "value": 3.0,
+       "count": 16
+      },
+      {
+       "value": 122.0,
+       "count": 6
+      },
+      {
+       "value": 4.5,
+       "count": 4
+      },
+      {
+       "value": 41.0,
+       "count": 4
+      },
+      {
+       "value": 3.5,
+       "count": 2
+      },
+      {
+       "value": 5.5,
+       "count": 2
+      },
+      {
+       "value": 108.5,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.912
+   },
+   "radius": {
+    "considered": 105,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "full",
+      "count": 47,
+      "share": 0.448
+     },
+     {
+      "value": 14.0,
+      "count": 46,
+      "share": 0.438
+     },
+     {
+      "value": 8.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 5.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 8.0,
+      "count": 4,
+      "share": 0.038
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "html.js > body > a.skip",
+     "14.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "8.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "5.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) > img",
+     "8.0": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(2) > div.how__art.how__art--deal > img.deal__c.deal__c--1:nth-of-type(1)"
+    },
+    "on_token_share": 0.931
+   },
+   "shadow": {
+    "considered": 63,
+    "distinct": 11,
+    "values": [
+     {
+      "value": "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px",
+      "count": 17,
+      "share": 0.27
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 16,
+      "share": 0.254
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 8,
+      "share": 0.127
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px",
+      "count": 7,
+      "share": 0.111
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset",
+      "count": 4,
+      "share": 0.063
+     },
+     {
+      "value": "rgb(228, 228, 224) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgb(212, 212, 207) 0px 0px 0px 1px inset",
+      "count": 2,
+      "share": 0.032
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.08) 0px 2px 4px 0px, rgba(15, 15, 14, 0.55) 0px 44px 80px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px",
+      "count": 1,
+      "share": 0.016
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 0px 0px 1px",
+      "count": 1,
+      "share": 0.016
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.1) 0px 0px 0px 1px, rgba(15, 15, 14, 0.35) 0px 6px 16px -6px",
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install",
+     "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "rgb(228, 228, 224) 0px 0px 0px 1px inset": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask",
+     "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset": "section.made:nth-of-type(7) > div.wrap.wheel__bar:nth-of-type(3) > button.btn.btn--icon:nth-of-type(1)",
+     "rgb(212, 212, 207) 0px 0px 0px 1px inset": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 13,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 13,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list"
+    }
+   },
+   "z_index": {
+    "considered": 21,
+    "distinct": 13,
+    "values": [
+     {
+      "value": 2,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 1,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 12,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 16,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 14,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 18,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 100,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 50,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": -1,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 40,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 30,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 3,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 0,
+      "count": 1,
+      "share": 0.048
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "2": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "1": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "12": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "16": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(2)",
+     "14": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "18": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(7)",
+     "100": "html.js > body > a.skip",
+     "50": "html.js > body > header.nav"
+    },
+    "ladder": {
+     "values": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      12,
+      14,
+      16,
+      18,
+      30,
+      40,
+      50,
+      100
+     ],
+     "max": 100,
+     "over_1000": [],
+     "distinct": 13
+    }
+   },
+   "duration": {
+    "considered": 221,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 160,
+      "count": 83,
+      "share": 0.376
+     },
+     {
+      "value": 320,
+      "count": 71,
+      "share": 0.321
+     },
+     {
+      "value": 300,
+      "count": 17,
+      "share": 0.077
+     },
+     {
+      "value": 650,
+      "count": 16,
+      "share": 0.072
+     },
+     {
+      "value": 700,
+      "count": 15,
+      "share": 0.068
+     },
+     {
+      "value": 720,
+      "count": 9,
+      "share": 0.041
+     },
+     {
+      "value": 760,
+      "count": 3,
+      "share": 0.014
+     },
+     {
+      "value": 1100,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 1200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 500,
+      "count": 1,
+      "share": 0.005
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "160": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "320": "html.js > body > header.nav",
+     "300": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "650": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "700": "section.sec:nth-of-type(3) > div.wrap.reveal",
+     "720": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "760": "#hero-title (animation)",
+     "1100": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    },
+    "on_token_share": 0.697
+   },
+   "easing": {
+    "considered": 218,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+      "count": 141,
+      "share": 0.647
+     },
+     {
+      "value": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+      "count": 45,
+      "share": 0.206
+     },
+     {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "count": 32,
+      "share": 0.147
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.2, 0.7, 0.2, 1)": "html.js > body > header.nav",
+     "cubic-bezier(0.3, 1.35, 0.5, 1)": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > button.copy > svg.copy__i:nth-of-type(1)",
+     "cubic-bezier(0.16, 1, 0.3, 1)": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    }
+   },
+   "font_family": {
+    "considered": 139,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Geist",
+      "count": 103,
+      "share": 0.741
+     },
+     {
+      "value": "Geist Mono",
+      "count": 17,
+      "share": 0.122
+     },
+     {
+      "value": "Newsreader",
+      "count": 15,
+      "share": 0.108
+     },
+     {
+      "value": "Fraunces",
+      "count": 4,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Geist": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "Geist Mono": "\"Geist Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+     "Newsreader": "Newsreader, \"Iowan Old Style\", Georgia, serif",
+     "Fraunces": "Fraunces, \"Iowan Old Style\", Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 226,
+    "distinct": 24,
+    "opaque_distinct": 20,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 59
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 60,
+      "max_oklab": 0.0138
+     },
+     {
+      "members": [
+       {
+        "value": "#fafaf9",
+        "count": 18
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 11
+       }
+      ],
+      "count": 29,
+      "max_oklab": 0.0153
+     },
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#e4e4e0",
+        "count": 8
+       },
+       {
+        "value": "#e9e9e6",
+        "count": 4
+       }
+      ],
+      "count": 12,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#c9c9c4",
+        "count": 2
+       },
+       {
+        "value": "#cfc6ba",
+        "count": 1
+       }
+      ],
+      "count": 3,
+      "max_oklab": 0.0145
+     }
+    ],
+    "on_token_share": 0.982
+   }
+  },
+  "1280": {
+   "elements_visible": 415,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 140,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "#0f0f0e",
+      "count": 53,
+      "share": 0.379
+     },
+     {
+      "value": "#6b6b66",
+      "count": 33,
+      "share": 0.236
+     },
+     {
+      "value": "#3a3a37",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "#8e8e88",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 10,
+      "share": 0.071
+     },
+     {
+      "value": "#fafaf9",
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": "#fc4c02",
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": "#c9c9c4",
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": "#b4232a",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#13703b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#ff9a6b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#5bd38d",
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "#0f0f0e": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__name:nth-of-type(2)",
+     "#6b6b66": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub",
+     "#3a3a37": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "#8e8e88": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(4) > div.how__art.how__art--lint > p.lint__cmd:nth-of-type(1)",
+     "#f5f5f3": "#ex-title",
+     "#fafaf9": "html.js > body > a.skip",
+     "#fc4c02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "#c9c9c4": "footer.foot > div.wrap.foot__bottom:nth-of-type(2) > nav.foot__links > a:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f5f5f3",
+        "count": 10
+       },
+       {
+        "value": "#fafaf9",
+        "count": 4
+       }
+      ],
+      "count": 14,
+      "max_oklab": 0.0153
+     }
+    ]
+   },
+   "colour_fill": {
+    "considered": 73,
+    "distinct": 14,
+    "values": [
+     {
+      "value": "#1c1c1a",
+      "count": 20,
+      "share": 0.274
+     },
+     {
+      "value": "#f2f2f0",
+      "count": 17,
+      "share": 0.233
+     },
+     {
+      "value": "#fafaf9",
+      "count": 13,
+      "share": 0.178
+     },
+     {
+      "value": "#0f0f0e",
+      "count": 7,
+      "share": 0.096
+     },
+     {
+      "value": "#1e1f21",
+      "count": 4,
+      "share": 0.055
+     },
+     {
+      "value": "#e9e9e6",
+      "count": 4,
+      "share": 0.055
+     },
+     {
+      "value": "#e5484d/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#d4d4cf",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#fc4c02",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#cfc6ba",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#121211",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.16",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 8,
+    "examples": {
+     "#1c1c1a": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "#f2f2f0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "#fafaf9": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "#0f0f0e": "html.js > body > a.skip",
+     "#1e1f21": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "#e9e9e6": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-p:nth-of-type(3)",
+     "#e5484d/0.12": "div.cmp > p.chip.chip--l:nth-of-type(1) > b",
+     "#1f9d55/0.12": "div.cmp > p.chip.chip--r:nth-of-type(2) > b"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#f2f2f0",
+        "count": 17
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 1
+       }
+      ],
+      "count": 18,
+      "max_oklab": 0.009
+     },
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 7
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 8,
+      "max_oklab": 0.0138
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 13,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e4e4e0",
+      "count": 8,
+      "share": 0.615
+     },
+     {
+      "value": "#f5f5f3/0.12",
+      "count": 5,
+      "share": 0.385
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#e4e4e0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list",
+     "#f5f5f3/0.12": "footer.foot > div.wrap.foot__top:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 140,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 15.0,
+      "count": 44,
+      "share": 0.314
+     },
+     {
+      "value": 13.0,
+      "count": 43,
+      "share": 0.307
+     },
+     {
+      "value": 17.0,
+      "count": 17,
+      "share": 0.121
+     },
+     {
+      "value": 16.0,
+      "count": 8,
+      "share": 0.057
+     },
+     {
+      "value": 75.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 48.5,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 12.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.021
+     },
+     {
+      "value": 35.0,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 14.5,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 62.0,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 19.5,
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "15.0": "body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2) > span.gh__label:nth-of-type(1)",
+     "13.0": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "17.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) > p.head__sub",
+     "16.0": "html.js > body > a.skip",
+     "75.0": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "48.5": "#cmp-title",
+     "12.0": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(4) > div.how__art.how__art--lint > p.lint__cmd:nth-of-type(1)",
+     "24.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       14.5,
+       15.0
+      ],
+      "counts": [
+       2,
+       44
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       44,
+       8
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       17.0
+      ],
+      "counts": [
+       8,
+       17
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 15.0,
+      "share_on": 1.0,
+      "chance_share": 0.512,
+      "excess": 0.488,
+      "steps_used": [
+       -3,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       4,
+       7,
+       13,
+       18,
+       22,
+       25
+      ]
+     },
+     "off_best_ratio_px": [],
+     "tailwind_scale_share": 0.186
+    },
+    "on_token_share": 0.921
+   },
+   "line_height": {
+    "considered": 140,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 94,
+      "share": 0.671
+     },
+     {
+      "value": 1.2,
+      "count": 21,
+      "share": 0.15
+     },
+     {
+      "value": 1.0,
+      "count": 18,
+      "share": 0.129
+     },
+     {
+      "value": 1.5,
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": 1.45,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html.js > body > a.skip",
+     "1.2": "span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col > span:nth-of-type(1)",
+     "1.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "1.5": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) > p.head__sub",
+     "1.45": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask > p.ask__me"
+    }
+   },
+   "letter_spacing": {
+    "considered": 140,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 117,
+      "share": 0.836
+     },
+     {
+      "value": -0.035,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.025,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.02,
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": -0.03,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "html.js > body > a.skip",
+     "-0.035": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "-0.025": "#cmp-title",
+     "-0.02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "-0.01": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > h3",
+     "-0.03": "section.sec:nth-of-type(5) > div.wrap.reveal > div.pairs:nth-of-type(2) > div.pair:nth-of-type(1) > h3.pair__name"
+    }
+   },
+   "spacing": {
+    "considered": 329,
+    "distinct": 16,
+    "values": [
+     {
+      "value": 8.0,
+      "count": 68,
+      "share": 0.207
+     },
+     {
+      "value": 24.0,
+      "count": 61,
+      "share": 0.185
+     },
+     {
+      "value": 16.0,
+      "count": 59,
+      "share": 0.179
+     },
+     {
+      "value": 12.0,
+      "count": 39,
+      "share": 0.119
+     },
+     {
+      "value": 48.0,
+      "count": 23,
+      "share": 0.07
+     },
+     {
+      "value": 4.0,
+      "count": 20,
+      "share": 0.061
+     },
+     {
+      "value": 3.0,
+      "count": 16,
+      "share": 0.049
+     },
+     {
+      "value": 64.0,
+      "count": 12,
+      "share": 0.036
+     },
+     {
+      "value": 96.0,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 185.5,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 32.0,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 7.0,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 33.5,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 3.5,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 8.5,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 128.0,
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "8.0": "html.js > body > a.skip paddingTop",
+     "24.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install marginTop",
+     "16.0": "html.js > body > a.skip paddingLeft",
+     "12.0": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2) paddingLeft",
+     "48.0": "html.js > body > header.nav > div.wrap.nav__in paddingLeft",
+     "4.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2) rowGap",
+     "3.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) paddingTop",
+     "64.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       2,
+       20
+      ]
+     },
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       4,
+       68
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       8.5
+      ],
+      "counts": [
+       68,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.897,
+     "share_on_8px": 0.897,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.897,
+       "chance_share": 0.3,
+       "excess": 0.597
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.0,
+       "chance_share": 0.25,
+       "excess": -0.25
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.392,
+       "chance_share": 0.217,
+       "excess": 0.175
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.717,
+       "chance_share": 0.175,
+       "excess": 0.542
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.0,
+       "chance_share": 0.15,
+       "excess": -0.15
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.897,
+      "chance_share": 0.3,
+      "excess": 0.597
+     },
+     "share_fractional": 0.043,
+     "off_4px_values": [
+      {
+       "value": 3.0,
+       "count": 16
+      },
+      {
+       "value": 185.5,
+       "count": 6
+      },
+      {
+       "value": 7.0,
+       "count": 4
+      },
+      {
+       "value": 33.5,
+       "count": 4
+      },
+      {
+       "value": 3.5,
+       "count": 2
+      },
+      {
+       "value": 8.5,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.909
+   },
+   "radius": {
+    "considered": 104,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "full",
+      "count": 47,
+      "share": 0.452
+     },
+     {
+      "value": 14.0,
+      "count": 45,
+      "share": 0.433
+     },
+     {
+      "value": 12.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 9.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 8.0,
+      "count": 4,
+      "share": 0.038
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "html.js > body > a.skip",
+     "14.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "12.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "9.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) > img",
+     "8.0": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(2) > div.how__art.how__art--deal > img.deal__c.deal__c--1:nth-of-type(1)"
+    },
+    "on_token_share": 0.93
+   },
+   "shadow": {
+    "considered": 63,
+    "distinct": 10,
+    "values": [
+     {
+      "value": "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px",
+      "count": 17,
+      "share": 0.27
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 16,
+      "share": 0.254
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 8,
+      "share": 0.127
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px",
+      "count": 8,
+      "share": 0.127
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset",
+      "count": 4,
+      "share": 0.063
+     },
+     {
+      "value": "rgb(228, 228, 224) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgb(212, 212, 207) 0px 0px 0px 1px inset",
+      "count": 2,
+      "share": 0.032
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 0px 0px 1px",
+      "count": 1,
+      "share": 0.016
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.1) 0px 0px 0px 1px, rgba(15, 15, 14, 0.35) 0px 6px 16px -6px",
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install",
+     "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "rgb(228, 228, 224) 0px 0px 0px 1px inset": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask",
+     "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset": "section.made:nth-of-type(7) > div.wrap.wheel__bar:nth-of-type(3) > button.btn.btn--icon:nth-of-type(1)",
+     "rgb(212, 212, 207) 0px 0px 0px 1px inset": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 13,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 13,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list"
+    }
+   },
+   "z_index": {
+    "considered": 21,
+    "distinct": 13,
+    "values": [
+     {
+      "value": 2,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 1,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 12,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 16,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 14,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 18,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 100,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 50,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": -1,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 20,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 30,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 3,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 0,
+      "count": 1,
+      "share": 0.048
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "2": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "1": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "12": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "16": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(2)",
+     "14": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "18": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(7)",
+     "100": "html.js > body > a.skip",
+     "50": "html.js > body > header.nav"
+    },
+    "ladder": {
+     "values": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      50,
+      100
+     ],
+     "max": 100,
+     "over_1000": [],
+     "distinct": 13
+    }
+   },
+   "duration": {
+    "considered": 221,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 160,
+      "count": 82,
+      "share": 0.371
+     },
+     {
+      "value": 320,
+      "count": 70,
+      "share": 0.317
+     },
+     {
+      "value": 700,
+      "count": 17,
+      "share": 0.077
+     },
+     {
+      "value": 300,
+      "count": 17,
+      "share": 0.077
+     },
+     {
+      "value": 650,
+      "count": 16,
+      "share": 0.072
+     },
+     {
+      "value": 720,
+      "count": 9,
+      "share": 0.041
+     },
+     {
+      "value": 760,
+      "count": 3,
+      "share": 0.014
+     },
+     {
+      "value": 1100,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 1200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 500,
+      "count": 1,
+      "share": 0.005
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "160": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "320": "html.js > body > header.nav",
+     "700": "section.sec:nth-of-type(2) > div.wrap.reveal",
+     "300": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "650": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "720": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "760": "#hero-title (animation)",
+     "1100": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    },
+    "on_token_share": 0.688
+   },
+   "easing": {
+    "considered": 218,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+      "count": 140,
+      "share": 0.642
+     },
+     {
+      "value": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+      "count": 44,
+      "share": 0.202
+     },
+     {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "count": 34,
+      "share": 0.156
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.2, 0.7, 0.2, 1)": "html.js > body > header.nav",
+     "cubic-bezier(0.3, 1.35, 0.5, 1)": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > button.copy > svg.copy__i:nth-of-type(1)",
+     "cubic-bezier(0.16, 1, 0.3, 1)": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    }
+   },
+   "font_family": {
+    "considered": 140,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Geist",
+      "count": 104,
+      "share": 0.743
+     },
+     {
+      "value": "Geist Mono",
+      "count": 17,
+      "share": 0.121
+     },
+     {
+      "value": "Newsreader",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "Fraunces",
+      "count": 4,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Geist": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "Geist Mono": "\"Geist Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+     "Newsreader": "Newsreader, \"Iowan Old Style\", Georgia, serif",
+     "Fraunces": "Fraunces, \"Iowan Old Style\", Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 226,
+    "distinct": 24,
+    "opaque_distinct": 20,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 60
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 61,
+      "max_oklab": 0.0138
+     },
+     {
+      "members": [
+       {
+        "value": "#fafaf9",
+        "count": 17
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 11
+       }
+      ],
+      "count": 28,
+      "max_oklab": 0.0153
+     },
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#e4e4e0",
+        "count": 8
+       },
+       {
+        "value": "#e9e9e6",
+        "count": 4
+       }
+      ],
+      "count": 12,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#c9c9c4",
+        "count": 2
+       },
+       {
+        "value": "#cfc6ba",
+        "count": 1
+       }
+      ],
+      "count": 3,
+      "max_oklab": 0.0145
+     }
+    ],
+    "on_token_share": 0.982
+   }
+  },
+  "1440": {
+   "elements_visible": 415,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 140,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "#0f0f0e",
+      "count": 53,
+      "share": 0.379
+     },
+     {
+      "value": "#6b6b66",
+      "count": 33,
+      "share": 0.236
+     },
+     {
+      "value": "#3a3a37",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "#8e8e88",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 10,
+      "share": 0.071
+     },
+     {
+      "value": "#fafaf9",
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": "#fc4c02",
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": "#c9c9c4",
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": "#b4232a",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#13703b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#ff9a6b",
+      "count": 1,
+      "share": 0.007
+     },
+     {
+      "value": "#5bd38d",
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 4,
+    "examples": {
+     "#0f0f0e": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__name:nth-of-type(2)",
+     "#6b6b66": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub",
+     "#3a3a37": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "#8e8e88": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(4) > div.how__art.how__art--lint > p.lint__cmd:nth-of-type(1)",
+     "#f5f5f3": "#ex-title",
+     "#fafaf9": "html.js > body > a.skip",
+     "#fc4c02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "#c9c9c4": "footer.foot > div.wrap.foot__bottom:nth-of-type(2) > nav.foot__links > a:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f5f5f3",
+        "count": 10
+       },
+       {
+        "value": "#fafaf9",
+        "count": 4
+       }
+      ],
+      "count": 14,
+      "max_oklab": 0.0153
+     }
+    ]
+   },
+   "colour_fill": {
+    "considered": 73,
+    "distinct": 14,
+    "values": [
+     {
+      "value": "#1c1c1a",
+      "count": 20,
+      "share": 0.274
+     },
+     {
+      "value": "#f2f2f0",
+      "count": 17,
+      "share": 0.233
+     },
+     {
+      "value": "#fafaf9",
+      "count": 13,
+      "share": 0.178
+     },
+     {
+      "value": "#0f0f0e",
+      "count": 7,
+      "share": 0.096
+     },
+     {
+      "value": "#1e1f21",
+      "count": 4,
+      "share": 0.055
+     },
+     {
+      "value": "#e9e9e6",
+      "count": 4,
+      "share": 0.055
+     },
+     {
+      "value": "#e5484d/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.12",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#d4d4cf",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#fc4c02",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#cfc6ba",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#121211",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#1f9d55/0.16",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 8,
+    "examples": {
+     "#1c1c1a": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "#f2f2f0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "#fafaf9": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "#0f0f0e": "html.js > body > a.skip",
+     "#1e1f21": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "#e9e9e6": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-p:nth-of-type(3)",
+     "#e5484d/0.12": "div.cmp > p.chip.chip--l:nth-of-type(1) > b",
+     "#1f9d55/0.12": "div.cmp > p.chip.chip--r:nth-of-type(2) > b"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#f2f2f0",
+        "count": 17
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 1
+       }
+      ],
+      "count": 18,
+      "max_oklab": 0.009
+     },
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 7
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 8,
+      "max_oklab": 0.0138
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 13,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e4e4e0",
+      "count": 8,
+      "share": 0.615
+     },
+     {
+      "value": "#f5f5f3/0.12",
+      "count": 5,
+      "share": 0.385
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#e4e4e0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list",
+     "#f5f5f3/0.12": "footer.foot > div.wrap.foot__top:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 140,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 15.0,
+      "count": 44,
+      "share": 0.314
+     },
+     {
+      "value": 13.0,
+      "count": 43,
+      "share": 0.307
+     },
+     {
+      "value": 17.0,
+      "count": 17,
+      "share": 0.121
+     },
+     {
+      "value": 16.0,
+      "count": 8,
+      "share": 0.057
+     },
+     {
+      "value": 83.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 51.5,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 12.0,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.021
+     },
+     {
+      "value": 37.0,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 14.5,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 64.0,
+      "count": 2,
+      "share": 0.014
+     },
+     {
+      "value": 20.0,
+      "count": 1,
+      "share": 0.007
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "15.0": "body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2) > span.gh__label:nth-of-type(1)",
+     "13.0": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "17.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) > p.head__sub",
+     "16.0": "html.js > body > a.skip",
+     "83.0": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "51.5": "#cmp-title",
+     "12.0": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(4) > div.how__art.how__art--lint > p.lint__cmd:nth-of-type(1)",
+     "24.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       14.5,
+       15.0
+      ],
+      "counts": [
+       2,
+       44
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       44,
+       8
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       17.0
+      ],
+      "counts": [
+       8,
+       17
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 15.0,
+      "share_on": 0.943,
+      "chance_share": 0.512,
+      "excess": 0.431,
+      "steps_used": [
+       -3,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       4,
+       7,
+       14,
+       19,
+       22,
+       26
+      ]
+     },
+     "off_best_ratio_px": [
+      64.0,
+      83.0
+     ],
+     "tailwind_scale_share": 0.143
+    },
+    "on_token_share": 0.893
+   },
+   "line_height": {
+    "considered": 140,
+    "distinct": 5,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 94,
+      "share": 0.671
+     },
+     {
+      "value": 1.2,
+      "count": 21,
+      "share": 0.15
+     },
+     {
+      "value": 1.0,
+      "count": 18,
+      "share": 0.129
+     },
+     {
+      "value": 1.5,
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": 1.45,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "html.js > body > a.skip",
+     "1.2": "span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col > span:nth-of-type(1)",
+     "1.0": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "1.5": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) > p.head__sub",
+     "1.45": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask > p.ask__me"
+    }
+   },
+   "letter_spacing": {
+    "considered": 140,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 117,
+      "share": 0.836
+     },
+     {
+      "value": -0.035,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.025,
+      "count": 6,
+      "share": 0.043
+     },
+     {
+      "value": -0.02,
+      "count": 5,
+      "share": 0.036
+     },
+     {
+      "value": -0.01,
+      "count": 4,
+      "share": 0.029
+     },
+     {
+      "value": -0.03,
+      "count": 2,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "html.js > body > a.skip",
+     "-0.035": "h1.hl > span.hl__w.hl__the:nth-of-type(1)",
+     "-0.025": "#cmp-title",
+     "-0.02": "body > header.nav > div.wrap.nav__in > a.brand:nth-of-type(1) > span.brand__slash:nth-of-type(1)",
+     "-0.01": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > h3",
+     "-0.03": "section.sec:nth-of-type(5) > div.wrap.reveal > div.pairs:nth-of-type(2) > div.pair:nth-of-type(1) > h3.pair__name"
+    }
+   },
+   "spacing": {
+    "considered": 328,
+    "distinct": 17,
+    "values": [
+     {
+      "value": 8.0,
+      "count": 68,
+      "share": 0.207
+     },
+     {
+      "value": 24.0,
+      "count": 60,
+      "share": 0.183
+     },
+     {
+      "value": 16.0,
+      "count": 57,
+      "share": 0.174
+     },
+     {
+      "value": 12.0,
+      "count": 39,
+      "share": 0.119
+     },
+     {
+      "value": 48.0,
+      "count": 23,
+      "share": 0.07
+     },
+     {
+      "value": 4.0,
+      "count": 20,
+      "share": 0.061
+     },
+     {
+      "value": 3.0,
+      "count": 16,
+      "share": 0.049
+     },
+     {
+      "value": 64.0,
+      "count": 12,
+      "share": 0.037
+     },
+     {
+      "value": 32.0,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": 197.0,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 96.0,
+      "count": 5,
+      "share": 0.015
+     },
+     {
+      "value": 7.5,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 35.0,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 3.5,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 126.0,
+      "count": 1,
+      "share": 0.003
+     },
+     {
+      "value": 128.0,
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "8.0": "html.js > body > a.skip paddingTop",
+     "24.0": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > p.hero__sub marginTop",
+     "16.0": "html.js > body > a.skip paddingLeft",
+     "12.0": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2) paddingLeft",
+     "48.0": "html.js > body > header.nav > div.wrap.nav__in paddingLeft",
+     "4.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.cmp-tabs:nth-of-type(2) rowGap",
+     "3.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) paddingTop",
+     "64.0": "section.sec:nth-of-type(2) > div.wrap.reveal > div.head:nth-of-type(1) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       2,
+       20
+      ]
+     },
+     {
+      "values": [
+       7.5,
+       8.0
+      ],
+      "counts": [
+       4,
+       68
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       68,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.893,
+     "share_on_8px": 0.893,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.893,
+       "chance_share": 0.3,
+       "excess": 0.593
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.012,
+       "chance_share": 0.25,
+       "excess": -0.238
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.39,
+       "chance_share": 0.217,
+       "excess": 0.173
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.713,
+       "chance_share": 0.175,
+       "excess": 0.538
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.0,
+       "chance_share": 0.15,
+       "excess": -0.15
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.893,
+      "chance_share": 0.3,
+      "excess": 0.593
+     },
+     "share_fractional": 0.018,
+     "off_4px_values": [
+      {
+       "value": 3.0,
+       "count": 16
+      },
+      {
+       "value": 197.0,
+       "count": 6
+      },
+      {
+       "value": 7.5,
+       "count": 4
+      },
+      {
+       "value": 35.0,
+       "count": 4
+      },
+      {
+       "value": 3.5,
+       "count": 2
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      },
+      {
+       "value": 126.0,
+       "count": 1
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.912
+   },
+   "radius": {
+    "considered": 104,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "full",
+      "count": 46,
+      "share": 0.442
+     },
+     {
+      "value": 14.0,
+      "count": 46,
+      "share": 0.442
+     },
+     {
+      "value": 13.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 10.5,
+      "count": 4,
+      "share": 0.038
+     },
+     {
+      "value": 8.0,
+      "count": 4,
+      "share": 0.038
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "full": "html.js > body > a.skip",
+     "14.0": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "13.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "10.5": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6) > img",
+     "8.0": "div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(2) > div.how__art.how__art--deal > img.deal__c.deal__c--1:nth-of-type(1)"
+    },
+    "on_token_share": 0.931
+   },
+   "shadow": {
+    "considered": 63,
+    "distinct": 10,
+    "values": [
+     {
+      "value": "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px",
+      "count": 17,
+      "share": 0.27
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 16,
+      "share": 0.254
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px",
+      "count": 8,
+      "share": 0.127
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px",
+      "count": 8,
+      "share": 0.127
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset",
+      "count": 4,
+      "share": 0.063
+     },
+     {
+      "value": "rgb(228, 228, 224) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset",
+      "count": 3,
+      "share": 0.048
+     },
+     {
+      "value": "rgb(212, 212, 207) 0px 0px 0px 1px inset",
+      "count": 2,
+      "share": 0.032
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.12) 0px 0px 0px 1px",
+      "count": 1,
+      "share": 0.016
+     },
+     {
+      "value": "rgba(15, 15, 14, 0.1) 0px 0px 0px 1px, rgba(15, 15, 14, 0.35) 0px 6px 16px -6px",
+      "count": 1,
+      "share": 0.016
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9) 0px 40px 80px -30px": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.28) 0px 18px 40px -22px, rgba(15, 15, 14, 0.06) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install",
+     "rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.45) 0px 30px 60px -28px, rgba(15, 15, 14, 0.08) 0px 0px 0px 1px": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.45) 0px 30px 56px -26px, rgba(255, 255, 255, 0.18) 0px 0px 0px 1px inset": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "rgb(228, 228, 224) 0px 0px 0px 1px inset": "section.sec:nth-of-type(3) > div.wrap.reveal > ol.how.is-armed > li.how__step:nth-of-type(1) > div.how__art.how__art--ask",
+     "rgba(245, 245, 243, 0.22) 0px 0px 0px 1px inset": "section.made:nth-of-type(7) > div.wrap.wheel__bar:nth-of-type(3) > button.btn.btn--icon:nth-of-type(1)",
+     "rgb(212, 212, 207) 0px 0px 0px 1px inset": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 13,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 13,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "section.sec.sec--q:nth-of-type(6) > div.wrap.faq > div.faq__list"
+    }
+   },
+   "z_index": {
+    "considered": 21,
+    "distinct": 13,
+    "values": [
+     {
+      "value": 2,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 1,
+      "count": 3,
+      "share": 0.143
+     },
+     {
+      "value": 12,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 16,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 14,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 18,
+      "count": 2,
+      "share": 0.095
+     },
+     {
+      "value": 100,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 50,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": -1,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 20,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 30,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 3,
+      "count": 1,
+      "share": 0.048
+     },
+     {
+      "value": 0,
+      "count": 1,
+      "share": 0.048
+     }
+    ],
+    "one_offs": 7,
+    "examples": {
+     "2": "div.cmp > p.chip.chip--l:nth-of-type(1)",
+     "1": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "12": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "16": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(2)",
+     "14": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "18": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(7)",
+     "100": "html.js > body > a.skip",
+     "50": "html.js > body > header.nav"
+    },
+    "ladder": {
+     "values": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      50,
+      100
+     ],
+     "max": 100,
+     "over_1000": [],
+     "distinct": 13
+    }
+   },
+   "duration": {
+    "considered": 221,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 160,
+      "count": 82,
+      "share": 0.371
+     },
+     {
+      "value": 320,
+      "count": 70,
+      "share": 0.317
+     },
+     {
+      "value": 700,
+      "count": 17,
+      "share": 0.077
+     },
+     {
+      "value": 300,
+      "count": 17,
+      "share": 0.077
+     },
+     {
+      "value": 650,
+      "count": 16,
+      "share": 0.072
+     },
+     {
+      "value": 720,
+      "count": 9,
+      "share": 0.041
+     },
+     {
+      "value": 760,
+      "count": 3,
+      "share": 0.014
+     },
+     {
+      "value": 1100,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 1200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 200,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 500,
+      "count": 1,
+      "share": 0.005
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "160": "html.js > body > header.nav > div.wrap.nav__in > a.gh:nth-of-type(2)",
+     "320": "html.js > body > header.nav",
+     "700": "section.sec:nth-of-type(2) > div.wrap.reveal",
+     "300": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "650": "ol.how.is-armed > li.how__step:nth-of-type(3) > div.how__art.how__art--draw > div.wire > i.w-nav:nth-of-type(1)",
+     "720": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "760": "#hero-title (animation)",
+     "1100": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    },
+    "on_token_share": 0.688
+   },
+   "easing": {
+    "considered": 218,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+      "count": 140,
+      "share": 0.642
+     },
+     {
+      "value": "cubic-bezier(0.3, 1.35, 0.5, 1)",
+      "count": 44,
+      "share": 0.202
+     },
+     {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "count": 34,
+      "share": 0.156
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.2, 0.7, 0.2, 1)": "html.js > body > header.nav",
+     "cubic-bezier(0.3, 1.35, 0.5, 1)": "section.hero.is-proofed:nth-of-type(1) > div.wrap.hero__copy:nth-of-type(2) > div.install > button.copy > svg.copy__i:nth-of-type(1)",
+     "cubic-bezier(0.16, 1, 0.3, 1)": "a.gh:nth-of-type(2) > span.gh__count:nth-of-type(2) > span.gh__n > span.odo:nth-of-type(1) > span.odo__col"
+    }
+   },
+   "font_family": {
+    "considered": 140,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Geist",
+      "count": 104,
+      "share": 0.743
+     },
+     {
+      "value": "Geist Mono",
+      "count": 17,
+      "share": 0.121
+     },
+     {
+      "value": "Newsreader",
+      "count": 15,
+      "share": 0.107
+     },
+     {
+      "value": "Fraunces",
+      "count": 4,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Geist": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "Geist Mono": "\"Geist Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+     "Newsreader": "Newsreader, \"Iowan Old Style\", Georgia, serif",
+     "Fraunces": "Fraunces, \"Iowan Old Style\", Georgia, serif"
+    }
+   },
+   "colour_all": {
+    "considered": 226,
+    "distinct": 24,
+    "opaque_distinct": 20,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#0f0f0e",
+        "count": 60
+       },
+       {
+        "value": "#121211",
+        "count": 1
+       }
+      ],
+      "count": 61,
+      "max_oklab": 0.0138
+     },
+     {
+      "members": [
+       {
+        "value": "#fafaf9",
+        "count": 17
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 11
+       }
+      ],
+      "count": 28,
+      "max_oklab": 0.0153
+     },
+     {
+      "members": [
+       {
+        "value": "#1c1c1a",
+        "count": 20
+       },
+       {
+        "value": "#1e1f21",
+        "count": 4
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#e4e4e0",
+        "count": 8
+       },
+       {
+        "value": "#e9e9e6",
+        "count": 4
+       }
+      ],
+      "count": 12,
+      "max_oklab": 0.0155
+     },
+     {
+      "members": [
+       {
+        "value": "#c9c9c4",
+        "count": 2
+       },
+       {
+        "value": "#cfc6ba",
+        "count": 1
+       }
+      ],
+      "count": 3,
+      "max_oklab": 0.0145
+     }
+    ],
+    "on_token_share": 0.982
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "4 off-scale spacing values: 3px, 9px, 35px, 126px (e.g. section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6))",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "12 distinct font sizes: 12, 13, 14.5, 15, 16, 17, 20, 24, 37, 51.5, 64, 83 (max 8)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "whole page",
+     "evidence": "5 font families render: Geist, Fraunces, Newsreader, Newsreader 16pt, Geist Mono",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "h3 vs body",
+     "evidence": "h3 17px is only 1.06x body 16px (min 1.25x)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": [
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--desk:nth-of-type(1)",
+     "evidence": "5 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.06) 0px 2px 4px 0px, rgba(15, 15, 14, 0.4\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "section.hero.is-proofed:nth-of-type(1) > div.fan:nth-of-type(3) > div.fan__hand > a.card.card--phone:nth-of-type(6)",
+     "evidence": "4 containers share radius 13.608px and shadow \"rgba(15, 15, 14, 0.12) 0px 1px 2px 0px, rgba(15, 15, 14, 0.4\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "#cmp-stage",
+     "evidence": "5 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.05) 0px 1px 2px 0px, rgba(15, 15, 14, 0.2\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.cmp > p.chip.chip--l:nth-of-type(1)  \"Without\"",
+     "evidence": "5 containers share radius 999px and shadow \"rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.wrap.reveal > ul.th-grid > li.th:nth-of-type(1) > a.th__link > span.th__shot:nth-of-type(1)",
+     "evidence": "10 containers share radius 14px and shadow \"rgba(15, 15, 14, 0.06) 0px 1px 2px 0px, rgba(15, 15, 14, 0.0\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.wheel:nth-of-type(2) > div.wheel__stage > ul.wheel__ring > li.wheel__item:nth-of-type(1) > a.wheel__card",
+     "evidence": "15 containers share radius 14px and shadow \"rgba(245, 245, 243, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.9\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "stylesheet",
+     "evidence": "overshoot easing cubic-bezier(0.3, 1.35, 0.5, 1) (y beyond 0..1.05)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button)",
+     "evidence": "transition runs 790 ms (measured from frames; limit for a button 300 ms)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button) -> #top > div:nth-of-type(3) > div > a:nth-of-type(5)",
+     "evidence": "moves 1095 px during the transition (limit 16 px for in-place UI)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button trigger \"Deal again\" (#top > div:nth-of-type(3) > button)",
+     "evidence": "6 other element(s) move while the transition runs (e.g. \"Refract\" 902 px off its start and end at 450 ms): the transition animates layout",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

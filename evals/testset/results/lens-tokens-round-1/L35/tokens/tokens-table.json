@@ -1,0 +1,2601 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L35",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 1
+ },
+ "stylesheet": {
+  "rules_listed": 752,
+  "unreadable_sheets": 0,
+  "unreadable": [],
+  "style_rules": 4298,
+  "declarations": 9019,
+  "root_font_px": 16.0,
+  "note": null,
+  "verified": true
+ },
+ "tokens": {
+  "declared": 629,
+  "own": 536,
+  "framework_internal": 93,
+  "by_scope": {
+   "scoped": 374,
+   "root": 162
+  },
+  "by_family": {
+   "colour": 291,
+   "spacing": 61,
+   "other": 59,
+   "shadow": 28,
+   "length": 19,
+   "container": 13,
+   "font_family": 13,
+   "z_index": 11,
+   "line_height": 9,
+   "font_size": 7,
+   "duration": 7,
+   "easing": 7,
+   "radius": 5,
+   "font_weight": 4,
+   "breakpoint": 1,
+   "letter_spacing": 1
+  },
+  "by_tier_guess": {
+   "primitive": 195,
+   "other": 148,
+   "semantic": 136,
+   "component": 41,
+   "scale_step": 16
+  },
+  "aliases": 222,
+  "semantic_or_component_aliasing_a_primitive": 24,
+  "component_tokens_pointing_at_primitives": [
+   "--checkbox-color",
+   "--radio-color"
+  ],
+  "component_colour_tokens_with_literal_values": [
+   "--context-card-tip-stroke",
+   "--dropdown-triangle-stroke",
+   "--geist-console-header",
+   "--header-border-bottom",
+   "--header-import-flow-background"
+  ],
+  "referenced_by_declarations": 333,
+  "var_references": 2848,
+  "alias_references": 1556,
+  "own_tokens_never_referenced": {
+   "count": 125,
+   "sample": [
+    "--arrow-bg",
+    "--container-height",
+    "--context-card-tip-stroke",
+    "--cross-color",
+    "--develop-end-gradient",
+    "--develop-line-end",
+    "--develop-start-gradient",
+    "--develop-text",
+    "--dropdown-box-shadow",
+    "--dropdown-triangle-stroke",
+    "--ds-amber-600",
+    "--ds-focus-ring-outline",
+    "--ds-gray-alpha-1000",
+    "--ds-gray-alpha-700",
+    "--ds-gray-alpha-800",
+    "--ds-green-100",
+    "--ds-green-1000",
+    "--ds-green-400",
+    "--ds-green-500",
+    "--ds-green-800",
+    "--ds-motion-overlay-scale",
+    "--ds-pink-100",
+    "--ds-pink-1000",
+    "--ds-pink-200",
+    "--ds-pink-400"
+   ]
+  },
+  "undeclared_references": {
+   "count": 154,
+   "without_fallback": [
+    {
+     "name": "--gap-ratio",
+     "uses": 12
+    },
+    {
+     "name": "--sm-height",
+     "uses": 10
+    },
+    {
+     "name": "--sm-grid-rows",
+     "uses": 10
+    },
+    {
+     "name": "--sm-grid-columns",
+     "uses": 10
+    },
+    {
+     "name": "--sm-grid-row",
+     "uses": 10
+    },
+    {
+     "name": "--sm-grid-column",
+     "uses": 10
+    },
+    {
+     "name": "--sm-cell-rows",
+     "uses": 10
+    },
+    {
+     "name": "--sm-cell-columns",
+     "uses": 10
+    },
+    {
+     "name": "--smd-block-display",
+     "uses": 6
+    },
+    {
+     "name": "--sm-cross-row",
+     "uses": 5
+    },
+    {
+     "name": "--sm-cross-column",
+     "uses": 5
+    },
+    {
+     "name": "--background",
+     "uses": 5
+    },
+    {
+     "name": "--sm-stack-padding",
+     "uses": 5
+    },
+    {
+     "name": "--sm-book-width",
+     "uses": 5
+    },
+    {
+     "name": "--dialog-open-cubic-bezier",
+     "uses": 4
+    }
+   ],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--tw-content",
+    "uses": 246,
+    "family": "font_family",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-inset-shadow",
+    "uses": 104,
+    "family": "shadow",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-inset-ring-shadow",
+    "uses": 104,
+    "family": "shadow",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-ring-offset-shadow",
+    "uses": 104,
+    "family": "shadow",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-ring-shadow",
+    "uses": 104,
+    "family": "shadow",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-shadow",
+    "uses": 104,
+    "family": "shadow",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--ds-gray-1000",
+    "uses": 98,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--tw-duration",
+    "uses": 50,
+    "family": "duration",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-ease",
+    "uses": 50,
+    "family": "easing",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-border-style",
+    "uses": 49,
+    "family": "colour",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--ds-background-100",
+    "uses": 48,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--tw-translate-x",
+    "uses": 47,
+    "family": "other",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--tw-translate-y",
+    "uses": 47,
+    "family": "other",
+    "tier": "framework_internal"
+   },
+   {
+    "name": "--default-transition-timing-function",
+    "uses": 46,
+    "family": "easing",
+    "tier": "semantic"
+   },
+   {
+    "name": "--default-transition-duration",
+    "uses": 46,
+    "family": "duration",
+    "tier": "semantic"
+   },
+   {
+    "name": "--font-geist-sans",
+    "uses": 39,
+    "family": "font_family",
+    "tier": "other"
+   },
+   {
+    "name": "--ds-gray-100",
+    "uses": 32,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--ds-gray-900",
+    "uses": 31,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--font-weight-normal",
+    "uses": 30,
+    "family": "font_weight",
+    "tier": "other"
+   },
+   {
+    "name": "--ds-gray-200",
+    "uses": 28,
+    "family": "colour",
+    "tier": "primitive"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--accents-1",
+    "--accents-2",
+    "--accents-3",
+    "--accents-4",
+    "--accents-5",
+    "--accents-6",
+    "--accents-7",
+    "--accents-8",
+    "--color-gray-200",
+    "--color-indigo-600",
+    "--ds-amber-100",
+    "--ds-amber-100-value"
+   ],
+   "semantic": [
+    "--arrow-bg",
+    "--bg-shadow",
+    "--block-display",
+    "--book-border-radius",
+    "--book-default-width",
+    "--book-text-color",
+    "--border-color",
+    "--default-font-family",
+    "--default-mono-font-family",
+    "--default-transition-duration",
+    "--default-transition-timing-function",
+    "--develop-text"
+   ],
+   "component": [
+    "--animate-loading-skeleton",
+    "--banner-height",
+    "--checkbox-color",
+    "--context-card-tip-stroke",
+    "--dropdown-box-shadow",
+    "--dropdown-triangle-stroke",
+    "--ds-motion-popover-duration",
+    "--ds-motion-popover-timing",
+    "--ds-popover-padding",
+    "--ds-popover-row-height",
+    "--ds-popover-row-padding",
+    "--ds-popover-row-radius"
+   ],
+   "scale_step": [
+    "--blur-sm",
+    "--breakpoint-lg",
+    "--container-3xl",
+    "--container-4xl",
+    "--container-lg",
+    "--container-md",
+    "--container-sm",
+    "--container-xs",
+    "--ds-size-large",
+    "--ds-size-medium",
+    "--ds-size-small",
+    "--font-weight-medium"
+   ],
+   "other": [
+    "--animate-blink",
+    "--animate-cmdkFadeIn",
+    "--animate-cmdkFadeOut",
+    "--animate-cmdkLoading",
+    "--animate-cmdkScaleIn",
+    "--animate-cmdkScaleOut",
+    "--animate-fadeInTooltip",
+    "--animate-fadeInTooltipFaster",
+    "--animate-fadeOutPopover",
+    "--animate-feedbackAppear",
+    "--animate-feedbackFadeIn",
+    "--animate-feedbackFadeOut"
+   ]
+  },
+  "pools": {
+   "colour": 143,
+   "length": 26,
+   "shadow": 20,
+   "spacing": 30,
+   "duration": 6,
+   "radius": 3,
+   "z_index": 6,
+   "line_height": 3,
+   "font_size": 5,
+   "letter_spacing": 1
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "border_width": {
+    "var": 3,
+    "literal": 38,
+    "utility_literal": 11,
+    "arbitrary_utility": 0,
+    "keyword": 20,
+    "var_share_of_non_keyword": 0.058,
+    "literal_share_of_non_keyword": 0.731
+   },
+   "colour": {
+    "var": 792,
+    "literal": 36,
+    "utility_literal": 13,
+    "arbitrary_utility": 23,
+    "keyword": 49,
+    "var_share_of_non_keyword": 0.917,
+    "literal_share_of_non_keyword": 0.042
+   },
+   "duration": {
+    "var": 83,
+    "literal": 76,
+    "utility_literal": 28,
+    "arbitrary_utility": 2,
+    "keyword": 2,
+    "var_share_of_non_keyword": 0.439,
+    "literal_share_of_non_keyword": 0.402
+   },
+   "easing": {
+    "var": 60,
+    "literal": 37,
+    "utility_literal": 4,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.594,
+    "literal_share_of_non_keyword": 0.366
+   },
+   "font_family": {
+    "var": 71,
+    "literal": 8,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.899,
+    "literal_share_of_non_keyword": 0.101
+   },
+   "font_size": {
+    "var": 24,
+    "literal": 46,
+    "utility_literal": 34,
+    "arbitrary_utility": 57,
+    "keyword": 3,
+    "var_share_of_non_keyword": 0.149,
+    "literal_share_of_non_keyword": 0.286
+   },
+   "letter_spacing": {
+    "var": 3,
+    "literal": 16,
+    "utility_literal": 12,
+    "arbitrary_utility": 12,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.07,
+    "literal_share_of_non_keyword": 0.372
+   },
+   "line_height": {
+    "var": 23,
+    "literal": 32,
+    "utility_literal": 43,
+    "arbitrary_utility": 16,
+    "keyword": 8,
+    "var_share_of_non_keyword": 0.202,
+    "literal_share_of_non_keyword": 0.281
+   },
+   "radius": {
+    "var": 27,
+    "literal": 32,
+    "utility_literal": 32,
+    "arbitrary_utility": 72,
+    "keyword": 50,
+    "var_share_of_non_keyword": 0.166,
+    "literal_share_of_non_keyword": 0.196
+   },
+   "shadow": {
+    "var": 136,
+    "literal": 6,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 0.958,
+    "literal_share_of_non_keyword": 0.042
+   },
+   "spacing": {
+    "var": 103,
+    "literal": 105,
+    "utility_literal": 232,
+    "arbitrary_utility": 58,
+    "keyword": 173,
+    "var_share_of_non_keyword": 0.207,
+    "literal_share_of_non_keyword": 0.211
+   },
+   "z_index": {
+    "var": 14,
+    "literal": 11,
+    "utility_literal": 15,
+    "arbitrary_utility": 13,
+    "keyword": 11,
+    "var_share_of_non_keyword": 0.264,
+    "literal_share_of_non_keyword": 0.208
+   }
+  },
+  "literal_retypes_a_token_value": {
+   "font_size": {
+    "count": 51,
+    "samples": [
+     {
+      "sel": ":root, :host",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".geist-text.h2",
+      "prop": "font-size",
+      "value": 36.0
+     },
+     {
+      "sel": ".geist-text.h4",
+      "prop": "font-size",
+      "value": 20.0
+     },
+     {
+      "sel": ".geist-text.h5",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".geist-text.h6",
+      "prop": "font-size",
+      "value": 14.0
+     },
+     {
+      "sel": ".geist-text.p",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".geist-text.body-title",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".geist-text.body-1",
+      "prop": "font-size",
+      "value": 16.0
+     }
+    ]
+   },
+   "spacing": {
+    "count": 94,
+    "samples": [
+     {
+      "sel": ".breadcrumb-link",
+      "prop": "padding-left",
+      "value": 1.0
+     },
+     {
+      "sel": "a.geist-secondary-link",
+      "prop": "padding-bottom",
+      "value": 1.0
+     },
+     {
+      "sel": ".AMTIxG_systemDebugOverlay::before",
+      "prop": "padding",
+      "value": 4.0
+     },
+     {
+      "sel": ".AMTIxG_systemDebugOverlay::before",
+      "prop": "padding",
+      "value": 8.0
+     },
+     {
+      "sel": ".vF3MAa_pre [data-added=\"true\"]::after",
+      "prop": "padding-left",
+      "value": 8.0
+     },
+     {
+      "sel": ".vF3MAa_pre [data-removed=\"true\"]::after",
+      "prop": "padding-left",
+      "value": 8.0
+     },
+     {
+      "sel": "._2RP9MG_code .token-line",
+      "prop": "padding-right",
+      "value": 16.0
+     },
+     {
+      "sel": ".disV0a_centerContent",
+      "prop": "gap",
+      "value": 12.0
+     }
+    ]
+   },
+   "colour": {
+    "count": 17,
+    "samples": [
+     {
+      "sel": ".AMTIxG_systemDebugOverlay::before",
+      "prop": "background",
+      "value": "#000000"
+     },
+     {
+      "sel": ".BH179W_pages",
+      "prop": "background",
+      "value": "#eaeaea"
+     },
+     {
+      "sel": ".BH179W_pages",
+      "prop": "background",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".BH179W_pages",
+      "prop": "background",
+      "value": "#fafafa"
+     },
+     {
+      "sel": ".BH179W_pages.BH179W_textured",
+      "prop": "background",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".BH179W_pages.BH179W_textured",
+      "prop": "background",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".dark-theme .BH179W_book",
+      "prop": "background",
+      "value": "#1f1f1f"
+     },
+     {
+      "sel": ".bg-\\[\\#000\\]",
+      "prop": "background-color",
+      "value": "#000000"
+     }
+    ]
+   },
+   "radius": {
+    "count": 28,
+    "samples": [
+     {
+      "sel": ".material-base",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".material-fullscreen",
+      "prop": "border-radius",
+      "value": 16.0
+     },
+     {
+      "sel": ".material-small",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".material-tooltip",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".rounded-\\[1px\\]",
+      "prop": "border-radius",
+      "value": 1.0
+     },
+     {
+      "sel": ".rounded-\\[6px\\]",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".rounded-\\[8px\\]",
+      "prop": "border-radius",
+      "value": 8.0
+     },
+     {
+      "sel": ".rounded-\\[14px\\]",
+      "prop": "border-radius",
+      "value": 14.0
+     }
+    ]
+   }
+  },
+  "distinct_literal_colours": 29,
+  "literal_colours_top": [
+   {
+    "value": "#ffffff",
+    "count": 6
+   },
+   {
+    "value": "#000000",
+    "count": 3
+   },
+   {
+    "value": "#ff0000/0.30",
+    "count": 2
+   },
+   {
+    "value": "#000000/0.70",
+    "count": 2
+   },
+   {
+    "value": "#9a050f",
+    "count": 2
+   },
+   {
+    "value": "#333333",
+    "count": 2
+   },
+   {
+    "value": "#00ffe0/0.20",
+    "count": 1
+   },
+   {
+    "value": "#eaeaea",
+    "count": 1
+   },
+   {
+    "value": "#fafafa",
+    "count": 1
+   },
+   {
+    "value": "#efefef",
+    "count": 1
+   },
+   {
+    "value": "#9a9a9a",
+    "count": 1
+   },
+   {
+    "value": "#ffffff/0.10",
+    "count": 1
+   },
+   {
+    "value": "#1f1f1f",
+    "count": 1
+   },
+   {
+    "value": "#26c941",
+    "count": 1
+   },
+   {
+    "value": "#878787",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 228,
+   "samples": [
+    ".rounded-t-\\[5px\\]",
+    ".rounded-t-\\[10px\\]",
+    ".rounded-l-\\[4px\\]",
+    ".rounded-l-\\[5px\\]",
+    ".\\!rounded-r-\\[5px\\]",
+    ".rounded-r-\\[5px\\]",
+    ".rounded-r-\\[6px\\]",
+    ".text-\\[11px\\]\\/\\[20px\\]",
+    ".text-\\[12px\\]\\/\\[24px\\]",
+    ".duration-\\[400ms\\]",
+    ".before\\:rounded-r-\\[10ex\\]::before",
+    ".after\\:rounded-r-\\[10ex\\]::after"
+   ]
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 255,
+  "base_colour_tokens": 13,
+  "base_semantic_colour_tokens": 11,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 294,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [
+   "class_or_attr"
+  ],
+  "dark_selectors": [
+   {
+    "selector": ".dark",
+    "declarations": 1297
+   },
+   {
+    "selector": ".dark-theme",
+    "declarations": 190
+   },
+   {
+    "selector": "@media (prefers-color-scheme: dark)",
+    "declarations": 1
+   }
+  ],
+  "dark_redefines_base": 26,
+  "dark_only_names": [
+   "--accents-1",
+   "--accents-2",
+   "--accents-3",
+   "--accents-4",
+   "--accents-5",
+   "--accents-6",
+   "--accents-7",
+   "--accents-8",
+   "--context-card-tip-stroke",
+   "--develop-end-gradient",
+   "--develop-line-end",
+   "--develop-start-gradient",
+   "--develop-text",
+   "--dropdown-box-shadow",
+   "--dropdown-triangle-stroke",
+   "--ds-amber-100",
+   "--ds-amber-100-value",
+   "--ds-amber-1000",
+   "--ds-amber-1000-value",
+   "--ds-amber-200",
+   "--ds-amber-200-value",
+   "--ds-amber-300",
+   "--ds-amber-300-value",
+   "--ds-amber-400",
+   "--ds-amber-400-value",
+   "--ds-amber-500",
+   "--ds-amber-500-value",
+   "--ds-amber-600",
+   "--ds-amber-600-value",
+   "--ds-amber-700"
+  ],
+  "semantic_colour_redefined_share": 0.455,
+  "semantic_colour_not_redefined": [
+   "--ds-focus-ring-outline",
+   "--ds-motion-overlay-scale",
+   "--ds-motion-overlay-timing",
+   "--ds-motion-popover-timing",
+   "--ds-overlay-backdrop-opacity",
+   "--ds-popover-row-height"
+  ],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 74,
+   "literal": 7,
+   "literal_samples": [
+    {
+     "sel": ".dark-theme .BH179W_book",
+     "prop": "background",
+     "value": "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, "
+    },
+    {
+     "sel": ".not-dark-theme\\:before\\:bg-\\[\\#404040\\]:not(:where(.dark-theme, .dark-theme *))",
+     "prop": "background-color",
+     "value": "rgb(64, 64, 64)"
+    },
+    {
+     "sel": ".dark\\:bg-\\[\\#0a0a0a\\]:where(.dark-theme, .dark-theme *)",
+     "prop": "background-color",
+     "value": "rgb(10, 10, 10)"
+    },
+    {
+     "sel": ".dark-theme\\:border-transparent:where(.dark-theme, .dark-theme *)",
+     "prop": "border-color",
+     "value": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "sel": ".dark-theme\\:before\\:bg-\\[\\#cdcdcd\\]:where(.dark-theme, .dark-theme *)::before",
+     "prop": "background-color",
+     "value": "rgb(205, 205, 205)"
+    },
+    {
+     "sel": ".dark-theme\\:hover\\:bg-\\[hsl\\(0\\,0\\%\\,30\\%\\)\\]:where(.dark-theme, .dark-theme *)",
+     "prop": "background-color",
+     "value": "rgb(77, 77, 77)"
+    }
+   ]
+  },
+  "color_scheme_values": [
+   "unset"
+  ],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "tailwind": {
+   "tokens_or_refs": 93,
+   "distinct_class_names": 17
+  },
+  "geist": {
+   "tokens_or_refs": 328
+  },
+  "tailwind_v4_theme": {
+   "theme_tokens": 21,
+   "layer_theme": true
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 755,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#a1a1a1",
+      "count": 286,
+      "share": 0.656
+     },
+     {
+      "value": "#ededed",
+      "count": 140,
+      "share": 0.321
+     },
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.023
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#a1a1a1": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "#ededed": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "#ffffff": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 101,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#1a1a1a",
+      "count": 98,
+      "share": 0.97
+     },
+     {
+      "value": "#0a0a0a",
+      "count": 3,
+      "share": 0.03
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1a1a1a": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#0a0a0a": "html.VEU71W_className.gb9FOq_className > body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 90,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#292929",
+      "count": 89,
+      "share": 0.989
+     },
+     {
+      "value": "#ffffff/0.14",
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#292929": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#ffffff/0.14": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 333,
+      "share": 0.764
+     },
+     {
+      "value": 13.5,
+      "count": 89,
+      "share": 0.204
+     },
+     {
+      "value": 14.0,
+      "count": 9,
+      "share": 0.021
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 13.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "16.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "13.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "14.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1",
+     "24.0": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "32.0": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "13.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       13.5
+      ],
+      "counts": [
+       1,
+       89
+      ]
+     },
+     {
+      "values": [
+       13.5,
+       14.0
+      ],
+      "counts": [
+       89,
+       9
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.25,
+      "base_px": 16.0,
+      "share_on": 0.972,
+      "chance_share": 0.265,
+      "excess": 0.708,
+      "steps_used": [
+       -1,
+       0,
+       2,
+       3
+      ]
+     },
+     "off_best_ratio_px": [
+      14.0,
+      24.0
+     ],
+     "tailwind_scale_share": 0.995
+    },
+    "on_token_share": 0.991
+   },
+   "line_height": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 316,
+      "share": 0.725
+     },
+     {
+      "value": 1.45,
+      "count": 98,
+      "share": 0.225
+     },
+     {
+      "value": 1.75,
+      "count": 17,
+      "share": 0.039
+     },
+     {
+      "value": 1.35,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 1.25,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 1.55,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "1.45": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "1.75": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "1.35": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "1.25": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "1.55": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    }
+   },
+   "letter_spacing": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 422,
+      "share": 0.968
+     },
+     {
+      "value": -0.02,
+      "count": 10,
+      "share": 0.023
+     },
+     {
+      "value": -0.04,
+      "count": 4,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "-0.02": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "-0.04": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32"
+    }
+   },
+   "spacing": {
+    "considered": 598,
+    "distinct": 13,
+    "values": [
+     {
+      "value": 2.0,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 3.5,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 12.0,
+      "count": 133,
+      "share": 0.222
+     },
+     {
+      "value": 16.0,
+      "count": 35,
+      "share": 0.059
+     },
+     {
+      "value": 4.0,
+      "count": 19,
+      "share": 0.032
+     },
+     {
+      "value": 20.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 8.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 56.0,
+      "count": 10,
+      "share": 0.017
+     },
+     {
+      "value": 64.0,
+      "count": 3,
+      "share": 0.005
+     },
+     {
+      "value": 10.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 6.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "2.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingTop",
+     "3.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingLeft",
+     "12.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(1) marginBottom",
+     "16.0": "html.VEU71W_className.gb9FOq_className > body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) paddingTop",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1 paddingLeft",
+     "20.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) paddingLeft",
+     "8.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(2) > li.mb-3.text-copy-16:nth-of-type(2) > ul.pl-5.mb-4 marginTop",
+     "56.0": "#interactions marginTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       178,
+       19
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.702,
+     "share_on_8px": 0.666,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.696,
+       "chance_share": 0.3,
+       "excess": 0.396
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.331,
+       "chance_share": 0.25,
+       "excess": 0.081
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.527,
+       "chance_share": 0.217,
+       "excess": 0.31
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.411,
+       "chance_share": 0.175,
+       "excess": 0.236
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.331,
+       "chance_share": 0.15,
+       "excess": 0.181
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.696,
+      "chance_share": 0.3,
+      "excess": 0.396
+     },
+     "share_fractional": 0.298,
+     "off_4px_values": [
+      {
+       "value": 3.5,
+       "count": 178
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.681
+   },
+   "radius": {
+    "considered": 101,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 6.0,
+      "count": 92,
+      "share": 0.911
+     },
+     {
+      "value": 4.0,
+      "count": 9,
+      "share": 0.089
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "6.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1"
+    },
+    "on_token_share": 0.911
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px": "main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none > button.outline-none.m-0"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 90,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 90,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)"
+    }
+   },
+   "z_index": {
+    "considered": 130,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 130,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "10": "strong.font-medium.text-gray-1000\\/90 > a.relative.text-current > span.relative.z-10:nth-of-type(1)"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 150,
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": 200,
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "150": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none",
+     "200": "div.hover\\:opacity-80.outline-none > button.outline-none.m-0 > span.truncate.px-1\\.5 > div.relative.size-4 > div.absolute.transition-all:nth-of-type(2)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.4, 0, 0.2, 1)": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none"
+    }
+   },
+   "font_family": {
+    "considered": 436,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "GeistSans",
+      "count": 337,
+      "share": 0.773
+     },
+     {
+      "value": "Geist Mono",
+      "count": 99,
+      "share": 0.227
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GeistSans": "GeistSans, \"GeistSans Fallback\"",
+     "Geist Mono": "\"Geist Mono\", Menlo, Monaco, \"Lucida Console\", \"Liberation Mono\", \"DejaVu Sans M"
+    }
+   },
+   "colour_all": {
+    "considered": 627,
+    "distinct": 7,
+    "opaque_distinct": 6,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1280": {
+   "elements_visible": 752,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#a1a1a1",
+      "count": 286,
+      "share": 0.656
+     },
+     {
+      "value": "#ededed",
+      "count": 140,
+      "share": 0.321
+     },
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.023
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#a1a1a1": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "#ededed": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "#ffffff": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 100,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#1a1a1a",
+      "count": 98,
+      "share": 0.98
+     },
+     {
+      "value": "#0a0a0a",
+      "count": 2,
+      "share": 0.02
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1a1a1a": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#0a0a0a": "html.VEU71W_className.gb9FOq_className > body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 90,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#292929",
+      "count": 89,
+      "share": 0.989
+     },
+     {
+      "value": "#ffffff/0.14",
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#292929": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#ffffff/0.14": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 333,
+      "share": 0.764
+     },
+     {
+      "value": 13.5,
+      "count": 89,
+      "share": 0.204
+     },
+     {
+      "value": 14.0,
+      "count": 9,
+      "share": 0.021
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 13.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "16.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "13.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "14.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1",
+     "24.0": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "32.0": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "13.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       13.5
+      ],
+      "counts": [
+       1,
+       89
+      ]
+     },
+     {
+      "values": [
+       13.5,
+       14.0
+      ],
+      "counts": [
+       89,
+       9
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.25,
+      "base_px": 16.0,
+      "share_on": 0.972,
+      "chance_share": 0.265,
+      "excess": 0.708,
+      "steps_used": [
+       -1,
+       0,
+       2,
+       3
+      ]
+     },
+     "off_best_ratio_px": [
+      14.0,
+      24.0
+     ],
+     "tailwind_scale_share": 0.995
+    },
+    "on_token_share": 0.991
+   },
+   "line_height": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 316,
+      "share": 0.725
+     },
+     {
+      "value": 1.45,
+      "count": 98,
+      "share": 0.225
+     },
+     {
+      "value": 1.75,
+      "count": 17,
+      "share": 0.039
+     },
+     {
+      "value": 1.35,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 1.25,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 1.55,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "1.45": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "1.75": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "1.35": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "1.25": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "1.55": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    }
+   },
+   "letter_spacing": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 422,
+      "share": 0.968
+     },
+     {
+      "value": -0.02,
+      "count": 10,
+      "share": 0.023
+     },
+     {
+      "value": -0.04,
+      "count": 4,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "-0.02": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "-0.04": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32"
+    }
+   },
+   "spacing": {
+    "considered": 598,
+    "distinct": 15,
+    "values": [
+     {
+      "value": 2.0,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 3.5,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 12.0,
+      "count": 133,
+      "share": 0.222
+     },
+     {
+      "value": 16.0,
+      "count": 31,
+      "share": 0.052
+     },
+     {
+      "value": 4.0,
+      "count": 19,
+      "share": 0.032
+     },
+     {
+      "value": 20.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 8.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 56.0,
+      "count": 10,
+      "share": 0.017
+     },
+     {
+      "value": 64.0,
+      "count": 3,
+      "share": 0.005
+     },
+     {
+      "value": 80.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 128.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 10.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 6.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "2.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingTop",
+     "3.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingLeft",
+     "12.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(1) marginBottom",
+     "16.0": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32 marginBottom",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1 paddingLeft",
+     "20.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) paddingLeft",
+     "8.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(2) > li.mb-3.text-copy-16:nth-of-type(2) > ul.pl-5.mb-4 marginTop",
+     "56.0": "#interactions marginTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       178,
+       19
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.702,
+     "share_on_8px": 0.666,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.696,
+       "chance_share": 0.3,
+       "excess": 0.396
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.334,
+       "chance_share": 0.25,
+       "excess": 0.084
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.527,
+       "chance_share": 0.217,
+       "excess": 0.31
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.411,
+       "chance_share": 0.175,
+       "excess": 0.236
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.334,
+       "chance_share": 0.15,
+       "excess": 0.184
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.696,
+      "chance_share": 0.3,
+      "excess": 0.396
+     },
+     "share_fractional": 0.298,
+     "off_4px_values": [
+      {
+       "value": 3.5,
+       "count": 178
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.677
+   },
+   "radius": {
+    "considered": 101,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 6.0,
+      "count": 92,
+      "share": 0.911
+     },
+     {
+      "value": 4.0,
+      "count": 9,
+      "share": 0.089
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "6.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1"
+    },
+    "on_token_share": 0.911
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px": "main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none > button.outline-none.m-0"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 90,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 90,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)"
+    }
+   },
+   "z_index": {
+    "considered": 130,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 130,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "10": "strong.font-medium.text-gray-1000\\/90 > a.relative.text-current > span.relative.z-10:nth-of-type(1)"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 150,
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": 200,
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "150": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none",
+     "200": "div.hover\\:opacity-80.outline-none > button.outline-none.m-0 > span.truncate.px-1\\.5 > div.relative.size-4 > div.absolute.transition-all:nth-of-type(2)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.4, 0, 0.2, 1)": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none"
+    }
+   },
+   "font_family": {
+    "considered": 436,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "GeistSans",
+      "count": 337,
+      "share": 0.773
+     },
+     {
+      "value": "Geist Mono",
+      "count": 99,
+      "share": 0.227
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GeistSans": "GeistSans, \"GeistSans Fallback\"",
+     "Geist Mono": "\"Geist Mono\", Menlo, Monaco, \"Lucida Console\", \"Liberation Mono\", \"DejaVu Sans M"
+    }
+   },
+   "colour_all": {
+    "considered": 626,
+    "distinct": 7,
+    "opaque_distinct": 6,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  },
+  "1440": {
+   "elements_visible": 752,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#a1a1a1",
+      "count": 286,
+      "share": 0.656
+     },
+     {
+      "value": "#ededed",
+      "count": 140,
+      "share": 0.321
+     },
+     {
+      "value": "#ffffff",
+      "count": 10,
+      "share": 0.023
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#a1a1a1": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "#ededed": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "#ffffff": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 100,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#1a1a1a",
+      "count": 98,
+      "share": 0.98
+     },
+     {
+      "value": "#0a0a0a",
+      "count": 2,
+      "share": 0.02
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#1a1a1a": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#0a0a0a": "html.VEU71W_className.gb9FOq_className > body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 90,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#292929",
+      "count": 89,
+      "share": 0.989
+     },
+     {
+      "value": "#ffffff/0.14",
+      "count": 1,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#292929": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "#ffffff/0.14": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 333,
+      "share": 0.764
+     },
+     {
+      "value": 13.5,
+      "count": 89,
+      "share": 0.204
+     },
+     {
+      "value": 14.0,
+      "count": 9,
+      "share": 0.021
+     },
+     {
+      "value": 24.0,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 13.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "16.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "13.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "14.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1",
+     "24.0": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "32.0": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "13.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       13.5
+      ],
+      "counts": [
+       1,
+       89
+      ]
+     },
+     {
+      "values": [
+       13.5,
+       14.0
+      ],
+      "counts": [
+       89,
+       9
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.25,
+      "base_px": 16.0,
+      "share_on": 0.972,
+      "chance_share": 0.265,
+      "excess": 0.708,
+      "steps_used": [
+       -1,
+       0,
+       2,
+       3
+      ]
+     },
+     "off_best_ratio_px": [
+      14.0,
+      24.0
+     ],
+     "tailwind_scale_share": 0.995
+    },
+    "on_token_share": 0.991
+   },
+   "line_height": {
+    "considered": 436,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 316,
+      "share": 0.725
+     },
+     {
+      "value": 1.45,
+      "count": 98,
+      "share": 0.225
+     },
+     {
+      "value": 1.75,
+      "count": 17,
+      "share": 0.039
+     },
+     {
+      "value": 1.35,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 1.25,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 1.55,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "1.45": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "1.75": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "1.35": "h1.mt-16.mb-4:nth-of-type(1) > a.inline-block.text-current",
+     "1.25": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32",
+     "1.55": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > pre.geist-overflow-scroll-y"
+    }
+   },
+   "letter_spacing": {
+    "considered": 436,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 422,
+      "share": 0.968
+     },
+     {
+      "value": -0.02,
+      "count": 10,
+      "share": 0.023
+     },
+     {
+      "value": -0.04,
+      "count": 4,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "0.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > p.mb-4.leading-7:nth-of-type(1)",
+     "-0.02": "h2.text-heading-16.font-medium:nth-of-type(1) > a.inline-block.text-current",
+     "-0.04": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32"
+    }
+   },
+   "spacing": {
+    "considered": 598,
+    "distinct": 15,
+    "values": [
+     {
+      "value": 2.0,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 3.5,
+      "count": 178,
+      "share": 0.298
+     },
+     {
+      "value": 12.0,
+      "count": 133,
+      "share": 0.222
+     },
+     {
+      "value": 16.0,
+      "count": 31,
+      "share": 0.052
+     },
+     {
+      "value": 4.0,
+      "count": 19,
+      "share": 0.032
+     },
+     {
+      "value": 20.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 8.0,
+      "count": 18,
+      "share": 0.03
+     },
+     {
+      "value": 56.0,
+      "count": 10,
+      "share": 0.017
+     },
+     {
+      "value": 64.0,
+      "count": 3,
+      "share": 0.005
+     },
+     {
+      "value": 80.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 128.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 10.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 6.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 48.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "2.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingTop",
+     "3.5": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1) paddingLeft",
+     "12.0": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(1) marginBottom",
+     "16.0": "body.tailwind.tailwind-no-preflight > div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > h1.mb-4.text-heading-32 marginBottom",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1 paddingLeft",
+     "20.0": "div.min-h-screen.py-4:nth-of-type(2) > div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) paddingLeft",
+     "8.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(2) > li.mb-3.text-copy-16:nth-of-type(2) > ul.pl-5.mb-4 marginTop",
+     "56.0": "#interactions marginTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.5,
+       4.0
+      ],
+      "counts": [
+       178,
+       19
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.702,
+     "share_on_8px": 0.666,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.696,
+       "chance_share": 0.3,
+       "excess": 0.396
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.334,
+       "chance_share": 0.25,
+       "excess": 0.084
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.527,
+       "chance_share": 0.217,
+       "excess": 0.31
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.411,
+       "chance_share": 0.175,
+       "excess": 0.236
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.334,
+       "chance_share": 0.15,
+       "excess": 0.184
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.696,
+      "chance_share": 0.3,
+      "excess": 0.396
+     },
+     "share_fractional": 0.298,
+     "off_4px_values": [
+      {
+       "value": 3.5,
+       "count": 178
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.677
+   },
+   "radius": {
+    "considered": 101,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 6.0,
+      "count": 92,
+      "share": 0.911
+     },
+     {
+      "value": 4.0,
+      "count": 9,
+      "share": 0.089
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "6.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)",
+     "4.0": "div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(20) > a.text-gray-900.underline:nth-of-type(2) > code.bg-gray-100.px-1"
+    },
+    "on_token_share": 0.911
+   },
+   "shadow": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px",
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px": "main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none > button.outline-none.m-0"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 90,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 90,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "main > div.-mb-4 > ul.pl-5.mb-4:nth-of-type(1) > li.mb-3.text-copy-16:nth-of-type(2) > code.bg-gray-100.px-1:nth-of-type(1)"
+    }
+   },
+   "z_index": {
+    "considered": 130,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 10,
+      "count": 130,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "10": "strong.font-medium.text-gray-1000\\/90 > a.relative.text-current > span.relative.z-10:nth-of-type(1)"
+    },
+    "ladder": {
+     "values": [
+      10
+     ],
+     "max": 10,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 150,
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": 200,
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "150": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none",
+     "200": "div.hover\\:opacity-80.outline-none > button.outline-none.m-0 > span.truncate.px-1\\.5 > div.relative.size-4 > div.absolute.transition-all:nth-of-type(2)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 3,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "count": 3,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "cubic-bezier(0.4, 0, 0.2, 1)": "div.text-gray-900.max-w-\\(--breakpoint-lg\\) > main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none"
+    }
+   },
+   "font_family": {
+    "considered": 436,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "GeistSans",
+      "count": 337,
+      "share": 0.773
+     },
+     {
+      "value": "Geist Mono",
+      "count": 99,
+      "share": 0.227
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "GeistSans": "GeistSans, \"GeistSans Fallback\"",
+     "Geist Mono": "\"Geist Mono\", Menlo, Monaco, \"Lucida Console\", \"Liberation Mono\", \"DejaVu Sans M"
+    }
+   },
+   "colour_all": {
+    "considered": 626,
+    "distinct": 7,
+    "opaque_distinct": 6,
+    "near_duplicates": [],
+    "on_token_share": 1.0
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": []
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "3 font families render: Geist, Geist Mono, GeistSans",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "skipped: only 2 type roles",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": []
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": []
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": [
+    {
+     "where": ".\\!transition-all",
+     "evidence": "\"transition-property: all !important\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".transition-all",
+     "evidence": "\"transition-property: all\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".\\[transition\\:all_var\\(--transition-length\\)_ease_var\\(--de",
+     "evidence": "\"transition: all var(--transition-length) ease var(--delay)\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": "main > div.-mb-4 > div.relative.w-fit > div.hover\\:opacity-80.outline-none > button.outline-none.m-0",
+     "evidence": "2 elements transition \"all\" (0.15s): every property change animates, including layout",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".krR_2a_root",
+     "evidence": "transition on a layout property: \"height 0.4s\"",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".transition-\\[bottom\\]",
+     "evidence": "transition on a layout property: \"bottom\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [
+  "#dont-block-paste",
+  "#dont-block-typing",
+  "#dont-pre-disable-submit",
+  "#dont-ship-the-schema",
+  "#dont-trigger-password-managers-for-non-auth-fields",
+  "#dont-use-the-main-thread-for-expensive-work",
+  "#semantics-before-aria"
+ ],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

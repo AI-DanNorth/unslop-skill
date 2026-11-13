@@ -1,0 +1,3611 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L34",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 45
+ },
+ "stylesheet": {
+  "rules_listed": 1092,
+  "unreadable_sheets": 0,
+  "unreadable": [],
+  "style_rules": 6864,
+  "declarations": 24006,
+  "root_font_px": 16.0,
+  "note": null,
+  "verified": true
+ },
+ "tokens": {
+  "declared": 1307,
+  "own": 1307,
+  "framework_internal": 0,
+  "by_scope": {
+   "scoped": 1303,
+   "root": 4
+  },
+  "by_family": {
+   "colour": 678,
+   "spacing": 267,
+   "length": 85,
+   "font_size": 65,
+   "shadow": 56,
+   "other": 43,
+   "radius": 21,
+   "line_height": 20,
+   "z_index": 18,
+   "duration": 12,
+   "container": 10,
+   "font_family": 10,
+   "border_width": 9,
+   "easing": 8,
+   "font_weight": 5
+  },
+  "by_tier_guess": {
+   "component": 640,
+   "semantic": 321,
+   "other": 155,
+   "primitive": 142,
+   "scale_step": 49
+  },
+  "aliases": 125,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [
+   "--ant-avatar-group-border-color",
+   "--ant-breadcrumb-item-color",
+   "--ant-breadcrumb-last-item-color",
+   "--ant-breadcrumb-link-color",
+   "--ant-breadcrumb-link-hover-color",
+   "--ant-breadcrumb-separator-color",
+   "--ant-btn-bg-color",
+   "--ant-btn-border-color",
+   "--ant-btn-text-color",
+   "--ant-button-border-color-disabled",
+   "--ant-button-danger-color",
+   "--ant-button-dashed-bg-disabled",
+   "--ant-button-default-active-bg",
+   "--ant-button-default-active-border-color",
+   "--ant-button-default-active-color"
+  ],
+  "referenced_by_declarations": 967,
+  "var_references": 6813,
+  "alias_references": 623,
+  "own_tokens_never_referenced": {
+   "count": 206,
+   "sample": [
+    "--ant-blue",
+    "--ant-blue-10",
+    "--ant-blue-4",
+    "--ant-blue-5",
+    "--ant-blue-8",
+    "--ant-blue-9",
+    "--ant-border-radius-outer",
+    "--ant-btn-border-color-disabled",
+    "--ant-btn-text-color-disabled",
+    "--ant-button-content-line-height",
+    "--ant-button-content-line-height-lg",
+    "--ant-button-content-line-height-sm",
+    "--ant-button-default-border-color-disabled",
+    "--ant-button-padding-block",
+    "--ant-button-padding-block-lg",
+    "--ant-button-padding-block-sm",
+    "--ant-calendar-cell-hover-with-range-bg",
+    "--ant-calendar-cell-range-border-color",
+    "--ant-calendar-internal_fixed_item_margin",
+    "--ant-calendar-multiple-item-bg",
+    "--ant-calendar-multiple-item-border-color",
+    "--ant-calendar-multiple-item-border-color-disabled",
+    "--ant-calendar-multiple-item-color-disabled",
+    "--ant-calendar-multiple-item-height",
+    "--ant-calendar-multiple-item-height-lg"
+   ]
+  },
+  "undeclared_references": {
+   "count": 97,
+   "without_fallback": [
+    {
+     "name": "--ant-steps-description-max-width",
+     "uses": 11
+    },
+    {
+     "name": "--arrow-x",
+     "uses": 3
+    },
+    {
+     "name": "--columns-count",
+     "uses": 3
+    },
+    {
+     "name": "--dot-duration",
+     "uses": 2
+    },
+    {
+     "name": "--ant-modal-xs-width",
+     "uses": 2
+    },
+    {
+     "name": "--ant-splitter-bar-preview-offset",
+     "uses": 2
+    },
+    {
+     "name": "--top-notificiation-width",
+     "uses": 2
+    },
+    {
+     "name": "--top-notificiation-height",
+     "uses": 2
+    },
+    {
+     "name": "--ant-col--flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-xs-flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-sm-flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-md-flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-lg-flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-xl-flex",
+     "uses": 1
+    },
+    {
+     "name": "--ant-col-xxl-flex",
+     "uses": 1
+    }
+   ],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--ant-line-width",
+    "uses": 345,
+    "family": "length",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-font-size",
+    "uses": 226,
+    "family": "font_size",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-motion-duration-slow",
+    "uses": 216,
+    "family": "duration",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-grid-display",
+    "uses": 192,
+    "family": "other",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-motion-duration-mid",
+    "uses": 189,
+    "family": "duration",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-line-type",
+    "uses": 187,
+    "family": "other",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-font-family",
+    "uses": 151,
+    "family": "font_family",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-color-text",
+    "uses": 149,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-border-radius-lg",
+    "uses": 121,
+    "family": "radius",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-padding-xs",
+    "uses": 116,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--ant-color-text-disabled",
+    "uses": 115,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-color-primary",
+    "uses": 107,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-line-height",
+    "uses": 106,
+    "family": "line_height",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-margin-xxl",
+    "uses": 99,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--ant-border-radius-sm",
+    "uses": 96,
+    "family": "radius",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-margin-xs",
+    "uses": 88,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--ant-motion-ease-in-out",
+    "uses": 85,
+    "family": "easing",
+    "tier": "other"
+   },
+   {
+    "name": "--ant-border-radius",
+    "uses": 76,
+    "family": "radius",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ant-padding-xxs",
+    "uses": 75,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--ant-color-bg-container",
+    "uses": 73,
+    "family": "container",
+    "tier": "semantic"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--ant-blue",
+    "--ant-blue-1",
+    "--ant-blue-10",
+    "--ant-blue-2",
+    "--ant-blue-3",
+    "--ant-blue-4",
+    "--ant-blue-5",
+    "--ant-blue-6",
+    "--ant-blue-7",
+    "--ant-blue-8",
+    "--ant-blue-9",
+    "--ant-color-white"
+   ],
+   "semantic": [
+    "--ant-anchor-link-padding-block",
+    "--ant-anchor-link-padding-inline-start",
+    "--ant-blue-active",
+    "--ant-blue-hover",
+    "--ant-border-radius",
+    "--ant-border-radius-lg",
+    "--ant-border-radius-outer",
+    "--ant-border-radius-sm",
+    "--ant-border-radius-xs",
+    "--ant-box-shadow",
+    "--ant-box-shadow-secondary",
+    "--ant-box-shadow-tertiary"
+   ],
+   "component": [
+    "--ant-alert-container-border-radius",
+    "--ant-alert-default-padding",
+    "--ant-alert-with-description-icon-size",
+    "--ant-alert-with-description-padding",
+    "--ant-avatar-container-size",
+    "--ant-avatar-container-size-lg",
+    "--ant-avatar-container-size-sm",
+    "--ant-avatar-group-border-color",
+    "--ant-avatar-group-overlapping",
+    "--ant-avatar-group-space",
+    "--ant-avatar-icon-font-size",
+    "--ant-avatar-icon-font-size-lg"
+   ],
+   "scale_step": [
+    "--ant-collapse-content-padding-lg",
+    "--ant-collapse-content-padding-sm",
+    "--ant-date-picker-multiple-item-height-lg",
+    "--ant-date-picker-multiple-item-height-sm",
+    "--ant-date-picker-padding-block-lg",
+    "--ant-date-picker-padding-block-sm",
+    "--ant-date-picker-padding-inline-lg",
+    "--ant-date-picker-padding-inline-sm",
+    "--ant-font-height-lg",
+    "--ant-font-height-sm",
+    "--ant-font-size-lg",
+    "--ant-font-size-sm"
+   ],
+   "other": [
+    "--ant-affix-z-index-popup",
+    "--ant-cascader-option-padding",
+    "--ant-cmp-mentions-padding-block",
+    "--ant-cmp-mentions-padding-inline",
+    "--ant-cmp-steps-dot-icon-size",
+    "--ant-cmp-steps-horizontal-rail-margin",
+    "--ant-cmp-steps-icon-dot-size-custom",
+    "--ant-cmp-steps-icon-dot-size-origin",
+    "--ant-cmp-steps-icon-size",
+    "--ant-cmp-steps-icon-size-max",
+    "--ant-cmp-steps-icon-size-ptg-unitless",
+    "--ant-cmp-steps-item-content-color"
+   ]
+  },
+  "pools": {
+   "z_index": 9,
+   "radius": 7,
+   "spacing": 29,
+   "length": 43,
+   "colour": 172,
+   "font_size": 11,
+   "shadow": 34,
+   "duration": 2,
+   "border_width": 2,
+   "line_height": 2
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "border_width": {
+    "var": 50,
+    "literal": 80,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 10,
+    "var_share_of_non_keyword": 0.385,
+    "literal_share_of_non_keyword": 0.615
+   },
+   "colour": {
+    "var": 1976,
+    "literal": 657,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 404,
+    "var_share_of_non_keyword": 0.75,
+    "literal_share_of_non_keyword": 0.25
+   },
+   "duration": {
+    "var": 328,
+    "literal": 137,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 53,
+    "var_share_of_non_keyword": 0.705,
+    "literal_share_of_non_keyword": 0.295
+   },
+   "easing": {
+    "var": 30,
+    "literal": 22,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.577,
+    "literal_share_of_non_keyword": 0.423
+   },
+   "font_family": {
+    "var": 156,
+    "literal": 16,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 8,
+    "var_share_of_non_keyword": 0.907,
+    "literal_share_of_non_keyword": 0.093
+   },
+   "font_size": {
+    "var": 366,
+    "literal": 84,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 18,
+    "var_share_of_non_keyword": 0.813,
+    "literal_share_of_non_keyword": 0.187
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 2,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "line_height": {
+    "var": 211,
+    "literal": 42,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 90,
+    "var_share_of_non_keyword": 0.834,
+    "literal_share_of_non_keyword": 0.166
+   },
+   "radius": {
+    "var": 311,
+    "literal": 61,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 205,
+    "var_share_of_non_keyword": 0.836,
+    "literal_share_of_non_keyword": 0.164
+   },
+   "shadow": {
+    "var": 106,
+    "literal": 26,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 39,
+    "var_share_of_non_keyword": 0.803,
+    "literal_share_of_non_keyword": 0.197
+   },
+   "spacing": {
+    "var": 734,
+    "literal": 447,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 537,
+    "var_share_of_non_keyword": 0.622,
+    "literal_share_of_non_keyword": 0.378
+   },
+   "z_index": {
+    "var": 34,
+    "literal": 71,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 95,
+    "var_share_of_non_keyword": 0.324,
+    "literal_share_of_non_keyword": 0.676
+   }
+  },
+  "literal_retypes_a_token_value": {
+   "spacing": {
+    "count": 241,
+    "samples": [
+     {
+      "sel": ".dumi-default-search-bar:not(:last-child)",
+      "prop": "margin-inline-end",
+      "value": 28.0
+     },
+     {
+      "sel": ".dumi-default-search-bar-svg",
+      "prop": "margin-top",
+      "value": 1.0
+     },
+     {
+      "sel": ".dumi-default-search-bar-input",
+      "prop": "padding-inline",
+      "value": 40.0
+     },
+     {
+      "sel": ".dumi-default-search-bar-input",
+      "prop": "padding-inline",
+      "value": 12.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-shortcut",
+      "prop": "padding",
+      "value": 4.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-shortcut",
+      "prop": "padding",
+      "value": 8.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-popover",
+      "prop": "margin-top",
+      "value": 18.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-content",
+      "prop": "padding",
+      "value": 12.0
+     }
+    ]
+   },
+   "radius": {
+    "count": 60,
+    "samples": [
+     {
+      "sel": ".dumi-default-search-bar-input",
+      "prop": "border-radius",
+      "value": 20.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-popover",
+      "prop": "border-radius",
+      "value": 8.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-content",
+      "prop": "border-radius",
+      "value": 8.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal .dumi-default-search-bar-inp",
+      "prop": "border-radius",
+      "value": 4.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-shortcut",
+      "prop": "border-radius",
+      "value": 3.0
+     },
+     {
+      "sel": ".demo-logo",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".demo-logo-vertical",
+      "prop": "border-radius",
+      "value": 6.0
+     },
+     {
+      "sel": ".dumi-default-badge",
+      "prop": "border-radius",
+      "value": 4.0
+     }
+    ]
+   },
+   "font_size": {
+    "count": 64,
+    "samples": [
+     {
+      "sel": ".dumi-default-search-bar-input",
+      "prop": "font-size",
+      "value": 14.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-shortcut",
+      "prop": "font-size",
+      "value": 12.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-commands",
+      "prop": "font-size",
+      "value": 12.0
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-shortcut",
+      "prop": "font-size",
+      "value": 12.0
+     },
+     {
+      "sel": ".rc-footer",
+      "prop": "font-size",
+      "value": 14.0
+     },
+     {
+      "sel": ".rc-footer-column h2",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".rc-footer-bottom-container",
+      "prop": "font-size",
+      "value": 16.0
+     },
+     {
+      "sel": ".dumi-default-badge",
+      "prop": "font-size",
+      "value": 12.0
+     }
+    ]
+   },
+   "colour": {
+    "count": 250,
+    "samples": [
+     {
+      "sel": ".dumi-default-search-bar-input:focus",
+      "prop": "background-color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-popover",
+      "prop": "background-color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-mask",
+      "prop": "background-color",
+      "value": "#000000/0.45"
+     },
+     {
+      "sel": ".dumi-default-search-bar .dumi-default-search-modal-content",
+      "prop": "background-color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".rc-footer",
+      "prop": "background-color",
+      "value": "#000000"
+     },
+     {
+      "sel": ".rc-footer-column h2",
+      "prop": "color",
+      "value": "#ffffff"
+     },
+     {
+      "sel": ".rc-footer-bottom-container",
+      "prop": "border-top",
+      "value": "#ffffff/0.25"
+     },
+     {
+      "sel": ".rc-footer-light",
+      "prop": "color",
+      "value": "#000000/0.85"
+     }
+    ]
+   }
+  },
+  "distinct_literal_colours": 263,
+  "literal_colours_top": [
+   {
+    "value": "#ffffff",
+    "count": 32
+   },
+   {
+    "value": "#000000/0.88",
+    "count": 18
+   },
+   {
+    "value": "#1677ff",
+    "count": 12
+   },
+   {
+    "value": "#8a9099",
+    "count": 11
+   },
+   {
+    "value": "#616d7f",
+    "count": 11
+   },
+   {
+    "value": "#050505/0.06",
+    "count": 11
+   },
+   {
+    "value": "#383a42",
+    "count": 10
+   },
+   {
+    "value": "#1c2022",
+    "count": 9
+   },
+   {
+    "value": "#d0d5d8",
+    "count": 8
+   },
+   {
+    "value": "#30363f",
+    "count": 7
+   },
+   {
+    "value": "#c6c9cd",
+    "count": 7
+   },
+   {
+    "value": "#000000/0.20",
+    "count": 6
+   },
+   {
+    "value": "#0f161d",
+    "count": 6
+   },
+   {
+    "value": "#e4e9ec",
+    "count": 6
+   },
+   {
+    "value": "#000000/0.04",
+    "count": 6
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 4,
+  "base_colour_tokens": 0,
+  "base_semantic_colour_tokens": 0,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 35,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [
+   "class_or_attr"
+  ],
+  "dark_selectors": [
+   {
+    "selector": ".dark",
+    "declarations": 35
+   }
+  ],
+  "dark_redefines_base": 0,
+  "dark_only_names": [
+   "--xy-attribution-background-color-default",
+   "--xy-background-color-default",
+   "--xy-background-pattern-cross-color-default",
+   "--xy-background-pattern-dots-color-default",
+   "--xy-background-pattern-lines-color-default",
+   "--xy-connectionline-stroke-default",
+   "--xy-connectionline-stroke-width-default",
+   "--xy-controls-box-shadow-default",
+   "--xy-controls-button-background-color-default",
+   "--xy-controls-button-background-color-hover-default",
+   "--xy-controls-button-border-color-default",
+   "--xy-controls-button-color-default",
+   "--xy-controls-button-color-hover-default",
+   "--xy-edge-label-background-color-default",
+   "--xy-edge-label-color-default",
+   "--xy-edge-stroke-default",
+   "--xy-edge-stroke-selected-default",
+   "--xy-edge-stroke-width-default",
+   "--xy-handle-background-color-default",
+   "--xy-handle-border-color-default",
+   "--xy-minimap-background-color-default",
+   "--xy-minimap-mask-background-color-default",
+   "--xy-minimap-mask-stroke-color-default",
+   "--xy-minimap-mask-stroke-width-default",
+   "--xy-minimap-node-background-color-default",
+   "--xy-minimap-node-stroke-color-default",
+   "--xy-minimap-node-stroke-width-default",
+   "--xy-node-background-color-default",
+   "--xy-node-border-default",
+   "--xy-node-boxshadow-hover-default"
+  ],
+  "semantic_colour_redefined_share": null,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [
+   "dark",
+   "light"
+  ],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "ant": {
+   "tokens_or_refs": 1289,
+   "distinct_class_names": 52
+  },
+  "tailwind_v4_theme": {
+   "theme_tokens": 2,
+   "layer_theme": true
+  },
+  "css_modules_or_in_js": {
+   "distinct_class_names": 1
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 546,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 179,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#000000/0.88",
+      "count": 135,
+      "share": 0.754
+     },
+     {
+      "value": "#000000/0.65",
+      "count": 41,
+      "share": 0.229
+     },
+     {
+      "value": "#ffffff",
+      "count": 2,
+      "share": 0.011
+     },
+     {
+      "value": "#000000/0.45",
+      "count": 1,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#000000/0.88": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "#000000/0.65": "div.ant-descriptions-item-container > span.ant-descriptions-item-content:nth-of-type(2) > div.ant-flex.css-i19pbt > a.ant-typography.ant-typography-link:nth-of-type(1) > span:nth-of-type(2)",
+     "#ffffff": "div.acss-ven19h > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(5) > span.ant-avatar-string",
+     "#000000/0.45": "tbody > tr.ant-descriptions-row > td.ant-descriptions-item > div.ant-descriptions-item-container > span.ant-descriptions-item-label.ant-descriptions-item-no-colon:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 25,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#f2f4f5",
+      "count": 22,
+      "share": 0.88
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#000000/0.25",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#f0f3fa",
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#f2f4f5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1)",
+     "#ffffff": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "#000000/0.25": "div:nth-of-type(5) > div.acss-ven19h > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(5)",
+     "#f0f3fa": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > footer.rc-footer.acss-nqf0sb"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 23,
+      "max_oklab": 0.0083
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 9,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 5,
+      "share": 0.556
+     },
+     {
+      "value": "#050505/0.06",
+      "count": 3,
+      "share": 0.333
+     },
+     {
+      "value": "#ffffff/0.25",
+      "count": 1,
+      "share": 0.111
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#ffffff": "div:nth-of-type(5) > div.acss-ven19h > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(1)",
+     "#050505/0.06": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div.ant-divider.css-i19pbt:nth-of-type(3)",
+     "#ffffff/0.25": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > footer.rc-footer.acss-nqf0sb > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 179,
+    "distinct": 7,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 111,
+      "share": 0.62
+     },
+     {
+      "value": 12.0,
+      "count": 36,
+      "share": 0.201
+     },
+     {
+      "value": 16.0,
+      "count": 14,
+      "share": 0.078
+     },
+     {
+      "value": 18.0,
+      "count": 10,
+      "share": 0.056
+     },
+     {
+      "value": 24.0,
+      "count": 5,
+      "share": 0.028
+     },
+     {
+      "value": 12.5,
+      "count": 2,
+      "share": 0.011
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "14.0": "tbody > tr.ant-descriptions-row > td.ant-descriptions-item > div.ant-descriptions-item-container > span.ant-descriptions-item-label.ant-descriptions-item-no-colon:nth-of-type(1)",
+     "12.0": "section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "16.0": "#default-button",
+     "18.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "24.0": "#design-principal",
+     "12.5": "div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote > p",
+     "32.0": "div.ant-flex.css-i19pbt:nth-of-type(1) > h1.ant-typography.css-i19pbt > div.ant-space.css-i19pbt > div.ant-space-item:nth-of-type(1) > span"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       36,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.2,
+      "base_px": 14.0,
+      "share_on": 0.849,
+      "chance_share": 0.324,
+      "excess": 0.525,
+      "steps_used": [
+       -1,
+       0,
+       1,
+       3,
+       5
+      ]
+     },
+     "off_best_ratio_px": [
+      12.5,
+      16.0,
+      18.0,
+      32.0
+     ],
+     "tailwind_scale_share": 0.994
+    },
+    "on_token_share": 1.0
+   },
+   "line_height": {
+    "considered": 179,
+    "distinct": 7,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 77,
+      "share": 0.43
+     },
+     {
+      "value": 2.0,
+      "count": 60,
+      "share": 0.335
+     },
+     {
+      "value": 1.55,
+      "count": 32,
+      "share": 0.179
+     },
+     {
+      "value": 1.35,
+      "count": 5,
+      "share": 0.028
+     },
+     {
+      "value": 2.3,
+      "count": 3,
+      "share": 0.017
+     },
+     {
+      "value": 1.8,
+      "count": 1,
+      "share": 0.006
+     },
+     {
+      "value": 1.2,
+      "count": 1,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(4) > div.preview-image-box:nth-of-type(1) > div.preview-image-description:nth-of-type(3)",
+     "2.0": "article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+     "1.55": "section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "1.35": "#design-principal",
+     "2.3": "div.ant-col.ant-col-xs-24 > footer.rc-footer.acss-nqf0sb > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container > div:nth-of-type(1)",
+     "1.8": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "1.2": "div.ant-flex.css-i19pbt:nth-of-type(1) > h1.ant-typography.css-i19pbt > div.ant-space.css-i19pbt > div.ant-space-item:nth-of-type(1) > span"
+    }
+   },
+   "letter_spacing": {
+    "considered": 179,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 178,
+      "share": 0.994
+     },
+     {
+      "value": -0.01,
+      "count": 1,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "-0.01": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl"
+    }
+   },
+   "spacing": {
+    "considered": 456,
+    "distinct": 24,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 107,
+      "share": 0.235
+     },
+     {
+      "value": 12.0,
+      "count": 77,
+      "share": 0.169
+     },
+     {
+      "value": 4.0,
+      "count": 59,
+      "share": 0.129
+     },
+     {
+      "value": 10.0,
+      "count": 46,
+      "share": 0.101
+     },
+     {
+      "value": 14.0,
+      "count": 44,
+      "share": 0.096
+     },
+     {
+      "value": 2.0,
+      "count": 28,
+      "share": 0.061
+     },
+     {
+      "value": 20.0,
+      "count": 13,
+      "share": 0.029
+     },
+     {
+      "value": 25.5,
+      "count": 10,
+      "share": 0.022
+     },
+     {
+      "value": 9.5,
+      "count": 10,
+      "share": 0.022
+     },
+     {
+      "value": 29.0,
+      "count": 9,
+      "share": 0.02
+     },
+     {
+      "value": 11.0,
+      "count": 9,
+      "share": 0.02
+     },
+     {
+      "value": 3.0,
+      "count": 7,
+      "share": 0.015
+     },
+     {
+      "value": 8.0,
+      "count": 7,
+      "share": 0.015
+     },
+     {
+      "value": 38.5,
+      "count": 5,
+      "share": 0.011
+     },
+     {
+      "value": 14.5,
+      "count": 5,
+      "share": 0.011
+     },
+     {
+      "value": 12.5,
+      "count": 4,
+      "share": 0.009
+     },
+     {
+      "value": 48.0,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 60.0,
+      "count": 3,
+      "share": 0.007
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.004
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.004
+     },
+     {
+      "value": 15.0,
+      "count": 2,
+      "share": 0.004
+     },
+     {
+      "value": 40.0,
+      "count": 2,
+      "share": 0.004
+     },
+     {
+      "value": 164.0,
+      "count": 1,
+      "share": 0.002
+     },
+     {
+      "value": 120.0,
+      "count": 1,
+      "share": 0.002
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "16.0": "div.ant-col.ant-col-xs-24 > section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) paddingLeft",
+     "12.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 columnGap",
+     "4.0": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ paddingTop",
+     "10.0": "div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box marginTop",
+     "14.0": "div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > p:nth-of-type(1) marginTop",
+     "2.0": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > section.acss-1feyapq > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor paddingLeft",
+     "20.0": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(4) > div.preview-image-box:nth-of-type(1) > div.preview-image-title:nth-of-type(2) marginTop",
+     "25.5": "#default-button marginTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.0,
+       4.0
+      ],
+      "counts": [
+       7,
+       59
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       9,
+       77
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       77,
+       4
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       2,
+       107
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.866,
+     "share_on_8px": 0.632,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.669,
+       "chance_share": 0.3,
+       "excess": 0.369
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.208,
+       "chance_share": 0.25,
+       "excess": -0.042
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.25,
+       "chance_share": 0.217,
+       "excess": 0.033
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.333,
+       "chance_share": 0.175,
+       "excess": 0.158
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.204,
+       "chance_share": 0.15,
+       "excess": 0.054
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.669,
+      "chance_share": 0.3,
+      "excess": 0.369
+     },
+     "share_fractional": 0.075,
+     "off_4px_values": [
+      {
+       "value": 25.5,
+       "count": 10
+      },
+      {
+       "value": 9.5,
+       "count": 10
+      },
+      {
+       "value": 29.0,
+       "count": 9
+      },
+      {
+       "value": 11.0,
+       "count": 9
+      },
+      {
+       "value": 3.0,
+       "count": 7
+      },
+      {
+       "value": 38.5,
+       "count": 5
+      },
+      {
+       "value": 14.5,
+       "count": 5
+      },
+      {
+       "value": 12.5,
+       "count": 4
+      },
+      {
+       "value": 15.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.971
+   },
+   "radius": {
+    "considered": 27,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 6.0,
+      "count": 24,
+      "share": 0.889
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.074
+     },
+     {
+      "value": 8.0,
+      "count": 1,
+      "share": 0.037
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "6.0": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > section.acss-1feyapq",
+     "4.0": "td.ant-descriptions-item > div.ant-descriptions-item-container > span.ant-descriptions-item-content:nth-of-type(2) > div.ant-flex.css-i19pbt > a.ant-typography.ant-typography-link:nth-of-type(1)",
+     "8.0": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div.ant-descriptions.ant-descriptions-small:nth-of-type(2) > div.ant-descriptions-view"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > footer.rc-footer.acss-nqf0sb",
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 10,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 8,
+      "share": 0.8
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.2
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div.ant-divider.css-i19pbt:nth-of-type(3)",
+     "4.0": "div:nth-of-type(4) > div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote"
+    }
+   },
+   "z_index": {
+    "considered": 3,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1000,
+      "count": 1,
+      "share": 0.333
+     },
+     {
+      "value": 1,
+      "count": 1,
+      "share": 0.333
+     },
+     {
+      "value": 10,
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "1000": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "1": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix > span.anticon.anticon-menu",
+     "10": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24 > section.acss-1feyapq"
+    },
+    "ladder": {
+     "values": [
+      1,
+      10,
+      1000
+     ],
+     "max": 1000,
+     "over_1000": [
+      1000
+     ],
+     "distinct": 3
+    }
+   },
+   "duration": {
+    "considered": 102,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 300,
+      "count": 101,
+      "share": 0.99
+     },
+     {
+      "value": 200,
+      "count": 1,
+      "share": 0.01
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "300": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "200": "div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div:nth-of-type(5) > div.acss-ven19h > button.ant-btn.css-i19pbt"
+    },
+    "on_token_share": 0.0
+   },
+   "easing": {
+    "considered": 102,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "ease",
+      "count": 101,
+      "share": 0.99
+     },
+     {
+      "value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "count": 1,
+      "share": 0.01
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "ease": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "cubic-bezier(0.645, 0.045, 0.355, 1)": "div.ant-col.ant-col-xs-24 > article.acss-n5pafq > div:nth-of-type(5) > div.acss-ven19h > button.ant-btn.css-i19pbt"
+    }
+   },
+   "font_family": {
+    "considered": 179,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "AlibabaSans",
+      "count": 152,
+      "share": 0.849
+     },
+     {
+      "value": "Avenir",
+      "count": 25,
+      "share": 0.14
+     },
+     {
+      "value": "SFMono-Regular",
+      "count": 2,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "AlibabaSans": "AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica N",
+     "Avenir": "Avenir, AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Hel",
+     "SFMono-Regular": "SFMono-Regular, Consolas, \"Liberation Mono\", Menlo, Courier, monospace"
+    }
+   },
+   "colour_all": {
+    "considered": 213,
+    "distinct": 9,
+    "opaque_distinct": 3,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 23,
+      "max_oklab": 0.0083
+     }
+    ],
+    "on_token_share": 0.892
+   }
+  },
+  "1280": {
+   "elements_visible": 778,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 240,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#000000/0.88",
+      "count": 185,
+      "share": 0.771
+     },
+     {
+      "value": "#000000/0.65",
+      "count": 41,
+      "share": 0.171
+     },
+     {
+      "value": "#000000/0.45",
+      "count": 6,
+      "share": 0.025
+     },
+     {
+      "value": "#1677ff",
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": "#ffffff",
+      "count": 3,
+      "share": 0.013
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#000000/0.88": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "#000000/0.65": "div.ant-descriptions-item-container > span.ant-descriptions-item-content:nth-of-type(2) > div.ant-flex.css-i19pbt > a.ant-typography.ant-typography-link:nth-of-type(1) > span:nth-of-type(2)",
+     "#000000/0.45": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > div.ant-menu-item-group-title",
+     "#1677ff": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "#ffffff": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 34,
+    "distinct": 7,
+    "values": [
+     {
+      "value": "#f2f4f5",
+      "count": 22,
+      "share": 0.647
+     },
+     {
+      "value": "#ffffff",
+      "count": 7,
+      "share": 0.206
+     },
+     {
+      "value": "#000000/0.04",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#000000/0.88",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#e6f4ff",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#000000/0.25",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#f0f3fa",
+      "count": 1,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 5,
+    "examples": {
+     "#f2f4f5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1)",
+     "#ffffff": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "#000000/0.04": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4)",
+     "#000000/0.88": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)",
+     "#e6f4ff": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > ul.ant-menu-item-group-list > li.ant-menu-item.ant-menu-item-selected:nth-of-type(7)",
+     "#000000/0.25": "div:nth-of-type(5) > div > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(5)",
+     "#f0f3fa": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#e6f4ff",
+        "count": 1
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0195
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 17,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#050505/0.06",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "#ffffff",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "#f5f5f5",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "#000000/0.88",
+      "count": 2,
+      "share": 0.118
+     },
+     {
+      "value": "#ffffff/0.25",
+      "count": 1,
+      "share": 0.059
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#050505/0.06": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root",
+     "#ffffff": "div:nth-of-type(5) > div > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(1)",
+     "#f5f5f5": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "#000000/0.88": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)",
+     "#ffffff/0.25": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 240,
+    "distinct": 8,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 170,
+      "share": 0.708
+     },
+     {
+      "value": 12.0,
+      "count": 36,
+      "share": 0.15
+     },
+     {
+      "value": 16.0,
+      "count": 14,
+      "share": 0.058
+     },
+     {
+      "value": 18.0,
+      "count": 10,
+      "share": 0.042
+     },
+     {
+      "value": 24.0,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 17.0,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 12.5,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "14.0": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "12.0": "section.acss-1feyapq:nth-of-type(1) > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "16.0": "#default-button",
+     "18.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "24.0": "#design-principal",
+     "17.0": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)",
+     "12.5": "div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote > p",
+     "32.0": "div.ant-flex.css-i19pbt:nth-of-type(1) > h1.ant-typography.css-i19pbt > div.ant-space.css-i19pbt > div.ant-space-item:nth-of-type(1) > span"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       36,
+       2
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       17.0
+      ],
+      "counts": [
+       14,
+       2
+      ]
+     },
+     {
+      "values": [
+       17.0,
+       18.0
+      ],
+      "counts": [
+       2,
+       10
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.618,
+      "base_px": 14.0,
+      "share_on": 0.708,
+      "chance_share": 0.123,
+      "excess": 0.585,
+      "steps_used": [
+       0,
+       1,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      12.0,
+      12.5,
+      16.0,
+      17.0,
+      18.0,
+      24.0,
+      32.0
+     ],
+     "tailwind_scale_share": 0.988
+    },
+    "on_token_share": 0.992
+   },
+   "line_height": {
+    "considered": 240,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 77,
+      "share": 0.321
+     },
+     {
+      "value": 2.0,
+      "count": 60,
+      "share": 0.25
+     },
+     {
+      "value": 2.85,
+      "count": 46,
+      "share": 0.192
+     },
+     {
+      "value": 1.55,
+      "count": 38,
+      "share": 0.158
+     },
+     {
+      "value": 4.55,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 1.35,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 2.3,
+      "count": 3,
+      "share": 0.013
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 5.15,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 1.8,
+      "count": 1,
+      "share": 0.004
+     },
+     {
+      "value": 1.2,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(4) > div.preview-image-box:nth-of-type(1) > div.preview-image-description:nth-of-type(3)",
+     "2.0": "article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+     "2.85": "div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root > li.ant-menu-submenu.ant-menu-submenu-inline:nth-of-type(1) > div.ant-menu-submenu-title > span.ant-menu-title-content",
+     "1.55": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4) > div.ant-select-content.ant-select-content-has-value:nth-of-type(1)",
+     "4.55": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "1.35": "#design-principal",
+     "2.3": "div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container > div:nth-of-type(1)",
+     "1.0": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)"
+    }
+   },
+   "letter_spacing": {
+    "considered": 240,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 239,
+      "share": 0.996
+     },
+     {
+      "value": -0.01,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "-0.01": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl"
+    }
+   },
+   "spacing": {
+    "considered": 671,
+    "distinct": 30,
+    "values": [
+     {
+      "value": 4.0,
+      "count": 153,
+      "share": 0.228
+     },
+     {
+      "value": 16.0,
+      "count": 151,
+      "share": 0.225
+     },
+     {
+      "value": 12.0,
+      "count": 85,
+      "share": 0.127
+     },
+     {
+      "value": 14.0,
+      "count": 42,
+      "share": 0.063
+     },
+     {
+      "value": 8.0,
+      "count": 35,
+      "share": 0.052
+     },
+     {
+      "value": 2.0,
+      "count": 29,
+      "share": 0.043
+     },
+     {
+      "value": 80.0,
+      "count": 29,
+      "share": 0.043
+     },
+     {
+      "value": 70.0,
+      "count": 18,
+      "share": 0.027
+     },
+     {
+      "value": 60.0,
+      "count": 16,
+      "share": 0.024
+     },
+     {
+      "value": 20.0,
+      "count": 14,
+      "share": 0.021
+     },
+     {
+      "value": 25.5,
+      "count": 10,
+      "share": 0.015
+     },
+     {
+      "value": 9.5,
+      "count": 10,
+      "share": 0.015
+     },
+     {
+      "value": 29.0,
+      "count": 9,
+      "share": 0.013
+     },
+     {
+      "value": 11.0,
+      "count": 9,
+      "share": 0.013
+     },
+     {
+      "value": 1.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 36.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 3.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.009
+     },
+     {
+      "value": 38.5,
+      "count": 5,
+      "share": 0.007
+     },
+     {
+      "value": 14.5,
+      "count": 5,
+      "share": 0.007
+     },
+     {
+      "value": 48.0,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 35.0,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 12.5,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 32.0,
+      "count": 3,
+      "share": 0.004
+     },
+     {
+      "value": 7.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 10.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 40.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 164.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 120.0,
+      "count": 1,
+      "share": 0.001
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "4.0": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root paddingLeft",
+     "16.0": "ul.ant-menu.ant-menu-sub > li.ant-menu-item.ant-menu-item-only-child:nth-of-type(1) paddingRight",
+     "12.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 columnGap",
+     "14.0": "div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > p:nth-of-type(1) marginTop",
+     "8.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) paddingLeft",
+     "2.0": "div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 columnGap",
+     "80.0": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > ul.ant-menu-item-group-list > li.ant-menu-item.ant-menu-item-only-child:nth-of-type(1) paddingLeft",
+     "70.0": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.0,
+       4.0
+      ],
+      "counts": [
+       7,
+       153
+      ]
+     },
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       2,
+       35
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       9,
+       85
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       85,
+       4
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       6,
+       151
+      ]
+     },
+     {
+      "values": [
+       35.0,
+       36.0
+      ],
+      "counts": [
+       4,
+       7
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.867,
+     "share_on_8px": 0.745,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.802,
+       "chance_share": 0.3,
+       "excess": 0.502
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.189,
+       "chance_share": 0.25,
+       "excess": -0.061
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.225,
+       "chance_share": 0.217,
+       "excess": 0.008
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.39,
+       "chance_share": 0.175,
+       "excess": 0.215
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.174,
+       "chance_share": 0.15,
+       "excess": 0.024
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.802,
+      "chance_share": 0.3,
+      "excess": 0.502
+     },
+     "share_fractional": 0.051,
+     "off_4px_values": [
+      {
+       "value": 70.0,
+       "count": 18
+      },
+      {
+       "value": 25.5,
+       "count": 10
+      },
+      {
+       "value": 9.5,
+       "count": 10
+      },
+      {
+       "value": 29.0,
+       "count": 9
+      },
+      {
+       "value": 11.0,
+       "count": 9
+      },
+      {
+       "value": 3.0,
+       "count": 7
+      },
+      {
+       "value": 15.0,
+       "count": 6
+      },
+      {
+       "value": 38.5,
+       "count": 5
+      },
+      {
+       "value": 14.5,
+       "count": 5
+      },
+      {
+       "value": 35.0,
+       "count": 4
+      },
+      {
+       "value": 12.5,
+       "count": 4
+      },
+      {
+       "value": 7.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.955
+   },
+   "radius": {
+    "considered": 84,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 8.0,
+      "count": 51,
+      "share": 0.607
+     },
+     {
+      "value": 6.0,
+      "count": 28,
+      "share": 0.333
+     },
+     {
+      "value": 4.0,
+      "count": 4,
+      "share": 0.048
+     },
+     {
+      "value": "full",
+      "count": 1,
+      "share": 0.012
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "8.0": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root > li.ant-menu-submenu.ant-menu-submenu-inline:nth-of-type(1)",
+     "6.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1)",
+     "4.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1)",
+     "full": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1) > input.dumi-default-search-bar-input"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t",
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 23,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 17,
+      "share": 0.739
+     },
+     {
+      "value": 2.0,
+      "count": 4,
+      "share": 0.174
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.087
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4)",
+     "2.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "4.0": "div:nth-of-type(4) > div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote"
+    }
+   },
+   "z_index": {
+    "considered": 9,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 0,
+      "count": 5,
+      "share": 0.556
+     },
+     {
+      "value": 1,
+      "count": 2,
+      "share": 0.222
+     },
+     {
+      "value": 1000,
+      "count": 1,
+      "share": 0.111
+     },
+     {
+      "value": 10,
+      "count": 1,
+      "share": 0.111
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "1": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)",
+     "1000": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "10": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > section.acss-1feyapq:nth-of-type(1)"
+    },
+    "ladder": {
+     "values": [
+      0,
+      1,
+      10,
+      1000
+     ],
+     "max": 1000,
+     "over_1000": [
+      1000
+     ],
+     "distinct": 4
+    }
+   },
+   "duration": {
+    "considered": 357,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 300,
+      "count": 340,
+      "share": 0.952
+     },
+     {
+      "value": 200,
+      "count": 13,
+      "share": 0.036
+     },
+     {
+      "value": 100,
+      "count": 4,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "300": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "200": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4) > div.ant-select-suffix:nth-of-type(2)",
+     "100": "div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1) > img.acss-1jyth9"
+    },
+    "on_token_share": 0.0
+   },
+   "easing": {
+    "considered": 357,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "ease",
+      "count": 330,
+      "share": 0.924
+     },
+     {
+      "value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "count": 25,
+      "share": 0.07
+     },
+     {
+      "value": "cubic-bezier(0.2, 0, 0, 1)",
+      "count": 2,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "cubic-bezier(0.645, 0.045, 0.355, 1)": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1)",
+     "cubic-bezier(0.2, 0, 0, 1)": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > ul.ant-menu.ant-menu-root"
+    }
+   },
+   "font_family": {
+    "considered": 240,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "AlibabaSans",
+      "count": 199,
+      "share": 0.829
+     },
+     {
+      "value": "Avenir",
+      "count": 37,
+      "share": 0.154
+     },
+     {
+      "value": "sans-serif",
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": "SFMono-Regular",
+      "count": 2,
+      "share": 0.008
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "AlibabaSans": "AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica N",
+     "Avenir": "Avenir, AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Hel",
+     "sans-serif": "sans-serif",
+     "SFMono-Regular": "SFMono-Regular, Consolas, \"Liberation Mono\", Menlo, Courier, monospace"
+    }
+   },
+   "colour_all": {
+    "considered": 291,
+    "distinct": 13,
+    "opaque_distinct": 6,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#f5f5f5",
+        "count": 4
+       },
+       {
+        "value": "#e6f4ff",
+        "count": 1
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 28,
+      "max_oklab": 0.0195
+     }
+    ],
+    "on_token_share": 0.921
+   }
+  },
+  "1440": {
+   "elements_visible": 778,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 240,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#000000/0.88",
+      "count": 185,
+      "share": 0.771
+     },
+     {
+      "value": "#000000/0.65",
+      "count": 41,
+      "share": 0.171
+     },
+     {
+      "value": "#000000/0.45",
+      "count": 6,
+      "share": 0.025
+     },
+     {
+      "value": "#1677ff",
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": "#ffffff",
+      "count": 3,
+      "share": 0.013
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#000000/0.88": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "#000000/0.65": "div.ant-descriptions-item-container > span.ant-descriptions-item-content:nth-of-type(2) > div.ant-flex.css-i19pbt > a.ant-typography.ant-typography-link:nth-of-type(1) > span:nth-of-type(2)",
+     "#000000/0.45": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > div.ant-menu-item-group-title",
+     "#1677ff": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "#ffffff": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 34,
+    "distinct": 7,
+    "values": [
+     {
+      "value": "#f2f4f5",
+      "count": 22,
+      "share": 0.647
+     },
+     {
+      "value": "#ffffff",
+      "count": 7,
+      "share": 0.206
+     },
+     {
+      "value": "#000000/0.04",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#000000/0.88",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#e6f4ff",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#000000/0.25",
+      "count": 1,
+      "share": 0.029
+     },
+     {
+      "value": "#f0f3fa",
+      "count": 1,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 5,
+    "examples": {
+     "#f2f4f5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box > div.preview-image-wrapper:nth-of-type(1)",
+     "#ffffff": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "#000000/0.04": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4)",
+     "#000000/0.88": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)",
+     "#e6f4ff": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > ul.ant-menu-item-group-list > li.ant-menu-item.ant-menu-item-selected:nth-of-type(7)",
+     "#000000/0.25": "div:nth-of-type(5) > div > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(5)",
+     "#f0f3fa": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#e6f4ff",
+        "count": 1
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 24,
+      "max_oklab": 0.0195
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 17,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#050505/0.06",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "#ffffff",
+      "count": 5,
+      "share": 0.294
+     },
+     {
+      "value": "#f5f5f5",
+      "count": 4,
+      "share": 0.235
+     },
+     {
+      "value": "#000000/0.88",
+      "count": 2,
+      "share": 0.118
+     },
+     {
+      "value": "#ffffff/0.25",
+      "count": 1,
+      "share": 0.059
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#050505/0.06": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root",
+     "#ffffff": "div:nth-of-type(5) > div > button.ant-btn.css-i19pbt > div.ant-avatar-group.css-var-_R_afsua_ > span.ant-avatar.ant-avatar-sm:nth-of-type(1)",
+     "#f5f5f5": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "#000000/0.88": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)",
+     "#ffffff/0.25": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 240,
+    "distinct": 8,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 170,
+      "share": 0.708
+     },
+     {
+      "value": 12.0,
+      "count": 36,
+      "share": 0.15
+     },
+     {
+      "value": 16.0,
+      "count": 14,
+      "share": 0.058
+     },
+     {
+      "value": 18.0,
+      "count": 10,
+      "share": 0.042
+     },
+     {
+      "value": 24.0,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 17.0,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 12.5,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 32.0,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "14.0": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "12.0": "section.acss-1feyapq:nth-of-type(1) > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(1) > a.ant-anchor-link-title",
+     "16.0": "#default-button",
+     "18.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl",
+     "24.0": "#design-principal",
+     "17.0": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)",
+     "12.5": "div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote > p",
+     "32.0": "div.ant-flex.css-i19pbt:nth-of-type(1) > h1.ant-typography.css-i19pbt > div.ant-space.css-i19pbt > div.ant-space-item:nth-of-type(1) > span"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       36,
+       2
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       17.0
+      ],
+      "counts": [
+       14,
+       2
+      ]
+     },
+     {
+      "values": [
+       17.0,
+       18.0
+      ],
+      "counts": [
+       2,
+       10
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.618,
+      "base_px": 14.0,
+      "share_on": 0.708,
+      "chance_share": 0.123,
+      "excess": 0.585,
+      "steps_used": [
+       0,
+       1,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      12.0,
+      12.5,
+      16.0,
+      17.0,
+      18.0,
+      24.0,
+      32.0
+     ],
+     "tailwind_scale_share": 0.988
+    },
+    "on_token_share": 0.992
+   },
+   "line_height": {
+    "considered": 240,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 77,
+      "share": 0.321
+     },
+     {
+      "value": 2.0,
+      "count": 60,
+      "share": 0.25
+     },
+     {
+      "value": 2.85,
+      "count": 46,
+      "share": 0.192
+     },
+     {
+      "value": 1.55,
+      "count": 38,
+      "share": 0.158
+     },
+     {
+      "value": 4.55,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 1.35,
+      "count": 5,
+      "share": 0.021
+     },
+     {
+      "value": 2.3,
+      "count": 3,
+      "share": 0.013
+     },
+     {
+      "value": 1.0,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 5.15,
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": 1.8,
+      "count": 1,
+      "share": 0.004
+     },
+     {
+      "value": 1.2,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(4) > div.preview-image-box:nth-of-type(1) > div.preview-image-description:nth-of-type(3)",
+     "2.0": "article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+     "2.85": "div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root > li.ant-menu-submenu.ant-menu-submenu-inline:nth-of-type(1) > div.ant-menu-submenu-title > span.ant-menu-title-content",
+     "1.55": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4) > div.ant-select-content.ant-select-content-has-value:nth-of-type(1)",
+     "4.55": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "1.35": "#design-principal",
+     "2.3": "div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t > section.rc-footer-bottom:nth-of-type(2) > div.rc-footer-bottom-container > div:nth-of-type(1)",
+     "1.0": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-2yv8wd:nth-of-type(1)"
+    }
+   },
+   "letter_spacing": {
+    "considered": 240,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 239,
+      "share": 0.996
+     },
+     {
+      "value": -0.01,
+      "count": 1,
+      "share": 0.004
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) > span.ant-menu-title-content > a",
+     "-0.01": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 > span.acss-wehhhl"
+    }
+   },
+   "spacing": {
+    "considered": 671,
+    "distinct": 30,
+    "values": [
+     {
+      "value": 4.0,
+      "count": 153,
+      "share": 0.228
+     },
+     {
+      "value": 16.0,
+      "count": 151,
+      "share": 0.225
+     },
+     {
+      "value": 12.0,
+      "count": 85,
+      "share": 0.127
+     },
+     {
+      "value": 14.0,
+      "count": 42,
+      "share": 0.063
+     },
+     {
+      "value": 8.0,
+      "count": 35,
+      "share": 0.052
+     },
+     {
+      "value": 2.0,
+      "count": 29,
+      "share": 0.043
+     },
+     {
+      "value": 80.0,
+      "count": 29,
+      "share": 0.043
+     },
+     {
+      "value": 70.0,
+      "count": 18,
+      "share": 0.027
+     },
+     {
+      "value": 60.0,
+      "count": 16,
+      "share": 0.024
+     },
+     {
+      "value": 20.0,
+      "count": 14,
+      "share": 0.021
+     },
+     {
+      "value": 25.5,
+      "count": 10,
+      "share": 0.015
+     },
+     {
+      "value": 9.5,
+      "count": 10,
+      "share": 0.015
+     },
+     {
+      "value": 29.0,
+      "count": 9,
+      "share": 0.013
+     },
+     {
+      "value": 11.0,
+      "count": 9,
+      "share": 0.013
+     },
+     {
+      "value": 1.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 36.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 3.0,
+      "count": 7,
+      "share": 0.01
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.009
+     },
+     {
+      "value": 38.5,
+      "count": 5,
+      "share": 0.007
+     },
+     {
+      "value": 14.5,
+      "count": 5,
+      "share": 0.007
+     },
+     {
+      "value": 48.0,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 35.0,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 12.5,
+      "count": 4,
+      "share": 0.006
+     },
+     {
+      "value": 32.0,
+      "count": 3,
+      "share": 0.004
+     },
+     {
+      "value": 7.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 10.0,
+      "count": 2,
+      "share": 0.003
+     },
+     {
+      "value": 40.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 164.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 120.0,
+      "count": 1,
+      "share": 0.001
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "4.0": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root paddingLeft",
+     "16.0": "ul.ant-menu.ant-menu-sub > li.ant-menu-item.ant-menu-item-only-child:nth-of-type(1) paddingRight",
+     "12.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5 columnGap",
+     "14.0": "div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div:nth-of-type(4) > div.markdown:nth-of-type(1) > p:nth-of-type(1) marginTop",
+     "8.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > ul.ant-menu.ant-menu-root > li.ant-menu-item.ant-menu-item-selected:nth-of-type(1) paddingLeft",
+     "2.0": "div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 columnGap",
+     "80.0": "ul.ant-menu.ant-menu-sub > li.ant-menu-item-group:nth-of-type(2) > ul.ant-menu-item-group-list > li.ant-menu-item.ant-menu-item-only-child:nth-of-type(1) paddingLeft",
+     "70.0": "main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) marginBottom"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.0,
+       4.0
+      ],
+      "counts": [
+       7,
+       153
+      ]
+     },
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       2,
+       35
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       9,
+       85
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       85,
+       4
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       6,
+       151
+      ]
+     },
+     {
+      "values": [
+       35.0,
+       36.0
+      ],
+      "counts": [
+       4,
+       7
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.867,
+     "share_on_8px": 0.745,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.802,
+       "chance_share": 0.3,
+       "excess": 0.502
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.189,
+       "chance_share": 0.25,
+       "excess": -0.061
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.225,
+       "chance_share": 0.217,
+       "excess": 0.008
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.39,
+       "chance_share": 0.175,
+       "excess": 0.215
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.174,
+       "chance_share": 0.15,
+       "excess": 0.024
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.802,
+      "chance_share": 0.3,
+      "excess": 0.502
+     },
+     "share_fractional": 0.051,
+     "off_4px_values": [
+      {
+       "value": 70.0,
+       "count": 18
+      },
+      {
+       "value": 25.5,
+       "count": 10
+      },
+      {
+       "value": 9.5,
+       "count": 10
+      },
+      {
+       "value": 29.0,
+       "count": 9
+      },
+      {
+       "value": 11.0,
+       "count": 9
+      },
+      {
+       "value": 3.0,
+       "count": 7
+      },
+      {
+       "value": 15.0,
+       "count": 6
+      },
+      {
+       "value": 38.5,
+       "count": 5
+      },
+      {
+       "value": 14.5,
+       "count": 5
+      },
+      {
+       "value": 35.0,
+       "count": 4
+      },
+      {
+       "value": 12.5,
+       "count": 4
+      },
+      {
+       "value": 7.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.955
+   },
+   "radius": {
+    "considered": 84,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 8.0,
+      "count": 51,
+      "share": 0.607
+     },
+     {
+      "value": 6.0,
+      "count": 28,
+      "share": 0.333
+     },
+     {
+      "value": 4.0,
+      "count": 4,
+      "share": 0.048
+     },
+     {
+      "value": "full",
+      "count": 1,
+      "share": 0.012
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "8.0": "div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.acss-u4hfj8:nth-of-type(1) > ul.ant-menu.ant-menu-root > li.ant-menu-submenu.ant-menu-submenu-inline:nth-of-type(1)",
+     "6.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1)",
+     "4.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1)",
+     "full": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.dumi-default-search-bar:nth-of-type(1) > input.dumi-default-search-bar-input"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0.14) 0px 106px 36px -116px inset": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > footer.rc-footer.acss-19g6v7t",
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 1px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px 0px": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 23,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 17,
+      "share": 0.739
+     },
+     {
+      "value": 2.0,
+      "count": 4,
+      "share": 0.174
+     },
+     {
+      "value": 4.0,
+      "count": 2,
+      "share": 0.087
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4)",
+     "2.0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "4.0": "div:nth-of-type(4) > div.markdown:nth-of-type(33) > ul:nth-of-type(2) > li:nth-of-type(1) > blockquote"
+    }
+   },
+   "z_index": {
+    "considered": 9,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 0,
+      "count": 5,
+      "share": 0.556
+     },
+     {
+      "value": 1,
+      "count": 2,
+      "share": 0.222
+     },
+     {
+      "value": 1000,
+      "count": 1,
+      "share": 0.111
+     },
+     {
+      "value": 10,
+      "count": 1,
+      "share": 0.111
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "0": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1)",
+     "1": "div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1) > div.btn-inner > div.acss-llcihc > span.acss-1rqftlq.acss-17yw7x1:nth-of-type(2)",
+     "1000": "div > div.css-i19pbt.ant-app > header.acss-qo92fo.clearfix",
+     "10": "div > div.css-i19pbt.ant-app > main.acss-18mnpdx > div.ant-col.ant-col-xs-24:nth-of-type(2) > section.acss-1feyapq:nth-of-type(1)"
+    },
+    "ladder": {
+     "values": [
+      0,
+      1,
+      10,
+      1000
+     ],
+     "max": 1000,
+     "over_1000": [
+      1000
+     ],
+     "distinct": 4
+    }
+   },
+   "duration": {
+    "considered": 357,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 300,
+      "count": 340,
+      "share": 0.952
+     },
+     {
+      "value": 200,
+      "count": 13,
+      "share": 0.036
+     },
+     {
+      "value": 100,
+      "count": 4,
+      "share": 0.011
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "300": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "200": "div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.ant-select.ant-select-sm:nth-of-type(4) > div.ant-select-suffix:nth-of-type(2)",
+     "100": "div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > div.acss-107fzff:nth-of-type(3) > a.acss-bx2upr:nth-of-type(1) > img.acss-1jyth9"
+    },
+    "on_token_share": 0.0
+   },
+   "easing": {
+    "considered": 357,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "ease",
+      "count": 330,
+      "share": 0.924
+     },
+     {
+      "value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "count": 25,
+      "share": 0.07
+     },
+     {
+      "value": "cubic-bezier(0.2, 0, 0, 1)",
+      "count": 2,
+      "share": 0.006
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-24:nth-of-type(1) > h1 > a.acss-1v3xej5",
+     "cubic-bezier(0.645, 0.045, 0.355, 1)": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > button.ant-btn.css-i19pbt:nth-of-type(1)",
+     "cubic-bezier(0.2, 0, 0, 1)": "header.acss-qo92fo.clearfix > div.ant-row.css-i19pbt > div.ant-col.ant-col-xs-0:nth-of-type(2) > div.acss-745902 > ul.ant-menu.ant-menu-root"
+    }
+   },
+   "font_family": {
+    "considered": 240,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "AlibabaSans",
+      "count": 199,
+      "share": 0.829
+     },
+     {
+      "value": "Avenir",
+      "count": 37,
+      "share": 0.154
+     },
+     {
+      "value": "sans-serif",
+      "count": 2,
+      "share": 0.008
+     },
+     {
+      "value": "SFMono-Regular",
+      "count": 2,
+      "share": 0.008
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "AlibabaSans": "AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica N",
+     "Avenir": "Avenir, AlibabaSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Hel",
+     "sans-serif": "sans-serif",
+     "SFMono-Regular": "SFMono-Regular, Consolas, \"Liberation Mono\", Menlo, Courier, monospace"
+    }
+   },
+   "colour_all": {
+    "considered": 291,
+    "distinct": 13,
+    "opaque_distinct": 6,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f4f5",
+        "count": 22
+       },
+       {
+        "value": "#f5f5f5",
+        "count": 4
+       },
+       {
+        "value": "#e6f4ff",
+        "count": 1
+       },
+       {
+        "value": "#f0f3fa",
+        "count": 1
+       }
+      ],
+      "count": 28,
+      "max_oklab": 0.0195
+     }
+    ],
+    "on_token_share": 0.921
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "4 off-scale spacing values: 3px, 7px, 15px, 70px (e.g. section.acss-1feyapq:nth-of-type(1) > div.css-i19pbt.css-var-_R_afsua_ > div.ant-anchor > div.ant-anchor-link:nth-of-type(2) > a.ant-anchor-link-title)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "3 font families render: Alibaba Sans, Consolas, Segoe UI",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "h3 vs h4",
+     "evidence": "h3 18px is only 1.12x h4 16px (min 1.25x)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "h4 vs body",
+     "evidence": "h4 16px is only 1.14x body 14px (min 1.25x)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": [
+    {
+     "where": "#design-principal  \"Design Principal\"",
+     "evidence": "display text at 24px set in Segoe UI, a UI text face",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": [
+    {
+     "where": "article.acss-n5pafq > div:nth-of-type(4) > div.clearfix.preview-image-boxes:nth-of-type(2) > div.preview-image-box > div",
+     "evidence": "one box recipe on 22 elements across 3 selectors (div.preview-image-wrapper, div.preview-image-wrapper.bad, div.preview-image-wrapper.good)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": [
+    {
+     "where": ".ant-anchor-wrapper .ant-anchor .ant-anchor-link-title",
+     "evidence": "\"transition: all var(--ant-motion-duration-slow)\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".ant-badge .ant-scroll-number",
+     "evidence": "\"transition: all var(--ant-motion-duration-mid) var(--ant-mot\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".ant-badge .ant-scroll-number .ant-scroll-number-only",
+     "evidence": "\"transition: all var(--ant-motion-duration-slow) var(--ant-mo\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".ant-card .ant-card-grid",
+     "evidence": "\"transition: all var(--ant-motion-duration-mid)\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".ant-cascader-dropdown .ant-cascader-checkbox::after",
+     "evidence": "\"transition: all var(--ant-motion-duration-fast) var(--ant-mo\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    },
+    {
+     "where": ".ant-collapse > .ant-collapse-item > .ant-collapse-header",
+     "evidence": "\"transition: all var(--ant-motion-duration-slow),visibility 0\": transition all animates layout and paint properties",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "dialog trigger \"contributors (10)\" (nth-of-type(2) > article > div:nth-of-type(5) > div > button)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 240 px / scales 80% (frames seeked)",
+     "tier": "Floor"
+    },
+    {
+     "where": "menu trigger \"\" (#_R_7bbqfsua_) -> iv > div:nth-of-type(2) > div > div:nth-of-type(5)",
+     "evidence": "enters from 0.80 scale (minimum 0.9): the element pops in from far instead of settling",
+     "tier": "Reflex"
+    },
+    {
+     "where": "button trigger \"\" (ype(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div)",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish"
+    },
+    {
+     "where": "button trigger \"\" (ype(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div)",
+     "evidence": "with prefers-reduced-motion: reduce the transition still moves 302 px / scales 98% (frames seeked)",
+     "tier": "Floor"
+    }
+   ]
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [
+  "#do--dont"
+ ],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

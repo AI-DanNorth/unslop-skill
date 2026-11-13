@@ -1,0 +1,1465 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L21",
+ "widths": [
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 2
+ },
+ "stylesheet": {
+  "rules_listed": 191,
+  "unreadable_sheets": 1,
+  "unreadable": [
+   "/* unreadable: https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=G"
+  ],
+  "style_rules": 247,
+  "declarations": 887,
+  "root_font_px": 16.0,
+  "note": "cross-origin sheets could not be read: their tokens and declarations are unknown, not absent",
+  "verified": true
+ },
+ "tokens": {
+  "declared": 23,
+  "own": 23,
+  "framework_internal": 0,
+  "by_scope": {
+   "scoped": 23
+  },
+  "by_family": {
+   "colour": 19,
+   "font_family": 4
+  },
+  "by_tier_guess": {
+   "semantic": 11,
+   "other": 11,
+   "primitive": 1
+  },
+  "aliases": 0,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [],
+  "referenced_by_declarations": 21,
+  "var_references": 194,
+  "alias_references": 0,
+  "own_tokens_never_referenced": {
+   "count": 2,
+   "sample": [
+    "--plate-ink",
+    "--reg"
+   ]
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--accent",
+    "uses": 36,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--mono",
+    "uses": 33,
+    "family": "font_family",
+    "tier": "other"
+   },
+   {
+    "name": "--soft",
+    "uses": 25,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--line",
+    "uses": 22,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--muted",
+    "uses": 18,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--ink",
+    "uses": 16,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--line-soft",
+    "uses": 8,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--well",
+    "uses": 7,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--serif",
+    "uses": 5,
+    "family": "font_family",
+    "tier": "other"
+   },
+   {
+    "name": "--sans",
+    "uses": 3,
+    "family": "font_family",
+    "tier": "other"
+   },
+   {
+    "name": "--on-accent",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--scrim",
+    "uses": 3,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--panel",
+    "uses": 3,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--bg",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--line-faint",
+    "uses": 2,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--accent-2",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--plate",
+    "uses": 2,
+    "family": "colour",
+    "tier": "other"
+   },
+   {
+    "name": "--sky",
+    "uses": 1,
+    "family": "colour",
+    "tier": "primitive"
+   },
+   {
+    "name": "--hover",
+    "uses": 1,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--scrim-2",
+    "uses": 1,
+    "family": "colour",
+    "tier": "semantic"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [
+    "--sky"
+   ],
+   "semantic": [
+    "--accent",
+    "--accent-2",
+    "--accent-wash",
+    "--bg",
+    "--hover",
+    "--ink",
+    "--muted",
+    "--on-accent",
+    "--plate-ink",
+    "--scrim",
+    "--scrim-2"
+   ],
+   "component": [],
+   "scale_step": [],
+   "other": [
+    "--line",
+    "--line-faint",
+    "--line-soft",
+    "--mono",
+    "--panel",
+    "--plate",
+    "--reg",
+    "--sans",
+    "--serif",
+    "--soft",
+    "--well"
+   ]
+  },
+  "pools": {
+   "colour": 14
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "colour": {
+    "var": 150,
+    "literal": 4,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 18,
+    "var_share_of_non_keyword": 0.974,
+    "literal_share_of_non_keyword": 0.026
+   },
+   "duration": {
+    "var": 0,
+    "literal": 9,
+    "utility_literal": 1,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 0.9
+   },
+   "font_family": {
+    "var": 41,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 1.0,
+    "literal_share_of_non_keyword": 0.0
+   },
+   "font_size": {
+    "var": 0,
+    "literal": 51,
+    "utility_literal": 1,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 0.981
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 33,
+    "utility_literal": 1,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 0.971
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 10,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 4,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 3,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "spacing": {
+    "var": 0,
+    "literal": 107,
+    "utility_literal": 4,
+    "arbitrary_utility": 0,
+    "keyword": 14,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 0.964
+   },
+   "z_index": {
+    "var": 0,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 1,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   }
+  },
+  "literal_retypes_a_token_value": {},
+  "distinct_literal_colours": 3,
+  "literal_colours_top": [
+   {
+    "value": "#000000/0.18",
+    "count": 1
+   },
+   {
+    "value": "#000000/0.06",
+    "count": 1
+   },
+   {
+    "value": "#000000",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 20,
+  "base_colour_tokens": 19,
+  "base_semantic_colour_tokens": 18,
+  "dark_tokens_media_query": 0,
+  "dark_tokens_class_or_attr": 23,
+  "light_tokens_class_or_attr": 20,
+  "dark_mechanisms": [
+   "class_or_attr"
+  ],
+  "dark_selectors": [
+   {
+    "selector": "[data-mode=\"dark",
+    "declarations": 23
+   }
+  ],
+  "dark_redefines_base": 20,
+  "dark_only_names": [
+   "--mono",
+   "--sans",
+   "--serif"
+  ],
+  "semantic_colour_redefined_share": 1.0,
+  "semantic_colour_not_redefined": [],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 2,
+   "literal": 0,
+   "literal_samples": []
+  },
+  "color_scheme_values": [
+   "dark",
+   "light"
+  ],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {},
+ "values": {
+  "1440": {
+   "elements_visible": 856,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 328,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "#4f4f4f",
+      "count": 143,
+      "share": 0.436
+     },
+     {
+      "value": "#5f5f5f",
+      "count": 100,
+      "share": 0.305
+     },
+     {
+      "value": "#111111",
+      "count": 57,
+      "share": 0.174
+     },
+     {
+      "value": "#bf4520",
+      "count": 26,
+      "share": 0.079
+     },
+     {
+      "value": "#f5f5f3",
+      "count": 1,
+      "share": 0.003
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#4f4f4f": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "#5f5f5f": "header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > span.sub",
+     "#111111": "header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > b",
+     "#bf4520": "div.wrap > div.hero-grid:nth-of-type(2) > div > h1.rise.in > span.em",
+     "#f5f5f3": "button.mode > span.l:nth-of-type(2)",
+     "#ffffff": "div.wrap > div.hero-grid:nth-of-type(2) > div > div.cta.rise:nth-of-type(2) > a.btn:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 113,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 58,
+      "share": 0.513
+     },
+     {
+      "value": "#f2f2f0",
+      "count": 50,
+      "share": 0.442
+     },
+     {
+      "value": "#bf4520",
+      "count": 3,
+      "share": 0.027
+     },
+     {
+      "value": "#fafaf9/0.82",
+      "count": 1,
+      "share": 0.009
+     },
+     {
+      "value": "#111111",
+      "count": 1,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#ffffff": "main > section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > figure.hero-fig.plate",
+     "#f2f2f0": "main > section.demo:nth-of-type(2) > div.wrap > figure.film.plate",
+     "#bf4520": "div.wrap > div.hero-grid:nth-of-type(2) > div > div.cta.rise:nth-of-type(2) > a.btn:nth-of-type(1)",
+     "#fafaf9/0.82": "html > body.anim > header.bar",
+     "#111111": "button.mode > span.l:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 119,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#000000/0.14",
+      "count": 89,
+      "share": 0.748
+     },
+     {
+      "value": "#000000/0.08",
+      "count": 24,
+      "share": 0.202
+     },
+     {
+      "value": "#bf4520",
+      "count": 6,
+      "share": 0.05
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "#000000/0.14": "html > body.anim > header.bar",
+     "#000000/0.08": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > div > div.proof.rise:nth-of-type(3)",
+     "#bf4520": "div.wrap > div.hero-grid:nth-of-type(2) > div > div.cta.rise:nth-of-type(2) > a.btn:nth-of-type(1)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 328,
+    "distinct": 19,
+    "values": [
+     {
+      "value": 9.5,
+      "count": 96,
+      "share": 0.293
+     },
+     {
+      "value": 14.0,
+      "count": 47,
+      "share": 0.143
+     },
+     {
+      "value": 11.0,
+      "count": 34,
+      "share": 0.104
+     },
+     {
+      "value": 12.5,
+      "count": 32,
+      "share": 0.098
+     },
+     {
+      "value": 10.0,
+      "count": 26,
+      "share": 0.079
+     },
+     {
+      "value": 15.0,
+      "count": 21,
+      "share": 0.064
+     },
+     {
+      "value": 10.5,
+      "count": 15,
+      "share": 0.046
+     },
+     {
+      "value": 13.0,
+      "count": 11,
+      "share": 0.034
+     },
+     {
+      "value": 12.0,
+      "count": 9,
+      "share": 0.027
+     },
+     {
+      "value": 17.0,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": 16.5,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": 48.0,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 16.0,
+      "count": 5,
+      "share": 0.015
+     },
+     {
+      "value": 80.0,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 19.0,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 24.0,
+      "count": 2,
+      "share": 0.006
+     },
+     {
+      "value": 22.0,
+      "count": 1,
+      "share": 0.003
+     },
+     {
+      "value": 30.5,
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "9.5": "header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > span.sub",
+     "14.0": "section:nth-of-type(6) > div.wrap > div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1) > span.d:nth-of-type(3)",
+     "11.0": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "12.5": "div.wrap > div.sheets:nth-of-type(2) > div.sheet.lead:nth-of-type(1) > pre > code",
+     "10.0": "button.mode > span.d:nth-of-type(1)",
+     "15.0": "section:nth-of-type(3) > div.wrap > ul.deltas.rise > li:nth-of-type(1)",
+     "10.5": "div.wrap > div.ba:nth-of-type(2) > div.fig.rise:nth-of-type(1) > div.lab > span:nth-of-type(1)",
+     "13.0": "section:nth-of-type(7) > div.wrap > div.sheets:nth-of-type(2) > div.sheet.lead:nth-of-type(1) > div.ft:nth-of-type(2)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       9.0,
+       9.5
+      ],
+      "counts": [
+       2,
+       96
+      ]
+     },
+     {
+      "values": [
+       9.5,
+       10.0
+      ],
+      "counts": [
+       96,
+       26
+      ]
+     },
+     {
+      "values": [
+       10.0,
+       10.5
+      ],
+      "counts": [
+       26,
+       15
+      ]
+     },
+     {
+      "values": [
+       10.5,
+       11.0
+      ],
+      "counts": [
+       15,
+       34
+      ]
+     },
+     {
+      "values": [
+       12.0,
+       12.5
+      ],
+      "counts": [
+       9,
+       32
+      ]
+     },
+     {
+      "values": [
+       12.5,
+       13.0
+      ],
+      "counts": [
+       32,
+       11
+      ]
+     },
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       11,
+       47
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       47,
+       21
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       21,
+       5
+      ]
+     },
+     {
+      "values": [
+       16.0,
+       16.5
+      ],
+      "counts": [
+       5,
+       8
+      ]
+     },
+     {
+      "values": [
+       16.5,
+       17.0
+      ],
+      "counts": [
+       8,
+       8
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 9.5,
+      "share_on": 1.0,
+      "chance_share": 0.512,
+      "excess": 0.488,
+      "steps_used": [
+       -1,
+       0,
+       1,
+       2,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       11,
+       13,
+       14,
+       18,
+       25,
+       33
+      ]
+     },
+     "off_best_ratio_px": [],
+     "tailwind_scale_share": 0.335
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 328,
+    "distinct": 8,
+    "values": [
+     {
+      "value": 1.55,
+      "count": 223,
+      "share": 0.68
+     },
+     {
+      "value": 1.45,
+      "count": 45,
+      "share": 0.137
+     },
+     {
+      "value": 1.85,
+      "count": 26,
+      "share": 0.079
+     },
+     {
+      "value": 1.0,
+      "count": 10,
+      "share": 0.03
+     },
+     {
+      "value": "normal",
+      "count": 9,
+      "share": 0.027
+     },
+     {
+      "value": 1.5,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 1.95,
+      "count": 6,
+      "share": 0.018
+     },
+     {
+      "value": 1.3,
+      "count": 3,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.55": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "1.45": "section:nth-of-type(6) > div.wrap > div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1) > span.d:nth-of-type(3)",
+     "1.85": "div.wrap > div.sheets:nth-of-type(2) > div.sheet.lead:nth-of-type(1) > pre > code",
+     "1.0": "header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > b",
+     "normal": "button.mode > span.d:nth-of-type(1)",
+     "1.5": "section:nth-of-type(3) > div.wrap > ul.deltas.rise > li:nth-of-type(1)",
+     "1.95": "div.use-grid:nth-of-type(2) > figure.dogfood.rise > div.term.plate > pre.term-body > code",
+     "1.3": "section:nth-of-type(3) > div.wrap > blockquote.quote.rise > p"
+    }
+   },
+   "letter_spacing": {
+    "considered": 328,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 135,
+      "share": 0.412
+     },
+     {
+      "value": 0.14,
+      "count": 109,
+      "share": 0.332
+     },
+     {
+      "value": 0.12,
+      "count": 31,
+      "share": 0.095
+     },
+     {
+      "value": 0.16,
+      "count": 11,
+      "share": 0.034
+     },
+     {
+      "value": 0.06,
+      "count": 9,
+      "share": 0.027
+     },
+     {
+      "value": 0.08,
+      "count": 9,
+      "share": 0.027
+     },
+     {
+      "value": -0.01,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": -0.005,
+      "count": 8,
+      "share": 0.024
+     },
+     {
+      "value": 0.1,
+      "count": 4,
+      "share": 0.012
+     },
+     {
+      "value": 0.18,
+      "count": 3,
+      "share": 0.009
+     },
+     {
+      "value": 0.01,
+      "count": 1,
+      "share": 0.003
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > div > p.lede.rise",
+     "0.14": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "0.12": "section:nth-of-type(3) > div.wrap > div.sec-head:nth-of-type(1) > p.note.rise",
+     "0.16": "header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > span.sub",
+     "0.06": "#starcount",
+     "0.08": "div.wrap > div.hero-grid:nth-of-type(2) > div > div.proof.rise:nth-of-type(3) > span.stamp:nth-of-type(1)",
+     "-0.01": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > div > h1.rise.in",
+     "-0.005": "div.legend:nth-of-type(2) > div.spec.rise:nth-of-type(1) > div > div.row > h3"
+    }
+   },
+   "spacing": {
+    "considered": 877,
+    "distinct": 28,
+    "values": [
+     {
+      "value": 11.0,
+      "count": 196,
+      "share": 0.223
+     },
+     {
+      "value": 2.0,
+      "count": 186,
+      "share": 0.212
+     },
+     {
+      "value": 10.0,
+      "count": 83,
+      "share": 0.095
+     },
+     {
+      "value": 16.0,
+      "count": 78,
+      "share": 0.089
+     },
+     {
+      "value": 9.0,
+      "count": 57,
+      "share": 0.065
+     },
+     {
+      "value": 1.0,
+      "count": 45,
+      "share": 0.051
+     },
+     {
+      "value": 14.0,
+      "count": 43,
+      "share": 0.049
+     },
+     {
+      "value": 12.0,
+      "count": 28,
+      "share": 0.032
+     },
+     {
+      "value": 22.0,
+      "count": 20,
+      "share": 0.023
+     },
+     {
+      "value": 5.0,
+      "count": 20,
+      "share": 0.023
+     },
+     {
+      "value": 8.0,
+      "count": 18,
+      "share": 0.021
+     },
+     {
+      "value": 24.0,
+      "count": 14,
+      "share": 0.016
+     },
+     {
+      "value": 78.0,
+      "count": 13,
+      "share": 0.015
+     },
+     {
+      "value": 26.0,
+      "count": 10,
+      "share": 0.011
+     },
+     {
+      "value": 6.0,
+      "count": 10,
+      "share": 0.011
+     },
+     {
+      "value": 40.0,
+      "count": 9,
+      "share": 0.01
+     },
+     {
+      "value": 3.0,
+      "count": 8,
+      "share": 0.009
+     },
+     {
+      "value": 7.0,
+      "count": 8,
+      "share": 0.009
+     },
+     {
+      "value": 15.0,
+      "count": 6,
+      "share": 0.007
+     },
+     {
+      "value": 52.0,
+      "count": 5,
+      "share": 0.006
+     },
+     {
+      "value": 18.0,
+      "count": 5,
+      "share": 0.006
+     },
+     {
+      "value": 4.0,
+      "count": 4,
+      "share": 0.005
+     },
+     {
+      "value": 30.0,
+      "count": 4,
+      "share": 0.005
+     },
+     {
+      "value": 34.0,
+      "count": 2,
+      "share": 0.002
+     },
+     {
+      "value": 44.0,
+      "count": 2,
+      "share": 0.002
+     },
+     {
+      "value": 64.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 56.0,
+      "count": 1,
+      "share": 0.001
+     },
+     {
+      "value": 60.0,
+      "count": 1,
+      "share": 0.001
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "11.0": "html > body.anim > header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) rowGap",
+     "2.0": "main > section.demo:nth-of-type(2) > div.wrap > figure.film.plate > figcaption.cap paddingLeft",
+     "10.0": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > div > div.hero-dim.dim:nth-of-type(1) rowGap",
+     "16.0": "section:nth-of-type(5) > div.wrap > div.axo:nth-of-type(2) > div.axo-item.rise:nth-of-type(1) > h3 marginTop",
+     "9.0": "button.mode > span.d:nth-of-type(1) paddingLeft",
+     "1.0": "section:nth-of-type(6) > div.wrap > div.plates:nth-of-type(2) > button.pl.rise:nth-of-type(1) > span.d:nth-of-type(3) paddingBottom",
+     "14.0": "main > section.hero:nth-of-type(1) > div.wrap > div.titleblock.rise:nth-of-type(1) > div:nth-of-type(1) paddingLeft",
+     "12.0": "html > body.anim > header.bar > div.wrap.bar-in paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       3.0,
+       4.0
+      ],
+      "counts": [
+       8,
+       4
+      ]
+     },
+     {
+      "values": [
+       4.0,
+       5.0
+      ],
+      "counts": [
+       4,
+       20
+      ]
+     },
+     {
+      "values": [
+       7.0,
+       8.0
+      ],
+      "counts": [
+       8,
+       18
+      ]
+     },
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       18,
+       57
+      ]
+     },
+     {
+      "values": [
+       11.0,
+       12.0
+      ],
+      "counts": [
+       196,
+       28
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       6,
+       78
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.602,
+     "share_on_8px": 0.438,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.447,
+       "chance_share": 0.3,
+       "excess": 0.147
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.404,
+       "chance_share": 0.25,
+       "excess": 0.154
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.349,
+       "chance_share": 0.217,
+       "excess": 0.132
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.401,
+       "chance_share": 0.175,
+       "excess": 0.226
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.374,
+       "chance_share": 0.15,
+       "excess": 0.224
+      }
+     ],
+     "best_base": {
+      "base_px": 8,
+      "share_on": 0.401,
+      "chance_share": 0.175,
+      "excess": 0.226
+     },
+     "share_fractional": 0.0,
+     "off_4px_values": [
+      {
+       "value": 11.0,
+       "count": 196
+      },
+      {
+       "value": 9.0,
+       "count": 57
+      },
+      {
+       "value": 22.0,
+       "count": 20
+      },
+      {
+       "value": 5.0,
+       "count": 20
+      },
+      {
+       "value": 78.0,
+       "count": 13
+      },
+      {
+       "value": 26.0,
+       "count": 10
+      },
+      {
+       "value": 3.0,
+       "count": 8
+      },
+      {
+       "value": 7.0,
+       "count": 8
+      },
+      {
+       "value": 15.0,
+       "count": 6
+      },
+      {
+       "value": 18.0,
+       "count": 5
+      },
+      {
+       "value": 30.0,
+       "count": 4
+      },
+      {
+       "value": 34.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": null
+   },
+   "radius": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "shadow": {
+    "considered": 0,
+    "distinct": 0,
+    "values": [],
+    "one_offs": 0,
+    "examples": {},
+    "on_token_share": null
+   },
+   "border_width": {
+    "considered": 119,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 119,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "html > body.anim > header.bar"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 50,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "50": "html > body.anim > header.bar"
+    },
+    "ladder": {
+     "values": [
+      50
+     ],
+     "max": 50,
+     "over_1000": [],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 98,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 200,
+      "count": 84,
+      "share": 0.857
+     },
+     {
+      "value": 700,
+      "count": 14,
+      "share": 0.143
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "200": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "700": "main > section.hero:nth-of-type(1) > div.wrap > div.titleblock.rise:nth-of-type(1)"
+    },
+    "on_token_share": null
+   },
+   "easing": {
+    "considered": 98,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "ease",
+      "count": 84,
+      "share": 0.857
+     },
+     {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "count": 14,
+      "share": 0.143
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "ease": "body.anim > header.bar > div.wrap.bar-in > nav.top > a:nth-of-type(1)",
+     "cubic-bezier(0.16, 1, 0.3, 1)": "main > section.hero:nth-of-type(1) > div.wrap > div.titleblock.rise:nth-of-type(1)"
+    }
+   },
+   "font_family": {
+    "considered": 328,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Geist Mono",
+      "count": 216,
+      "share": 0.659
+     },
+     {
+      "value": "Geist",
+      "count": 100,
+      "share": 0.305
+     },
+     {
+      "value": "Instrument Serif",
+      "count": 12,
+      "share": 0.037
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "Geist Mono": "\"Geist Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+     "Geist": "Geist, system-ui, -apple-system, sans-serif",
+     "Instrument Serif": "\"Instrument Serif\", Georgia, \"Times New Roman\", serif"
+    }
+   },
+   "colour_all": {
+    "considered": 560,
+    "distinct": 10,
+    "opaque_distinct": 7,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#f2f2f0",
+        "count": 50
+       },
+       {
+        "value": "#f5f5f3",
+        "count": 1
+       }
+      ],
+      "count": 51,
+      "max_oklab": 0.009
+     }
+    ],
+    "on_token_share": 1.0
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "12 off-scale spacing values: 3px, 5px, 7px, 9px, 11px, 15px, 18px, 22px, 26px, 30px, 34px, 78px (e.g. header.bar > div.wrap.bar-in > a.brand:nth-of-type(1) > span > span.sub)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "19 distinct font sizes: 9, 9.5, 10, 10.5, 11, 12, 12.5, 13, 14, 15, 16, 16.5, 17, 19, 22, 24, 30.5, 48, 80 (max 8)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "whole page",
+     "evidence": "3 font families render: Instrument Serif, Geist Mono, Geist",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": []
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": []
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": [
+    {
+     "where": "section.hero:nth-of-type(1) > div.wrap > div.hero-grid:nth-of-type(2) > div > div.proof.rise:nth-of-type(3)",
+     "evidence": "one box recipe on 7 elements across 4 selectors (div.proof.rise, div.spec.rise, div.stamp-block, ul.deltas.rise)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "#why",
+     "evidence": "one box recipe on 6 elements across 6 selectors (#axonometric, #gallery, #install, #use)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": []
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "button trigger \"View the first-pass diagram full size\" (#why > div > div:nth-of-type(2) > div:nth-of-type(1))",
+     "evidence": "transition easing is ease (read from the running animations)",
+     "tier": "Finish"
+    }
+   ]
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "warm-paper-serif: 4 of 6 tells (terracotta_accent (#bf4520); serif_display (Instrument Serif); italic_serif_hero (italic serif headline); eyebrows (154 tracked caps labels)); cluster minimum 3",
+     "tier": "Reflex"
+    },
+    {
+     "where": "whole page",
+     "evidence": "hairline-newspaper: 4 of 4 tells (hairlines (96 hairlines); zero_radius (zero radius); mono_labels (198 mono labels); italic_serif (italic serif)); cluster minimum 3",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}

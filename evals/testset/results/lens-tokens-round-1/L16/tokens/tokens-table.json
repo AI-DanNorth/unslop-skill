@@ -1,0 +1,2407 @@
+{
+ "run": "C:\\Users\\warwicka\\Documents\\unslop-runs-live\\L16",
+ "widths": [
+  375,
+  1280,
+  1440
+ ],
+ "network": {
+  "mode": "direct",
+  "blocked": 0
+ },
+ "stylesheet": {
+  "rules_listed": 98,
+  "unreadable_sheets": 1,
+  "unreadable": [
+   "/* unreadable: https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500"
+  ],
+  "style_rules": 99,
+  "declarations": 380,
+  "root_font_px": 16.0,
+  "note": "cross-origin sheets could not be read: their tokens and declarations are unknown, not absent",
+  "verified": true
+ },
+ "tokens": {
+  "declared": 33,
+  "own": 33,
+  "framework_internal": 0,
+  "by_scope": {
+   "root": 33
+  },
+  "by_family": {
+   "colour": 17,
+   "spacing": 7,
+   "duration": 2,
+   "font_family": 2,
+   "radius": 2,
+   "shadow": 2,
+   "easing": 1
+  },
+  "by_tier_guess": {
+   "semantic": 20,
+   "scale_step": 9,
+   "component": 2,
+   "other": 2
+  },
+  "aliases": 0,
+  "semantic_or_component_aliasing_a_primitive": 0,
+  "component_tokens_pointing_at_primitives": [],
+  "component_colour_tokens_with_literal_values": [
+   "--color-card",
+   "--color-card-foreground"
+  ],
+  "referenced_by_declarations": 31,
+  "var_references": 171,
+  "alias_references": 0,
+  "own_tokens_never_referenced": {
+   "count": 2,
+   "sample": [
+    "--color-on-destructive",
+    "--shadow-md"
+   ]
+  },
+  "undeclared_references": {
+   "count": 0,
+   "without_fallback": [],
+   "note": "names referenced but declared in no readable sheet: from an unreadable sheet, script or an inline style, or a real typo"
+  },
+  "placeholder_values": [],
+  "most_referenced": [
+   {
+    "name": "--color-muted-foreground",
+    "uses": 17,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--space-xl",
+    "uses": 16,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--space-md",
+    "uses": 13,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--color-border",
+    "uses": 13,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--space-lg",
+    "uses": 12,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--color-card",
+    "uses": 10,
+    "family": "colour",
+    "tier": "component"
+   },
+   {
+    "name": "--ease-out",
+    "uses": 8,
+    "family": "easing",
+    "tier": "other"
+   },
+   {
+    "name": "--radius-md",
+    "uses": 8,
+    "family": "radius",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--space-sm",
+    "uses": 8,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--color-primary",
+    "uses": 7,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--radius-sm",
+    "uses": 6,
+    "family": "radius",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--color-muted",
+    "uses": 6,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--dur-base",
+    "uses": 6,
+    "family": "duration",
+    "tier": "semantic"
+   },
+   {
+    "name": "--color-foreground",
+    "uses": 5,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--space-xs",
+    "uses": 5,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--space-2xl",
+    "uses": 4,
+    "family": "spacing",
+    "tier": "scale_step"
+   },
+   {
+    "name": "--color-destructive",
+    "uses": 4,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--color-background",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   },
+   {
+    "name": "--font-body",
+    "uses": 2,
+    "family": "font_family",
+    "tier": "semantic"
+   },
+   {
+    "name": "--color-on-primary",
+    "uses": 2,
+    "family": "colour",
+    "tier": "semantic"
+   }
+  ],
+  "naming_samples": {
+   "primitive": [],
+   "semantic": [
+    "--color-accent",
+    "--color-background",
+    "--color-border",
+    "--color-destructive",
+    "--color-foreground",
+    "--color-muted",
+    "--color-muted-foreground",
+    "--color-on-accent",
+    "--color-on-destructive",
+    "--color-on-primary",
+    "--color-primary",
+    "--color-ring"
+   ],
+   "component": [
+    "--color-card",
+    "--color-card-foreground"
+   ],
+   "scale_step": [
+    "--radius-md",
+    "--radius-sm",
+    "--space-2xl",
+    "--space-3xl",
+    "--space-lg",
+    "--space-md",
+    "--space-sm",
+    "--space-xl",
+    "--space-xs"
+   ],
+   "other": [
+    "--dur-fast",
+    "--ease-out"
+   ]
+  },
+  "pools": {
+   "colour": 13,
+   "duration": 2,
+   "radius": 2,
+   "shadow": 2,
+   "spacing": 7
+  },
+  "note": "tier is guessed from the name: a hue word or a numbered step is a primitive, a role word semantic, a component word component; read the samples"
+ },
+ "declarations": {
+  "by_family": {
+   "colour": {
+    "var": 74,
+    "literal": 8,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 3,
+    "var_share_of_non_keyword": 0.902,
+    "literal_share_of_non_keyword": 0.098
+   },
+   "duration": {
+    "var": 5,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.625,
+    "literal_share_of_non_keyword": 0.375
+   },
+   "font_family": {
+    "var": 1,
+    "literal": 0,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 1.0,
+    "literal_share_of_non_keyword": 0.0
+   },
+   "font_size": {
+    "var": 0,
+    "literal": 18,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "letter_spacing": {
+    "var": 0,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "line_height": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   },
+   "radius": {
+    "var": 13,
+    "literal": 3,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.812,
+    "literal_share_of_non_keyword": 0.188
+   },
+   "shadow": {
+    "var": 3,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.75,
+    "literal_share_of_non_keyword": 0.25
+   },
+   "spacing": {
+    "var": 45,
+    "literal": 2,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 9,
+    "var_share_of_non_keyword": 0.957,
+    "literal_share_of_non_keyword": 0.043
+   },
+   "z_index": {
+    "var": 0,
+    "literal": 1,
+    "utility_literal": 0,
+    "arbitrary_utility": 0,
+    "keyword": 0,
+    "var_share_of_non_keyword": 0.0,
+    "literal_share_of_non_keyword": 1.0
+   }
+  },
+  "literal_retypes_a_token_value": {
+   "radius": {
+    "count": 1,
+    "samples": [
+     {
+      "sel": ".vr-badge",
+      "prop": "border-radius",
+      "value": 6.0
+     }
+    ]
+   }
+  },
+  "distinct_literal_colours": 8,
+  "literal_colours_top": [
+   {
+    "value": "#64748b",
+    "count": 1
+   },
+   {
+    "value": "#ffffff/0.92",
+    "count": 1
+   },
+   {
+    "value": "#0f172a/0.08",
+    "count": 1
+   },
+   {
+    "value": "#0f172a",
+    "count": 1
+   },
+   {
+    "value": "#94a3b8",
+    "count": 1
+   },
+   {
+    "value": "#0f172a/0.88",
+    "count": 1
+   },
+   {
+    "value": "#94a3b8/0.20",
+    "count": 1
+   },
+   {
+    "value": "#f1f5f9",
+    "count": 1
+   }
+  ],
+  "arbitrary_value_selectors": {
+   "distinct": 0,
+   "samples": []
+  },
+  "note": "utility_literal: a framework utility rule (.p-4, .text-sm) whose literal value is the framework's own scale step; arbitrary_utility: a bracketed one-off (text-[15px])"
+ },
+ "theme": {
+  "base_root_tokens": 33,
+  "base_colour_tokens": 17,
+  "base_semantic_colour_tokens": 17,
+  "dark_tokens_media_query": 15,
+  "dark_tokens_class_or_attr": 0,
+  "light_tokens_class_or_attr": 0,
+  "dark_mechanisms": [
+   "media_query"
+  ],
+  "dark_selectors": [
+   {
+    "selector": "@media (prefers-color-scheme: dark)",
+    "declarations": 15
+   }
+  ],
+  "dark_redefines_base": 15,
+  "dark_only_names": [],
+  "semantic_colour_redefined_share": 0.824,
+  "semantic_colour_not_redefined": [
+   "--color-on-accent",
+   "--color-on-destructive",
+   "--color-secondary"
+  ],
+  "media_query_and_class_mirror": null,
+  "dark_rules_colour_declarations": {
+   "var": 0,
+   "literal": 4,
+   "literal_samples": [
+    {
+     "sel": ".vr-badge",
+     "prop": "color",
+     "value": "rgb(148, 163, 184)"
+    },
+    {
+     "sel": ".vr-badge",
+     "prop": "background",
+     "value": "rgba(15, 23, 42, 0.88)"
+    },
+    {
+     "sel": ".vr-badge",
+     "prop": "border-color",
+     "value": "rgba(148, 163, 184, 0.2)"
+    },
+    {
+     "sel": ".vr-badge:hover",
+     "prop": "color",
+     "value": "rgb(241, 245, 249)"
+    }
+   ]
+  },
+  "color_scheme_values": [],
+  "alternate_theme_attrs": [],
+  "note": "the capture renders one colour scheme; the other theme is read from the stylesheet only, never seen or measured"
+ },
+ "frameworks": {
+  "tailwind_v4_theme": {
+   "theme_tokens": 5,
+   "layer_theme": false
+  },
+  "bootstrap": {
+   "distinct_class_names": 1
+  }
+ },
+ "values": {
+  "375": {
+   "elements_visible": 40,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 25,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#475569",
+      "count": 9,
+      "share": 0.36
+     },
+     {
+      "value": "#1e293b",
+      "count": 9,
+      "share": 0.36
+     },
+     {
+      "value": "#2563eb",
+      "count": 5,
+      "share": 0.2
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#64748b",
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#475569": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "#1e293b": "html > body > div.wrap > header.masthead > h1",
+     "#2563eb": "body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1) > a",
+     "#ffffff": "html > body > a.skip-link:nth-of-type(1)",
+     "#64748b": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 10,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 6,
+      "share": 0.6
+     },
+     {
+      "value": "#e9eff8",
+      "count": 2,
+      "share": 0.2
+     },
+     {
+      "value": "#2563eb",
+      "count": 1,
+      "share": 0.1
+     },
+     {
+      "value": "#ffffff/0.92",
+      "count": 1,
+      "share": 0.1
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#ffffff": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "#e9eff8": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1)",
+     "#2563eb": "html > body > a.skip-link:nth-of-type(1)",
+     "#ffffff/0.92": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_border": {
+    "considered": 9,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "#e2e8f0",
+      "count": 8,
+      "share": 0.889
+     },
+     {
+      "value": "#0f172a/0.08",
+      "count": 1,
+      "share": 0.111
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "#e2e8f0": "html > body > div.wrap > header.masthead",
+     "#0f172a/0.08": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 25,
+    "distinct": 6,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 16,
+      "share": 0.64
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.12
+     },
+     {
+      "value": 16.0,
+      "count": 2,
+      "share": 0.08
+     },
+     {
+      "value": 12.0,
+      "count": 2,
+      "share": 0.08
+     },
+     {
+      "value": 24.0,
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": 11.0,
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "14.0": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "28.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "16.0": "html > body > a.skip-link:nth-of-type(1)",
+     "12.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label",
+     "24.0": "html > body > div.wrap > header.masthead > h1",
+     "11.0": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": [],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.414,
+      "base_px": 14.0,
+      "share_on": 0.76,
+      "chance_share": 0.171,
+      "excess": 0.589,
+      "steps_used": [
+       -1,
+       0,
+       2
+      ]
+     },
+     "off_best_ratio_px": [
+      11.0,
+      12.0,
+      16.0,
+      24.0
+     ],
+     "tailwind_scale_share": 0.84
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 25,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 17,
+      "share": 0.68
+     },
+     {
+      "value": 1.0,
+      "count": 6,
+      "share": 0.24
+     },
+     {
+      "value": 1.2,
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": 1.35,
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "1.5": "html > body > a.skip-link:nth-of-type(1)",
+     "1.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "1.2": "html > body > div.wrap > header.masthead > h1",
+     "1.35": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "letter_spacing": {
+    "considered": 25,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 21,
+      "share": 0.84
+     },
+     {
+      "value": -0.01,
+      "count": 3,
+      "share": 0.12
+     },
+     {
+      "value": -0.02,
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "html > body > a.skip-link:nth-of-type(1)",
+     "-0.01": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "-0.02": "html > body > div.wrap > header.masthead > h1"
+    }
+   },
+   "spacing": {
+    "considered": 69,
+    "distinct": 9,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 24,
+      "share": 0.348
+     },
+     {
+      "value": 2.0,
+      "count": 12,
+      "share": 0.174
+     },
+     {
+      "value": 12.0,
+      "count": 10,
+      "share": 0.145
+     },
+     {
+      "value": 8.0,
+      "count": 6,
+      "share": 0.087
+     },
+     {
+      "value": 4.0,
+      "count": 6,
+      "share": 0.087
+     },
+     {
+      "value": 24.0,
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.029
+     },
+     {
+      "value": 5.5,
+      "count": 2,
+      "share": 0.029
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.029
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "16.0": "html > body > a.skip-link:nth-of-type(1) paddingLeft",
+     "2.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) paddingTop",
+     "12.0": "main > section.stats.reveal:nth-of-type(1) rowGap",
+     "8.0": "html > body > a.skip-link:nth-of-type(1) paddingTop",
+     "4.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label paddingLeft",
+     "24.0": "html > body > div.wrap paddingTop",
+     "32.0": "html > body > div.wrap paddingBottom",
+     "5.5": "html > body > a.vr-badge:nth-of-type(2) paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       6,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.942,
+     "share_on_8px": 0.942,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.942,
+       "chance_share": 0.3,
+       "excess": 0.642
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.174,
+       "chance_share": 0.25,
+       "excess": -0.076
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.391,
+       "chance_share": 0.217,
+       "excess": 0.174
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.71,
+       "chance_share": 0.175,
+       "excess": 0.535
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.174,
+       "chance_share": 0.15,
+       "excess": 0.024
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.942,
+      "chance_share": 0.3,
+      "excess": 0.642
+     },
+     "share_fractional": 0.029,
+     "off_4px_values": [
+      {
+       "value": 5.5,
+       "count": 2
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.942
+   },
+   "radius": {
+    "considered": 15,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 4.0,
+      "count": 7,
+      "share": 0.467
+     },
+     {
+      "value": 6.0,
+      "count": 6,
+      "share": 0.4
+     },
+     {
+      "value": "full",
+      "count": 2,
+      "share": 0.133
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "4.0": "html > body > a.skip-link:nth-of-type(1)",
+     "6.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "full": "main > section.toolbar.reveal:nth-of-type(2) > div.chip-list:nth-of-type(3) > span.chip"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 3,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "value": "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 14,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 14,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "1.0": "html > body > div.wrap > header.masthead"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 2147483646,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "2147483646": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "ladder": {
+     "values": [
+      2147483646
+     ],
+     "max": 2147483646,
+     "over_1000": [
+      2147483646
+     ],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 30,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 200,
+      "count": 28,
+      "share": 0.933
+     },
+     {
+      "value": 150,
+      "count": 2,
+      "share": 0.067
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "200": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "150": "html > body > a.skip-link:nth-of-type(1)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 30,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "count": 29,
+      "share": 0.967
+     },
+     {
+      "value": "ease",
+      "count": 1,
+      "share": 0.033
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "cubic-bezier(0.2, 0.8, 0.2, 1)": "html > body > a.skip-link:nth-of-type(1)",
+     "ease": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "font_family": {
+    "considered": 25,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Fira Sans",
+      "count": 20,
+      "share": 0.8
+     },
+     {
+      "value": "Fira Code",
+      "count": 4,
+      "share": 0.16
+     },
+     {
+      "value": "ui-sans-serif",
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "Fira Sans": "\"Fira Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+     "Fira Code": "\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace",
+     "ui-sans-serif": "ui-sans-serif, system-ui, -apple-system, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 44,
+    "distinct": 9,
+    "opaque_distinct": 7,
+    "near_duplicates": [],
+    "on_token_share": 0.955
+   }
+  },
+  "1280": {
+   "elements_visible": 132,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 69,
+    "distinct": 8,
+    "values": [
+     {
+      "value": "#475569",
+      "count": 28,
+      "share": 0.406
+     },
+     {
+      "value": "#1e293b",
+      "count": 24,
+      "share": 0.348
+     },
+     {
+      "value": "#2563eb",
+      "count": 6,
+      "share": 0.087
+     },
+     {
+      "value": "#15803d",
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": "#dc2626",
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#b45309",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#64748b",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#475569": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "#1e293b": "html > body > div.wrap > header.masthead > h1",
+     "#2563eb": "body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1) > a",
+     "#15803d": "table > tbody > tr:nth-of-type(2) > td.num.positive:nth-of-type(3) > span.trend",
+     "#dc2626": "table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.status.status-error:nth-of-type(1)",
+     "#ffffff": "html > body > a.skip-link:nth-of-type(1)",
+     "#b45309": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(2) > span.status.status-pending:nth-of-type(1)",
+     "#64748b": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 25,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 12,
+      "share": 0.48
+     },
+     {
+      "value": "#e9eff8",
+      "count": 10,
+      "share": 0.4
+     },
+     {
+      "value": "#2563eb",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#f8fafc",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#ffffff/0.92",
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#ffffff": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "#e9eff8": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1)",
+     "#2563eb": "html > body > a.skip-link:nth-of-type(1)",
+     "#f8fafc": "section.reveal:nth-of-type(4) > ul.feed > li.type-draft:nth-of-type(2) > div.body > div.draft",
+     "#ffffff/0.92": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 12
+       },
+       {
+        "value": "#f8fafc",
+        "count": 1
+       }
+      ],
+      "count": 13,
+      "max_oklab": 0.0162
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 36,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#e2e8f0",
+      "count": 34,
+      "share": 0.944
+     },
+     {
+      "value": "#ea580c",
+      "count": 1,
+      "share": 0.028
+     },
+     {
+      "value": "#0f172a/0.08",
+      "count": 1,
+      "share": 0.028
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#e2e8f0": "html > body > div.wrap > header.masthead",
+     "#ea580c": "main > section.reveal:nth-of-type(4) > p.insight:nth-of-type(1)",
+     "#0f172a/0.08": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 69,
+    "distinct": 8,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 34,
+      "share": 0.493
+     },
+     {
+      "value": 12.0,
+      "count": 12,
+      "share": 0.174
+     },
+     {
+      "value": 16.0,
+      "count": 10,
+      "share": 0.145
+     },
+     {
+      "value": 13.0,
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": 15.0,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": 34.0,
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": 11.0,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "14.0": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "12.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label",
+     "16.0": "html > body > a.skip-link:nth-of-type(1)",
+     "13.0": "table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.sub:nth-of-type(2)",
+     "28.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "15.0": "div.table-wrap > table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(1)",
+     "34.0": "html > body > div.wrap > header.masthead > h1",
+     "11.0": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       5,
+       34
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       34,
+       3
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       3,
+       10
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 14.0,
+      "share_on": 1.0,
+      "chance_share": 0.512,
+      "excess": 0.488,
+      "steps_used": [
+       -4,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       11,
+       14
+      ]
+     },
+     "off_best_ratio_px": [],
+     "tailwind_scale_share": 0.812
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 69,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 57,
+      "share": 0.826
+     },
+     {
+      "value": 1.0,
+      "count": 7,
+      "share": 0.101
+     },
+     {
+      "value": 1.2,
+      "count": 4,
+      "share": 0.058
+     },
+     {
+      "value": 1.35,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.5": "html > body > a.skip-link:nth-of-type(1)",
+     "1.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "1.2": "html > body > div.wrap > header.masthead > h1",
+     "1.35": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "letter_spacing": {
+    "considered": 69,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 60,
+      "share": 0.87
+     },
+     {
+      "value": 0.02,
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": -0.01,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": -0.02,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "html > body > a.skip-link:nth-of-type(1)",
+     "0.02": "table > thead > tr > th:nth-of-type(1) > a",
+     "-0.01": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "-0.02": "html > body > div.wrap > header.masthead > h1"
+    }
+   },
+   "spacing": {
+    "considered": 231,
+    "distinct": 9,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 79,
+      "share": 0.342
+     },
+     {
+      "value": 8.0,
+      "count": 67,
+      "share": 0.29
+     },
+     {
+      "value": 12.0,
+      "count": 27,
+      "share": 0.117
+     },
+     {
+      "value": 2.0,
+      "count": 25,
+      "share": 0.108
+     },
+     {
+      "value": 4.0,
+      "count": 20,
+      "share": 0.087
+     },
+     {
+      "value": 24.0,
+      "count": 7,
+      "share": 0.03
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 5.5,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "16.0": "html > body > a.skip-link:nth-of-type(1) paddingLeft",
+     "8.0": "html > body > a.skip-link:nth-of-type(1) paddingTop",
+     "12.0": "main > section.stats.reveal:nth-of-type(1) rowGap",
+     "2.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) paddingTop",
+     "4.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label paddingLeft",
+     "24.0": "html > body > div.wrap paddingTop",
+     "32.0": "html > body > div.wrap paddingBottom",
+     "5.5": "html > body > a.vr-badge:nth-of-type(2) paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       67,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.983,
+     "share_on_8px": 0.983,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.983,
+       "chance_share": 0.3,
+       "excess": 0.683
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.108,
+       "chance_share": 0.25,
+       "excess": -0.142
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.255,
+       "chance_share": 0.217,
+       "excess": 0.038
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.779,
+       "chance_share": 0.175,
+       "excess": 0.604
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.108,
+       "chance_share": 0.15,
+       "excess": -0.042
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.983,
+      "chance_share": 0.3,
+      "excess": 0.683
+     },
+     "share_fractional": 0.009,
+     "off_4px_values": [
+      {
+       "value": 5.5,
+       "count": 2
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.983
+   },
+   "radius": {
+    "considered": 24,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 4.0,
+      "count": 12,
+      "share": 0.5
+     },
+     {
+      "value": 6.0,
+      "count": 10,
+      "share": 0.417
+     },
+     {
+      "value": "full",
+      "count": 2,
+      "share": 0.083
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "4.0": "html > body > a.skip-link:nth-of-type(1)",
+     "6.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "full": "main > section.toolbar.reveal:nth-of-type(2) > div.chip-list:nth-of-type(3) > span.chip"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 4,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "count": 2,
+      "share": 0.5
+     },
+     {
+      "value": "rgb(220, 38, 38) 3px 0px 0px 0px inset",
+      "count": 1,
+      "share": 0.25
+     },
+     {
+      "value": "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "rgb(220, 38, 38) 3px 0px 0px 0px inset": "section.reveal:nth-of-type(3) > div.table-wrap > table > tbody > tr.row-flag:nth-of-type(1)",
+     "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 41,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 40,
+      "share": 0.976
+     },
+     {
+      "value": 3.0,
+      "count": 1,
+      "share": 0.024
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.0": "html > body > div.wrap > header.masthead",
+     "3.0": "main > section.reveal:nth-of-type(4) > p.insight:nth-of-type(1)"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 2147483646,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "2147483646": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "ladder": {
+     "values": [
+      2147483646
+     ],
+     "max": 2147483646,
+     "over_1000": [
+      2147483646
+     ],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 38,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 200,
+      "count": 33,
+      "share": 0.868
+     },
+     {
+      "value": 150,
+      "count": 5,
+      "share": 0.132
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "200": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "150": "html > body > a.skip-link:nth-of-type(1)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 38,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "count": 37,
+      "share": 0.974
+     },
+     {
+      "value": "ease",
+      "count": 1,
+      "share": 0.026
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "cubic-bezier(0.2, 0.8, 0.2, 1)": "html > body > a.skip-link:nth-of-type(1)",
+     "ease": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "font_family": {
+    "considered": 69,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Fira Sans",
+      "count": 46,
+      "share": 0.667
+     },
+     {
+      "value": "Fira Code",
+      "count": 22,
+      "share": 0.319
+     },
+     {
+      "value": "ui-sans-serif",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "Fira Sans": "\"Fira Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+     "Fira Code": "\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace",
+     "ui-sans-serif": "ui-sans-serif, system-ui, -apple-system, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 130,
+    "distinct": 14,
+    "opaque_distinct": 12,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 13
+       },
+       {
+        "value": "#f8fafc",
+        "count": 1
+       }
+      ],
+      "count": 14,
+      "max_oklab": 0.0162
+     }
+    ],
+    "on_token_share": 0.985
+   }
+  },
+  "1440": {
+   "elements_visible": 132,
+   "elements_in_exhibits_left_out": 0,
+   "colour_text": {
+    "considered": 69,
+    "distinct": 8,
+    "values": [
+     {
+      "value": "#475569",
+      "count": 28,
+      "share": 0.406
+     },
+     {
+      "value": "#1e293b",
+      "count": 24,
+      "share": 0.348
+     },
+     {
+      "value": "#2563eb",
+      "count": 6,
+      "share": 0.087
+     },
+     {
+      "value": "#15803d",
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": "#dc2626",
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": "#ffffff",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#b45309",
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": "#64748b",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#475569": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "#1e293b": "html > body > div.wrap > header.masthead > h1",
+     "#2563eb": "body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1) > a",
+     "#15803d": "table > tbody > tr:nth-of-type(2) > td.num.positive:nth-of-type(3) > span.trend",
+     "#dc2626": "table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.status.status-error:nth-of-type(1)",
+     "#ffffff": "html > body > a.skip-link:nth-of-type(1)",
+     "#b45309": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(2) > span.status.status-pending:nth-of-type(1)",
+     "#64748b": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "colour_fill": {
+    "considered": 25,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "#ffffff",
+      "count": 12,
+      "share": 0.48
+     },
+     {
+      "value": "#e9eff8",
+      "count": 10,
+      "share": 0.4
+     },
+     {
+      "value": "#2563eb",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#f8fafc",
+      "count": 1,
+      "share": 0.04
+     },
+     {
+      "value": "#ffffff/0.92",
+      "count": 1,
+      "share": 0.04
+     }
+    ],
+    "one_offs": 3,
+    "examples": {
+     "#ffffff": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "#e9eff8": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1)",
+     "#2563eb": "html > body > a.skip-link:nth-of-type(1)",
+     "#f8fafc": "section.reveal:nth-of-type(4) > ul.feed > li.type-draft:nth-of-type(2) > div.body > div.draft",
+     "#ffffff/0.92": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 12
+       },
+       {
+        "value": "#f8fafc",
+        "count": 1
+       }
+      ],
+      "count": 13,
+      "max_oklab": 0.0162
+     }
+    ]
+   },
+   "colour_border": {
+    "considered": 36,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "#e2e8f0",
+      "count": 34,
+      "share": 0.944
+     },
+     {
+      "value": "#ea580c",
+      "count": 1,
+      "share": 0.028
+     },
+     {
+      "value": "#0f172a/0.08",
+      "count": 1,
+      "share": 0.028
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "#e2e8f0": "html > body > div.wrap > header.masthead",
+     "#ea580c": "main > section.reveal:nth-of-type(4) > p.insight:nth-of-type(1)",
+     "#0f172a/0.08": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": []
+   },
+   "font_size": {
+    "considered": 69,
+    "distinct": 8,
+    "values": [
+     {
+      "value": 14.0,
+      "count": 34,
+      "share": 0.493
+     },
+     {
+      "value": 12.0,
+      "count": 12,
+      "share": 0.174
+     },
+     {
+      "value": 16.0,
+      "count": 10,
+      "share": 0.145
+     },
+     {
+      "value": 13.0,
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": 28.0,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": 15.0,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": 34.0,
+      "count": 1,
+      "share": 0.014
+     },
+     {
+      "value": 11.0,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "14.0": "html > body > div.wrap > header.masthead > p.eyebrow:nth-of-type(1)",
+     "12.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label",
+     "16.0": "html > body > a.skip-link:nth-of-type(1)",
+     "13.0": "table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(2) > span.sub:nth-of-type(2)",
+     "28.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "15.0": "div.table-wrap > table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(1)",
+     "34.0": "html > body > div.wrap > header.masthead > h1",
+     "11.0": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       13.0,
+       14.0
+      ],
+      "counts": [
+       5,
+       34
+      ]
+     },
+     {
+      "values": [
+       14.0,
+       15.0
+      ],
+      "counts": [
+       34,
+       3
+      ]
+     },
+     {
+      "values": [
+       15.0,
+       16.0
+      ],
+      "counts": [
+       3,
+       10
+      ]
+     }
+    ],
+    "scale": {
+     "best_ratio": {
+      "ratio": 1.067,
+      "base_px": 14.0,
+      "share_on": 1.0,
+      "chance_share": 0.512,
+      "excess": 0.488,
+      "steps_used": [
+       -4,
+       -2,
+       -1,
+       0,
+       1,
+       2,
+       11,
+       14
+      ]
+     },
+     "off_best_ratio_px": [],
+     "tailwind_scale_share": 0.812
+    },
+    "on_token_share": null
+   },
+   "line_height": {
+    "considered": 69,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 1.5,
+      "count": 57,
+      "share": 0.826
+     },
+     {
+      "value": 1.0,
+      "count": 7,
+      "share": 0.101
+     },
+     {
+      "value": 1.2,
+      "count": 4,
+      "share": 0.058
+     },
+     {
+      "value": 1.35,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.5": "html > body > a.skip-link:nth-of-type(1)",
+     "1.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "1.2": "html > body > div.wrap > header.masthead > h1",
+     "1.35": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "letter_spacing": {
+    "considered": 69,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 0.0,
+      "count": 60,
+      "share": 0.87
+     },
+     {
+      "value": 0.02,
+      "count": 5,
+      "share": 0.072
+     },
+     {
+      "value": -0.01,
+      "count": 3,
+      "share": 0.043
+     },
+     {
+      "value": -0.02,
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "0.0": "html > body > a.skip-link:nth-of-type(1)",
+     "0.02": "table > thead > tr > th:nth-of-type(1) > a",
+     "-0.01": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1) > div.stat-value:nth-of-type(2)",
+     "-0.02": "html > body > div.wrap > header.masthead > h1"
+    }
+   },
+   "spacing": {
+    "considered": 231,
+    "distinct": 9,
+    "values": [
+     {
+      "value": 16.0,
+      "count": 79,
+      "share": 0.342
+     },
+     {
+      "value": 8.0,
+      "count": 67,
+      "share": 0.29
+     },
+     {
+      "value": 12.0,
+      "count": 27,
+      "share": 0.117
+     },
+     {
+      "value": 2.0,
+      "count": 25,
+      "share": 0.108
+     },
+     {
+      "value": 4.0,
+      "count": 20,
+      "share": 0.087
+     },
+     {
+      "value": 24.0,
+      "count": 7,
+      "share": 0.03
+     },
+     {
+      "value": 32.0,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 5.5,
+      "count": 2,
+      "share": 0.009
+     },
+     {
+      "value": 9.0,
+      "count": 2,
+      "share": 0.009
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "16.0": "html > body > a.skip-link:nth-of-type(1) paddingLeft",
+     "8.0": "html > body > a.skip-link:nth-of-type(1) paddingTop",
+     "12.0": "main > section.stats.reveal:nth-of-type(1) rowGap",
+     "2.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) paddingTop",
+     "4.0": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > span.seg-label paddingLeft",
+     "24.0": "html > body > div.wrap paddingTop",
+     "32.0": "html > body > div.wrap paddingBottom",
+     "5.5": "html > body > a.vr-badge:nth-of-type(2) paddingTop"
+    },
+    "near_duplicates": [
+     {
+      "values": [
+       8.0,
+       9.0
+      ],
+      "counts": [
+       67,
+       2
+      ]
+     }
+    ],
+    "scale": {
+     "share_on_4px": 0.983,
+     "share_on_8px": 0.983,
+     "bases": [
+      {
+       "base_px": 4,
+       "share_on": 0.983,
+       "chance_share": 0.3,
+       "excess": 0.683
+      },
+      {
+       "base_px": 5,
+       "share_on": 0.108,
+       "chance_share": 0.25,
+       "excess": -0.142
+      },
+      {
+       "base_px": 6,
+       "share_on": 0.255,
+       "chance_share": 0.217,
+       "excess": 0.038
+      },
+      {
+       "base_px": 8,
+       "share_on": 0.779,
+       "chance_share": 0.175,
+       "excess": 0.604
+      },
+      {
+       "base_px": 10,
+       "share_on": 0.108,
+       "chance_share": 0.15,
+       "excess": -0.042
+      }
+     ],
+     "best_base": {
+      "base_px": 4,
+      "share_on": 0.983,
+      "chance_share": 0.3,
+      "excess": 0.683
+     },
+     "share_fractional": 0.009,
+     "off_4px_values": [
+      {
+       "value": 5.5,
+       "count": 2
+      },
+      {
+       "value": 9.0,
+       "count": 2
+      }
+     ],
+     "note": "4px base counts 1, 2, 6, 10 and 14 as hairlines and half-steps, as the off_scale_spacing detector does; 8px counts 1, 2, 4 and 12"
+    },
+    "on_token_share": 0.983
+   },
+   "radius": {
+    "considered": 24,
+    "distinct": 3,
+    "values": [
+     {
+      "value": 4.0,
+      "count": 12,
+      "share": 0.5
+     },
+     {
+      "value": 6.0,
+      "count": 10,
+      "share": 0.417
+     },
+     {
+      "value": "full",
+      "count": 2,
+      "share": 0.083
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "4.0": "html > body > a.skip-link:nth-of-type(1)",
+     "6.0": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "full": "main > section.toolbar.reveal:nth-of-type(2) > div.chip-list:nth-of-type(3) > span.chip"
+    },
+    "on_token_share": 1.0
+   },
+   "shadow": {
+    "considered": 4,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "count": 2,
+      "share": 0.5
+     },
+     {
+      "value": "rgb(220, 38, 38) 3px 0px 0px 0px inset",
+      "count": 1,
+      "share": 0.25
+     },
+     {
+      "value": "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "one_offs": 2,
+    "examples": {
+     "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "rgb(220, 38, 38) 3px 0px 0px 0px inset": "section.reveal:nth-of-type(3) > div.table-wrap > table > tbody > tr.row-flag:nth-of-type(1)",
+     "rgba(15, 23, 42, 0.08) 0px 1px 3px 0px": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "on_token_share": 0.0
+   },
+   "border_width": {
+    "considered": 41,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 1.0,
+      "count": 40,
+      "share": 0.976
+     },
+     {
+      "value": 3.0,
+      "count": 1,
+      "share": 0.024
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "1.0": "html > body > div.wrap > header.masthead",
+     "3.0": "main > section.reveal:nth-of-type(4) > p.insight:nth-of-type(1)"
+    }
+   },
+   "z_index": {
+    "considered": 1,
+    "distinct": 1,
+    "values": [
+     {
+      "value": 2147483646,
+      "count": 1,
+      "share": 1.0
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "2147483646": "html > body > a.vr-badge:nth-of-type(2)"
+    },
+    "ladder": {
+     "values": [
+      2147483646
+     ],
+     "max": 2147483646,
+     "over_1000": [
+      2147483646
+     ],
+     "distinct": 1
+    }
+   },
+   "duration": {
+    "considered": 38,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 200,
+      "count": 33,
+      "share": 0.868
+     },
+     {
+      "value": 150,
+      "count": 5,
+      "share": 0.132
+     }
+    ],
+    "one_offs": 0,
+    "examples": {
+     "200": "main > section.toolbar.reveal:nth-of-type(2) > div.seg:nth-of-type(1) > button:nth-of-type(1)",
+     "150": "html > body > a.skip-link:nth-of-type(1)"
+    },
+    "on_token_share": 1.0
+   },
+   "easing": {
+    "considered": 38,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "count": 37,
+      "share": 0.974
+     },
+     {
+      "value": "ease",
+      "count": 1,
+      "share": 0.026
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "cubic-bezier(0.2, 0.8, 0.2, 1)": "html > body > a.skip-link:nth-of-type(1)",
+     "ease": "html > body > a.vr-badge:nth-of-type(2)"
+    }
+   },
+   "font_family": {
+    "considered": 69,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Fira Sans",
+      "count": 46,
+      "share": 0.667
+     },
+     {
+      "value": "Fira Code",
+      "count": 22,
+      "share": 0.319
+     },
+     {
+      "value": "ui-sans-serif",
+      "count": 1,
+      "share": 0.014
+     }
+    ],
+    "one_offs": 1,
+    "examples": {
+     "Fira Sans": "\"Fira Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+     "Fira Code": "\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace",
+     "ui-sans-serif": "ui-sans-serif, system-ui, -apple-system, sans-serif"
+    }
+   },
+   "colour_all": {
+    "considered": 130,
+    "distinct": 14,
+    "opaque_distinct": 12,
+    "near_duplicates": [
+     {
+      "members": [
+       {
+        "value": "#ffffff",
+        "count": 13
+       },
+       {
+        "value": "#f8fafc",
+        "count": 1
+       }
+      ],
+      "count": 14,
+      "max_oklab": 0.0162
+     }
+    ],
+    "on_token_share": 0.985
+   }
+  }
+ },
+ "sweep": {
+  "off_scale_spacing": {
+   "status": "ran",
+   "rule": "LAY-002",
+   "note": null,
+   "hits": []
+  },
+  "spacing_monotony": {
+   "status": "ran",
+   "rule": "LAY-001",
+   "note": null,
+   "hits": []
+  },
+  "type_ladder": {
+   "status": "ran",
+   "rule": "TYP-002",
+   "note": null,
+   "hits": [
+    {
+     "where": "whole page",
+     "evidence": "3 font families render: Fira Sans, Fira Code, Segoe UI",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "flat_hierarchy": {
+   "status": "ran",
+   "rule": "TYP-001",
+   "note": null,
+   "hits": [
+    {
+     "where": "h2 vs body",
+     "evidence": "h2 16px is only 1.00x body 16px (min 1.25x)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "banned_fonts": {
+   "status": "ran",
+   "rule": "TYP-003",
+   "note": null,
+   "hits": []
+  },
+  "stock_swatches": {
+   "status": "ran",
+   "rule": "CLR-002",
+   "note": null,
+   "hits": [
+    {
+     "where": ":root --color-secondary",
+     "evidence": "token --color-secondary: #3B82F6 is a stock tailwind-defaults swatch",
+     "tier": "Reflex"
+    },
+    {
+     "where": ":root --color-background",
+     "evidence": "token --color-background: #F8FAFC is a stock tailwind-defaults swatch",
+     "tier": "Reflex"
+    },
+    {
+     "where": ":root --color-foreground",
+     "evidence": "token --color-foreground: #1E293B is a stock tailwind-defaults swatch",
+     "tier": "Reflex"
+    },
+    {
+     "where": ":root --color-card-foreground",
+     "evidence": "token --color-card-foreground: #1E293B is a stock tailwind-defaults swatch",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "accent_footprint": {
+   "status": "ran",
+   "rule": "CLR-001",
+   "note": null,
+   "hits": []
+  },
+  "nested_radius": {
+   "status": "ran",
+   "rule": "LAY-024",
+   "note": null,
+   "hits": []
+  },
+  "card_kit": {
+   "status": "ran",
+   "rule": "SLP-005",
+   "note": null,
+   "hits": []
+  },
+  "container_monotony": {
+   "status": "ran",
+   "rule": "SLP-006",
+   "note": null,
+   "hits": [
+    {
+     "where": "main > section.stats.reveal:nth-of-type(1) > div.stat:nth-of-type(1)",
+     "evidence": "one box recipe on 6 elements across 4 selectors (div.stat, li.type-done, li.type-draft, li.type-user)",
+     "tier": "Reflex"
+    },
+    {
+     "where": "div.table-wrap > table > tbody > tr.row-flag:nth-of-type(1) > td:nth-of-type(1)  \"Harbor and Co\"",
+     "evidence": "one box recipe on 15 elements across 4 selectors (td, td.num, td.num.negative, td.num.positive)",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion_css": {
+   "status": "ran",
+   "rule": "MOT-001",
+   "note": null,
+   "hits": [
+    {
+     "where": ".skip-link",
+     "evidence": "transition on a layout property: \"top var(--dur-fast) var(--ease-out)\"",
+     "tier": "Reflex"
+    }
+   ]
+  },
+  "motion": {
+   "status": "ran",
+   "rule": "MOT-002",
+   "note": null,
+   "hits": []
+  },
+  "look_family": {
+   "status": "ran",
+   "rule": "SLP-012",
+   "note": null,
+   "hits": []
+  },
+  "fallback_face": {
+   "status": "ran",
+   "rule": "TYP-004",
+   "note": null,
+   "hits": []
+  }
+ },
+ "sweep_exhibits": [],
+ "not_captured": [
+  "inline style attributes",
+  "margin-left and margin-right",
+  "which rule set each computed value",
+  "the second colour scheme (read from the stylesheet only)",
+  "tokens in unreadable cross-origin sheets",
+  "token source files (only the shipped CSS is read)"
+ ]
+}
